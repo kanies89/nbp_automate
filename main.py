@@ -120,3 +120,4 @@ def copy_wb(from_workbook, to_workbook, dataframe):
         temp_table = "C:\\Users\\Krzysztof kaniewski\\Desktop\\AR2\\NBP_Temp_1.sql"
         query = "C:\\Users\\Krzysztof kaniewski\\Desktop\\AR2\\NBP_Query_1.sql"
         df = connect(temp_table, query)
+        #kk
