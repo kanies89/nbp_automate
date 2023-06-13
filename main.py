@@ -64,7 +64,7 @@ def prepare_data():
         elif name == '4a.R.W_PLiW2':
             j = 0
             i = 0
-            for df in dataframe_1:
+            for df, k in dataframe_1, enumerate:
                 for country in df['name']:
                     if country == 'Holandia':
                         country = 'Niderlandy'
