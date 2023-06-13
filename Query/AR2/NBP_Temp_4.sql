@@ -1222,6 +1222,8 @@ INSERT INTO #geo6 VALUES ('ZZ','Extra UE not allocated') -- D09
 --from #mcc 
 --left join #dane on merchant_category_code = #mcc.mcc
 
+---split---
+
 IF OBJECT_ID('tempdb..#start') IS NOT NULL DROP TABLE #start
 SELECT *
 into #start

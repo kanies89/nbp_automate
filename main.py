@@ -57,6 +57,9 @@ def prepare_data():
 
                     col = pd.Index(df_nbp_2[name].iloc[7]).get_loc(country)
                     df_nbp_2[name][col].iloc[AR2_4_row_1[j]] = df['ilosc'].iloc[i]
+                    i += 1
+                i = 0
+                j += 1
 
         elif name == '4a.R.W_PLiW2':
             j = 0
@@ -69,6 +72,7 @@ def prepare_data():
                     col = pd.Index(df_nbp_2[name].iloc[7]).get_loc(country)
                     df_nbp_2[name][col].iloc[AR2_4_row_2[j]] = df['wartosc'].iloc[i]
                     i += 1
+                i = 0
                 j += 1
 
         elif name == '6.ab.LiW':
@@ -95,10 +99,8 @@ def prepare_data():
     dataframe_4 = connect(temp_table, query)
 
 
-
-
 if __name__ == '__main__':
-
+    # AR2 sheet for NBP
     # Fill the first sheet with "Author of the report" info.
     # input the personal data
     d_21 = input('First name: ')
@@ -114,10 +116,10 @@ if __name__ == '__main__':
         d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
     ]
 
-    ## RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
+    # RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
     i = 0
-    for input in input_data:
-        df_nbp_2[EXCEL_READ[0]].loc[df_nbp_2[EXCEL_READ[0]][0] == TO_FILL[i], 5] = input
+    for inp in input_data:
+        df_nbp_2[EXCEL_READ[0]].loc[df_nbp_2[EXCEL_READ[0]][0] == TO_FILL[i], 5] = inp
         i += 1
 
     # Fill sheets 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW and 5a.R
