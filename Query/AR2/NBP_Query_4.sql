@@ -1,5 +1,3 @@
-use paytel_olap
-
 set transaction isolation level read uncommitted
 
 declare @dtb as smalldatetime

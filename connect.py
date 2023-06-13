@@ -19,7 +19,11 @@ def connect(temp_table_file, query_file):
 
     with engine.connect() as connection:
         connection.echo = False
-        connection.execute(temp_table)
+
+        t_list = temp_table.split('---split---')
+
+        for t in t_list:
+            connection.execute(t)
 
         q_list = query.split('---split---')
 
