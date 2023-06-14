@@ -1229,5 +1229,5 @@ SELECT *
 into #start
 FROM #geo6
 cross join #mcc
---SELECT * FROM #start
+SELECT * FROM #start
 -- 80 065

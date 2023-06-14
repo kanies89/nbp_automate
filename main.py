@@ -5,6 +5,7 @@ from openpyxl.utils import get_column_letter
 import shutil
 import openpyxl
 from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2
+from f_visa import find
 
 path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ, header=None)
@@ -111,7 +112,7 @@ def prepare_data():
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-    # dataframe_4 = connect(temp_table, query)
+    dataframe_4 = connect(temp_table, query)
 
 
 if __name__ == '__main__':

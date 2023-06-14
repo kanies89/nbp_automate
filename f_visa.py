@@ -1,10 +1,10 @@
-import re
-import pandas as pd
-from datetime import time, datetime as dt
 from calendar import monthrange
-from fiscalyear import FiscalDate, FiscalDateTime
+from fiscalyear import FiscalDate
+import pandas as pd
+import numpy as np
 
-PATH = "Z:/Internal/clearing/Visa/"
+
+PATH = "C:/Users/Krzysztof kaniewski/PycharmProjects/pythonProject/visa_data/"
 
 quarter_months = [
     ['01', '02', '03'],
@@ -23,7 +23,6 @@ months = [
 
 def check_quarter():
     a = FiscalDate.today()
-    # a = FiscalDateTime(2023, 1, 1, 0, 0) # check what happens if month january
     print(a)
     q = a.fiscal_quarter
 
@@ -47,25 +46,41 @@ def check_quarter():
     return folders, q_year, months
 
 
-if __name__ == "__main__":
-    # file_one = open("demo.txt", "w")
-    # file_one.write("first line of text\nsecond line of text\nthird line of text")
-    # file_one.close()
+matched_lines = []  # List to store the matched lines
 
-    patrn = "FRDDMC61"
+
+def grep(path):
+    pattern = 'FRDDMC61'  # Replace with your desired pattern
+
+    with open(path, 'r') as file:
+        file = file.readlines()
+        for lines in file:
+            if pattern in lines:
+                if '******' in lines:
+                    matched_lines.append(lines)
+
+
+def find():
     result = check_quarter()
 
     i = 0
 
     for folder in result[0]:
         for day in range(monthrange(result[1], result[2][0][i])[1]):
-            print(day+1)
             if day + 1 < 10:
-                full_path = f'{PATH}{folder}/{folder}0{str(day+1)}_INTF.EPD'
-
-                print(full_path+"\n")
+                full_path = f'{PATH}{folder}/{folder}0{str(day + 1)}_INITF.EPD'
+                print(full_path)
+                grep(full_path)
             else:
-                full_path = f'{PATH}{folder}/{folder}{str(day+1)}_INTF.EPD'
-
-                print(full_path+"\n")
+                full_path = f'{PATH}{folder}/{folder}{str(day + 1)}_INITF.EPD'
+                print(full_path)
+                grep(full_path)
         i += 1
+
+    for line in matched_lines:
+        print(line)
+
+
+if __name__ == "__main__":
+    data = find()
+    print(pd.DataFrame(np.array(data)))
