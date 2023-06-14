@@ -39,46 +39,61 @@ def copy_wb(from_workbook, to_workbook, dataframe):
     return wb
 
 
+def load_df():
+    df = []
+    for n in range(22):
+        df.append(pd.read_csv(f"./df/df_{n}.csv"))
+    return df
+
+
 def prepare_data():
     # 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
 
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
     query = f"Query\\AR2\\NBP_Query_1.sql"
-    dataframe_1 = connect(temp_table, query)
+    # dataframe_1 = connect(temp_table, query)
+    dataframe_1 = load_df()  # for tests
 
-    for name in EXCEL_READ:
-        if name == '4.a.R.L_PLiW2':
-            j = 0
-            i = 0
-            for df in dataframe_1:
-                for country in df['name']:
-                    if country == 'Holandia':
-                        country = 'Niderlandy'
+    sheet = '4a.R.L_PLiW2'
+    
+    j = 0
+    i = 0
+    for n in range(0, 20):
+        print(dataframe_1[n].columns)
+        for country in dataframe_1[n]['name']:
+            if country == 'Holandia':
+                country = 'Niderlandy'
+            print('I', i)
+            print(country)
+            if i <= 19:
+                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                df_nbp_2[sheet][col].iloc[AR2_4_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
+            i += 1
+        i = 0
+        j += 1
 
-                    col = pd.Index(df_nbp_2[name].iloc[7]).get_loc(country)
-                    df_nbp_2[name][col].iloc[AR2_4_row_1[j]] = df['ilosc'].iloc[i]
-                    i += 1
-                i = 0
-                j += 1
+    sheet = '4a.R.W_PLiW2'
 
-        elif name == '4a.R.W_PLiW2':
-            j = 0
-            i = 0
-            for df in dataframe_1:
-                for country in df['name']:
-                    if country == 'Holandia':
-                        country = 'Niderlandy'
+    j = 0
+    i = 0
+    for n in range(0, 20):
 
-                    col = pd.Index(df_nbp_2[name].iloc[7]).get_loc(country)
-                    df_nbp_2[name][col].iloc[AR2_4_row_2[j]] = df['wartosc'].iloc[i]
-                    i += 1
-                i = 0
-                j += 1
+        for country in dataframe_1[n]['name']:
+            if country == 'Holandia':
+                country = 'Niderlandy'
+            print('W', i)
+            print(country)
+            if i <= 19:
+                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                df_nbp_2[sheet][col].iloc[AR2_4_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
+            i += 1
+        i = 0
+        j += 1
 
-        elif name == '6.ab.LiW':
-            for j in range(1):
-                df_nbp_2[name][col].iloc[AR2_6_row_1[j]] = dataframe_1[20]['ilosc'].iloc[0]
-                df_nbp_2[name][col].iloc[AR2_6_row_2[j]] = dataframe_1[21]['wartosc'].iloc[0]
+    sheet = EXCEL_READ[6]
+    for j in range(1):
+        df_nbp_2[sheet][34].iloc[AR2_6_row_1[j]] = dataframe_1[20]['ilosc'].iloc[0]
+        df_nbp_2[sheet][34].iloc[AR2_6_row_2[j]] = dataframe_1[21]['wartosc'].iloc[0]
 
     # 5a.R
 
@@ -86,17 +101,17 @@ def prepare_data():
     query = f"Query\\AR2\\NBP_Query_3.sql"
     dataframe_3 = connect(temp_table, query)
 
-    for name in EXCEL_READ:
-        if name == '5a.R':
-            df_nbp_2[name][3].iloc[8] = dataframe_3[2]['wartosc'].iloc[0]
-            df_nbp_2[name][3].iloc[9] = dataframe_3[3]['wartosc'].iloc[0]
-            df_nbp_2[name][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
+    sheet = '5a.R.SF'
+    df_nbp_2[sheet][3].iloc[8] = dataframe_3[2]['wartosc'].iloc[0]
+    df_nbp_2[sheet][3].iloc[9] = dataframe_3[3]['wartosc'].iloc[0]
+    df_nbp_2[sheet][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
+    print("finished")
 
     # 9.R.L.MCC and 9.R.W.MCC
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-    dataframe_4 = connect(temp_table, query)
+    # dataframe_4 = connect(temp_table, query)
 
 
 if __name__ == '__main__':
