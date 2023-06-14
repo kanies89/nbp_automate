@@ -1,10 +1,8 @@
 from calendar import monthrange
 from fiscalyear import FiscalDate
-import pandas as pd
-import numpy as np
 
-
-PATH = "C:/Users/Krzysztof kaniewski/PycharmProjects/pythonProject/visa_data/"
+PATH = "./visa_data/"
+# PATH = "\\\\prdfil\\tf$\\Internal\\clearing\\Visa\\"
 
 quarter_months = [
     ['01', '02', '03'],
@@ -82,5 +80,6 @@ def find():
 
 
 if __name__ == "__main__":
-    data = find()
-    print(pd.DataFrame(np.array(data)))
+    find()
+    for d in matched_lines:
+        print(len(d))
