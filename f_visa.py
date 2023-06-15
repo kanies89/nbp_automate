@@ -11,6 +11,59 @@ matched_lines = []  # List to store the matched lines
 
 PATH = "y:/Internal/clearing/Visa/"
 
+CARD_TYPE = {
+    'D': 'Debit',
+    'P': 'Prepaid',
+    'C': 'Credit',
+    'R': 'Charge'
+}
+
+FT = {
+    0: ['Lost', 'Zgubienie lub kradzież karty'],
+    1: ['Stolen', 'Zgubienie lub kradzież karty'],
+    2: ['Not Received', 'Nieodebrana karta'],
+    3: ['Fraudulent Application', 'Pozostałe'],
+    4: ['Counterfeit Card Fraud', 'Karta sfałszowana'],
+    5: ['Miscellaneous', 'Pozostałe'],
+    6: ['Fraudulent Use of Account Number', 'Pozostałe'],
+    9: ['Acquirer Reported Counterfiet', 'Pozostałe'],
+
+}
+
+NBP_Countries = [
+    'AT',
+    'BE',
+    'BG',
+    'HR',
+    'CY',
+    'CZ',
+    'DK',
+    'EE',
+    'FI',
+    'FR',
+    'GR',
+    'ES',
+    'NL',
+    'IE',
+    'IS',
+    'LT',
+    'LI',
+    'LU',
+    'LV',
+    'MT',
+    'DE',
+    'NO',
+    'PT',
+    'RO',
+    'SK',
+    'SI',
+    'SE',
+    'IT',
+    'G1',
+    'W2',
+    'PL'
+]
+
 quarter_months = [
     ['01', '02', '03'],
     ['04', '05', '06'],
@@ -29,11 +82,17 @@ f_arn = []
 f_trx_date = []
 f_posted_date = []
 f_quarter = []
+f_fraud_type = []
+f_fraud_type_desc = []
+f_card_type = []
 
 EPD_SPLIT = {
     'ARN': [f_arn],
     'trx_date': [f_trx_date],
-    'posted_date': [f_posted_date]
+    'posted_date': [f_posted_date],
+    'quarter': [f_quarter],
+    'FT': [f_fraud_type],
+    'FT description': [f_fraud_type_desc]
 }
 
 
@@ -96,7 +155,8 @@ def grep(path):
 
                     # Retrieve posted date from EPD file name
                     posted_date = path[-16:-10:]
-                    posted_date = pd.to_datetime(f'20{posted_date[:2]}/{posted_date[2:4]}/{posted_date[4:]}', format='%Y/%m/%d', errors='coerce')
+                    posted_date = pd.to_datetime(f'20{posted_date[:2]}/{posted_date[2:4]}/{posted_date[4:]}',
+                                                 format='%Y/%m/%d', errors='coerce')
                     f_posted_date.append(posted_date)
 
                     # Retrieve quarter data from EPD file name
@@ -145,6 +205,13 @@ def get_data_from_sql():
         ml_trx_date = pd.to_datetime(ml_trx_date, format='%m/%d/%Y')
         f_trx_date.append(ml_trx_date)
 
+        # Retrieve fraud type
+        ml_fraud_type = matched_lines[i][66:66 + 1]
+        f_fraud_type.append(ml_fraud_type)
+
+        # Get fraud description
+        f_fraud_type_desc.append(FT[ml_fraud_type][1])
+
         if i == 0:
             arns += "('" + ml_arn + "', "
         elif i == len(matched_lines) - 1:
@@ -156,7 +223,7 @@ def get_data_from_sql():
     with open('./query/f_visa/fraud_data_based_on_arn.sql') as sql:
         sql = sql.read()
         sql += arns
-    if i+1 == len(matched_lines):
+    if i + 1 == len(matched_lines):
         print('All ARN numbers passed to SQL query.')
     else:
         print('Not all ARN passed to sql query')
@@ -168,8 +235,18 @@ def get_data_from_sql():
     return sql
 
 
+def nbp_divide(row):
+    if row['country'] in NBP_Countries:
+        value = row['country']
+    else:
+        value = 'G1'
+    return value
+
+
 if __name__ == "__main__":
     find()
     df_query = pd.DataFrame(connect_single_query(get_data_from_sql())[0])
+    df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
     print(df_query)
-    print(f_posted_date, f_trx_date, f_quarter)
+
+    # @TODO - kk: glue the dataframe from sql query with retrieved data from epd
