@@ -36,3 +36,23 @@ def connect(temp_table_file, query_file):
     engine.dispose()
 
     return df
+
+
+def connect_single_query(query):
+    engine = create_engine(
+        'mssql+pyodbc://@' + SERVER_NAME + '/' + DATABASE_NAME + '?trusted_connection=yes&driver=ODBC+Driver+18+for+SQL+Server&encrypt=no')
+
+    with engine.connect() as connection:
+        connection.echo = False
+
+        q_list = query.split('---split---')
+
+        df = []
+
+        for q in q_list:
+            tableResult = pd.read_sql(q, connection)
+            df.append(pd.DataFrame(tableResult))
+
+    engine.dispose()
+
+    return df
