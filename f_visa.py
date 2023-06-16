@@ -249,4 +249,4 @@ if __name__ == "__main__":
     df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
     print(df_query)
 
-    # @TODO - kk: glue the dataframe from sql query with retrieved data from epd
+    # @TODO - kk: glue the dataframe from sql query with retrieved data from epd.
