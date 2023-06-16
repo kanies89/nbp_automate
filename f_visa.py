@@ -244,9 +244,20 @@ def nbp_divide(row):
 
 
 if __name__ == "__main__":
+    # Find data from Visa EPD files that matches the fraud records
     find()
+
+    # Get data from sql query and ARN number retrieved by find()
     df_query = pd.DataFrame(connect_single_query(get_data_from_sql())[0])
+    # Add column 'podział NBP'
     df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
+
+    # Set new dataframe based on data retrieved from find()
+    df_epd = pd.DataFrame.from_dict(EPD_SPLIT)
+
+    # Join two dataframes by ARN number
+    df_visa_fraud_data = df_query.merge(df_epd, left_on='ARN', right_on='ARN')
+    df_visa_fraud_data.to_csv('df_visa_fraud_data.csv')
     print(df_query)
 
     # @TODO - kk: glue the dataframe from sql query with retrieved data from epd.
