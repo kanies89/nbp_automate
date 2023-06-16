@@ -128,7 +128,7 @@ def f_mastercard_make():
 
     # Join two dataframes by ARN number
     df_mastercard_fraud_data = df_query.merge(df_data, left_on='ARN', right_on='ARN')
-    df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'})
+    df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'}, inplace=True)
     df_mastercard_fraud_data.to_csv('df_mastercard_fraud_data.csv')
 
     return df_mastercard_fraud_data

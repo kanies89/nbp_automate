@@ -149,9 +149,9 @@ if __name__ == '__main__':
 
     df_visa = pd.DataFrame(f_visa_make())
     df_mastercard = pd.DataFrame(f_mastercard_make())
-    df = [df_visa, df_mastercard]
+    df_complete = [df_visa, df_mastercard]
 
-    df_fraud = pd.concat[df]
+    df_fraud = pd.concat(df_complete)
     df_fraud.to_csv('df_fraud.csv')
     print("finished")
 
