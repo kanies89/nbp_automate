@@ -1,15 +1,36 @@
 from calendar import monthrange
-
 import pandas as pd
 from fiscalyear import FiscalDate
-import sys
-import win32net as wnet
-import os
+import win32wnet
 from connect import connect_single_query
 
 matched_lines = []  # List to store the matched lines
 
-PATH = "y:/Internal/clearing/Visa/"
+PATH = "//prdfil/tf$/Internal/clearing/Visa/"
+
+
+def read_remote_file(remote_file_path, username, password):
+    try:
+        # Establish a connection to the shared drive with credentials
+        netpath = r"\\prdfil\tf$"
+        win32wnet.WNetAddConnection2(0, None, netpath, None, username, password)
+
+        # Read the remote file
+        with open(remote_file_path, 'r') as file:
+            file_contents = file.read()
+            print("Contents of the remote file:")
+            print(file_contents)
+
+        # Disconnect from the shared drive
+        win32wnet.WNetCancelConnection2(netpath, 0, 0)
+
+    except FileNotFoundError:
+        print("File not found:", remote_file_path)
+    except PermissionError:
+        print("Permission denied to access the file:", remote_file_path)
+    except Exception as e:
+        print("An error occurred while reading the remote file:", str(e))
+
 
 CARD_TYPE = {
     'D': 'Debit',
@@ -87,34 +108,13 @@ f_fraud_type_desc = []
 f_card_type = []
 
 EPD_SPLIT = {
-    'ARN': [f_arn],
-    'trx_date': [f_trx_date],
-    'posted_date': [f_posted_date],
-    'quarter': [f_quarter],
-    'FT': [f_fraud_type],
-    'FT description': [f_fraud_type_desc]
+    'ARN': f_arn,
+    'trx_date': f_trx_date,
+    'posted_date': f_posted_date,
+    'quarter': f_quarter,
+    'FT': f_fraud_type,
+    'FT description': f_fraud_type_desc
 }
-
-
-def open_remote(*argv):
-    local_drive = "y:"
-    username = input('Provide username (not admin / ladmin): ')
-    passwprd = input('Password')  # @TODO - kk: Modified to hide sensitive data
-    data = {
-        "remote": r"\\prdfil\tf$",
-        "local": local_drive,
-        "password": passwprd,
-    }
-
-    try:
-        res = wnet.NetUseAdd(None, 2, data)
-        print(res)
-
-    except:
-        print("Error adding connection:", sys.exc_info())
-        return -1
-
-    print("Items in the shared folder:\n{:}".format(os.listdir(local_drive)))
 
 
 def check_quarter():
@@ -170,15 +170,22 @@ def grep(path):
 
 
 def find():
-    open_remote()
+    # open_remote()
     result = check_quarter()
 
     i = 0
-
+    # username = input("your_username: ")
+    username = 'PAYTEL\\Krzysztof Kaniewski'  # @TODO: kk - change later
+    password = input("your_password: ")  # @TODO - kk: Modify to hide sensitive data
     for folder in result[0]:
         for day in range(monthrange(result[1], result[2][0][i])[1]):
             if day + 1 < 10:
                 full_path = f'{PATH}{folder}/{folder}0{str(day + 1)}_INITF.epd'
+
+                # Example usage
+                remote_file_path = full_path  # Remote network path
+
+                read_remote_file(remote_file_path, username, password)
                 print(full_path)
                 grep(full_path)
             else:
@@ -210,7 +217,7 @@ def get_data_from_sql():
         f_fraud_type.append(ml_fraud_type)
 
         # Get fraud description
-        f_fraud_type_desc.append(FT[ml_fraud_type][1])
+        f_fraud_type_desc.append(FT[int(ml_fraud_type)][1])
 
         if i == 0:
             arns += "('" + ml_arn + "', "
@@ -243,7 +250,7 @@ def nbp_divide(row):
     return value
 
 
-if __name__ == "__main__":
+def f_visa_make():
     # Find data from Visa EPD files that matches the fraud records
     find()
 
@@ -255,9 +262,16 @@ if __name__ == "__main__":
     # Set new dataframe based on data retrieved from find()
     df_epd = pd.DataFrame.from_dict(EPD_SPLIT)
 
+    df_query.to_csv('df_visa_sql.csv')
+    df_epd.to_csv('df_visa_epd.csv')
+
     # Join two dataframes by ARN number
     df_visa_fraud_data = df_query.merge(df_epd, left_on='ARN', right_on='ARN')
     df_visa_fraud_data.to_csv('df_visa_fraud_data.csv')
-    print(df_query)
 
-    # @TODO - kk: glue the dataframe from sql query with retrieved data from epd.
+    return df_visa_fraud_data
+
+
+if __name__ == "__main__":
+    f_visa_make()
+

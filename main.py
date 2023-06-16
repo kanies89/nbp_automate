@@ -5,7 +5,8 @@ from openpyxl.utils import get_column_letter
 import shutil
 import openpyxl
 from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2
-from f_visa import find
+from f_visa import f_visa_make
+from f_mastercard import f_mastercard_make
 
 path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ, header=None)
@@ -53,7 +54,7 @@ def prepare_data():
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
     query = f"Query\\AR2\\NBP_Query_1.sql"
     # dataframe_1 = connect(temp_table, query)
-    dataframe_1 = load_df()  # for tests
+    dataframe_1 = load_df()  # for tests # @TODO kk - remove this after tests.
 
     sheet = '4a.R.L_PLiW2'
     
@@ -106,13 +107,12 @@ def prepare_data():
     df_nbp_2[sheet][3].iloc[8] = dataframe_3[2]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[9] = dataframe_3[3]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
-    print("finished")
 
     # 9.R.L.MCC and 9.R.W.MCC
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-    dataframe_4 = connect(temp_table, query)
+    #dataframe_4 = connect(temp_table, query)
 
 
 if __name__ == '__main__':
@@ -144,7 +144,16 @@ if __name__ == '__main__':
     # Save everything to new excel file
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
     to_wb = path + 'Filled\\' + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
+
     wb = copy_wb(from_wb, to_wb, df_nbp_2)
+
+    df_visa = pd.DataFrame(f_visa_make())
+    df_mastercard = pd.DataFrame(f_mastercard_make())
+    df = [df_visa, df_mastercard]
+
+    df_fraud = pd.concat[df]
+    df_fraud.to_csv('df_fraud.csv')
+    print("finished")
 
     # Save the updated workbook
     wb.save(to_wb)
