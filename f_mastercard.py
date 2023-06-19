@@ -101,7 +101,7 @@ def add_arn_to_query(dataframe):
     with open('./query/f_mastercard/recent_fraud.sql', 'w') as recent:
         recent.write(sql)
 
-    return sql
+    return sql, arns
 
 
 def nbp_divide(row):
@@ -114,8 +114,9 @@ def nbp_divide(row):
 
 def f_mastercard_make():
     df_mastercard_http = read('df_mastercard_http')
-
-    df_query = pd.DataFrame(connect_single_query(add_arn_to_query(df_mastercard_http))[0])
+    data = add_arn_to_query(df_mastercard_http)
+    arns_mastercard = data[1]
+    df_query = pd.DataFrame(connect_single_query(data[0])[0])
 
     # Add column 'podział NBP'
     df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
@@ -131,7 +132,7 @@ def f_mastercard_make():
     df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'}, inplace=True)
     df_mastercard_fraud_data.to_csv('df_mastercard_fraud_data.csv')
 
-    return df_mastercard_fraud_data
+    return df_mastercard_fraud_data, arns_mastercard
 
 
 if __name__ == '__main__':

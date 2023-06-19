@@ -10,9 +10,22 @@ PATH = "//prdfil/tf$/Internal/clearing/Visa/"
 
 calc_quarter = int
 
+arns_visa = ''
+
+
+def disconnect_all_connections():
+    try:
+        # Disable all existing connections
+        win32wnet.WNetCancelConnection2(r"\\prdfil\tf$", 0, 1)
+    except Exception as e:
+        print("An error occurred while disconnecting all connections:", str(e))
+
 
 def read_remote_file(remote_file_path, username, password):
     try:
+        # Disconnect all existing connections
+        disconnect_all_connections()
+
         # Establish a connection to the shared drive with credentials
         netpath = r"\\prdfil\tf$"
         win32wnet.WNetAddConnection2(0, None, netpath, None, username, password)
@@ -178,7 +191,7 @@ def find():
     i = 0
     # username = input("your_username: ")
     username = 'PAYTEL\\Krzysztof Kaniewski'  # @TODO: kk - change later
-    password = input("your_password: ")  # @TODO - kk: Modify to hide sensitive data
+    password = 'Xl2Km0oPYahPagh6'  # input("your_password: ")  # @TODO - kk: Modify to hide sensitive data
     for folder in result[0]:
         for day in range(monthrange(result[1], result[2][0][i])[1]):
             if day + 1 < 10:
@@ -201,7 +214,7 @@ def find():
         print(line)
 
 
-def get_data_from_sql():
+def get_data_for_sql():
     arns = ''
 
     for i in range(len(matched_lines)):
@@ -241,7 +254,7 @@ def get_data_from_sql():
     with open('./query/f_visa/recent_fraud.sql', 'w') as recent:
         recent.write(sql)
 
-    return sql
+    return sql, arns
 
 
 def nbp_divide(row):
@@ -256,8 +269,11 @@ def f_visa_make():
     # Find data from Visa EPD files that matches the fraud records
     find()
 
+    # Save ARNs and SQL
+    data = get_data_for_sql()
+    arns_visa = data[1]
     # Get data from sql query and ARN number retrieved by find()
-    df_query = pd.DataFrame(connect_single_query(get_data_from_sql())[0])
+    df_query = pd.DataFrame(connect_single_query(data[0])[0])
     # Add column 'podział NBP'
     df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
 
@@ -271,8 +287,8 @@ def f_visa_make():
     df_visa_fraud_data = df_query.merge(df_epd, left_on='ARN', right_on='ARN')
     df_visa_fraud_data.to_csv('df_visa_fraud_data.csv')
 
-    return df_visa_fraud_data
+    return df_visa_fraud_data, arns_visa
 
 
 if __name__ == "__main__":
-    f_visa_make()
+    f_visa_make()[0]
