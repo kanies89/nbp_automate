@@ -5,7 +5,7 @@ from openpyxl.utils import get_column_letter
 import shutil
 import openpyxl
 from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2
-from f_visa import f_visa_make
+from f_visa import f_visa_make, check_quarter
 from f_mastercard import f_mastercard_make
 
 path = 'Example\\'
@@ -57,7 +57,7 @@ def prepare_data():
     dataframe_1 = load_df()  # for tests # @TODO kk - remove this after tests.
 
     sheet = '4a.R.L_PLiW2'
-    
+
     j = 0
     i = 0
     for n in range(0, 20):
@@ -112,7 +112,14 @@ def prepare_data():
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-    #dataframe_4 = connect(temp_table, query)
+    # dataframe_4 = connect(temp_table, query)
+
+
+def aggr_country(c):
+    if c == 'PL':
+        return 'PL'
+    else:
+        return 'NPL'
 
 
 if __name__ == '__main__':
@@ -141,19 +148,23 @@ if __name__ == '__main__':
     # Fill sheets 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW and 5a.R
     prepare_data()
 
+    # Prepare data for sheets 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+    df_visa = pd.DataFrame(f_visa_make())
+    df_mastercard = pd.DataFrame(f_mastercard_make())
+    df_complete = [df_visa, df_mastercard]
+    df_fraud = pd.concat(df_complete)
+    df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
+    df_fraud.to_csv('df_fraud.csv')
+    print(check_quarter()[3])
+    df_f_data = pd.pivot_table(index='pos_entry_mode', columns='country_aggr',
+                               data=df_fraud[df_fraud['quarter'] == check_quarter()[3]],
+                               aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
+
     # Save everything to new excel file
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
     to_wb = path + 'Filled\\' + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
 
     wb = copy_wb(from_wb, to_wb, df_nbp_2)
-
-    df_visa = pd.DataFrame(f_visa_make())
-    df_mastercard = pd.DataFrame(f_mastercard_make())
-    df_complete = [df_visa, df_mastercard]
-
-    df_fraud = pd.concat(df_complete)
-    df_fraud.to_csv('df_fraud.csv')
-    print("finished")
 
     # Save the updated workbook
     wb.save(to_wb)

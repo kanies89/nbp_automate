@@ -8,6 +8,8 @@ matched_lines = []  # List to store the matched lines
 
 PATH = "//prdfil/tf$/Internal/clearing/Visa/"
 
+calc_quarter = int
+
 
 def read_remote_file(remote_file_path, username, password):
     try:
@@ -131,7 +133,7 @@ def check_quarter():
         q_year -= 1
 
     q_year_str = str(q_year)
-    print(q_prev, q_year_str)
+
     folders = []
     for month in quarter_months[q_prev - 1]:
         folders.append(q_year_str + month)
@@ -139,7 +141,7 @@ def check_quarter():
     print(folders)
     months[q_prev]
 
-    return folders, q_year, months
+    return folders, q_year, months, q_prev
 
 
 def grep(path):
@@ -274,4 +276,3 @@ def f_visa_make():
 
 if __name__ == "__main__":
     f_visa_make()
-
