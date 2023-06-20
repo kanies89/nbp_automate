@@ -21,9 +21,7 @@ def connect(temp_table_file, query_file):
         connection.echo = False
 
         connection.execute(temp_table)
-
         q_list = query.split('---split---')
-
         df = []
 
         for q in q_list:

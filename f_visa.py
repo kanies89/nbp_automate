@@ -33,8 +33,6 @@ def read_remote_file(remote_file_path, username, password):
         # Read the remote file
         with open(remote_file_path, 'r') as file:
             file_contents = file.read()
-            print("Contents of the remote file:")
-            print(file_contents)
 
         # Disconnect from the shared drive
         win32wnet.WNetCancelConnection2(netpath, 0, 0)
@@ -134,11 +132,10 @@ EPD_SPLIT = {
 
 def check_quarter():
     a = FiscalDate.today()
-    print(a)
     q = a.fiscal_quarter
 
     q_prev = q - 2
-    print(q_prev)
+    print('Calculation for quarter: ' + str(q_prev))
     q_year = a.fiscal_year
 
     if q_prev == 0:
@@ -151,7 +148,7 @@ def check_quarter():
     for month in quarter_months[q_prev - 1]:
         folders.append(q_year_str + month)
 
-    print(folders)
+    print('Checking folders: ' + str(folders))
     months[q_prev]
 
     return folders, q_year, months, q_prev
@@ -175,7 +172,6 @@ def grep(path):
                     f_posted_date.append(posted_date)
 
                     # Retrieve quarter data from EPD file name
-                    print(FiscalDate(posted_date.year, posted_date.month, posted_date.day).fiscal_quarter - 1)
                     if FiscalDate(posted_date.year, posted_date.month, posted_date.day).fiscal_quarter - 1 == 0:
                         quarter = 4
                     else:
@@ -253,7 +249,7 @@ def get_data_for_sql():
     # Save query
     with open('./query/f_visa/recent_fraud.sql', 'w') as recent:
         recent.write(sql)
-
+    print('VISA ARNs: ' + arns)
     return sql, arns
 
 

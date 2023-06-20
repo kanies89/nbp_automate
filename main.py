@@ -1,16 +1,27 @@
+import datetime
+import sys
 import pandas as pd
 from connect import connect, connect_single_query
 from openpyxl.utils import get_column_letter
 
 import shutil
 import openpyxl
-from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2
+from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, AR2_5_row_2
 from f_visa import f_visa_make, check_quarter
 from f_mastercard import f_mastercard_make
 import re
 
+
 path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ, header=None)
+
+
+def to_log():
+    report_date = datetime.datetime.now().strftime("%Y-%m-%d")
+    file_name = f'Log/{report_date}_LOG.txt'
+    with open(file_name, 'a') as log:
+        log.write(f"\nReport start --{report_date}--\n")
+    return file_name
 
 
 def copy_wb(from_workbook, to_workbook, dataframe):
@@ -62,12 +73,9 @@ def prepare_data():
     j = 0
     i = 0
     for n in range(0, 20):
-        print(dataframe_1[n].columns)
         for country in dataframe_1[n]['name']:
             if country == 'Holandia':
                 country = 'Niderlandy'
-            print('I', i)
-            print(country)
             if i <= 19:
                 col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 df_nbp_2[sheet][col].iloc[AR2_4_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
@@ -84,8 +92,6 @@ def prepare_data():
         for country in dataframe_1[n]['name']:
             if country == 'Holandia':
                 country = 'Niderlandy'
-            print('W', i)
-            print(country)
             if i <= 19:
                 col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 df_nbp_2[sheet][col].iloc[AR2_4_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
@@ -127,7 +133,6 @@ def prepare_data():
         insert_start = [match.start() for match in re.finditer(pattern, sql)]
         mastercard_insert = [insert_start[0], insert_start[0] + len(pattern)]
         visa_insert = [insert_start[1], insert_start[1] + len(pattern)]
-        print(mastercard_insert, visa_insert)
 
         sql = sql[:visa_insert[0]] + data_visa[1] + sql[visa_insert[1]:]
         sql = sql[:mastercard_insert[0]] + data_mastercard[1] + sql[mastercard_insert[1]:]
@@ -140,14 +145,37 @@ def prepare_data():
     query = f"Query\\AR2\\NBP_Query_2.sql"
     dataframe_2 = connect(temp_table, query)
 
-    for k in range(len(dataframe_2)):
-        dataframe_2[k].to_csv(f'df_5_{k}.csv')
-    # TODO: kk - use sql data in excel.
+    sheet = '5a.R.LF_PLiW2'
+
+    j = 0
+    i = 0
+    for n in range(0, len(dataframe_2)+1):
+        for country in dataframe_2[n]['code']:
+            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
+            i += 1
+        i = 0
+        j += 1
+
+    sheet = '5a.R.WF_PLiW2'
+
+    j = 0
+    i = 0
+    for n in range(0, len(dataframe_2)+1):
+        for country in dataframe_2[n]['code']:
+            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            df_nbp_2[sheet][col].iloc[AR2_5_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
+            i += 1
+        i = 0
+        j += 1
+
+    # for k in range(len(dataframe_2)):
+    #     dataframe_2[k].to_csv(f'df_5_{k}.csv')
 
     # Make pivot table
     df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
     df_fraud.to_csv('df_fraud.csv')
-    print(check_quarter()[3])
+    print('Checking the quarter: ' + str(check_quarter()[3]))
     df_f_data = pd.pivot_table(index='pos_entry_mode', columns='country_aggr',
                                data=df_fraud[df_fraud['quarter'] == check_quarter()[3]],
                                aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
@@ -156,7 +184,9 @@ def prepare_data():
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-    # dataframe_4 = connect(temp_table, query)
+    dataframe_4 = connect(temp_table, query)
+    for k in range(len(dataframe_2)):
+        dataframe_4[k].to_csv(f'df_9_{k}.csv')
 
 
 def aggr_country(c):
@@ -167,6 +197,11 @@ def aggr_country(c):
 
 
 if __name__ == '__main__':
+    # Open the log file in append mode
+    log_file = open(to_log(), "a")
+    # Redirect stdout to the log file
+    sys.stdout = log_file
+
     # AR2 sheet for NBP
     # Fill the first sheet with "Author of the report" info.
     # input the personal data
@@ -200,3 +235,6 @@ if __name__ == '__main__':
 
     # Save the updated workbook
     wb.save(to_wb)
+
+    # Close the log file
+    log_file.close()

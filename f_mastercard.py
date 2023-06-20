@@ -66,7 +66,6 @@ def add_arn_to_query(dataframe):
             f_posted_date.append(posted_date)
 
             # Retrieve quarter data from mastercard excel data
-            print(FiscalDate(posted_date.year, posted_date.month, posted_date.day).fiscal_quarter - 1)
             if FiscalDate(posted_date.year, posted_date.month, posted_date.day).fiscal_quarter - 1 == 0:
                 quarter = 4
             else:
@@ -84,8 +83,6 @@ def add_arn_to_query(dataframe):
         else:
             s -= 1
 
-    print(i, s)
-
     # Add all ARN numbers to sql query
     with open('./query/f_mastercard/fraud_data_based_on_arn.sql') as sql:
         sql = sql.read()
@@ -95,7 +92,7 @@ def add_arn_to_query(dataframe):
     else:
         print('Not all ARN passed to sql query')
 
-    print(arns)
+    print('MASTERCARD ARNs: ' + arns)
 
     # Save query
     with open('./query/f_mastercard/recent_fraud.sql', 'w') as recent:
