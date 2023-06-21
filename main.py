@@ -6,11 +6,11 @@ from openpyxl.utils import get_column_letter
 
 import shutil
 import openpyxl
-from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, AR2_5_row_2
+from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, AR2_5_row_2, \
+    AR2_9_row_1, AR2_9_row_2
 from f_visa import f_visa_make, check_quarter
 from f_mastercard import f_mastercard_make
 import re
-
 
 path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ, header=None)
@@ -20,7 +20,7 @@ def to_log():
     report_date = datetime.datetime.now().strftime("%Y-%m-%d")
     file_name = f'Log/{report_date}_LOG.txt'
     with open(file_name, 'a') as log:
-        log.write(f"\nReport start --{report_date}--\n")
+        log.write(f"\nReport start -AR2- --{report_date}--\n")
     return file_name
 
 
@@ -149,10 +149,10 @@ def prepare_data():
 
     j = 0
     i = 0
-    for n in range(0, len(dataframe_2)+1):
+    for n in range(0, len(dataframe_2)):
         for country in dataframe_2[n]['code']:
             col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
-            df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
+            df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
             i += 1
         i = 0
         j += 1
@@ -161,10 +161,10 @@ def prepare_data():
 
     j = 0
     i = 0
-    for n in range(0, len(dataframe_2)+1):
+    for n in range(0, len(dataframe_2)):
         for country in dataframe_2[n]['code']:
             col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
-            df_nbp_2[sheet][col].iloc[AR2_5_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
+            df_nbp_2[sheet][col].iloc[AR2_5_row_2[j]] = dataframe_2[n]['wartosc'].iloc[i]
             i += 1
         i = 0
         j += 1
@@ -185,8 +185,46 @@ def prepare_data():
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
     dataframe_4 = connect(temp_table, query)
-    for k in range(len(dataframe_2)):
-        dataframe_4[k].to_csv(f'df_9_{k}.csv')
+
+    sheet = '9.R.L.MCC'
+
+    for n in range(0, len(dataframe_4)):
+        print(n)
+        for country in dataframe_4[n]['name']:
+            # last dataframe retrieved from database is different so if n=3 then execute different algorithm
+            if n < 3:
+                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
+            if n == 3:
+                # Convert df_nbp_2[1] column to string
+                df_nbp_2[sheet][1] = df_nbp_2[sheet][1].astype(str)
+                mcc = dataframe_4[n]['mcc'].iloc[i]
+                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
+                df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
+            i += 1
+        i = 0
+        j += 1
+
+    sheet = '9.R.W.MCC'
+
+    for n in range(0, len(dataframe_4)):
+        print(n)
+        for country in dataframe_4[n]['name']:
+            # last dataframe retrieved from database is different so if n=3 then execute different algorithm
+            if n < 3:
+                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
+            if n == 3:
+                # Convert df_nbp_2[1] column to string
+                df_nbp_2[sheet][1] = df_nbp_2[sheet][1].astype(str)
+                mcc = dataframe_4[n]['mcc'].iloc[i]
+                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
+                df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
+            i += 1
+        i = 0
+        j += 1
 
 
 def aggr_country(c):
@@ -196,11 +234,27 @@ def aggr_country(c):
         return 'NPL'
 
 
+class Logger(object):
+    def __init__(self, log_file):
+        self.terminal = sys.stdout
+        self.log_file = log_file
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log_file.write(message)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log_file.flush()
+
+
 if __name__ == '__main__':
     # Open the log file in append mode
     log_file = open(to_log(), "a")
-    # Redirect stdout to the log file
-    sys.stdout = log_file
+    # Create the logger object
+    logger = Logger(log_file)
+    # Assign the logger as the new sys.stdout
+    sys.stdout = logger
 
     # AR2 sheet for NBP
     # Fill the first sheet with "Author of the report" info.
@@ -229,7 +283,7 @@ if __name__ == '__main__':
 
     # Save everything to new excel file
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
-    to_wb = path + 'Filled\\' + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
+    to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
 
     wb = copy_wb(from_wb, to_wb, df_nbp_2)
 

@@ -1,9 +1,8 @@
 -- RAPORT NBP zakładka 9.R.L.MCC oraz 9.R.W.MCC
 -- Liczba transakcji - transakcje płatnicze zrealizowane w oparciu o kartę w podziale na kody MCC [otrzymane]
       --  (liczba i wartość transakcji kartowych, bez blika)
-use paytel_olap
-
-set transaction isolation level read uncommitted
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED
+USE paytel_olap
 
 declare @dtb as smalldatetime
 declare @dte as smalldatetime
@@ -613,7 +612,7 @@ GROUP BY
 		ELSE cc_name end
 		,IIF(substring(te_pos_entry_mode, 1, 2) = '01', 'MOTO', 'inne')
 --SELECT distinct country_code_NBP, country_name FROM #dane where karta = 'VISA' order by 1
-
+---split---
 IF OBJECT_ID('tempdb..#dane_2') IS NOT NULL DROP TABLE #dane_2
 SELECT country_code_NBP, country_name, merchant_category_code, czy_moto, SUM(ilosc) as ilosc, SUM(wartosc_transakcji) as wartosc_transakcji
 into #dane_2
@@ -621,7 +620,7 @@ FROM #dane
 group by country_code_NBP, country_name, merchant_category_code, czy_moto
 order by 1
 --select * from #dane_2
-
+---split---
 
 IF OBJECT_ID('tempdb..#mcc') IS NOT NULL DROP TABLE #mcc
 CREATE TABLE #mcc (mcc varchar(4), opis varchar(256))
@@ -961,7 +960,7 @@ INSERT INTO #mcc VALUES ('9754','Hazard - konie, wyścigi psów, loterie państw
 INSERT INTO #mcc VALUES ('9950','Zakup przedsiębiorstwa (jedynie Visa)')
 INSERT INTO #mcc VALUES ('R999','Tymczasowy niezdefiniowany kod MCC')
 --select * from #mcc where mcc
-
+---split---
 IF OBJECT_ID('tempdb..#geo6') IS NOT NULL DROP TABLE #geo6
 CREATE TABLE #geo6 (code varchar(2), name varchar(256))
 INSERT INTO #geo6 VALUES ('AD', 'Andorra')
@@ -1224,10 +1223,11 @@ INSERT INTO #geo6 VALUES ('ZZ','Extra UE not allocated') -- D09
 
 ---split---
 
-IF OBJECT_ID('tempdb..#start') IS NOT NULL DROP TABLE #start
+IF OBJECT_ID('tempdb..##start') IS NOT NULL DROP TABLE ##start
 SELECT *
-into #start
+into ##start
 FROM #geo6
 cross join #mcc
-SELECT * FROM #start
+
+---SELECT * FROM ##start
 -- 80 065

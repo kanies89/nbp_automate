@@ -1,5 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 # Setting the connection
 DRIVER_NAME = '{ODBC Driver 18 for SQL Server}'
@@ -17,20 +18,34 @@ def connect(temp_table_file, query_file):
     engine = create_engine(
         'mssql+pyodbc://@' + SERVER_NAME + '/' + DATABASE_NAME + '?trusted_connection=yes&driver=ODBC+Driver+18+for+SQL+Server&encrypt=no')
 
-    with engine.connect() as connection:
-        connection.echo = False
+    Session = sessionmaker(bind=engine)
+    session = Session()
 
-        connection.execute(temp_table)
+    try:
+        # split the code to get individual query for retrieving the data for dataframes
+        t_list = temp_table.split('---split---')
+
+        for t in t_list:
+            session.execute(t)
+
+        # split the code to get individual query for retrieving the data for dataframes
         q_list = query.split('---split---')
-        df = []
+        df_list = []
 
         for q in q_list:
-            tableResult = pd.read_sql(q, connection)
-            df.append(pd.DataFrame(tableResult))
+            result = session.execute(q)
+            data = result.fetchall()
+            df = pd.DataFrame(data, columns=result.keys())
+            df_list.append(df)
 
-    engine.dispose()
-
-    return df
+        session.commit()
+        return df_list
+    except:
+        session.rollback()
+        raise
+    finally:
+        session.close()
+        engine.dispose()
 
 
 def connect_single_query(query):
