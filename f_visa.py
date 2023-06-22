@@ -180,14 +180,13 @@ def grep(path):
                     f_quarter.append(quarter)
 
 
-def find():
+def find(user, passw):
     # open_remote()
     result = check_quarter()
 
     i = 0
-    # username = input("your_username: ")
-    username = 'PAYTEL\\Krzysztof Kaniewski'  # @TODO: kk - change later
-    password = 'Xl2Km0oPYahPagh6'  # input("your_password: ")  # @TODO - kk: Modify to hide sensitive data
+    username = user
+    password = passw
     for folder in result[0]:
         for day in range(monthrange(result[1], result[2][0][i])[1]):
             if day + 1 < 10:
@@ -261,9 +260,9 @@ def nbp_divide(row):
     return value
 
 
-def f_visa_make():
+def f_visa_make(user, passw):
     # Find data from Visa EPD files that matches the fraud records
-    find()
+    find(user, passw)
 
     # Save ARNs and SQL
     data = get_data_for_sql()

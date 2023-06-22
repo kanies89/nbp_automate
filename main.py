@@ -6,14 +6,16 @@ from openpyxl.utils import get_column_letter
 
 import shutil
 import openpyxl
-from variables import EXCEL_READ, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, AR2_5_row_2, \
-    AR2_9_row_1, AR2_9_row_2
+from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, \
+    AR2_5_row_2, \
+    AR2_9_row_1, EXCEL_READ_AR1
 from f_visa import f_visa_make, check_quarter
 from f_mastercard import f_mastercard_make
 import re
 
 path = 'Example\\'
-df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ, header=None)
+df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None)
+df_nbp_1 = pd.read_excel(path + 'AR1 - Q1.2023.xlsx', sheet_name=EXCEL_READ_AR1, header=None)
 
 
 def to_log():
@@ -31,7 +33,7 @@ def copy_wb(from_workbook, to_workbook, dataframe):
     # Load the new workbook
     wb = openpyxl.load_workbook(to_workbook)
 
-    for sheet_name in EXCEL_READ:
+    for sheet_name in EXCEL_READ_AR2:
         sheet = wb[sheet_name]
         for row in dataframe[sheet_name].index:
             for col in dataframe[sheet_name].columns:
@@ -45,7 +47,7 @@ def copy_wb(from_workbook, to_workbook, dataframe):
                         first_cell = merged_range.min_row, merged_range.min_col
                         first_coord = get_column_letter(first_cell[1]) + str(first_cell[0])
                         # wb[sheet_name][first_coord].value = new_value
-                        # not working, don't know why it is not filling the merged cels
+                        # not working, don't know why it is not filling the merged cells
                         break  # Exit the loop after setting the value for the merged cell
                 else:
                     # If the cell is not merged, set the value directly
@@ -60,7 +62,7 @@ def load_df():
     return df
 
 
-def prepare_data():
+def prepare_data_ar2(user, passw):
     # 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
 
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
@@ -99,7 +101,7 @@ def prepare_data():
         i = 0
         j += 1
 
-    sheet = EXCEL_READ[6]
+    sheet = EXCEL_READ_AR2[6]
     for j in range(1):
         df_nbp_2[sheet][34].iloc[AR2_6_row_1[j]] = dataframe_1[20]['ilosc'].iloc[0]
         df_nbp_2[sheet][34].iloc[AR2_6_row_2[j]] = dataframe_1[21]['wartosc'].iloc[0]
@@ -118,7 +120,7 @@ def prepare_data():
     # 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
 
     # Get the Visa
-    data_visa = f_visa_make()
+    data_visa = f_visa_make(user, passw)
     df_visa = pd.DataFrame(data_visa[0])
     # Get the Mastercard
     data_mastercard = f_mastercard_make()
@@ -248,6 +250,53 @@ class Logger(object):
         self.log_file.flush()
 
 
+def prepare_data_ar1():
+    # ST.01
+
+    temp_table = f"Query\\AR1\\NBP_Temp_1.sql"
+    query = f"Query\\AR1\\NBP_Query_1.sql"
+    dataframe_1 = connect(temp_table, query)
+
+    i = 0
+    for df in dataframe_1:
+        df.to_csv(f'ST.01.{i}.csv')
+        i += 1
+
+    # ST.05
+
+    temp_table = f"Query\\AR1\\NBP_Temp_2.sql"
+    query = f"Query\\AR1\\NBP_Query_2.sql"
+    dataframe_2 = connect(temp_table, query)
+
+    i = 0
+    for df in dataframe_2:
+        df.to_csv(f'ST.05.{i}.csv')
+        i += 1
+
+    # ST.06
+
+    temp_table = f"Query\\AR1\\NBP_Temp_3.sql"
+    query = f"Query\\AR1\\NBP_Query_3.sql"
+    dataframe_3 = connect(temp_table, query)
+
+    i = 0
+    for df in dataframe_3:
+        df.to_csv(f'ST.06.{i}.csv')
+        i += 1
+
+    # ST.02
+
+    # ST.07
+
+    temp_table = f"Query\\AR1\\NBP_Temp_4.sql"
+    query = f"Query\\AR1\\NBP_Query_4.sql"
+    dataframe_4 = connect(temp_table, query)
+
+    i = 0
+    for df in dataframe_4:
+        df.to_csv(f'ST.07.{i}.csv')
+        i += 1
+
 if __name__ == '__main__':
     # Open the log file in append mode
     log_file = open(to_log(), "a")
@@ -267,6 +316,8 @@ if __name__ == '__main__':
     d_32 = d_22
     d_33 = d_23
     d_34 = d_24
+    user = 'PAYTEL\\Krzysztof Kaniewski'  # 'PAYTEL\\' + input("your_username: ")   # @TODO: kk - change later
+    passw = 'Xl2Km0oPYahPagh6'  # input("your_password: ")  # @TODO - kk: Modify to hide sensitive data
 
     input_data = [
         d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
@@ -275,17 +326,29 @@ if __name__ == '__main__':
     # RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
     i = 0
     for inp in input_data:
-        df_nbp_2[EXCEL_READ[0]].loc[df_nbp_2[EXCEL_READ[0]][0] == TO_FILL[i], 5] = inp
+        df_nbp_2[EXCEL_READ_AR2[0]].loc[df_nbp_2[EXCEL_READ_AR2[0]][0] == TO_FILL[i], 5] = inp
         i += 1
 
-    # Fill sheets 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW and 5a.R
-    prepare_data()
+    # Fill sheets in AR2
+    prepare_data_ar2(user, passw)
 
     # Save everything to new excel file
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
     to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
 
     wb = copy_wb(from_wb, to_wb, df_nbp_2)
+
+    # Save the updated workbook
+    wb.save(to_wb)
+
+    # Fill sheets in AR1
+    prepare_data_ar1()
+
+    # Save everything to new excel file
+    from_wb = path + 'AR1 - Q1.2023'
+    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}'
+
+    wb = copy_wb(from_wb, to_wb, df_nbp_1)
 
     # Save the updated workbook
     wb.save(to_wb)

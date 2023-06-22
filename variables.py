@@ -1,4 +1,4 @@
-EXCEL_READ = [
+EXCEL_READ_AR2 = [
     'AR2',
     '4a.R.L_PLiW2',
     '4a.R.W_PLiW2',
@@ -52,4 +52,12 @@ AR2_9_row_1 = [
 
 AR2_9_row_2 = [
     9, 10, 12
+]
+
+EXCEL_READ_AR1 = [
+    'ST.01',
+    'ST.03',
+    'ST.05',
+    'ST.06',
+    'ST.07'
 ]
