@@ -16,7 +16,7 @@ arns_visa = ''
 def disconnect_all_connections():
     try:
         # Disable all existing connections
-        win32wnet.WNetCancelConnection2(r"\\prdfil\tf$", 0, 1)
+        win32wnet.WNetCancelConnection2(r"\\prdfil", 0, 1)
     except Exception as e:
         print("An error occurred while disconnecting all connections:", str(e))
 
@@ -27,7 +27,7 @@ def read_remote_file(remote_file_path, username, password):
         disconnect_all_connections()
 
         # Establish a connection to the shared drive with credentials
-        netpath = r"\\prdfil\tf$"
+        netpath = r"\\prdfil"
         win32wnet.WNetAddConnection2(0, None, netpath, None, username, password)
 
         # Read the remote file

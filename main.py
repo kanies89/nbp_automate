@@ -3,13 +3,14 @@ import sys
 import pandas as pd
 from connect import connect, connect_single_query
 from openpyxl.utils import get_column_letter
+import progressbar
 
 import shutil
 import openpyxl
 from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, \
     AR2_5_row_2, \
     AR2_9_row_1, EXCEL_READ_AR1
-from f_visa import f_visa_make, check_quarter
+from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 import re
 
@@ -250,7 +251,7 @@ class Logger(object):
         self.log_file.flush()
 
 
-def prepare_data_ar1():
+def prepare_data_ar1(user, passw):
     # ST.01
 
     temp_table = f"Query\\AR1\\NBP_Temp_1.sql"
@@ -262,6 +263,53 @@ def prepare_data_ar1():
         df.to_csv(f'ST.01.{i}.csv')
         i += 1
 
+    # Get data from "Tvid_nev_lost.xlsx'
+    path = f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter[1]}Q{check_quarter[3]}/Tvid_nev_lost.xlsx'
+    read_remote_file(path, user, passw)
+    dataframe_0 = pd.read_excel(f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/Tvid_nev_lost.xlsx', header='3')
+
+    print('Data z pliku Tvid_nev_lost.xlsx: ', dataframe_0['tr_date'][0])
+
+    # Data to be filled
+    to_change_values = [
+        dataframe_1[1]['MID all cashback'][0],
+        dataframe_1[1]['SID all cashback'][0],
+        dataframe_1[1]['TVID all cashback'][0],
+        dataframe_1[0]['ilosc_softPOS'][0],
+        dataframe_0['active_tvid'][0], # tvid all
+        dataframe_0['active_tvid'][0], # tvid all
+        dataframe_0['active_tvid'][0], # tvid all
+        dataframe_0['active_tvid'][0], # tvid all
+        dataframe_0['active_mid'][0], # mid all
+        dataframe_0['active_mid'][0], # mid all
+        dataframe_0['active_sid'][0], # sid all
+        dataframe_0['active_sid'][0] # sid all
+
+    ]
+    to_change_rows = [8, 13, 18, 21, 15, 16, 17, 19, 6, 7, 11, 12]
+    to_change_column = 5
+
+    # Changes in dataframe from spreadsheet - df_nbp_1
+    for v in range(to_change_values):
+        df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
+
+    # ST.03
+    to_change_values = [
+        dataframe_0['active_mid'][0],  # mid all
+        dataframe_0['active_mid'][0],  # mid all
+        dataframe_0['active_sid'][0],  # sid all
+        dataframe_0['active_sid'][0],  # sid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0]  # tvid all
+
+    ]
+    to_change_rows = [7, 8, 12, 13, 16, 17]
+    to_change_column = 5
+
+    # Just using values filled to sheet ST.01
+    for v in range(to_change_values):
+        df_nbp_1['ST.03'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
+
     # ST.05
 
     temp_table = f"Query\\AR1\\NBP_Temp_2.sql"
@@ -272,6 +320,32 @@ def prepare_data_ar1():
     for df in dataframe_2:
         df.to_csv(f'ST.05.{i}.csv')
         i += 1
+
+    # Data to be filled
+    to_change_values = [
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
+            'Liczba transakcji CashBack'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
+            'Liczba transakcji CashBack'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
+            'Wartość wypłat Cash Back'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
+            'Wartość wypłat Cash Back'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
+            'Liczba transakcji CashBack'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
+            'Liczba transakcji CashBack'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
+            'Wartość wypłat Cash Back'].sum(),
+        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
+            'Wartość wypłat Cash Back'].sum()
+    ]
+    to_change_rows = [9, 10, 11, 12, 13, 14, 15, 16]
+    to_change_column = 13
+
+    # Changes in dataframe from spreadsheet - df_nbp_1
+    for v in range(to_change_values):
+        df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
     # ST.06
 
@@ -296,6 +370,7 @@ def prepare_data_ar1():
     for df in dataframe_4:
         df.to_csv(f'ST.07.{i}.csv')
         i += 1
+
 
 if __name__ == '__main__':
     # Open the log file in append mode
@@ -342,7 +417,7 @@ if __name__ == '__main__':
     wb.save(to_wb)
 
     # Fill sheets in AR1
-    prepare_data_ar1()
+    prepare_data_ar1(user, passw)
 
     # Save everything to new excel file
     from_wb = path + 'AR1 - Q1.2023'
