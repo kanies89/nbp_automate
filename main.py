@@ -322,30 +322,63 @@ def prepare_data_ar1(user, passw):
         i += 1
 
     # Data to be filled
-    to_change_values = [
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
-            'Liczba transakcji CashBack'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
-            'Liczba transakcji CashBack'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
-            'Wartość wypłat Cash Back'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
-            'Wartość wypłat Cash Back'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
-            'Liczba transakcji CashBack'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
-            'Liczba transakcji CashBack'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'POLSKA') & (dataframe_2[1]['category'] == 'Individual')][
-            'Wartość wypłat Cash Back'].sum(),
-        dataframe_2[1][(dataframe_2[1]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[1]['category'] == 'Individual')][
-            'Wartość wypłat Cash Back'].sum()
-    ]
-    to_change_rows = [9, 10, 11, 12, 13, 14, 15, 16]
-    to_change_column = 13
+    def prepare_values_data(d, c):
+        if d == 1:
+            ilosc = 'Liczba transakcji CashBack'
+            wartosc = 'Wartość wypłat Cash Back'
+        elif d == 2:
+            ilosc = 'Liczba transakcji BLIK'
+            wartosc = 'Kwota transakcji BLIK'
+        else:
+            ilosc = 'ilosc'
+            wartosc = 'wartosc'
+
+        if d == 2:
+            to_change_values = [
+                dataframe_2[d][ilosc][0], 0, dataframe_2[d][wartosc][0], 0, dataframe_2[d][ilosc][0], 0, dataframe_2[d][
+                    wartosc][0], 0
+            ]
+        else:
+            to_change_values = [
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'POLSKA') & (dataframe_2[d]['category'] == c)][
+                    ilosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
+                    ilosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'POLSKA') & (dataframe_2[d]['category'] == c)][
+                    wartosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
+                    wartosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'POLSKA') & (dataframe_2[d]['category'] == c)][
+                    ilosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
+                    ilosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'POLSKA') & (dataframe_2[d]['category'] == c)][
+                    wartosc].sum(),
+                dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
+                    wartosc].sum()
+            ]
+        return to_change_values
+
+    to_change_columns = [9, 10, 11, 12, 13, 14, 15, 16]
+    to_change_rows = [[13, 11, 12, 27, 21], [17, 15, 16, 29, 21]]
+    df = [1, 3, 4, 5, 2]
 
     # Changes in dataframe from spreadsheet - df_nbp_1
-    for v in range(to_change_values):
-        df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
+    j = 0
+    for d in df:
+        category = 'Individual'
+        prepare_values_data(d, category)
+        for v in range(to_change_values):
+            df_nbp_1['ST.05'].iat[to_change_rows[0][v], to_change_columns[j]] = to_change_values[v]
+        j += 1
+
+    j = 0
+    for d in df:
+        category = 'BUSINESS'
+        prepare_values_data(d, category)
+        for v in range(to_change_values):
+            df_nbp_1['ST.05'].iat[to_change_rows[1][v], to_change_columns[j]] = to_change_values[v]
+        j += 1
 
     # ST.06
 
@@ -357,6 +390,18 @@ def prepare_data_ar1(user, passw):
     for df in dataframe_3:
         df.to_csv(f'ST.06.{i}.csv')
         i += 1
+
+    column_amount = [3, 4, 5]
+    column_value = [6, 7, 8]
+
+    content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
+    content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_transakcji_CashBack']
+    # devices that accept payment cards / Internet / cash back
+    for i in range(len(column_amount)):
+        for country in dataframe_3['CountryCode']:
+                row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
+                df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
+                df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
 
     # ST.02
 
@@ -370,6 +415,12 @@ def prepare_data_ar1(user, passw):
     for df in dataframe_4:
         df.to_csv(f'ST.07.{i}.csv')
         i += 1
+
+    df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4['kraj'] == 'PL']['ilosc']
+    df_nbp_1['ST.07'].iat[14, 5] = dataframe_4[1][dataframe_4['kraj'] == 'other']['ilosc']
+    df_nbp_1['ST.07'].iat[14, 6] = dataframe_4[1][dataframe_4['kraj'] == 'PL']['kwota']
+    df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4['kraj'] == 'other']['kwota']
+    df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'][0]
 
 
 if __name__ == '__main__':
