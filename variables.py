@@ -59,5 +59,6 @@ EXCEL_READ_AR1 = [
     'ST.03',
     'ST.05',
     'ST.06',
-    'ST.07'
+    'ST.07',
+    'p-dane'
 ]

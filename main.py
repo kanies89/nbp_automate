@@ -252,7 +252,7 @@ class Logger(object):
         self.log_file.flush()
 
 
-def prepare_data_ar1(user, passw, df_f):
+def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     # ST.01
 
     temp_table = f"Query\\AR1\\NBP_Temp_1.sql"
@@ -423,7 +423,7 @@ def prepare_data_ar1(user, passw, df_f):
     df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4['kraj'] == 'other']['kwota']
     df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'][0]
 
-    df_res = df[df['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
+    df_res = df_f[df_f['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
                                                                             ILOŚĆ=('ARN', 'count'))
     if 'NPL' in df_res.index:
         df_nbp_1['ST.07'].iat[11, 4] = df_res.iloc[0][0]
@@ -460,6 +460,17 @@ def prepare_data_ar1(user, passw, df_f):
         df_nbp_1['ST.07'].iat[10, n] = df_nbp_1['ST.07'][n].iloc[11:15].sum() - df_nbp_1['ST.07'][n].iloc[12]
         df_nbp_1['ST.07'].iat[9,n] = df_nbp_1['ST.07'][n].iloc[10]
 
+    author_data =[
+        name,
+        surname,
+        phone,
+        email
+    ]
+
+    for x in range(3, 9):
+        for y in range(8, 12):
+            df_nbp_1['p-dane'].iat[x, y] =
+
 
 if __name__ == '__main__':
     # Open the log file in append mode
@@ -480,8 +491,8 @@ if __name__ == '__main__':
     d_32 = d_22
     d_33 = d_23
     d_34 = d_24
-    user = 'PAYTEL\\Krzysztof Kaniewski'  # 'PAYTEL\\' + input("your_username: ")   # @TODO: kk - change later
-    passw = 'Xl2Km0oPYahPagh6'  # input("your_password: ")  # @TODO - kk: Modify to hide sensitive data
+    user = 'PAYTEL\\' + d_21 + d_22
+    passw = input('Write a password to your regular account named by your - Name Surname: ')
 
     input_data = [
         d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
@@ -507,7 +518,7 @@ if __name__ == '__main__':
     wb.save(to_wb)
 
     # Fill sheets in AR1
-    prepare_data_ar1(user, passw, df_fraud_st7)
+    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
 
     # Save everything to new excel file
     from_wb = path + 'AR1 - Q1.2023'
