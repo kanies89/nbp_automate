@@ -228,6 +228,7 @@ def prepare_data_ar2(user, passw):
             i += 1
         i = 0
         j += 1
+    return df_fraud
 
 
 def aggr_country(c):
@@ -251,7 +252,7 @@ class Logger(object):
         self.log_file.flush()
 
 
-def prepare_data_ar1(user, passw):
+def prepare_data_ar1(user, passw, df_f):
     # ST.01
 
     temp_table = f"Query\\AR1\\NBP_Temp_1.sql"
@@ -264,9 +265,9 @@ def prepare_data_ar1(user, passw):
         i += 1
 
     # Get data from "Tvid_nev_lost.xlsx'
-    path = f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter[1]}Q{check_quarter[3]}/Tvid_nev_lost.xlsx'
+    path = f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/Tvid_nev_lost.xlsx'
     read_remote_file(path, user, passw)
-    dataframe_0 = pd.read_excel(f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/Tvid_nev_lost.xlsx', header='3')
+    dataframe_0 = pd.read_excel(path, header='3')
 
     print('Data z pliku Tvid_nev_lost.xlsx: ', dataframe_0['tr_date'][0])
 
@@ -276,14 +277,14 @@ def prepare_data_ar1(user, passw):
         dataframe_1[1]['SID all cashback'][0],
         dataframe_1[1]['TVID all cashback'][0],
         dataframe_1[0]['ilosc_softPOS'][0],
-        dataframe_0['active_tvid'][0], # tvid all
-        dataframe_0['active_tvid'][0], # tvid all
-        dataframe_0['active_tvid'][0], # tvid all
-        dataframe_0['active_tvid'][0], # tvid all
-        dataframe_0['active_mid'][0], # mid all
-        dataframe_0['active_mid'][0], # mid all
-        dataframe_0['active_sid'][0], # sid all
-        dataframe_0['active_sid'][0] # sid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_mid'][0],  # mid all
+        dataframe_0['active_mid'][0],  # mid all
+        dataframe_0['active_sid'][0],  # sid all
+        dataframe_0['active_sid'][0]  # sid all
 
     ]
     to_change_rows = [8, 13, 18, 21, 15, 16, 17, 19, 6, 7, 11, 12]
@@ -399,9 +400,9 @@ def prepare_data_ar1(user, passw):
     # devices that accept payment cards / Internet / cash back
     for i in range(len(column_amount)):
         for country in dataframe_3['CountryCode']:
-                row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
-                df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
-                df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
+            row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
+            df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
+            df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
 
     # ST.02
 
@@ -422,6 +423,39 @@ def prepare_data_ar1(user, passw):
     df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4['kraj'] == 'other']['kwota']
     df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'][0]
 
+    df_res = df[df['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
+                                                                            ILOŚĆ=('ARN', 'count'))
+    if 'NPL' in df_res.index:
+        df_nbp_1['ST.07'].iat[11, 4] = df_res.iloc[0][0]
+        df_nbp_1['ST.07'].iat[11, 6] = df_res.iloc[0][1]
+    else:
+        df_nbp_1['ST.07'].iat[11, 4] = 0
+        df_nbp_1['ST.07'].iat[11, 6] = 0
+
+    if 'PL' in df_res.index:
+        df_nbp_1['ST.07'].iat[11, 5] = df_res.iloc[1][0]
+        df_nbp_1['ST.07'].iat[11, 7] = df_res.iloc[1][1]
+    else:
+        df_nbp_1['ST.07'].iat[11, 5] = 0
+        df_nbp_1['ST.07'].iat[11, 7] = 0
+
+    df_res = df[df['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'), ILOŚĆ=('ARN', 'count'))
+
+    if 'NPL' in df_res.index:
+        df_nbp_1['ST.07'].iat[12, 4] = df_res.iloc[0][0]
+        df_nbp_1['ST.07'].iat[12, 6] = df_res.iloc[0][1]
+    else:
+        df_nbp_1['ST.07'].iat[12, 4] = 0
+        df_nbp_1['ST.07'].iat[12, 6] = 0
+
+    if 'PL' in df_res.index:
+        df_nbp_1['ST.07'].iat[12, 5] = df_res.iloc[1][0]
+        df_nbp_1['ST.07'].iat[12, 7] = df_res.iloc[1][1]
+    else:
+        df_nbp_1['ST.07'].iat[12, 5] = 0
+        df_nbp_1['ST.07'].iat[12, 7] = 0
+
+    df_nbp_1['ST.07'].iat[10, 4] = df_nbp_1['ST.07'].index() # @TODO: kk - finish
 
 if __name__ == '__main__':
     # Open the log file in append mode
@@ -456,7 +490,8 @@ if __name__ == '__main__':
         i += 1
 
     # Fill sheets in AR2
-    prepare_data_ar2(user, passw)
+    df_fraud_st7 = prepare_data_ar2(user, passw)
+    df_fraud_st7.to_csv('df_f.csv')
 
     # Save everything to new excel file
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
@@ -468,7 +503,7 @@ if __name__ == '__main__':
     wb.save(to_wb)
 
     # Fill sheets in AR1
-    prepare_data_ar1(user, passw)
+    prepare_data_ar1(user, passw, df_fraud_st7)
 
     # Save everything to new excel file
     from_wb = path + 'AR1 - Q1.2023'
