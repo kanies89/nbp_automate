@@ -439,7 +439,8 @@ def prepare_data_ar1(user, passw, df_f):
         df_nbp_1['ST.07'].iat[11, 5] = 0
         df_nbp_1['ST.07'].iat[11, 7] = 0
 
-    df_res = df[df['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'), ILOŚĆ=('ARN', 'count'))
+    df_res = df[df['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
+                                                                            ILOŚĆ=('ARN', 'count'))
 
     if 'NPL' in df_res.index:
         df_nbp_1['ST.07'].iat[12, 4] = df_res.iloc[0][0]
@@ -455,7 +456,8 @@ def prepare_data_ar1(user, passw, df_f):
         df_nbp_1['ST.07'].iat[12, 5] = 0
         df_nbp_1['ST.07'].iat[12, 7] = 0
 
-    df_nbp_1['ST.07'].iat[10, 4] = df_nbp_1['ST.07'].index() # @TODO: kk - finish
+    df_nbp_1['ST.07'].iat[10, 4] = df_nbp_1['ST.07'].index()  # @TODO: kk - finish
+
 
 if __name__ == '__main__':
     # Open the log file in append mode
