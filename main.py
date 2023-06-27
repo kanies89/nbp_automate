@@ -467,9 +467,11 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         email
     ]
 
+    i = 0
     for x in range(3, 9):
         for y in range(8, 12):
-            df_nbp_1['p-dane'].iat[x, y] =
+            df_nbp_1['p-dane'].iat[x, y] = author_data[i]
+            i += 1
 
 
 if __name__ == '__main__':
@@ -491,7 +493,7 @@ if __name__ == '__main__':
     d_32 = d_22
     d_33 = d_23
     d_34 = d_24
-    user = 'PAYTEL\\' + d_21 + d_22
+    user = 'PAYTEL\\' + d_21 + ' ' + d_22
     passw = input('Write a password to your regular account named by your - Name Surname: ')
 
     input_data = [
