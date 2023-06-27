@@ -68,8 +68,7 @@ def prepare_data_ar2(user, passw):
 
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
     query = f"Query\\AR2\\NBP_Query_1.sql"
-    # dataframe_1 = connect(temp_table, query)
-    dataframe_1 = load_df()  # for tests # @TODO kk - remove this after tests.
+    dataframe_1 = connect(temp_table, query)
 
     sheet = '4a.R.L_PLiW2'
 
@@ -247,9 +246,15 @@ class Logger(object):
         self.terminal.write(message)
         self.log_file.write(message)
 
+        error_keywords = ["Error", "Exception", "Traceback", "Warning"]
+        if any(keyword in message for keyword in error_keywords):
+            # Print error message to the console
+            print(message)
+
     def flush(self):
         self.terminal.flush()
         self.log_file.flush()
+
 
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
@@ -267,7 +272,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     # Get data from "Tvid_nev_lost.xlsx'
     path = f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/Tvid_nev_lost.xlsx'
     read_remote_file(path, user, passw)
-    dataframe_0 = pd.read_excel(path, header='3')
+    dataframe_0 = pd.read_excel(path, header=3)
 
     print('Data z pliku Tvid_nev_lost.xlsx: ', dataframe_0['tr_date'][0])
 
@@ -475,61 +480,68 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
 
 if __name__ == '__main__':
-    # Open the log file in append mode
-    log_file = open(to_log(), "a")
-    # Create the logger object
-    logger = Logger(log_file)
-    # Assign the logger as the new sys.stdout
-    sys.stdout = logger
+    try:
+        # Open the log file in append mode
+        log_file = open(to_log(), "a")
+        # Create the logger object
+        logger = Logger(log_file)
+        # Assign the logger as the new sys.stdout
+        sys.stdout = logger
 
-    # AR2 sheet for NBP
-    # Fill the first sheet with "Author of the report" info.
-    # input the personal data
-    d_21 = input('First name: ')
-    d_22 = input('Last name: ')
-    d_23 = input('Telephone number: ')
-    d_24 = input('E-mail: ')
-    d_31 = d_21
-    d_32 = d_22
-    d_33 = d_23
-    d_34 = d_24
-    user = 'PAYTEL\\' + d_21 + ' ' + d_22
-    passw = input('Write a password to your regular account named by your - Name Surname: ')
+        # AR2 sheet for NBP
+        # Fill the first sheet with "Author of the report" info.
+        # input the personal data
+        d_21 = input('First name: ')
+        d_22 = input('Last name: ')
+        d_23 = input('Telephone number: ')
+        d_24 = input('E-mail: ')
+        d_31 = d_21
+        d_32 = d_22
+        d_33 = d_23
+        d_34 = d_24
+        user = 'PAYTEL\\' + d_21 + ' ' + d_22
+        passw = input('Write a password to your regular account named by your - Name Surname: ')
 
-    input_data = [
-        d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
-    ]
+        input_data = [
+            d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
+        ]
 
-    # RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
-    i = 0
-    for inp in input_data:
-        df_nbp_2[EXCEL_READ_AR2[0]].loc[df_nbp_2[EXCEL_READ_AR2[0]][0] == TO_FILL[i], 5] = inp
-        i += 1
+        # RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
+        i = 0
+        for inp in input_data:
+            df_nbp_2[EXCEL_READ_AR2[0]].loc[df_nbp_2[EXCEL_READ_AR2[0]][0] == TO_FILL[i], 5] = inp
+            i += 1
 
-    # Fill sheets in AR2
-    df_fraud_st7 = prepare_data_ar2(user, passw)
-    df_fraud_st7.to_csv('df_f.csv')
+        # Fill sheets in AR2
+        df_fraud_st7 = prepare_data_ar2(user, passw)
+        df_fraud_st7.to_csv('df_f.csv')
 
-    # Save everything to new excel file
-    from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
-    to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
+        # Save everything to new excel file
+        from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
+        to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
 
-    wb = copy_wb(from_wb, to_wb, df_nbp_2)
+        wb = copy_wb(from_wb, to_wb, df_nbp_2)
 
-    # Save the updated workbook
-    wb.save(to_wb)
+        # Save the updated workbook
+        wb.save(to_wb)
 
-    # Fill sheets in AR1
-    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
+        # Fill sheets in AR1
+        prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
 
-    # Save everything to new excel file
-    from_wb = path + 'AR1 - Q1.2023'
-    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}'
+        # Save everything to new excel file
+        from_wb = path + 'AR1 - Q1.2023'
+        to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}'
 
-    wb = copy_wb(from_wb, to_wb, df_nbp_1)
+        wb = copy_wb(from_wb, to_wb, df_nbp_1)
 
-    # Save the updated workbook
-    wb.save(to_wb)
+        # Save the updated workbook
+        wb.save(to_wb)
 
-    # Close the log file
-    log_file.close()
+        # Close the log file
+        log_file.close()
+
+    except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
+        # Print the error message to the console and add it to the log file
+        sys.stdout.flush()  # Make sure the error message is flushed immediately
+        print(e)
+        raise e  # Re-raise the exception to stop the execution
