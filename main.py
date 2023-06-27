@@ -456,7 +456,9 @@ def prepare_data_ar1(user, passw, df_f):
         df_nbp_1['ST.07'].iat[12, 5] = 0
         df_nbp_1['ST.07'].iat[12, 7] = 0
 
-    df_nbp_1['ST.07'].iat[10, 4] = df_nbp_1['ST.07'].index()  # @TODO: kk - finish
+    for n in range(4, 9):
+        df_nbp_1['ST.07'].iat[10, n] = df_nbp_1['ST.07'][n].iloc[11:15].sum() - df_nbp_1['ST.07'][n].iloc[12]
+        df_nbp_1['ST.07'].iat[9,n] = df_nbp_1['ST.07'][n].iloc[10]
 
 
 if __name__ == '__main__':
