@@ -39,6 +39,12 @@ group by IIF(country in ('POL','PL'), 'PL', 'other')
 --Data CHB (Visa) / DATA z AdjCom (MC)– daty należące do wybranego kwartału 
 --Obciążenia Merchanta (Visa) / obciążenie (MC) – wszystkie wartości które zaczynają się od „obciążenie” ( wykluczyć puste, niezrzeszeni, pre-abb itp.) 
 
+declare @dtb as smalldatetime
+declare @dte as smalldatetime
+
+set @dtb = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-1, '19000101');
+set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101');
+
 SELECT
 		COUNT(id_c) as ilosc
 		,ABS(SUM(tran_amount)) as kwota

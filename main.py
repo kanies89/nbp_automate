@@ -1,9 +1,10 @@
 import datetime
 import sys
 import pandas as pd
-from connect import connect, connect_single_query
+from connect import connect
 from openpyxl.utils import get_column_letter
 import progressbar
+import time
 
 import shutil
 import openpyxl
@@ -13,10 +14,41 @@ from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_r
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 import re
+import os
 
 path = 'Example\\'
-df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None)
-df_nbp_1 = pd.read_excel(path + 'AR1 - Q1.2023.xlsx', sheet_name=EXCEL_READ_AR1, header=None)
+df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None, keep_default_na=False)
+df_nbp_1 = pd.read_excel(path + 'AR1 - Q1.2023.xlsx', sheet_name=EXCEL_READ_AR1, header=None, keep_default_na=False)
+
+
+def measure_time_with_progress(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()  # Start time
+        result = func(*args, **kwargs)
+        elapsed_time = time.time() - start_time  # Elapsed time
+        with open("time.txt", "w") as file:
+            file.write(str(elapsed_time))  # Save elapsed time to file
+        print(f"Elapsed time: {elapsed_time:.2f}s")
+        return result
+
+    return wrapper
+
+
+def progress_bar_with_elapsed_time(data):
+    elapsed_time = 0
+    if os.path.exists("time.txt"):
+        with open("time.txt", "r") as file:
+            elapsed_time = float(file.read().strip())  # Read elapsed time from file
+    bar = progressbar.ProgressBar(maxval=len(data), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
+    bar.start()
+
+    for i, item in enumerate(data):
+        # Process each item in data
+        time.sleep(0.1)  # Simulate some processing time
+        bar.update(i + 1)
+
+    bar.finish()
+    print(f"Total time: {elapsed_time:.2f}s")
 
 
 def to_log():
@@ -256,7 +288,6 @@ class Logger(object):
         self.log_file.flush()
 
 
-
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     # ST.01
 
@@ -296,7 +327,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     to_change_column = 5
 
     # Changes in dataframe from spreadsheet - df_nbp_1
-    for v in range(to_change_values):
+    for v in range(len(to_change_values)):
         df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
     # ST.03
@@ -313,7 +344,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     to_change_column = 5
 
     # Just using values filled to sheet ST.01
-    for v in range(to_change_values):
+    for v in range(len(to_change_values)):
         df_nbp_1['ST.03'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
     # ST.05
@@ -341,8 +372,14 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
         if d == 2:
             to_change_values = [
-                dataframe_2[d][ilosc][0], 0, dataframe_2[d][wartosc][0], 0, dataframe_2[d][ilosc][0], 0, dataframe_2[d][
-                    wartosc][0], 0
+                dataframe_2[d][ilosc][0],
+                0,
+                dataframe_2[d][wartosc][0],
+                0,
+                dataframe_2[d][ilosc][0],
+                0,
+                dataframe_2[d][wartosc][0],
+                0
             ]
         else:
             to_change_values = [
@@ -366,42 +403,43 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         return to_change_values
 
     to_change_columns = [9, 10, 11, 12, 13, 14, 15, 16]
-    to_change_rows = [[13, 11, 12, 27, 21], [17, 15, 16, 29, 21]]
+    to_change_rows_1 = [13, 11, 12, 27, 21]
+    to_change_rows_2 = [17, 15, 16, 29, 21]
     df = [1, 3, 4, 5, 2]
 
     # Changes in dataframe from spreadsheet - df_nbp_1
-    j = 0
-    for d in df:
-        category = 'Individual'
-        prepare_values_data(d, category)
-        for v in range(to_change_values):
-            df_nbp_1['ST.05'].iat[to_change_rows[0][v], to_change_columns[j]] = to_change_values[v]
-        j += 1
 
-    j = 0
-    for d in df:
+    for row in range(len(df)):
+        category = 'Individual'
+        prepare_values_data(df[row], category)
+        for v in range(len(to_change_values)):
+            df_nbp_1['ST.05'].iat[to_change_rows_1[row], to_change_columns[v]] = to_change_values[v]
+
+    for row in range(len(df)):
         category = 'BUSINESS'
-        prepare_values_data(d, category)
-        for v in range(to_change_values):
-            df_nbp_1['ST.05'].iat[to_change_rows[1][v], to_change_columns[j]] = to_change_values[v]
-        j += 1
+        prepare_values_data(df[row], category)
+        for v in range(len(to_change_values)):
+            df_nbp_1['ST.05'].iat[to_change_rows_2[row], to_change_columns[v]] = to_change_values[v]
 
     # ST.06
 
     temp_table = f"Query\\AR1\\NBP_Temp_3.sql"
     query = f"Query\\AR1\\NBP_Query_3.sql"
     dataframe_3 = connect(temp_table, query)
+    print('Data: ' + str(dataframe_3[0]))
 
     i = 0
     for df in dataframe_3:
         df.to_csv(f'ST.06.{i}.csv')
         i += 1
 
+    dataframe_3 = dataframe_3[1]
+
     column_amount = [3, 4, 5]
     column_value = [6, 7, 8]
 
     content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
-    content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_transakcji_CashBack']
+    content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
     # devices that accept payment cards / Internet / cash back
     for i in range(len(column_amount)):
         for country in dataframe_3['CountryCode']:
@@ -410,6 +448,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
             df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
 
     # ST.02
+
+    # Right now we do not fill this sheet.
 
     # ST.07
 
@@ -421,15 +461,14 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     for df in dataframe_4:
         df.to_csv(f'ST.07.{i}.csv')
         i += 1
+    dataframe_4[1]['kwota'] = dataframe_4[1]['kwota'].astype('float')
+    df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['ilosc'].iloc[0]
+    df_nbp_1['ST.07'].iat[14, 5] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['ilosc'].iloc[0]
+    df_nbp_1['ST.07'].iat[14, 6] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['kwota'].iloc[0]
+    df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['kwota'].iloc[0]
+    df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'].iloc[0]
 
-    df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4['kraj'] == 'PL']['ilosc']
-    df_nbp_1['ST.07'].iat[14, 5] = dataframe_4[1][dataframe_4['kraj'] == 'other']['ilosc']
-    df_nbp_1['ST.07'].iat[14, 6] = dataframe_4[1][dataframe_4['kraj'] == 'PL']['kwota']
-    df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4['kraj'] == 'other']['kwota']
-    df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'][0]
-
-    df_res = df_f[df_f['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
-                                                                            ILOŚĆ=('ARN', 'count'))
+    df_res = df_f.groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'), ILOŚĆ=('ARN', 'count'))
     if 'NPL' in df_res.index:
         df_nbp_1['ST.07'].iat[11, 4] = df_res.iloc[0][0]
         df_nbp_1['ST.07'].iat[11, 6] = df_res.iloc[0][1]
@@ -444,7 +483,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.07'].iat[11, 5] = 0
         df_nbp_1['ST.07'].iat[11, 7] = 0
 
-    df_res = df[df['pos_entry_mode'] == 'CTLS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
+    df_res = df_f[df_f['pos_entry_mode'] == 'CLTS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
                                                                             ILOŚĆ=('ARN', 'count'))
 
     if 'NPL' in df_res.index:
@@ -462,8 +501,9 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.07'].iat[12, 7] = 0
 
     for n in range(4, 9):
-        df_nbp_1['ST.07'].iat[10, n] = df_nbp_1['ST.07'][n].iloc[11:15].sum() - df_nbp_1['ST.07'][n].iloc[12]
-        df_nbp_1['ST.07'].iat[9,n] = df_nbp_1['ST.07'][n].iloc[10]
+        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(df_nbp_1['ST.07'][n].iloc[12])
+    for n in range(4, 9):
+        df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
 
     author_data =[
         name,
@@ -472,73 +512,82 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         email
     ]
 
-    i = 0
-    for x in range(3, 9):
+    for x in range(2, 9):
+        i = 0
         for y in range(8, 12):
-            df_nbp_1['p-dane'].iat[x, y] = author_data[i]
+            df_nbp_1['p-dane'].iat[y, x] = author_data[i]
             i += 1
+
+
+@measure_time_with_progress
+def start_automation(n):
+    data = list(range(n))
+    progress_bar_with_elapsed_time(data)  # Pass the wrapped function as an argument
+
+    # Open the log file in append mode
+    log_file = open(to_log(), "a")
+    # Create the logger object
+    logger = Logger(log_file)
+    # Assign the logger as the new sys.stdout
+    sys.stdout = logger
+
+    # AR2 sheet for NBP
+    # Fill the first sheet with "Author of the report" info.
+    # input the personal data
+    d_21 = input('First name: ')
+    d_22 = input('Last name: ')
+    d_23 = input('Telephone number: ')
+    d_24 = input('E-mail: ')
+    d_31 = d_21
+    d_32 = d_22
+    d_33 = d_23
+    d_34 = d_24
+    user = 'PAYTEL\\' + d_21 + ' ' + d_22
+    passw = input('Write a password to your regular account named by your - Name Surname: ')
+
+    input_data = [
+        d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
+    ]
+
+    # RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
+    i = 0
+    for inp in input_data:
+        df_nbp_2[EXCEL_READ_AR2[0]].loc[df_nbp_2[EXCEL_READ_AR2[0]][0] == TO_FILL[i], 5] = inp
+        i += 1
+
+    # Fill sheets in AR2
+    df_fraud_st7 = prepare_data_ar2(user, passw)
+    df_fraud_st7.to_csv('df_f.csv')
+
+    # Save everything to new excel file
+    from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
+    to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
+
+    wb = copy_wb(from_wb, to_wb, df_nbp_2)
+
+    # Save the updated workbook
+    wb.save(to_wb)
+
+    # Fill sheets in AR1
+    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
+
+    # Save everything to new excel file
+    from_wb = path + 'AR1 - Q1.2023'
+    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}'
+
+    wb = copy_wb(from_wb, to_wb, df_nbp_1)
+
+    # Save the updated workbook
+    wb.save(to_wb)
+
+    # Close the log file
+    log_file.close()
+    return sum(data)
 
 
 if __name__ == '__main__':
     try:
-        # Open the log file in append mode
-        log_file = open(to_log(), "a")
-        # Create the logger object
-        logger = Logger(log_file)
-        # Assign the logger as the new sys.stdout
-        sys.stdout = logger
-
-        # AR2 sheet for NBP
-        # Fill the first sheet with "Author of the report" info.
-        # input the personal data
-        d_21 = input('First name: ')
-        d_22 = input('Last name: ')
-        d_23 = input('Telephone number: ')
-        d_24 = input('E-mail: ')
-        d_31 = d_21
-        d_32 = d_22
-        d_33 = d_23
-        d_34 = d_24
-        user = 'PAYTEL\\' + d_21 + ' ' + d_22
-        passw = input('Write a password to your regular account named by your - Name Surname: ')
-
-        input_data = [
-            d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
-        ]
-
-        # RETURN ROW WITH "D2.1" IN COLUMN 0 - COLUMN 5 to be edited
-        i = 0
-        for inp in input_data:
-            df_nbp_2[EXCEL_READ_AR2[0]].loc[df_nbp_2[EXCEL_READ_AR2[0]][0] == TO_FILL[i], 5] = inp
-            i += 1
-
-        # Fill sheets in AR2
-        df_fraud_st7 = prepare_data_ar2(user, passw)
-        df_fraud_st7.to_csv('df_f.csv')
-
-        # Save everything to new excel file
-        from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
-        to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
-
-        wb = copy_wb(from_wb, to_wb, df_nbp_2)
-
-        # Save the updated workbook
-        wb.save(to_wb)
-
-        # Fill sheets in AR1
-        prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
-
-        # Save everything to new excel file
-        from_wb = path + 'AR1 - Q1.2023'
-        to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}'
-
-        wb = copy_wb(from_wb, to_wb, df_nbp_1)
-
-        # Save the updated workbook
-        wb.save(to_wb)
-
-        # Close the log file
-        log_file.close()
+        start_automation(10)
 
     except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
         # Print the error message to the console and add it to the log file

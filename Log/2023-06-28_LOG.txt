@@ -1,0 +1,221 @@
+
+Report start -AR2- --2023-06-28--
+First name: Last name: Telephone number: E-mail: Write a password to your regular account named by your - Name Surname: Calculation for quarter: 1
+Checking folders: ['202301', '202302', '202303']
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230101_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230102_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230103_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230104_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230105_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230106_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230107_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230108_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202301/20230109_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230110_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230111_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230112_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230113_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230114_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230115_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230116_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230117_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230118_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230119_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230120_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230121_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230122_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230123_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230124_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230125_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230126_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230127_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230128_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230129_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230130_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202301/20230131_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230201_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230202_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230203_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230204_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230205_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230206_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230207_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230208_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202302/20230209_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230210_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230211_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230212_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230213_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230214_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230215_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230216_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230217_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230218_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230219_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230220_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230221_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230222_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230223_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230224_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230225_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230226_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230227_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202302/20230228_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230301_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230302_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230303_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230304_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230305_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230306_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230307_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230308_INITF.epd
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+//prdfil/tf$/Internal/clearing/Visa/202303/20230309_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230310_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230311_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230312_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230313_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230314_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230315_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230316_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230317_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230318_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230319_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230320_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230321_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230322_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230323_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230324_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230325_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230326_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230327_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230328_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230329_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230330_INITF.epd
+//prdfil/tf$/Internal/clearing/Visa/202303/20230331_INITF.epd
+45  00441049400082 THI NGA NGUYEN   19349  OSTROWIEC     PL  5812 1            12.01 416549 01/05/23 416549******5777 0003 74410493005017828454962 07  FRDDMC61  031760290
+
+45  00441049400082 THI NGA NGUYEN   19349  OSTROWIEC     PL  5812 1            44.15 416549 01/05/23 416549******5777 0002 74410493005017828451661 07  FRDDMC61  031760300
+
+45  00441049400082 THI NGA NGUYEN   19349  OSTROWIEC     PL  5812 1            18.06 416549 01/05/23 416549******5777 0004 74410493005017828462023 07  FRDDMC61  031760310
+
+45  00441049400082 SKLEP U ZOSI ZOFI21057  ZABRZE        PL  5411 0            14.69 424671 01/07/23 424671******5099 0024 74410493007017831981769 07  FRDDMC61  027288120
+
+45  00441049400082 SKLEP U ZOSI ZOFI21057  ZABRZE        PL  5411 0            24.02 424671 01/07/23 424671******5099 0023 74410493007017831975381 07  FRDDMC61  027288130
+
+45  00441049400082 SKLEP U ZOSI ZOFI21057  ZABRZE        PL  5411 0            23.70 424671 01/07/23 424671******5099 0015 74410493007017831917052 07  FRDDMC61  027288140
+
+45  00441049400082 SKLEP U ZOSI ZOFI21057  ZABRZE        PL  5411 0             9.73 424671 01/07/23 424671******5099 0019 74410493007017831927267 07  FRDDMC61  027288150
+
+45  00441049400082 SKLEP U ZOSI ZOFI21057  ZABRZE        PL  5411 0             5.42 424671 01/07/23 424671******5099 0018 74410493007017831921500 07  FRDDMC61  027288160
+
+45  00441049400082 SKLEP WEGA DOROTA87523  WAGROWIEC     PL  5999 6            47.33 456331 11/30/22 456331******7653 0016 74410492334017608880877 05  FRDDMC61  027288170
+
+45  00441049400082 ANDRUS MARTYNOWIC69477  WROCLAW       PL  5411 1            46.33 418040 12/07/22 418040******2101 0003 74410492341017654864107 07  FRDDMC61  030567500
+
+45  00441049400082 PIZZA WINO I CO I93315  KNUROW        PL  5812 0            23.02 424671 12/17/22 424671******7492 0002 74410492351017724524365 07  FRDDMC61  037253110
+
+45  00441049400082 VAHAN KEBAB      41525  POZNAN        PL  5812 1            44.00 424671 02/28/23 424671******8110 0009 74410493059018147855579 07  FRDDMC61  041766200
+
+45  00441049400082 F.H.U. ANDA      23072  CZELADZ       PL  5411 0            20.00 424671 03/04/23 424671******6562 0002 74410493063018170959771 07  FRDDMC61  024792440
+
+45  00441049400082 F.H.U. ANDA      23072  CZELADZ       PL  5411 0            40.00 424671 03/04/23 424671******6562 0001 74410493063018171016225 07  FRDDMC61  024792450
+
+45  00441049400082 KANIEWSKI PAWEL K41134  WROCLAW       PL  5411 0            13.00 424671 12/10/22 424671******7346 0001 74410492344017673832314 07  FRDDMC61  024249170
+
+45  00441049400082 KANIEWSKI PAWEL K41134  WROCLAW       PL  5411 0            12.99 424671 10/29/22 424671******7346 0002 74410492302017406869161 07  FRDDMC61  024249180
+
+45  00441049400082 KANIEWSKI PAWEL K41134  WROCLAW       PL  5411 0            22.50 424671 03/11/23 424671******7346 0003 74410493070018219974402 07  FRDDMC61  024249190
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6          2442.68 453738 01/21/23 453738******5037 0005 74410493021017916143345 05  FRDDMC61  027685010
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6          2140.91 453738 01/19/23 453738******5037 0010 74410493019017902217818 05  FRDDMC61  027685020
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6            58.14 453738 01/19/23 453738******5037 0004 74410493019017902215549 05  FRDDMC61  027685030
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6           707.29 453738 01/21/23 453738******5037 0007 74410493021017916117588 05  FRDDMC61  027685040
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6          2458.43 453738 01/19/23 453738******5037 0003 74410493019017902223113 05  FRDDMC61  027685050
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6           707.29 453738 01/21/23 453738******5037 0008 74410493021017916091973 05  FRDDMC61  027685060
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6           231.67 453738 01/21/23 453738******5037 0002 74410493021017916107670 05  FRDDMC61  027685070
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6          2188.24 453738 01/19/23 453738******5037 0009 74410493019017902221422 05  FRDDMC61  027685080
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6          1321.27 453738 01/21/23 453738******5037 0001 74410493021017916126746 05  FRDDMC61  027685090
+
+45  00441049400082 HIGHWORKINGDEVELO39980  KRAKOW        PL  5812 6           707.29 453738 01/21/23 453738******5037 0006 74410493021017916068500 05  FRDDMC61  027685100
+
+45  00441049400082 FPU STOLARZ-ADAM 30842  ALEKSANDROW   PL  5699 0            34.61 424671 02/23/23 424671******2554 0002 74410493054018113424959 07  FRDDMC61  044114960
+
+45  00441049400082 FPU STOLARZ-ADAM 30842  ALEKSANDROW   PL  5699 0            43.50 424671 03/10/23 424671******2554 0003 74410493069018212344275 07  FRDDMC61  044114970
+
+45  00441049400082 FPU STOLARZ-ADAM 30842  ALEKSANDROW   PL  5699 0            34.01 424671 02/15/23 424671******2554 0001 74410493046018065931697 07  FRDDMC61  044114980
+
+45  00441049400082 FPU STOLARZ-ADAM 30842  ALEKSANDROW   PL  5699 0            34.61 424671 02/23/23 424671******2554 0002 74410493054018113424959 07  FRDDMC61  044114960
+
+45  00441049400082 FPU STOLARZ-ADAM 30842  ALEKSANDROW   PL  5699 0            43.50 424671 03/10/23 424671******2554 0003 74410493069018212344275 07  FRDDMC61  044114970
+
+45  00441049400082 FPU STOLARZ-ADAM 30842  ALEKSANDROW   PL  5699 0            34.01 424671 02/15/23 424671******2554 0001 74410493046018065931697 07  FRDDMC61  044114980
+
+45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 0             9.02 416598 03/19/23 416598******1259 0001 74410493078018268722720 07  FRDDMC61  036393380
+
+45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 0            69.63 416598 03/19/23 416598******1259 0002 74410493078018268730467 07  FRDDMC61  036393390
+
+45  00441049400082 STODOLA KEBAP'N G33180  POZNAN        PL  5812 1            29.88 422224 03/26/23 422224******3036 0004 74410493085018314182698 07  FRDDMC61  036917240
+
+All ARN numbers passed to SQL query.
+VISA ARNs: ('74410493005017828454962', '74410493005017828451661', '74410493005017828462023', '74410493007017831981769', '74410493007017831975381', '74410493007017831917052', '74410493007017831927267', '74410493007017831921500', '74410492334017608880877', '74410492341017654864107', '74410492351017724524365', '74410493059018147855579', '74410493063018170959771', '74410493063018171016225', '74410492344017673832314', '74410492302017406869161', '74410493070018219974402', '74410493021017916143345', '74410493019017902217818', '74410493019017902215549', '74410493021017916117588', '74410493019017902223113', '74410493021017916091973', '74410493021017916107670', '74410493019017902221422', '74410493021017916126746', '74410493021017916068500', '74410493054018113424959', '74410493069018212344275', '74410493046018065931697', '74410493054018113424959', '74410493069018212344275', '74410493046018065931697', '74410493078018268722720', '74410493078018268730467', '74410493085018314182698')
+19
+All ARN numbers passed to SQL query.
+MASTERCARD ARNs: ('05185243010029351149884', '05185243010029351105662', '05185243010029351082242', '05185243010029351011258', '05185243010029351027288', '05185243010029350865498', '05185243010029350750518', '05185242364029212952124', '05185242364029212997210', '05185242358029145813789', '05185242358029146394821', '05185242358029148095855', '05185243010029345915846', '05185243010029346132177', '05185242276027737386171', '05185243060030110609530', '05185243065030200228121')
+Calculation for quarter: 1
+Checking folders: ['202301', '202302', '202303']
+Checking the quarter: 1
+Calculation for quarter: 1
+Checking folders: ['202301', '202302', '202303']
+0
+1
+2
+3
+0
+1
+2
+3
+Calculation for quarter: 1
+Checking folders: ['202301', '202302', '202303']
+Calculation for quarter: 1
+Checking folders: ['202301', '202302', '202303']
+Calculation for quarter: 1
+Checking folders: ['202301', '202302', '202303']
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+Data z pliku Tvid_nev_lost.xlsx:  2023-03-31 00:00:00
+list indices must be integers or slices, not str
