@@ -3,9 +3,9 @@ import sys
 import pandas as pd
 from connect import connect
 from openpyxl.utils import get_column_letter
-import progressbar
+from tqdm import tqdm
 import time
-
+import multiprocessing as mp
 import shutil
 import openpyxl
 from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, \
@@ -29,28 +29,17 @@ def measure_time_with_progress(func):
         elapsed_time = time.time() - start_time  # Elapsed time
         with open("time.txt", "w") as file:
             file.write(str(elapsed_time))  # Save elapsed time to file
-        print(f"Elapsed time: {elapsed_time:.2f}s")
+        print(f"\n Elapsed time: {elapsed_time:.2f}s")
         return result
 
     return wrapper
 
 
 def progress_bar_with_elapsed_time(data):
-    elapsed_time = 0
-    if os.path.exists("time.txt"):
-        with open("time.txt", "r") as file:
-            elapsed_time = float(file.read().strip())  # Read elapsed time from file
-    bar = progressbar.ProgressBar(maxval=len(data),
-                                  widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
-    bar.start()
-
-    for i, item in enumerate(data):
-        # Process each item in data
-        time.sleep(0.1)  # Simulate some processing time
-        bar.update(i + 1)
-
-    bar.finish()
-    print(f"Total time: {elapsed_time:.2f}s")
+    with tqdm(total=len(data), ncols=80, bar_format='{l_bar}{bar}| {n_fmt}/{total_fmt}') as pbar:
+        for _ in data:
+            time.sleep(0.1)  # Simulate some processing time
+            pbar.update(1)
 
 
 def to_log():
@@ -232,7 +221,7 @@ def prepare_data_ar2(user, passw):
     # Make pivot table
     df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
     df_fraud.to_csv('df_fraud.csv')
-    print('Checking the quarter: ' + str(check_quarter()[3]))
+    print('\nChecking the quarter: ' + str(check_quarter()[3]))
     df_f_data = pd.pivot_table(index='pos_entry_mode', columns='country_aggr',
                                data=df_fraud[df_fraud['quarter'] == check_quarter()[3]],
                                aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
@@ -246,7 +235,6 @@ def prepare_data_ar2(user, passw):
     sheet = '9.R.L.MCC'
 
     for n in range(0, len(dataframe_4)):
-        print(n)
         for country in dataframe_4[n]['name']:
             # last dataframe retrieved from database is different so if n=3 then execute different algorithm
             if n < 3:
@@ -266,7 +254,6 @@ def prepare_data_ar2(user, passw):
     sheet = '9.R.W.MCC'
 
     for n in range(0, len(dataframe_4)):
-        print(n)
         for country in dataframe_4[n]['name']:
             # last dataframe retrieved from database is different so if n=3 then execute different algorithm
             if n < 3:
@@ -328,7 +315,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     read_remote_file(path, user, passw)
     dataframe_0 = pd.read_excel(path, header=3)
 
-    print('Data z pliku Tvid_nev_lost.xlsx: ', dataframe_0['tr_date'][0])
+    print('\nData z pliku Tvid_nev_lost.xlsx: ', dataframe_0['tr_date'][0])
 
     # Data to be filled
     to_change_values = [
@@ -449,7 +436,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     temp_table = f"Query\\AR1\\NBP_Temp_3.sql"
     query = f"Query\\AR1\\NBP_Query_3.sql"
     dataframe_3 = connect(temp_table, query)
-    print('Data: ' + str(dataframe_3[0]))
+    print('\nData: ' + str(dataframe_3[0]))
 
     i = 0
     for df in dataframe_3:
@@ -544,10 +531,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
 
 @measure_time_with_progress
-def start_automation(n):
-    data = list(range(n))
-    progress_bar_with_elapsed_time(data)  # Pass the wrapped function as an argument
-
+def start_automation(d1, d2, d3, d4, d_pass):
+    print('\nNBP report automation 2023')
     # Open the log file in append mode
     log_file = open(to_log(), "a")
     # Create the logger object
@@ -558,17 +543,17 @@ def start_automation(n):
     # AR2 sheet for NBP
     # Fill the first sheet with "Author of the report" info.
     # input the personal data
-    d_21 = input('First name: ')
-    d_22 = input('Last name: ')
-    d_23 = input('Telephone number: ')
-    d_24 = input('E-mail: ')
+    d_21 = d1
+    d_22 = d2
+    d_23 = d3
+    d_24 = d4
     d_31 = d_21
     d_32 = d_22
     d_33 = d_23
     d_34 = d_24
     user = 'PAYTEL\\' + d_21 + ' ' + d_22
-    passw = input('Write a password to your regular account named by your - Name Surname: ')
-
+    passw = d_pass
+    INPUT_PROVIDED = True
     input_data = [
         d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
     ]
@@ -606,15 +591,53 @@ def start_automation(n):
 
     # Close the log file
     log_file.close()
-    return sum(data)
+
+
+def update_bar(queue, total):
+    pbar = tqdm(total=total)
+
+    while True:
+        if pbar.n >= pbar.total:
+            break
+        time.sleep(0.1)  # Simulate some processing time
+        pbar.update(1)
+
+    pbar.close()
 
 
 if __name__ == '__main__':
     try:
-        start_automation(10)
+        # Read the last execution total time from "time.txt"
+        last_time = 0
+        if os.path.exists("time.txt"):
+            with open("time.txt", "r") as file:
+                last_time = float(file.read().strip())
+        d_name = input('First name: ')
+        d_surname = input('Last name: ')
+        d_telephone = input('Telephone number: ')
+        d_email = input('E-mail: ')
+        d_pass = input('Write a password to your regular account named by your - Name Surname: ')
+
+        # Check if input is provided
+        if any(input_var.strip() == '' for input_var in [d_name, d_surname, d_telephone, d_email, d_pass]):
+            print('\nInput not provided. Exiting the program.')
+        else:
+            # Create a progress bar queue
+            bar_queue = mp.Queue()
+
+            # Start the progress bar process
+            bar_process = mp.Process(target=update_bar, args=(bar_queue, last_time * 10))
+            bar_process.start()
+
+            # Run the main function in the main process
+            start_automation(d_name, d_surname, d_telephone, d_email, d_pass)
+
+            # Signal the progress bar process to finish
+            bar_queue.put(None)
+            bar_process.join()
 
     except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
         # Print the error message to the console and add it to the log file
         sys.stdout.flush()  # Make sure the error message is flushed immediately
-        print(e)
+        print('\n'+e)
         raise e  # Re-raise the exception to stop the execution

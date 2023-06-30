@@ -18,7 +18,7 @@ def disconnect_all_connections():
         # Disable all existing connections
         win32wnet.WNetCancelConnection2(r"\\prdfil", 0, 1)
     except Exception as e:
-        print("An error occurred while disconnecting all connections:", str(e))
+        print("\nAn error occurred while disconnecting all connections:", str(e))
 
 
 def read_remote_file(remote_file_path, username, password):
@@ -38,11 +38,11 @@ def read_remote_file(remote_file_path, username, password):
         win32wnet.WNetCancelConnection2(netpath, 0, 0)
 
     except FileNotFoundError:
-        print("File not found:", remote_file_path)
+        print("\nFile not found:", remote_file_path)
     except PermissionError:
-        print("Permission denied to access the file:", remote_file_path)
+        print("\nPermission denied to access the file:", remote_file_path)
     except Exception as e:
-        print("An error occurred while reading the remote file:", str(e))
+        print("\nAn error occurred while reading the remote file:", str(e))
 
 
 CARD_TYPE = {
@@ -135,7 +135,7 @@ def check_quarter():
     q = a.fiscal_quarter
 
     q_prev = q - 2
-    print('Calculation for quarter: ' + str(q_prev))
+    print('\nCalculation for quarter: ' + str(q_prev))
     q_year = a.fiscal_year
 
     if q_prev == 0:
@@ -148,7 +148,7 @@ def check_quarter():
     for month in quarter_months[q_prev - 1]:
         folders.append(q_year_str + month)
 
-    print('Checking folders: ' + str(folders))
+    print('\nChecking folders: ' + str(folders))
     months[q_prev]
 
     return folders, q_year, months, q_prev
@@ -196,17 +196,17 @@ def find(user, passw):
                 remote_file_path = full_path  # Remote network path
 
                 read_remote_file(remote_file_path, username, password)
-                print(full_path)
+                print('\nChecking files for VISA FRAUD in: '+full_path)
                 grep(full_path)
             else:
                 full_path = f'{PATH}{folder}/{folder}{str(day + 1)}_INITF.epd'
-                print(full_path)
+                print('\nChecking files for VISA FRAUD in: '+full_path)
                 grep(full_path)
 
         i += 1
 
     for line in matched_lines:
-        print(line)
+        print('\nFound VISA FRAUD data: '+line)
 
 
 def get_data_for_sql():
@@ -241,14 +241,14 @@ def get_data_for_sql():
         sql = sql.read()
         sql += arns
     if i + 1 == len(matched_lines):
-        print('All ARN numbers passed to SQL query.')
+        print('\nAll ARN numbers passed to SQL query for VISA FRAUD.')
     else:
-        print('Not all ARN passed to sql query')
+        print('\nNot all ARN passed to sql query for VISA FRAUD')
 
     # Save query
     with open('./query/f_visa/recent_fraud.sql', 'w') as recent:
         recent.write(sql)
-    print('VISA ARNs: ' + arns)
+    print('\nVISA ARNs: ' + arns)
     return sql, arns
 
 

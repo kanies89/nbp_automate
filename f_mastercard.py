@@ -49,7 +49,6 @@ def add_arn_to_query(dataframe):
     arns = ''
     s = dataframe['Acquirer Reference Number'].size
 
-    print(s)
     for row in dataframe.iterrows():
         if str(row[1][27]) != 'nan':
             if i == 0:
@@ -88,11 +87,11 @@ def add_arn_to_query(dataframe):
         sql = sql.read()
         sql += arns
     if i == s:
-        print('All ARN numbers passed to SQL query.')
+        print('\nAll ARN numbers passed to SQL query.')
     else:
-        print('Not all ARN passed to sql query')
+        print('\nNot all ARN passed to sql query')
 
-    print('MASTERCARD ARNs: ' + arns)
+    print('\nMASTERCARD ARNs: ' + arns)
 
     # Save query
     with open('./query/f_mastercard/recent_fraud.sql', 'w') as recent:
