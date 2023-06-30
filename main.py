@@ -17,7 +17,8 @@ import re
 import os
 
 path = 'Example\\'
-df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None, keep_default_na=False)
+df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None,
+                         keep_default_na=False)
 df_nbp_1 = pd.read_excel(path + 'AR1 - Q1.2023.xlsx', sheet_name=EXCEL_READ_AR1, header=None, keep_default_na=False)
 
 
@@ -39,7 +40,8 @@ def progress_bar_with_elapsed_time(data):
     if os.path.exists("time.txt"):
         with open("time.txt", "r") as file:
             elapsed_time = float(file.read().strip())  # Read elapsed time from file
-    bar = progressbar.ProgressBar(maxval=len(data), widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
+    bar = progressbar.ProgressBar(maxval=len(data),
+                                  widgets=[progressbar.Bar('=', '[', ']'), ' ', progressbar.Percentage()])
     bar.start()
 
     for i, item in enumerate(data):
@@ -59,32 +61,53 @@ def to_log():
     return file_name
 
 
-def copy_wb(from_workbook, to_workbook, dataframe):
+def copy_wb(from_workbook, to_workbook, dataframe, number):
     # Copy the from_workbook to create a new workbook
     shutil.copyfile(from_workbook, to_workbook)
 
     # Load the new workbook
     wb = openpyxl.load_workbook(to_workbook)
 
-    for sheet_name in EXCEL_READ_AR2:
-        sheet = wb[sheet_name]
-        for row in dataframe[sheet_name].index:
-            for col in dataframe[sheet_name].columns:
-                coord = get_column_letter(col + 1) + str(row + 1)
-                new_value = dataframe[sheet_name].iat[row, col]
+    if number == 1:
+        for sheet_name in EXCEL_READ_AR1:
+            sheet = wb[sheet_name]
+            for row in dataframe[sheet_name].index:
+                for col in dataframe[sheet_name].columns:
+                    coord = get_column_letter(col + 1) + str(row + 1)
+                    new_value = dataframe[sheet_name].iat[row, col]
 
-                # Handle merged cells
-                for merged_range in sheet.merged_cells.ranges:
-                    if coord in merged_range:
-                        # Find the first cell in the merged range
-                        first_cell = merged_range.min_row, merged_range.min_col
-                        first_coord = get_column_letter(first_cell[1]) + str(first_cell[0])
-                        # wb[sheet_name][first_coord].value = new_value
-                        # not working, don't know why it is not filling the merged cells
-                        break  # Exit the loop after setting the value for the merged cell
-                else:
-                    # If the cell is not merged, set the value directly
-                    wb[sheet_name][coord].value = new_value
+                    # Handle merged cells
+                    for merged_range in sheet.merged_cells.ranges:
+                        if coord in merged_range:
+                            # Find the first cell in the merged range
+                            first_cell = merged_range.min_row, merged_range.min_col
+                            first_coord = get_column_letter(first_cell[1]) + str(first_cell[0])
+                            # wb[sheet_name][first_coord].value = new_value
+                            # not working, don't know why it is not filling the merged cells
+                            break  # Exit the loop after setting the value for the merged cell
+                    else:
+                        # If the cell is not merged, set the value directly
+                        wb[sheet_name][coord].value = new_value
+    elif number == 2:
+        for sheet_name in EXCEL_READ_AR2:
+            sheet = wb[sheet_name]
+            for row in dataframe[sheet_name].index:
+                for col in dataframe[sheet_name].columns:
+                    coord = get_column_letter(col + 1) + str(row + 1)
+                    new_value = dataframe[sheet_name].iat[row, col]
+
+                    # Handle merged cells
+                    for merged_range in sheet.merged_cells.ranges:
+                        if coord in merged_range:
+                            # Find the first cell in the merged range
+                            first_cell = merged_range.min_row, merged_range.min_col
+                            first_coord = get_column_letter(first_cell[1]) + str(first_cell[0])
+                            # wb[sheet_name][first_coord].value = new_value
+                            # not working, don't know why it is not filling the merged cells
+                            break  # Exit the loop after setting the value for the merged cell
+                    else:
+                        # If the cell is not merged, set the value directly
+                        wb[sheet_name][coord].value = new_value
     return wb
 
 
@@ -484,7 +507,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.07'].iat[11, 7] = 0
 
     df_res = df_f[df_f['pos_entry_mode'] == 'CLTS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
-                                                                            ILOŚĆ=('ARN', 'count'))
+                                                                                ILOŚĆ=('ARN', 'count'))
 
     if 'NPL' in df_res.index:
         df_nbp_1['ST.07'].iat[12, 4] = df_res.iloc[0][0]
@@ -501,11 +524,12 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.07'].iat[12, 7] = 0
 
     for n in range(4, 9):
-        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(df_nbp_1['ST.07'][n].iloc[12])
+        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(
+            df_nbp_1['ST.07'][n].iloc[12])
     for n in range(4, 9):
         df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
 
-    author_data =[
+    author_data = [
         name,
         surname,
         phone,
@@ -563,7 +587,7 @@ def start_automation(n):
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
     to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
 
-    wb = copy_wb(from_wb, to_wb, df_nbp_2)
+    wb = copy_wb(from_wb, to_wb, df_nbp_2, 2)
 
     # Save the updated workbook
     wb.save(to_wb)
@@ -572,10 +596,10 @@ def start_automation(n):
     prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
 
     # Save everything to new excel file
-    from_wb = path + 'AR1 - Q1.2023'
-    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}'
+    from_wb = path + 'AR1 - Q1.2023.xlsx'
+    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}.xlsx'
 
-    wb = copy_wb(from_wb, to_wb, df_nbp_1)
+    wb = copy_wb(from_wb, to_wb, df_nbp_1, 1)
 
     # Save the updated workbook
     wb.save(to_wb)
