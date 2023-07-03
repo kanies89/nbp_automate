@@ -1,20 +1,24 @@
-import datetime
 import sys
+import re
+import os
+
+import datetime
 import pandas as pd
-from connect import connect
 from openpyxl.utils import get_column_letter
+import openpyxl
+
 from tqdm import tqdm
 import time
 import multiprocessing as mp
 import shutil
-import openpyxl
+
+from connect import connect
 from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, \
     AR2_5_row_2, \
     AR2_9_row_1, EXCEL_READ_AR1
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
-import re
-import os
+
 
 path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None,
