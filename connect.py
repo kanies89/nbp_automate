@@ -1,6 +1,7 @@
 import pandas as pd
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+import pyodbc
 
 # Setting the connection
 DRIVER_NAME = '{ODBC Driver 18 for SQL Server}'
