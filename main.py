@@ -219,12 +219,12 @@ def prepare_data_ar2(user, passw):
         i = 0
         j += 1
 
-    # for k in range(len(dataframe_2)):
-    #     dataframe_2[k].to_csv(f'df_5_{k}.csv')
-
     # Make pivot table
     df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
-    df_fraud.to_csv('df_fraud.csv')
+
+    path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
+    df_fraud.to_csv(path_df+'df_fraud.csv')
+
     print('\nChecking the quarter: ' + str(check_quarter()[3]))
     df_f_data = pd.pivot_table(index='pos_entry_mode', columns='country_aggr',
                                data=df_fraud[df_fraud['quarter'] == check_quarter()[3]],
@@ -367,10 +367,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_2.sql"
     dataframe_2 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_2:
-        df.to_csv(f'ST.05.{i}.csv')
-        i += 1
+    # i = 0
+    # for df in dataframe_2:
+    #     df.to_csv(f'ST.05.{i}.csv')
+    #     i += 1
 
     # Data to be filled
     def prepare_values_data(d, c):
@@ -442,10 +442,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     dataframe_3 = connect(temp_table, query)
     print('\nData: ' + str(dataframe_3[0]))
 
-    i = 0
-    for df in dataframe_3:
-        df.to_csv(f'ST.06.{i}.csv')
-        i += 1
+    # i = 0
+    # for df in dataframe_3:
+    #     df.to_csv(f'ST.06.{i}.csv')
+    #     i += 1
 
     dataframe_3 = dataframe_3[1]
 
@@ -471,10 +471,11 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_4.sql"
     dataframe_4 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_4:
-        df.to_csv(f'ST.07.{i}.csv')
-        i += 1
+    # i = 0
+    # for df in dataframe_4:
+    #     df.to_csv(f'ST.07.{i}.csv')
+    #     i += 1
+
     dataframe_4[1]['kwota'] = dataframe_4[1]['kwota'].astype('float')
     df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['ilosc'].iloc[0]
     df_nbp_1['ST.07'].iat[14, 5] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['ilosc'].iloc[0]
@@ -557,7 +558,7 @@ def start_automation(d1, d2, d3, d4, d_pass):
     d_34 = d_24
     user = 'PAYTEL\\' + d_21 + ' ' + d_22
     passw = d_pass
-    INPUT_PROVIDED = True
+
     input_data = [
         d_21, d_22, d_23, d_24, d_31, d_32, d_33, d_34
     ]
@@ -597,8 +598,19 @@ def start_automation(d1, d2, d3, d4, d_pass):
     log_file.close()
 
 
+class TqdmExtraFormat(tqdm):
+    """Provides a `minutes per iteration` format parameter"""
+    @property
+    def format_dict(self):
+        d = super(TqdmExtraFormat, self).format_dict
+        rate_min = '{:.2f}'.format(1/d["rate"] / 60) if d["rate"] else '?'
+        d.update(rate_min=(rate_min + ' min/' + d['unit']))
+        return d
+
+
 def update_bar(queue, total):
-    pbar = tqdm(total=total)
+    b = '{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_min}{postfix}]'
+    pbar = tqdm(total=total, bar_format=b)
 
     while True:
         if pbar.n >= pbar.total:

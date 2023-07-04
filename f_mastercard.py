@@ -2,6 +2,7 @@ import pandas as pd
 from connect import connect_single_query
 from fiscalyear import FiscalDate
 from f_visa import NBP_Countries
+from f_visa import check_quarter
 
 rows = []
 
@@ -120,13 +121,14 @@ def f_mastercard_make():
     # Set new dataframe based on data retrieved from find()
     df_data = pd.DataFrame.from_dict(DATA_SPLIT)
 
-    df_query.to_csv('df_mastercard_sql.csv')
-    df_data.to_csv('df_mastercard_epd.csv')
+    path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
+    df_query.to_csv(path_df + 'df_mastercard_sql.csv')
+    df_data.to_csv(path_df + 'df_mastercard_epd.csv')
 
     # Join two dataframes by ARN number
     df_mastercard_fraud_data = df_query.merge(df_data, left_on='ARN', right_on='ARN')
     df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'}, inplace=True)
-    df_mastercard_fraud_data.to_csv('df_mastercard_fraud_data.csv')
+    df_mastercard_fraud_data.to_csv(path_df + 'df_mastercard_fraud_data.csv')
 
     return df_mastercard_fraud_data, arns_mastercard
 
