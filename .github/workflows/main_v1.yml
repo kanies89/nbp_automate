@@ -35,7 +35,4 @@ jobs:
     - name: Run pytest
       run: pytest
     
-    - name: Publish test results
-      uses: actions/upload-sarif@v1
-      with:
-        sarif_file: ./test-results.sarif
+
