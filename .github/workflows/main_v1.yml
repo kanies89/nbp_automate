@@ -1,4 +1,4 @@
-name: Publish Single-File App
+name: Build and Publish
 
 on:
   push:
@@ -10,27 +10,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.10
 
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Change working directory
-        working-directory: ./
-
       - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Build single-file app
         run: |
-          pip install pyinstaller
-          pyinstaller --onefile main.py --name NBP_Report.exe
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-      - name: Upload artifact
+      - name: Build executable
+        run: |
+          pyinstaller --onefile --name NBP_Report main.py
+
+      - name: Publish artifact
         uses: actions/upload-artifact@v2
         with:
-          name: single-file-app
-          path: dist/NBP_Report.exe 
+          name: NBP_Report
+          path: dist/NBP_Report.exe
