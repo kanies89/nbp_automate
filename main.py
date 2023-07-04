@@ -609,14 +609,16 @@ class TqdmExtraFormat(tqdm):
 
 
 def update_bar(queue, total):
-    b = '{l_bar}{bar}| {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_min}{postfix}]'
-    pbar = tqdm(total=total, bar_format=b)
+    pbar = tqdm(total=round(total, 2))
 
     while True:
         if pbar.n >= pbar.total:
             break
         time.sleep(0.1)  # Simulate some processing time
         pbar.update(1)
+        elapsed_time = (time.time() - pbar.start_t)
+        pbar.set_postfix(elapsed=f"{elapsed_time:.2f}s",
+                         remaining=f"{(pbar.total - pbar.n) * (elapsed_time / pbar.n):.2f}s / {((pbar.total - pbar.n) * (elapsed_time / pbar.n))/60:.2f}min")
 
     pbar.close()
 
