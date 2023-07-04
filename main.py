@@ -499,7 +499,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.07'].iat[11, 7] = 0
 
     df_res = df_f[df_f['pos_entry_mode'] == 'CLTS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
-                                                                                ILOŚĆ=('ARN', 'count'))
+                                                                                ILOSC=('ARN', 'count'))
 
     if 'NPL' in df_res.index:
         df_nbp_1['ST.07'].iat[12, 4] = df_res.iloc[0][0]
@@ -646,10 +646,11 @@ def update_bar(queue, total):
 if __name__ == '__main__':
     try:
         # Read the last execution total time from "time.txt"
-        last_time = 0
+        last_time = 4000
         if os.path.exists("time.txt"):
             with open("time.txt", "r") as file:
                 last_time = float(file.read().strip())
+
         d_name = input('First name: ')
         d_surname = input('Last name: ')
         d_telephone = input('Telephone number: ')
@@ -674,8 +675,14 @@ if __name__ == '__main__':
             bar_queue.put(None)
             bar_process.join()
 
+            # Wait for user input to keep the window open
+            input("Press Enter to exit...")
+
     except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
         # Print the error message to the console and add it to the log file
         sys.stdout.flush()  # Make sure the error message is flushed immediately
         print('\n'+e)
         raise e  # Re-raise the exception to stop the execution
+
+    # Wait for user input to keep the window open
+    input("Press Enter to exit...")
