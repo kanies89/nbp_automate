@@ -537,6 +537,16 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
 @measure_time_with_progress
 def start_automation(d1, d2, d3, d4, d_pass):
+    # Create folder structure
+    create_folder_structure('/Example')
+    create_folder_structure('/Example/Filled')
+    create_folder_structure('/Query')
+    create_folder_structure('/Query/AR1')
+    create_folder_structure('/Query/AR2')
+    create_folder_structure('/Log')
+    create_folder_structure('/df')
+    create_folder_structure('/temp')
+
     print('\nNBP report automation 2023')
     # Open the log file in append mode
     log_file = open(to_log(), "a")
@@ -606,6 +616,16 @@ class TqdmExtraFormat(tqdm):
         rate_min = '{:.2f}'.format(1/d["rate"] / 60) if d["rate"] else '?'
         d.update(rate_min=(rate_min + ' min/' + d['unit']))
         return d
+
+
+def create_folder_structure(address):
+    # Check if the folder structure exists
+    if not os.path.exists(address):
+        # Create the folder structure
+        os.makedirs(address)
+        print("Folder structure created successfully.")
+    else:
+        print("Folder structure already exists.")
 
 
 def update_bar(queue, total):
