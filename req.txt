@@ -1,7 +1,7 @@
-fiscalyear==0.4.0
-openpyxl==3.0.10
-pandas==1.5.3
+fiscalyear
+openpyxl
+pandas
 pywin32
 pyodbc
-SQLAlchemy==1.4.39
-tqdm==4.64.1
+SQLAlchemy
+tqdm
