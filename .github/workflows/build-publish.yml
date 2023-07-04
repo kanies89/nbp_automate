@@ -1,0 +1,31 @@
+name: Build and Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Docker
+        uses: docker/setup-docker@v2
+
+      - name: Build Docker image
+        run: docker build -t my-app .
+
+      - name: Run Docker container
+        run: |
+          docker run my-app pyinstaller --onefile --name NBP_Report main.py
+          docker cp "$(docker ps -lq):/app/dist/NBP_Report.exe" "${{ github.workspace }}/dist/NBP_Report.exe"
+
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nbp_report
+          path: dist/NBP_Report.exe
