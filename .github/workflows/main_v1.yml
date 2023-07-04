@@ -25,7 +25,10 @@ jobs:
 
       - name: Install PyInstaller
         run: pip install pyinstaller
-
+        
+      - name: Install pyodbc
+        run: pip install pyodbc
+        
       - name: Build executable
         run: pyinstaller --onefile --name NBP_Report main.py
 
