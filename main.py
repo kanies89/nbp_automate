@@ -483,7 +483,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['kwota'].iloc[0]
     df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'].iloc[0]
 
-    df_res = df_f.groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'), ILOŚĆ=('ARN', 'count'))
+    df_res = df_f.groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'), ILOSC=('ARN', 'count'))
     if 'NPL' in df_res.index:
         df_nbp_1['ST.07'].iat[11, 4] = df_res.iloc[0][0]
         df_nbp_1['ST.07'].iat[11, 6] = df_res.iloc[0][1]
