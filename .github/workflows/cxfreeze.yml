@@ -36,4 +36,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nbp_report
-          path: build/exe.win-amd64-3.9/NBP_Report.exe
+          path: dist/NBP_Report.exe
