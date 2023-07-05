@@ -189,7 +189,7 @@ def find(user, passw):
     password = passw
     for folder in result[0]:
         for day in range(1, monthrange(result[1], result[2][0][i])[1]):
-            if day + 1 < 10:
+            if day < 10:
                 full_path = f'{PATH}{folder}/{folder}0{str(day)}_INITF.epd'
 
                 # Example usage
