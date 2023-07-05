@@ -27,14 +27,14 @@ def connect(temp_table_file, query_file):
         t_list = temp_table.split('---split---')
 
         for t in t_list:
-            session.execute(str(t))
+            session.execute(f'{t}')
 
         # split the code to get individual query for retrieving the data for dataframes
         q_list = query.split('---split---')
         df_list = []
 
         for q in q_list:
-            result = session.execute(str(q))
+            result = session.execute(f'{q}')
             data = result.fetchall()
             df = pd.DataFrame(data, columns=result.keys())
             df_list.append(df)
@@ -61,7 +61,7 @@ def connect_single_query(query):
         df = []
 
         for q in q_list:
-            tableResult = pd.read_sql(str(q), connection)
+            tableResult = pd.read_sql(f'{q}', connection)
             df.append(pd.DataFrame(tableResult))
 
     engine.dispose()
