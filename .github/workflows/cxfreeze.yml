@@ -34,5 +34,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nbp_report
-          path: NBP_Report.exe
+
 
