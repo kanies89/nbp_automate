@@ -199,7 +199,7 @@ def find(user, passw):
                 print('\nChecking files for VISA FRAUD in: '+full_path)
                 grep(full_path)
             else:
-                full_path = f'{PATH}{folder}/{folder}{str(day + 1)}_INITF.epd'
+                full_path = f'{PATH}{folder}/{folder}{str(day)}_INITF.epd'
                 print('\nChecking files for VISA FRAUD in: '+full_path)
                 grep(full_path)
 
