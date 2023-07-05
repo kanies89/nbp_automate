@@ -188,9 +188,9 @@ def find(user, passw):
     username = user
     password = passw
     for folder in result[0]:
-        for day in range(monthrange(result[1], result[2][0][i])[1]):
+        for day in range(1, monthrange(result[1], result[2][0][i])[1]):
             if day + 1 < 10:
-                full_path = f'{PATH}{folder}/{folder}0{str(day + 1)}_INITF.epd'
+                full_path = f'{PATH}{folder}/{folder}0{str(day)}_INITF.epd'
 
                 # Example usage
                 remote_file_path = full_path  # Remote network path
