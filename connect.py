@@ -9,6 +9,18 @@ SERVER_NAME = 'PRDBI'
 DATABASE_NAME = 'paytel_olap'
 
 
+
+The connect function you provided appears to be a database connection function that executes SQL queries and retrieves data from a SQL Server database. The error you encountered seems to be related to the SQL expression in either the temp_table_file or query_file not being explicitly declared as text.
+
+To resolve this issue, you can explicitly declare the SQL expressions as text by using the text function from the SQLAlchemy library. Here's an updated version of your code with the necessary changes:
+
+python
+Copy code
+from sqlalchemy import create_engine, text
+from sqlalchemy.orm import sessionmaker
+
+# ...
+
 def connect(temp_table_file, query_file):
     with open(temp_table_file, 'r', encoding='utf-8') as file:
         temp_table = file.read()  # Read the SQL query from the file
@@ -27,14 +39,14 @@ def connect(temp_table_file, query_file):
         t_list = temp_table.split('---split---')
 
         for t in t_list:
-            session.execute(f'{t}')
+            session.execute(text(str(t)))
 
         # split the code to get individual query for retrieving the data for dataframes
         q_list = query.split('---split---')
         df_list = []
 
         for q in q_list:
-            result = session.execute(f'{q}')
+            result = session.execute(text(str(q)))
             data = result.fetchall()
             df = pd.DataFrame(data, columns=result.keys())
             df_list.append(df)
