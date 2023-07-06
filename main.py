@@ -129,7 +129,12 @@ def prepare_data_ar2(user, passw):
             if country == 'Holandia':
                 country = 'Niderlandy'
             if i <= 19:
-                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                except KeyError:
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['CountryCode'] == country]}")
+
                 df_nbp_2[sheet][col].iloc[AR2_4_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
             i += 1
         i = 0
@@ -145,7 +150,12 @@ def prepare_data_ar2(user, passw):
             if country == 'Holandia':
                 country = 'Niderlandy'
             if i <= 19:
-                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                except KeyError:
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['CountryCode'] == country]}")
+
                 df_nbp_2[sheet][col].iloc[AR2_4_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
             i += 1
         i = 0
@@ -203,7 +213,11 @@ def prepare_data_ar2(user, passw):
     i = 0
     for n in range(0, len(dataframe_2)):
         for country in dataframe_2[n]['code']:
-            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            try:
+                col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            except KeyError:
+                print(
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['CountryCode'] == country]}")
             df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
             i += 1
         i = 0
@@ -215,7 +229,12 @@ def prepare_data_ar2(user, passw):
     i = 0
     for n in range(0, len(dataframe_2)):
         for country in dataframe_2[n]['code']:
-            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            try:
+                col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            except KeyError:
+                print(
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['CountryCode'] == country]}")
+
             df_nbp_2[sheet][col].iloc[AR2_5_row_2[j]] = dataframe_2[n]['wartosc'].iloc[i]
             i += 1
         i = 0
@@ -244,13 +263,23 @@ def prepare_data_ar2(user, passw):
         for country in dataframe_4[n]['name']:
             # last dataframe retrieved from database is different so if n=3 then execute different algorithm
             if n < 3:
-                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                except KeyError:
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+
                 df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
             if n == 3:
                 # Convert df_nbp_2[1] column to string
                 df_nbp_2[sheet][1] = df_nbp_2[sheet][1].astype(str)
                 mcc = dataframe_4[n]['mcc'].iloc[i]
-                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                except KeyError:
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+
                 ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                 df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
             i += 1
@@ -263,13 +292,24 @@ def prepare_data_ar2(user, passw):
         for country in dataframe_4[n]['name']:
             # last dataframe retrieved from database is different so if n=3 then execute different algorithm
             if n < 3:
-                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                except KeyError:
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+
                 df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
             if n == 3:
                 # Convert df_nbp_2[1] column to string
                 df_nbp_2[sheet][1] = df_nbp_2[sheet][1].astype(str)
                 mcc = dataframe_4[n]['mcc'].iloc[i]
-                col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                except KeyError:
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+
                 ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                 df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
             i += 1
