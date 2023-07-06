@@ -133,7 +133,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['CountryCode'] == country]}")
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
                 df_nbp_2[sheet][col].iloc[AR2_4_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
             i += 1
@@ -154,7 +154,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['CountryCode'] == country]}")
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
                 df_nbp_2[sheet][col].iloc[AR2_4_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
             i += 1
@@ -217,7 +217,7 @@ def prepare_data_ar2(user, passw):
                 col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
             except KeyError:
                 print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['CountryCode'] == country]}")
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
             df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
             i += 1
         i = 0
@@ -233,7 +233,7 @@ def prepare_data_ar2(user, passw):
                 col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
             except KeyError:
                 print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['CountryCode'] == country]}")
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
 
             df_nbp_2[sheet][col].iloc[AR2_5_row_2[j]] = dataframe_2[n]['wartosc'].iloc[i]
             i += 1
@@ -267,7 +267,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
                 df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
             if n == 3:
@@ -278,7 +278,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
                 ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                 df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
@@ -296,7 +296,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
                 df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
             if n == 3:
@@ -308,7 +308,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['CountryCode'] == country]}")
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
                 ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                 df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
