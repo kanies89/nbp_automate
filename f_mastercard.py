@@ -38,11 +38,12 @@ FT = {
 
 def read(file):
     try:
-        read = pd.read_excel(f'{file}.xlsx', header=4)
-    except:
-        read = pd.read_excel(f'{file}.csv', header=4)
-    finally:
-        return read
+        read_file = pd.read_excel(f'{file}.xlsx', header=4)
+
+    except FileNotFoundError:
+        read_file = pd.read_excel(f'{file}.csv', header=4)
+
+    return read_file
 
 
 def add_arn_to_query(dataframe):
@@ -70,6 +71,7 @@ def add_arn_to_query(dataframe):
                 quarter = 4
             else:
                 quarter = FiscalDate(posted_date.year, posted_date.month, posted_date.day).fiscal_quarter - 1
+
             f_quarter.append(quarter)
             fraud_type = row[1][7]
             if fraud_type[0] == '0':
@@ -77,7 +79,10 @@ def add_arn_to_query(dataframe):
 
             f_fraud_type.append(fraud_type)
             # Get fraud description
-            f_fraud_type_desc.append(FT[int(fraud_type)][1])
+            try:
+                f_fraud_type_desc.append(FT[int(fraud_type)][1])
+            except ValueError:
+                f_fraud_type_desc.append(fraud_type)
 
             i += 1
         else:
@@ -110,7 +115,13 @@ def nbp_divide(row):
 
 
 def f_mastercard_make():
-    df_mastercard_http = read('df_mastercard_http')
+    while True:
+        try:
+            df_mastercard_http = read(f'{check_quarter()[1]}_{check_quarter()[3]} Mastercard')
+            break
+        except FileNotFoundError:
+            input(f'Insert data into NBP_Report.exe folder, from mastercard fraud service as excel file called: "{check_quarter()[1]}_{check_quarter(3)} Mastercard.xlsx" and then press enter.')
+
     data = add_arn_to_query(df_mastercard_http)
     arns_mastercard = data[1]
     df_query = pd.DataFrame(connect_single_query(data[0])[0])

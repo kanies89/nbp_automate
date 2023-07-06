@@ -1,5 +1,5 @@
 import pandas as pd
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 
 # Setting the connection
@@ -26,14 +26,14 @@ def connect(temp_table_file, query_file):
         t_list = temp_table.split('---split---')
 
         for t in t_list:
-            session.execute(t)
+            session.execute(text(str(t)))
 
         # split the code to get individual query for retrieving the data for dataframes
         q_list = query.split('---split---')
         df_list = []
 
         for q in q_list:
-            result = session.execute(q)
+            result = session.execute(text(str(q)))
             data = result.fetchall()
             df = pd.DataFrame(data, columns=result.keys())
             df_list.append(df)

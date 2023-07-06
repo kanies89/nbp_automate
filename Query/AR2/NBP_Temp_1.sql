@@ -19,7 +19,7 @@ select @dtb,@dte
 --transakcje VISA
 IF OBJECT_ID('tempdb..#dane') IS NOT NULL DROP TABLE #dane
 SELECT
-	'VISA'as 'karta'
+	'VISA' as 'karta'
 	,case 
 		WHEN VT.country IN ('AUT', 'AT') THEN 'Austria'
 		WHEN VT.country IN ('BEL', 'BE') THEN 'Belgia'
