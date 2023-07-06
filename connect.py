@@ -1,12 +1,12 @@
 import pandas as pd
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
+import pyodbc
 
 # Setting the connection
 DRIVER_NAME = '{ODBC Driver 18 for SQL Server}'
 SERVER_NAME = 'PRDBI'
 DATABASE_NAME = 'paytel_olap'
-
 
 def connect(temp_table_file, query_file):
     with open(temp_table_file, 'r', encoding='utf-8') as file:
@@ -60,7 +60,7 @@ def connect_single_query(query):
         df = []
 
         for q in q_list:
-            tableResult = pd.read_sql(q, connection)
+            tableResult = pd.read_sql(f'{q}', connection)
             df.append(pd.DataFrame(tableResult))
 
     engine.dispose()

@@ -1,6 +1,0 @@
-fiscalyear==0.4.0
-openpyxl==3.0.10
-pandas==1.5.3
-
-SQLAlchemy==1.4.39
-tqdm==4.64.1
