@@ -1,0 +1,38 @@
+name: cx_Freeze - Build and Publish
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set working directory
+        run: cd ../
+
+      - name: Install dependencies
+        run: pip install -r req.txt
+
+      - name: Install cx_Freeze
+        run: pip install cx-Freeze
+        
+      - name: Install pyodbc
+        run: pip install pyodbc
+        
+      - name: Build executable
+        run: python setup.py build
+
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nbp_report
+
+
