@@ -20,6 +20,8 @@ from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 
 
+TEMP = f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/'
+
 path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None,
                          keep_default_na=False)
@@ -311,7 +313,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
     i = 0
     for df in dataframe_1:
-        df.to_csv(f'ST.01.{i}.csv')
+        df.to_csv(TEMP + f'ST.01.{i}.csv')
         i += 1
 
     # Get data from "Tvid_nev_lost.xlsx'
@@ -367,10 +369,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_2.sql"
     dataframe_2 = connect(temp_table, query)
 
-    # i = 0
-    # for df in dataframe_2:
-    #     df.to_csv(f'ST.05.{i}.csv')
-    #     i += 1
+    i = 0
+    for df in dataframe_2:
+        df.to_csv(TEMP + f'ST.05.{i}.csv')
+        i += 1
 
     # Data to be filled
     def prepare_values_data(d, c):
@@ -442,10 +444,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     dataframe_3 = connect(temp_table, query)
     print('\nData: ' + str(dataframe_3[0]))
 
-    # i = 0
-    # for df in dataframe_3:
-    #     df.to_csv(f'ST.06.{i}.csv')
-    #     i += 1
+    i = 0
+    for df in dataframe_3:
+        df.to_csv(TEMP + f'ST.06.{i}.csv')
+        i += 1
 
     dataframe_3 = dataframe_3[1]
 
@@ -457,9 +459,15 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     # devices that accept payment cards / Internet / cash back
     for i in range(len(column_amount)):
         for country in dataframe_3['CountryCode']:
-            row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
-            df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
-            df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
+            if country == 'uwaga - coś nowego':
+                print(f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
+            else:
+                try:
+                    row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
+                except KeyError:
+                    print(f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
+                df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
+                df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
 
     # ST.02
 
@@ -471,10 +479,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_4.sql"
     dataframe_4 = connect(temp_table, query)
 
-    # i = 0
-    # for df in dataframe_4:
-    #     df.to_csv(f'ST.07.{i}.csv')
-    #     i += 1
+    i = 0
+    for df in dataframe_4:
+        df.to_csv(TEMP + f'ST.07.{i}.csv')
+        i += 1
 
     dataframe_4[1]['kwota'] = dataframe_4[1]['kwota'].astype('float')
     df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['ilosc'].iloc[0]
@@ -538,16 +546,17 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 @measure_time_with_progress
 def start_automation(d1, d2, d3, d4, d_pass):
     # Create folder structure
-    create_folder_structure('/Example')
-    create_folder_structure('/Example/Filled')
-    create_folder_structure('/Query')
-    create_folder_structure('/Query/AR1')
-    create_folder_structure('/Query/AR2')
-    create_folder_structure('/Log')
-    create_folder_structure('/df')
-    create_folder_structure('/temp')
-
-    print('\nNBP report automation 2023')
+    create_folder_structure('./Example')
+    create_folder_structure('./Example/Filled')
+    create_folder_structure('./Query')
+    create_folder_structure('./Query/AR1')
+    create_folder_structure('./Query/AR2')
+    create_folder_structure('./Log')
+    create_folder_structure('./df')
+    create_folder_structure('./temp')
+    create_folder_structure(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}')
+    print(f'\nPreparing NBP_Report for:\nyear: {check_quarter()[1]},\nquarter: {check_quarter()[3]}.')
+    print(f'\nNBP report automation {check_quarter()[1]}')
     # Open the log file in append mode
     log_file = open(to_log(), "a")
     # Create the logger object
@@ -681,7 +690,7 @@ if __name__ == '__main__':
     except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
         # Print the error message to the console and add it to the log file
         sys.stdout.flush()  # Make sure the error message is flushed immediately
-        print('\n'+e)
+        print('\n'+f'{e}')
         raise e  # Re-raise the exception to stop the execution
 
     # Wait for user input to keep the window open

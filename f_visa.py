@@ -135,7 +135,6 @@ def check_quarter():
     q = a.fiscal_quarter
 
     q_prev = q - 2
-    print('\nCalculation for quarter: ' + str(q_prev))
     q_year = a.fiscal_year
 
     if q_prev == 0:
@@ -148,7 +147,6 @@ def check_quarter():
     for month in quarter_months[q_prev - 1]:
         folders.append(q_year_str + month)
 
-    print('\nChecking folders: ' + str(folders))
     months[q_prev]
 
     return folders, q_year, months, q_prev
@@ -188,9 +186,9 @@ def find(user, passw):
     username = user
     password = passw
     for folder in result[0]:
-        for day in range(monthrange(result[1], result[2][0][i])[1]):
-            if day + 1 < 10:
-                full_path = f'{PATH}{folder}/{folder}0{str(day + 1)}_INITF.epd'
+        for day in range(1, monthrange(result[1], result[2][0][i])[1]):
+            if day < 10:
+                full_path = f'{PATH}{folder}/{folder}0{str(day)}_INITF.epd'
 
                 # Example usage
                 remote_file_path = full_path  # Remote network path
@@ -199,7 +197,7 @@ def find(user, passw):
                 print('\nChecking files for VISA FRAUD in: '+full_path)
                 grep(full_path)
             else:
-                full_path = f'{PATH}{folder}/{folder}{str(day + 1)}_INITF.epd'
+                full_path = f'{PATH}{folder}/{folder}{str(day)}_INITF.epd'
                 print('\nChecking files for VISA FRAUD in: '+full_path)
                 grep(full_path)
 
@@ -227,7 +225,10 @@ def get_data_for_sql():
         f_fraud_type.append(ml_fraud_type)
 
         # Get fraud description
-        f_fraud_type_desc.append(FT[int(ml_fraud_type)][1])
+        try:
+            f_fraud_type_desc.append(FT[int(ml_fraud_type)][1])
+        except ValueError:
+            f_fraud_type_desc.append(f'Nieznane oznaczenie - {ml_fraud_type}')
 
         if i == 0:
             arns += "('" + ml_arn + "', "
