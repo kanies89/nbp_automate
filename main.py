@@ -19,6 +19,7 @@ from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_r
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 
+bug_table = []
 
 TEMP = f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/'
 
@@ -137,6 +138,7 @@ def prepare_data_ar2(user, passw):
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
+                    bug_table.append(dataframe_1[n][dataframe_1[n]['name'] == country])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
@@ -158,6 +160,7 @@ def prepare_data_ar2(user, passw):
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
+                    bug_table.append(dataframe_1[n][dataframe_1[n]['name'] == country])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
@@ -235,6 +238,7 @@ def prepare_data_ar2(user, passw):
             try:
                 col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
             except KeyError:
+                bug_table.append(dataframe_2[dataframe_2['code'] == country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
             df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
@@ -251,6 +255,7 @@ def prepare_data_ar2(user, passw):
             try:
                 col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
             except KeyError:
+                bug_table.append(dataframe_2[dataframe_2['code'] == country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
 
@@ -293,6 +298,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                     df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
                 except KeyError:
+                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -305,6 +311,7 @@ def prepare_data_ar2(user, passw):
                     ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                     df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
                 except KeyError:
+                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -324,6 +331,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                     df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
                 except KeyError:
+                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -336,6 +344,7 @@ def prepare_data_ar2(user, passw):
                     ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                     df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
                 except KeyError:
+                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -749,6 +758,9 @@ if __name__ == '__main__':
 
             # Run the main function in the main process
             start_automation(d_name, d_surname, d_telephone, d_email, d_pass)
+
+            if bug_table is not None:
+                pd.DataFrame(bug_table).to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/bug_table.csv')
 
             # Signal the progress bar process to finish
             bar_queue.put(None)
