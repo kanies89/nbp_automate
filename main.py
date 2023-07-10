@@ -120,6 +120,11 @@ def prepare_data_ar2(user, passw):
     query = f"Query\\AR2\\NBP_Query_1.sql"
     dataframe_1 = connect(temp_table, query)
 
+    i = 0
+    for df in dataframe_1:
+        df.to_csv(TEMP + f'4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__{i}.csv')
+        i += 1
+
     sheet = '4a.R.L_PLiW2'
 
     j = 0
@@ -161,10 +166,13 @@ def prepare_data_ar2(user, passw):
         i = 0
         j += 1
 
+    # 6.ab.LiW
+
     sheet = EXCEL_READ_AR2[6]
-    for j in range(1):
-        df_nbp_2[sheet][34].iloc[AR2_6_row_1[j]] = dataframe_1[20]['ilosc'].iloc[0]
-        df_nbp_2[sheet][34].iloc[AR2_6_row_2[j]] = dataframe_1[21]['wartosc'].iloc[0]
+
+    for j in range(2):
+        df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = dataframe_1[20+j]['ilosc'].iloc[0]
+        df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20+j]['wartosc'].iloc[0]
 
     # 5a.R.SF
 
@@ -172,7 +180,13 @@ def prepare_data_ar2(user, passw):
     query = f"Query\\AR2\\NBP_Query_3.sql"
     dataframe_3 = connect(temp_table, query)
 
+    i = 0
+    for df in dataframe_3:
+        df.to_csv(TEMP + f'5a.R.SF__{i}.csv')
+        i += 1
+
     sheet = '5a.R.SF'
+
     df_nbp_2[sheet][3].iloc[8] = dataframe_3[2]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[9] = dataframe_3[3]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
@@ -206,6 +220,11 @@ def prepare_data_ar2(user, passw):
     temp_table = f"Query\\AR2\\NBP_Temp_2_filled.sql"
     query = f"Query\\AR2\\NBP_Query_2.sql"
     dataframe_2 = connect(temp_table, query)
+
+    i = 0
+    for df in dataframe_2:
+        df.to_csv(TEMP + f'5a.R.LF_PLiW2_5a.R.WF_PLiW2__{i}.csv')
+        i += 1
 
     sheet = '5a.R.LF_PLiW2'
 
@@ -257,64 +276,73 @@ def prepare_data_ar2(user, passw):
     query = f"Query\\AR2\\NBP_Query_4.sql"
     dataframe_4 = connect(temp_table, query)
 
+    i = 0
+    for df in dataframe_4:
+        df.to_csv(TEMP + f'9.R.L.MCC_9.R.W.MCC__{i}.csv')
+        i += 1
+
     sheet = '9.R.L.MCC'
 
+    i = 0
+    j = 0
     for n in range(0, len(dataframe_4)):
         for country in dataframe_4[n]['name']:
             # last dataframe retrieved from database is different so if n=3 then execute different algorithm
             if n < 3:
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                    df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
                 except KeyError:
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
-                df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
             if n == 3:
                 # Convert df_nbp_2[1] column to string
                 df_nbp_2[sheet][1] = df_nbp_2[sheet][1].astype(str)
                 mcc = dataframe_4[n]['mcc'].iloc[i]
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                    ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
+                    df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
                 except KeyError:
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
-                ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
-                df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
             i += 1
         i = 0
         j += 1
 
     sheet = '9.R.W.MCC'
 
+    i = 0
+    j = 0
     for n in range(0, len(dataframe_4)):
         for country in dataframe_4[n]['name']:
             # last dataframe retrieved from database is different so if n=3 then execute different algorithm
             if n < 3:
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                    df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
                 except KeyError:
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
-                df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
             if n == 3:
                 # Convert df_nbp_2[1] column to string
                 df_nbp_2[sheet][1] = df_nbp_2[sheet][1].astype(str)
                 mcc = dataframe_4[n]['mcc'].iloc[i]
-
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
+                    ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
+                    df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
                 except KeyError:
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
-                ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
-                df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
             i += 1
         i = 0
         j += 1
+
     return df_fraud
 
 
@@ -564,8 +592,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.07'].iat[12, 7] = 0
 
     for n in range(4, 9):
-        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(
-            df_nbp_1['ST.07'][n].iloc[12])
+        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(df_nbp_1['ST.07'][n].iloc[12])
     for n in range(4, 9):
         df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
 
@@ -653,6 +680,9 @@ def start_automation(d1, d2, d3, d4, d_pass):
     # Save the updated workbook
     wb.save(to_wb)
 
+    # Wait for user input to keep the window open
+    input("Report done. Press Enter to exit...")
+
     # Close the log file
     log_file.close()
 
@@ -724,14 +754,8 @@ if __name__ == '__main__':
             bar_queue.put(None)
             bar_process.join()
 
-            # Wait for user input to keep the window open
-            input("Press Enter to exit...")
-
     except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
         # Print the error message to the console and add it to the log file
         sys.stdout.flush()  # Make sure the error message is flushed immediately
         print('\n'+f'{e}')
         raise e  # Re-raise the exception to stop the execution
-
-    # Wait for user input to keep the window open
-    input("Press Enter to exit...")
