@@ -189,7 +189,7 @@ ALL = [
 ]
 
 
-def read_txt_files(directory):
+"""def read_txt_files(directory):
     file_list = os.listdir(directory)
     values = []
 
@@ -216,3 +216,5 @@ all_values = read_txt_files(directory_path)
 for a in ALL:
     if a not in all_values:
         print(a)
+"""
+
