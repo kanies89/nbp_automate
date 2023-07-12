@@ -282,7 +282,7 @@ def f_visa_make(user, passw):
     # Join two dataframes by ARN number
     df_visa_fraud_data = df_query.merge(df_epd, left_on='ARN', right_on='ARN')
     df_visa_fraud_data.to_csv('df_visa_fraud_data.csv')
-
+    print('VISA finished')
     return df_visa_fraud_data, arns_visa
 
 

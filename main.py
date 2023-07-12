@@ -5,6 +5,7 @@ import os
 import datetime
 import pandas as pd
 from openpyxl.utils import get_column_letter
+from openpyxl import Workbook
 import openpyxl
 
 from tqdm import tqdm
@@ -107,24 +108,38 @@ def copy_wb(from_workbook, to_workbook, dataframe, number):
     return wb
 
 
-def load_df():
+def load_df(length, path):
     df = []
-    for n in range(22):
-        df.append(pd.read_csv(f"./df/df_{n}.csv"))
+    for n in range(length):
+        df.append(pd.read_csv(f'{path}{n}.csv'))
     return df
+
+
+def load_or_query(length, name, temp_table, query):
+    for i in range(length):
+        if os.path.exists(f'{TEMP}{name}{i}.csv'):
+            if i == (length - 1) and os.path.exists(f'{TEMP}{name}{i}.csv'):
+                dataframe = load_df(length, f'{TEMP}{name}')
+                break
+            continue
+        else:
+            dataframe = connect(temp_table, query)
+            i = 0
+            for df in dataframe:
+                df.to_csv(f'{TEMP}{name}{i}.csv')
+                i += 1
+            break
+    return dataframe
 
 
 def prepare_data_ar2(user, passw):
     # 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+    print('4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW')
 
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
     query = f"Query\\AR2\\NBP_Query_1.sql"
-    dataframe_1 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_1:
-        df.to_csv(TEMP + f'4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__{i}.csv')
-        i += 1
+    dataframe_1 = load_or_query(22, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
 
     sheet = '4a.R.L_PLiW2'
 
@@ -138,7 +153,7 @@ def prepare_data_ar2(user, passw):
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
-                    bug_table.append(dataframe_1[n][dataframe_1[n]['name'] == country])
+                    bug_table.append([f'BUG_{sheet}', dataframe_1[n][dataframe_1[n]['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
@@ -160,7 +175,7 @@ def prepare_data_ar2(user, passw):
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
-                    bug_table.append(dataframe_1[n][dataframe_1[n]['name'] == country])
+                    bug_table.append([f'BUG_{sheet}', dataframe_1[n][dataframe_1[n]['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
@@ -170,6 +185,7 @@ def prepare_data_ar2(user, passw):
         j += 1
 
     # 6.ab.LiW
+    print('6.ab.LiW')
 
     sheet = EXCEL_READ_AR2[6]
 
@@ -178,15 +194,12 @@ def prepare_data_ar2(user, passw):
         df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20+j]['wartosc'].iloc[0]
 
     # 5a.R.SF
+    print('5a.R.SF')
 
     temp_table = f"Query\\AR2\\NBP_Temp_3.sql"
     query = f"Query\\AR2\\NBP_Query_3.sql"
-    dataframe_3 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_3:
-        df.to_csv(TEMP + f'5a.R.SF__{i}.csv')
-        i += 1
+    dataframe_3 = load_or_query(18, '5a.R.SF__', temp_table, query)
 
     sheet = '5a.R.SF'
 
@@ -195,6 +208,7 @@ def prepare_data_ar2(user, passw):
     df_nbp_2[sheet][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
 
     # 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+    print('5a.R.LF_PLiW2 and 5a.R.WF_PLiW2')
 
     # Get the Visa
     data_visa = f_visa_make(user, passw)
@@ -222,12 +236,8 @@ def prepare_data_ar2(user, passw):
 
     temp_table = f"Query\\AR2\\NBP_Temp_2_filled.sql"
     query = f"Query\\AR2\\NBP_Query_2.sql"
-    dataframe_2 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_2:
-        df.to_csv(TEMP + f'5a.R.LF_PLiW2_5a.R.WF_PLiW2__{i}.csv')
-        i += 1
+    dataframe_2 = load_or_query(18, '5a.R.LF_PLiW2_5a.R.WF_PLiW2__', temp_table, query)
 
     sheet = '5a.R.LF_PLiW2'
 
@@ -238,7 +248,7 @@ def prepare_data_ar2(user, passw):
             try:
                 col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
             except KeyError:
-                bug_table.append(dataframe_2[dataframe_2['code'] == country])
+                bug_table.append([f'BUG_{sheet}', dataframe_2[dataframe_2['code'] == country]])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
             df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
@@ -255,7 +265,7 @@ def prepare_data_ar2(user, passw):
             try:
                 col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
             except KeyError:
-                bug_table.append(dataframe_2[dataframe_2['code'] == country])
+                bug_table.append([f'BUG_{sheet}', dataframe_2[dataframe_2['code'] == country]])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
 
@@ -276,15 +286,12 @@ def prepare_data_ar2(user, passw):
                                aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
 
     # 9.R.L.MCC and 9.R.W.MCC
+    print('9.R.L.MCC and 9.R.W.MCC')
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-    dataframe_4 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_4:
-        df.to_csv(TEMP + f'9.R.L.MCC_9.R.W.MCC__{i}.csv')
-        i += 1
+    dataframe_4 = load_or_query(4, '9.R.L.MCC_9.R.W.MCC__', temp_table, query)
 
     sheet = '9.R.L.MCC'
 
@@ -298,7 +305,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                     df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['ilosc'].iloc[i]
                 except KeyError:
-                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
+                    bug_table.append([f'BUG_{sheet}', dataframe_4[dataframe_4['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -311,7 +318,7 @@ def prepare_data_ar2(user, passw):
                     ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                     df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['ilosc'].iloc[i]
                 except KeyError:
-                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
+                    bug_table.append([f'BUG_{sheet}', dataframe_4[dataframe_4['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -331,7 +338,7 @@ def prepare_data_ar2(user, passw):
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                     df_nbp_2[sheet][col].iloc[AR2_9_row_1[n]] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
                 except KeyError:
-                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
+                    bug_table.append([f'BUG_{sheet}', dataframe_4[dataframe_4['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -344,7 +351,7 @@ def prepare_data_ar2(user, passw):
                     ind = df_nbp_2[sheet][df_nbp_2[sheet][1] == mcc].index[0]
                     df_nbp_2[sheet].iat[ind, col] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
                 except KeyError:
-                    bug_table.append(dataframe_4[dataframe_4['name'] == country])
+                    bug_table.append([f'BUG_{sheet}', dataframe_4[dataframe_4['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_4[dataframe_4['name'] == country]}")
 
@@ -383,15 +390,12 @@ class Logger(object):
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     # ST.01
+    print('ST.01')
 
     temp_table = f"Query\\AR1\\NBP_Temp_1.sql"
     query = f"Query\\AR1\\NBP_Query_1.sql"
-    dataframe_1 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_1:
-        df.to_csv(TEMP + f'ST.01.{i}.csv')
-        i += 1
+    dataframe_1 = load_or_query(2, 'ST.01.', temp_table, query)
 
     # Get data from "Tvid_nev_lost.xlsx'
     path = f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/Tvid_nev_lost.xlsx'
@@ -424,6 +428,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
     # ST.03
+    print('ST.03')
+
     to_change_values = [
         dataframe_0['active_mid'][0],  # mid all
         dataframe_0['active_mid'][0],  # mid all
@@ -441,15 +447,12 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.03'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
     # ST.05
+    print('ST.05')
 
     temp_table = f"Query\\AR1\\NBP_Temp_2.sql"
     query = f"Query\\AR1\\NBP_Query_2.sql"
-    dataframe_2 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_2:
-        df.to_csv(TEMP + f'ST.05.{i}.csv')
-        i += 1
+    dataframe_2 = load_or_query(6, 'ST.05.', temp_table, query)
 
     # Data to be filled
     def prepare_values_data(d, c):
@@ -515,16 +518,13 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
             df_nbp_1['ST.05'].iat[to_change_rows_2[row], to_change_columns[v]] = to_change_values[v]
 
     # ST.06
+    print('ST.06')
 
     temp_table = f"Query\\AR1\\NBP_Temp_3.sql"
     query = f"Query\\AR1\\NBP_Query_3.sql"
-    dataframe_3 = connect(temp_table, query)
-    print('\nData: ' + str(dataframe_3[0]))
 
-    i = 0
-    for df in dataframe_3:
-        df.to_csv(TEMP + f'ST.06.{i}.csv')
-        i += 1
+    dataframe_3 = load_or_query(2, 'ST.06.', temp_table, query)
+    print('\nDate: ' + str(dataframe_3[0]))
 
     dataframe_3 = dataframe_3[1]
 
@@ -533,16 +533,19 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
     content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
     content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
+
     # devices that accept payment cards / Internet / cash back
     for i in range(len(column_amount)):
         for country in dataframe_3['CountryCode']:
             if country == 'uwaga - coś nowego':
                 print(f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
+                bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
             else:
                 try:
                     row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
                 except KeyError:
                     print(f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
+                    bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == country]])
                 df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
                 df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
 
@@ -551,15 +554,12 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     # Right now we do not fill this sheet.
 
     # ST.07
+    print('ST.07')
 
     temp_table = f"Query\\AR1\\NBP_Temp_4.sql"
     query = f"Query\\AR1\\NBP_Query_4.sql"
-    dataframe_4 = connect(temp_table, query)
 
-    i = 0
-    for df in dataframe_4:
-        df.to_csv(TEMP + f'ST.07.{i}.csv')
-        i += 1
+    dataframe_4 = load_or_query(3, 'ST.07.', temp_table, query)
 
     dataframe_4[1]['kwota'] = dataframe_4[1]['kwota'].astype('float')
     df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['ilosc'].iloc[0]
@@ -617,6 +617,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         for y in range(8, 12):
             df_nbp_1['p-dane'].iat[y, x] = author_data[i]
             i += 1
+    print('END')
 
 
 @measure_time_with_progress
@@ -666,7 +667,7 @@ def start_automation(d1, d2, d3, d4, d_pass):
 
     # Fill sheets in AR2
     df_fraud_st7 = prepare_data_ar2(user, passw)
-    df_fraud_st7.to_csv('df_f.csv')
+    df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
     # Save everything to new excel file
     from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
@@ -734,7 +735,7 @@ def update_bar(queue, total):
 if __name__ == '__main__':
     try:
         # Read the last execution total time from "time.txt"
-        last_time = 4000
+        last_time = 4700
         if os.path.exists("time.txt"):
             with open("time.txt", "r") as file:
                 last_time = float(file.read().strip())
@@ -759,8 +760,33 @@ if __name__ == '__main__':
             # Run the main function in the main process
             start_automation(d_name, d_surname, d_telephone, d_email, d_pass)
 
-            if bug_table is not None:
-                pd.DataFrame(bug_table).to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/bug_table.csv')
+            wb_sheet_names = []
+            wb_bug = Workbook()
+            ws_bug = wb_bug.active
+
+            if not bug_table:
+                # Add the message to the cell
+                ws_bug['Completed'] = 'Full success - no bugs!'
+
+            else:
+                # Add all the bugs tables to excel.
+                for bug in bug_table:
+                    if bug[0]+'_0' not in wb_sheet_names:
+                        wb_sheet_names.append(bug[0]+'_0')
+                        wb_bug[bug[0]+'_0'] = pd.DataFrame(bug[1])
+                    else:
+                        no = []
+                        for sheet_name in wb_sheet_names:
+                            if bug[0]+'_' in sheet_name:
+                                try:
+                                    no.append(int(sheet_name[len(bug[0]+'_')+1:]))
+                                except IndexError:
+                                    print('Error in writing the bug table.')
+                        wb_sheet_names.append(bug[0]+'_'+str(max(no)))
+                        wb_bug[bug[0]+'_'+max(no)] = pd.DataFrame(bug[1])
+
+            # Save the workbook
+            wb_bug.save(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/bug_table.xlsx')
 
             # Signal the progress bar process to finish
             bar_queue.put(None)

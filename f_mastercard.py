@@ -140,7 +140,7 @@ def f_mastercard_make():
     df_mastercard_fraud_data = df_query.merge(df_data, left_on='ARN', right_on='ARN')
     df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'}, inplace=True)
     df_mastercard_fraud_data.to_csv(path_df + 'df_mastercard_fraud_data.csv')
-
+    print('MASTERCARD finished')
     return df_mastercard_fraud_data, arns_mastercard
 
 
