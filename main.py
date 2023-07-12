@@ -766,27 +766,30 @@ if __name__ == '__main__':
 
             if not bug_table:
                 # Add the message to the cell
-                ws_bug['Completed'] = 'Full success - no bugs!'
+                ws_bug['A1'] = 'Full success - no bugs!'
 
             else:
-                # Add all the bugs tables to excel.
+                # Add all the bug tables to excel.
                 for bug in bug_table:
-                    if bug[0]+'_0' not in wb_sheet_names:
-                        wb_sheet_names.append(bug[0]+'_0')
-                        wb_bug[bug[0]+'_0'] = pd.DataFrame(bug[1])
+                    if bug[0] + '_0' not in wb_sheet_names:
+                        wb_sheet_names.append(bug[0] + '_0')
+                        ws_bug = wb_bug.create_sheet(bug[0] + '_0')
+                        ws_bug.append(bug[1])
                     else:
                         no = []
                         for sheet_name in wb_sheet_names:
-                            if bug[0]+'_' in sheet_name:
+                            if bug[0] + '_' in sheet_name:
                                 try:
-                                    no.append(int(sheet_name[len(bug[0]+'_')+1:]))
+                                    no.append(int(sheet_name[len(bug[0] + '_') + 1:]))
                                 except IndexError:
                                     print('Error in writing the bug table.')
-                        wb_sheet_names.append(bug[0]+'_'+str(max(no)))
-                        wb_bug[bug[0]+'_'+max(no)] = pd.DataFrame(bug[1])
+                        max_no = max(no)
+                        wb_sheet_names.append(bug[0] + '_' + str(max_no))
+                        ws_bug = wb_bug.create_sheet(bug[0] + '_' + str(max_no))
+                        ws_bug.append(bug[1])
 
             # Save the workbook
-            wb_bug.save(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/bug_table.xlsx')
+            wb_bug.save(f'{TEMP}/bug_table.xlsx')
 
             # Signal the progress bar process to finish
             bar_queue.put(None)
