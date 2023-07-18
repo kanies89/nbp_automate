@@ -309,6 +309,7 @@ SELECT
 	--- dodatkowe zamiany:
 	WHEN MC.country = 'ROM' THEN 'RO' 
 	WHEN MC.country = 'QZZ' THEN 'D09'   --- KOSOWO zaliczamy do extra ue not allocated
+	WHEN MC.country = 'ZAR' THEN 'CD'
 	ELSE 'uwaga - coś nowego'
 	END as 'CountryCode'
 ,COUNT(*) as 'ilość transakcji'
