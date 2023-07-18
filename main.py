@@ -5,7 +5,6 @@ import os
 import datetime
 import pandas as pd
 from openpyxl.utils import get_column_letter
-from openpyxl import Workbook
 import openpyxl
 
 from tqdm import tqdm
@@ -620,6 +619,62 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     print('END')
 
 
+def bug_report():
+    wb_sheet_names = []
+    if not bug_table:
+        print('Full success - no bugs!')
+    else:
+        wb_bug = pd.ExcelWriter(f'{TEMP}bug_table.xlsx', engine='openpyxl')
+
+        for i, bug in enumerate(bug_table):
+            if bug[0] + '_0' not in wb_sheet_names:
+                sheet_name = bug[0] + '_0'
+                wb_sheet_names.append(sheet_name)
+                bug[1].to_excel(wb_bug, sheet_name=sheet_name, index=False)
+                print(f'Added bug table to sheet: {sheet_name}')
+            else:
+                no = []
+                for sheet_name in wb_sheet_names:
+                    if bug[0] + '_' in sheet_name:
+                        try:
+                            no.append(int(sheet_name[len(bug[0] + '_'):]))
+                        except IndexError:
+                            print('Error in writing the bug table.')
+
+                max_no = max(no) + 1
+                sheet_name = bug[0] + '_' + str(max_no)
+                wb_sheet_names.append(sheet_name)
+                bug[1].to_excel(wb_bug, sheet_name=sheet_name, index=False)
+                print(f'Added bug table to sheet: {sheet_name}')
+
+        # Add all the bug tables to a single sheet
+        combined_sheet_name = 'Combined Sheet'
+        all_bugs = pd.DataFrame(columns=['Sheet Name', 'Data', 'Sum'])
+
+        for sheet_name in wb_sheet_names:
+            data = bug_table[wb_sheet_names.index(sheet_name)][1]
+            if 'wartosc_transakcji' in data.columns and 'wartosc_internet' in data.columns and 'wartosc_wyplat_CashBack' in data.columns:
+                data_sum = data['wartosc_transakcji'] + data['wartosc_internet'] + data['wartosc_wyplat_CashBack']
+                data_sum = data_sum.item() if len(data_sum) == 1 else None  # Extract the float value from Series
+            else:
+                data_sum = None
+
+            row_data = {'Sheet Name': sheet_name, 'Data': data, 'Sum': data_sum}
+            all_bugs = pd.concat([all_bugs, pd.DataFrame([row_data])], ignore_index=True)
+
+        # Reorder the sheets
+        writer = pd.ExcelWriter(f'{TEMP}bug_table.xlsx', engine='openpyxl')
+        writer.book = wb_bug.book
+        all_bugs['Sum'] = all_bugs['Sum'].astype(float)  # Convert the 'Sum' column to float
+        all_bugs.to_excel(writer, sheet_name=combined_sheet_name, index=False)
+        writer.save()
+
+        print(f'Added all bug tables to the combined sheet: {combined_sheet_name}')
+
+        wb_bug.close()
+        print('Saved bug tables to bug_table.xlsx')
+
+
 @measure_time_with_progress
 def start_automation(d1, d2, d3, d4, d_pass):
     # Create folder structure
@@ -690,8 +745,8 @@ def start_automation(d1, d2, d3, d4, d_pass):
     # Save the updated workbook
     wb.save(to_wb)
 
-    # Wait for user input to keep the window open
-    input("Report done. Press Enter to exit...")
+    # Prepare bug report tables
+    bug_report()
 
     # Close the log file
     log_file.close()
@@ -759,37 +814,6 @@ if __name__ == '__main__':
 
             # Run the main function in the main process
             start_automation(d_name, d_surname, d_telephone, d_email, d_pass)
-
-            wb_sheet_names = []
-            wb_bug = Workbook()
-            ws_bug = wb_bug.active
-
-            if not bug_table:
-                # Add the message to the cell
-                ws_bug['A1'] = 'Full success - no bugs!'
-
-            else:
-                # Add all the bug tables to excel.
-                for bug in bug_table:
-                    if bug[0] + '_0' not in wb_sheet_names:
-                        wb_sheet_names.append(bug[0] + '_0')
-                        ws_bug = wb_bug.create_sheet(bug[0] + '_0')
-                        ws_bug.append(bug[1])
-                    else:
-                        no = []
-                        for sheet_name in wb_sheet_names:
-                            if bug[0] + '_' in sheet_name:
-                                try:
-                                    no.append(int(sheet_name[len(bug[0] + '_') + 1:]))
-                                except IndexError:
-                                    print('Error in writing the bug table.')
-                        max_no = max(no)
-                        wb_sheet_names.append(bug[0] + '_' + str(max_no))
-                        ws_bug = wb_bug.create_sheet(bug[0] + '_' + str(max_no))
-                        ws_bug.append(bug[1])
-
-            # Save the workbook
-            wb_bug.save(f'{TEMP}/bug_table.xlsx')
 
             # Signal the progress bar process to finish
             bar_queue.put(None)

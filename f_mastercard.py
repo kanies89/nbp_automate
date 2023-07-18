@@ -3,6 +3,9 @@ from connect import connect_single_query
 from fiscalyear import FiscalDate
 from f_visa import NBP_Countries
 from f_visa import check_quarter
+import os
+
+TEMP = f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/'
 
 rows = []
 
@@ -121,26 +124,35 @@ def f_mastercard_make():
             break
         except FileNotFoundError:
             input(f'Insert data into NBP_Report.exe folder, from mastercard fraud service as excel file called: "{check_quarter()[1]}_{check_quarter(3)} Mastercard.xlsx" and then press enter.')
+    if os.path.exists(f'{TEMP}df_mastercard_sql.csv') and os.path.exists(f'{TEMP}df_mastercard_epd.csv') and os.path.exists(f'{TEMP}df_mastercard_fraud_data.csv') and os.path.exists(f'{TEMP}arns_mastercard.csv'):
+        with open(TEMP + 'arns_mastercard.txt', 'r') as file:
+            arns_mastercard = file.read()
+        df_mastercard_fraud_data = pd.read_csv(TEMP + 'df_mastercard_fraud_data.csv')
+    else:
+        path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
 
-    data = add_arn_to_query(df_mastercard_http)
-    arns_mastercard = data[1]
-    df_query = pd.DataFrame(connect_single_query(data[0])[0])
+        data = add_arn_to_query(df_mastercard_http)
+        arns_mastercard = data[1]
 
-    # Add column 'podział NBP'
-    df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
+        with open(TEMP + 'arns_mastercard.txt', 'w') as file:
+            file.write(arns_mastercard)
 
-    # Set new dataframe based on data retrieved from find()
-    df_data = pd.DataFrame.from_dict(DATA_SPLIT)
+        df_query = pd.DataFrame(connect_single_query(data[0])[0])
 
-    path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
-    df_query.to_csv(path_df + 'df_mastercard_sql.csv')
-    df_data.to_csv(path_df + 'df_mastercard_epd.csv')
+        # Add column 'podział NBP'
+        df_query['podział NBP'] = df_query.apply(lambda row: nbp_divide(row), axis=1)
 
-    # Join two dataframes by ARN number
-    df_mastercard_fraud_data = df_query.merge(df_data, left_on='ARN', right_on='ARN')
-    df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'}, inplace=True)
-    df_mastercard_fraud_data.to_csv(path_df + 'df_mastercard_fraud_data.csv')
-    print('MASTERCARD finished')
+        # Set new dataframe based on data retrieved from find()
+        df_data = pd.DataFrame.from_dict(DATA_SPLIT)
+        df_query.to_csv(path_df + 'df_mastercard_sql.csv')
+        df_data.to_csv(path_df + 'df_mastercard_epd.csv')
+
+        # Join two dataframes by ARN number
+        df_mastercard_fraud_data = df_query.merge(df_data, left_on='ARN', right_on='ARN')
+        df_mastercard_fraud_data.rename(columns={'cc_A2': 'country'}, inplace=True)
+        df_mastercard_fraud_data.to_csv(path_df + 'df_mastercard_fraud_data.csv')
+        print('MASTERCARD finished')
+
     return df_mastercard_fraud_data, arns_mastercard
 
 

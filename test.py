@@ -217,4 +217,8 @@ for a in ALL:
     if a not in all_values:
         print(a)
 """
-
+check = 'ST.07'
+checked = check + '_0'
+print(check+'_')
+print(len(check+'_'))
+print(checked[6:0])
