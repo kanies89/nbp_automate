@@ -533,6 +533,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
     content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
 
+    geo6 = pd.read_excel("C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\NBP_GEO6.xlsx", header = 3)
+    next_row = 42
     # devices that accept payment cards / Internet / cash back
     for i in range(len(column_amount)):
         for country in dataframe_3['CountryCode']:
@@ -541,12 +543,31 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
                 bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
             else:
                 try:
-                    row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
+                    if country in df_nbp_1['ST.06'][0][10:]:
+
+                        row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
+                        df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
+                        df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
+                    else:
+
+                        df_nbp_1['ST.06'][1].iloc[next_row] = geo6[geo6['Code'] == country]['Nazwa kraju']
+                        df_nbp_1['ST.06'][2].iloc[next_row] = geo6[geo6['Code'] == country]['Name']
+                        df_nbp_1['ST.06'][column_amount[i]].iloc[next_row] = dataframe_3[content_amount[i]].iloc[i]
+                        df_nbp_1['ST.06'][column_value[i]].iloc[next_row] = dataframe_3[content_value[i]].iloc[i]
+
                 except KeyError:
                     print(f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
                     bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == country]])
-                df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
-                df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
+
+        if country not in df_nbp_1['ST.06'][0][10:]:
+            next_row += 1
+
+    df_nbp_1['ST.06'][3].iloc[41] = df_nbp_1['ST.06'][3][42:].sum()
+    df_nbp_1['ST.06'][4].iloc[41] = df_nbp_1['ST.06'][4][42:].sum()
+    df_nbp_1['ST.06'][5].iloc[41] = df_nbp_1['ST.06'][5][42:].sum()
+    df_nbp_1['ST.06'][6].iloc[41] = df_nbp_1['ST.06'][6][42:].sum()
+    df_nbp_1['ST.06'][7].iloc[41] = df_nbp_1['ST.06'][7][42:].sum()
+    df_nbp_1['ST.06'][8].iloc[41] = df_nbp_1['ST.06'][8][42:].sum()
 
     # ST.02
 
