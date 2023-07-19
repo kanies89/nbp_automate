@@ -142,43 +142,41 @@ def prepare_data_ar2(user, passw):
     dataframe_1 = load_or_query(22, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
 
     sheet = '4a.R.L_PLiW2'
-
     j = 0
     i = 0
-    for n in range(0, 20):
+    print(len(dataframe_1))
+    for n in range(len(dataframe_1)-2):
         for country in dataframe_1[n]['name']:
             if country == 'Holandia':
                 country = 'Niderlandy'
-            if i <= 19:
+            if i <= 20:
+                print(i, dataframe_1[n]['name'])
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     bug_table.append([f'BUG_{sheet}', dataframe_1[n][dataframe_1[n]['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
-
                 df_nbp_2[sheet][col].iloc[AR2_4_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
             i += 1
         i = 0
         j += 1
 
     sheet = '4a.R.W_PLiW2'
-
     j = 0
     i = 0
-    for n in range(0, 20):
-
+    for n in range(len(dataframe_1)-2):
         for country in dataframe_1[n]['name']:
             if country == 'Holandia':
                 country = 'Niderlandy'
-            if i <= 19:
+            if i <= 20:
+                print(i, dataframe_1[n]['name'])
                 try:
                     col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
                 except KeyError:
                     bug_table.append([f'BUG_{sheet}', dataframe_1[n][dataframe_1[n]['name'] == country]])
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
-
                 df_nbp_2[sheet][col].iloc[AR2_4_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
             i += 1
         i = 0
@@ -281,9 +279,6 @@ def prepare_data_ar2(user, passw):
     df_fraud.to_csv(path_df+'df_fraud.csv')
 
     print('\nChecking the quarter: ' + str(check_quarter()[3]))
-    df_f_data = pd.pivot_table(index='pos_entry_mode', columns='country_aggr',
-                               data=df_fraud[df_fraud['quarter'] == check_quarter()[3]],
-                               aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
 
     # 9.R.L.MCC and 9.R.W.MCC
     print('9.R.L.MCC and 9.R.W.MCC')
@@ -507,13 +502,13 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
     for row in range(len(df)):
         category = 'Individual'
-        prepare_values_data(df[row], category)
+        to_change_values = prepare_values_data(df[row], category)
         for v in range(len(to_change_values)):
             df_nbp_1['ST.05'].iat[to_change_rows_1[row], to_change_columns[v]] = to_change_values[v]
 
     for row in range(len(df)):
         category = 'BUSINESS'
-        prepare_values_data(df[row], category)
+        to_change_values = prepare_values_data(df[row], category)
         for v in range(len(to_change_values)):
             df_nbp_1['ST.05'].iat[to_change_rows_2[row], to_change_columns[v]] = to_change_values[v]
 
@@ -608,37 +603,21 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['kwota'].iloc[0]
     df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'].iloc[0]
 
-    df_res = df_f.groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'), ILOSC=('ARN', 'count'))
-    if 'NPL' in df_res.index:
-        df_nbp_1['ST.07'].iat[11, 4] = df_res.iloc[0][0]
-        df_nbp_1['ST.07'].iat[11, 6] = df_res.iloc[0][1]
-    else:
-        df_nbp_1['ST.07'].iat[11, 4] = 0
-        df_nbp_1['ST.07'].iat[11, 6] = 0
+    dff = pd.pivot_table(index='pos_entry_mode', columns='country_aggr', data=df_f[df_f['quarter'] == check_quarter()[3]], aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
 
-    if 'PL' in df_res.index:
-        df_nbp_1['ST.07'].iat[11, 5] = df_res.iloc[1][0]
-        df_nbp_1['ST.07'].iat[11, 7] = df_res.iloc[1][1]
-    else:
-        df_nbp_1['ST.07'].iat[11, 5] = 0
-        df_nbp_1['ST.07'].iat[11, 7] = 0
+    df_nbp_1['ST.07'].iat[11, 4] = dff['country_aggr'].sum()['PL']
+    df_nbp_1['ST.07'].iat[11, 5] = dff['country_aggr'].sum()['NPL']
+    df_nbp_1['ST.07'].iat[11, 6] = dff['tr_amout'].sum()['PL']
+    df_nbp_1['ST.07'].iat[11, 7] = dff['tr_amout'].sum()['PL']
+    df_nbp_1['ST.07'].iat[11, 8] = dff['country_aggr'].sum()['PL'] + dff['country_aggr'].sum()['NPL']
+    df_nbp_1['ST.07'].iat[11, 9] = dff['tr_amout'].sum()['PL'] + dff['tr_amout'].sum()['NPL']
 
-    df_res = df_f[df_f['pos_entry_mode'] == 'CLTS'].groupby('country_aggr').agg(SUMA=('tr_amout', 'sum'),
-                                                                                ILOSC=('ARN', 'count'))
-
-    if 'NPL' in df_res.index:
-        df_nbp_1['ST.07'].iat[12, 4] = df_res.iloc[0][0]
-        df_nbp_1['ST.07'].iat[12, 6] = df_res.iloc[0][1]
-    else:
-        df_nbp_1['ST.07'].iat[12, 4] = 0
-        df_nbp_1['ST.07'].iat[12, 6] = 0
-
-    if 'PL' in df_res.index:
-        df_nbp_1['ST.07'].iat[12, 5] = df_res.iloc[1][0]
-        df_nbp_1['ST.07'].iat[12, 7] = df_res.iloc[1][1]
-    else:
-        df_nbp_1['ST.07'].iat[12, 5] = 0
-        df_nbp_1['ST.07'].iat[12, 7] = 0
+    df_nbp_1['ST.07'].iat[12, 4] = dff['country_aggr'].loc['CTLS']['PL']
+    df_nbp_1['ST.07'].iat[12, 5] = dff['country_aggr'].loc['CTLS']['NPL']
+    df_nbp_1['ST.07'].iat[12, 6] = dff['tr_amout'].loc['CTLS']['PL']
+    df_nbp_1['ST.07'].iat[12, 7] = dff['tr_amout'].loc['CTLS']['NPL']
+    df_nbp_1['ST.07'].iat[12, 8] = dff['country_aggr'].loc['CTLS']['PL'] + dff['country_aggr'].loc['CTLS']['NPL']
+    df_nbp_1['ST.07'].iat[12, 9] = dff['tr_amout'].loc['CTLS']['PL'] + dff['tr_amout'].loc['CTLS']['NPL']
 
     for n in range(4, 9):
         df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(df_nbp_1['ST.07'][n].iloc[12])
