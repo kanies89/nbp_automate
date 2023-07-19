@@ -6,3 +6,4 @@ fiscalyear~=0.4.0
 pyodbc~=4.0.34
 sqlalchemy~=1.4.39
 pytest~=7.1.2
+numpy~=1.23.5

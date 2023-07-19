@@ -6,6 +6,7 @@ import datetime
 import pandas as pd
 from openpyxl.utils import get_column_letter
 import openpyxl
+import numpy as np
 
 from tqdm import tqdm
 import time
@@ -534,40 +535,59 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
 
     geo6 = pd.read_excel("C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\NBP_GEO6.xlsx", header = 3)
-    next_row = 42
+    next_row = 40
+    j = 0
     # devices that accept payment cards / Internet / cash back
-    for i in range(len(column_amount)):
-        for country in dataframe_3['CountryCode']:
-            if country == 'uwaga - coś nowego':
-                print(f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
-                bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
-            else:
-                try:
-                    if country in df_nbp_1['ST.06'][0][10:]:
+    for country in dataframe_3['CountryCode']:
+        if country == 'uwaga - coś nowego':
+            print(f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
+            bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
+        else:
+            try:
+                if country in df_nbp_1['ST.06'][0][10:]:
+                    if pd.isnull(country):  # Check for NaN if `country` is a string
+                        continue
+                    for i in range(len(column_amount)):
+                        row_1 = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
+                        df_nbp_1['ST.06'][column_amount[i]].iloc[row_1] = dataframe_3[content_amount[i]].iloc[j]
+                        df_nbp_1['ST.06'][column_value[i]].iloc[row_1] = dataframe_3[content_value[i]].iloc[j]
+                else:
+                    print(next_row)
+                    print(country)
+                    if pd.isnull(country):  # Check for NaN if `country` is a string
+                        continue
+                    if country == 'nan':  # Check for nan
+                        continue
+                    if country == '':
+                        continue
+                    for i in range(len(column_amount)):
+                        df_nbp_1['ST.06'][0].iloc[next_row] = geo6[geo6['Code'] == country]['Code'].iloc[0]
+                        df_nbp_1['ST.06'][1].iloc[next_row] = geo6[geo6['Code'] == country]['Nazwa kraju'].iloc[0]
+                        df_nbp_1['ST.06'][2].iloc[next_row] = geo6[geo6['Code'] == country]['Name'].iloc[0]
+                        df_nbp_1['ST.06'][column_amount[i]].iloc[next_row] = dataframe_3[content_amount[i]].iloc[j]
+                        df_nbp_1['ST.06'][column_value[i]].iloc[next_row] = dataframe_3[content_value[i]].iloc[j]
 
-                        row = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
-                        df_nbp_1['ST.06'][column_amount[i]].iloc[row] = dataframe_3[content_amount[i]].iloc[i]
-                        df_nbp_1['ST.06'][column_value[i]].iloc[row] = dataframe_3[content_value[i]].iloc[i]
-                    else:
+            except KeyError:
+                print(f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
+                bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == country]])
+                j -= 1
+            j += 1
+        # Increase next_row after finishing the inner loop
+        next_row += 1
 
-                        df_nbp_1['ST.06'][1].iloc[next_row] = geo6[geo6['Code'] == country]['Nazwa kraju']
-                        df_nbp_1['ST.06'][2].iloc[next_row] = geo6[geo6['Code'] == country]['Name']
-                        df_nbp_1['ST.06'][column_amount[i]].iloc[next_row] = dataframe_3[content_amount[i]].iloc[i]
-                        df_nbp_1['ST.06'][column_value[i]].iloc[next_row] = dataframe_3[content_value[i]].iloc[i]
+    #df_nbp_1['ST.06'].to_excel('test.xlsx')
 
-                except KeyError:
-                    print(f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
-                    bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == country]])
+    # Convert the 'ST.06' column to float and handle invalid values with `errors='coerce'`
+    # df_nbp_1['ST.06'] = pd.to_numeric(df_nbp_1['ST.06'], errors='coerce')
 
-        if country not in df_nbp_1['ST.06'][0][10:]:
-            next_row += 1
+    # Convert the 'ST.06' column starting from index 39 to float
+    #df_nbp_1['ST.06'].iloc[39:] = df_nbp_1['ST.06'].iloc[39:].astype(float)
 
-    df_nbp_1['ST.06'][3].iloc[41] = df_nbp_1['ST.06'][3][42:].sum()
-    df_nbp_1['ST.06'][4].iloc[41] = df_nbp_1['ST.06'][4][42:].sum()
-    df_nbp_1['ST.06'][5].iloc[41] = df_nbp_1['ST.06'][5][42:].sum()
-    df_nbp_1['ST.06'][6].iloc[41] = df_nbp_1['ST.06'][6][42:].sum()
-    df_nbp_1['ST.06'][7].iloc[41] = df_nbp_1['ST.06'][7][42:].sum()
-    df_nbp_1['ST.06'][8].iloc[41] = df_nbp_1['ST.06'][8][42:].sum()
+    # Replace NaN with 0 if needed
+    #df_nbp_1['ST.06'].fillna(0, inplace=True)
+
+    # Calculate the sums for columns 3 to 8, starting from row 40, and update row 39 with the sums
+    #df_nbp_1['ST.06'].iloc[39, 3:] = df_nbp_1['ST.06'].iloc[40:, 3:].sum()
 
     # ST.02
 
