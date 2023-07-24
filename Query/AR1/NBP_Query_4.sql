@@ -1,3 +1,8 @@
+-- STATUSY na [paytel_olap].[dbo].[v_rs_chargeback]
+-- zamknięta - przegrana ---> strata merchanta/sklepu
+-- strata operacyjna Paytel ----> strata agenta rozliczeniowego (czyli Paytel)
+-- zamknięta - wygrana -------> strata posiadacza karty
+
 declare @dtb as smalldatetime
 declare @dte as smalldatetime
 
@@ -24,11 +29,11 @@ set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101');
 --d)	KRAJ - Zliczyć ilość i wartość transakcji po ustawieniu filtru kraj na PL a następnie zliczyć dla wszystkich poza PL.
 
 SELECT
-		IIF(country in ('POL','PL'), 'PL', 'other') as kraj
-		,COUNT(id_c) as ilosc
-		,ABS(SUM(tran_amount)) as kwota
-  FROM [paytel_olap].[dbo].[v_rs_chargeback]
-  where date_CHB between @dtb and @dte and arbitraz is null
+	IIF(country in ('POL','PL'), 'PL', 'other') as kraj
+	,COUNT(id_c) as ilosc
+	,ABS(SUM(tran_amount)) as kwota
+FROM [paytel_olap].[dbo].[v_rs_chargeback]
+where date_CHB between @dtb and @dte and arbitraz is null
 group by IIF(country in ('POL','PL'), 'PL', 'other') 
 
 
@@ -44,10 +49,25 @@ declare @dte as smalldatetime
 
 set @dtb = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-1, '19000101');
 set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101');
-
+-- zamknięta - przegrana ---> strata merchanta/sklepu
 SELECT
-		COUNT(id_c) as ilosc
-		,ABS(SUM(tran_amount)) as kwota
-  FROM [paytel_olap].[dbo].[v_rs_chargeback]
-  where date_CHB between @dtb and @dte and arbitraz is null and charge_merchant_date is not null
+	COUNT(id_c) as ilosc,
+	ABS(SUM(tran_amount)) as kwota
+FROM [paytel_olap].[dbo].[v_rs_chargeback]
+where date_CHB between @dtb and @dte and arbitraz is null and status = 'zamknięta- przegrana'--charge_merchant_date is not null
 
+---split---
+
+-- strata operacyjna Paytel ----> strata agenta rozliczeniowego (czyli Paytel)
+declare @dtb as smalldatetime
+declare @dte as smalldatetime
+
+set @dtb = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-1, '19000101');
+set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101');
+
+SELECT 
+	COUNT(id_c) as ilosc,
+	ABS(SUM(tran_amount)) as kwota
+FROM [paytel_olap].[dbo].[v_rs_chargeback]
+WHERE [status] LIKE '%strata%'
+AND date_CHB  between @dtb and @dte

@@ -115,7 +115,7 @@ declare @dte as smalldatetime
 declare @te_tran_type as int
 
 set @dtb = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-1, '19000101');
-set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101'); 
+set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101');
  
  IF OBJECT_ID('tempdb..#dane_zwroty') IS NOT NULL DROP TABLE #dane_zwroty
 --transakcje VISA

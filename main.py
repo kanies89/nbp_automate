@@ -6,7 +6,6 @@ import datetime
 import pandas as pd
 from openpyxl.utils import get_column_letter
 import openpyxl
-import numpy as np
 
 from tqdm import tqdm
 import time
@@ -80,8 +79,11 @@ def copy_wb(from_workbook, to_workbook, dataframe, number):
                             first_cell = merged_range.min_row, merged_range.min_col
                             first_coord = get_column_letter(first_cell[1]) + str(first_cell[0])
                             # wb[sheet_name][first_coord].value = new_value
-                            # not working, don't know why it is not filling the merged cells
-                            break  # Exit the loop after setting the value for the merged cell
+
+                            # Merge the cells
+                            # sheet.merge_cells(merged_range.coord)
+
+                            break  # Exit the loop after setting the value and merging cells
                     else:
                         # If the cell is not merged, set the value directly
                         wb[sheet_name][coord].value = new_value
@@ -100,18 +102,22 @@ def copy_wb(from_workbook, to_workbook, dataframe, number):
                             first_cell = merged_range.min_row, merged_range.min_col
                             first_coord = get_column_letter(first_cell[1]) + str(first_cell[0])
                             # wb[sheet_name][first_coord].value = new_value
-                            # not working, don't know why it is not filling the merged cells
-                            break  # Exit the loop after setting the value for the merged cell
+
+                            # Merge the cells
+                            # sheet.merge_cells(merged_range.coord)
+
+                            break  # Exit the loop after setting the value and merging cells
                     else:
                         # If the cell is not merged, set the value directly
                         wb[sheet_name][coord].value = new_value
+
     return wb
 
 
 def load_df(length, path):
     df = []
     for n in range(length):
-        df.append(pd.read_csv(f'{path}{n}.csv'))
+        df.append(pd.read_csv(f'{path}{n}.csv', keep_default_na=False))
     return df
 
 
@@ -141,46 +147,20 @@ def prepare_data_ar2(user, passw):
 
     dataframe_1 = load_or_query(22, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
 
-    sheet = '4a.R.L_PLiW2'
-    j = 0
-    i = 0
-    print(len(dataframe_1))
-    for n in range(len(dataframe_1)-2):
-        for country in dataframe_1[n]['name']:
+    for n in range(len(dataframe_1) - 2):
+        for i, country in enumerate(dataframe_1[n]['name']):
             if country == 'Holandia':
                 country = 'Niderlandy'
-            if i <= 20:
-                print(i, dataframe_1[n]['name'])
-                try:
-                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
-                except KeyError:
-                    bug_table.append([f'BUG_{sheet}', dataframe_1[n][dataframe_1[n]['name'] == country]])
-                    print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
-                df_nbp_2[sheet][col].iloc[AR2_4_row_1[j]] = dataframe_1[n]['ilosc'].iloc[i]
-            i += 1
-        i = 0
-        j += 1
-
-    sheet = '4a.R.W_PLiW2'
-    j = 0
-    i = 0
-    for n in range(len(dataframe_1)-2):
-        for country in dataframe_1[n]['name']:
-            if country == 'Holandia':
-                country = 'Niderlandy'
-            if i <= 20:
-                print(i, dataframe_1[n]['name'])
-                try:
-                    col = pd.Index(df_nbp_2[sheet].iloc[7]).get_loc(country)
-                except KeyError:
-                    bug_table.append([f'BUG_{sheet}', dataframe_1[n][dataframe_1[n]['name'] == country]])
-                    print(
-                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
-                df_nbp_2[sheet][col].iloc[AR2_4_row_2[j]] = dataframe_1[n]['wartosc'].iloc[i]
-            i += 1
-        i = 0
-        j += 1
+            try:
+                print('i:', i, 'country:', country, 'n:', n)
+                col1 = pd.Index(df_nbp_2['4a.R.L_PLiW2'].iloc[7]).get_loc(country)
+                col2 = pd.Index(df_nbp_2['4a.R.W_PLiW2'].iloc[7]).get_loc(country)
+                df_nbp_2['4a.R.L_PLiW2'][col1].iloc[AR2_4_row_1[n]] = dataframe_1[n]['ilosc'].iloc[i]
+                df_nbp_2['4a.R.W_PLiW2'][col2].iloc[AR2_4_row_2[n]] = dataframe_1[n]['wartosc'].iloc[i]
+            except KeyError:
+                bug_table.append([f'BUG_4a.R.L_PLiW2', dataframe_1[n][dataframe_1[n]['name'] == country]])
+                print(
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
 
     # 6.ab.LiW
     print('6.ab.LiW')
@@ -188,8 +168,8 @@ def prepare_data_ar2(user, passw):
     sheet = EXCEL_READ_AR2[6]
 
     for j in range(2):
-        df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = dataframe_1[20+j]['ilosc'].iloc[0]
-        df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20+j]['wartosc'].iloc[0]
+        df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = dataframe_1[20 + j]['ilosc'].iloc[0]
+        df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20 + j]['wartosc'].iloc[0]
 
     # 5a.R.SF
     print('5a.R.SF')
@@ -276,7 +256,7 @@ def prepare_data_ar2(user, passw):
     df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
 
     path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
-    df_fraud.to_csv(path_df+'df_fraud.csv')
+    df_fraud.to_csv(path_df + 'df_fraud.csv')
 
     print('\nChecking the quarter: ' + str(check_quarter()[3]))
 
@@ -529,60 +509,66 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
     content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
 
-    geo6 = pd.read_excel("C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\NBP_GEO6.xlsx", header = 3)
+    geo6 = pd.read_excel("C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\NBP_GEO6.xlsx",
+                         header=3)
+
     next_row = 40
-    j = 0
     # devices that accept payment cards / Internet / cash back
-    for country in dataframe_3['CountryCode']:
+    for k, country in enumerate(dataframe_3['CountryCode']):
         if country == 'uwaga - coś nowego':
-            print(f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
+            print(
+                f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
             bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
+        elif country in df_nbp_1['ST.06'][0][10:39]:
+            row = pd.Index(df_nbp_1['ST.06'][0]).get_loc(country)
+            for i in range(len(column_amount)):
+                df_nbp_1['ST.06'].iat[row, column_amount[i]] = dataframe_3[dataframe_3['CountryCode'] == country][
+                    content_amount[i]]
+                df_nbp_1['ST.06'].iat[row, column_value[i]] = dataframe_3[dataframe_3['CountryCode'] == country][
+                    content_value[i]]
+
         else:
             try:
-                if country in df_nbp_1['ST.06'][0][10:]:
-                    if pd.isnull(country):  # Check for NaN if `country` is a string
-                        continue
+                print('k: ', k, 'and next_row: ', next_row, 'country: ', country)
+                if country == 'NA':
+                    c_name = 'Namibia'
+                    df_nbp_1['ST.06'][0].iloc[next_row] = 'NA'
+                    df_nbp_1['ST.06'][1].iloc[next_row] = c_name
+                    df_nbp_1['ST.06'][1].iloc[next_row] = c_name
                     for i in range(len(column_amount)):
-                        row_1 = pd.Index(df_nbp_1['ST.06'][0][10:]).get_loc(country) + 10
-                        df_nbp_1['ST.06'][column_amount[i]].iloc[row_1] = dataframe_3[content_amount[i]].iloc[j]
-                        df_nbp_1['ST.06'][column_value[i]].iloc[row_1] = dataframe_3[content_value[i]].iloc[j]
+                        df_nbp_1['ST.06'].iat[next_row, column_amount[i]] = \
+                        dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_amount[i]].values[0]
+                        df_nbp_1['ST.06'].iat[next_row, column_value[i]] = \
+                        dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_value[i]].values[0]
                 else:
-                    print(next_row)
-                    print(country)
-                    if pd.isnull(country):  # Check for NaN if `country` is a string
-                        continue
-                    if country == 'nan':  # Check for nan
-                        continue
-                    if country == '':
-                        continue
+                    df_nbp_1['ST.06'][0].iloc[next_row] = geo6[geo6['Code'] == country]['Code'].values[0]
+                    df_nbp_1['ST.06'][1].iloc[next_row] = geo6[geo6['Code'] == country]['Nazwa kraju'].values[0]
+                    df_nbp_1['ST.06'][2].iloc[next_row] = geo6[geo6['Code'] == country]['Name'].values[0]
                     for i in range(len(column_amount)):
-                        df_nbp_1['ST.06'][0].iloc[next_row] = geo6[geo6['Code'] == country]['Code'].iloc[0]
-                        df_nbp_1['ST.06'][1].iloc[next_row] = geo6[geo6['Code'] == country]['Nazwa kraju'].iloc[0]
-                        df_nbp_1['ST.06'][2].iloc[next_row] = geo6[geo6['Code'] == country]['Name'].iloc[0]
-                        df_nbp_1['ST.06'][column_amount[i]].iloc[next_row] = dataframe_3[content_amount[i]].iloc[j]
-                        df_nbp_1['ST.06'][column_value[i]].iloc[next_row] = dataframe_3[content_value[i]].iloc[j]
+                        df_nbp_1['ST.06'].iat[next_row, column_amount[i]] = \
+                        dataframe_3[dataframe_3['CountryCode'] == country][content_amount[i]].values[0]
+                        df_nbp_1['ST.06'].iat[next_row, column_value[i]] = \
+                        dataframe_3[dataframe_3['CountryCode'] == country][content_value[i]].values[0]
+                next_row += 1
 
             except KeyError:
-                print(f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
+                print(
+                    f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
                 bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == country]])
-                j -= 1
-            j += 1
-        # Increase next_row after finishing the inner loop
-        next_row += 1
 
-    #df_nbp_1['ST.06'].to_excel('test.xlsx')
+    # df_nbp_1['ST.06'].to_excel('test.xlsx')
 
     # Convert the 'ST.06' column to float and handle invalid values with `errors='coerce'`
     # df_nbp_1['ST.06'] = pd.to_numeric(df_nbp_1['ST.06'], errors='coerce')
 
     # Convert the 'ST.06' column starting from index 39 to float
-    #df_nbp_1['ST.06'].iloc[39:] = df_nbp_1['ST.06'].iloc[39:].astype(float)
+    # df_nbp_1['ST.06'].iloc[39:] = df_nbp_1['ST.06'].iloc[39:].astype(float)
 
     # Replace NaN with 0 if needed
-    #df_nbp_1['ST.06'].fillna(0, inplace=True)
+    # df_nbp_1['ST.06'].fillna(0, inplace=True)
 
     # Calculate the sums for columns 3 to 8, starting from row 40, and update row 39 with the sums
-    #df_nbp_1['ST.06'].iloc[39, 3:] = df_nbp_1['ST.06'].iloc[40:, 3:].sum()
+    # df_nbp_1['ST.06'].iloc[39, 3:] = df_nbp_1['ST.06'].iloc[40:, 3:].sum()
 
     # ST.02
 
@@ -594,33 +580,37 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     temp_table = f"Query\\AR1\\NBP_Temp_4.sql"
     query = f"Query\\AR1\\NBP_Query_4.sql"
 
-    dataframe_4 = load_or_query(3, 'ST.07.', temp_table, query)
+    dataframe_4 = load_or_query(4, 'ST.07.', temp_table, query)
 
     dataframe_4[1]['kwota'] = dataframe_4[1]['kwota'].astype('float')
     df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['ilosc'].iloc[0]
     df_nbp_1['ST.07'].iat[14, 5] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['ilosc'].iloc[0]
     df_nbp_1['ST.07'].iat[14, 6] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['kwota'].iloc[0]
     df_nbp_1['ST.07'].iat[14, 7] = dataframe_4[1][dataframe_4[1]['kraj'] == 'other']['kwota'].iloc[0]
-    df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[2]['kwota'].iloc[0]
+    df_nbp_1['ST.07'].iat[14, 8] = dataframe_4[3]['kwota'].iloc[0]
+    df_nbp_1['ST.07'].iat[14, 9] = dataframe_4[2]['kwota'].iloc[0]
 
-    dff = pd.pivot_table(index='pos_entry_mode', columns='country_aggr', data=df_f[df_f['quarter'] == check_quarter()[3]], aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
+    dff = pd.pivot_table(index='pos_entry_mode', columns='country_aggr',
+                         data=df_f[df_f['quarter'] == check_quarter()[3]],
+                         aggfunc={'tr_amout': 'sum', 'country_aggr': 'count'}, fill_value=0)
 
     df_nbp_1['ST.07'].iat[11, 4] = dff['country_aggr'].sum()['PL']
     df_nbp_1['ST.07'].iat[11, 5] = dff['country_aggr'].sum()['NPL']
     df_nbp_1['ST.07'].iat[11, 6] = dff['tr_amout'].sum()['PL']
-    df_nbp_1['ST.07'].iat[11, 7] = dff['tr_amout'].sum()['PL']
-    df_nbp_1['ST.07'].iat[11, 8] = dff['country_aggr'].sum()['PL'] + dff['country_aggr'].sum()['NPL']
-    df_nbp_1['ST.07'].iat[11, 9] = dff['tr_amout'].sum()['PL'] + dff['tr_amout'].sum()['NPL']
+    df_nbp_1['ST.07'].iat[11, 7] = dff['tr_amout'].sum()['NPL']
+    df_nbp_1['ST.07'].iat[11, 8] = 0
+    df_nbp_1['ST.07'].iat[11, 9] = 0
 
     df_nbp_1['ST.07'].iat[12, 4] = dff['country_aggr'].loc['CTLS']['PL']
     df_nbp_1['ST.07'].iat[12, 5] = dff['country_aggr'].loc['CTLS']['NPL']
     df_nbp_1['ST.07'].iat[12, 6] = dff['tr_amout'].loc['CTLS']['PL']
     df_nbp_1['ST.07'].iat[12, 7] = dff['tr_amout'].loc['CTLS']['NPL']
-    df_nbp_1['ST.07'].iat[12, 8] = dff['country_aggr'].loc['CTLS']['PL'] + dff['country_aggr'].loc['CTLS']['NPL']
-    df_nbp_1['ST.07'].iat[12, 9] = dff['tr_amout'].loc['CTLS']['PL'] + dff['tr_amout'].loc['CTLS']['NPL']
+    df_nbp_1['ST.07'].iat[12, 8] = 0
+    df_nbp_1['ST.07'].iat[12, 9] = 0
 
     for n in range(4, 9):
-        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(df_nbp_1['ST.07'][n].iloc[12])
+        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(
+            df_nbp_1['ST.07'][n].iloc[12])
     for n in range(4, 9):
         df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
 
@@ -774,10 +764,11 @@ def start_automation(d1, d2, d3, d4, d_pass):
 
 class TqdmExtraFormat(tqdm):
     """Provides a `minutes per iteration` format parameter"""
+
     @property
     def format_dict(self):
         d = super(TqdmExtraFormat, self).format_dict
-        rate_min = '{:.2f}'.format(1/d["rate"] / 60) if d["rate"] else '?'
+        rate_min = '{:.2f}'.format(1 / d["rate"] / 60) if d["rate"] else '?'
         d.update(rate_min=(rate_min + ' min/' + d['unit']))
         return d
 
@@ -802,7 +793,7 @@ def update_bar(queue, total):
         pbar.update(1)
         elapsed_time = (time.time() - pbar.start_t)
         pbar.set_postfix(elapsed=f"{elapsed_time:.2f}s",
-                         remaining=f"{(pbar.total - pbar.n) * (elapsed_time / pbar.n):.2f}s / {((pbar.total - pbar.n) * (elapsed_time / pbar.n))/60:.2f}min")
+                         remaining=f"{(pbar.total - pbar.n) * (elapsed_time / pbar.n):.2f}s / {((pbar.total - pbar.n) * (elapsed_time / pbar.n)) / 60:.2f}min")
 
     pbar.close()
 
@@ -842,5 +833,5 @@ if __name__ == '__main__':
     except (ValueError, TypeError, IndexError, KeyError, AttributeError, ZeroDivisionError, IOError) as e:
         # Print the error message to the console and add it to the log file
         sys.stdout.flush()  # Make sure the error message is flushed immediately
-        print('\n'+f'{e}')
+        print('\n' + f'{e}')
         raise e  # Re-raise the exception to stop the execution

@@ -2,8 +2,8 @@ declare @dtb as smalldatetime
 declare @dte as smalldatetime
 declare @te_tran_type as int
 
-set @dtb = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-1, '19000101');
-set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101');
+set @dtb = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-1, '19000101'); --changed from -0 to -1 due to checking 2 quaters in the past
+set @dte = DATEADD(qq,DATEDIFF(QQ, '19000101', getdate())-0 , '19000101'); --changed from 0 to -0 due to checking 2 quaters in the past
 select @dtb,@dte
 
 ---split---

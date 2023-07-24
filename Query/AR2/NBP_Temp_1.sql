@@ -252,10 +252,6 @@ GROUP BY
 
 --select * from #dane
 
-
-
-
-
 IF OBJECT_ID('tempdb..#geo3') IS NOT NULL DROP TABLE #geo3
 CREATE TABLE #geo3 (num smallint, code varchar(2), name varchar(256))
 INSERT INTO #geo3 VALUES (1, 'AT', 'Austria')
