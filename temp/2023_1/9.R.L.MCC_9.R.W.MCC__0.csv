@@ -1,0 +1,240 @@
+,code,name,ilosc,wartosc_transakcji
+0,AD,Andorra,8,744.4000
+1,AE,United Arab Emirates (the),1009,156014.9100
+2,AF,Afghanistan,1,200.0000
+3,AG,Antigua and Barbuda,0,0.0000
+4,AI,Anguilla,0,0.0000
+5,AL,Albania,39,3983.0600
+6,AM,Armenia,134,60462.5900
+7,AO,Angola,21,1002.0500
+8,AQ,Antarctica,0,0.0000
+9,AR,Argentina,89,5404.3100
+10,AS,American Samoa,0,0.0000
+11,AT,Austria,4184,469612.9700
+12,AU,Australia,1240,104865.3000
+13,AW,Aruba,0,0.0000
+14,AZ,Azerbaijan,1210,72855.1500
+15,BA,Bosnia and Herzegovina,122,8753.3500
+16,BB,Barbados,0,0.0000
+17,BD,Bangladesh,8,395.7700
+18,BE,Belgium,11745,984719.8100
+19,BF,Burkina Faso,0,0.0000
+20,BG,Bulgaria,1074,79135.1700
+21,BH,Bahrain,20,1563.6800
+22,BI,Burundi,0,0.0000
+23,BJ,Benin,0,0.0000
+24,BM,Bermuda,3,607.0000
+25,BN,Brunei Darussalam,7,2417.5000
+26,BO,Bolivia (Plurinational State of),3,2245.0000
+27,BQ,"Bonaire, Sint Eustatius and Saba",0,0.0000
+28,BR,Brazil,476,30371.5500
+29,BS,Bahamas (the),2,79.0000
+30,BT,Bhutan,0,0.0000
+31,BV,Bouvet Island,0,0.0000
+32,BW,Botswana,4,253.0000
+33,BY,Belarus,15037,2562208.5100
+34,BZ,Belize,0,0.0000
+35,CA,Canada,2187,370561.5300
+36,CC,Cocos (Keeling) Islands (the),0,0.0000
+37,CD,Congo (the Democratic Republic of the),2,368.3500
+38,CF,Central African Republic (the),0,0.0000
+39,CG,Congo (the),12,238.3000
+40,CH,Switzerland,2691,474788.3100
+41,CI,Côte dIvoire,1,61.0000
+42,CK,Cook Islands (the),0,0.0000
+43,CL,Chile,131,8579.9000
+44,CM,Cameroon,1,52.9000
+45,CN,China,2340,175149.6700
+46,CO,Colombia,205,8860.4600
+47,CR,Costa Rica,66,7171.7400
+48,CU,Cuba,0,0.0000
+49,CV,Cabo Verde,1,18.9900
+50,CW,Curaçao,0,0.0000
+51,CX,Christmas Island,0,0.0000
+52,CY,Cyprus,382,60088.2800
+53,CZ,Czechia,41678,6553851.2300
+54,DE,Germany,54302,9412198.5300
+55,DJ,Djibouti,0,0.0000
+56,DK,Denmark,8399,967416.4200
+57,DM,Dominica,0,0.0000
+58,DO,Dominican Republic (the),17,458.1200
+59,DZ,Algeria,10,1659.5000
+60,EC,Ecuador,71,3554.8400
+61,EE,Estonia,1112,116943.3100
+62,EG,Egypt,170,9660.3000
+63,EH,Western Sahara*,0,0.0000
+64,ER,Eritrea,0,0.0000
+65,ES,Spain,7041,455910.9500
+66,ET,Ethiopia,0,0.0000
+67,FI,Finland,2413,189735.9600
+68,FJ,Fiji,0,0.0000
+69,FK,Falkland Islands (the) [Malvinas],0,0.0000
+70,FM,Micronesia (Federated States of),0,0.0000
+71,FO,Faroe Islands (the),0,0.0000
+72,FR,France,8331,836849.6200
+73,GA,Gabon,0,0.0000
+74,GB,United Kingdom of Great Britain and Northern Ireland (the),245468,16906718.3700
+75,GD,Grenada,1,670.0000
+76,GE,Georgia,1938,143257.9600
+77,GG,Guernsey,0,0.0000
+78,GH,Ghana,112,9590.3500
+79,GI,Gibraltar,12,1753.9500
+80,GL,Greenland,0,0.0000
+81,GM,Gambia (the),0,0.0000
+82,GN,Guinea,0,0.0000
+83,GQ,Equatorial Guinea,0,0.0000
+84,GR,Greece,1300,79461.6000
+85,GS,South Georgia and the South Sandwich Islands,0,0.0000
+86,GT,Guatemala,34,1554.7000
+87,GU,Guam,0,0.0000
+88,GW,Guinea-Bissau,0,0.0000
+89,GY,Guyana,0,0.0000
+90,HK,Hong Kong,219,17595.5200
+91,HM,Heard Island and McDonald Islands,0,0.0000
+92,HN,Honduras,37,679.2100
+93,HR,Croatia,570,60955.3000
+94,HT,Haiti,0,0.0000
+95,HU,Hungary,3240,264917.7700
+96,ID,Indonesia,57,4468.5500
+97,IE,Ireland,16991,3710182.0300
+98,IL,Israel,1471,196500.6900
+99,IM,Isle of Man,0,0.0000
+100,IN,India,737,50331.8800
+101,IO,British Indian Ocean Territory (the),0,0.0000
+102,IQ,Iraq,15,1081.7900
+103,IR,Iran (Islamic Republic of),0,0.0000
+104,IS,Iceland,2965,363925.0500
+105,IT,Italy,9481,746864.0100
+106,JE,Jersey,0,0.0000
+107,JM,Jamaica,4,1088.5100
+108,JO,Jordan,88,7812.4100
+109,JP,Japan,795,47655.3100
+110,KE,Kenya,44,2648.9300
+111,KG,Kyrgyzstan,197,10853.9500
+112,KH,Cambodia,8,320.0000
+113,KI,Kiribati,0,0.0000
+114,KM,Comoros (the),0,0.0000
+115,KN,Saint Kitts and Nevis,0,0.0000
+116,KP,Korea (the Democratic Peoples Republic of),0,0.0000
+117,KR,Korea (the Republic of),1703,356832.0700
+118,KW,Kuwait,72,4976.6100
+119,KY,Cayman Islands (the),23,2322.9100
+120,KZ,Kazakhstan,2044,150682.5600
+121,LA,Lao Peoples Democratic Republic (the),2,296.0000
+122,LB,Lebanon,17,2375.9200
+123,LC,Saint Lucia,1,10.0000
+124,LI,Liechtenstein,13,2738.0000
+125,LK,Sri Lanka,3,157.1000
+126,LR,Liberia,0,0.0000
+127,LS,Lesotho,0,0.0000
+128,LT,Lithuania,14680,1856872.6000
+129,LU,Luxembourg,365,47052.6400
+130,LV,Latvia,2077,251025.8600
+131,LY,Libya,2,1250.0000
+132,MA,Morocco,86,3365.2000
+133,MD,Moldova (the Republic of),509,57386.4200
+134,ME,Montenegro,175,8943.0500
+135,MG,Madagascar,0,0.0000
+136,MH,Marshall Islands (the),0,0.0000
+137,MK,North Macedonia,264,25114.4900
+138,ML,Mali,0,0.0000
+139,MM,Myanmar,139,4289.4000
+140,MN,Mongolia,65,3380.2500
+141,MO,Macao,2,57.9000
+142,MP,Northern Mariana Islands (the),0,0.0000
+143,MR,Mauritania,0,0.0000
+144,MS,Montserrat,0,0.0000
+145,MT,Malta,250,21514.4100
+146,MU,Mauritius,6,281.8900
+147,MV,Maldives,0,0.0000
+148,MW,Malawi,0,0.0000
+149,MX,Mexico,622,47192.3400
+150,MY,Malaysia,254,23467.7900
+151,MZ,Mozambique,25,4184.8000
+152,NA,Namibia,3,460.0000
+153,NC,New Caledonia,0,0.0000
+154,NE,Niger (the),0,0.0000
+155,NF,Norfolk Island,0,0.0000
+156,NG,Nigeria,48,2742.9700
+157,NI,Nicaragua,10,545.6500
+158,NL,Netherlands,18783,1753055.2600
+159,NO,Norway,21497,2229673.9400
+160,NP,Nepal,1,11.0000
+161,NR,Nauru,0,0.0000
+162,NU,Niue,0,0.0000
+163,NZ,New Zealand,130,12587.1000
+164,OM,Oman,56,2595.4600
+165,PA,Panama,68,3211.4600
+166,PE,Peru,61,5112.7600
+167,PF,French Polynesia,0,0.0000
+168,PG,Papua New Guinea,1,849.0000
+169,PH,Philippines (the),101,11081.8300
+170,PK,Pakistan,15,891.0700
+171,PN,Pitcairn,0,0.0000
+172,PS,"Palestine, State of",18,1541.5000
+173,PT,Portugal,2140,136330.1200
+174,PW,Palau,0,0.0000
+175,PY,Paraguay,4,301.3000
+176,QA,Qatar,473,37463.3100
+177,RO,Romania,2174,260343.3200
+178,RS,Serbia,402,41056.0000
+179,RU,Russian Federation (the),0,0.0000
+180,RW,Rwanda,19,1265.8400
+181,SA,Saudi Arabia,332,33519.4900
+182,SB,Solomon Islands,0,0.0000
+183,SC,Seychelles,2,115.2000
+184,SD,Sudan (the),3,71.3000
+185,SE,Sweden,11898,1214740.6000
+186,SG,Singapore,407,50830.3100
+187,SH,"Saint Helena, Ascension and Tristan da Cunha",0,0.0000
+188,SI,Slovenia,594,31955.5100
+189,SJ,Svalbard and Jan Mayen,0,0.0000
+190,SK,Slovakia,15984,1468846.6600
+191,SL,Sierra Leone,0,0.0000
+192,SM,San Marino,5,288.9000
+193,SN,Senegal,2,771.0000
+194,SO,Somalia,0,0.0000
+195,SR,Suriname,0,0.0000
+196,SS,South Sudan,2,50.0000
+197,ST,Sao Tome and Principe,0,0.0000
+198,SV,El Salvador,16,581.3400
+199,SX,Sint Maarten (Dutch part),0,0.0000
+200,SY,Syrian Arab Republic (the),0,0.0000
+201,SZ,Eswatini,4,83.0000
+202,TC,Turks and Caicos Islands (the),0,0.0000
+203,TD,Chad,0,0.0000
+204,TF,French Southern Territories (the),0,0.0000
+205,TG,Togo,0,0.0000
+206,TH,Thailand,356,17121.2100
+207,TJ,Tajikistan,71,5585.9200
+208,TK,Tokelau,0,0.0000
+209,TL,Timor-Leste,0,0.0000
+210,TM,Turkmenistan,9,3100.0000
+211,TN,Tunisia,2,749.0000
+212,TO,Tonga,0,0.0000
+213,TR,Turkey,3608,213884.9500
+214,TT,Trinidad and Tobago,4,157.2600
+215,TV,Tuvalu,0,0.0000
+216,TW,Taiwan (Province of China),699,43804.6900
+217,TZ,"Tanzania, the United Republic of",20,3340.9000
+218,UA,Ukraine,220210,13866542.1400
+219,UG,Uganda,4,178.3500
+220,UM,United States Minor Outlying Islands (the),0,0.0000
+221,US,United States of America (the),37486,4038012.4100
+222,UY,Uruguay,15,1353.0000
+223,UZ,Uzbekistan,283,47638.2200
+224,VA,Holy See (the),10,1338.9700
+225,VC,Saint Vincent and the Grenadines,0,0.0000
+226,VE,Venezuela (Bolivarian Republic of),0,0.0000
+227,VG,Virgin Islands (British),0,0.0000
+228,VI,Virgin Islands (U.S.),0,0.0000
+229,VN,Viet Nam,54,4465.8800
+230,VU,Vanuatu,0,0.0000
+231,WA,Domestic,30183352,1726874267.4300
+232,WF,Wallis and Futuna,0,0.0000
+233,WS,Samoa,0,0.0000
+234,YE,Yemen,0,0.0000
+235,ZA,South Africa,159,14140.0600
+236,ZM,Zambia,8,197.1500
+237,ZW,Zimbabwe,23,758.4300
+238,ZZ,Extra UE not allocated,515,29863.3900

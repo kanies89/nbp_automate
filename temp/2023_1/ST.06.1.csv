@@ -1,0 +1,150 @@
+,CountryCode,name_PL,name,podzial_NBP,ilosc_transakcji,ilosc_internet,ilosc_transakcji_CashBack,wartosc_transakcji,wartosc_internet,wartosc_wyplat_CashBack
+0,AT,Austria,Austria,wyróżnione,5453,0,8,508761.4500,0,2946.0100
+1,BE,Belgia,Belgium,wyróżnione,14885,0,1,1223998.9800,0,20.0000
+2,BG,Bułgaria,Bulgaria,wyróżnione,1265,0,2,88359.5700,0,210.0000
+3,HR,Chorwacja,Croatia,wyróżnione,666,0,0,66748.5100,0,0.0000
+4,CY,Cypr,Cyprus,wyróżnione,504,0,0,78098.1500,0,0.0000
+5,CZ,Czechy,Czechia,wyróżnione,48002,0,2,6058710.2600,0,389.5000
+6,DK,Dania,Denmark,wyróżnione,10384,0,0,991950.1000,0,0.0000
+7,EE,Estonia,Estonia,wyróżnione,1324,0,0,117543.8200,0,0.0000
+8,FI,Finlandia,Finland,wyróżnione,3096,0,0,196210.9600,0,0.0000
+9,FR,Francja,France,wyróżnione,10502,0,0,964910.0400,0,0.0000
+10,DE,Niemcy,Germany,wyróżnione,65720,0,5,8616729.0000,0,431.0000
+11,GR,Grecja,Greece,wyróżnione,1716,0,0,96610.8500,0,0.0000
+12,HU,Węgry,Hungary,wyróżnione,4099,0,0,239577.9300,0,0.0000
+13,IS,Islandia,Iceland,wyróżnione,4027,0,0,390163.2800,0,0.0000
+14,IE,Irlandia,Ireland,wyróżnione,20540,0,4,3905678.2200,0,1430.0000
+15,IT,Włochy,Italy,wyróżnione,12459,0,0,863193.1600,0,0.0000
+16,LV,Łotwa,Latvia,wyróżnione,2474,0,0,238970.3800,0,0.0000
+17,LI,Liechtenstein,Liechtenstein,wyróżnione,14,0,0,2061.0000,0,0.0000
+18,LT,Litwa,Lithuania,wyróżnione,17362,0,1,1577902.6800,0,50.0000
+19,LU,Luksemburg,Luxembourg,wyróżnione,510,0,0,70946.5900,0,0.0000
+20,MT,Malta,Malta,wyróżnione,360,0,0,27768.9800,0,0.0000
+21,NL,Niderlandy,Netherlands,wyróżnione,25714,0,32,1969937.3700,0,4742.0000
+22,NO,Norwegia ,Norway,wyróżnione,27604,0,3,2708806.9200,0,800.0000
+23,PT,Portugalia ,Portugal,wyróżnione,2643,0,0,156170.4200,0,0.0000
+24,RO,Rumunia,Romania,wyróżnione,2649,0,0,281833.8400,0,0.0000
+25,SK,Słowacja,Slovakia,wyróżnione,20134,0,0,1686795.2600,0,0.0000
+26,SI,Słowenia,Slovenia,wyróżnione,700,0,0,36918.3600,0,0.0000
+27,ES,Hiszpania,Spain,wyróżnione,8698,0,0,509631.0300,0,0.0000
+28,SE,Szwecja,Sweden,wyróżnione,15250,0,0,1166459.5300,0,0.0000
+29,AF,Afganistan,Afghanistan,reszta świata,2,0,0,359.9900,0,0.0000
+30,AL,Albania,Albania,reszta świata,44,0,0,3721.7300,0,0.0000
+31,DZ,Algieria,Algeria,reszta świata,10,0,0,1659.5000,0,0.0000
+32,AD,Andora,Andorra,reszta świata,9,0,0,798.4000,0,0.0000
+33,AO,Angola łącznie z Kabinda,Angola,reszta świata,21,0,0,807.0500,0,0.0000
+34,AR,Argentyna,Argentina,reszta świata,107,0,0,6407.4900,0,0.0000
+35,AM,Armenia,Armenia,reszta świata,165,0,0,58759.7500,0,0.0000
+36,AW,Aruba,Aruba,reszta świata,1,0,0,81.0000,0,0.0000
+37,AU,Australia,Australia,reszta świata,1687,0,0,125545.3100,0,0.0000
+38,AZ,Azerbejdżan,Azerbaijan,reszta świata,1479,0,0,77025.7800,0,0.0000
+39,BS,Bahamy,Bahamas (the),reszta świata,2,0,0,79.0000,0,0.0000
+40,BH,Bahrajn,Bahrain,reszta świata,27,0,0,2060.9400,0,0.0000
+41,BD,Bangladesz,Bangladesh,reszta świata,8,0,0,395.7700,0,0.0000
+42,BY,Białoruś,Belarus,reszta świata,18465,0,0,1393790.9400,0,0.0000
+43,BZ,Belize,Belize,reszta świata,1,0,0,71.0000,0,0.0000
+44,BM,Bermudy,Bermuda,reszta świata,3,0,0,607.0000,0,0.0000
+45,BO,Boliwia,Bolivia (Plurinational State of),reszta świata,8,0,0,2709.0000,0,0.0000
+46,BA,Bośnia i Hercegowina,Bosnia and Herzegovina,reszta świata,147,0,0,8753.8500,0,0.0000
+47,BW,Botswana,Botswana,reszta świata,4,0,0,253.0000,0,0.0000
+48,BR,Brazylia,Brazil,reszta świata,610,0,0,33115.7900,0,0.0000
+49,BN,Brunei Darussalam,Brunei Darussalam,reszta świata,7,0,0,2417.5000,0,0.0000
+50,CV,Wyspy Zielonego Przylądka,Cabo Verde,reszta świata,1,0,0,18.9900,0,0.0000
+51,KH,Kambodża (Kampucza),Cambodia,reszta świata,10,0,0,446.0000,0,0.0000
+52,CM,Kamerun,Cameroon,reszta świata,5,0,0,221.3000,0,0.0000
+53,CA,Kanada,Canada,reszta świata,2656,0,0,423851.2000,0,0.0000
+54,KY,Kajmany,Cayman Islands (the),reszta świata,29,0,0,2690.9100,0,0.0000
+55,CL,Chile,Chile,reszta świata,162,0,0,10460.8900,0,0.0000
+56,CN,Chiny,China,reszta świata,2779,0,0,187883.8700,0,0.0000
+57,CO,Kolumbia,Colombia,reszta świata,258,0,0,11327.0000,0,0.0000
+58,CD,"Kongo, Republika Demokratyczna",Congo (the Democratic Republic of the),reszta świata,3,0,0,2019.4500,0,0.0000
+59,CG,Kongo,Congo (the),reszta świata,15,0,0,293.4800,0,0.0000
+60,CR,Kostaryka,Costa Rica,reszta świata,72,0,0,6320.3600,0,0.0000
+61,CI,Wybrzeże Kości Słoniowej,Côte d'Ivoire,reszta świata,1,0,0,61.0000,0,0.0000
+62,DO,Republika Dominikany,Dominican Republic (the),reszta świata,22,0,0,765.8200,0,0.0000
+63,EC,Ekwador ,Ecuador,reszta świata,81,0,0,3479.7400,0,0.0000
+64,EG,Egipt,Egypt,reszta świata,210,0,0,11347.1500,0,0.0000
+65,SV,Salwador,El Salvador,reszta świata,16,0,0,581.3400,0,0.0000
+66,D09,Pozostałe kraje,Extra UE not allocated,reszta świata,594,0,0,30261.6600,0,0.0000
+67,GE,Gruzja,Georgia,reszta świata,2387,0,0,138577.0000,0,0.0000
+68,GH,Ghana,Ghana,reszta świata,132,0,0,9670.4900,0,0.0000
+69,GI,Gibraltar,Gibraltar,reszta świata,11,0,0,1256.8000,0,0.0000
+70,GD,Grenada,Grenada,reszta świata,1,0,0,670.0000,0,0.0000
+71,GT,Gwatemala,Guatemala,reszta świata,46,0,0,1865.6900,0,0.0000
+72,VA,Watykan,Holy See (the),reszta świata,10,0,0,1338.9700,0,0.0000
+73,HN,Honduras,Honduras,reszta świata,44,0,0,988.9100,0,0.0000
+74,HK,Hongkong,Hong Kong,reszta świata,274,0,0,23634.2000,0,0.0000
+75,IN,Indie,India,reszta świata,933,0,0,62444.2800,0,0.0000
+76,ID,Indonezja,Indonesia,reszta świata,74,0,0,4828.9300,0,0.0000
+77,IQ,Irak,Iraq,reszta świata,18,0,0,1193.5900,0,0.0000
+78,IL,Izrael,Israel,reszta świata,1860,0,0,214423.1400,0,0.0000
+79,JM,Jamajka,Jamaica,reszta świata,3,0,0,669.9900,0,0.0000
+80,JP,Japonia,Japan,reszta świata,967,0,0,50708.2900,0,0.0000
+81,JO,Jordania,Jordan,reszta świata,111,0,0,16324.1400,0,0.0000
+82,KZ,Kazachstan,Kazakhstan,reszta świata,2567,0,0,190788.1100,0,0.0000
+83,KE,Kenia,Kenya,reszta świata,49,0,0,3095.1800,0,0.0000
+84,KR,Republika Korei (Korea Południowa),Korea (the Republic of),reszta świata,2036,0,0,312285.0800,0,0.0000
+85,KW,Kuwejt,Kuwait,reszta świata,86,0,0,4768.9100,0,0.0000
+86,KG,Kirgistan,Kyrgyzstan,reszta świata,246,0,0,16596.9900,0,0.0000
+87,LA,Laos,Lao People's Democratic Republic (the),reszta świata,2,0,0,296.0000,0,0.0000
+88,LB,Liban,Lebanon,reszta świata,18,0,0,1342.5200,0,0.0000
+89,LY,Libia,Libya,reszta świata,2,0,0,1250.0000,0,0.0000
+90,MO,Makao,Macao,reszta świata,3,0,0,86.9000,0,0.0000
+91,MG,Madagaskar,Madagascar,reszta świata,1,0,0,17.0000,0,0.0000
+92,MY,Malezja,Malaysia,reszta świata,298,0,0,25229.6100,0,0.0000
+93,ML,Mali,Mali,reszta świata,1,0,0,65.9900,0,0.0000
+94,MR,Mauretania,Mauritania,reszta świata,1,0,0,7.0000,0,0.0000
+95,MU,Mauritius,Mauritius,reszta świata,10,0,0,643.9400,0,0.0000
+96,MX,Meksyk,Mexico,reszta świata,730,0,0,54020.0700,0,0.0000
+97,MD,Mołdowa,Moldova (the Republic of),reszta świata,609,0,0,44258.1800,0,0.0000
+98,MN,Mongolia,Mongolia,reszta świata,75,0,0,3253.2400,0,0.0000
+99,ME,Czarnogóra,Montenegro,reszta świata,221,0,0,11633.8000,0,0.0000
+100,MA,Maroko,Morocco,reszta świata,99,0,0,3883.4000,0,0.0000
+101,MZ,Mozambik,Mozambique,reszta świata,35,0,0,4774.9600,0,0.0000
+102,MM,Myanmar (Birma),Myanmar,reszta świata,169,0,0,5132.9900,0,0.0000
+103,NA,Namibia,Namibia,reszta świata,5,0,0,656.0000,0,0.0000
+104,NP,Nepal,Nepal,reszta świata,1,0,0,11.0000,0,0.0000
+105,NZ,Nowa Zelandia,New Zealand,reszta świata,176,0,0,14326.9000,0,0.0000
+106,NI,Nikaragua,Nicaragua,reszta świata,12,0,0,848.2700,0,0.0000
+107,NG,Nigeria,Nigeria,reszta świata,65,0,0,3141.7600,0,0.0000
+108,MK,Macedonia,North Macedonia,reszta świata,342,0,0,24698.3100,0,0.0000
+109,OM,Oman ,Oman,reszta świata,73,0,0,3085.8900,0,0.0000
+110,PK,Pakistan,Pakistan,reszta świata,16,0,0,928.0700,0,0.0000
+111,PS,Palestyna,"Palestine, State of",reszta świata,22,0,0,2065.8000,0,0.0000
+112,PA,Panama,Panama,reszta świata,84,0,0,4289.6300,0,0.0000
+113,PG,Papua Nowa Gwinea,Papua New Guinea,reszta świata,1,0,0,849.0000,0,0.0000
+114,PY,Paragwaj,Paraguay,reszta świata,5,0,0,319.3000,0,0.0000
+115,PE,Peru,Peru,reszta świata,88,0,0,8034.4300,0,0.0000
+116,PH,Filipiny,Philippines (the),reszta świata,112,0,0,8167.5300,0,0.0000
+117,QA,Katar,Qatar,reszta świata,692,0,0,45838.3700,0,0.0000
+118,RW,Rwanda,Rwanda,reszta świata,24,0,0,1774.8400,0,0.0000
+119,LC,Saint Lucia,Saint Lucia,reszta świata,1,0,0,10.0000,0,0.0000
+120,SM,San Marino,San Marino,reszta świata,7,0,0,354.3000,0,0.0000
+121,SA,Arabia Saudyjska,Saudi Arabia,reszta świata,420,0,0,43770.0900,0,0.0000
+122,SN,Senegal,Senegal,reszta świata,1,0,0,368.0000,0,0.0000
+123,RS,Serbia,Serbia,reszta świata,524,0,0,53613.5400,0,0.0000
+124,SC,Seszele,Seychelles,reszta świata,2,0,0,115.2000,0,0.0000
+125,SG,Singapur,Singapore,reszta świata,489,0,0,58445.2900,0,0.0000
+126,ZA,Republika Południowej Afryki,South Africa,reszta świata,193,0,0,15001.7500,0,0.0000
+127,SS,Sudan Południowy,South Sudan,reszta świata,3,0,0,88.0000,0,0.0000
+128,LK,Sri Lanka,Sri Lanka,reszta świata,3,0,0,157.1000,0,0.0000
+129,SD,Sudan,Sudan (the),reszta świata,3,0,0,71.3000,0,0.0000
+130,CH,Szwajcaria,Switzerland,reszta świata,3625,0,1,494119.0800,0,225.0000
+131,TW,Tajwan,Taiwan (Province of China),reszta świata,864,0,0,49062.3000,0,0.0000
+132,TJ,Tadżykistan,Tajikistan,reszta świata,89,0,0,6833.5200,0,0.0000
+133,TZ,Tanzania,"Tanzania, the United Republic of",reszta świata,23,0,0,3398.6800,0,0.0000
+134,TH,Tajlandia,Thailand,reszta świata,417,0,0,19705.3000,0,0.0000
+135,TT,Trynidad i Tobago,Trinidad and Tobago,reszta świata,5,0,0,197.2600,0,0.0000
+136,TN,Tunezja,Tunisia,reszta świata,2,0,0,749.0000,0,0.0000
+137,TR,Turcja,Turkey,reszta świata,4345,0,0,194514.6200,0,0.0000
+138,TM,Turkmenistan,Turkmenistan,reszta świata,9,0,0,3100.0000,0,0.0000
+139,UG,Uganda,Uganda,reszta świata,4,0,0,178.3500,0,0.0000
+140,UA,Ukraina,Ukraine,reszta świata,271903,0,11,13681328.2700,0,1558.0000
+141,AE,Zjednoczone Emiraty Arabskie,United Arab Emirates (the),reszta świata,1312,0,0,176614.3200,0,0.0000
+142,GB,Wielka Brytania,United Kingdom of Great Britain and Northern Ireland (the),reszta świata,307259,0,9,20149873.1300,0,1177.0000
+143,US,Stany Zjednoczone Ameryki Północnej łącznie z Portoryko i Navassa,United States of America (the),reszta świata,46699,0,1,4569339.8600,0,400.0000
+144,UY,Urugwaj,Uruguay,reszta świata,17,0,0,1567.0000,0,0.0000
+145,UZ,Uzbekistan,Uzbekistan,reszta świata,368,0,0,52232.0900,0,0.0000
+146,VN,Wietnam,Viet Nam,reszta świata,67,0,0,5729.9700,0,0.0000
+147,ZM,Zambia,Zambia,reszta świata,10,0,0,350.1500,0,0.0000
+148,ZW,Zimbabwe,Zimbabwe,reszta świata,31,0,0,904.9100,0,0.0000
