@@ -1,0 +1,5388 @@
+
+Report start -AR2- --2023-07-25--
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+i: 0 country: Austria n: 0
+i: 1 country: Belgia n: 0
+i: 2 country: Bu³garia n: 0
+i: 3 country: Chorwacja n: 0
+i: 4 country: Cypr n: 0
+i: 5 country: Czechy n: 0
+i: 6 country: Dania n: 0
+i: 7 country: Estonia n: 0
+i: 8 country: Finlandia n: 0
+i: 9 country: Francja n: 0
+i: 10 country: Grecja n: 0
+i: 11 country: Hiszpania n: 0
+i: 12 country: Niderlandy n: 0
+i: 13 country: Irlandia n: 0
+i: 14 country: Islandia n: 0
+i: 15 country: Litwa  n: 0
+i: 16 country: Liechtenstein n: 0
+i: 17 country: Luksemburg n: 0
+i: 18 country: £otwa n: 0
+i: 19 country: Malta n: 0
+i: 20 country: Niemcy n: 0
+i: 21 country: Norwegia n: 0
+i: 22 country: Polska n: 0
+i: 23 country: Portugalia n: 0
+i: 24 country: Rumunia n: 0
+i: 25 country: S³owacja n: 0
+i: 26 country: S³owenia n: 0
+i: 27 country: Szwecja n: 0
+i: 28 country: Wêgry n: 0
+i: 29 country: W³ochy n: 0
+i: 30 country: Krajowe n: 0
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 0
+i: 0 country: Austria n: 1
+i: 1 country: Belgia n: 1
+i: 2 country: Bu³garia n: 1
+i: 3 country: Chorwacja n: 1
+i: 4 country: Cypr n: 1
+i: 5 country: Czechy n: 1
+i: 6 country: Dania n: 1
+i: 7 country: Estonia n: 1
+i: 8 country: Finlandia n: 1
+i: 9 country: Francja n: 1
+i: 10 country: Grecja n: 1
+i: 11 country: Hiszpania n: 1
+i: 12 country: Niderlandy n: 1
+i: 13 country: Irlandia n: 1
+i: 14 country: Islandia n: 1
+i: 15 country: Litwa  n: 1
+i: 16 country: Liechtenstein n: 1
+i: 17 country: Luksemburg n: 1
+i: 18 country: £otwa n: 1
+i: 19 country: Malta n: 1
+i: 20 country: Niemcy n: 1
+i: 21 country: Norwegia n: 1
+i: 22 country: Polska n: 1
+i: 23 country: Portugalia n: 1
+i: 24 country: Rumunia n: 1
+i: 25 country: S³owacja n: 1
+i: 26 country: S³owenia n: 1
+i: 27 country: Szwecja n: 1
+i: 28 country: Wêgry n: 1
+i: 29 country: W³ochy n: 1
+i: 30 country: Krajowe n: 1
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 1
+i: 0 country: Austria n: 2
+i: 1 country: Belgia n: 2
+i: 2 country: Bu³garia n: 2
+i: 3 country: Chorwacja n: 2
+i: 4 country: Cypr n: 2
+i: 5 country: Czechy n: 2
+i: 6 country: Dania n: 2
+i: 7 country: Estonia n: 2
+i: 8 country: Finlandia n: 2
+i: 9 country: Francja n: 2
+i: 10 country: Grecja n: 2
+i: 11 country: Hiszpania n: 2
+i: 12 country: Niderlandy n: 2
+i: 13 country: Irlandia n: 2
+i: 14 country: Islandia n: 2
+i: 15 country: Litwa  n: 2
+i: 16 country: Liechtenstein n: 2
+i: 17 country: Luksemburg n: 2
+i: 18 country: £otwa n: 2
+i: 19 country: Malta n: 2
+i: 20 country: Niemcy n: 2
+i: 21 country: Norwegia n: 2
+i: 22 country: Polska n: 2
+i: 23 country: Portugalia n: 2
+i: 24 country: Rumunia n: 2
+i: 25 country: S³owacja n: 2
+i: 26 country: S³owenia n: 2
+i: 27 country: Szwecja n: 2
+i: 28 country: Wêgry n: 2
+i: 29 country: W³ochy n: 2
+i: 30 country: Krajowe n: 2
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 2
+i: 0 country: Austria n: 3
+i: 1 country: Belgia n: 3
+i: 2 country: Bu³garia n: 3
+i: 3 country: Chorwacja n: 3
+i: 4 country: Cypr n: 3
+i: 5 country: Czechy n: 3
+i: 6 country: Dania n: 3
+i: 7 country: Estonia n: 3
+i: 8 country: Finlandia n: 3
+i: 9 country: Francja n: 3
+i: 10 country: Grecja n: 3
+i: 11 country: Hiszpania n: 3
+i: 12 country: Niderlandy n: 3
+i: 13 country: Irlandia n: 3
+i: 14 country: Islandia n: 3
+i: 15 country: Litwa  n: 3
+i: 16 country: Liechtenstein n: 3
+i: 17 country: Luksemburg n: 3
+i: 18 country: £otwa n: 3
+i: 19 country: Malta n: 3
+i: 20 country: Niemcy n: 3
+i: 21 country: Norwegia n: 3
+i: 22 country: Polska n: 3
+i: 23 country: Portugalia n: 3
+i: 24 country: Rumunia n: 3
+i: 25 country: S³owacja n: 3
+i: 26 country: S³owenia n: 3
+i: 27 country: Szwecja n: 3
+i: 28 country: Wêgry n: 3
+i: 29 country: W³ochy n: 3
+i: 30 country: Krajowe n: 3
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 3
+i: 0 country: Austria n: 4
+i: 1 country: Belgia n: 4
+i: 2 country: Bu³garia n: 4
+i: 3 country: Chorwacja n: 4
+i: 4 country: Cypr n: 4
+i: 5 country: Czechy n: 4
+i: 6 country: Dania n: 4
+i: 7 country: Estonia n: 4
+i: 8 country: Finlandia n: 4
+i: 9 country: Francja n: 4
+i: 10 country: Grecja n: 4
+i: 11 country: Hiszpania n: 4
+i: 12 country: Niderlandy n: 4
+i: 13 country: Irlandia n: 4
+i: 14 country: Islandia n: 4
+i: 15 country: Litwa  n: 4
+i: 16 country: Liechtenstein n: 4
+i: 17 country: Luksemburg n: 4
+i: 18 country: £otwa n: 4
+i: 19 country: Malta n: 4
+i: 20 country: Niemcy n: 4
+i: 21 country: Norwegia n: 4
+i: 22 country: Polska n: 4
+i: 23 country: Portugalia n: 4
+i: 24 country: Rumunia n: 4
+i: 25 country: S³owacja n: 4
+i: 26 country: S³owenia n: 4
+i: 27 country: Szwecja n: 4
+i: 28 country: Wêgry n: 4
+i: 29 country: W³ochy n: 4
+i: 30 country: Krajowe n: 4
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 4
+i: 0 country: Austria n: 5
+i: 1 country: Belgia n: 5
+i: 2 country: Bu³garia n: 5
+i: 3 country: Chorwacja n: 5
+i: 4 country: Cypr n: 5
+i: 5 country: Czechy n: 5
+i: 6 country: Dania n: 5
+i: 7 country: Estonia n: 5
+i: 8 country: Finlandia n: 5
+i: 9 country: Francja n: 5
+i: 10 country: Grecja n: 5
+i: 11 country: Hiszpania n: 5
+i: 12 country: Niderlandy n: 5
+i: 13 country: Irlandia n: 5
+i: 14 country: Islandia n: 5
+i: 15 country: Litwa  n: 5
+i: 16 country: Liechtenstein n: 5
+i: 17 country: Luksemburg n: 5
+i: 18 country: £otwa n: 5
+i: 19 country: Malta n: 5
+i: 20 country: Niemcy n: 5
+i: 21 country: Norwegia n: 5
+i: 22 country: Polska n: 5
+i: 23 country: Portugalia n: 5
+i: 24 country: Rumunia n: 5
+i: 25 country: S³owacja n: 5
+i: 26 country: S³owenia n: 5
+i: 27 country: Szwecja n: 5
+i: 28 country: Wêgry n: 5
+i: 29 country: W³ochy n: 5
+i: 30 country: Krajowe n: 5
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 5
+i: 0 country: Austria n: 6
+i: 1 country: Belgia n: 6
+i: 2 country: Bu³garia n: 6
+i: 3 country: Chorwacja n: 6
+i: 4 country: Cypr n: 6
+i: 5 country: Czechy n: 6
+i: 6 country: Dania n: 6
+i: 7 country: Estonia n: 6
+i: 8 country: Finlandia n: 6
+i: 9 country: Francja n: 6
+i: 10 country: Grecja n: 6
+i: 11 country: Hiszpania n: 6
+i: 12 country: Niderlandy n: 6
+i: 13 country: Irlandia n: 6
+i: 14 country: Islandia n: 6
+i: 15 country: Litwa  n: 6
+i: 16 country: Liechtenstein n: 6
+i: 17 country: Luksemburg n: 6
+i: 18 country: £otwa n: 6
+i: 19 country: Malta n: 6
+i: 20 country: Niemcy n: 6
+i: 21 country: Norwegia n: 6
+i: 22 country: Polska n: 6
+i: 23 country: Portugalia n: 6
+i: 24 country: Rumunia n: 6
+i: 25 country: S³owacja n: 6
+i: 26 country: S³owenia n: 6
+i: 27 country: Szwecja n: 6
+i: 28 country: Wêgry n: 6
+i: 29 country: W³ochy n: 6
+i: 30 country: Krajowe n: 6
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 6
+i: 0 country: Austria n: 7
+i: 1 country: Belgia n: 7
+i: 2 country: Bu³garia n: 7
+i: 3 country: Chorwacja n: 7
+i: 4 country: Cypr n: 7
+i: 5 country: Czechy n: 7
+i: 6 country: Dania n: 7
+i: 7 country: Estonia n: 7
+i: 8 country: Finlandia n: 7
+i: 9 country: Francja n: 7
+i: 10 country: Grecja n: 7
+i: 11 country: Hiszpania n: 7
+i: 12 country: Niderlandy n: 7
+i: 13 country: Irlandia n: 7
+i: 14 country: Islandia n: 7
+i: 15 country: Litwa  n: 7
+i: 16 country: Liechtenstein n: 7
+i: 17 country: Luksemburg n: 7
+i: 18 country: £otwa n: 7
+i: 19 country: Malta n: 7
+i: 20 country: Niemcy n: 7
+i: 21 country: Norwegia n: 7
+i: 22 country: Polska n: 7
+i: 23 country: Portugalia n: 7
+i: 24 country: Rumunia n: 7
+i: 25 country: S³owacja n: 7
+i: 26 country: S³owenia n: 7
+i: 27 country: Szwecja n: 7
+i: 28 country: Wêgry n: 7
+i: 29 country: W³ochy n: 7
+i: 30 country: Krajowe n: 7
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 7
+i: 0 country: Austria n: 8
+i: 1 country: Belgia n: 8
+i: 2 country: Bu³garia n: 8
+i: 3 country: Chorwacja n: 8
+i: 4 country: Cypr n: 8
+i: 5 country: Czechy n: 8
+i: 6 country: Dania n: 8
+i: 7 country: Estonia n: 8
+i: 8 country: Finlandia n: 8
+i: 9 country: Francja n: 8
+i: 10 country: Grecja n: 8
+i: 11 country: Hiszpania n: 8
+i: 12 country: Niderlandy n: 8
+i: 13 country: Irlandia n: 8
+i: 14 country: Islandia n: 8
+i: 15 country: Litwa  n: 8
+i: 16 country: Liechtenstein n: 8
+i: 17 country: Luksemburg n: 8
+i: 18 country: £otwa n: 8
+i: 19 country: Malta n: 8
+i: 20 country: Niemcy n: 8
+i: 21 country: Norwegia n: 8
+i: 22 country: Polska n: 8
+i: 23 country: Portugalia n: 8
+i: 24 country: Rumunia n: 8
+i: 25 country: S³owacja n: 8
+i: 26 country: S³owenia n: 8
+i: 27 country: Szwecja n: 8
+i: 28 country: Wêgry n: 8
+i: 29 country: W³ochy n: 8
+i: 30 country: Krajowe n: 8
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 8
+i: 0 country: Austria n: 9
+i: 1 country: Belgia n: 9
+i: 2 country: Bu³garia n: 9
+i: 3 country: Chorwacja n: 9
+i: 4 country: Cypr n: 9
+i: 5 country: Czechy n: 9
+i: 6 country: Dania n: 9
+i: 7 country: Estonia n: 9
+i: 8 country: Finlandia n: 9
+i: 9 country: Francja n: 9
+i: 10 country: Grecja n: 9
+i: 11 country: Hiszpania n: 9
+i: 12 country: Niderlandy n: 9
+i: 13 country: Irlandia n: 9
+i: 14 country: Islandia n: 9
+i: 15 country: Litwa  n: 9
+i: 16 country: Liechtenstein n: 9
+i: 17 country: Luksemburg n: 9
+i: 18 country: £otwa n: 9
+i: 19 country: Malta n: 9
+i: 20 country: Niemcy n: 9
+i: 21 country: Norwegia n: 9
+i: 22 country: Polska n: 9
+i: 23 country: Portugalia n: 9
+i: 24 country: Rumunia n: 9
+i: 25 country: S³owacja n: 9
+i: 26 country: S³owenia n: 9
+i: 27 country: Szwecja n: 9
+i: 28 country: Wêgry n: 9
+i: 29 country: W³ochy n: 9
+i: 30 country: Krajowe n: 9
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 9
+i: 0 country: Austria n: 10
+i: 1 country: Belgia n: 10
+i: 2 country: Bu³garia n: 10
+i: 3 country: Chorwacja n: 10
+i: 4 country: Cypr n: 10
+i: 5 country: Czechy n: 10
+i: 6 country: Dania n: 10
+i: 7 country: Estonia n: 10
+i: 8 country: Finlandia n: 10
+i: 9 country: Francja n: 10
+i: 10 country: Grecja n: 10
+i: 11 country: Hiszpania n: 10
+i: 12 country: Niderlandy n: 10
+i: 13 country: Irlandia n: 10
+i: 14 country: Islandia n: 10
+i: 15 country: Litwa  n: 10
+i: 16 country: Liechtenstein n: 10
+i: 17 country: Luksemburg n: 10
+i: 18 country: £otwa n: 10
+i: 19 country: Malta n: 10
+i: 20 country: Niemcy n: 10
+i: 21 country: Norwegia n: 10
+i: 22 country: Polska n: 10
+i: 23 country: Portugalia n: 10
+i: 24 country: Rumunia n: 10
+i: 25 country: S³owacja n: 10
+i: 26 country: S³owenia n: 10
+i: 27 country: Szwecja n: 10
+i: 28 country: Wêgry n: 10
+i: 29 country: W³ochy n: 10
+i: 30 country: Krajowe n: 10
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 10
+i: 0 country: Austria n: 11
+i: 1 country: Belgia n: 11
+i: 2 country: Bu³garia n: 11
+i: 3 country: Chorwacja n: 11
+i: 4 country: Cypr n: 11
+i: 5 country: Czechy n: 11
+i: 6 country: Dania n: 11
+i: 7 country: Estonia n: 11
+i: 8 country: Finlandia n: 11
+i: 9 country: Francja n: 11
+i: 10 country: Grecja n: 11
+i: 11 country: Hiszpania n: 11
+i: 12 country: Niderlandy n: 11
+i: 13 country: Irlandia n: 11
+i: 14 country: Islandia n: 11
+i: 15 country: Litwa  n: 11
+i: 16 country: Liechtenstein n: 11
+i: 17 country: Luksemburg n: 11
+i: 18 country: £otwa n: 11
+i: 19 country: Malta n: 11
+i: 20 country: Niemcy n: 11
+i: 21 country: Norwegia n: 11
+i: 22 country: Polska n: 11
+i: 23 country: Portugalia n: 11
+i: 24 country: Rumunia n: 11
+i: 25 country: S³owacja n: 11
+i: 26 country: S³owenia n: 11
+i: 27 country: Szwecja n: 11
+i: 28 country: Wêgry n: 11
+i: 29 country: W³ochy n: 11
+i: 30 country: Krajowe n: 11
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 11
+i: 0 country: Austria n: 12
+i: 1 country: Belgia n: 12
+i: 2 country: Bu³garia n: 12
+i: 3 country: Chorwacja n: 12
+i: 4 country: Cypr n: 12
+i: 5 country: Czechy n: 12
+i: 6 country: Dania n: 12
+i: 7 country: Estonia n: 12
+i: 8 country: Finlandia n: 12
+i: 9 country: Francja n: 12
+i: 10 country: Grecja n: 12
+i: 11 country: Hiszpania n: 12
+i: 12 country: Niderlandy n: 12
+i: 13 country: Irlandia n: 12
+i: 14 country: Islandia n: 12
+i: 15 country: Litwa  n: 12
+i: 16 country: Liechtenstein n: 12
+i: 17 country: Luksemburg n: 12
+i: 18 country: £otwa n: 12
+i: 19 country: Malta n: 12
+i: 20 country: Niemcy n: 12
+i: 21 country: Norwegia n: 12
+i: 22 country: Polska n: 12
+i: 23 country: Portugalia n: 12
+i: 24 country: Rumunia n: 12
+i: 25 country: S³owacja n: 12
+i: 26 country: S³owenia n: 12
+i: 27 country: Szwecja n: 12
+i: 28 country: Wêgry n: 12
+i: 29 country: W³ochy n: 12
+i: 30 country: Krajowe n: 12
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 12
+i: 0 country: Austria n: 13
+i: 1 country: Belgia n: 13
+i: 2 country: Bu³garia n: 13
+i: 3 country: Chorwacja n: 13
+i: 4 country: Cypr n: 13
+i: 5 country: Czechy n: 13
+i: 6 country: Dania n: 13
+i: 7 country: Estonia n: 13
+i: 8 country: Finlandia n: 13
+i: 9 country: Francja n: 13
+i: 10 country: Grecja n: 13
+i: 11 country: Hiszpania n: 13
+i: 12 country: Niderlandy n: 13
+i: 13 country: Irlandia n: 13
+i: 14 country: Islandia n: 13
+i: 15 country: Litwa  n: 13
+i: 16 country: Liechtenstein n: 13
+i: 17 country: Luksemburg n: 13
+i: 18 country: £otwa n: 13
+i: 19 country: Malta n: 13
+i: 20 country: Niemcy n: 13
+i: 21 country: Norwegia n: 13
+i: 22 country: Polska n: 13
+i: 23 country: Portugalia n: 13
+i: 24 country: Rumunia n: 13
+i: 25 country: S³owacja n: 13
+i: 26 country: S³owenia n: 13
+i: 27 country: Szwecja n: 13
+i: 28 country: Wêgry n: 13
+i: 29 country: W³ochy n: 13
+i: 30 country: Krajowe n: 13
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 13
+i: 0 country: Austria n: 14
+i: 1 country: Belgia n: 14
+i: 2 country: Bu³garia n: 14
+i: 3 country: Chorwacja n: 14
+i: 4 country: Cypr n: 14
+i: 5 country: Czechy n: 14
+i: 6 country: Dania n: 14
+i: 7 country: Estonia n: 14
+i: 8 country: Finlandia n: 14
+i: 9 country: Francja n: 14
+i: 10 country: Grecja n: 14
+i: 11 country: Hiszpania n: 14
+i: 12 country: Niderlandy n: 14
+i: 13 country: Irlandia n: 14
+i: 14 country: Islandia n: 14
+i: 15 country: Litwa  n: 14
+i: 16 country: Liechtenstein n: 14
+i: 17 country: Luksemburg n: 14
+i: 18 country: £otwa n: 14
+i: 19 country: Malta n: 14
+i: 20 country: Niemcy n: 14
+i: 21 country: Norwegia n: 14
+i: 22 country: Polska n: 14
+i: 23 country: Portugalia n: 14
+i: 24 country: Rumunia n: 14
+i: 25 country: S³owacja n: 14
+i: 26 country: S³owenia n: 14
+i: 27 country: Szwecja n: 14
+i: 28 country: Wêgry n: 14
+i: 29 country: W³ochy n: 14
+i: 30 country: Krajowe n: 14
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 14
+i: 0 country: Austria n: 15
+i: 1 country: Belgia n: 15
+i: 2 country: Bu³garia n: 15
+i: 3 country: Chorwacja n: 15
+i: 4 country: Cypr n: 15
+i: 5 country: Czechy n: 15
+i: 6 country: Dania n: 15
+i: 7 country: Estonia n: 15
+i: 8 country: Finlandia n: 15
+i: 9 country: Francja n: 15
+i: 10 country: Grecja n: 15
+i: 11 country: Hiszpania n: 15
+i: 12 country: Niderlandy n: 15
+i: 13 country: Irlandia n: 15
+i: 14 country: Islandia n: 15
+i: 15 country: Litwa  n: 15
+i: 16 country: Liechtenstein n: 15
+i: 17 country: Luksemburg n: 15
+i: 18 country: £otwa n: 15
+i: 19 country: Malta n: 15
+i: 20 country: Niemcy n: 15
+i: 21 country: Norwegia n: 15
+i: 22 country: Polska n: 15
+i: 23 country: Portugalia n: 15
+i: 24 country: Rumunia n: 15
+i: 25 country: S³owacja n: 15
+i: 26 country: S³owenia n: 15
+i: 27 country: Szwecja n: 15
+i: 28 country: Wêgry n: 15
+i: 29 country: W³ochy n: 15
+i: 30 country: Krajowe n: 15
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 15
+i: 0 country: Austria n: 16
+i: 1 country: Belgia n: 16
+i: 2 country: Bu³garia n: 16
+i: 3 country: Chorwacja n: 16
+i: 4 country: Cypr n: 16
+i: 5 country: Czechy n: 16
+i: 6 country: Dania n: 16
+i: 7 country: Estonia n: 16
+i: 8 country: Finlandia n: 16
+i: 9 country: Francja n: 16
+i: 10 country: Grecja n: 16
+i: 11 country: Hiszpania n: 16
+i: 12 country: Niderlandy n: 16
+i: 13 country: Irlandia n: 16
+i: 14 country: Islandia n: 16
+i: 15 country: Litwa  n: 16
+i: 16 country: Liechtenstein n: 16
+i: 17 country: Luksemburg n: 16
+i: 18 country: £otwa n: 16
+i: 19 country: Malta n: 16
+i: 20 country: Niemcy n: 16
+i: 21 country: Norwegia n: 16
+i: 22 country: Polska n: 16
+i: 23 country: Portugalia n: 16
+i: 24 country: Rumunia n: 16
+i: 25 country: S³owacja n: 16
+i: 26 country: S³owenia n: 16
+i: 27 country: Szwecja n: 16
+i: 28 country: Wêgry n: 16
+i: 29 country: W³ochy n: 16
+i: 30 country: Krajowe n: 16
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 16
+i: 0 country: Austria n: 17
+i: 1 country: Belgia n: 17
+i: 2 country: Bu³garia n: 17
+i: 3 country: Chorwacja n: 17
+i: 4 country: Cypr n: 17
+i: 5 country: Czechy n: 17
+i: 6 country: Dania n: 17
+i: 7 country: Estonia n: 17
+i: 8 country: Finlandia n: 17
+i: 9 country: Francja n: 17
+i: 10 country: Grecja n: 17
+i: 11 country: Hiszpania n: 17
+i: 12 country: Niderlandy n: 17
+i: 13 country: Irlandia n: 17
+i: 14 country: Islandia n: 17
+i: 15 country: Litwa  n: 17
+i: 16 country: Liechtenstein n: 17
+i: 17 country: Luksemburg n: 17
+i: 18 country: £otwa n: 17
+i: 19 country: Malta n: 17
+i: 20 country: Niemcy n: 17
+i: 21 country: Norwegia n: 17
+i: 22 country: Polska n: 17
+i: 23 country: Portugalia n: 17
+i: 24 country: Rumunia n: 17
+i: 25 country: S³owacja n: 17
+i: 26 country: S³owenia n: 17
+i: 27 country: Szwecja n: 17
+i: 28 country: Wêgry n: 17
+i: 29 country: W³ochy n: 17
+i: 30 country: Krajowe n: 17
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 17
+i: 0 country: Austria n: 18
+i: 1 country: Belgia n: 18
+i: 2 country: Bu³garia n: 18
+i: 3 country: Chorwacja n: 18
+i: 4 country: Cypr n: 18
+i: 5 country: Czechy n: 18
+i: 6 country: Dania n: 18
+i: 7 country: Estonia n: 18
+i: 8 country: Finlandia n: 18
+i: 9 country: Francja n: 18
+i: 10 country: Grecja n: 18
+i: 11 country: Hiszpania n: 18
+i: 12 country: Niderlandy n: 18
+i: 13 country: Irlandia n: 18
+i: 14 country: Islandia n: 18
+i: 15 country: Litwa  n: 18
+i: 16 country: Liechtenstein n: 18
+i: 17 country: Luksemburg n: 18
+i: 18 country: £otwa n: 18
+i: 19 country: Malta n: 18
+i: 20 country: Niemcy n: 18
+i: 21 country: Norwegia n: 18
+i: 22 country: Polska n: 18
+i: 23 country: Portugalia n: 18
+i: 24 country: Rumunia n: 18
+i: 25 country: S³owacja n: 18
+i: 26 country: S³owenia n: 18
+i: 27 country: Szwecja n: 18
+i: 28 country: Wêgry n: 18
+i: 29 country: W³ochy n: 18
+i: 30 country: Krajowe n: 18
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 18
+i: 0 country: Austria n: 19
+i: 1 country: Belgia n: 19
+i: 2 country: Bu³garia n: 19
+i: 3 country: Chorwacja n: 19
+i: 4 country: Cypr n: 19
+i: 5 country: Czechy n: 19
+i: 6 country: Dania n: 19
+i: 7 country: Estonia n: 19
+i: 8 country: Finlandia n: 19
+i: 9 country: Francja n: 19
+i: 10 country: Grecja n: 19
+i: 11 country: Hiszpania n: 19
+i: 12 country: Niderlandy n: 19
+i: 13 country: Irlandia n: 19
+i: 14 country: Islandia n: 19
+i: 15 country: Litwa  n: 19
+i: 16 country: Liechtenstein n: 19
+i: 17 country: Luksemburg n: 19
+i: 18 country: £otwa n: 19
+i: 19 country: Malta n: 19
+i: 20 country: Niemcy n: 19
+i: 21 country: Norwegia n: 19
+i: 22 country: Polska n: 19
+i: 23 country: Portugalia n: 19
+i: 24 country: Rumunia n: 19
+i: 25 country: S³owacja n: 19
+i: 26 country: S³owenia n: 19
+i: 27 country: Szwecja n: 19
+i: 28 country: Wêgry n: 19
+i: 29 country: W³ochy n: 19
+i: 30 country: Krajowe n: 19
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 19
+6.ab.LiW
+5a.R.SF
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+An error occurred while reading the remote file: (1326, 'WNetAddConnection2', 'Nazwa u¿ytkownika lub has³o s¹ niepoprawne.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd
+
+[Errno 13] Permission denied: '//prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd'
+
+Report start -AR2- --2023-07-25--
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+i: 0 country: Austria n: 0
+i: 1 country: Belgia n: 0
+i: 2 country: Bu³garia n: 0
+i: 3 country: Chorwacja n: 0
+i: 4 country: Cypr n: 0
+i: 5 country: Czechy n: 0
+i: 6 country: Dania n: 0
+i: 7 country: Estonia n: 0
+i: 8 country: Finlandia n: 0
+i: 9 country: Francja n: 0
+i: 10 country: Grecja n: 0
+i: 11 country: Hiszpania n: 0
+i: 12 country: Niderlandy n: 0
+i: 13 country: Irlandia n: 0
+i: 14 country: Islandia n: 0
+i: 15 country: Litwa  n: 0
+i: 16 country: Liechtenstein n: 0
+i: 17 country: Luksemburg n: 0
+i: 18 country: £otwa n: 0
+i: 19 country: Malta n: 0
+i: 20 country: Niemcy n: 0
+i: 21 country: Norwegia n: 0
+i: 22 country: Polska n: 0
+i: 23 country: Portugalia n: 0
+i: 24 country: Rumunia n: 0
+i: 25 country: S³owacja n: 0
+i: 26 country: S³owenia n: 0
+i: 27 country: Szwecja n: 0
+i: 28 country: Wêgry n: 0
+i: 29 country: W³ochy n: 0
+i: 30 country: Krajowe n: 0
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 0
+i: 0 country: Austria n: 1
+i: 1 country: Belgia n: 1
+i: 2 country: Bu³garia n: 1
+i: 3 country: Chorwacja n: 1
+i: 4 country: Cypr n: 1
+i: 5 country: Czechy n: 1
+i: 6 country: Dania n: 1
+i: 7 country: Estonia n: 1
+i: 8 country: Finlandia n: 1
+i: 9 country: Francja n: 1
+i: 10 country: Grecja n: 1
+i: 11 country: Hiszpania n: 1
+i: 12 country: Niderlandy n: 1
+i: 13 country: Irlandia n: 1
+i: 14 country: Islandia n: 1
+i: 15 country: Litwa  n: 1
+i: 16 country: Liechtenstein n: 1
+i: 17 country: Luksemburg n: 1
+i: 18 country: £otwa n: 1
+i: 19 country: Malta n: 1
+i: 20 country: Niemcy n: 1
+i: 21 country: Norwegia n: 1
+i: 22 country: Polska n: 1
+i: 23 country: Portugalia n: 1
+i: 24 country: Rumunia n: 1
+i: 25 country: S³owacja n: 1
+i: 26 country: S³owenia n: 1
+i: 27 country: Szwecja n: 1
+i: 28 country: Wêgry n: 1
+i: 29 country: W³ochy n: 1
+i: 30 country: Krajowe n: 1
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 1
+i: 0 country: Austria n: 2
+i: 1 country: Belgia n: 2
+i: 2 country: Bu³garia n: 2
+i: 3 country: Chorwacja n: 2
+i: 4 country: Cypr n: 2
+i: 5 country: Czechy n: 2
+i: 6 country: Dania n: 2
+i: 7 country: Estonia n: 2
+i: 8 country: Finlandia n: 2
+i: 9 country: Francja n: 2
+i: 10 country: Grecja n: 2
+i: 11 country: Hiszpania n: 2
+i: 12 country: Niderlandy n: 2
+i: 13 country: Irlandia n: 2
+i: 14 country: Islandia n: 2
+i: 15 country: Litwa  n: 2
+i: 16 country: Liechtenstein n: 2
+i: 17 country: Luksemburg n: 2
+i: 18 country: £otwa n: 2
+i: 19 country: Malta n: 2
+i: 20 country: Niemcy n: 2
+i: 21 country: Norwegia n: 2
+i: 22 country: Polska n: 2
+i: 23 country: Portugalia n: 2
+i: 24 country: Rumunia n: 2
+i: 25 country: S³owacja n: 2
+i: 26 country: S³owenia n: 2
+i: 27 country: Szwecja n: 2
+i: 28 country: Wêgry n: 2
+i: 29 country: W³ochy n: 2
+i: 30 country: Krajowe n: 2
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 2
+i: 0 country: Austria n: 3
+i: 1 country: Belgia n: 3
+i: 2 country: Bu³garia n: 3
+i: 3 country: Chorwacja n: 3
+i: 4 country: Cypr n: 3
+i: 5 country: Czechy n: 3
+i: 6 country: Dania n: 3
+i: 7 country: Estonia n: 3
+i: 8 country: Finlandia n: 3
+i: 9 country: Francja n: 3
+i: 10 country: Grecja n: 3
+i: 11 country: Hiszpania n: 3
+i: 12 country: Niderlandy n: 3
+i: 13 country: Irlandia n: 3
+i: 14 country: Islandia n: 3
+i: 15 country: Litwa  n: 3
+i: 16 country: Liechtenstein n: 3
+i: 17 country: Luksemburg n: 3
+i: 18 country: £otwa n: 3
+i: 19 country: Malta n: 3
+i: 20 country: Niemcy n: 3
+i: 21 country: Norwegia n: 3
+i: 22 country: Polska n: 3
+i: 23 country: Portugalia n: 3
+i: 24 country: Rumunia n: 3
+i: 25 country: S³owacja n: 3
+i: 26 country: S³owenia n: 3
+i: 27 country: Szwecja n: 3
+i: 28 country: Wêgry n: 3
+i: 29 country: W³ochy n: 3
+i: 30 country: Krajowe n: 3
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 3
+i: 0 country: Austria n: 4
+i: 1 country: Belgia n: 4
+i: 2 country: Bu³garia n: 4
+i: 3 country: Chorwacja n: 4
+i: 4 country: Cypr n: 4
+i: 5 country: Czechy n: 4
+i: 6 country: Dania n: 4
+i: 7 country: Estonia n: 4
+i: 8 country: Finlandia n: 4
+i: 9 country: Francja n: 4
+i: 10 country: Grecja n: 4
+i: 11 country: Hiszpania n: 4
+i: 12 country: Niderlandy n: 4
+i: 13 country: Irlandia n: 4
+i: 14 country: Islandia n: 4
+i: 15 country: Litwa  n: 4
+i: 16 country: Liechtenstein n: 4
+i: 17 country: Luksemburg n: 4
+i: 18 country: £otwa n: 4
+i: 19 country: Malta n: 4
+i: 20 country: Niemcy n: 4
+i: 21 country: Norwegia n: 4
+i: 22 country: Polska n: 4
+i: 23 country: Portugalia n: 4
+i: 24 country: Rumunia n: 4
+i: 25 country: S³owacja n: 4
+i: 26 country: S³owenia n: 4
+i: 27 country: Szwecja n: 4
+i: 28 country: Wêgry n: 4
+i: 29 country: W³ochy n: 4
+i: 30 country: Krajowe n: 4
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 4
+i: 0 country: Austria n: 5
+i: 1 country: Belgia n: 5
+i: 2 country: Bu³garia n: 5
+i: 3 country: Chorwacja n: 5
+i: 4 country: Cypr n: 5
+i: 5 country: Czechy n: 5
+i: 6 country: Dania n: 5
+i: 7 country: Estonia n: 5
+i: 8 country: Finlandia n: 5
+i: 9 country: Francja n: 5
+i: 10 country: Grecja n: 5
+i: 11 country: Hiszpania n: 5
+i: 12 country: Niderlandy n: 5
+i: 13 country: Irlandia n: 5
+i: 14 country: Islandia n: 5
+i: 15 country: Litwa  n: 5
+i: 16 country: Liechtenstein n: 5
+i: 17 country: Luksemburg n: 5
+i: 18 country: £otwa n: 5
+i: 19 country: Malta n: 5
+i: 20 country: Niemcy n: 5
+i: 21 country: Norwegia n: 5
+i: 22 country: Polska n: 5
+i: 23 country: Portugalia n: 5
+i: 24 country: Rumunia n: 5
+i: 25 country: S³owacja n: 5
+i: 26 country: S³owenia n: 5
+i: 27 country: Szwecja n: 5
+i: 28 country: Wêgry n: 5
+i: 29 country: W³ochy n: 5
+i: 30 country: Krajowe n: 5
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 5
+i: 0 country: Austria n: 6
+i: 1 country: Belgia n: 6
+i: 2 country: Bu³garia n: 6
+i: 3 country: Chorwacja n: 6
+i: 4 country: Cypr n: 6
+i: 5 country: Czechy n: 6
+i: 6 country: Dania n: 6
+i: 7 country: Estonia n: 6
+i: 8 country: Finlandia n: 6
+i: 9 country: Francja n: 6
+i: 10 country: Grecja n: 6
+i: 11 country: Hiszpania n: 6
+i: 12 country: Niderlandy n: 6
+i: 13 country: Irlandia n: 6
+i: 14 country: Islandia n: 6
+i: 15 country: Litwa  n: 6
+i: 16 country: Liechtenstein n: 6
+i: 17 country: Luksemburg n: 6
+i: 18 country: £otwa n: 6
+i: 19 country: Malta n: 6
+i: 20 country: Niemcy n: 6
+i: 21 country: Norwegia n: 6
+i: 22 country: Polska n: 6
+i: 23 country: Portugalia n: 6
+i: 24 country: Rumunia n: 6
+i: 25 country: S³owacja n: 6
+i: 26 country: S³owenia n: 6
+i: 27 country: Szwecja n: 6
+i: 28 country: Wêgry n: 6
+i: 29 country: W³ochy n: 6
+i: 30 country: Krajowe n: 6
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 6
+i: 0 country: Austria n: 7
+i: 1 country: Belgia n: 7
+i: 2 country: Bu³garia n: 7
+i: 3 country: Chorwacja n: 7
+i: 4 country: Cypr n: 7
+i: 5 country: Czechy n: 7
+i: 6 country: Dania n: 7
+i: 7 country: Estonia n: 7
+i: 8 country: Finlandia n: 7
+i: 9 country: Francja n: 7
+i: 10 country: Grecja n: 7
+i: 11 country: Hiszpania n: 7
+i: 12 country: Niderlandy n: 7
+i: 13 country: Irlandia n: 7
+i: 14 country: Islandia n: 7
+i: 15 country: Litwa  n: 7
+i: 16 country: Liechtenstein n: 7
+i: 17 country: Luksemburg n: 7
+i: 18 country: £otwa n: 7
+i: 19 country: Malta n: 7
+i: 20 country: Niemcy n: 7
+i: 21 country: Norwegia n: 7
+i: 22 country: Polska n: 7
+i: 23 country: Portugalia n: 7
+i: 24 country: Rumunia n: 7
+i: 25 country: S³owacja n: 7
+i: 26 country: S³owenia n: 7
+i: 27 country: Szwecja n: 7
+i: 28 country: Wêgry n: 7
+i: 29 country: W³ochy n: 7
+i: 30 country: Krajowe n: 7
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 7
+i: 0 country: Austria n: 8
+i: 1 country: Belgia n: 8
+i: 2 country: Bu³garia n: 8
+i: 3 country: Chorwacja n: 8
+i: 4 country: Cypr n: 8
+i: 5 country: Czechy n: 8
+i: 6 country: Dania n: 8
+i: 7 country: Estonia n: 8
+i: 8 country: Finlandia n: 8
+i: 9 country: Francja n: 8
+i: 10 country: Grecja n: 8
+i: 11 country: Hiszpania n: 8
+i: 12 country: Niderlandy n: 8
+i: 13 country: Irlandia n: 8
+i: 14 country: Islandia n: 8
+i: 15 country: Litwa  n: 8
+i: 16 country: Liechtenstein n: 8
+i: 17 country: Luksemburg n: 8
+i: 18 country: £otwa n: 8
+i: 19 country: Malta n: 8
+i: 20 country: Niemcy n: 8
+i: 21 country: Norwegia n: 8
+i: 22 country: Polska n: 8
+i: 23 country: Portugalia n: 8
+i: 24 country: Rumunia n: 8
+i: 25 country: S³owacja n: 8
+i: 26 country: S³owenia n: 8
+i: 27 country: Szwecja n: 8
+i: 28 country: Wêgry n: 8
+i: 29 country: W³ochy n: 8
+i: 30 country: Krajowe n: 8
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 8
+i: 0 country: Austria n: 9
+i: 1 country: Belgia n: 9
+i: 2 country: Bu³garia n: 9
+i: 3 country: Chorwacja n: 9
+i: 4 country: Cypr n: 9
+i: 5 country: Czechy n: 9
+i: 6 country: Dania n: 9
+i: 7 country: Estonia n: 9
+i: 8 country: Finlandia n: 9
+i: 9 country: Francja n: 9
+i: 10 country: Grecja n: 9
+i: 11 country: Hiszpania n: 9
+i: 12 country: Niderlandy n: 9
+i: 13 country: Irlandia n: 9
+i: 14 country: Islandia n: 9
+i: 15 country: Litwa  n: 9
+i: 16 country: Liechtenstein n: 9
+i: 17 country: Luksemburg n: 9
+i: 18 country: £otwa n: 9
+i: 19 country: Malta n: 9
+i: 20 country: Niemcy n: 9
+i: 21 country: Norwegia n: 9
+i: 22 country: Polska n: 9
+i: 23 country: Portugalia n: 9
+i: 24 country: Rumunia n: 9
+i: 25 country: S³owacja n: 9
+i: 26 country: S³owenia n: 9
+i: 27 country: Szwecja n: 9
+i: 28 country: Wêgry n: 9
+i: 29 country: W³ochy n: 9
+i: 30 country: Krajowe n: 9
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 9
+i: 0 country: Austria n: 10
+i: 1 country: Belgia n: 10
+i: 2 country: Bu³garia n: 10
+i: 3 country: Chorwacja n: 10
+i: 4 country: Cypr n: 10
+i: 5 country: Czechy n: 10
+i: 6 country: Dania n: 10
+i: 7 country: Estonia n: 10
+i: 8 country: Finlandia n: 10
+i: 9 country: Francja n: 10
+i: 10 country: Grecja n: 10
+i: 11 country: Hiszpania n: 10
+i: 12 country: Niderlandy n: 10
+i: 13 country: Irlandia n: 10
+i: 14 country: Islandia n: 10
+i: 15 country: Litwa  n: 10
+i: 16 country: Liechtenstein n: 10
+i: 17 country: Luksemburg n: 10
+i: 18 country: £otwa n: 10
+i: 19 country: Malta n: 10
+i: 20 country: Niemcy n: 10
+i: 21 country: Norwegia n: 10
+i: 22 country: Polska n: 10
+i: 23 country: Portugalia n: 10
+i: 24 country: Rumunia n: 10
+i: 25 country: S³owacja n: 10
+i: 26 country: S³owenia n: 10
+i: 27 country: Szwecja n: 10
+i: 28 country: Wêgry n: 10
+i: 29 country: W³ochy n: 10
+i: 30 country: Krajowe n: 10
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 10
+i: 0 country: Austria n: 11
+i: 1 country: Belgia n: 11
+i: 2 country: Bu³garia n: 11
+i: 3 country: Chorwacja n: 11
+i: 4 country: Cypr n: 11
+i: 5 country: Czechy n: 11
+i: 6 country: Dania n: 11
+i: 7 country: Estonia n: 11
+i: 8 country: Finlandia n: 11
+i: 9 country: Francja n: 11
+i: 10 country: Grecja n: 11
+i: 11 country: Hiszpania n: 11
+i: 12 country: Niderlandy n: 11
+i: 13 country: Irlandia n: 11
+i: 14 country: Islandia n: 11
+i: 15 country: Litwa  n: 11
+i: 16 country: Liechtenstein n: 11
+i: 17 country: Luksemburg n: 11
+i: 18 country: £otwa n: 11
+i: 19 country: Malta n: 11
+i: 20 country: Niemcy n: 11
+i: 21 country: Norwegia n: 11
+i: 22 country: Polska n: 11
+i: 23 country: Portugalia n: 11
+i: 24 country: Rumunia n: 11
+i: 25 country: S³owacja n: 11
+i: 26 country: S³owenia n: 11
+i: 27 country: Szwecja n: 11
+i: 28 country: Wêgry n: 11
+i: 29 country: W³ochy n: 11
+i: 30 country: Krajowe n: 11
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 11
+i: 0 country: Austria n: 12
+i: 1 country: Belgia n: 12
+i: 2 country: Bu³garia n: 12
+i: 3 country: Chorwacja n: 12
+i: 4 country: Cypr n: 12
+i: 5 country: Czechy n: 12
+i: 6 country: Dania n: 12
+i: 7 country: Estonia n: 12
+i: 8 country: Finlandia n: 12
+i: 9 country: Francja n: 12
+i: 10 country: Grecja n: 12
+i: 11 country: Hiszpania n: 12
+i: 12 country: Niderlandy n: 12
+i: 13 country: Irlandia n: 12
+i: 14 country: Islandia n: 12
+i: 15 country: Litwa  n: 12
+i: 16 country: Liechtenstein n: 12
+i: 17 country: Luksemburg n: 12
+i: 18 country: £otwa n: 12
+i: 19 country: Malta n: 12
+i: 20 country: Niemcy n: 12
+i: 21 country: Norwegia n: 12
+i: 22 country: Polska n: 12
+i: 23 country: Portugalia n: 12
+i: 24 country: Rumunia n: 12
+i: 25 country: S³owacja n: 12
+i: 26 country: S³owenia n: 12
+i: 27 country: Szwecja n: 12
+i: 28 country: Wêgry n: 12
+i: 29 country: W³ochy n: 12
+i: 30 country: Krajowe n: 12
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 12
+i: 0 country: Austria n: 13
+i: 1 country: Belgia n: 13
+i: 2 country: Bu³garia n: 13
+i: 3 country: Chorwacja n: 13
+i: 4 country: Cypr n: 13
+i: 5 country: Czechy n: 13
+i: 6 country: Dania n: 13
+i: 7 country: Estonia n: 13
+i: 8 country: Finlandia n: 13
+i: 9 country: Francja n: 13
+i: 10 country: Grecja n: 13
+i: 11 country: Hiszpania n: 13
+i: 12 country: Niderlandy n: 13
+i: 13 country: Irlandia n: 13
+i: 14 country: Islandia n: 13
+i: 15 country: Litwa  n: 13
+i: 16 country: Liechtenstein n: 13
+i: 17 country: Luksemburg n: 13
+i: 18 country: £otwa n: 13
+i: 19 country: Malta n: 13
+i: 20 country: Niemcy n: 13
+i: 21 country: Norwegia n: 13
+i: 22 country: Polska n: 13
+i: 23 country: Portugalia n: 13
+i: 24 country: Rumunia n: 13
+i: 25 country: S³owacja n: 13
+i: 26 country: S³owenia n: 13
+i: 27 country: Szwecja n: 13
+i: 28 country: Wêgry n: 13
+i: 29 country: W³ochy n: 13
+i: 30 country: Krajowe n: 13
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 13
+i: 0 country: Austria n: 14
+i: 1 country: Belgia n: 14
+i: 2 country: Bu³garia n: 14
+i: 3 country: Chorwacja n: 14
+i: 4 country: Cypr n: 14
+i: 5 country: Czechy n: 14
+i: 6 country: Dania n: 14
+i: 7 country: Estonia n: 14
+i: 8 country: Finlandia n: 14
+i: 9 country: Francja n: 14
+i: 10 country: Grecja n: 14
+i: 11 country: Hiszpania n: 14
+i: 12 country: Niderlandy n: 14
+i: 13 country: Irlandia n: 14
+i: 14 country: Islandia n: 14
+i: 15 country: Litwa  n: 14
+i: 16 country: Liechtenstein n: 14
+i: 17 country: Luksemburg n: 14
+i: 18 country: £otwa n: 14
+i: 19 country: Malta n: 14
+i: 20 country: Niemcy n: 14
+i: 21 country: Norwegia n: 14
+i: 22 country: Polska n: 14
+i: 23 country: Portugalia n: 14
+i: 24 country: Rumunia n: 14
+i: 25 country: S³owacja n: 14
+i: 26 country: S³owenia n: 14
+i: 27 country: Szwecja n: 14
+i: 28 country: Wêgry n: 14
+i: 29 country: W³ochy n: 14
+i: 30 country: Krajowe n: 14
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 14
+i: 0 country: Austria n: 15
+i: 1 country: Belgia n: 15
+i: 2 country: Bu³garia n: 15
+i: 3 country: Chorwacja n: 15
+i: 4 country: Cypr n: 15
+i: 5 country: Czechy n: 15
+i: 6 country: Dania n: 15
+i: 7 country: Estonia n: 15
+i: 8 country: Finlandia n: 15
+i: 9 country: Francja n: 15
+i: 10 country: Grecja n: 15
+i: 11 country: Hiszpania n: 15
+i: 12 country: Niderlandy n: 15
+i: 13 country: Irlandia n: 15
+i: 14 country: Islandia n: 15
+i: 15 country: Litwa  n: 15
+i: 16 country: Liechtenstein n: 15
+i: 17 country: Luksemburg n: 15
+i: 18 country: £otwa n: 15
+i: 19 country: Malta n: 15
+i: 20 country: Niemcy n: 15
+i: 21 country: Norwegia n: 15
+i: 22 country: Polska n: 15
+i: 23 country: Portugalia n: 15
+i: 24 country: Rumunia n: 15
+i: 25 country: S³owacja n: 15
+i: 26 country: S³owenia n: 15
+i: 27 country: Szwecja n: 15
+i: 28 country: Wêgry n: 15
+i: 29 country: W³ochy n: 15
+i: 30 country: Krajowe n: 15
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 15
+i: 0 country: Austria n: 16
+i: 1 country: Belgia n: 16
+i: 2 country: Bu³garia n: 16
+i: 3 country: Chorwacja n: 16
+i: 4 country: Cypr n: 16
+i: 5 country: Czechy n: 16
+i: 6 country: Dania n: 16
+i: 7 country: Estonia n: 16
+i: 8 country: Finlandia n: 16
+i: 9 country: Francja n: 16
+i: 10 country: Grecja n: 16
+i: 11 country: Hiszpania n: 16
+i: 12 country: Niderlandy n: 16
+i: 13 country: Irlandia n: 16
+i: 14 country: Islandia n: 16
+i: 15 country: Litwa  n: 16
+i: 16 country: Liechtenstein n: 16
+i: 17 country: Luksemburg n: 16
+i: 18 country: £otwa n: 16
+i: 19 country: Malta n: 16
+i: 20 country: Niemcy n: 16
+i: 21 country: Norwegia n: 16
+i: 22 country: Polska n: 16
+i: 23 country: Portugalia n: 16
+i: 24 country: Rumunia n: 16
+i: 25 country: S³owacja n: 16
+i: 26 country: S³owenia n: 16
+i: 27 country: Szwecja n: 16
+i: 28 country: Wêgry n: 16
+i: 29 country: W³ochy n: 16
+i: 30 country: Krajowe n: 16
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 16
+i: 0 country: Austria n: 17
+i: 1 country: Belgia n: 17
+i: 2 country: Bu³garia n: 17
+i: 3 country: Chorwacja n: 17
+i: 4 country: Cypr n: 17
+i: 5 country: Czechy n: 17
+i: 6 country: Dania n: 17
+i: 7 country: Estonia n: 17
+i: 8 country: Finlandia n: 17
+i: 9 country: Francja n: 17
+i: 10 country: Grecja n: 17
+i: 11 country: Hiszpania n: 17
+i: 12 country: Niderlandy n: 17
+i: 13 country: Irlandia n: 17
+i: 14 country: Islandia n: 17
+i: 15 country: Litwa  n: 17
+i: 16 country: Liechtenstein n: 17
+i: 17 country: Luksemburg n: 17
+i: 18 country: £otwa n: 17
+i: 19 country: Malta n: 17
+i: 20 country: Niemcy n: 17
+i: 21 country: Norwegia n: 17
+i: 22 country: Polska n: 17
+i: 23 country: Portugalia n: 17
+i: 24 country: Rumunia n: 17
+i: 25 country: S³owacja n: 17
+i: 26 country: S³owenia n: 17
+i: 27 country: Szwecja n: 17
+i: 28 country: Wêgry n: 17
+i: 29 country: W³ochy n: 17
+i: 30 country: Krajowe n: 17
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 17
+i: 0 country: Austria n: 18
+i: 1 country: Belgia n: 18
+i: 2 country: Bu³garia n: 18
+i: 3 country: Chorwacja n: 18
+i: 4 country: Cypr n: 18
+i: 5 country: Czechy n: 18
+i: 6 country: Dania n: 18
+i: 7 country: Estonia n: 18
+i: 8 country: Finlandia n: 18
+i: 9 country: Francja n: 18
+i: 10 country: Grecja n: 18
+i: 11 country: Hiszpania n: 18
+i: 12 country: Niderlandy n: 18
+i: 13 country: Irlandia n: 18
+i: 14 country: Islandia n: 18
+i: 15 country: Litwa  n: 18
+i: 16 country: Liechtenstein n: 18
+i: 17 country: Luksemburg n: 18
+i: 18 country: £otwa n: 18
+i: 19 country: Malta n: 18
+i: 20 country: Niemcy n: 18
+i: 21 country: Norwegia n: 18
+i: 22 country: Polska n: 18
+i: 23 country: Portugalia n: 18
+i: 24 country: Rumunia n: 18
+i: 25 country: S³owacja n: 18
+i: 26 country: S³owenia n: 18
+i: 27 country: Szwecja n: 18
+i: 28 country: Wêgry n: 18
+i: 29 country: W³ochy n: 18
+i: 30 country: Krajowe n: 18
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 18
+i: 0 country: Austria n: 19
+i: 1 country: Belgia n: 19
+i: 2 country: Bu³garia n: 19
+i: 3 country: Chorwacja n: 19
+i: 4 country: Cypr n: 19
+i: 5 country: Czechy n: 19
+i: 6 country: Dania n: 19
+i: 7 country: Estonia n: 19
+i: 8 country: Finlandia n: 19
+i: 9 country: Francja n: 19
+i: 10 country: Grecja n: 19
+i: 11 country: Hiszpania n: 19
+i: 12 country: Niderlandy n: 19
+i: 13 country: Irlandia n: 19
+i: 14 country: Islandia n: 19
+i: 15 country: Litwa  n: 19
+i: 16 country: Liechtenstein n: 19
+i: 17 country: Luksemburg n: 19
+i: 18 country: £otwa n: 19
+i: 19 country: Malta n: 19
+i: 20 country: Niemcy n: 19
+i: 21 country: Norwegia n: 19
+i: 22 country: Polska n: 19
+i: 23 country: Portugalia n: 19
+i: 24 country: Rumunia n: 19
+i: 25 country: S³owacja n: 19
+i: 26 country: S³owenia n: 19
+i: 27 country: Szwecja n: 19
+i: 28 country: Wêgry n: 19
+i: 29 country: W³ochy n: 19
+i: 30 country: Krajowe n: 19
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 19
+6.ab.LiW
+5a.R.SF
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230402_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230403_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230404_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230405_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230406_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230407_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230408_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230409_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230410_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230411_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230412_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230413_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230414_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230415_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230416_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230417_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230418_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230419_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230420_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230421_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230422_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230423_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230424_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230425_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230426_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230427_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230428_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230429_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230430_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230501_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230502_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230503_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230504_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230505_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230506_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230507_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230508_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230509_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230510_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230511_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230512_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230513_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230514_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230515_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230516_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230517_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230518_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230519_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230520_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230521_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230522_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230523_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230524_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230525_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230526_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230527_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230601_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230602_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230603_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230604_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230605_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230606_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230607_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230608_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230609_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230610_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230611_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230612_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230613_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230614_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230615_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230616_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230617_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230618_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230619_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230620_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230621_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230622_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230623_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230624_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230625_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230626_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230627_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230628_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230629_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230630_INITF.epd
+
+Found VISA FRAUD data: 45  00441049400082 NORBERT SWIDERSKI97751  WROCLAW       PL  5921 1            43.98 424671 03/25/23 424671******6562 0002 74410493084018307202371 07  FRDDMC61  047555790
+
+
+Found VISA FRAUD data: 45  00441049400082 NORBERT SWIDERSKI97751  WROCLAW       PL  5921 1            19.52 424671 03/25/23 424671******6562 0001 74410493084018307202280 07  FRDDMC61  047555800
+
+
+Found VISA FRAUD data: 45  00441049400082 Beauty Nails     04915  DRAWSKO       PL  7298 4           470.01 414720 03/31/23 414720******6660 4001 74410493090018348774422 00  FRDDMC61  030841610
+
+
+Found VISA FRAUD data: 45  00441049400082 FUCZYLO FHU      66803  POLKOWICE     PL  5411 1            96.61 424671 03/31/23 424671******3434 0008 74410493090018343830799 07  FRDDMC61  030841620
+
+
+Found VISA FRAUD data: 45  00441049400082 MIROSLAW BILSKI T39964  KRAKOW        PL  4121 D            39.98 457195 03/19/23 457195******1792 0020 74410493078018268394850 07  FRDDMC61  030841630
+
+
+Found VISA FRAUD data: 45  00441049400082 MICHALOWKA SPOLKA10259  LISZKI        PL  5812 D           127.02 457122 03/30/23 457122******9925 0012 74410493089018343438349 07  FRDDMC61  035867890
+
+
+Found VISA FRAUD data: 45  00441049400082 PUNKT            12740  WROCLAW       PL  7392 0            80.02 424671 04/06/23 424671******2236 0001 74410493096018387090072 07  FRDDMC61  035867900
+
+
+Found VISA FRAUD data: 45  00441049400082 STODOLA KEBAP'N G33181  POZNAN        PL  5812 4            64.00 406095 04/10/23 406095******1712 4020 74410493100018407963104 07  FRDDMC61  039602450
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            32.98 424671 04/25/23 424671******5529 0003 74410493115018506674613 07  FRDDMC61  026519410
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            54.50 424671 04/25/23 424671******5529 0002 74410493115018509806014 07  FRDDMC61  026519420
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            49.00 424671 04/25/23 424671******5529 0001 74410493115018506669399 07  FRDDMC61  026519430
+
+
+Found VISA FRAUD data: 45  00441049400082 KULIG SP. Z O.O. 15241  WARSZAWA      PL  5139 4           125.85 414709 05/10/23 414709******1010 0005 74410493125018572704060     FRDDMC61  021275740
+
+
+Found VISA FRAUD data: 45  00441049400082 GOMIK MALGORZATA 70247  GDANSK        PL  5999 1            15.99 424671 04/29/23 424671******7235 0001 74410493119018539998258 07  FRDDMC61  030942570
+
+
+Found VISA FRAUD data: 45  00441049400082 POLA TAXI        37039  GNIEZNO       PL  4121 0           203.04 400022 05/12/23 400022******9681 0005 74410493132018629398370 07  FRDDMC61  046164300
+
+
+Found VISA FRAUD data: 45  00441049400082 BUSSOLA COFFEE KR20497  KRAKOW        PL  5812 B            49.14 482498 05/13/23 482498******5801 0011 74410493133018636262717 07  FRDDMC61  022939290
+
+
+Found VISA FRAUD data: 45  00441049400082 CHM GOGOLA, BOCZO17615  KRAKOW        PL  5999 1           138.91 457168 02/25/23 457168******6533 0003 74410493056018128407831 07  FRDDMC61  039114740
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 4            18.09 492915 06/04/23 492915******3006 0002 74410493155018800305899 07  FRDDMC61  023500950
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 4            73.32 492915 06/04/23 492915******3006 0001 74410493155018800304504 07  FRDDMC61  023500960
+
+
+Found VISA FRAUD data: 45  00441049400082 SEVEN SPADES PIOT44769  DZIWNOW       PL  5947 1            92.82 465901 06/11/23 465901******6010 0008 74410493162018849701638 07  FRDDMC61  033978340
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            30.58 440066 06/16/23 440066******6892 0005 74410493167018883769124 07  FRDDMC61  030189760
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           754.74 440066 06/16/23 440066******6892 0003 74410493167018883770932 07  FRDDMC61  030189770
+
+
+Found VISA FRAUD data: 45  00441049400082 TRAFIKA NR.225   91195  KALISZ        PL  5192 1            29.97 424671 06/10/23 424671******7926 0007 74410493161018842810452 07  FRDDMC61  030189780
+
+
+Found VISA FRAUD data: 45  00441049400082 TRAFIKA NR.225   91195  KALISZ        PL  5192 1            31.99 424671 06/10/23 424671******7926 0006 74410493161018842818323 07  FRDDMC61  030189790
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            33.28 424671 06/17/23 424671******7218 0006 74410493168018893046512 07  FRDDMC61  017207540
+
+
+Found VISA FRAUD data: 45  00441049400082 KWITOWSKI PALIWA 24115  KALISZ        PL  5541 0            60.01 424671 06/11/23 424671******9426 0003 74410493162018847887330 07  FRDDMC61  030179610
+
+
+Found VISA FRAUD data: 45  00441049400082 KWITOWSKI PALIWA 24115  KALISZ        PL  5541 0            60.01 424671 06/11/23 424671******9426 0002 74410493162018847887215 07  FRDDMC61  030179620
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1             9.87 424671 06/20/23 424671******4531 0021 74410493171018914403184 07  FRDDMC61  037826410
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            22.08 424671 06/20/23 424671******4531 0016 74410493171018919430398 07  FRDDMC61  037826420
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            34.75 424671 06/20/23 424671******4531 0013 74410493171018918839193 07  FRDDMC61  037826430
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            10.00 424671 06/20/23 424671******4531 0003 74410493171018914376935 07  FRDDMC61  037826440
+
+
+Found VISA FRAUD data: 45  00441049400082 LIBERTE          68397  KRAKOW        PL  7999 0            98.00 440066 06/09/23 440066******4910 0052 74410493160018832288066 07  FRDDMC61  011118700
+
+
+All ARN numbers passed to SQL query for VISA FRAUD.
+
+VISA ARNs: ('74410493084018307202371', '74410493084018307202280', '74410493090018348774422', '74410493090018343830799', '74410493078018268394850', '74410493089018343438349', '74410493096018387090072', '74410493100018407963104', '74410493115018506674613', '74410493115018509806014', '74410493115018506669399', '74410493125018572704060', '74410493119018539998258', '74410493132018629398370', '74410493133018636262717', '74410493056018128407831', '74410493155018800305899', '74410493155018800304504', '74410493162018849701638', '74410493167018883769124', '74410493167018883770932', '74410493161018842810452', '74410493161018842818323', '74410493168018893046512', '74410493162018847887330', '74410493162018847887215', '74410493171018914403184', '74410493171018919430398', '74410493171018918839193', '74410493171018914376935', '74410493160018832288066')
+VISA finished
+
+All ARN numbers passed to SQL query.
+
+MASTERCARD ARNs: ('05185243074030360473185', '05185243090030631480563', '05185243115031043558906', '05185243115031043546109', '05185243117031078316178', '05185243062030157497409', '05185243115031032952565', '05185242330028682998303', '05185242330028682845504', '05185242328028646718304', '05185243048029942470951', '05185242330028683114876', '05185243129031273801293', '05185243112031000863540', '05185243112031000859662', '05185243117031072573436', '05185243117031072732941', '05185243148031663818540', '05185243148031664201852', '05185243163031957574445', '05185243163031957671639', '05185243165032001035571')
+MASTERCARD finished
+
+Checking the quarter: 2
+9.R.L.MCC and 9.R.W.MCC
+ST.01
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+k:  0 and next_row:  40 country:  AT
+Country code:  AT row:  40
+k:  1 and next_row:  41 country:  BE
+Country code:  BE row:  41
+k:  2 and next_row:  42 country:  BG
+Country code:  BG row:  42
+k:  3 and next_row:  43 country:  HR
+Country code:  HR row:  43
+k:  4 and next_row:  44 country:  CY
+Country code:  CY row:  44
+k:  5 and next_row:  45 country:  CZ
+Country code:  CZ row:  45
+k:  6 and next_row:  46 country:  DK
+Country code:  DK row:  46
+k:  7 and next_row:  47 country:  EE
+Country code:  EE row:  47
+k:  8 and next_row:  48 country:  FI
+Country code:  FI row:  48
+k:  9 and next_row:  49 country:  FR
+Country code:  FR row:  49
+k:  10 and next_row:  50 country:  DE
+Country code:  DE row:  50
+k:  11 and next_row:  51 country:  GR
+Country code:  GR row:  51
+k:  12 and next_row:  52 country:  HU
+Country code:  HU row:  52
+k:  13 and next_row:  53 country:  IS
+Country code:  IS row:  53
+k:  14 and next_row:  54 country:  IE
+Country code:  IE row:  54
+k:  15 and next_row:  55 country:  IT
+Country code:  IT row:  55
+k:  16 and next_row:  56 country:  LV
+Country code:  LV row:  56
+k:  17 and next_row:  57 country:  LI
+Country code:  LI row:  57
+k:  18 and next_row:  58 country:  LT
+Country code:  LT row:  58
+k:  19 and next_row:  59 country:  LU
+Country code:  LU row:  59
+k:  20 and next_row:  60 country:  MT
+Country code:  MT row:  60
+k:  21 and next_row:  61 country:  NL
+Country code:  NL row:  61
+k:  22 and next_row:  62 country:  NO
+Country code:  NO row:  62
+k:  23 and next_row:  63 country:  PT
+Country code:  PT row:  63
+k:  24 and next_row:  64 country:  RO
+Country code:  RO row:  64
+k:  25 and next_row:  65 country:  SK
+Country code:  SK row:  65
+k:  26 and next_row:  66 country:  SI
+Country code:  SI row:  66
+k:  27 and next_row:  67 country:  ES
+Country code:  ES row:  67
+k:  28 and next_row:  68 country:  SE
+Country code:  SE row:  68
+k:  29 and next_row:  69 country:  AF
+Country code:  AF row:  69
+k:  30 and next_row:  70 country:  AL
+Country code:  AL row:  70
+k:  31 and next_row:  71 country:  DZ
+Country code:  DZ row:  71
+k:  32 and next_row:  72 country:  AD
+Country code:  AD row:  72
+k:  33 and next_row:  73 country:  AO
+Country code:  AO row:  73
+k:  34 and next_row:  74 country:  AR
+Country code:  AR row:  74
+k:  35 and next_row:  75 country:  AM
+Country code:  AM row:  75
+k:  36 and next_row:  76 country:  AU
+Country code:  AU row:  76
+k:  37 and next_row:  77 country:  AZ
+Country code:  AZ row:  77
+k:  38 and next_row:  78 country:  BS
+Country code:  BS row:  78
+k:  39 and next_row:  79 country:  BH
+Country code:  BH row:  79
+k:  40 and next_row:  80 country:  BD
+Country code:  BD row:  80
+k:  41 and next_row:  81 country:  BB
+Country code:  BB row:  81
+k:  42 and next_row:  82 country:  BY
+Country code:  BY row:  82
+k:  43 and next_row:  83 country:  BJ
+Country code:  BJ row:  83
+k:  44 and next_row:  84 country:  BM
+Country code:  BM row:  84
+k:  45 and next_row:  85 country:  BO
+Country code:  BO row:  85
+k:  46 and next_row:  86 country:  BA
+Country code:  BA row:  86
+k:  47 and next_row:  87 country:  BW
+Country code:  BW row:  87
+k:  48 and next_row:  88 country:  BR
+Country code:  BR row:  88
+k:  49 and next_row:  89 country:  BN
+Country code:  BN row:  89
+k:  50 and next_row:  90 country:  BI
+Country code:  BI row:  90
+k:  51 and next_row:  91 country:  KH
+Country code:  KH row:  91
+k:  52 and next_row:  92 country:  CM
+Country code:  CM row:  92
+k:  53 and next_row:  93 country:  CA
+Country code:  CA row:  93
+k:  54 and next_row:  94 country:  KY
+Country code:  KY row:  94
+k:  55 and next_row:  95 country:  CL
+Country code:  CL row:  95
+k:  56 and next_row:  96 country:  CN
+Country code:  CN row:  96
+k:  57 and next_row:  97 country:  CO
+Country code:  CO row:  97
+k:  58 and next_row:  98 country:  CD
+Country code:  CD row:  98
+k:  59 and next_row:  99 country:  CG
+Country code:  CG row:  99
+k:  60 and next_row:  100 country:  CR
+Country code:  CR row:  100
+k:  61 and next_row:  101 country:  CI
+Country code:  CI row:  101
+k:  62 and next_row:  102 country:  DO
+Country code:  DO row:  102
+k:  63 and next_row:  103 country:  EC
+Country code:  EC row:  103
+k:  64 and next_row:  104 country:  EG
+Country code:  EG row:  104
+k:  65 and next_row:  105 country:  SV
+Country code:  SV row:  105
+k:  66 and next_row:  106 country:  D09
+Country code:  D09 row:  106
+k:  67 and next_row:  107 country:  GE
+Country code:  GE row:  107
+k:  68 and next_row:  108 country:  GH
+Country code:  GH row:  108
+k:  69 and next_row:  109 country:  GI
+Country code:  GI row:  109
+k:  70 and next_row:  110 country:  GU
+Country code:  GU row:  110
+k:  71 and next_row:  111 country:  GT
+Country code:  GT row:  111
+k:  72 and next_row:  112 country:  HT
+Country code:  HT row:  112
+k:  73 and next_row:  113 country:  VA
+Country code:  VA row:  113
+k:  74 and next_row:  114 country:  HN
+Country code:  HN row:  114
+k:  75 and next_row:  115 country:  HK
+Country code:  HK row:  115
+k:  76 and next_row:  116 country:  IN
+Country code:  IN row:  116
+k:  77 and next_row:  117 country:  ID
+Country code:  ID row:  117
+k:  78 and next_row:  118 country:  IQ
+Country code:  IQ row:  118
+k:  79 and next_row:  119 country:  IL
+Country code:  IL row:  119
+k:  80 and next_row:  120 country:  JM
+Country code:  JM row:  120
+k:  81 and next_row:  121 country:  JP
+Country code:  JP row:  121
+k:  82 and next_row:  122 country:  JE
+Country code:  JE row:  122
+k:  83 and next_row:  123 country:  JO
+Country code:  JO row:  123
+k:  84 and next_row:  124 country:  KZ
+Country code:  KZ row:  124
+k:  85 and next_row:  125 country:  KE
+Country code:  KE row:  125
+k:  86 and next_row:  126 country:  KR
+Country code:  KR row:  126
+k:  87 and next_row:  127 country:  KW
+Country code:  KW row:  127
+k:  88 and next_row:  128 country:  KG
+Country code:  KG row:  128
+k:  89 and next_row:  129 country:  LA
+Country code:  LA row:  129
+k:  90 and next_row:  130 country:  LB
+Country code:  LB row:  130
+k:  91 and next_row:  131 country:  LY
+Country code:  LY row:  131
+k:  92 and next_row:  132 country:  MO
+Country code:  MO row:  132
+k:  93 and next_row:  133 country:  MW
+Country code:  MW row:  133
+k:  94 and next_row:  134 country:  MY
+Country code:  MY row:  134
+k:  95 and next_row:  135 country:  MV
+Country code:  MV row:  135
+k:  96 and next_row:  136 country:  MR
+Country code:  MR row:  136
+k:  97 and next_row:  137 country:  MU
+Country code:  MU row:  137
+k:  98 and next_row:  138 country:  MX
+Country code:  MX row:  138
+k:  99 and next_row:  139 country:  MD
+Country code:  MD row:  139
+k:  100 and next_row:  140 country:  MN
+Country code:  MN row:  140
+k:  101 and next_row:  141 country:  ME
+Country code:  ME row:  141
+k:  102 and next_row:  142 country:  MA
+Country code:  MA row:  142
+k:  103 and next_row:  143 country:  MZ
+Country code:  MZ row:  143
+k:  104 and next_row:  144 country:  MM
+Country code:  MM row:  144
+k:  105 and next_row:  145 country:  NA
+k:  106 and next_row:  146 country:  NP
+Country code:  NP row:  146
+k:  107 and next_row:  147 country:  NZ
+Country code:  NZ row:  147
+k:  108 and next_row:  148 country:  NI
+Country code:  NI row:  148
+k:  109 and next_row:  149 country:  NE
+Country code:  NE row:  149
+k:  110 and next_row:  150 country:  NG
+Country code:  NG row:  150
+k:  111 and next_row:  151 country:  MK
+Country code:  MK row:  151
+k:  112 and next_row:  152 country:  OM
+Country code:  OM row:  152
+k:  113 and next_row:  153 country:  PK
+Country code:  PK row:  153
+k:  114 and next_row:  154 country:  PS
+Country code:  PS row:  154
+k:  115 and next_row:  155 country:  PA
+Country code:  PA row:  155
+k:  116 and next_row:  156 country:  PG
+Country code:  PG row:  156
+k:  117 and next_row:  157 country:  PY
+Country code:  PY row:  157
+k:  118 and next_row:  158 country:  PE
+Country code:  PE row:  158
+k:  119 and next_row:  159 country:  PH
+Country code:  PH row:  159
+k:  120 and next_row:  160 country:  QA
+Country code:  QA row:  160
+k:  121 and next_row:  161 country:  RW
+Country code:  RW row:  161
+k:  122 and next_row:  162 country:  SM
+Country code:  SM row:  162
+k:  123 and next_row:  163 country:  SA
+Country code:  SA row:  163
+k:  124 and next_row:  164 country:  SN
+Country code:  SN row:  164
+k:  125 and next_row:  165 country:  RS
+Country code:  RS row:  165
+k:  126 and next_row:  166 country:  SC
+Country code:  SC row:  166
+k:  127 and next_row:  167 country:  SL
+Country code:  SL row:  167
+k:  128 and next_row:  168 country:  SG
+Country code:  SG row:  168
+k:  129 and next_row:  169 country:  ZA
+Country code:  ZA row:  169
+k:  130 and next_row:  170 country:  LK
+Country code:  LK row:  170
+k:  131 and next_row:  171 country:  CH
+Country code:  CH row:  171
+k:  132 and next_row:  172 country:  TW
+Country code:  TW row:  172
+k:  133 and next_row:  173 country:  TJ
+Country code:  TJ row:  173
+k:  134 and next_row:  174 country:  TZ
+Country code:  TZ row:  174
+k:  135 and next_row:  175 country:  TH
+Country code:  TH row:  175
+k:  136 and next_row:  176 country:  TT
+Country code:  TT row:  176
+k:  137 and next_row:  177 country:  TN
+Country code:  TN row:  177
+k:  138 and next_row:  178 country:  TR
+Country code:  TR row:  178
+k:  139 and next_row:  179 country:  TM
+Country code:  TM row:  179
+k:  140 and next_row:  180 country:  TC
+Country code:  TC row:  180
+k:  141 and next_row:  181 country:  UG
+Country code:  UG row:  181
+k:  142 and next_row:  182 country:  UA
+Country code:  UA row:  182
+k:  143 and next_row:  183 country:  AE
+Country code:  AE row:  183
+k:  144 and next_row:  184 country:  GB
+Country code:  GB row:  184
+k:  145 and next_row:  185 country:  US
+Country code:  US row:  185
+k:  146 and next_row:  186 country:  UY
+Country code:  UY row:  186
+k:  147 and next_row:  187 country:  UZ
+Country code:  UZ row:  187
+k:  148 and next_row:  188 country:  VN
+Country code:  VN row:  188
+k:  149 and next_row:  189 country:  VG
+Country code:  VG row:  189
+k:  150 and next_row:  190 country:  ZM
+Country code:  ZM row:  190
+k:  151 and next_row:  191 country:  ZW
+Country code:  ZW row:  191
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+i: 0 country: Austria n: 0
+i: 1 country: Belgia n: 0
+i: 2 country: Bu³garia n: 0
+i: 3 country: Chorwacja n: 0
+i: 4 country: Cypr n: 0
+i: 5 country: Czechy n: 0
+i: 6 country: Dania n: 0
+i: 7 country: Estonia n: 0
+i: 8 country: Finlandia n: 0
+i: 9 country: Francja n: 0
+i: 10 country: Grecja n: 0
+i: 11 country: Hiszpania n: 0
+i: 12 country: Niderlandy n: 0
+i: 13 country: Irlandia n: 0
+i: 14 country: Islandia n: 0
+i: 15 country: Litwa  n: 0
+i: 16 country: Liechtenstein n: 0
+i: 17 country: Luksemburg n: 0
+i: 18 country: £otwa n: 0
+i: 19 country: Malta n: 0
+i: 20 country: Niemcy n: 0
+i: 21 country: Norwegia n: 0
+i: 22 country: Polska n: 0
+i: 23 country: Portugalia n: 0
+i: 24 country: Rumunia n: 0
+i: 25 country: S³owacja n: 0
+i: 26 country: S³owenia n: 0
+i: 27 country: Szwecja n: 0
+i: 28 country: Wêgry n: 0
+i: 29 country: W³ochy n: 0
+i: 30 country: Krajowe n: 0
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 0
+i: 0 country: Austria n: 1
+i: 1 country: Belgia n: 1
+i: 2 country: Bu³garia n: 1
+i: 3 country: Chorwacja n: 1
+i: 4 country: Cypr n: 1
+i: 5 country: Czechy n: 1
+i: 6 country: Dania n: 1
+i: 7 country: Estonia n: 1
+i: 8 country: Finlandia n: 1
+i: 9 country: Francja n: 1
+i: 10 country: Grecja n: 1
+i: 11 country: Hiszpania n: 1
+i: 12 country: Niderlandy n: 1
+i: 13 country: Irlandia n: 1
+i: 14 country: Islandia n: 1
+i: 15 country: Litwa  n: 1
+i: 16 country: Liechtenstein n: 1
+i: 17 country: Luksemburg n: 1
+i: 18 country: £otwa n: 1
+i: 19 country: Malta n: 1
+i: 20 country: Niemcy n: 1
+i: 21 country: Norwegia n: 1
+i: 22 country: Polska n: 1
+i: 23 country: Portugalia n: 1
+i: 24 country: Rumunia n: 1
+i: 25 country: S³owacja n: 1
+i: 26 country: S³owenia n: 1
+i: 27 country: Szwecja n: 1
+i: 28 country: Wêgry n: 1
+i: 29 country: W³ochy n: 1
+i: 30 country: Krajowe n: 1
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 1
+i: 0 country: Austria n: 2
+i: 1 country: Belgia n: 2
+i: 2 country: Bu³garia n: 2
+i: 3 country: Chorwacja n: 2
+i: 4 country: Cypr n: 2
+i: 5 country: Czechy n: 2
+i: 6 country: Dania n: 2
+i: 7 country: Estonia n: 2
+i: 8 country: Finlandia n: 2
+i: 9 country: Francja n: 2
+i: 10 country: Grecja n: 2
+i: 11 country: Hiszpania n: 2
+i: 12 country: Niderlandy n: 2
+i: 13 country: Irlandia n: 2
+i: 14 country: Islandia n: 2
+i: 15 country: Litwa  n: 2
+i: 16 country: Liechtenstein n: 2
+i: 17 country: Luksemburg n: 2
+i: 18 country: £otwa n: 2
+i: 19 country: Malta n: 2
+i: 20 country: Niemcy n: 2
+i: 21 country: Norwegia n: 2
+i: 22 country: Polska n: 2
+i: 23 country: Portugalia n: 2
+i: 24 country: Rumunia n: 2
+i: 25 country: S³owacja n: 2
+i: 26 country: S³owenia n: 2
+i: 27 country: Szwecja n: 2
+i: 28 country: Wêgry n: 2
+i: 29 country: W³ochy n: 2
+i: 30 country: Krajowe n: 2
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 2
+i: 0 country: Austria n: 3
+i: 1 country: Belgia n: 3
+i: 2 country: Bu³garia n: 3
+i: 3 country: Chorwacja n: 3
+i: 4 country: Cypr n: 3
+i: 5 country: Czechy n: 3
+i: 6 country: Dania n: 3
+i: 7 country: Estonia n: 3
+i: 8 country: Finlandia n: 3
+i: 9 country: Francja n: 3
+i: 10 country: Grecja n: 3
+i: 11 country: Hiszpania n: 3
+i: 12 country: Niderlandy n: 3
+i: 13 country: Irlandia n: 3
+i: 14 country: Islandia n: 3
+i: 15 country: Litwa  n: 3
+i: 16 country: Liechtenstein n: 3
+i: 17 country: Luksemburg n: 3
+i: 18 country: £otwa n: 3
+i: 19 country: Malta n: 3
+i: 20 country: Niemcy n: 3
+i: 21 country: Norwegia n: 3
+i: 22 country: Polska n: 3
+i: 23 country: Portugalia n: 3
+i: 24 country: Rumunia n: 3
+i: 25 country: S³owacja n: 3
+i: 26 country: S³owenia n: 3
+i: 27 country: Szwecja n: 3
+i: 28 country: Wêgry n: 3
+i: 29 country: W³ochy n: 3
+i: 30 country: Krajowe n: 3
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 3
+i: 0 country: Austria n: 4
+i: 1 country: Belgia n: 4
+i: 2 country: Bu³garia n: 4
+i: 3 country: Chorwacja n: 4
+i: 4 country: Cypr n: 4
+i: 5 country: Czechy n: 4
+i: 6 country: Dania n: 4
+i: 7 country: Estonia n: 4
+i: 8 country: Finlandia n: 4
+i: 9 country: Francja n: 4
+i: 10 country: Grecja n: 4
+i: 11 country: Hiszpania n: 4
+i: 12 country: Niderlandy n: 4
+i: 13 country: Irlandia n: 4
+i: 14 country: Islandia n: 4
+i: 15 country: Litwa  n: 4
+i: 16 country: Liechtenstein n: 4
+i: 17 country: Luksemburg n: 4
+i: 18 country: £otwa n: 4
+i: 19 country: Malta n: 4
+i: 20 country: Niemcy n: 4
+i: 21 country: Norwegia n: 4
+i: 22 country: Polska n: 4
+i: 23 country: Portugalia n: 4
+i: 24 country: Rumunia n: 4
+i: 25 country: S³owacja n: 4
+i: 26 country: S³owenia n: 4
+i: 27 country: Szwecja n: 4
+i: 28 country: Wêgry n: 4
+i: 29 country: W³ochy n: 4
+i: 30 country: Krajowe n: 4
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 4
+i: 0 country: Austria n: 5
+i: 1 country: Belgia n: 5
+i: 2 country: Bu³garia n: 5
+i: 3 country: Chorwacja n: 5
+i: 4 country: Cypr n: 5
+i: 5 country: Czechy n: 5
+i: 6 country: Dania n: 5
+i: 7 country: Estonia n: 5
+i: 8 country: Finlandia n: 5
+i: 9 country: Francja n: 5
+i: 10 country: Grecja n: 5
+i: 11 country: Hiszpania n: 5
+i: 12 country: Niderlandy n: 5
+i: 13 country: Irlandia n: 5
+i: 14 country: Islandia n: 5
+i: 15 country: Litwa  n: 5
+i: 16 country: Liechtenstein n: 5
+i: 17 country: Luksemburg n: 5
+i: 18 country: £otwa n: 5
+i: 19 country: Malta n: 5
+i: 20 country: Niemcy n: 5
+i: 21 country: Norwegia n: 5
+i: 22 country: Polska n: 5
+i: 23 country: Portugalia n: 5
+i: 24 country: Rumunia n: 5
+i: 25 country: S³owacja n: 5
+i: 26 country: S³owenia n: 5
+i: 27 country: Szwecja n: 5
+i: 28 country: Wêgry n: 5
+i: 29 country: W³ochy n: 5
+i: 30 country: Krajowe n: 5
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 5
+i: 0 country: Austria n: 6
+i: 1 country: Belgia n: 6
+i: 2 country: Bu³garia n: 6
+i: 3 country: Chorwacja n: 6
+i: 4 country: Cypr n: 6
+i: 5 country: Czechy n: 6
+i: 6 country: Dania n: 6
+i: 7 country: Estonia n: 6
+i: 8 country: Finlandia n: 6
+i: 9 country: Francja n: 6
+i: 10 country: Grecja n: 6
+i: 11 country: Hiszpania n: 6
+i: 12 country: Niderlandy n: 6
+i: 13 country: Irlandia n: 6
+i: 14 country: Islandia n: 6
+i: 15 country: Litwa  n: 6
+i: 16 country: Liechtenstein n: 6
+i: 17 country: Luksemburg n: 6
+i: 18 country: £otwa n: 6
+i: 19 country: Malta n: 6
+i: 20 country: Niemcy n: 6
+i: 21 country: Norwegia n: 6
+i: 22 country: Polska n: 6
+i: 23 country: Portugalia n: 6
+i: 24 country: Rumunia n: 6
+i: 25 country: S³owacja n: 6
+i: 26 country: S³owenia n: 6
+i: 27 country: Szwecja n: 6
+i: 28 country: Wêgry n: 6
+i: 29 country: W³ochy n: 6
+i: 30 country: Krajowe n: 6
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 6
+i: 0 country: Austria n: 7
+i: 1 country: Belgia n: 7
+i: 2 country: Bu³garia n: 7
+i: 3 country: Chorwacja n: 7
+i: 4 country: Cypr n: 7
+i: 5 country: Czechy n: 7
+i: 6 country: Dania n: 7
+i: 7 country: Estonia n: 7
+i: 8 country: Finlandia n: 7
+i: 9 country: Francja n: 7
+i: 10 country: Grecja n: 7
+i: 11 country: Hiszpania n: 7
+i: 12 country: Niderlandy n: 7
+i: 13 country: Irlandia n: 7
+i: 14 country: Islandia n: 7
+i: 15 country: Litwa  n: 7
+i: 16 country: Liechtenstein n: 7
+i: 17 country: Luksemburg n: 7
+i: 18 country: £otwa n: 7
+i: 19 country: Malta n: 7
+i: 20 country: Niemcy n: 7
+i: 21 country: Norwegia n: 7
+i: 22 country: Polska n: 7
+i: 23 country: Portugalia n: 7
+i: 24 country: Rumunia n: 7
+i: 25 country: S³owacja n: 7
+i: 26 country: S³owenia n: 7
+i: 27 country: Szwecja n: 7
+i: 28 country: Wêgry n: 7
+i: 29 country: W³ochy n: 7
+i: 30 country: Krajowe n: 7
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 7
+i: 0 country: Austria n: 8
+i: 1 country: Belgia n: 8
+i: 2 country: Bu³garia n: 8
+i: 3 country: Chorwacja n: 8
+i: 4 country: Cypr n: 8
+i: 5 country: Czechy n: 8
+i: 6 country: Dania n: 8
+i: 7 country: Estonia n: 8
+i: 8 country: Finlandia n: 8
+i: 9 country: Francja n: 8
+i: 10 country: Grecja n: 8
+i: 11 country: Hiszpania n: 8
+i: 12 country: Niderlandy n: 8
+i: 13 country: Irlandia n: 8
+i: 14 country: Islandia n: 8
+i: 15 country: Litwa  n: 8
+i: 16 country: Liechtenstein n: 8
+i: 17 country: Luksemburg n: 8
+i: 18 country: £otwa n: 8
+i: 19 country: Malta n: 8
+i: 20 country: Niemcy n: 8
+i: 21 country: Norwegia n: 8
+i: 22 country: Polska n: 8
+i: 23 country: Portugalia n: 8
+i: 24 country: Rumunia n: 8
+i: 25 country: S³owacja n: 8
+i: 26 country: S³owenia n: 8
+i: 27 country: Szwecja n: 8
+i: 28 country: Wêgry n: 8
+i: 29 country: W³ochy n: 8
+i: 30 country: Krajowe n: 8
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 8
+i: 0 country: Austria n: 9
+i: 1 country: Belgia n: 9
+i: 2 country: Bu³garia n: 9
+i: 3 country: Chorwacja n: 9
+i: 4 country: Cypr n: 9
+i: 5 country: Czechy n: 9
+i: 6 country: Dania n: 9
+i: 7 country: Estonia n: 9
+i: 8 country: Finlandia n: 9
+i: 9 country: Francja n: 9
+i: 10 country: Grecja n: 9
+i: 11 country: Hiszpania n: 9
+i: 12 country: Niderlandy n: 9
+i: 13 country: Irlandia n: 9
+i: 14 country: Islandia n: 9
+i: 15 country: Litwa  n: 9
+i: 16 country: Liechtenstein n: 9
+i: 17 country: Luksemburg n: 9
+i: 18 country: £otwa n: 9
+i: 19 country: Malta n: 9
+i: 20 country: Niemcy n: 9
+i: 21 country: Norwegia n: 9
+i: 22 country: Polska n: 9
+i: 23 country: Portugalia n: 9
+i: 24 country: Rumunia n: 9
+i: 25 country: S³owacja n: 9
+i: 26 country: S³owenia n: 9
+i: 27 country: Szwecja n: 9
+i: 28 country: Wêgry n: 9
+i: 29 country: W³ochy n: 9
+i: 30 country: Krajowe n: 9
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 9
+i: 0 country: Austria n: 10
+i: 1 country: Belgia n: 10
+i: 2 country: Bu³garia n: 10
+i: 3 country: Chorwacja n: 10
+i: 4 country: Cypr n: 10
+i: 5 country: Czechy n: 10
+i: 6 country: Dania n: 10
+i: 7 country: Estonia n: 10
+i: 8 country: Finlandia n: 10
+i: 9 country: Francja n: 10
+i: 10 country: Grecja n: 10
+i: 11 country: Hiszpania n: 10
+i: 12 country: Niderlandy n: 10
+i: 13 country: Irlandia n: 10
+i: 14 country: Islandia n: 10
+i: 15 country: Litwa  n: 10
+i: 16 country: Liechtenstein n: 10
+i: 17 country: Luksemburg n: 10
+i: 18 country: £otwa n: 10
+i: 19 country: Malta n: 10
+i: 20 country: Niemcy n: 10
+i: 21 country: Norwegia n: 10
+i: 22 country: Polska n: 10
+i: 23 country: Portugalia n: 10
+i: 24 country: Rumunia n: 10
+i: 25 country: S³owacja n: 10
+i: 26 country: S³owenia n: 10
+i: 27 country: Szwecja n: 10
+i: 28 country: Wêgry n: 10
+i: 29 country: W³ochy n: 10
+i: 30 country: Krajowe n: 10
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 10
+i: 0 country: Austria n: 11
+i: 1 country: Belgia n: 11
+i: 2 country: Bu³garia n: 11
+i: 3 country: Chorwacja n: 11
+i: 4 country: Cypr n: 11
+i: 5 country: Czechy n: 11
+i: 6 country: Dania n: 11
+i: 7 country: Estonia n: 11
+i: 8 country: Finlandia n: 11
+i: 9 country: Francja n: 11
+i: 10 country: Grecja n: 11
+i: 11 country: Hiszpania n: 11
+i: 12 country: Niderlandy n: 11
+i: 13 country: Irlandia n: 11
+i: 14 country: Islandia n: 11
+i: 15 country: Litwa  n: 11
+i: 16 country: Liechtenstein n: 11
+i: 17 country: Luksemburg n: 11
+i: 18 country: £otwa n: 11
+i: 19 country: Malta n: 11
+i: 20 country: Niemcy n: 11
+i: 21 country: Norwegia n: 11
+i: 22 country: Polska n: 11
+i: 23 country: Portugalia n: 11
+i: 24 country: Rumunia n: 11
+i: 25 country: S³owacja n: 11
+i: 26 country: S³owenia n: 11
+i: 27 country: Szwecja n: 11
+i: 28 country: Wêgry n: 11
+i: 29 country: W³ochy n: 11
+i: 30 country: Krajowe n: 11
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 11
+i: 0 country: Austria n: 12
+i: 1 country: Belgia n: 12
+i: 2 country: Bu³garia n: 12
+i: 3 country: Chorwacja n: 12
+i: 4 country: Cypr n: 12
+i: 5 country: Czechy n: 12
+i: 6 country: Dania n: 12
+i: 7 country: Estonia n: 12
+i: 8 country: Finlandia n: 12
+i: 9 country: Francja n: 12
+i: 10 country: Grecja n: 12
+i: 11 country: Hiszpania n: 12
+i: 12 country: Niderlandy n: 12
+i: 13 country: Irlandia n: 12
+i: 14 country: Islandia n: 12
+i: 15 country: Litwa  n: 12
+i: 16 country: Liechtenstein n: 12
+i: 17 country: Luksemburg n: 12
+i: 18 country: £otwa n: 12
+i: 19 country: Malta n: 12
+i: 20 country: Niemcy n: 12
+i: 21 country: Norwegia n: 12
+i: 22 country: Polska n: 12
+i: 23 country: Portugalia n: 12
+i: 24 country: Rumunia n: 12
+i: 25 country: S³owacja n: 12
+i: 26 country: S³owenia n: 12
+i: 27 country: Szwecja n: 12
+i: 28 country: Wêgry n: 12
+i: 29 country: W³ochy n: 12
+i: 30 country: Krajowe n: 12
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 12
+i: 0 country: Austria n: 13
+i: 1 country: Belgia n: 13
+i: 2 country: Bu³garia n: 13
+i: 3 country: Chorwacja n: 13
+i: 4 country: Cypr n: 13
+i: 5 country: Czechy n: 13
+i: 6 country: Dania n: 13
+i: 7 country: Estonia n: 13
+i: 8 country: Finlandia n: 13
+i: 9 country: Francja n: 13
+i: 10 country: Grecja n: 13
+i: 11 country: Hiszpania n: 13
+i: 12 country: Niderlandy n: 13
+i: 13 country: Irlandia n: 13
+i: 14 country: Islandia n: 13
+i: 15 country: Litwa  n: 13
+i: 16 country: Liechtenstein n: 13
+i: 17 country: Luksemburg n: 13
+i: 18 country: £otwa n: 13
+i: 19 country: Malta n: 13
+i: 20 country: Niemcy n: 13
+i: 21 country: Norwegia n: 13
+i: 22 country: Polska n: 13
+i: 23 country: Portugalia n: 13
+i: 24 country: Rumunia n: 13
+i: 25 country: S³owacja n: 13
+i: 26 country: S³owenia n: 13
+i: 27 country: Szwecja n: 13
+i: 28 country: Wêgry n: 13
+i: 29 country: W³ochy n: 13
+i: 30 country: Krajowe n: 13
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 13
+i: 0 country: Austria n: 14
+i: 1 country: Belgia n: 14
+i: 2 country: Bu³garia n: 14
+i: 3 country: Chorwacja n: 14
+i: 4 country: Cypr n: 14
+i: 5 country: Czechy n: 14
+i: 6 country: Dania n: 14
+i: 7 country: Estonia n: 14
+i: 8 country: Finlandia n: 14
+i: 9 country: Francja n: 14
+i: 10 country: Grecja n: 14
+i: 11 country: Hiszpania n: 14
+i: 12 country: Niderlandy n: 14
+i: 13 country: Irlandia n: 14
+i: 14 country: Islandia n: 14
+i: 15 country: Litwa  n: 14
+i: 16 country: Liechtenstein n: 14
+i: 17 country: Luksemburg n: 14
+i: 18 country: £otwa n: 14
+i: 19 country: Malta n: 14
+i: 20 country: Niemcy n: 14
+i: 21 country: Norwegia n: 14
+i: 22 country: Polska n: 14
+i: 23 country: Portugalia n: 14
+i: 24 country: Rumunia n: 14
+i: 25 country: S³owacja n: 14
+i: 26 country: S³owenia n: 14
+i: 27 country: Szwecja n: 14
+i: 28 country: Wêgry n: 14
+i: 29 country: W³ochy n: 14
+i: 30 country: Krajowe n: 14
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 14
+i: 0 country: Austria n: 15
+i: 1 country: Belgia n: 15
+i: 2 country: Bu³garia n: 15
+i: 3 country: Chorwacja n: 15
+i: 4 country: Cypr n: 15
+i: 5 country: Czechy n: 15
+i: 6 country: Dania n: 15
+i: 7 country: Estonia n: 15
+i: 8 country: Finlandia n: 15
+i: 9 country: Francja n: 15
+i: 10 country: Grecja n: 15
+i: 11 country: Hiszpania n: 15
+i: 12 country: Niderlandy n: 15
+i: 13 country: Irlandia n: 15
+i: 14 country: Islandia n: 15
+i: 15 country: Litwa  n: 15
+i: 16 country: Liechtenstein n: 15
+i: 17 country: Luksemburg n: 15
+i: 18 country: £otwa n: 15
+i: 19 country: Malta n: 15
+i: 20 country: Niemcy n: 15
+i: 21 country: Norwegia n: 15
+i: 22 country: Polska n: 15
+i: 23 country: Portugalia n: 15
+i: 24 country: Rumunia n: 15
+i: 25 country: S³owacja n: 15
+i: 26 country: S³owenia n: 15
+i: 27 country: Szwecja n: 15
+i: 28 country: Wêgry n: 15
+i: 29 country: W³ochy n: 15
+i: 30 country: Krajowe n: 15
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 15
+i: 0 country: Austria n: 16
+i: 1 country: Belgia n: 16
+i: 2 country: Bu³garia n: 16
+i: 3 country: Chorwacja n: 16
+i: 4 country: Cypr n: 16
+i: 5 country: Czechy n: 16
+i: 6 country: Dania n: 16
+i: 7 country: Estonia n: 16
+i: 8 country: Finlandia n: 16
+i: 9 country: Francja n: 16
+i: 10 country: Grecja n: 16
+i: 11 country: Hiszpania n: 16
+i: 12 country: Niderlandy n: 16
+i: 13 country: Irlandia n: 16
+i: 14 country: Islandia n: 16
+i: 15 country: Litwa  n: 16
+i: 16 country: Liechtenstein n: 16
+i: 17 country: Luksemburg n: 16
+i: 18 country: £otwa n: 16
+i: 19 country: Malta n: 16
+i: 20 country: Niemcy n: 16
+i: 21 country: Norwegia n: 16
+i: 22 country: Polska n: 16
+i: 23 country: Portugalia n: 16
+i: 24 country: Rumunia n: 16
+i: 25 country: S³owacja n: 16
+i: 26 country: S³owenia n: 16
+i: 27 country: Szwecja n: 16
+i: 28 country: Wêgry n: 16
+i: 29 country: W³ochy n: 16
+i: 30 country: Krajowe n: 16
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 16
+i: 0 country: Austria n: 17
+i: 1 country: Belgia n: 17
+i: 2 country: Bu³garia n: 17
+i: 3 country: Chorwacja n: 17
+i: 4 country: Cypr n: 17
+i: 5 country: Czechy n: 17
+i: 6 country: Dania n: 17
+i: 7 country: Estonia n: 17
+i: 8 country: Finlandia n: 17
+i: 9 country: Francja n: 17
+i: 10 country: Grecja n: 17
+i: 11 country: Hiszpania n: 17
+i: 12 country: Niderlandy n: 17
+i: 13 country: Irlandia n: 17
+i: 14 country: Islandia n: 17
+i: 15 country: Litwa  n: 17
+i: 16 country: Liechtenstein n: 17
+i: 17 country: Luksemburg n: 17
+i: 18 country: £otwa n: 17
+i: 19 country: Malta n: 17
+i: 20 country: Niemcy n: 17
+i: 21 country: Norwegia n: 17
+i: 22 country: Polska n: 17
+i: 23 country: Portugalia n: 17
+i: 24 country: Rumunia n: 17
+i: 25 country: S³owacja n: 17
+i: 26 country: S³owenia n: 17
+i: 27 country: Szwecja n: 17
+i: 28 country: Wêgry n: 17
+i: 29 country: W³ochy n: 17
+i: 30 country: Krajowe n: 17
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 17
+i: 0 country: Austria n: 18
+i: 1 country: Belgia n: 18
+i: 2 country: Bu³garia n: 18
+i: 3 country: Chorwacja n: 18
+i: 4 country: Cypr n: 18
+i: 5 country: Czechy n: 18
+i: 6 country: Dania n: 18
+i: 7 country: Estonia n: 18
+i: 8 country: Finlandia n: 18
+i: 9 country: Francja n: 18
+i: 10 country: Grecja n: 18
+i: 11 country: Hiszpania n: 18
+i: 12 country: Niderlandy n: 18
+i: 13 country: Irlandia n: 18
+i: 14 country: Islandia n: 18
+i: 15 country: Litwa  n: 18
+i: 16 country: Liechtenstein n: 18
+i: 17 country: Luksemburg n: 18
+i: 18 country: £otwa n: 18
+i: 19 country: Malta n: 18
+i: 20 country: Niemcy n: 18
+i: 21 country: Norwegia n: 18
+i: 22 country: Polska n: 18
+i: 23 country: Portugalia n: 18
+i: 24 country: Rumunia n: 18
+i: 25 country: S³owacja n: 18
+i: 26 country: S³owenia n: 18
+i: 27 country: Szwecja n: 18
+i: 28 country: Wêgry n: 18
+i: 29 country: W³ochy n: 18
+i: 30 country: Krajowe n: 18
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 18
+i: 0 country: Austria n: 19
+i: 1 country: Belgia n: 19
+i: 2 country: Bu³garia n: 19
+i: 3 country: Chorwacja n: 19
+i: 4 country: Cypr n: 19
+i: 5 country: Czechy n: 19
+i: 6 country: Dania n: 19
+i: 7 country: Estonia n: 19
+i: 8 country: Finlandia n: 19
+i: 9 country: Francja n: 19
+i: 10 country: Grecja n: 19
+i: 11 country: Hiszpania n: 19
+i: 12 country: Niderlandy n: 19
+i: 13 country: Irlandia n: 19
+i: 14 country: Islandia n: 19
+i: 15 country: Litwa  n: 19
+i: 16 country: Liechtenstein n: 19
+i: 17 country: Luksemburg n: 19
+i: 18 country: £otwa n: 19
+i: 19 country: Malta n: 19
+i: 20 country: Niemcy n: 19
+i: 21 country: Norwegia n: 19
+i: 22 country: Polska n: 19
+i: 23 country: Portugalia n: 19
+i: 24 country: Rumunia n: 19
+i: 25 country: S³owacja n: 19
+i: 26 country: S³owenia n: 19
+i: 27 country: Szwecja n: 19
+i: 28 country: Wêgry n: 19
+i: 29 country: W³ochy n: 19
+i: 30 country: Krajowe n: 19
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 19
+6.ab.LiW
+5a.R.SF
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230402_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230403_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230404_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230405_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230406_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230407_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230408_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230409_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230410_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230411_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230412_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230413_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230414_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230415_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230416_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230417_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230418_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230419_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230420_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230421_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230422_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230423_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230424_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230425_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230426_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230427_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230428_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230429_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230430_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230501_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230502_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230503_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230504_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230505_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230506_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230507_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230508_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230509_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230510_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230511_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230512_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230513_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230514_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230515_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230516_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230517_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230518_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230519_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230520_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230521_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230522_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230523_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230524_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230525_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230526_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230527_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230601_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230602_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230603_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230604_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230605_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230606_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230607_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230608_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230609_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230610_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230611_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230612_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230613_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230614_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230615_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230616_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230617_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230618_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230619_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230620_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230621_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230622_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230623_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230624_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230625_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230626_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230627_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230628_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230629_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230630_INITF.epd
+
+Found VISA FRAUD data: 45  00441049400082 NORBERT SWIDERSKI97751  WROCLAW       PL  5921 1            43.98 424671 03/25/23 424671******6562 0002 74410493084018307202371 07  FRDDMC61  047555790
+
+
+Found VISA FRAUD data: 45  00441049400082 NORBERT SWIDERSKI97751  WROCLAW       PL  5921 1            19.52 424671 03/25/23 424671******6562 0001 74410493084018307202280 07  FRDDMC61  047555800
+
+
+Found VISA FRAUD data: 45  00441049400082 Beauty Nails     04915  DRAWSKO       PL  7298 4           470.01 414720 03/31/23 414720******6660 4001 74410493090018348774422 00  FRDDMC61  030841610
+
+
+Found VISA FRAUD data: 45  00441049400082 FUCZYLO FHU      66803  POLKOWICE     PL  5411 1            96.61 424671 03/31/23 424671******3434 0008 74410493090018343830799 07  FRDDMC61  030841620
+
+
+Found VISA FRAUD data: 45  00441049400082 MIROSLAW BILSKI T39964  KRAKOW        PL  4121 D            39.98 457195 03/19/23 457195******1792 0020 74410493078018268394850 07  FRDDMC61  030841630
+
+
+Found VISA FRAUD data: 45  00441049400082 MICHALOWKA SPOLKA10259  LISZKI        PL  5812 D           127.02 457122 03/30/23 457122******9925 0012 74410493089018343438349 07  FRDDMC61  035867890
+
+
+Found VISA FRAUD data: 45  00441049400082 PUNKT            12740  WROCLAW       PL  7392 0            80.02 424671 04/06/23 424671******2236 0001 74410493096018387090072 07  FRDDMC61  035867900
+
+
+Found VISA FRAUD data: 45  00441049400082 STODOLA KEBAP'N G33181  POZNAN        PL  5812 4            64.00 406095 04/10/23 406095******1712 4020 74410493100018407963104 07  FRDDMC61  039602450
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            32.98 424671 04/25/23 424671******5529 0003 74410493115018506674613 07  FRDDMC61  026519410
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            54.50 424671 04/25/23 424671******5529 0002 74410493115018509806014 07  FRDDMC61  026519420
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            49.00 424671 04/25/23 424671******5529 0001 74410493115018506669399 07  FRDDMC61  026519430
+
+
+Found VISA FRAUD data: 45  00441049400082 KULIG SP. Z O.O. 15241  WARSZAWA      PL  5139 4           125.85 414709 05/10/23 414709******1010 0005 74410493125018572704060     FRDDMC61  021275740
+
+
+Found VISA FRAUD data: 45  00441049400082 GOMIK MALGORZATA 70247  GDANSK        PL  5999 1            15.99 424671 04/29/23 424671******7235 0001 74410493119018539998258 07  FRDDMC61  030942570
+
+
+Found VISA FRAUD data: 45  00441049400082 POLA TAXI        37039  GNIEZNO       PL  4121 0           203.04 400022 05/12/23 400022******9681 0005 74410493132018629398370 07  FRDDMC61  046164300
+
+
+Found VISA FRAUD data: 45  00441049400082 BUSSOLA COFFEE KR20497  KRAKOW        PL  5812 B            49.14 482498 05/13/23 482498******5801 0011 74410493133018636262717 07  FRDDMC61  022939290
+
+
+Found VISA FRAUD data: 45  00441049400082 CHM GOGOLA, BOCZO17615  KRAKOW        PL  5999 1           138.91 457168 02/25/23 457168******6533 0003 74410493056018128407831 07  FRDDMC61  039114740
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 4            18.09 492915 06/04/23 492915******3006 0002 74410493155018800305899 07  FRDDMC61  023500950
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 4            73.32 492915 06/04/23 492915******3006 0001 74410493155018800304504 07  FRDDMC61  023500960
+
+
+Found VISA FRAUD data: 45  00441049400082 SEVEN SPADES PIOT44769  DZIWNOW       PL  5947 1            92.82 465901 06/11/23 465901******6010 0008 74410493162018849701638 07  FRDDMC61  033978340
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            30.58 440066 06/16/23 440066******6892 0005 74410493167018883769124 07  FRDDMC61  030189760
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           754.74 440066 06/16/23 440066******6892 0003 74410493167018883770932 07  FRDDMC61  030189770
+
+
+Found VISA FRAUD data: 45  00441049400082 TRAFIKA NR.225   91195  KALISZ        PL  5192 1            29.97 424671 06/10/23 424671******7926 0007 74410493161018842810452 07  FRDDMC61  030189780
+
+
+Found VISA FRAUD data: 45  00441049400082 TRAFIKA NR.225   91195  KALISZ        PL  5192 1            31.99 424671 06/10/23 424671******7926 0006 74410493161018842818323 07  FRDDMC61  030189790
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            33.28 424671 06/17/23 424671******7218 0006 74410493168018893046512 07  FRDDMC61  017207540
+
+
+Found VISA FRAUD data: 45  00441049400082 KWITOWSKI PALIWA 24115  KALISZ        PL  5541 0            60.01 424671 06/11/23 424671******9426 0003 74410493162018847887330 07  FRDDMC61  030179610
+
+
+Found VISA FRAUD data: 45  00441049400082 KWITOWSKI PALIWA 24115  KALISZ        PL  5541 0            60.01 424671 06/11/23 424671******9426 0002 74410493162018847887215 07  FRDDMC61  030179620
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1             9.87 424671 06/20/23 424671******4531 0021 74410493171018914403184 07  FRDDMC61  037826410
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            22.08 424671 06/20/23 424671******4531 0016 74410493171018919430398 07  FRDDMC61  037826420
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            34.75 424671 06/20/23 424671******4531 0013 74410493171018918839193 07  FRDDMC61  037826430
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            10.00 424671 06/20/23 424671******4531 0003 74410493171018914376935 07  FRDDMC61  037826440
+
+
+Found VISA FRAUD data: 45  00441049400082 LIBERTE          68397  KRAKOW        PL  7999 0            98.00 440066 06/09/23 440066******4910 0052 74410493160018832288066 07  FRDDMC61  011118700
+
+
+All ARN numbers passed to SQL query for VISA FRAUD.
+
+VISA ARNs: ('74410493084018307202371', '74410493084018307202280', '74410493090018348774422', '74410493090018343830799', '74410493078018268394850', '74410493089018343438349', '74410493096018387090072', '74410493100018407963104', '74410493115018506674613', '74410493115018509806014', '74410493115018506669399', '74410493125018572704060', '74410493119018539998258', '74410493132018629398370', '74410493133018636262717', '74410493056018128407831', '74410493155018800305899', '74410493155018800304504', '74410493162018849701638', '74410493167018883769124', '74410493167018883770932', '74410493161018842810452', '74410493161018842818323', '74410493168018893046512', '74410493162018847887330', '74410493162018847887215', '74410493171018914403184', '74410493171018919430398', '74410493171018918839193', '74410493171018914376935', '74410493160018832288066')
+VISA finished
+
+All ARN numbers passed to SQL query.
+
+MASTERCARD ARNs: ('05185243074030360473185', '05185243090030631480563', '05185243115031043558906', '05185243115031043546109', '05185243117031078316178', '05185243062030157497409', '05185243115031032952565', '05185242330028682998303', '05185242330028682845504', '05185242328028646718304', '05185243048029942470951', '05185242330028683114876', '05185243129031273801293', '05185243112031000863540', '05185243112031000859662', '05185243117031072573436', '05185243117031072732941', '05185243148031663818540', '05185243148031664201852', '05185243163031957574445', '05185243163031957671639', '05185243165032001035571')
+MASTERCARD finished
+
+Checking the quarter: 2
+9.R.L.MCC and 9.R.W.MCC
+ST.01
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+k:  151 and next_row:  40 country:  ZW
+Country code:  ZW row:  40
+
+Report start -AR2- --2023-07-25--
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+i: 0 country: Austria n: 0
+i: 1 country: Belgia n: 0
+i: 2 country: Bu³garia n: 0
+i: 3 country: Chorwacja n: 0
+i: 4 country: Cypr n: 0
+i: 5 country: Czechy n: 0
+i: 6 country: Dania n: 0
+i: 7 country: Estonia n: 0
+i: 8 country: Finlandia n: 0
+i: 9 country: Francja n: 0
+i: 10 country: Grecja n: 0
+i: 11 country: Hiszpania n: 0
+i: 12 country: Niderlandy n: 0
+i: 13 country: Irlandia n: 0
+i: 14 country: Islandia n: 0
+i: 15 country: Litwa  n: 0
+i: 16 country: Liechtenstein n: 0
+i: 17 country: Luksemburg n: 0
+i: 18 country: £otwa n: 0
+i: 19 country: Malta n: 0
+i: 20 country: Niemcy n: 0
+i: 21 country: Norwegia n: 0
+i: 22 country: Polska n: 0
+i: 23 country: Portugalia n: 0
+i: 24 country: Rumunia n: 0
+i: 25 country: S³owacja n: 0
+i: 26 country: S³owenia n: 0
+i: 27 country: Szwecja n: 0
+i: 28 country: Wêgry n: 0
+i: 29 country: W³ochy n: 0
+i: 30 country: Krajowe n: 0
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 0
+i: 0 country: Austria n: 1
+i: 1 country: Belgia n: 1
+i: 2 country: Bu³garia n: 1
+i: 3 country: Chorwacja n: 1
+i: 4 country: Cypr n: 1
+i: 5 country: Czechy n: 1
+i: 6 country: Dania n: 1
+i: 7 country: Estonia n: 1
+i: 8 country: Finlandia n: 1
+i: 9 country: Francja n: 1
+i: 10 country: Grecja n: 1
+i: 11 country: Hiszpania n: 1
+i: 12 country: Niderlandy n: 1
+i: 13 country: Irlandia n: 1
+i: 14 country: Islandia n: 1
+i: 15 country: Litwa  n: 1
+i: 16 country: Liechtenstein n: 1
+i: 17 country: Luksemburg n: 1
+i: 18 country: £otwa n: 1
+i: 19 country: Malta n: 1
+i: 20 country: Niemcy n: 1
+i: 21 country: Norwegia n: 1
+i: 22 country: Polska n: 1
+i: 23 country: Portugalia n: 1
+i: 24 country: Rumunia n: 1
+i: 25 country: S³owacja n: 1
+i: 26 country: S³owenia n: 1
+i: 27 country: Szwecja n: 1
+i: 28 country: Wêgry n: 1
+i: 29 country: W³ochy n: 1
+i: 30 country: Krajowe n: 1
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 1
+i: 0 country: Austria n: 2
+i: 1 country: Belgia n: 2
+i: 2 country: Bu³garia n: 2
+i: 3 country: Chorwacja n: 2
+i: 4 country: Cypr n: 2
+i: 5 country: Czechy n: 2
+i: 6 country: Dania n: 2
+i: 7 country: Estonia n: 2
+i: 8 country: Finlandia n: 2
+i: 9 country: Francja n: 2
+i: 10 country: Grecja n: 2
+i: 11 country: Hiszpania n: 2
+i: 12 country: Niderlandy n: 2
+i: 13 country: Irlandia n: 2
+i: 14 country: Islandia n: 2
+i: 15 country: Litwa  n: 2
+i: 16 country: Liechtenstein n: 2
+i: 17 country: Luksemburg n: 2
+i: 18 country: £otwa n: 2
+i: 19 country: Malta n: 2
+i: 20 country: Niemcy n: 2
+i: 21 country: Norwegia n: 2
+i: 22 country: Polska n: 2
+i: 23 country: Portugalia n: 2
+i: 24 country: Rumunia n: 2
+i: 25 country: S³owacja n: 2
+i: 26 country: S³owenia n: 2
+i: 27 country: Szwecja n: 2
+i: 28 country: Wêgry n: 2
+i: 29 country: W³ochy n: 2
+i: 30 country: Krajowe n: 2
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 2
+i: 0 country: Austria n: 3
+i: 1 country: Belgia n: 3
+i: 2 country: Bu³garia n: 3
+i: 3 country: Chorwacja n: 3
+i: 4 country: Cypr n: 3
+i: 5 country: Czechy n: 3
+i: 6 country: Dania n: 3
+i: 7 country: Estonia n: 3
+i: 8 country: Finlandia n: 3
+i: 9 country: Francja n: 3
+i: 10 country: Grecja n: 3
+i: 11 country: Hiszpania n: 3
+i: 12 country: Niderlandy n: 3
+i: 13 country: Irlandia n: 3
+i: 14 country: Islandia n: 3
+i: 15 country: Litwa  n: 3
+i: 16 country: Liechtenstein n: 3
+i: 17 country: Luksemburg n: 3
+i: 18 country: £otwa n: 3
+i: 19 country: Malta n: 3
+i: 20 country: Niemcy n: 3
+i: 21 country: Norwegia n: 3
+i: 22 country: Polska n: 3
+i: 23 country: Portugalia n: 3
+i: 24 country: Rumunia n: 3
+i: 25 country: S³owacja n: 3
+i: 26 country: S³owenia n: 3
+i: 27 country: Szwecja n: 3
+i: 28 country: Wêgry n: 3
+i: 29 country: W³ochy n: 3
+i: 30 country: Krajowe n: 3
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 3
+i: 0 country: Austria n: 4
+i: 1 country: Belgia n: 4
+i: 2 country: Bu³garia n: 4
+i: 3 country: Chorwacja n: 4
+i: 4 country: Cypr n: 4
+i: 5 country: Czechy n: 4
+i: 6 country: Dania n: 4
+i: 7 country: Estonia n: 4
+i: 8 country: Finlandia n: 4
+i: 9 country: Francja n: 4
+i: 10 country: Grecja n: 4
+i: 11 country: Hiszpania n: 4
+i: 12 country: Niderlandy n: 4
+i: 13 country: Irlandia n: 4
+i: 14 country: Islandia n: 4
+i: 15 country: Litwa  n: 4
+i: 16 country: Liechtenstein n: 4
+i: 17 country: Luksemburg n: 4
+i: 18 country: £otwa n: 4
+i: 19 country: Malta n: 4
+i: 20 country: Niemcy n: 4
+i: 21 country: Norwegia n: 4
+i: 22 country: Polska n: 4
+i: 23 country: Portugalia n: 4
+i: 24 country: Rumunia n: 4
+i: 25 country: S³owacja n: 4
+i: 26 country: S³owenia n: 4
+i: 27 country: Szwecja n: 4
+i: 28 country: Wêgry n: 4
+i: 29 country: W³ochy n: 4
+i: 30 country: Krajowe n: 4
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 4
+i: 0 country: Austria n: 5
+i: 1 country: Belgia n: 5
+i: 2 country: Bu³garia n: 5
+i: 3 country: Chorwacja n: 5
+i: 4 country: Cypr n: 5
+i: 5 country: Czechy n: 5
+i: 6 country: Dania n: 5
+i: 7 country: Estonia n: 5
+i: 8 country: Finlandia n: 5
+i: 9 country: Francja n: 5
+i: 10 country: Grecja n: 5
+i: 11 country: Hiszpania n: 5
+i: 12 country: Niderlandy n: 5
+i: 13 country: Irlandia n: 5
+i: 14 country: Islandia n: 5
+i: 15 country: Litwa  n: 5
+i: 16 country: Liechtenstein n: 5
+i: 17 country: Luksemburg n: 5
+i: 18 country: £otwa n: 5
+i: 19 country: Malta n: 5
+i: 20 country: Niemcy n: 5
+i: 21 country: Norwegia n: 5
+i: 22 country: Polska n: 5
+i: 23 country: Portugalia n: 5
+i: 24 country: Rumunia n: 5
+i: 25 country: S³owacja n: 5
+i: 26 country: S³owenia n: 5
+i: 27 country: Szwecja n: 5
+i: 28 country: Wêgry n: 5
+i: 29 country: W³ochy n: 5
+i: 30 country: Krajowe n: 5
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 5
+i: 0 country: Austria n: 6
+i: 1 country: Belgia n: 6
+i: 2 country: Bu³garia n: 6
+i: 3 country: Chorwacja n: 6
+i: 4 country: Cypr n: 6
+i: 5 country: Czechy n: 6
+i: 6 country: Dania n: 6
+i: 7 country: Estonia n: 6
+i: 8 country: Finlandia n: 6
+i: 9 country: Francja n: 6
+i: 10 country: Grecja n: 6
+i: 11 country: Hiszpania n: 6
+i: 12 country: Niderlandy n: 6
+i: 13 country: Irlandia n: 6
+i: 14 country: Islandia n: 6
+i: 15 country: Litwa  n: 6
+i: 16 country: Liechtenstein n: 6
+i: 17 country: Luksemburg n: 6
+i: 18 country: £otwa n: 6
+i: 19 country: Malta n: 6
+i: 20 country: Niemcy n: 6
+i: 21 country: Norwegia n: 6
+i: 22 country: Polska n: 6
+i: 23 country: Portugalia n: 6
+i: 24 country: Rumunia n: 6
+i: 25 country: S³owacja n: 6
+i: 26 country: S³owenia n: 6
+i: 27 country: Szwecja n: 6
+i: 28 country: Wêgry n: 6
+i: 29 country: W³ochy n: 6
+i: 30 country: Krajowe n: 6
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 6
+i: 0 country: Austria n: 7
+i: 1 country: Belgia n: 7
+i: 2 country: Bu³garia n: 7
+i: 3 country: Chorwacja n: 7
+i: 4 country: Cypr n: 7
+i: 5 country: Czechy n: 7
+i: 6 country: Dania n: 7
+i: 7 country: Estonia n: 7
+i: 8 country: Finlandia n: 7
+i: 9 country: Francja n: 7
+i: 10 country: Grecja n: 7
+i: 11 country: Hiszpania n: 7
+i: 12 country: Niderlandy n: 7
+i: 13 country: Irlandia n: 7
+i: 14 country: Islandia n: 7
+i: 15 country: Litwa  n: 7
+i: 16 country: Liechtenstein n: 7
+i: 17 country: Luksemburg n: 7
+i: 18 country: £otwa n: 7
+i: 19 country: Malta n: 7
+i: 20 country: Niemcy n: 7
+i: 21 country: Norwegia n: 7
+i: 22 country: Polska n: 7
+i: 23 country: Portugalia n: 7
+i: 24 country: Rumunia n: 7
+i: 25 country: S³owacja n: 7
+i: 26 country: S³owenia n: 7
+i: 27 country: Szwecja n: 7
+i: 28 country: Wêgry n: 7
+i: 29 country: W³ochy n: 7
+i: 30 country: Krajowe n: 7
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 7
+i: 0 country: Austria n: 8
+i: 1 country: Belgia n: 8
+i: 2 country: Bu³garia n: 8
+i: 3 country: Chorwacja n: 8
+i: 4 country: Cypr n: 8
+i: 5 country: Czechy n: 8
+i: 6 country: Dania n: 8
+i: 7 country: Estonia n: 8
+i: 8 country: Finlandia n: 8
+i: 9 country: Francja n: 8
+i: 10 country: Grecja n: 8
+i: 11 country: Hiszpania n: 8
+i: 12 country: Niderlandy n: 8
+i: 13 country: Irlandia n: 8
+i: 14 country: Islandia n: 8
+i: 15 country: Litwa  n: 8
+i: 16 country: Liechtenstein n: 8
+i: 17 country: Luksemburg n: 8
+i: 18 country: £otwa n: 8
+i: 19 country: Malta n: 8
+i: 20 country: Niemcy n: 8
+i: 21 country: Norwegia n: 8
+i: 22 country: Polska n: 8
+i: 23 country: Portugalia n: 8
+i: 24 country: Rumunia n: 8
+i: 25 country: S³owacja n: 8
+i: 26 country: S³owenia n: 8
+i: 27 country: Szwecja n: 8
+i: 28 country: Wêgry n: 8
+i: 29 country: W³ochy n: 8
+i: 30 country: Krajowe n: 8
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 8
+i: 0 country: Austria n: 9
+i: 1 country: Belgia n: 9
+i: 2 country: Bu³garia n: 9
+i: 3 country: Chorwacja n: 9
+i: 4 country: Cypr n: 9
+i: 5 country: Czechy n: 9
+i: 6 country: Dania n: 9
+i: 7 country: Estonia n: 9
+i: 8 country: Finlandia n: 9
+i: 9 country: Francja n: 9
+i: 10 country: Grecja n: 9
+i: 11 country: Hiszpania n: 9
+i: 12 country: Niderlandy n: 9
+i: 13 country: Irlandia n: 9
+i: 14 country: Islandia n: 9
+i: 15 country: Litwa  n: 9
+i: 16 country: Liechtenstein n: 9
+i: 17 country: Luksemburg n: 9
+i: 18 country: £otwa n: 9
+i: 19 country: Malta n: 9
+i: 20 country: Niemcy n: 9
+i: 21 country: Norwegia n: 9
+i: 22 country: Polska n: 9
+i: 23 country: Portugalia n: 9
+i: 24 country: Rumunia n: 9
+i: 25 country: S³owacja n: 9
+i: 26 country: S³owenia n: 9
+i: 27 country: Szwecja n: 9
+i: 28 country: Wêgry n: 9
+i: 29 country: W³ochy n: 9
+i: 30 country: Krajowe n: 9
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 9
+i: 0 country: Austria n: 10
+i: 1 country: Belgia n: 10
+i: 2 country: Bu³garia n: 10
+i: 3 country: Chorwacja n: 10
+i: 4 country: Cypr n: 10
+i: 5 country: Czechy n: 10
+i: 6 country: Dania n: 10
+i: 7 country: Estonia n: 10
+i: 8 country: Finlandia n: 10
+i: 9 country: Francja n: 10
+i: 10 country: Grecja n: 10
+i: 11 country: Hiszpania n: 10
+i: 12 country: Niderlandy n: 10
+i: 13 country: Irlandia n: 10
+i: 14 country: Islandia n: 10
+i: 15 country: Litwa  n: 10
+i: 16 country: Liechtenstein n: 10
+i: 17 country: Luksemburg n: 10
+i: 18 country: £otwa n: 10
+i: 19 country: Malta n: 10
+i: 20 country: Niemcy n: 10
+i: 21 country: Norwegia n: 10
+i: 22 country: Polska n: 10
+i: 23 country: Portugalia n: 10
+i: 24 country: Rumunia n: 10
+i: 25 country: S³owacja n: 10
+i: 26 country: S³owenia n: 10
+i: 27 country: Szwecja n: 10
+i: 28 country: Wêgry n: 10
+i: 29 country: W³ochy n: 10
+i: 30 country: Krajowe n: 10
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 10
+i: 0 country: Austria n: 11
+i: 1 country: Belgia n: 11
+i: 2 country: Bu³garia n: 11
+i: 3 country: Chorwacja n: 11
+i: 4 country: Cypr n: 11
+i: 5 country: Czechy n: 11
+i: 6 country: Dania n: 11
+i: 7 country: Estonia n: 11
+i: 8 country: Finlandia n: 11
+i: 9 country: Francja n: 11
+i: 10 country: Grecja n: 11
+i: 11 country: Hiszpania n: 11
+i: 12 country: Niderlandy n: 11
+i: 13 country: Irlandia n: 11
+i: 14 country: Islandia n: 11
+i: 15 country: Litwa  n: 11
+i: 16 country: Liechtenstein n: 11
+i: 17 country: Luksemburg n: 11
+i: 18 country: £otwa n: 11
+i: 19 country: Malta n: 11
+i: 20 country: Niemcy n: 11
+i: 21 country: Norwegia n: 11
+i: 22 country: Polska n: 11
+i: 23 country: Portugalia n: 11
+i: 24 country: Rumunia n: 11
+i: 25 country: S³owacja n: 11
+i: 26 country: S³owenia n: 11
+i: 27 country: Szwecja n: 11
+i: 28 country: Wêgry n: 11
+i: 29 country: W³ochy n: 11
+i: 30 country: Krajowe n: 11
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 11
+i: 0 country: Austria n: 12
+i: 1 country: Belgia n: 12
+i: 2 country: Bu³garia n: 12
+i: 3 country: Chorwacja n: 12
+i: 4 country: Cypr n: 12
+i: 5 country: Czechy n: 12
+i: 6 country: Dania n: 12
+i: 7 country: Estonia n: 12
+i: 8 country: Finlandia n: 12
+i: 9 country: Francja n: 12
+i: 10 country: Grecja n: 12
+i: 11 country: Hiszpania n: 12
+i: 12 country: Niderlandy n: 12
+i: 13 country: Irlandia n: 12
+i: 14 country: Islandia n: 12
+i: 15 country: Litwa  n: 12
+i: 16 country: Liechtenstein n: 12
+i: 17 country: Luksemburg n: 12
+i: 18 country: £otwa n: 12
+i: 19 country: Malta n: 12
+i: 20 country: Niemcy n: 12
+i: 21 country: Norwegia n: 12
+i: 22 country: Polska n: 12
+i: 23 country: Portugalia n: 12
+i: 24 country: Rumunia n: 12
+i: 25 country: S³owacja n: 12
+i: 26 country: S³owenia n: 12
+i: 27 country: Szwecja n: 12
+i: 28 country: Wêgry n: 12
+i: 29 country: W³ochy n: 12
+i: 30 country: Krajowe n: 12
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 12
+i: 0 country: Austria n: 13
+i: 1 country: Belgia n: 13
+i: 2 country: Bu³garia n: 13
+i: 3 country: Chorwacja n: 13
+i: 4 country: Cypr n: 13
+i: 5 country: Czechy n: 13
+i: 6 country: Dania n: 13
+i: 7 country: Estonia n: 13
+i: 8 country: Finlandia n: 13
+i: 9 country: Francja n: 13
+i: 10 country: Grecja n: 13
+i: 11 country: Hiszpania n: 13
+i: 12 country: Niderlandy n: 13
+i: 13 country: Irlandia n: 13
+i: 14 country: Islandia n: 13
+i: 15 country: Litwa  n: 13
+i: 16 country: Liechtenstein n: 13
+i: 17 country: Luksemburg n: 13
+i: 18 country: £otwa n: 13
+i: 19 country: Malta n: 13
+i: 20 country: Niemcy n: 13
+i: 21 country: Norwegia n: 13
+i: 22 country: Polska n: 13
+i: 23 country: Portugalia n: 13
+i: 24 country: Rumunia n: 13
+i: 25 country: S³owacja n: 13
+i: 26 country: S³owenia n: 13
+i: 27 country: Szwecja n: 13
+i: 28 country: Wêgry n: 13
+i: 29 country: W³ochy n: 13
+i: 30 country: Krajowe n: 13
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 13
+i: 0 country: Austria n: 14
+i: 1 country: Belgia n: 14
+i: 2 country: Bu³garia n: 14
+i: 3 country: Chorwacja n: 14
+i: 4 country: Cypr n: 14
+i: 5 country: Czechy n: 14
+i: 6 country: Dania n: 14
+i: 7 country: Estonia n: 14
+i: 8 country: Finlandia n: 14
+i: 9 country: Francja n: 14
+i: 10 country: Grecja n: 14
+i: 11 country: Hiszpania n: 14
+i: 12 country: Niderlandy n: 14
+i: 13 country: Irlandia n: 14
+i: 14 country: Islandia n: 14
+i: 15 country: Litwa  n: 14
+i: 16 country: Liechtenstein n: 14
+i: 17 country: Luksemburg n: 14
+i: 18 country: £otwa n: 14
+i: 19 country: Malta n: 14
+i: 20 country: Niemcy n: 14
+i: 21 country: Norwegia n: 14
+i: 22 country: Polska n: 14
+i: 23 country: Portugalia n: 14
+i: 24 country: Rumunia n: 14
+i: 25 country: S³owacja n: 14
+i: 26 country: S³owenia n: 14
+i: 27 country: Szwecja n: 14
+i: 28 country: Wêgry n: 14
+i: 29 country: W³ochy n: 14
+i: 30 country: Krajowe n: 14
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 14
+i: 0 country: Austria n: 15
+i: 1 country: Belgia n: 15
+i: 2 country: Bu³garia n: 15
+i: 3 country: Chorwacja n: 15
+i: 4 country: Cypr n: 15
+i: 5 country: Czechy n: 15
+i: 6 country: Dania n: 15
+i: 7 country: Estonia n: 15
+i: 8 country: Finlandia n: 15
+i: 9 country: Francja n: 15
+i: 10 country: Grecja n: 15
+i: 11 country: Hiszpania n: 15
+i: 12 country: Niderlandy n: 15
+i: 13 country: Irlandia n: 15
+i: 14 country: Islandia n: 15
+i: 15 country: Litwa  n: 15
+i: 16 country: Liechtenstein n: 15
+i: 17 country: Luksemburg n: 15
+i: 18 country: £otwa n: 15
+i: 19 country: Malta n: 15
+i: 20 country: Niemcy n: 15
+i: 21 country: Norwegia n: 15
+i: 22 country: Polska n: 15
+i: 23 country: Portugalia n: 15
+i: 24 country: Rumunia n: 15
+i: 25 country: S³owacja n: 15
+i: 26 country: S³owenia n: 15
+i: 27 country: Szwecja n: 15
+i: 28 country: Wêgry n: 15
+i: 29 country: W³ochy n: 15
+i: 30 country: Krajowe n: 15
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 15
+i: 0 country: Austria n: 16
+i: 1 country: Belgia n: 16
+i: 2 country: Bu³garia n: 16
+i: 3 country: Chorwacja n: 16
+i: 4 country: Cypr n: 16
+i: 5 country: Czechy n: 16
+i: 6 country: Dania n: 16
+i: 7 country: Estonia n: 16
+i: 8 country: Finlandia n: 16
+i: 9 country: Francja n: 16
+i: 10 country: Grecja n: 16
+i: 11 country: Hiszpania n: 16
+i: 12 country: Niderlandy n: 16
+i: 13 country: Irlandia n: 16
+i: 14 country: Islandia n: 16
+i: 15 country: Litwa  n: 16
+i: 16 country: Liechtenstein n: 16
+i: 17 country: Luksemburg n: 16
+i: 18 country: £otwa n: 16
+i: 19 country: Malta n: 16
+i: 20 country: Niemcy n: 16
+i: 21 country: Norwegia n: 16
+i: 22 country: Polska n: 16
+i: 23 country: Portugalia n: 16
+i: 24 country: Rumunia n: 16
+i: 25 country: S³owacja n: 16
+i: 26 country: S³owenia n: 16
+i: 27 country: Szwecja n: 16
+i: 28 country: Wêgry n: 16
+i: 29 country: W³ochy n: 16
+i: 30 country: Krajowe n: 16
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 16
+i: 0 country: Austria n: 17
+i: 1 country: Belgia n: 17
+i: 2 country: Bu³garia n: 17
+i: 3 country: Chorwacja n: 17
+i: 4 country: Cypr n: 17
+i: 5 country: Czechy n: 17
+i: 6 country: Dania n: 17
+i: 7 country: Estonia n: 17
+i: 8 country: Finlandia n: 17
+i: 9 country: Francja n: 17
+i: 10 country: Grecja n: 17
+i: 11 country: Hiszpania n: 17
+i: 12 country: Niderlandy n: 17
+i: 13 country: Irlandia n: 17
+i: 14 country: Islandia n: 17
+i: 15 country: Litwa  n: 17
+i: 16 country: Liechtenstein n: 17
+i: 17 country: Luksemburg n: 17
+i: 18 country: £otwa n: 17
+i: 19 country: Malta n: 17
+i: 20 country: Niemcy n: 17
+i: 21 country: Norwegia n: 17
+i: 22 country: Polska n: 17
+i: 23 country: Portugalia n: 17
+i: 24 country: Rumunia n: 17
+i: 25 country: S³owacja n: 17
+i: 26 country: S³owenia n: 17
+i: 27 country: Szwecja n: 17
+i: 28 country: Wêgry n: 17
+i: 29 country: W³ochy n: 17
+i: 30 country: Krajowe n: 17
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 17
+i: 0 country: Austria n: 18
+i: 1 country: Belgia n: 18
+i: 2 country: Bu³garia n: 18
+i: 3 country: Chorwacja n: 18
+i: 4 country: Cypr n: 18
+i: 5 country: Czechy n: 18
+i: 6 country: Dania n: 18
+i: 7 country: Estonia n: 18
+i: 8 country: Finlandia n: 18
+i: 9 country: Francja n: 18
+i: 10 country: Grecja n: 18
+i: 11 country: Hiszpania n: 18
+i: 12 country: Niderlandy n: 18
+i: 13 country: Irlandia n: 18
+i: 14 country: Islandia n: 18
+i: 15 country: Litwa  n: 18
+i: 16 country: Liechtenstein n: 18
+i: 17 country: Luksemburg n: 18
+i: 18 country: £otwa n: 18
+i: 19 country: Malta n: 18
+i: 20 country: Niemcy n: 18
+i: 21 country: Norwegia n: 18
+i: 22 country: Polska n: 18
+i: 23 country: Portugalia n: 18
+i: 24 country: Rumunia n: 18
+i: 25 country: S³owacja n: 18
+i: 26 country: S³owenia n: 18
+i: 27 country: Szwecja n: 18
+i: 28 country: Wêgry n: 18
+i: 29 country: W³ochy n: 18
+i: 30 country: Krajowe n: 18
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 18
+i: 0 country: Austria n: 19
+i: 1 country: Belgia n: 19
+i: 2 country: Bu³garia n: 19
+i: 3 country: Chorwacja n: 19
+i: 4 country: Cypr n: 19
+i: 5 country: Czechy n: 19
+i: 6 country: Dania n: 19
+i: 7 country: Estonia n: 19
+i: 8 country: Finlandia n: 19
+i: 9 country: Francja n: 19
+i: 10 country: Grecja n: 19
+i: 11 country: Hiszpania n: 19
+i: 12 country: Niderlandy n: 19
+i: 13 country: Irlandia n: 19
+i: 14 country: Islandia n: 19
+i: 15 country: Litwa  n: 19
+i: 16 country: Liechtenstein n: 19
+i: 17 country: Luksemburg n: 19
+i: 18 country: £otwa n: 19
+i: 19 country: Malta n: 19
+i: 20 country: Niemcy n: 19
+i: 21 country: Norwegia n: 19
+i: 22 country: Polska n: 19
+i: 23 country: Portugalia n: 19
+i: 24 country: Rumunia n: 19
+i: 25 country: S³owacja n: 19
+i: 26 country: S³owenia n: 19
+i: 27 country: Szwecja n: 19
+i: 28 country: Wêgry n: 19
+i: 29 country: W³ochy n: 19
+i: 30 country: Krajowe n: 19
+i: 31 country: Pozosta³e kraje œwiata (poza EOG) n: 19
+6.ab.LiW
+5a.R.SF
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230402_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230403_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230404_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230405_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230406_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230407_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230408_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230409_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230410_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230411_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230412_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230413_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230414_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230415_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230416_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230417_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230418_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230419_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230420_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230421_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230422_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230423_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230424_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230425_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230426_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230427_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230428_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230429_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230430_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230501_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230502_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230503_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230504_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230505_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230506_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230507_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230508_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230509_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230510_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230511_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230512_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230513_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230514_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230515_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230516_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230517_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230518_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230519_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230520_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230521_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230522_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230523_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230524_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230525_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230526_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202305/20230527_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230601_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230602_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230603_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230604_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230605_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230606_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230607_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230608_INITF.epd
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230609_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230610_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230611_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230612_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230613_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230614_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230615_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230616_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230617_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230618_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230619_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230620_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230621_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230622_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230623_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230624_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230625_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230626_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230627_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230628_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230629_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202306/20230630_INITF.epd
+
+Found VISA FRAUD data: 45  00441049400082 NORBERT SWIDERSKI97751  WROCLAW       PL  5921 1            43.98 424671 03/25/23 424671******6562 0002 74410493084018307202371 07  FRDDMC61  047555790
+
+
+Found VISA FRAUD data: 45  00441049400082 NORBERT SWIDERSKI97751  WROCLAW       PL  5921 1            19.52 424671 03/25/23 424671******6562 0001 74410493084018307202280 07  FRDDMC61  047555800
+
+
+Found VISA FRAUD data: 45  00441049400082 Beauty Nails     04915  DRAWSKO       PL  7298 4           470.01 414720 03/31/23 414720******6660 4001 74410493090018348774422 00  FRDDMC61  030841610
+
+
+Found VISA FRAUD data: 45  00441049400082 FUCZYLO FHU      66803  POLKOWICE     PL  5411 1            96.61 424671 03/31/23 424671******3434 0008 74410493090018343830799 07  FRDDMC61  030841620
+
+
+Found VISA FRAUD data: 45  00441049400082 MIROSLAW BILSKI T39964  KRAKOW        PL  4121 D            39.98 457195 03/19/23 457195******1792 0020 74410493078018268394850 07  FRDDMC61  030841630
+
+
+Found VISA FRAUD data: 45  00441049400082 MICHALOWKA SPOLKA10259  LISZKI        PL  5812 D           127.02 457122 03/30/23 457122******9925 0012 74410493089018343438349 07  FRDDMC61  035867890
+
+
+Found VISA FRAUD data: 45  00441049400082 PUNKT            12740  WROCLAW       PL  7392 0            80.02 424671 04/06/23 424671******2236 0001 74410493096018387090072 07  FRDDMC61  035867900
+
+
+Found VISA FRAUD data: 45  00441049400082 STODOLA KEBAP'N G33181  POZNAN        PL  5812 4            64.00 406095 04/10/23 406095******1712 4020 74410493100018407963104 07  FRDDMC61  039602450
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            32.98 424671 04/25/23 424671******5529 0003 74410493115018506674613 07  FRDDMC61  026519410
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            54.50 424671 04/25/23 424671******5529 0002 74410493115018509806014 07  FRDDMC61  026519420
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            49.00 424671 04/25/23 424671******5529 0001 74410493115018506669399 07  FRDDMC61  026519430
+
+
+Found VISA FRAUD data: 45  00441049400082 KULIG SP. Z O.O. 15241  WARSZAWA      PL  5139 4           125.85 414709 05/10/23 414709******1010 0005 74410493125018572704060     FRDDMC61  021275740
+
+
+Found VISA FRAUD data: 45  00441049400082 GOMIK MALGORZATA 70247  GDANSK        PL  5999 1            15.99 424671 04/29/23 424671******7235 0001 74410493119018539998258 07  FRDDMC61  030942570
+
+
+Found VISA FRAUD data: 45  00441049400082 POLA TAXI        37039  GNIEZNO       PL  4121 0           203.04 400022 05/12/23 400022******9681 0005 74410493132018629398370 07  FRDDMC61  046164300
+
+
+Found VISA FRAUD data: 45  00441049400082 BUSSOLA COFFEE KR20497  KRAKOW        PL  5812 B            49.14 482498 05/13/23 482498******5801 0011 74410493133018636262717 07  FRDDMC61  022939290
+
+
+Found VISA FRAUD data: 45  00441049400082 CHM GOGOLA, BOCZO17615  KRAKOW        PL  5999 1           138.91 457168 02/25/23 457168******6533 0003 74410493056018128407831 07  FRDDMC61  039114740
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 4            18.09 492915 06/04/23 492915******3006 0002 74410493155018800305899 07  FRDDMC61  023500950
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 4            73.32 492915 06/04/23 492915******3006 0001 74410493155018800304504 07  FRDDMC61  023500960
+
+
+Found VISA FRAUD data: 45  00441049400082 SEVEN SPADES PIOT44769  DZIWNOW       PL  5947 1            92.82 465901 06/11/23 465901******6010 0008 74410493162018849701638 07  FRDDMC61  033978340
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            30.58 440066 06/16/23 440066******6892 0005 74410493167018883769124 07  FRDDMC61  030189760
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           754.74 440066 06/16/23 440066******6892 0003 74410493167018883770932 07  FRDDMC61  030189770
+
+
+Found VISA FRAUD data: 45  00441049400082 TRAFIKA NR.225   91195  KALISZ        PL  5192 1            29.97 424671 06/10/23 424671******7926 0007 74410493161018842810452 07  FRDDMC61  030189780
+
+
+Found VISA FRAUD data: 45  00441049400082 TRAFIKA NR.225   91195  KALISZ        PL  5192 1            31.99 424671 06/10/23 424671******7926 0006 74410493161018842818323 07  FRDDMC61  030189790
+
+
+Found VISA FRAUD data: 45  00441049400082 SKORPION         40719  SZCZECIN      PL  5921 1            33.28 424671 06/17/23 424671******7218 0006 74410493168018893046512 07  FRDDMC61  017207540
+
+
+Found VISA FRAUD data: 45  00441049400082 KWITOWSKI PALIWA 24115  KALISZ        PL  5541 0            60.01 424671 06/11/23 424671******9426 0003 74410493162018847887330 07  FRDDMC61  030179610
+
+
+Found VISA FRAUD data: 45  00441049400082 KWITOWSKI PALIWA 24115  KALISZ        PL  5541 0            60.01 424671 06/11/23 424671******9426 0002 74410493162018847887215 07  FRDDMC61  030179620
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1             9.87 424671 06/20/23 424671******4531 0021 74410493171018914403184 07  FRDDMC61  037826410
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            22.08 424671 06/20/23 424671******4531 0016 74410493171018919430398 07  FRDDMC61  037826420
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            34.75 424671 06/20/23 424671******4531 0013 74410493171018918839193 07  FRDDMC61  037826430
+
+
+Found VISA FRAUD data: 45  00441049400082 JOANNA GRABOWSKA 44479  RADOM         PL  5499 1            10.00 424671 06/20/23 424671******4531 0003 74410493171018914376935 07  FRDDMC61  037826440
+
+
+Found VISA FRAUD data: 45  00441049400082 LIBERTE          68397  KRAKOW        PL  7999 0            98.00 440066 06/09/23 440066******4910 0052 74410493160018832288066 07  FRDDMC61  011118700
+
+
+All ARN numbers passed to SQL query for VISA FRAUD.
+
+VISA ARNs: ('74410493084018307202371', '74410493084018307202280', '74410493090018348774422', '74410493090018343830799', '74410493078018268394850', '74410493089018343438349', '74410493096018387090072', '74410493100018407963104', '74410493115018506674613', '74410493115018509806014', '74410493115018506669399', '74410493125018572704060', '74410493119018539998258', '74410493132018629398370', '74410493133018636262717', '74410493056018128407831', '74410493155018800305899', '74410493155018800304504', '74410493162018849701638', '74410493167018883769124', '74410493167018883770932', '74410493161018842810452', '74410493161018842818323', '74410493168018893046512', '74410493162018847887330', '74410493162018847887215', '74410493171018914403184', '74410493171018919430398', '74410493171018918839193', '74410493171018914376935', '74410493160018832288066')
+VISA finished
+
+All ARN numbers passed to SQL query.
+
+MASTERCARD ARNs: ('05185243074030360473185', '05185243090030631480563', '05185243115031043558906', '05185243115031043546109', '05185243117031078316178', '05185243062030157497409', '05185243115031032952565', '05185242330028682998303', '05185242330028682845504', '05185242328028646718304', '05185243048029942470951', '05185242330028683114876', '05185243129031273801293', '05185243112031000863540', '05185243112031000859662', '05185243117031072573436', '05185243117031072732941', '05185243148031663818540', '05185243148031664201852', '05185243163031957574445', '05185243163031957671639', '05185243165032001035571')
+MASTERCARD finished
+
+Checking the quarter: 2
+9.R.L.MCC and 9.R.W.MCC
+ST.01
+
+An error occurred while disconnecting all connections: (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+k:  151 and next_row:  40 country:  ZW
+Country code:  ZW row:  40
+
+list assignment index out of range
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+k:  0 and next_row:  country:  AT
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+
+list assignment index out of range
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+
+list assignment index out of range
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+
+list assignment index out of range
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+
+list assignment index out of range
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+
+'DataFrame' object has no attribute 'Transpose'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+
+'DataFrame' object has no attribute 'Transpose'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+ST.07
+END
+
+[Errno 13] Permission denied: 'Example\\Filled\\AR1 - Q2.2023.xlsx'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+
+Cannot convert 0    8079
+Name: ilosc_transakcji, dtype: int64 to Excel
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+[Errno 13] Permission denied: 'test.xlsx'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+
+'NoneType' object has no attribute 'save'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+'ilosc_transakcji'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+can only concatenate str (not "numpy.int64") to str
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+'Series' object has no attribute 'value'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+'str' object has no attribute 'sum'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+can only concatenate str (not "numpy.int64") to str
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+can only concatenate str (not "numpy.int64") to str
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+Unable to parse string "Karty p³atnicze" at position 4
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+Unable to parse string "Karty p³atnicze" at position 4
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+DataFrame.append() got an unexpected keyword argument 'loc'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+'DataFrame' object has no attribute 'concat'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+'list' object has no attribute 'iloc'
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+
+cannot concatenate object of type '<class 'list'>'; only Series and DataFrame objs are valid
+
+Report start -AR2- --2023-07-25--
+ST.01
+
+An error occurred while reading the remote file: 'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+Data z pliku Tvid_nev_lost.xlsx:  2023-06-30 00:00:00
+ST.03
+ST.05
+ST.06
+
+Date:    Unnamed: 0  Unnamed: 1  Unnamed: 2
+0           0  2023-04-01  2023-07-01
+Country code:  AT row:  4
+Country code:  BE row:  10
+Country code:  BG row:  11
+Country code:  HR row:  12
+Country code:  CY row:  13
+Country code:  CZ row:  14
+Country code:  DK row:  15
+Country code:  EE row:  16
+Country code:  FI row:  17
+Country code:  FR row:  18
+Country code:  DE row:  19
+Country code:  GR row:  20
+Country code:  HU row:  21
+Country code:  IS row:  22
+Country code:  IE row:  23
+Country code:  IT row:  24
+Country code:  LV row:  25
+Country code:  LI row:  26
+Country code:  LT row:  27
+Country code:  LU row:  28
+Country code:  MT row:  29
+Country code:  NL row:  30
+Country code:  NO row:  31
+Country code:  PT row:  32
+Country code:  RO row:  33
+Country code:  SK row:  34
+Country code:  SI row:  35
+Country code:  ES row:  36
+Country code:  SE row:  37
+ST.07
+END
+Full success - no bugs!
