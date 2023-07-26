@@ -7,3 +7,4 @@ pyodbc~=4.0.34
 sqlalchemy~=1.4.39
 pytest~=7.1.2
 numpy~=1.23.5
+pyautogui~=0.9.54
