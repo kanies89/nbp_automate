@@ -12,7 +12,6 @@ import pyautogui
 from tqdm import tqdm
 import time
 import multiprocessing as mp
-import shutil
 
 from connect import connect
 from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, \
@@ -154,7 +153,6 @@ def prepare_data_ar2(user, passw):
             if country == 'Holandia':
                 country = 'Niderlandy'
             try:
-                print('i:', i, 'country:', country, 'n:', n)
                 col1 = pd.Index(df_nbp_2['4a.R.L_PLiW2'].iloc[7]).get_loc(country)
                 col2 = pd.Index(df_nbp_2['4a.R.W_PLiW2'].iloc[7]).get_loc(country)
                 df_nbp_2['4a.R.L_PLiW2'][col1].iloc[AR2_4_row_1[n]] = dataframe_1[n]['ilosc'].iloc[i]
@@ -521,7 +519,6 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
                 f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
             bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
         elif country in df_nbp_1['ST.06'][0][10:39].values:
-            print('Country code: ', country, 'row: ', row)
             row = pd.Index(df_nbp_1['ST.06'][0]).get_loc(country)
             for i in range(len(column_amount)):
                 df_nbp_1['ST.06'].iat[row, column_amount[i]] = dataframe_3[dataframe_3['CountryCode'] == country][
@@ -532,7 +529,6 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
             try:
                 if country == 'NA':
                     c_name = 'Namibia'
-
                     new_row_data = ['NA', c_name, c_name] + [np.nan] * (len(column_amount) + len(column_value))
                     for i in range(len(column_amount)):
                         new_row_data[column_amount[i]] = dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_amount[i]].values[0]
@@ -540,25 +536,20 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
                 else:
                     country_name = geo6[geo6['Code'] == country]['Nazwa kraju'].values[0]
                     country_name_english = geo6[geo6['Code'] == country]['Name'].values[0]
-
                     new_row_data = [country, country_name, country_name_english] + [np.nan] * (len(column_amount) + len(column_value))
                     for i in range(len(column_amount)):
                         new_row_data[column_amount[i]] = dataframe_3[dataframe_3['CountryCode'] == country][content_amount[i]].values[0]
                         new_row_data[column_value[i]] = dataframe_3[dataframe_3['CountryCode'] == country][content_value[i]].values[0]
-
                 if country != 'GB':
                     # Concatenate new row data to DataFrame
                     new_row_data_t = pd.DataFrame(new_row_data).T
                     new_row_data_t.reset_index(drop=True, inplace=True)
                     df_nbp_1['ST.06'] = pd.concat([df_nbp_1['ST.06'], new_row_data_t], axis=0)
-
                 else:
                     new_row_data = pd.DataFrame([new_row_data])
                     # Concatenate the original DataFrame with the new row DataFrame
                     df_nbp_1['ST.06'] = pd.concat([df_nbp_1['ST.06'].iloc[:40], new_row_data, df_nbp_1['ST.06'].iloc[40:]], ignore_index=True)
-
                 df_nbp_1['ST.06'].reset_index(drop=True, inplace=True)
-
             except KeyError:
                 print(
                     f"!!: In the report fraud transactions were not added (there is no such a country code in excel) - {dataframe_3[dataframe_3['CountryCode'] == country]}")
@@ -569,27 +560,9 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.06'][column_amount[i]][10:] = pd.to_numeric(df_nbp_1['ST.06'][column_amount[i]][10:])
         df_nbp_1['ST.06'][column_value[i]][10:] = pd.to_numeric(df_nbp_1['ST.06'][column_value[i]][10:])
 
-        # Calculate the sum of each column in rows 40 and below
-        sum_amount = df_nbp_1['ST.06'][column_amount[i]][40:].sum()
-        sum_value = df_nbp_1['ST.06'][column_value[i]][40:].sum()
-
         # Assign the sum values to row 39
         df_nbp_1['ST.06'][column_amount[i]].loc[39] = df_nbp_1['ST.06'][column_amount[i]][40:].sum()
         df_nbp_1['ST.06'][column_value[i]].loc[39] = df_nbp_1['ST.06'][column_value[i]][40:].sum()
-
-    df_nbp_1['ST.06'].to_excel('test.xlsx')
-
-    # Convert the 'ST.06' column to float and handle invalid values with `errors='coerce'`
-    # df_nbp_1['ST.06'] = pd.to_numeric(df_nbp_1['ST.06'], errors='coerce')
-
-    # Convert the 'ST.06' column starting from index 39 to float
-    # df_nbp_1['ST.06'].iloc[39:] = df_nbp_1['ST.06'].iloc[39:].astype(float)
-
-    # Replace NaN with 0 if needed
-    # df_nbp_1['ST.06'].fillna(0, inplace=True)
-
-    # Calculate the sums for columns 3 to 8, starting from row 40, and update row 39 with the sums
-    # df_nbp_1['ST.06'].iloc[39, 3:] = df_nbp_1['ST.06'].iloc[40:, 3:].sum()
 
     # ST.02
 
@@ -753,19 +726,19 @@ def start_automation(d1, d2, d3, d4, d_pass):
         i += 1
 
     # Fill sheets in AR2
-    #df_fraud_st7 = prepare_data_ar2(user, passw) # <-TODO: delete after tests.
-    #df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv') # <-TODO: delete after tests.
+    df_fraud_st7 = prepare_data_ar2(user, passw)
+    df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
     # Save everything to new excel file
-    #from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
-    #to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
+    from_wb = path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx'
+    to_wb = path + f'Filled\\' + f'BSP_AR2_v.4.0_Q{check_quarter()[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
 
-    #wb = copy_wb(from_wb, to_wb, df_nbp_2, 2)
+    wb = copy_wb(from_wb, to_wb, df_nbp_2, 2)
 
     # Save the updated workbook
-    #wb.save(to_wb)
+    wb.save(to_wb)
 
-    df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')# TODO: delete after tests.
+    df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
     # Fill sheets in AR1
     prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
 
@@ -829,11 +802,11 @@ if __name__ == '__main__':
             with open("time.txt", "r") as file:
                 last_time = float(file.read().strip())
 
-        d_name = 'Krzysztof' # input('First name: ')
-        d_surname = 'Kaniewski' # input('Last name: ')
-        d_telephone = '555 666 777' # input('Telephone number: ')
-        d_email = 'krzysztof.kaniewski@paytel.pl' # input('E-mail: ')
-        d_pass = 'Xl2Km0oPYahPagh6' # pyautogui.password(text='Write a password to your regular account named by your - Name Surname: ', mask='*')
+        d_name = input('First name: ')
+        d_surname = input('Last name: ')
+        d_telephone = input('Telephone number: ')
+        d_email = input('E-mail: ')
+        d_pass = pyautogui.password(text='Write a password to your regular account named by your - Name Surname: ', mask='*')
 
         # Check if input is provided
         if any(input_var.strip() == '' for input_var in [d_name, d_surname, d_telephone, d_email, d_pass]):
