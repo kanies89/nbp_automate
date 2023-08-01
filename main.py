@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 from openpyxl.utils import get_column_letter
 import openpyxl
-import pyautogui
 
 from tqdm import tqdm
 import time
@@ -19,6 +18,7 @@ from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_r
     AR2_9_row_1, EXCEL_READ_AR1
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
+from PyQt5.QtCore import pyqtSignal, QObject
 
 bug_table = []
 
@@ -28,6 +28,25 @@ path = 'Example\\'
 df_nbp_2 = pd.read_excel(path + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None,
                          keep_default_na=False)
 df_nbp_1 = pd.read_excel(path + 'AR1 - Q1.2023.xlsx', sheet_name=EXCEL_READ_AR1, header=None, keep_default_na=False)
+
+
+class Logger(QObject):
+    # Define a custom signal for log updates
+    log_updated = pyqtSignal(str)
+
+    def __init__(self, log_file):
+        super(Logger, self).__init__()
+        self.terminal = sys.stdout
+        self.log_file = log_file
+
+    def write(self, message):
+        self.terminal.write(message)
+        self.log_file.write(message)
+        self.log_updated.emit(message)
+
+    def flush(self):
+        self.terminal.flush()
+        self.log_file.flush()
 
 
 def measure_time_with_progress(func):
@@ -139,7 +158,7 @@ def load_or_query(length, name, temp_table, query):
     return dataframe
 
 
-def prepare_data_ar2(user, passw):
+def prepare_data_ar2(user, passw, progress_callback=None):
     # 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
     print('4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW')
 
@@ -147,6 +166,10 @@ def prepare_data_ar2(user, passw):
     query = f"Query\\AR2\\NBP_Query_1.sql"
 
     dataframe_1 = load_or_query(22, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(15)
 
     for n in range(len(dataframe_1) - 2):
         for i, country in enumerate(dataframe_1[n]['name']):
@@ -167,6 +190,10 @@ def prepare_data_ar2(user, passw):
 
     sheet = EXCEL_READ_AR2[6]
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(19)
+
     for j in range(2):
         df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = dataframe_1[20 + j]['ilosc'].iloc[0]
         df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20 + j]['wartosc'].iloc[0]
@@ -179,20 +206,38 @@ def prepare_data_ar2(user, passw):
 
     dataframe_3 = load_or_query(18, '5a.R.SF__', temp_table, query)
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(27)
+
     sheet = '5a.R.SF'
 
     df_nbp_2[sheet][3].iloc[8] = dataframe_3[2]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[9] = dataframe_3[3]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(29)
+
     # 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
     print('5a.R.LF_PLiW2 and 5a.R.WF_PLiW2')
 
     # Get the Visa
     data_visa = f_visa_make(user, passw)
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(35)
+
     df_visa = pd.DataFrame(data_visa[0])
     # Get the Mastercard
     data_mastercard = f_mastercard_make()
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(39)
+
     df_mastercard = pd.DataFrame(data_mastercard[0])
     df_complete = [df_visa, df_mastercard]
     df_fraud = pd.concat(df_complete)
@@ -216,6 +261,10 @@ def prepare_data_ar2(user, passw):
     query = f"Query\\AR2\\NBP_Query_2.sql"
 
     dataframe_2 = load_or_query(18, '5a.R.LF_PLiW2_5a.R.WF_PLiW2__', temp_table, query)
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(43)
 
     sheet = '5a.R.LF_PLiW2'
 
@@ -252,6 +301,10 @@ def prepare_data_ar2(user, passw):
         i = 0
         j += 1
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(47)
+
     # Make pivot table
     df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
 
@@ -267,6 +320,10 @@ def prepare_data_ar2(user, passw):
     query = f"Query\\AR2\\NBP_Query_4.sql"
 
     dataframe_4 = load_or_query(4, '9.R.L.MCC_9.R.W.MCC__', temp_table, query)
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(49)
 
     sheet = '9.R.L.MCC'
 
@@ -344,26 +401,7 @@ def aggr_country(c):
         return 'NPL'
 
 
-class Logger(object):
-    def __init__(self, log_file):
-        self.terminal = sys.stdout
-        self.log_file = log_file
-
-    def write(self, message):
-        self.terminal.write(message)
-        self.log_file.write(message)
-
-        error_keywords = ["Error", "Exception", "Traceback", "Warning"]
-        if any(keyword in message for keyword in error_keywords):
-            # Print error message to the console
-            print(message)
-
-    def flush(self):
-        self.terminal.flush()
-        self.log_file.flush()
-
-
-def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
+def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None):
     # ST.01
     print('ST.01')
 
@@ -371,6 +409,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_1.sql"
 
     dataframe_1 = load_or_query(2, 'ST.01.', temp_table, query)
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(55)
 
     # Get data from "Tvid_nev_lost.xlsx'
     path = f'//prdfil/Business/DPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/Tvid_nev_lost.xlsx'
@@ -402,6 +444,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     for v in range(len(to_change_values)):
         df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(57)
+
     # ST.03
     print('ST.03')
 
@@ -421,6 +467,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     for v in range(len(to_change_values)):
         df_nbp_1['ST.03'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(64)
+
     # ST.05
     print('ST.05')
 
@@ -428,6 +478,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_2.sql"
 
     dataframe_2 = load_or_query(6, 'ST.05.', temp_table, query)
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(68)
 
     # Data to be filled
     def prepare_values_data(d, c):
@@ -491,6 +545,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         to_change_values = prepare_values_data(df[row], category)
         for v in range(len(to_change_values)):
             df_nbp_1['ST.05'].iat[to_change_rows_2[row], to_change_columns[v]] = to_change_values[v]
+
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(75)
 
     # ST.06
     print('ST.06')
@@ -564,6 +622,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
         df_nbp_1['ST.06'][column_amount[i]].loc[39] = df_nbp_1['ST.06'][column_amount[i]][40:].sum()
         df_nbp_1['ST.06'][column_value[i]].loc[39] = df_nbp_1['ST.06'][column_value[i]][40:].sum()
 
+    # Calculate and update progress to 30% when appropriate
+    if progress_callback:
+        progress_callback(86)
+
     # ST.02
 
     # Right now we do not fill this sheet.
@@ -575,6 +637,10 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
     query = f"Query\\AR1\\NBP_Query_4.sql"
 
     dataframe_4 = load_or_query(4, 'ST.07.', temp_table, query)
+    # Calculate and update progress to 30% when appropriate
+
+    if progress_callback:
+        progress_callback(98)
 
     dataframe_4[1]['kwota'] = dataframe_4[1]['kwota'].astype('float')
     df_nbp_1['ST.07'].iat[14, 4] = dataframe_4[1][dataframe_4[1]['kraj'] == 'PL']['ilosc'].iloc[0]
@@ -608,6 +674,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email):
 
     for n in range(4, 10):
         df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
+
 
     author_data = [
         name,
@@ -681,7 +748,19 @@ def bug_report():
 
 
 @measure_time_with_progress
-def start_automation(d1, d2, d3, d4, d_pass):
+def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None):
+    # Open the log file in append mode
+    log_file = open(to_log(), "a")
+
+    # Create the logger object
+    logger = Logger(log_file)
+
+    # Create an instance of the Logger class
+    sys_logger = Logger(sys.stdout)
+
+    # Assign the logger as the new sys.stdout
+    sys.stdout = sys_logger
+
     # Create folder structure
     create_folder_structure('./Example')
     create_folder_structure('./Example/Filled')
@@ -692,14 +771,8 @@ def start_automation(d1, d2, d3, d4, d_pass):
     create_folder_structure('./df')
     create_folder_structure('./temp')
     create_folder_structure(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}')
-    print(f'\nPreparing NBP_Report for:\nyear: {check_quarter()[1]},\nquarter: {check_quarter()[3]}.')
-    print(f'\nNBP report automation {check_quarter()[1]}')
-    # Open the log file in append mode
-    log_file = open(to_log(), "a")
-    # Create the logger object
-    logger = Logger(log_file)
-    # Assign the logger as the new sys.stdout
-    sys.stdout = logger
+    logger.write(f'\nPreparing NBP_Report for:\nyear: {check_quarter()[1]},\nquarter: {check_quarter()[3]}.')
+    logger.write(f'\nNBP report automation {check_quarter()[1]}')
 
     # AR2 sheet for NBP
     # Fill the first sheet with "Author of the report" info.
@@ -726,7 +799,7 @@ def start_automation(d1, d2, d3, d4, d_pass):
         i += 1
 
     # Fill sheets in AR2
-    df_fraud_st7 = prepare_data_ar2(user, passw)
+    df_fraud_st7 = prepare_data_ar2(user, passw, progress_callback)
     df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
     # Save everything to new excel file
@@ -738,9 +811,13 @@ def start_automation(d1, d2, d3, d4, d_pass):
     # Save the updated workbook
     wb.save(to_wb)
 
+    # Set progress to 50% when AR2 is completed
+    if progress_callback:
+        progress_callback(50)
+
     df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
     # Fill sheets in AR1
-    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24)
+    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24, progress_callback)
 
     # Save everything to new excel file
     from_wb = path + 'AR1 - Q1.2023.xlsx'
@@ -750,6 +827,10 @@ def start_automation(d1, d2, d3, d4, d_pass):
 
     # Save the updated workbook
     wb.save(to_wb)
+
+    # Set progress to 100% when everything is completed
+    if progress_callback:
+        progress_callback(100)
 
     # Prepare bug report tables
     bug_report()
@@ -794,7 +875,7 @@ def update_bar(queue, total):
     pbar.close()
 
 
-if __name__ == '__main__':
+def start(name, surname, telephone, email, passw):
     try:
         # Read the last execution total time from "time.txt"
         last_time = 4700
@@ -802,11 +883,11 @@ if __name__ == '__main__':
             with open("time.txt", "r") as file:
                 last_time = float(file.read().strip())
 
-        d_name = input('First name: ')
-        d_surname = input('Last name: ')
-        d_telephone = input('Telephone number: ')
-        d_email = input('E-mail: ')
-        d_pass = pyautogui.password(text='Write a password to your regular account named by your - Name Surname: ', mask='*')
+        d_name = name
+        d_surname = surname
+        d_telephone = telephone
+        d_email = email
+        d_pass = passw
 
         # Check if input is provided
         if any(input_var.strip() == '' for input_var in [d_name, d_surname, d_telephone, d_email, d_pass]):
@@ -831,3 +912,7 @@ if __name__ == '__main__':
         sys.stdout.flush()  # Make sure the error message is flushed immediately
         print('\n' + f'{e}')
         raise e  # Re-raise the exception to stop the execution
+
+
+if __name__ == '__main__':
+    start()

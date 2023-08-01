@@ -8,6 +8,7 @@ DRIVER_NAME = '{ODBC Driver 18 for SQL Server}'
 SERVER_NAME = 'PRDBI'
 DATABASE_NAME = 'paytel_olap'
 
+
 def connect(temp_table_file, query_file):
     with open(temp_table_file, 'r', encoding='utf-8') as file:
         temp_table = file.read()  # Read the SQL query from the file
