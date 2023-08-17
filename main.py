@@ -675,7 +675,6 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     for n in range(4, 10):
         df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
 
-
     author_data = [
         name,
         surname,
