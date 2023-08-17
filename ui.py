@@ -1,7 +1,7 @@
 import sys
 import datetime
-from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QTextEdit
-from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QTimer
+from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit
+from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot
 from PyQt5.uic import loadUi
 from main import start_automation, Logger
 
@@ -53,9 +53,10 @@ class MyDialog(QDialog):
         super(MyDialog, self).__init__()
         # Load the UI from the XML file
         loadUi("./UI/nbp_ui.ui", self)
-
+        self.setup_table()  # Call the method to set up the table
         self.name = ""
         self.surname = ""
+        self.enlarged = False  # track window state
 
         # Set the fixed size of the window
         self.setFixedSize(402, 528)
@@ -86,6 +87,9 @@ class MyDialog(QDialog):
             self.TPassword: (self.Start, None),
         }
 
+        # Connect the clicked signal of the toolbutton
+        self.toolButton.clicked.connect(self.toggle_window_size)
+
         # Create the logger object
         report_date = datetime.datetime.now().strftime("%Y-%m-%d")
         log_file_name = f'Log/{report_date}_LOG.txt'
@@ -103,6 +107,23 @@ class MyDialog(QDialog):
         log_file_name = f'Log/{report_date}_LOG.txt'
         with open(log_file_name, 'w') as log_file:
             log_file.write(self.TDisplay.toPlainText())
+
+    def setup_table(self):
+        # Set default alignment for wrapped text in header
+        for col in range(self.tableWidget.columnCount()):
+            header_item = self.tableWidget.horizontalHeaderItem(col)
+            if header_item:
+                header_item.setTextAlignment(Qt.AlignHCenter | Qt.TextWordWrap)
+        # Set the width and height of the QTableWidget
+        self.tableWidget.setFixedSize(1109, 470)  # Adjust the values as needed
+
+    def toggle_window_size(self):
+        if self.enlarged:
+            self.setFixedSize(402, 528)  # Set your original size
+            self.enlarged = False
+        else:
+            self.setFixedSize(1520, 528)  # Set the enlarged size
+            self.enlarged = True
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.KeyPress and obj in [self.TName, self.TSurname, self.TPhone, self.TEmail,
