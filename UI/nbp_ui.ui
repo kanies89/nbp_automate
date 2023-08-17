@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1488</width>
+    <width>1866</width>
     <height>525</height>
    </rect>
   </property>
@@ -407,13 +407,25 @@
    </layout>
   </widget>
   <widget class="QFrame" name="frame">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>409</x>
      <y>9</y>
-     <width>1061</width>
+     <width>1441</width>
      <height>511</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>true</underline>
+     <strikeout>false</strikeout>
+    </font>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -426,7 +438,7 @@
      <rect>
       <x>-1</x>
       <y>0</y>
-      <width>1111</width>
+      <width>1441</width>
       <height>491</height>
      </rect>
     </property>
@@ -448,12 +460,13 @@
       <widget class="QTableWidget" name="tableWidget">
        <property name="maximumSize">
         <size>
-         <width>1109</width>
+         <width>1300</width>
          <height>16777215</height>
         </size>
        </property>
        <property name="font">
         <font>
+         <underline>false</underline>
          <strikeout>false</strikeout>
          <stylestrategy>PreferDefault</stylestrategy>
          <kerning>true</kerning>
@@ -489,6 +502,9 @@
        <property name="sortingEnabled">
         <bool>true</bool>
        </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
        <attribute name="horizontalHeaderVisible">
         <bool>true</bool>
        </attribute>
@@ -496,7 +512,7 @@
         <bool>true</bool>
        </attribute>
        <attribute name="horizontalHeaderDefaultSectionSize">
-        <number>68</number>
+        <number>85</number>
        </attribute>
        <attribute name="horizontalHeaderHighlightSections">
         <bool>true</bool>
@@ -513,8 +529,14 @@
        <attribute name="verticalHeaderCascadingSectionResizes">
         <bool>false</bool>
        </attribute>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>30</number>
+       </attribute>
        <attribute name="verticalHeaderHighlightSections">
         <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderMinimumSectionSize">
+        <number>23</number>
        </attribute>
        <attribute name="verticalHeaderShowSortIndicator" stdset="0">
         <bool>true</bool>
@@ -587,6 +609,121 @@
          <string>13</string>
         </property>
        </row>
+       <row>
+        <property name="text">
+         <string>14</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>15</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>16</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>17</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>18</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>19</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>20</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>21</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>22</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>23</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>24</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>25</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>26</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>27</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>28</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>29</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>30</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>31</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>32</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>33</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>34</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>35</string>
+        </property>
+       </row>
+       <row>
+        <property name="text">
+         <string>36</string>
+        </property>
+       </row>
        <column>
         <property name="text">
          <string>Identyfikator reguły
@@ -653,20 +790,33 @@
        </column>
        <column>
         <property name="text">
-         <string>5a.R.WF_PLiW2
-</string>
+         <string>5a.R.LF_krajGEO3</string>
         </property>
        </column>
        <column>
         <property name="text">
-         <string>5a.R.WF_krajGEO3
-</string>
+         <string>5a.R.WF_PLiW2</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>5a.R.WF_krajGEO3</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>5a.R.SF</string>
         </property>
        </column>
        <column>
         <property name="text">
          <string>6.ab.LiW
 </string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>9.R.L.MCC</string>
         </property>
        </column>
        <column>
@@ -681,6 +831,1713 @@
 </string>
         </property>
        </column>
+       <item row="0" column="0">
+        <property name="text">
+         <string>PCP_090</string>
+        </property>
+       </item>
+       <item row="0" column="1">
+        <property name="text">
+         <string>8. = 8.1.1 + 8.1.2</string>
+        </property>
+       </item>
+       <item row="0" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="0" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="0" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="0" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="0">
+        <property name="text">
+         <string>PCP_091</string>
+        </property>
+       </item>
+       <item row="1" column="1">
+        <property name="text">
+         <string>8.1.1 = 8.1.1.1 + 8.1.1.2</string>
+        </property>
+       </item>
+       <item row="1" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="1" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="1" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="1" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string>PCP_092</string>
+        </property>
+       </item>
+       <item row="2" column="1">
+        <property name="text">
+         <string>8.1.2 = 8.1.2.1 + 8.1.2.2</string>
+        </property>
+       </item>
+       <item row="2" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="2" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="2" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="2" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="0">
+        <property name="text">
+         <string>PCP_093</string>
+        </property>
+       </item>
+       <item row="3" column="1">
+        <property name="text">
+         <string>8.1.2.1 = suma(8.1.2.1.1.i)  dla i=1..3</string>
+        </property>
+       </item>
+       <item row="3" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="3" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="3" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="3" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="0">
+        <property name="text">
+         <string>PCP_094</string>
+        </property>
+       </item>
+       <item row="4" column="1">
+        <property name="text">
+         <string>8.1.2.1 = suma(8.1.2.1.2.i)  dla i=1..9</string>
+        </property>
+       </item>
+       <item row="4" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="4" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="4" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="4" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="5" column="0">
+        <property name="text">
+         <string>PCP_096</string>
+        </property>
+       </item>
+       <item row="5" column="1">
+        <property name="text">
+         <string>8.1.2.1.2.i = suma(8.1.2.1.2.i.1.j) dla i=1..9; j=1..3</string>
+        </property>
+       </item>
+       <item row="5" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="5" column="3">
+        <property name="text">
+         <string>72</string>
+        </property>
+       </item>
+       <item row="5" column="5">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="6">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="7">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="8">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="5" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="0">
+        <property name="text">
+         <string>PCP_099</string>
+        </property>
+       </item>
+       <item row="6" column="1">
+        <property name="text">
+         <string>8.1.2.1.2.i = suma(8.1.2.1.2.i.2.j) dla i=1; j=1..2;</string>
+        </property>
+       </item>
+       <item row="6" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="6" column="3">
+        <property name="text">
+         <string>72</string>
+        </property>
+       </item>
+       <item row="6" column="5">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="6">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="7">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="8">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="6" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="7" column="0">
+        <property name="text">
+         <string>PCP_006</string>
+        </property>
+       </item>
+       <item row="7" column="1">
+        <property name="text">
+         <string>suma(8.1.2.1.2.i.2.2) = suma(8.1.2.1.3.j) dla i=1..9, j=2..5</string>
+        </property>
+       </item>
+       <item row="7" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="7" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="7" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="7" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="0">
+        <property name="text">
+         <string>PCP_095</string>
+        </property>
+       </item>
+       <item row="8" column="1">
+        <property name="text">
+         <string>8.1.2.2 = suma(8.1.2.2.2.i)  dla i=1..9</string>
+        </property>
+       </item>
+       <item row="8" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="8" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="8" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="8" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="9" column="0">
+        <property name="text">
+         <string>PCP_102</string>
+        </property>
+       </item>
+       <item row="9" column="1">
+        <property name="text">
+         <string>8.1.2.2.2.i = suma(8.1.2.2.2.i.1.j) dla i=1; j=1..3;</string>
+        </property>
+       </item>
+       <item row="9" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="9" column="3">
+        <property name="text">
+         <string>72</string>
+        </property>
+       </item>
+       <item row="9" column="5">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="6">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="7">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="8">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="9" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="0">
+        <property name="text">
+         <string>PCP_105</string>
+        </property>
+       </item>
+       <item row="10" column="1">
+        <property name="text">
+         <string>8.1.2.2.2.i = suma(8.1.2.2.2.i.2.j) dla i=1; j=1..2;</string>
+        </property>
+       </item>
+       <item row="10" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="10" column="3">
+        <property name="text">
+         <string>72</string>
+        </property>
+       </item>
+       <item row="10" column="5">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="6">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="7">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="8">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="10" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="11" column="0">
+        <property name="text">
+         <string>PCP_007</string>
+        </property>
+       </item>
+       <item row="11" column="1">
+        <property name="text">
+         <string>suma(8.1.2.2.2.i.2.2) = suma(8.1.2.2.3.j) dla i=1..9, j=2..3,5-7;</string>
+        </property>
+       </item>
+       <item row="11" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="11" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="11" column="5">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="6">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="7">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="8">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="9">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="10">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="11">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="11" column="12">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="12" column="0">
+        <property name="text">
+         <string>PCP_108</string>
+        </property>
+       </item>
+       <item row="12" column="1">
+        <property name="text">
+         <string>8.1.2.1.2.i.2.1 = suma(8.1.2.1.2.i.2.1.j) dla i=1..9; j=1..3;</string>
+        </property>
+       </item>
+       <item row="12" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="12" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="12" column="5">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="12" column="6">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="12" column="7">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="12" column="8">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="12" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="12" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="12" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="12" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="13" column="0">
+        <property name="text">
+         <string>PCP_120</string>
+        </property>
+       </item>
+       <item row="13" column="1">
+        <property name="text">
+         <string>8.1.2.1.2.i.2.1.1 = suma(8.1.2.1.2.i.2.1.1.j) dla i=1; j=1..4;</string>
+        </property>
+       </item>
+       <item row="13" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="13" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="13" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="13" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="13" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="13" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="14" column="0">
+        <property name="text">
+         <string>PCP_109</string>
+        </property>
+       </item>
+       <item row="14" column="1">
+        <property name="text">
+         <string>8.1.2.1.2.i.2.2 = suma(8.1.2.1.2.i.2.2.j) dla i=1; j=1..3;</string>
+        </property>
+       </item>
+       <item row="14" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="14" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="14" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="14" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="14" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="14" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="15" column="0">
+        <property name="text">
+         <string>PCP_121</string>
+        </property>
+       </item>
+       <item row="15" column="1">
+        <property name="text">
+         <string>8.1.2.1.2.i.2.2.1 = suma(8.1.2.1.2.i.2.2.1.j) dla i=1; j=1..4;</string>
+        </property>
+       </item>
+       <item row="15" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="15" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="15" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="15" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="15" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="15" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="16" column="0">
+        <property name="text">
+         <string>PCP_110</string>
+        </property>
+       </item>
+       <item row="16" column="1">
+        <property name="text">
+         <string>8.1.2.2.2.i.2.1 = suma(8.1.2.2.2.i.2.1.j) dla i=1; j=1..3;</string>
+        </property>
+       </item>
+       <item row="16" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="16" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="16" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="16" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="16" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="16" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="17" column="0">
+        <property name="text">
+         <string>PCP_122</string>
+        </property>
+       </item>
+       <item row="17" column="1">
+        <property name="text">
+         <string>8.1.2.2.2.i.2.1.1 = suma(8.1.2.2.2.i.2.1.1.j) dla i=1; j=1..5;</string>
+        </property>
+       </item>
+       <item row="17" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="17" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="17" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="17" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="17" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="17" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="18" column="0">
+        <property name="text">
+         <string>PCP_111</string>
+        </property>
+       </item>
+       <item row="18" column="1">
+        <property name="text">
+         <string>8.1.2.2.2.i.2.2 = suma(8.1.2.2.2.i.2.2.j) dla i=1; j=1..3;</string>
+        </property>
+       </item>
+       <item row="18" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="18" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="18" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="18" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="18" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="18" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="19" column="0">
+        <property name="text">
+         <string>PCP_123</string>
+        </property>
+       </item>
+       <item row="19" column="1">
+        <property name="text">
+         <string>8.1.2.2.2.i.2.2.1 = suma(8.1.2.2.2.i.2.2.1.j) dla i=1; j=1..5;</string>
+        </property>
+       </item>
+       <item row="19" column="2">
+        <property name="text">
+         <string>9 reguł - w ramach każdej z reguł &quot;i&quot; jest stałe</string>
+        </property>
+       </item>
+       <item row="19" column="3">
+        <property name="text">
+         <string>36</string>
+        </property>
+       </item>
+       <item row="19" column="9">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="19" column="10">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="19" column="11">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="19" column="12">
+        <property name="text">
+         <string>9</string>
+        </property>
+       </item>
+       <item row="20" column="0">
+        <property name="text">
+         <string>PCP_245_R</string>
+        </property>
+       </item>
+       <item row="20" column="1">
+        <property name="text">
+         <string>9.1 = 9.1.1 + 9.1.2</string>
+        </property>
+       </item>
+       <item row="20" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="20" column="3">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item row="20" column="9">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="20" column="10">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="20" column="11">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="20" column="12">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="20" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="20" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="21" column="0">
+        <property name="text">
+         <string>DSDs_040_R</string>
+        </property>
+       </item>
+       <item row="21" column="1">
+        <property name="text">
+         <string>9.1.1 &gt;= sum(9.1.1.kodMCC) dla kodMCC &gt; 0000</string>
+        </property>
+       </item>
+       <item row="21" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="21" column="3">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item row="21" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="21" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="22" column="0">
+        <property name="text">
+         <string>DSDs_038_R</string>
+        </property>
+       </item>
+       <item row="22" column="1">
+        <property name="text">
+         <string>9.1.2 &gt;= sum(9.1.2.kodMCC) dla kodMCC &gt; 0000</string>
+        </property>
+       </item>
+       <item row="22" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="22" column="3">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item row="22" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="22" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="23" column="0">
+        <property name="text">
+         <string>PCP_031_R</string>
+        </property>
+       </item>
+       <item row="23" column="1">
+        <property name="text">
+         <string>9.R.[L/W].MCC(9.) = Tab( suma( 8.) ) dla krajów Geo3 bez G1
+dla Tab=4a.R.[L/W]_PLiW2[Kraj wydawcy karty], 4a.R.[L/W]_krajGEO3[Kraj wydawcy karty];</string>
+        </property>
+       </item>
+       <item row="23" column="2">
+        <property name="text">
+         <string>Reguła dotyczy krajów Geo3 (bez poz. G1 w tab.4). 
+Liczba/Wartość w 9.R.[L/W].MCC w wierszu 9. dla sprawdzanego kraju jest równa sumie pozycji tego kraju  w tabelach 4a.R.[L/W]_PLiW2 oraz 4a.R.[L/W]_krajGEO3_&lt;kraj&gt; w wierszu 8.</string>
+        </property>
+       </item>
+       <item row="23" column="3">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="23" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="23" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="24" column="0">
+        <property name="text">
+         <string>PCP_031_R_G1</string>
+        </property>
+       </item>
+       <item row="24" column="1">
+        <property name="text">
+         <string>9.R.[L/W].MCC(9.) = Tab( suma( 8.) ) dla krajów Geo6 i G1 bez krajów Geo3
+dla Tab=4a.R.[L/W]_PLiW2[Kraj wydawcy karty], 4a.R.[L/W]_krajGEO3[Kraj wydawcy karty];</string>
+        </property>
+       </item>
+       <item row="24" column="2">
+        <property name="text">
+         <string>Reguła dotyczy krajów Geo6 bez Geo3 w tab 9 oraz kol. G1 w tab. 4. 
+Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&gt; w wierszu 8 jest równa sumie liczb/wartości w tab. 9 dla krajów Geo6 nie należących do Geo3 w wierszu 9. </string>
+        </property>
+       </item>
+       <item row="24" column="15">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="24" column="16">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="25" column="0">
+        <property name="text">
+         <string>W_008</string>
+        </property>
+       </item>
+       <item row="25" column="1">
+        <property name="text">
+         <string>9. &gt;= 9.1.</string>
+        </property>
+       </item>
+       <item row="25" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="25" column="3">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item row="25" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="25" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="26" column="0">
+        <property name="text">
+         <string>PCP_035_R</string>
+        </property>
+       </item>
+       <item row="26" column="1">
+        <property name="text">
+         <string>9.R.[L/W].MCC(9.1.1.) = Tab( suma(  8.1.2.1.) ) dla krajów Geo3 bez G1
+dla Tab=4a.R.[L/W]_PLiW2[Kraj wydawcy karty], 4a.R.[L/W]_krajGEO3[&quot;Kraj wydawcy karty&quot;];</string>
+        </property>
+       </item>
+       <item row="26" column="2">
+        <property name="text">
+         <string>Reguła dotyczy krajów Geo3 (bez poz. G1 w tab.4). 
+Liczba/Wartość w 9.R.[L/W].MCC w wierszu 9.1.1. dla sprawdzanego kraju jest równa sumie pozycji tego kraju  w tabelach 4a.R.[L/W]_PLiW2 oraz 4a.R.[L/W]_krajGEO3_&lt;kraj&gt; w wierszu 8.1.2.1.</string>
+        </property>
+       </item>
+       <item row="26" column="3">
+        <property name="text">
+         <string>2</string>
+        </property>
+       </item>
+       <item row="26" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="26" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="27" column="0">
+        <property name="text">
+         <string>PCP_035_R_G1</string>
+        </property>
+       </item>
+       <item row="27" column="1">
+        <property name="text">
+         <string>9.R.[L/W].MCC(9.1.1.) = Tab( suma(  8.1.2.1.) ) dla krajów Geo6 i G1 bez krajów Geo3
+dla Tab=4a.R.[L/W]_PLiW2[Kraj wydawcy karty], 4a.R.[L/W]_krajGEO3[&quot;Kraj wydawcy karty&quot;];</string>
+        </property>
+       </item>
+       <item row="27" column="2">
+        <property name="text">
+         <string>Reguła dotyczy krajów Geo6 bez Geo3 w tab 9 oraz kol. G1 w tab. 4. 
+Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&gt; w wierszu 8.1.2.1. jest równa sumie liczb/wartości w tab. 9 dla krajów Geo6 nie należących do Geo3 w wierszu 9.1.1. </string>
+        </property>
+       </item>
+       <item row="27" column="15">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="27" column="16">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="28" column="0">
+        <property name="text">
+         <string>PCP_038_R</string>
+        </property>
+       </item>
+       <item row="28" column="1">
+        <property name="text">
+         <string>9.R.[L/W].MCC(9.1.2.) = Tab( suma( 8.1.2.2.) ) dla krajów Geo3 bez G1
+dla Tab=4a.R.[L/W]_PLiW2[Kraj wydawcy karty], 4a.R.[L/W]_krajGEO3[&quot;Kraj wydawcy karty&quot;];</string>
+        </property>
+       </item>
+       <item row="28" column="2">
+        <property name="text">
+         <string>Reguła dotyczy krajów Geo3 (bez poz. G1 w tab.4). 
+Liczba/Wartość w 9.R.[L/W].MCC w wierszu 9.1.2. dla sprawdzanego kraju jest równa sumie pozycji tego kraju  w tabelach 4a.R.[L/W]_PLiW2 oraz 4a.R.[L/W]_krajGEO3_&lt;kraj&gt; w wierszu 8.1.2.2.</string>
+        </property>
+       </item>
+       <item row="28" column="15">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="28" column="16">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </item>
+       <item row="29" column="0">
+        <property name="text">
+         <string>PCP_038_R_G1</string>
+        </property>
+       </item>
+       <item row="29" column="1">
+        <property name="text">
+         <string>9.R.[L/W].MCC(9.1.2.) = Tab( suma( 8.1.2.2.) ) dla krajów Geo6 i G1 bez krajów Geo3
+dla Tab=4a.R.[L/W]_PLiW2[Kraj wydawcy karty], 4a.R.[L/W]_krajGEO3[&quot;Kraj wydawcy karty&quot;];</string>
+        </property>
+       </item>
+       <item row="29" column="2">
+        <property name="text">
+         <string>Reguła dotyczy krajów Geo6 bez Geo3 w tab 9 oraz kol. G1 w tab. 4. 
+Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&gt; w wierszu 8.1.2.2. jest równa sumie liczb/wartości w tab. 9 dla krajów Geo6 nie należących do Geo3 w wierszu 9.1.2. </string>
+        </property>
+       </item>
+       <item row="30" column="0">
+        <property name="text">
+         <string>NCN</string>
+        </property>
+       </item>
+       <item row="30" column="1">
+        <property name="text">
+         <string>jeśli wypełniono wartość dla danej pozycji sprawozdawczej, to i liczba musi być wypełniona dla odpowiednika tej pozycji sprawozdawczej </string>
+        </property>
+       </item>
+       <item row="30" column="2">
+        <property name="text">
+         <string>X- oznacza wszystkie dane w formularzu</string>
+        </property>
+       </item>
+       <item row="30" column="3">
+        <property name="text">
+         <string>7</string>
+        </property>
+       </item>
+       <item row="30" column="4">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="7">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="8">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="11">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="12">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="14">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="16">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="30" column="17">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="31" column="0">
+        <property name="text">
+         <string>NCV</string>
+        </property>
+       </item>
+       <item row="31" column="1">
+        <property name="text">
+         <string>jeśli wypełniono liczbę dla danej pozycji sprawozdawczej, to i wartość musi być wypełniona dla odpowiednika tej pozycji sprawozdawczej</string>
+        </property>
+       </item>
+       <item row="31" column="2">
+        <property name="text">
+         <string>X- oznacza wszystkie dane w formularzu</string>
+        </property>
+       </item>
+       <item row="31" column="3">
+        <property name="text">
+         <string>7</string>
+        </property>
+       </item>
+       <item row="31" column="4">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="5">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="6">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="9">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="10">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="14">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="15">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="31" column="16">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="32" column="0">
+        <property name="text">
+         <string>NEG</string>
+        </property>
+       </item>
+       <item row="32" column="1">
+        <property name="text">
+         <string>Dane nie powinny przyjmować liczby i wartości ujemnych</string>
+        </property>
+       </item>
+       <item row="32" column="2">
+        <property name="text">
+         <string>X- oznacza wszystkie dane w formularzu</string>
+        </property>
+       </item>
+       <item row="32" column="3">
+        <property name="text">
+         <string>13</string>
+        </property>
+       </item>
+       <item row="32" column="4">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="5">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="6">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="7">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="8">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="9">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="10">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="11">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="12">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="13">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="14">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="15">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="16">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="32" column="17">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="33" column="0">
+        <property name="text">
+         <string>INT</string>
+        </property>
+       </item>
+       <item row="33" column="1">
+        <property name="text">
+         <string>Sprawdzenie wartości danej sprawozdawczej czy jest wyrażona w liczbie całkowitej</string>
+        </property>
+       </item>
+       <item row="33" column="2">
+        <property name="text">
+         <string>X- oznacza wszystkie dane w formularzu</string>
+        </property>
+       </item>
+       <item row="33" column="3">
+        <property name="text">
+         <string>7</string>
+        </property>
+       </item>
+       <item row="33" column="4">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="33" column="5">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="33" column="6">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="33" column="9">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="33" column="10">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="33" column="14">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="33" column="15">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="0">
+        <property name="text">
+         <string>DEC</string>
+        </property>
+       </item>
+       <item row="34" column="1">
+        <property name="text">
+         <string>Sprawdzenie czy liczba miejsc dziesiętnych w danej sprawozdawanej nie została przekroczona</string>
+        </property>
+       </item>
+       <item row="34" column="2">
+        <property name="text">
+         <string>X- oznacza wszystkie dane w formularzu</string>
+        </property>
+       </item>
+       <item row="34" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
+       <item row="34" column="4">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="7">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="8">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="11">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="12">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="13">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="14">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="34" column="16">
+        <property name="text">
+         <string>X</string>
+        </property>
+       </item>
+       <item row="35" column="0">
+        <property name="text">
+         <string>NNUL</string>
+        </property>
+       </item>
+       <item row="35" column="1">
+        <property name="text">
+         <string>Sprawdzenie wypełnienia pola (dotyczy pól w tabelach &quot;Sporządzający sprawozdanie&quot;)</string>
+        </property>
+       </item>
+       <item row="35" column="2">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="35" column="3">
+        <property name="text">
+         <string>8</string>
+        </property>
+       </item>
       </widget>
      </item>
     </layout>
