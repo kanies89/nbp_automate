@@ -17,9 +17,19 @@ AR2_TO_CHECK = [
     '9.R.W.MCC'
 ]
 
+AR1_TO_CHECK = [
+    'ST.01',
+    'ST.02',
+    'ST.03',
+    'ST.04',
+    'ST.05',
+    'ST.06',
+    'ST.07'
+]
+
 
 # PCP_090
-def rule_1(dataframe, sheet_number):
+def rule_1_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -61,7 +71,7 @@ def rule_1(dataframe, sheet_number):
 
 
 # PCP_091
-def rule_2(dataframe, sheet_number):
+def rule_2_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -107,7 +117,7 @@ def rule_2(dataframe, sheet_number):
 
 
 # PCP_092
-def rule_3(dataframe, sheet_number):
+def rule_3_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -153,7 +163,7 @@ def rule_3(dataframe, sheet_number):
 
 
 # PCP_093
-def rule_4(dataframe, sheet_number):
+def rule_4_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -196,7 +206,7 @@ def rule_4(dataframe, sheet_number):
 
 
 # PCP_094
-def rule_5(dataframe, sheet_number):
+def rule_5_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -239,7 +249,7 @@ def rule_5(dataframe, sheet_number):
 
 
 # PCP_096
-def rule_6(dataframe, sheet_number):
+def rule_6_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -295,7 +305,7 @@ def rule_6(dataframe, sheet_number):
 
 
 # PCP_099
-def rule_7(dataframe, sheet_number):
+def rule_7_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -345,7 +355,7 @@ def rule_7(dataframe, sheet_number):
 
 
 # PCP_006
-def rule_8(dataframe, sheet_number):
+def rule_8_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -394,7 +404,7 @@ def rule_8(dataframe, sheet_number):
 
 
 # PCP_095
-def rule_9(dataframe, sheet_number):
+def rule_9_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -443,7 +453,7 @@ def rule_9(dataframe, sheet_number):
 
 
 # PCP_102
-def rule_10(dataframe, sheet_number):
+def rule_10_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -493,7 +503,7 @@ def rule_10(dataframe, sheet_number):
 
 
 # PCP_105
-def rule_11(dataframe, sheet_number):
+def rule_11_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -543,7 +553,7 @@ def rule_11(dataframe, sheet_number):
 
 
 # PCP_007
-def rule_12(dataframe, sheet_number):
+def rule_12_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -593,7 +603,7 @@ def rule_12(dataframe, sheet_number):
 
 
 # PCP_108
-def rule_13(dataframe, sheet_number):
+def rule_13_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -643,7 +653,7 @@ def rule_13(dataframe, sheet_number):
 
 
 # PCP_120
-def rule_14(dataframe, sheet_number):
+def rule_14_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -693,7 +703,7 @@ def rule_14(dataframe, sheet_number):
 
 
 # PCP_109
-def rule_15(dataframe, sheet_number):
+def rule_15_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -743,7 +753,7 @@ def rule_15(dataframe, sheet_number):
 
 
 # PCP_121
-def rule_16(dataframe, sheet_number):
+def rule_16_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -793,7 +803,7 @@ def rule_16(dataframe, sheet_number):
 
 
 # PCP_110
-def rule_17(dataframe, sheet_number):
+def rule_17_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -843,7 +853,7 @@ def rule_17(dataframe, sheet_number):
 
 
 # PCP_122
-def rule_18(dataframe, sheet_number):
+def rule_18_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -893,7 +903,7 @@ def rule_18(dataframe, sheet_number):
 
 
 # PCP_111
-def rule_19(dataframe, sheet_number):
+def rule_19_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -943,7 +953,7 @@ def rule_19(dataframe, sheet_number):
 
 
 # PCP_123
-def rule_20(dataframe, sheet_number):
+def rule_20_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -993,7 +1003,7 @@ def rule_20(dataframe, sheet_number):
 
 
 # PCP_245_R
-def rule_21(dataframe, sheet_number):
+def rule_21_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -1041,7 +1051,7 @@ def rule_21(dataframe, sheet_number):
 
 
 # DSDs_040_R
-def rule_22(dataframe, sheet_number):
+def rule_22_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -1089,7 +1099,7 @@ def rule_22(dataframe, sheet_number):
 
 
 # DSDs_038_R
-def rule_23(dataframe, sheet_number):
+def rule_23_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -1171,7 +1181,7 @@ GEO3 = [
 
 
 # PCP_031_R
-def rule_24(dataframe, sheet_number):
+def rule_24_ar2(dataframe, sheet_number):
     if sheet_number == 12:
         check_sheets = [2, 3]
     else:
@@ -1244,7 +1254,7 @@ def rule_24(dataframe, sheet_number):
 
 
 # W_008
-def rule_26(dataframe, sheet_number):
+def rule_26_ar2(dataframe, sheet_number):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
 
@@ -1293,7 +1303,7 @@ def rule_26(dataframe, sheet_number):
 
 
 # PCP_035_R
-def rule_27(dataframe, sheet_number):
+def rule_27_ar2(dataframe, sheet_number):
     if sheet_number == 12:
         check_sheets = [2, 4]
     else:
@@ -1363,7 +1373,7 @@ def rule_27(dataframe, sheet_number):
 
 
 # PCP_038_R
-def rule_29(dataframe, sheet_number):
+def rule_29_ar2(dataframe, sheet_number):
     if sheet_number == 12:
         check_sheets = [2, 3]
     else:
@@ -1475,3 +1485,214 @@ def to_float(value):
 
     except ValueError:
         return None  # Handle the case where the conversion fails
+
+
+def to_int(value):
+    # Convert the value to a float using pd.to_numeric()
+    try:
+        # Convert the value to a float using pd.to_numeric()
+        value_int = pd.to_numeric(value, errors='coerce')  # Convert to float and replace non-numeric values with NaN
+
+        # Replace NaN with 0
+        if pd.isna(value_int):
+            value_int = 0
+
+        return value_int
+
+    except ValueError:
+        return None  # Handle the case where the conversion fails
+
+
+first = ['1.1.1', '1.1.2', '1.2.1', '2.1.1', '2.1.2', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7',
+         '3.1.8']
+second = ['1.1', '1.1', '1.2', '2.1', '2.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1']
+
+
+def rule_1_ar1(dataframe, sheet_number):
+    rules = []
+    for i in range(13):
+        rules.append(rule_1_13_ar1(dataframe, sheet_number, i))
+    return rules
+
+
+# RW_ST.01_01 till RW_ST.01_13
+def rule_1_13_ar1(dataframe, sheet_number, k):
+    results = []
+    sheet = AR1_TO_CHECK[sheet_number]
+
+    df = dataframe[sheet]
+    try:
+        rows_1 = []
+        condition = df.iloc[:, 0] == first[k]
+        index = condition[condition].index[0]
+        rows_1.append(index)
+
+    except KeyError:
+        print(f"Row - {first[k]} - not found")
+
+    try:
+        rows_2 = []
+        condition = df.iloc[:, 0] == second[k]
+        index = condition[condition].index[0]
+        rows_2.append(index)
+
+    except KeyError:
+        print(f"Row - {second[k]} - not found")
+
+    columns_number = dataframe[sheet].shape[1]
+
+    for c in range(5, columns_number):
+        value_sum_1 = 0
+        for i in range(len(rows_1)):
+            value_sum_1 += to_int(dataframe[sheet].iat[rows_1[i], c])
+        first_part = value_sum_1
+
+        value_sum_2 = 0
+        for i in range(len(rows_2)):
+            value_sum_2 += to_int(dataframe[sheet].iat[rows_2[i], c])
+        second_part = value_sum_2
+
+    if first_part <= second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, c])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.01_14
+def rule_14_ar1(dataframe, sheet_number):
+    results = []
+    sheet = AR1_TO_CHECK[sheet_number]
+
+    df = dataframe[sheet]
+    try:
+        rows_1 = []
+        condition = df.iloc[:, 0] == '3.1'
+        index = condition[condition].index[0]
+        rows_1.append(index)
+
+    except KeyError:
+        print(f"Row - 3.1 - not found")
+
+    sheet = AR1_TO_CHECK[sheet_number + 2]
+    df = dataframe[sheet]
+    try:
+        rows_2 = []
+        condition = df.iloc[:, 0] == '9.1'
+        index = condition[condition].index[0]
+        rows_2.append(index)
+
+    except KeyError:
+        print(f"Row - not found")
+
+    for c in [5]:
+        value_sum_1 = 0
+        for i in range(len(rows_1)):
+            value_sum_1 += to_int(dataframe[sheet].iat[rows_1[i], c])
+        first_part = value_sum_1
+
+        sheet = AR1_TO_CHECK[sheet_number + 2]
+        value_sum_2 = 0
+        for i in range(len(rows_2)):
+            value_sum_2 += to_int(dataframe[sheet].iat[rows_2[i], c])
+        second_part = value_sum_2
+
+    if first_part <= second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, c])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.01_15
+def rule_15_ar1(dataframe, sheet_number):
+    results = []
+    sheet = AR1_TO_CHECK[sheet_number]
+
+    df = dataframe[sheet]
+    try:
+        rows_1 = []
+        condition = df.iloc[:, 0] == '3.1'
+        index = condition[condition].index[0]
+        rows_1.append(index)
+
+    except KeyError:
+        print(f"Row - 3.1 - not found")
+
+    try:
+        rows_2 = range(9, 40)
+
+    except KeyError:
+        print(f"Row - not found")
+
+    for c in [6]:
+        value_sum_1 = 0
+        for i in range(len(rows_1)):
+            value_sum_1 += to_int(dataframe[sheet].iat[rows_1[i], c])
+        first_part = value_sum_1
+
+    for c in [3]:
+        sheet = AR1_TO_CHECK[sheet_number + 3]
+        value_sum_2 = 0
+        for i in range(len(rows_2)):
+            value_sum_2 += to_int(dataframe[sheet].iat[rows_2[i], c])
+        second_part = value_sum_2
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, c])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.01_16
+def rule_16_ar1(dataframe, sheet_number):
+    results = []
+    sheet = AR1_TO_CHECK[sheet_number]
+
+    df = dataframe[sheet]
+    try:
+        rows_1 = []
+        condition = df.iloc[:, 0] == '1.1'
+        index = condition[condition].index[0]
+        rows_1.append(index)
+
+    except KeyError:
+        print(f"Row - 3.1 - not found")
+
+    sheet = AR1_TO_CHECK[sheet_number + 2]
+    df = dataframe[sheet]
+    try:
+        rows_2 = []
+        condition = df.iloc[:, 0] == '7.1'
+        index = condition[condition].index[0]
+        rows_2.append(index)
+
+    except KeyError:
+        print(f"Row - not found")
+
+    for c in [5]:
+        value_sum_1 = 0
+        for i in range(len(rows_1)):
+            value_sum_1 += to_int(dataframe[sheet].iat[rows_1[i], c])
+        first_part = value_sum_1
+
+        sheet = AR1_TO_CHECK[sheet_number + 3]
+        value_sum_2 = 0
+        for i in range(len(rows_1)):
+            value_sum_2 += to_int(dataframe[sheet].iat[rows_2[i], c])
+        second_part = value_sum_2
+
+    if first_part <= second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, c])
+        print(first_part, '!=', second_part)
+
+    return results

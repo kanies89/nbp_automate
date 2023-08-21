@@ -5,7 +5,7 @@ from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot
 from PyQt5.QtGui import QColor
 from PyQt5.uic import loadUi
 from main import start_automation, Logger, check_quarter
-from check import AR2_TO_CHECK
+from check import AR2_TO_CHECK, AR1_TO_CHECK
 import importlib
 import pandas as pd
 from openpyxl.utils import get_column_letter
@@ -143,8 +143,23 @@ class MyDialog(QDialog):
             log_file.write(self.TDisplay.toPlainText())
 
     # Method to change the background color of a cell
-    def change_cell_background(self, row, col, r, g, b):
-        item = self.tableWidget_AR2.item(row, col)
+    def change_cell_background(self, row, col, r, g, b, excel):
+        if excel == 'AR2':
+            item = self.tableWidget_AR2.item(row, col)
+        if excel == 'AR1-ST.01':
+            item = self.tableWidget_AR1_1.item(row, col)
+        if excel == 'AR1-ST.02':
+            item = self.tableWidget_AR1_2.item(row, col)
+        if excel == 'AR1-ST.03':
+            item = self.tableWidget_AR1_3.item(row, col)
+        if excel == 'AR1-ST.04':
+            item = self.tableWidget_AR1_4.item(row, col)
+        if excel == 'AR1-ST.05':
+            item = self.tableWidget_AR1_5.item(row, col)
+        if excel == 'AR1-ST.06':
+            item = self.tableWidget_AR1_6.item(row, col)
+        if excel == 'AR1-ST.07':
+            item = self.tableWidget_AR1_7.item(row, col)
         if item:
             item.setBackground(QColor(r, g, b))
 
@@ -336,8 +351,23 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         # Update the progress bar
         self.progressBar.setValue(progress)
 
-    def append_text_to_cell(self, row, col, text_to_append):
-        current_item = self.tableWidget_AR2.item(row, col)
+    def append_text_to_cell(self, row, col, text_to_append, excel):
+        if excel == 'AR2':
+            current_item = self.tableWidget_AR2.item(row, col)
+        if excel == 'AR1-ST.01':
+            current_item = self.tableWidget_AR1_1.item(row, col)
+        if excel == 'AR1-ST.02':
+            current_item = self.tableWidget_AR1_2.item(row, col)
+        if excel == 'AR1-ST.03':
+            current_item = self.tableWidget_AR1_3.item(row, col)
+        if excel == 'AR1-ST.04':
+            current_item = self.tableWidget_AR1_4.item(row, col)
+        if excel == 'AR1-ST.05':
+            current_item = self.tableWidget_AR1_5.item(row, col)
+        if excel == 'AR1-ST.06':
+            current_item = self.tableWidget_AR1_6.item(row, col)
+        if excel == 'AR1-ST.07':
+            current_item = self.tableWidget_AR1_7.item(row, col)
         if current_item:
             current_text = current_item.text()
             new_text = current_text + " " + text_to_append
@@ -350,9 +380,9 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         self.save_logs()
 
 
-def run_rule(col_from, col_to, dataframe, rule_number, row):
+def run_rule_ar2(col_from, col_to, dataframe, rule_number, row):
     rule_module = importlib.import_module('check')
-    rule_function_name = f'rule_{rule_number}'
+    rule_function_name = f'rule_{rule_number}_ar2'
     rule_function = getattr(rule_module, rule_function_name, None)
 
     if rule_function is None or not callable(rule_function):
@@ -364,15 +394,56 @@ def run_rule(col_from, col_to, dataframe, rule_number, row):
 
         for result in results:
             if not result[1]:
-                dialog.change_cell_background(row, n, 255, 0, 0)
+                dialog.change_cell_background(row, n, 255, 0, 0, 'AR2')
                 if rule_number != 24 and rule_number != 29:
-                    dialog.append_text_to_cell(row, n, f'; Error in column: {get_column_letter(result[2] + 1)}; ')
+                    dialog.append_text_to_cell(row, n, f'; Error in column: {get_column_letter(result[2] + 1)}; ', 'AR2')
                 else:
-                    dialog.append_text_to_cell(row, n, f'; Error in column: {result[2]}; ')
+                    dialog.append_text_to_cell(row, n, f'; Error in column: {result[2]}; ', 'AR2')
                 bool = False
 
             if result[1] and bool:
-                dialog.change_cell_background(row, n, 50, 205, 50)
+                dialog.change_cell_background(row, n, 50, 205, 50, 'AR2')
+
+
+def run_rule_ar1(col, dataframe, rule_number, row, sheet):
+    rule_module = importlib.import_module('check')
+    rule_function_name = f'rule_{rule_number}_ar1'
+    rule_function = getattr(rule_module, rule_function_name, None)
+
+    if rule_function is None or not callable(rule_function):
+        raise ValueError(f"Rule {rule_function_name} not found or not callable")
+
+    bool = True
+    results = rule_function(dataframe, col - 3)
+
+    for result in results:
+        if not result[1]:
+            dialog.change_cell_background(row, col, 255, 0, 0, f'AR1-ST.0{sheet}')
+            dialog.append_text_to_cell(row, col, f'; Error in column: {result[2]}; ', f'AR1-ST.0{sheet}')
+            bool = False
+        if result[1] and bool:
+            dialog.change_cell_background(row, col, 50, 205, 50, f'AR1-ST.0{sheet}')
+
+
+def run_rule_ar1m(col, dataframe, rule_number, row):
+    rule_module = importlib.import_module('check')
+    rule_function_name = f'rule_{rule_number}_ar1'
+    rule_function = getattr(rule_module, rule_function_name, None)
+
+    if rule_function is None or not callable(rule_function):
+        raise ValueError(f"Rule {rule_function_name} not found or not callable")
+
+    bool = True
+    results = rule_function(dataframe, col - 3)
+
+    for r, result in enumerate(results):
+        for data in result:
+            if not data[1]:
+                dialog.change_cell_background(row + r, col, 255, 0, 0, f'AR1-ST.0{rule_number}')
+                dialog.append_text_to_cell(row + r, col, f'; Error in column: {data[2]}; ', f'AR1-ST.0{rule_number}')
+                bool = False
+            if data[1] and bool:
+                dialog.change_cell_background(row + r, col, 50, 205, 50, f'AR1-ST.0{rule_number}')
 
 
 def perform_tests():
@@ -381,35 +452,47 @@ def perform_tests():
     path = "C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\Filled\\BSP_AR2_v.4.0_Q12023_20230721-9RL-NO-ZEROS.xlsx"
     # Perform all the tests
     df_nbp = pd.read_excel(path, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
-    # Call the function
-    run_rule(5, 13, df_nbp, 1, 0)
-    run_rule(5, 13, df_nbp, 2, 1)
-    run_rule(5, 13, df_nbp, 3, 2)
-    run_rule(5, 13, df_nbp, 4, 3)
-    run_rule(5, 13, df_nbp, 5, 4)
-    run_rule(5, 13, df_nbp, 6, 5)
-    run_rule(5, 13, df_nbp, 7, 6)
-    run_rule(5, 13, df_nbp, 8, 7)
-    run_rule(5, 13, df_nbp, 9, 8)
-    run_rule(5, 13, df_nbp, 10, 9)
-    run_rule(5, 13, df_nbp, 11, 10)
-    run_rule(5, 13, df_nbp, 12, 11)
-    run_rule(9, 13, df_nbp, 13, 12)
-    run_rule(9, 13, df_nbp, 14, 13)
-    run_rule(9, 13, df_nbp, 15, 14)
-    run_rule(9, 13, df_nbp, 16, 15)
-    run_rule(9, 13, df_nbp, 17, 16)
-    run_rule(9, 13, df_nbp, 18, 17)
-    run_rule(9, 13, df_nbp, 19, 18)
-    run_rule(9, 13, df_nbp, 20, 19)
-    run_rule(15, 17, df_nbp, 21, 20)
-    run_rule(15, 17, df_nbp, 22, 21)
-    run_rule(15, 17, df_nbp, 23, 22)
-    run_rule(15, 17, df_nbp, 24, 23)
 
-    run_rule(15, 17, df_nbp, 26, 25)
-    run_rule(15, 17, df_nbp, 27, 26)
-    run_rule(15, 17, df_nbp, 29, 28)
+    # Call the function
+    run_rule_ar2(5, 13, df_nbp, 1, 0)
+    run_rule_ar2(5, 13, df_nbp, 2, 1)
+    run_rule_ar2(5, 13, df_nbp, 3, 2)
+    run_rule_ar2(5, 13, df_nbp, 4, 3)
+    run_rule_ar2(5, 13, df_nbp, 5, 4)
+    run_rule_ar2(5, 13, df_nbp, 6, 5)
+    run_rule_ar2(5, 13, df_nbp, 7, 6)
+    run_rule_ar2(5, 13, df_nbp, 8, 7)
+    run_rule_ar2(5, 13, df_nbp, 9, 8)
+    run_rule_ar2(5, 13, df_nbp, 10, 9)
+    run_rule_ar2(5, 13, df_nbp, 11, 10)
+    run_rule_ar2(5, 13, df_nbp, 12, 11)
+    run_rule_ar2(9, 13, df_nbp, 13, 12)
+    run_rule_ar2(9, 13, df_nbp, 14, 13)
+    run_rule_ar2(9, 13, df_nbp, 15, 14)
+    run_rule_ar2(9, 13, df_nbp, 16, 15)
+    run_rule_ar2(9, 13, df_nbp, 17, 16)
+    run_rule_ar2(9, 13, df_nbp, 18, 17)
+    run_rule_ar2(9, 13, df_nbp, 19, 18)
+    run_rule_ar2(9, 13, df_nbp, 20, 19)
+    run_rule_ar2(15, 17, df_nbp, 21, 20)
+    run_rule_ar2(15, 17, df_nbp, 22, 21)
+    run_rule_ar2(15, 17, df_nbp, 23, 22)
+    run_rule_ar2(15, 17, df_nbp, 24, 23)
+
+    run_rule_ar2(15, 17, df_nbp, 26, 25)
+    run_rule_ar2(15, 17, df_nbp, 27, 26)
+    run_rule_ar2(15, 17, df_nbp, 29, 28)
+
+    # path = f'EXAMPLE\\Filled\\' + f'BSP_AR2_v.4.0_Q{date[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
+    path = "C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\Filled\\AR1 - Q2.2023.xlsx"
+    # Perform all the tests
+    df_nbp = pd.read_excel(path, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
+
+    # Call the function
+    run_rule_ar1m(3, df_nbp, 1, 0)
+    run_rule_ar1(3, df_nbp, 14, 13, 1)
+    run_rule_ar1(3, df_nbp, 15, 14, 1)
+    run_rule_ar1(3, df_nbp, 16, 15, 1)
 
 
 if __name__ == "__main__":
