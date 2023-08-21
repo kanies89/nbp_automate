@@ -3260,121 +3260,6 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string>7</string>
            </property>
           </row>
-          <row>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>17</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>18</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>19</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>20</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>21</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>22</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>23</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>24</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>25</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>26</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>27</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>28</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>29</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>30</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>
@@ -3397,12 +3282,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </column>
           <item row="0" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_01</string>
            </property>
           </item>
           <item row="0" column="1">
            <property name="text">
-            <string/>
+            <string>6.1.1. &lt;= 6.1.</string>
            </property>
           </item>
           <item row="0" column="3">
@@ -3412,12 +3297,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="1" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_02</string>
            </property>
           </item>
           <item row="1" column="1">
            <property name="text">
-            <string/>
+            <string>6.2.1. &lt;= 6.2.</string>
            </property>
           </item>
           <item row="1" column="3">
@@ -3427,12 +3312,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="2" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_03</string>
            </property>
           </item>
           <item row="2" column="1">
            <property name="text">
-            <string/>
+            <string>6.2.2. &lt;= 6.2.</string>
            </property>
           </item>
           <item row="2" column="3">
@@ -3442,12 +3327,17 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="3" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_04</string>
            </property>
           </item>
           <item row="3" column="1">
            <property name="text">
-            <string/>
+            <string>6.1.1 &quot;PRP - poza terytorium Rzeczypospolitej Polskiej&quot; = ST.04 =&quot;M09_UKPE_PRP...&quot;</string>
+           </property>
+          </item>
+          <item row="3" column="2">
+           <property name="text">
+            <string>poz. 6.1.1 w kol. &quot;PRP - poza terytorium Rzeczypospolitej Polskiej&quot; = suma_kolumny (ST.04 kol. &quot;M09_UKPE_PRP - Liczba urządzeń akceptujących instrumenty, na których jest przechowywany  pieniądz elektroniczny&quot;)</string>
            </property>
           </item>
           <item row="3" column="3">
@@ -3457,12 +3347,17 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="4" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_05</string>
            </property>
           </item>
           <item row="4" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="4" column="2">
+           <property name="text">
+            <string>poz. 6.2 w kol. &quot;PRP - poza terytorium Rzeczypospolitej Polskiej&quot; = suma_kolumny (ST.04 kol. &quot;M09_UKKPE_PRP - Urządzenia kart pieniądza elektronicznego, w tym:&quot;)</string>
            </property>
           </item>
           <item row="4" column="3">
@@ -3472,12 +3367,17 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="5" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_06</string>
            </property>
           </item>
           <item row="5" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="5" column="2">
+           <property name="text">
+            <string>poz. 6.2.1 w kol. &quot;PRP - poza terytorium Rzeczypospolitej Polskiej&quot; = suma_kolumny (ST.04 kol. &quot;M09_UKPEZR_PRP - w tym: urządzenia umożliwiające zasilenie i rozładowanie kart z funkcją pieniądza elektronicznego&quot;)</string>
            </property>
           </item>
           <item row="5" column="3">
@@ -3487,7 +3387,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="6" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.02_07</string>
            </property>
           </item>
           <item row="6" column="1">
@@ -3495,362 +3395,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string/>
            </property>
           </item>
+          <item row="6" column="2">
+           <property name="text">
+            <string>poz. 6.2.2 w kol. &quot;PRP - poza terytorium Rzeczypospolitej Polskiej&quot; = suma_kolumny (ST.04 kol. &quot;M09_UAKPE_PRP - w tym: urządzenia akceptujące karty pieniądza elektronicznego&quot;)</string>
+           </property>
+          </item>
           <item row="6" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="7" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="8" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="9" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="10" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="11" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="12" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="13" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="14" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="15" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="16" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="17" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="18" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="19" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="20" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="21" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="22" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="23" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="24" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="25" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="26" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="27" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="28" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="29" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="3">
            <property name="text">
             <string>1</string>
            </property>
@@ -3909,126 +3459,6 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string>6</string>
            </property>
           </row>
-          <row>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>17</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>18</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>19</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>20</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>21</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>22</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>23</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>24</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>25</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>26</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>27</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>28</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>29</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>30</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>
@@ -4051,12 +3481,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </column>
           <item row="0" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.03_01</string>
            </property>
           </item>
           <item row="0" column="1">
            <property name="text">
-            <string/>
+            <string>7.1 &gt;= 7.1.1</string>
            </property>
           </item>
           <item row="0" column="3">
@@ -4066,12 +3496,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="1" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.03_02</string>
            </property>
           </item>
           <item row="1" column="1">
            <property name="text">
-            <string/>
+            <string>7.2 &gt;= 7.2.2</string>
            </property>
           </item>
           <item row="1" column="3">
@@ -4081,12 +3511,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="2" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.03_06</string>
            </property>
           </item>
           <item row="2" column="1">
            <property name="text">
-            <string/>
+            <string>7.2. &gt;= 7.2.1.</string>
            </property>
           </item>
           <item row="2" column="3">
@@ -4096,12 +3526,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="3" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.03_03</string>
            </property>
           </item>
           <item row="3" column="1">
            <property name="text">
-            <string/>
+            <string>8.1 &gt;= 8.1.1</string>
            </property>
           </item>
           <item row="3" column="3">
@@ -4111,12 +3541,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="4" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.03_04</string>
            </property>
           </item>
           <item row="4" column="1">
            <property name="text">
-            <string/>
+            <string>8.2 &gt;= 8.2.1</string>
            </property>
           </item>
           <item row="4" column="3">
@@ -4126,385 +3556,15 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="5" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.03_05</string>
            </property>
           </item>
           <item row="5" column="1">
            <property name="text">
-            <string/>
+            <string>9.1 &gt;= 9.1.1</string>
            </property>
           </item>
           <item row="5" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="6" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="6" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="6" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="7" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="8" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="9" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="10" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="11" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="12" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="13" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="14" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="15" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="16" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="17" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="18" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="19" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="20" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="21" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="22" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="23" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="24" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="25" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="26" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="27" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="28" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="29" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="3">
            <property name="text">
             <string>1</string>
            </property>
@@ -4558,131 +3618,6 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string>5</string>
            </property>
           </row>
-          <row>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>17</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>18</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>19</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>20</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>21</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>22</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>23</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>24</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>25</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>26</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>27</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>28</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>29</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>30</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>
@@ -4705,12 +3640,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </column>
           <item row="0" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.04_01</string>
            </property>
           </item>
           <item row="0" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>poz. w kol. &quot;M03_UKP_PRP - w tym: umożliwiające dokonywanie płatności zbliżeniowych&quot; 
+&lt;= poz. w kol. &quot;M03_UKP_PRP - Liczba urzadzeń akceptujących karty płatnicze, w tym:&quot;. 
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="0" column="3">
@@ -4720,12 +3662,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="1" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.04_02</string>
            </property>
           </item>
           <item row="1" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="1" column="2">
+           <property name="text">
+            <string>poz. w kol. &quot;M03_UIP.PE_PRP - w tym: urządzenia akceptujące transakcje z użyciem pieniądza elektronicznego 
+&lt;= poz. w kol. &quot;M03_UKP_PRP - Liczba urzadzeń akceptujących karty płatnicze, w tym:&quot;.
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="1" column="3">
@@ -4735,12 +3684,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="2" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.04_03</string>
            </property>
           </item>
           <item row="2" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="2" column="2">
+           <property name="text">
+            <string>poz. w kol. &quot;M09_UKPEZR_PRP - w tym: urządzenia umożliwiające zasilenie i rozładowanie kart z funkcją pieniądza elektronicznego&quot; 
+&lt;= poz. w kol. &quot;M09_UKKPE_PRP - Urządzenia kart pieniądza elektronicznego, w tym:&quot;.
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="2" column="3">
@@ -4750,12 +3706,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="3" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.04_04</string>
            </property>
           </item>
           <item row="3" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="3" column="2">
+           <property name="text">
+            <string>poz. w kol. &quot;M09_UKPE_PRP - w tym: urządzenia akceptujące karty pieniądza elektronicznego&quot;
+&lt;= poz. w kol. &quot;M09_UKKPE_PRP - Urządzenia kart pieniądza elektronicznego, w tym:&quot;
+Reguła sprawdza wszystkie wiersze oddzielnie.</string>
            </property>
           </item>
           <item row="3" column="3">
@@ -4765,7 +3728,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="4" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.04_05</string>
            </property>
           </item>
           <item row="4" column="1">
@@ -4773,392 +3736,13 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string/>
            </property>
           </item>
+          <item row="4" column="2">
+           <property name="text">
+            <string>dla każdej kolumny oddzielnie:
+10.WLD &gt;= 10.GB</string>
+           </property>
+          </item>
           <item row="4" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="5" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="5" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="5" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="6" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="6" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="6" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="7" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="8" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="9" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="10" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="11" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="12" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="13" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="14" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="15" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="16" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="17" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="18" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="19" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="20" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="21" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="22" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="23" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="24" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="25" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="26" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="27" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="28" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="29" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="3">
            <property name="text">
             <string>1</string>
            </property>
@@ -5252,91 +3836,6 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string>13</string>
            </property>
           </row>
-          <row>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>17</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>18</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>19</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>20</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>21</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>22</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>23</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>24</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>25</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>26</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>27</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>28</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>29</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>30</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>
@@ -5359,12 +3858,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </column>
           <item row="0" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_01</string>
            </property>
           </item>
           <item row="0" column="1">
            <property name="text">
-            <string/>
+            <string>11.1.1.1 &lt;= 11.1.1.</string>
            </property>
           </item>
           <item row="0" column="3">
@@ -5374,12 +3873,18 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="1" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_02</string>
            </property>
           </item>
           <item row="1" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="1" column="2">
+           <property name="text">
+            <string>poz. w kol.&quot; M-10 Liczba transakcji:&quot;|&quot;NRP - przy użyciu instrumentów wydanych na terytorium Rzeczypospolitej Polskiej&quot; &gt;= poz. w kol. &quot;M201 - Liczba operacji w sieci akceptacji na terytorium RP:&quot; | &quot;NRP - przy użyciu instrumentów wydanych na terytorium Rzeczypospolitej Polskiej&quot;.
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="1" column="3">
@@ -5389,12 +3894,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="2" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_03</string>
            </property>
           </item>
           <item row="2" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="2" column="2">
+           <property name="text">
+            <string>poz. w Kol. &quot;M-10 Liczba transakcji:&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot; 
+&gt;= poz. w kol. &quot;M201 - Liczba operacji w sieci akceptacji na terytorium RP:&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;.
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="2" column="3">
@@ -5404,12 +3916,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="3" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_04</string>
            </property>
           </item>
           <item row="3" column="1">
            <property name="text">
-            <string/>
+            <string>11.2.1.1 &lt;= 11.2.1.</string>
            </property>
           </item>
           <item row="3" column="3">
@@ -5419,12 +3931,18 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="4" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_05</string>
            </property>
           </item>
           <item row="4" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="4" column="2">
+           <property name="text">
+            <string>poz. w kol. &quot;M-11 Wartość transakcji:&quot; | &quot;NRP - przy użyciu instrumentów wydanych na terytorium Rzeczypospolitej Polskiej&quot; &gt;= &quot;M202 - Wartość operacji w sieci akceptacji na terytorium RP:&quot; | &quot;NRP - przy użyciu instrumentów wydanych na terytorium Rzeczypospolitej Polskiej&quot;.
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="4" column="3">
@@ -5434,12 +3952,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="5" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_06</string>
            </property>
           </item>
           <item row="5" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="5" column="2">
+           <property name="text">
+            <string>poz. w kol. &quot;M-11 Wartość transakcji:&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;
+&gt;= &quot;M202 - Wartość operacji w sieci akceptacji na terytorium RP:&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;.
+Reguła sprawdza wszystkie wiersze oddzielnie</string>
            </property>
           </item>
           <item row="5" column="3">
@@ -5449,10 +3974,15 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="6" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_07</string>
            </property>
           </item>
           <item row="6" column="1">
+           <property name="text">
+            <string>12.1.1 &lt;= 12.1</string>
+           </property>
+          </item>
+          <item row="6" column="2">
            <property name="text">
             <string/>
            </property>
@@ -5464,12 +3994,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="7" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_08</string>
            </property>
           </item>
           <item row="7" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="7" column="2">
+           <property name="text">
+            <string>suma M201_KI_OKP.UKP_PRP i  M201_KB_OKP.UKP_PRP = suma_kolumny([ST.06] M10_OKP.UKP_PRP_XX). 
+tj.:
+suma poz. w kol. &quot;M201 - Liczba operacji w sieci akceptacji na terytorium RP&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;. w wierszach 11.1.1. i 11.2.1 jest równa sumie kolumny &quot;M10 - liczba transakcji&quot; | &quot;OKP.UKP_PRP - urządzenia akceptujące karty płatnicze&quot; z ST.06 (bez poz. &quot;WLD - Pozostałe kraje świata&quot;)</string>
            </property>
           </item>
           <item row="7" column="3">
@@ -5479,12 +4016,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="8" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_09</string>
            </property>
           </item>
           <item row="8" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="8" column="2">
+           <property name="text">
+            <string>suma M201_KI_OCB_PRP i M201_KB_OCB_PRP = suma_kolumny([ST.06] M10_OCB_PRP_XX).
+tj. 
+suma poz. w kol. &quot;M201 - Liczba operacji w sieci akceptacji na terytorium RP&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;. w wierszach 11.1.2 i 11.2.2. jest równa sumie kolumny &quot;M10 - liczba transakcji&quot; | &quot;OCB_PRP - cash back&quot; z ST.06 (bez poz. &quot;WLD - Pozostałe kraje świata&quot;)</string>
            </property>
           </item>
           <item row="8" column="3">
@@ -5494,12 +4038,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="9" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_10</string>
            </property>
           </item>
           <item row="9" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="9" column="2">
+           <property name="text">
+            <string>suma M201_KI_OKP.IT_PRP i M201_KB_OKP.IT_PRP = suma_kolumny([ST.06]M10_OKP.IT_PRP_XX).
+tj. 
+suma poz. w kol. &quot;M201 - Liczba operacji w sieci akceptacji na terytorium RP&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;. w wierszach 11.1.3 i 11.2.3 jest równa sumie kolumny &quot;M10 - liczba transakcji&quot; | &quot;OKP.IT_PRP - Internet&quot; z ST.06 (bez poz. &quot;WLD - Pozostałe kraje świata&quot;)</string>
            </property>
           </item>
           <item row="9" column="3">
@@ -5509,12 +4060,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="10" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_11</string>
            </property>
           </item>
           <item row="10" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="10" column="2">
+           <property name="text">
+            <string>suma M202_KI_OKP.UKP_PRP i M202_KB_OKP.UKP_PRP = suma_kolumny([ST.06] M11_OKP.UKP_PRP_XX).
+tj.
+suma poz. w kol. &quot;M202 - Wartość operacji w sieci akceptacji na terytorium RP&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;. w wierszu 11.1.1 i 11.2.1. jest równa sumie kolumny &quot;M11 - wartość transakcji&quot; | &quot;OKP.UKP_PRP - urządzenia akceptujące karty płatnicze&quot; z ST.06 (bez poz. &quot;WLD - Pozostałe kraje świata&quot;)</string>
            </property>
           </item>
           <item row="10" column="3">
@@ -5524,12 +4082,19 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="11" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_12</string>
            </property>
           </item>
           <item row="11" column="1">
            <property name="text">
             <string/>
+           </property>
+          </item>
+          <item row="11" column="2">
+           <property name="text">
+            <string>suma M202_KI_OCB_PRP i M202_KB_OCB_PRP = suma_kolumny([ST.06] M11_OCB_PRP_XX).
+tj.
+suma poz. w kol. &quot;M202 - Wartość operacji w sieci akceptacji na terytorium RP&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;. w wierszu 11.1.2 i 11.2.2 jest równa sumie kolumny &quot;M11 - wartość transakcji&quot; | &quot;OCB_PRP - cash back&quot; z ST.06 (bez poz. &quot;WLD - Pozostałe kraje świata&quot;)</string>
            </property>
           </item>
           <item row="11" column="3">
@@ -5539,7 +4104,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="12" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.05_13</string>
            </property>
           </item>
           <item row="12" column="1">
@@ -5547,272 +4112,14 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string/>
            </property>
           </item>
+          <item row="12" column="2">
+           <property name="text">
+            <string>suma M202_KI_OKP.IT_PRP i M202_KB_OKP.IT_PRP = suma_kolumny([ST.06] M11_OKP.IT_PRP_XX). 
+tj.
+suma poz. w kol. &quot;M202 - Wartość operacji w sieci akceptacji na terytorium RP&quot; | &quot;PRP - przy użyciu instrumentów wydanych poza terytorium Rzeczypospolitej Polskiej&quot;. w wierszu 11.1.3 i 11.2.3 jest równa sumie kolumny &quot;M11 - wartość transakcji&quot; | &quot;OKP.IT_PRP - Internet&quot; z ST.06 (bez poz. &quot;WLD - Pozostałe kraje świata&quot;)</string>
+           </property>
+          </item>
           <item row="12" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="13" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="14" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="15" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="16" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="17" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="18" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="19" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="20" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="21" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="22" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="23" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="24" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="25" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="26" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="27" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="28" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="29" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="3">
            <property name="text">
             <string>1</string>
            </property>
@@ -5846,151 +4153,6 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string>1</string>
            </property>
           </row>
-          <row>
-           <property name="text">
-            <string>2</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>3</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>4</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>6</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>7</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>17</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>18</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>19</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>20</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>21</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>22</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>23</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>24</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>25</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>26</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>27</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>28</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>29</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>30</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>
@@ -6013,7 +4175,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </column>
           <item row="0" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.06_01</string>
            </property>
           </item>
           <item row="0" column="1">
@@ -6021,452 +4183,13 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string/>
            </property>
           </item>
+          <item row="0" column="2">
+           <property name="text">
+            <string>dla każdej kolumny:
+komorka &quot;Pozostałe kraje siwata&quot; = suma &quot;Wielka Brytania plus każdy kolejny kraj wprowadzony poniżej wiersza Wielka Brytania&quot;</string>
+           </property>
+          </item>
           <item row="0" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="1" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="1" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="1" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="2" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="2" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="2" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="3" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="3" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="3" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="4" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="4" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="4" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="5" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="5" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="5" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="6" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="6" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="6" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="7" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="8" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="9" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="10" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="11" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="12" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="13" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="14" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="15" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="16" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="17" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="18" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="19" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="20" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="21" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="22" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="23" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="24" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="25" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="26" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="27" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="28" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="29" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="3">
            <property name="text">
             <string>1</string>
            </property>
@@ -6530,121 +4253,6 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <string>7</string>
            </property>
           </row>
-          <row>
-           <property name="text">
-            <string>8</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>9</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>10</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>11</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>12</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>13</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>14</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>15</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>16</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>17</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>18</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>19</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>20</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>21</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>22</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>23</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>24</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>25</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>26</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>27</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>28</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>29</string>
-           </property>
-          </row>
-          <row>
-           <property name="text">
-            <string>30</string>
-           </property>
-          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>
@@ -6667,12 +4275,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </column>
           <item row="0" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_01</string>
            </property>
           </item>
           <item row="0" column="1">
            <property name="text">
-            <string/>
+            <string>17.1=17.1.1+17.1.2+17.1.3</string>
            </property>
           </item>
           <item row="0" column="3">
@@ -6682,12 +4290,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="1" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_03</string>
            </property>
           </item>
           <item row="1" column="1">
            <property name="text">
-            <string/>
+            <string>17.1.1=17.1.1.1+17.1.1.2</string>
            </property>
           </item>
           <item row="1" column="3">
@@ -6697,12 +4305,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="2" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_05</string>
            </property>
           </item>
           <item row="2" column="1">
            <property name="text">
-            <string/>
+            <string>17.1.1.1.1&lt;17.1.1.1</string>
            </property>
           </item>
           <item row="2" column="3">
@@ -6712,12 +4320,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="3" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_06</string>
            </property>
           </item>
           <item row="3" column="1">
            <property name="text">
-            <string/>
+            <string>17.1.1.3.1 &lt;=17.1.1.</string>
            </property>
           </item>
           <item row="3" column="3">
@@ -6727,12 +4335,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="4" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_04</string>
            </property>
           </item>
           <item row="4" column="1">
            <property name="text">
-            <string/>
+            <string>17.1.2 = 17.1.2.1 + 17.1.2.2</string>
            </property>
           </item>
           <item row="4" column="3">
@@ -6742,12 +4350,12 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="5" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_07</string>
            </property>
           </item>
           <item row="5" column="1">
            <property name="text">
-            <string/>
+            <string>17.1.2.3.1 &lt;=17.1.2.</string>
            </property>
           </item>
           <item row="5" column="3">
@@ -6757,370 +4365,15 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
           </item>
           <item row="6" column="0">
            <property name="text">
-            <string/>
+            <string>RW_ST.07_02</string>
            </property>
           </item>
           <item row="6" column="1">
            <property name="text">
-            <string/>
+            <string>17.2. = 17.2.1. + 17.2.2. + 17.2.3.</string>
            </property>
           </item>
           <item row="6" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="7" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="7" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="8" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="8" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="9" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="9" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="10" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="10" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="11" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="11" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="12" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="12" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="13" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="13" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="14" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="1">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="14" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="15" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="15" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="16" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="16" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="17" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="17" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="18" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="18" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="19" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="19" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="20" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="20" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="21" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="21" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="22" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="22" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="23" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="23" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="24" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="24" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="25" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="25" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="26" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="26" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="27" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="27" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="28" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="28" column="3">
-           <property name="text">
-            <string>1</string>
-           </property>
-          </item>
-          <item row="29" column="0">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="2">
-           <property name="text">
-            <string/>
-           </property>
-          </item>
-          <item row="29" column="3">
            <property name="text">
             <string>1</string>
            </property>
