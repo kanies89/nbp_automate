@@ -5,9 +5,31 @@ from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot
 from PyQt5.QtGui import QColor
 from PyQt5.uic import loadUi
 from main import start_automation, Logger, check_quarter
-from check import rule_1
-from variables import EXCEL_READ_AR2
+from check import AR2_TO_CHECK
+import importlib
 import pandas as pd
+from openpyxl.utils import get_column_letter
+
+
+class CheckThread(QThread):
+    # Define custom signals to communicate with the main thread
+
+    def __init__(self):
+        super(CheckThread, self).__init__()
+
+    def run(self):
+        # Run the start_automation function
+        print('Checking')
+
+        # Call the start_automation function with progress_callback
+        def progress_callback(step):
+            self.progress = (step * 100) // self.total_steps
+            self.progress_updated.emit(self.progress)
+
+        perform_tests()
+
+        # Emit the finished signal to indicate the completion
+        self.finished.emit()
 
 
 class AutomationThread(QThread):
@@ -57,6 +79,10 @@ class MyDialog(QDialog):
         super(MyDialog, self).__init__()
         # Load the UI from the XML file
         loadUi("./UI/nbp_ui.ui", self)
+
+        self.automation_thread = None
+        self.check_thread = None
+
         self.setup_table()  # Call the method to set up the table
         self.name = ""
         self.surname = ""
@@ -114,53 +140,56 @@ class MyDialog(QDialog):
 
     # Method to change the background color of a cell
     def change_cell_background(self, row, col, r, g, b):
-        item = self.tableWidget.item(row, col)
+        item = self.tableWidget_AR2.item(row, col)
         if item:
             item.setBackground(QColor(r, g, b))
 
     def setup_table(self):
         # Set default alignment for wrapped text in header
-        for col in range(self.tableWidget.columnCount()):
-            header_item = self.tableWidget.horizontalHeaderItem(col)
+        for col in range(self.tableWidget_AR2.columnCount()):
+            header_item = self.tableWidget_AR2.horizontalHeaderItem(col)
             if header_item:
                 header_item.setTextAlignment(Qt.AlignHCenter | Qt.TextWordWrap)
 
         # Enable word wrapping for all cells
-        for row in range(self.tableWidget.rowCount()):
-            for col in range(self.tableWidget.columnCount()):
-                item = self.tableWidget.item(row, col)
+        for row in range(self.tableWidget_AR2.rowCount()):
+            for col in range(self.tableWidget_AR2.columnCount()):
+                item = self.tableWidget_AR2.item(row, col)
                 if item:
                     item.setTextAlignment(Qt.AlignVCenter | Qt.TextWordWrap)
-                    self.tableWidget.setItem(row, col, item)
+                    self.tableWidget_AR2.setItem(row, col, item)
                     if col > 1:  # Adjust the column index where alignment should be set
                         item.setTextAlignment(
                             Qt.AlignVCenter | Qt.AlignHCenter)  # Align center for columns 2 and onward
 
         # Connect cell content change signal to row height adjustment
-        self.tableWidget.cellChanged.connect(self.adjust_row_heights)
+        self.tableWidget_AR2.cellChanged.connect(self.adjust_row_heights)
 
-        # Set the width and height of the QTableWidget
-        self.tableWidget.setFixedSize(1385, 470)  # Adjust the values as needed
-        self.tableWidget.setColumnWidth(0, 100)
-        self.tableWidget.setColumnWidth(1, 210)
-        self.tableWidget.setColumnWidth(3, 50)
-        self.tableWidget.setColumnWidth(4, 50)
-        self.tableWidget.setColumnWidth(6, 95)
-        self.tableWidget.setColumnWidth(10, 100)
-        self.tableWidget.setColumnWidth(11, 115)
-        self.tableWidget.setColumnWidth(12, 60)
-        self.tableWidget.setColumnWidth(14, 50)
+        # Set the width and height of the QtableWidget_AR2
+        self.tableWidget_AR2.setFixedSize(1572, 500)  # Adjust the values as needed
+        self.tableWidget_AR2.setColumnWidth(0, 80)
+        self.tableWidget_AR2.setColumnWidth(1, 200)
+        self.tableWidget_AR2.setColumnWidth(3, 50)
+        self.tableWidget_AR2.setColumnWidth(4, 50)
+        self.tableWidget_AR2.setColumnWidth(6, 95)
+        self.tableWidget_AR2.setColumnWidth(10, 100)
+        self.tableWidget_AR2.setColumnWidth(11, 105)
+        self.tableWidget_AR2.setColumnWidth(12, 90)
+        self.tableWidget_AR2.setColumnWidth(13, 50)
+        self.tableWidget_AR2.setColumnWidth(14, 60)
+        self.tableWidget_AR2.setColumnWidth(15, 70)
+        self.tableWidget_AR2.setColumnWidth(16, 70)
 
     def adjust_row_heights(self, row, col):
         # Adjust the row height based on the contents of the specified cell
-        self.tableWidget.resizeRowToContents(row)
+        self.tableWidget_AR2.resizeRowToContents(row)
 
     def toggle_window_size(self):
         if self.enlarged:
             self.setFixedSize(402, 528)  # Set your original size
             self.enlarged = False
         else:
-            self.setFixedSize(1800, 528)  # Set the enlarged size
+            self.setFixedSize(1975, 528)  # Set the enlarged size
             self.enlarged = True
 
     def eventFilter(self, obj, event):
@@ -196,7 +225,13 @@ class MyDialog(QDialog):
         self.TSurname.setEnabled(True)
         self.BSurname.setEnabled(True)
 
-        self.perform_tests()
+        # Create the AutomationThread and start it
+        self.check_thread = CheckThread()
+        # self.automation_thread.progress_updated.connect(self.update_progress)
+        # self.automation_thread.finished.connect(self.on_automation_finished)
+
+        # Start the check thread
+        self.check_thread.start()
 
     def on_surname_apply_clicked(self):
         surname = self.TSurname.toPlainText()
@@ -264,7 +299,7 @@ class MyDialog(QDialog):
         self.progressBar.setValue(progress)
 
     def append_text_to_cell(self, row, col, text_to_append):
-        current_item = self.table_widget.item(row, col)
+        current_item = self.tableWidget_AR2.item(row, col)
         if current_item:
             current_text = current_item.text()
             new_text = current_text + " " + text_to_append
@@ -276,24 +311,67 @@ class MyDialog(QDialog):
         # Save the logs to the log file
         self.save_logs()
 
-    def perform_tests(self):
-        date = check_quarter()
-        # path = f'EXAMPLE\\Filled\\' + f'BSP_AR2_v.4.0_Q{date[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
-        path = "C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\Filled\\BSP_AR2_v.4.0_Q22023_20230712.xlsx"
-        # Perform all the tests
-        df_nbp = pd.read_excel(path, sheet_name=EXCEL_READ_AR2, header=None, keep_default_na=False)
 
-        bool_1 = True
-        for n in range(5, 13):
-            print("wtf")
-            for result in rule_1(df_nbp, EXCEL_READ_AR2[n - 4], n):
-                print(EXCEL_READ_AR2[n - 4])
-                if not result[1]:
-                    self.change_cell_background(0, n, 255, 0, 0)
-                    # self.append_text_to_cell(n, result[2], f'; Error in column: {result[2]}; ')
-                    bool_1 = False
-                if n == 12 and bool_1:
-                    self.change_cell_background(0, n, 50, 205, 50)
+def run_rule(col_from, col_to, dataframe, rule_number, row):
+    rule_module = importlib.import_module('check')
+    rule_function_name = f'rule_{rule_number}'
+    rule_function = getattr(rule_module, rule_function_name, None)
+
+    if rule_function is None or not callable(rule_function):
+        raise ValueError(f"Rule {rule_function_name} not found or not callable")
+
+    for n in range(col_from, col_to):
+        bool = True
+        results = rule_function(dataframe, n - 3)
+
+        for result in results:
+            if not result[1]:
+                dialog.change_cell_background(row, n, 255, 0, 0)
+                if rule_number != 24 and rule_number != 29:
+                    dialog.append_text_to_cell(row, n, f'; Error in column: {get_column_letter(result[2] + 1)}; ')
+                else:
+                    dialog.append_text_to_cell(row, n, f'; Error in column: {result[2]}; ')
+                bool = False
+
+            if result[1] and bool:
+                dialog.change_cell_background(row, n, 50, 205, 50)
+
+
+def perform_tests():
+    date = check_quarter()
+    # path = f'EXAMPLE\\Filled\\' + f'BSP_AR2_v.4.0_Q{date[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
+    path = "C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\Filled\\BSP_AR2_v.4.0_Q12023_20230721-9RL-NO-ZEROS.xlsx"
+    # Perform all the tests
+    df_nbp = pd.read_excel(path, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
+    # Call the function
+    run_rule(5, 13, df_nbp, 1, 0)
+    run_rule(5, 13, df_nbp, 2, 1)
+    run_rule(5, 13, df_nbp, 3, 2)
+    run_rule(5, 13, df_nbp, 4, 3)
+    run_rule(5, 13, df_nbp, 5, 4)
+    run_rule(5, 13, df_nbp, 6, 5)
+    run_rule(5, 13, df_nbp, 7, 6)
+    run_rule(5, 13, df_nbp, 8, 7)
+    run_rule(5, 13, df_nbp, 9, 8)
+    run_rule(5, 13, df_nbp, 10, 9)
+    run_rule(5, 13, df_nbp, 11, 10)
+    run_rule(5, 13, df_nbp, 12, 11)
+    run_rule(9, 13, df_nbp, 13, 12)
+    run_rule(9, 13, df_nbp, 14, 13)
+    run_rule(9, 13, df_nbp, 15, 14)
+    run_rule(9, 13, df_nbp, 16, 15)
+    run_rule(9, 13, df_nbp, 17, 16)
+    run_rule(9, 13, df_nbp, 18, 17)
+    run_rule(9, 13, df_nbp, 19, 18)
+    run_rule(9, 13, df_nbp, 20, 19)
+    run_rule(15, 17, df_nbp, 21, 20)
+    run_rule(15, 17, df_nbp, 22, 21)
+    run_rule(15, 17, df_nbp, 23, 22)
+    run_rule(15, 17, df_nbp, 24, 23)
+
+    run_rule(15, 17, df_nbp, 26, 25)
+    run_rule(15, 17, df_nbp, 27, 26)
+    run_rule(15, 17, df_nbp, 29, 28)
 
 
 if __name__ == "__main__":
