@@ -87,6 +87,7 @@ class MyDialog(QDialog):
         self.name = ""
         self.surname = ""
         self.enlarged = False  # track window state
+        self.current_tab = 0
 
         # Set the fixed size of the window
         self.setFixedSize(402, 528)
@@ -97,6 +98,9 @@ class MyDialog(QDialog):
         self.BPhone.clicked.connect(self.on_phone_apply_clicked)
         self.BEmail.clicked.connect(self.on_email_apply_clicked)
         self.Start.clicked.connect(self.on_start_clicked)
+
+        # Connect tabs
+        self.tabWidget.tabBarClicked.connect(lambda index: self.toggle_window_size(index, source='tabWidget'))
 
         # Set the password field to display asterisks
         self.TPassword.setEchoMode(QLineEdit.Password)
@@ -118,7 +122,7 @@ class MyDialog(QDialog):
         }
 
         # Connect the clicked signal of the toolbutton
-        self.toolButton.clicked.connect(self.toggle_window_size)
+        self.toolButton.clicked.connect(lambda: self.toggle_window_size(self.current_tab, source='toolButton'))
 
         # Create the logger object
         report_date = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -180,17 +184,51 @@ class MyDialog(QDialog):
         self.tableWidget_AR2.setColumnWidth(15, 70)
         self.tableWidget_AR2.setColumnWidth(16, 70)
 
+        for i in range(1, 8):
+            exec(f"""
+# Set default alignment for wrapped text in header
+for col in range(self.tableWidget_AR1_{i}.columnCount()):
+    header_item = self.tableWidget_AR1_{i}.horizontalHeaderItem(col)
+    if header_item:
+        header_item.setTextAlignment(Qt.AlignHCenter | Qt.TextWordWrap)
+
+# Enable word wrapping for all cells
+for row in range(self.tableWidget_AR1_{i}.rowCount()):
+    for col in range(self.tableWidget_AR2.columnCount()):
+        item = self.tableWidget_AR1_{i}.item(row, col)
+        if item:
+            item.setTextAlignment(Qt.AlignVCenter | Qt.TextWordWrap)
+            self.tableWidget_AR1_{i}.setItem(row, col, item)
+            if col > 1:  # Adjust the column index where alignment should be set
+                item.setTextAlignment(
+                    Qt.AlignVCenter | Qt.AlignHCenter)  # Align center for columns 2 and onward
+            
+self.tableWidget_AR1_{i}.setFixedSize(1072, 500)  # Adjust the values as needed
+self.tableWidget_AR1_{i}.setColumnWidth(0, 80)
+self.tableWidget_AR1_{i}.setColumnWidth(1, 200)
+self.tableWidget_AR1_{i}.setColumnWidth(1, 350)
+
+# Connect cell content change signal to row height adjustment
+self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
+""")
+
     def adjust_row_heights(self, row, col):
         # Adjust the row height based on the contents of the specified cell
         self.tableWidget_AR2.resizeRowToContents(row)
 
-    def toggle_window_size(self):
-        if self.enlarged:
+    def toggle_window_size(self, index, source):
+        if self.enlarged and source == "toolButton":
             self.setFixedSize(402, 528)  # Set your original size
             self.enlarged = False
         else:
-            self.setFixedSize(1975, 528)  # Set the enlarged size
-            self.enlarged = True
+            if index == 0:  # tab_AR2
+                self.setFixedSize(1975, 528)  # Set the enlarged size
+                self.current_tab = 0
+                self.enlarged = True
+            elif index == 1:  # tab_AR1
+                self.setFixedSize(1075, 528)  # Set the enlarged size
+                self.enlarged = True
+                self.current_tab = 1
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.KeyPress and obj in [self.TName, self.TSurname, self.TPhone, self.TEmail,
