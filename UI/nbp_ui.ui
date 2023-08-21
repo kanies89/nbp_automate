@@ -422,7 +422,7 @@
     <attribute name="title">
      <string>  AR2 - Tests according to &quot;Zestawy_reguł-AR2_v.1&quot;</string>
     </attribute>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="tableWidget_AR2">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -2520,7 +2520,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
     <attribute name="title">
      <string>AR1 - Tests according to &quot;BSP_SUG_KE_zał_1_AR_formST.w.8.7.5&quot;</string>
     </attribute>
-    <widget class="QTableWidget" name="tableWidget_2">
+    <widget class="QTableWidget" name="tableWidget_AR1">
      <property name="geometry">
       <rect>
        <x>0</x>
