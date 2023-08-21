@@ -567,8 +567,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
     content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
 
-    geo6 = pd.read_excel("C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\NBP_GEO6.xlsx",
-                         header=3)
+    geo6 = pd.read_excel("./Example/NBP_GEO6.xlsx", header=3)
 
     # devices that accept payment cards / Internet / cash back
     for k, country in enumerate(dataframe_3['CountryCode']):
