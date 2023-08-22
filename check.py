@@ -2469,17 +2469,206 @@ def rule_47_ar1(dataframe, sheet_number):
     results = []
 
     sheet = AR1_TO_CHECK[sheet_number]
-    rows = [39, 40]
+    rows = [38, 39]
 
     for c in range(4, 6):
         for i in range(len(rows)):
-            first_part = to_int(dataframe[sheet].iat[rows[39], c])
-            second_part = to_int(dataframe[sheet].iat[rows[40], c])
+            first_part = to_int(dataframe[sheet].iat[rows[0], c])
+            second_part = to_int(dataframe[sheet].iat[rows[1], c])
 
             if first_part >= second_part:
                 results.append([sheet, True])
             else:
                 results.append([sheet, False, c])
                 print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_06
+def rule_48_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 3]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '3.1'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 3.1 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 3].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_07
+def rule_49_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 3]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '3.1.1'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 3.1.1 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 4].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_08
+def rule_50_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 3]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '3.1.8'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 3.1.8 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 5].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_09
+def rule_51_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 2]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '6.1.1'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 6.1.1 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 6].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_10
+def rule_52_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 2]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '6.2'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 6.2 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 7].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_11
+def rule_53_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 2]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '6.2.1'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 6.2.1 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 8].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.04_12
+def rule_54_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number - 2]
+    df = dataframe[sheet]
+    try:
+        condition = df.iloc[:, 0] == '6.2.2'
+        ind = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - 6.2.2 - not found")
+
+    first_part = df.iat[ind, 6]
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    second_part = df.iloc[9:38, 9].sum()
+
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, 3])
+        print(first_part, '!=', second_part)
 
     return results
