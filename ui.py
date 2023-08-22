@@ -1,6 +1,6 @@
 import sys
 import datetime
-from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit
+from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot
 from PyQt5.QtGui import QColor
 from PyQt5.uic import loadUi
@@ -30,6 +30,13 @@ class CheckThread(QThread):
 
         # Emit the finished signal to indicate the completion
         self.finished.emit()
+
+        # Enable the toolButton
+        dialog.toolButton.setEnabled(True)
+        dialog.radioButton_check.setEnabled(True)
+        dialog.radioButton_prepare.setEnabled(True)
+        dialog.pushButton_openAR1.setEnabled(True)
+        dialog.pushButton_openAR2.setEnabled(True)
 
 
 class AutomationThread(QThread):
@@ -82,6 +89,8 @@ class MyDialog(QDialog):
 
         self.automation_thread = None
         self.check_thread = None
+        self.AR1 = None
+        self.AR2 = None
 
         self.setup_table()  # Call the method to set up the table
         self.name = ""
@@ -100,8 +109,11 @@ class MyDialog(QDialog):
         self.Start.clicked.connect(self.on_start_clicked)
 
         # Connect radio buttons
-        self.radioButton_check.clicked.connect(lambda index: self.radio_buttons(button='check'))
-        self.radioButton_prepare.clicked.connect(lambda index: self.radio_buttons(button='prepare'))
+        self.radioButton_check.clicked.connect(lambda button: self.radio_buttons(button='check'))
+        self.radioButton_prepare.clicked.connect(lambda button: self.radio_buttons(button='prepare'))
+
+        self.pushButton_openAR1.clicked.connect(lambda source: self.open_file_dialog(source='AR1'))
+        self.pushButton_openAR2.clicked.connect(lambda source: self.open_file_dialog(source='AR2'))
 
         # Connect tabs
         self.tabWidget.tabBarClicked.connect(lambda index: self.toggle_window_size(index, source='tabWidget'))
@@ -282,14 +294,6 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         self.TSurname.setEnabled(True)
         self.BSurname.setEnabled(True)
 
-        # Create the AutomationThread and start it
-        self.check_thread = CheckThread()
-        # self.automation_thread.progress_updated.connect(self.update_progress)
-        # self.automation_thread.finished.connect(self.on_automation_finished)
-
-        # Start the check thread
-        self.check_thread.start()
-
     def on_surname_apply_clicked(self):
         surname = self.TSurname.toPlainText()
         # Do something with the surname input
@@ -388,12 +392,45 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.radioButton_check.setChecked(False)
             self.TName.setEnabled(True)
             self.BName.setEnabled(True)
+            self.pushButton_openAR1.setEnabled(False)
+            self.pushButton_openAR2.setEnabled(False)
+            self.AR1 = None
+            self.AR2 = None
             self.toolButton.setEnabled(False)
+            self.enlarged = True
+            self.toggle_window_size(self.current_tab, source="toolButton")
+
         if button == 'check':
             self.radioButton_prepare.setChecked(False)
             self.TName.setEnabled(False)
             self.BName.setEnabled(False)
-            self.toolButton.setEnabled(True)
+            self.pushButton_openAR1.setEnabled(True)
+            self.pushButton_openAR2.setEnabled(True)
+            self.enlarged = True
+            self.toggle_window_size(self.current_tab, source="toolButton")
+
+    def open_file_dialog(self, source):
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+        file_name, _ = QFileDialog.getOpenFileName(self, "Open File", "", "All Files (*)", options=options)
+
+        if file_name:
+            if source == 'AR1':
+                self.AR1 = file_name
+            if source == 'AR2':
+                self.AR2 = file_name
+
+        if self.AR1 is not None and self.AR2 is not None:
+            self.pushButton_openAR1.setEnabled(False)
+            self.pushButton_openAR2.setEnabled(False)
+            self.radioButton_prepare.setEnabled(False)
+            # Create the AutomationThread and start it
+            self.check_thread = CheckThread()
+            # self.automation_thread.progress_updated.connect(self.update_progress)
+            # self.automation_thread.finished.connect(self.on_automation_finished)
+
+            # Start the check thread
+            self.check_thread.start()
 
 
 def run_rule_ar2(col_from, col_to, dataframe, rule_number, row):
@@ -430,7 +467,7 @@ def run_rule_ar1(col, dataframe, rule_number, row, sheet):
         raise ValueError(f"Rule {rule_function_name} not found or not callable")
 
     bool = True
-    results = rule_function(dataframe, col - 3)
+    results = rule_function(dataframe, sheet - 1)
 
     for result in results:
         if not result[1]:
@@ -464,53 +501,79 @@ def run_rule_ar1m(sheet_number, dataframe, rule_number, row):
 
 def perform_tests():
     date = check_quarter()
-    # path = f'EXAMPLE\\Filled\\' + f'BSP_AR2_v.4.0_Q{date[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
-    path = "C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\Filled\\BSP_AR2_v.4.0_Q12023_20230721-9RL-NO-ZEROS.xlsx"
+    if dialog.AR2 is None:
+        path_2 = f'EXAMPLE\\Filled\\' + f'BSP_AR2_v.4.0_Q{date[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
+    else:
+        path_2 = dialog.AR2
+
+    if dialog.AR1 is None:
+        path_1 = f'EXAMPLE\\Filled\\' + f'AR1 - Q{date[3]}.{datetime.date.today().strftime("%Y")}.xlsx'
+    else:
+        path_1 = dialog.AR1
+
     # Perform all the tests
-    df_nbp = pd.read_excel(path, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
+    df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
 
     # Call the function
-    run_rule_ar2(5, 13, df_nbp, 1, 0)
-    run_rule_ar2(5, 13, df_nbp, 2, 1)
-    run_rule_ar2(5, 13, df_nbp, 3, 2)
-    run_rule_ar2(5, 13, df_nbp, 4, 3)
-    run_rule_ar2(5, 13, df_nbp, 5, 4)
-    run_rule_ar2(5, 13, df_nbp, 6, 5)
-    run_rule_ar2(5, 13, df_nbp, 7, 6)
-    run_rule_ar2(5, 13, df_nbp, 8, 7)
-    run_rule_ar2(5, 13, df_nbp, 9, 8)
-    run_rule_ar2(5, 13, df_nbp, 10, 9)
-    run_rule_ar2(5, 13, df_nbp, 11, 10)
-    run_rule_ar2(5, 13, df_nbp, 12, 11)
-    run_rule_ar2(9, 13, df_nbp, 13, 12)
-    run_rule_ar2(9, 13, df_nbp, 14, 13)
-    run_rule_ar2(9, 13, df_nbp, 15, 14)
-    run_rule_ar2(9, 13, df_nbp, 16, 15)
-    run_rule_ar2(9, 13, df_nbp, 17, 16)
-    run_rule_ar2(9, 13, df_nbp, 18, 17)
-    run_rule_ar2(9, 13, df_nbp, 19, 18)
-    run_rule_ar2(9, 13, df_nbp, 20, 19)
-    run_rule_ar2(15, 17, df_nbp, 21, 20)
-    run_rule_ar2(15, 17, df_nbp, 22, 21)
-    run_rule_ar2(15, 17, df_nbp, 23, 22)
-    run_rule_ar2(15, 17, df_nbp, 24, 23)
+    run_rule_ar2(5, 13, df_nbp_2, 1, 0)
+    run_rule_ar2(5, 13, df_nbp_2, 2, 1)
+    run_rule_ar2(5, 13, df_nbp_2, 3, 2)
+    run_rule_ar2(5, 13, df_nbp_2, 4, 3)
+    run_rule_ar2(5, 13, df_nbp_2, 5, 4)
+    run_rule_ar2(5, 13, df_nbp_2, 6, 5)
+    run_rule_ar2(5, 13, df_nbp_2, 7, 6)
+    run_rule_ar2(5, 13, df_nbp_2, 8, 7)
+    run_rule_ar2(5, 13, df_nbp_2, 9, 8)
+    run_rule_ar2(5, 13, df_nbp_2, 10, 9)
+    run_rule_ar2(5, 13, df_nbp_2, 11, 10)
+    run_rule_ar2(5, 13, df_nbp_2, 12, 11)
+    run_rule_ar2(9, 13, df_nbp_2, 13, 12)
+    run_rule_ar2(9, 13, df_nbp_2, 14, 13)
+    run_rule_ar2(9, 13, df_nbp_2, 15, 14)
+    run_rule_ar2(9, 13, df_nbp_2, 16, 15)
+    run_rule_ar2(9, 13, df_nbp_2, 17, 16)
+    run_rule_ar2(9, 13, df_nbp_2, 18, 17)
+    run_rule_ar2(9, 13, df_nbp_2, 19, 18)
+    run_rule_ar2(9, 13, df_nbp_2, 20, 19)
+    run_rule_ar2(15, 17, df_nbp_2, 21, 20)
+    run_rule_ar2(15, 17, df_nbp_2, 22, 21)
+    run_rule_ar2(15, 17, df_nbp_2, 23, 22)
+    run_rule_ar2(15, 17, df_nbp_2, 24, 23)
 
-    run_rule_ar2(15, 17, df_nbp, 26, 25)
-    run_rule_ar2(15, 17, df_nbp, 27, 26)
-    run_rule_ar2(15, 17, df_nbp, 29, 28)
+    run_rule_ar2(15, 17, df_nbp_2, 26, 25)
+    run_rule_ar2(15, 17, df_nbp_2, 27, 26)
+    run_rule_ar2(15, 17, df_nbp_2, 29, 28)
 
-    # path = f'EXAMPLE\\Filled\\' + f'BSP_AR2_v.4.0_Q{date[3]}{datetime.date.today().strftime("%Y")}_{datetime.date.today().strftime("%Y%m%d")}.xlsx'
-    path = "C:\\Users\\Krzysztof kaniewski\\PycharmProjects\\pythonProject\\Example\\Filled\\AR1 - Q2.2023.xlsx"
     # Perform all the tests
-    df_nbp = pd.read_excel(path, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
+    df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
 
     # Call the function
-    run_rule_ar1m(0, df_nbp, 1, 0)
-    run_rule_ar1(3, df_nbp, 14, 13, 1)
-    run_rule_ar1(3, df_nbp, 15, 14, 1)
-    run_rule_ar1m(0, df_nbp, 2, 15)
-    run_rule_ar1(3, df_nbp, 29, 28, 1)
-    run_rule_ar1(3, df_nbp, 30, 29, 1)
+    # ST.01
+    run_rule_ar1m(0, df_nbp_1, 1, 0)
+    run_rule_ar1(3, df_nbp_1, 14, 13, 1)
+    run_rule_ar1(3, df_nbp_1, 15, 14, 1)
+    run_rule_ar1m(0, df_nbp_1, 2, 15)
+    run_rule_ar1(3, df_nbp_1, 29, 28, 1)
+    run_rule_ar1(3, df_nbp_1, 30, 29, 1)
+    # ST.02
+    run_rule_ar1(3, df_nbp_1, 31, 0, 2)
+    run_rule_ar1(3, df_nbp_1, 32, 1, 2)
+    run_rule_ar1(3, df_nbp_1, 33, 2, 2)
+    run_rule_ar1(3, df_nbp_1, 33, 3, 2)
+    run_rule_ar1(3, df_nbp_1, 34, 4, 2)
+    run_rule_ar1(3, df_nbp_1, 35, 5, 2)
+    run_rule_ar1(3, df_nbp_1, 36, 6, 2)
+    # ST.03
+    run_rule_ar1(3, df_nbp_1, 37, 0, 3)
+    run_rule_ar1(3, df_nbp_1, 38, 1, 3)
+    run_rule_ar1(3, df_nbp_1, 39, 2, 3)
+    run_rule_ar1(3, df_nbp_1, 40, 3, 3)
+    run_rule_ar1(3, df_nbp_1, 41, 4, 3)
+    run_rule_ar1(3, df_nbp_1, 42, 5, 3)
+    # ST.04
+    run_rule_ar1(3, df_nbp_1, 43, 0, 4)
+
+
 
 
 if __name__ == "__main__":
