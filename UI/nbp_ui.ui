@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1975</width>
-    <height>529</height>
+    <height>555</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -24,10 +24,38 @@
      <x>10</x>
      <y>10</y>
      <width>381</width>
-     <height>509</height>
+     <height>536</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QRadioButton" name="radioButton_prepare">
+        <property name="text">
+         <string>Prepare report</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_check">
+        <property name="text">
+         <string>Check existing report</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
     <item>
      <widget class="QLabel" name="label_8">
       <property name="enabled">
@@ -387,6 +415,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QToolButton" name="toolButton">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>...</string>
         </property>
@@ -410,7 +441,7 @@
    <property name="geometry">
     <rect>
      <x>400</x>
-     <y>0</y>
+     <y>20</y>
      <width>1571</width>
      <height>521</height>
     </rect>
@@ -428,7 +459,7 @@
        <x>0</x>
        <y>0</y>
        <width>1571</width>
-       <height>491</height>
+       <height>501</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -2554,7 +2585,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
             <x>0</x>
             <y>0</y>
             <width>641</width>
-            <height>481</height>
+            <height>471</height>
            </rect>
           </property>
           <property name="verticalScrollBarPolicy">

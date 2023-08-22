@@ -90,7 +90,7 @@ class MyDialog(QDialog):
         self.current_tab = 0
 
         # Set the fixed size of the window
-        self.setFixedSize(402, 528)
+        self.setFixedSize(402, 555)
 
         # Connect the "Apply" buttons click events to their functions
         self.BName.clicked.connect(self.on_name_apply_clicked)
@@ -98,6 +98,10 @@ class MyDialog(QDialog):
         self.BPhone.clicked.connect(self.on_phone_apply_clicked)
         self.BEmail.clicked.connect(self.on_email_apply_clicked)
         self.Start.clicked.connect(self.on_start_clicked)
+
+        # Connect radio buttons
+        self.radioButton_check.clicked.connect(lambda index: self.radio_buttons(button='check'))
+        self.radioButton_prepare.clicked.connect(lambda index: self.radio_buttons(button='prepare'))
 
         # Connect tabs
         self.tabWidget.tabBarClicked.connect(lambda index: self.toggle_window_size(index, source='tabWidget'))
@@ -233,15 +237,15 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
     def toggle_window_size(self, index, source):
         if self.enlarged and source == "toolButton":
-            self.setFixedSize(402, 528)  # Set your original size
+            self.setFixedSize(402, 555)  # Set your original size
             self.enlarged = False
         else:
             if index == 0:  # tab_AR2
-                self.setFixedSize(1975, 528)  # Set the enlarged size
+                self.setFixedSize(1975, 555)  # Set the enlarged size
                 self.current_tab = 0
                 self.enlarged = True
             elif index == 1:  # tab_AR1
-                self.setFixedSize(1075, 528)  # Set the enlarged size
+                self.setFixedSize(1075, 555)  # Set the enlarged size
                 self.enlarged = True
                 self.current_tab = 1
 
@@ -379,6 +383,18 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         # Save the logs to the log file
         self.save_logs()
 
+    def radio_buttons(self, button):
+        if button == 'prepare':
+            self.radioButton_check.setChecked(False)
+            self.TName.setEnabled(True)
+            self.BName.setEnabled(True)
+            self.toolButton.setEnabled(False)
+        if button == 'check':
+            self.radioButton_prepare.setChecked(False)
+            self.TName.setEnabled(False)
+            self.BName.setEnabled(False)
+            self.toolButton.setEnabled(True)
+
 
 def run_rule_ar2(col_from, col_to, dataframe, rule_number, row):
     rule_module = importlib.import_module('check')
@@ -425,7 +441,7 @@ def run_rule_ar1(col, dataframe, rule_number, row, sheet):
             dialog.change_cell_background(row, col, 50, 205, 50, f'AR1-ST.0{sheet}')
 
 
-def run_rule_ar1m(col, dataframe, rule_number, row):
+def run_rule_ar1m(sheet_number, dataframe, rule_number, row):
     rule_module = importlib.import_module('check')
     rule_function_name = f'rule_{rule_number}_ar1'
     rule_function = getattr(rule_module, rule_function_name, None)
@@ -434,16 +450,16 @@ def run_rule_ar1m(col, dataframe, rule_number, row):
         raise ValueError(f"Rule {rule_function_name} not found or not callable")
 
     bool = True
-    results = rule_function(dataframe, col - 3)
+    results = rule_function(dataframe, sheet_number)
 
     for r, result in enumerate(results):
         for data in result:
             if not data[1]:
-                dialog.change_cell_background(row + r, col, 255, 0, 0, f'AR1-ST.0{rule_number}')
-                dialog.append_text_to_cell(row + r, col, f'; Error in column: {data[2]}; ', f'AR1-ST.0{rule_number}')
+                dialog.change_cell_background(row + r, sheet_number + 3, 255, 0, 0, f'AR1-ST.0{sheet_number + 1}')
+                dialog.append_text_to_cell(row + r, sheet_number + 3, f'; Error in column: {data[2]}; ', f'AR1-ST.0{sheet_number + 1}')
                 bool = False
             if data[1] and bool:
-                dialog.change_cell_background(row + r, col, 50, 205, 50, f'AR1-ST.0{rule_number}')
+                dialog.change_cell_background(row + r, sheet_number + 3, 50, 205, 50, f'AR1-ST.0{sheet_number + 1}')
 
 
 def perform_tests():
@@ -489,10 +505,12 @@ def perform_tests():
     df_nbp = pd.read_excel(path, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
 
     # Call the function
-    run_rule_ar1m(3, df_nbp, 1, 0)
+    run_rule_ar1m(0, df_nbp, 1, 0)
     run_rule_ar1(3, df_nbp, 14, 13, 1)
     run_rule_ar1(3, df_nbp, 15, 14, 1)
-    run_rule_ar1(3, df_nbp, 16, 15, 1)
+    run_rule_ar1m(0, df_nbp, 2, 15)
+    run_rule_ar1(3, df_nbp, 29, 28, 1)
+    run_rule_ar1(3, df_nbp, 30, 29, 1)
 
 
 if __name__ == "__main__":
