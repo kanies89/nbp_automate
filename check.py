@@ -1503,23 +1503,23 @@ def to_int(value):
         return None  # Handle the case where the conversion fails
 
 
-first = ['1.1.1', '1.1.2', '1.2.1', '2.1.1', '2.1.2', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7',
+first_1 = ['1.1.1', '1.1.2', '1.2.1', '2.1.1', '2.1.2', '3.1.1', '3.1.2', '3.1.3', '3.1.4', '3.1.5', '3.1.6', '3.1.7',
          '3.1.8']
-second = ['1.1', '1.1', '1.2', '2.1', '2.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1']
+second_1 = ['1.1', '1.1', '1.2', '2.1', '2.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1', '3.1']
 
 
 def rule_1_ar1(dataframe, sheet_number):
     rules = []
-    for i in range(13):
-        rules.append(rule_1_13_ar1(dataframe, sheet_number, i))
+    for i in range(len(first_1)):
+        rules.append(rule_1_13_ar1(dataframe, sheet_number, i, first_1, second_1))
     return rules
 
 
 # RW_ST.01_01 till RW_ST.01_13
-def rule_1_13_ar1(dataframe, sheet_number, k):
+def rule_1_13_ar1(dataframe, sheet_number, k, first, second):
     results = []
+    print(k)
     sheet = AR1_TO_CHECK[sheet_number]
-
     df = dataframe[sheet]
     try:
         rows_1 = []
@@ -1527,7 +1527,7 @@ def rule_1_13_ar1(dataframe, sheet_number, k):
         index = condition[condition].index[0]
         rows_1.append(index)
 
-    except KeyError:
+    except IndexError:
         print(f"Row - {first[k]} - not found")
 
     try:
@@ -1536,7 +1536,7 @@ def rule_1_13_ar1(dataframe, sheet_number, k):
         index = condition[condition].index[0]
         rows_2.append(index)
 
-    except KeyError:
+    except IndexError:
         print(f"Row - {second[k]} - not found")
 
     columns_number = dataframe[sheet].shape[1]
@@ -1573,7 +1573,7 @@ def rule_14_ar1(dataframe, sheet_number):
         index = condition[condition].index[0]
         rows_1.append(index)
 
-    except KeyError:
+    except IndexError:
         print(f"Row - 3.1 - not found")
 
     sheet = AR1_TO_CHECK[sheet_number + 2]
@@ -1584,7 +1584,7 @@ def rule_14_ar1(dataframe, sheet_number):
         index = condition[condition].index[0]
         rows_2.append(index)
 
-    except KeyError:
+    except IndexError:
         print(f"Row - not found")
 
     for c in [5]:
@@ -1620,13 +1620,13 @@ def rule_15_ar1(dataframe, sheet_number):
         index = condition[condition].index[0]
         rows_1.append(index)
 
-    except KeyError:
+    except IndexError:
         print(f"Row - 3.1 - not found")
 
     try:
         rows_2 = range(9, 40)
 
-    except KeyError:
+    except IndexError:
         print(f"Row - not found")
 
     for c in [6]:
@@ -1651,45 +1651,146 @@ def rule_15_ar1(dataframe, sheet_number):
     return results
 
 
-# RW_ST.01_16
-def rule_16_ar1(dataframe, sheet_number):
-    results = []
-    sheet = AR1_TO_CHECK[sheet_number]
+first_2 = [('1.1', 5), ('1.1', 6), ('1.2', 5), ('1.2', 6), ('1.2.1', 5), ('1.2.1', 6), ('2.1', 5), ('2.1', 6), ('2.1.1', 5), ('2.1.1', 6), ('2.2', 5), ('2.2', 6), ('3.1', 6)]
+second_2 = [('7.1', 5), ('7.1', 6), ('7.2', 5), ('7.2', 6), ('7.2.2', 5), ('7.2.2', 6), ('8.1', 5), ('8.1', 6), ('8.1.1', 5), ('8.1.1', 6), ('8.2', 5), ('8.2', 6), ('9.1', 6)]
 
+
+def rule_2_ar1(dataframe, sheet_number):
+    rules = []
+    for i in range(len(first_2)):
+        rules.append(rule_16_28_ar1(dataframe, sheet_number, i, first_2, second_2))
+    return rules
+
+
+# RW_ST.01_16 till RW_ST.01_28
+def rule_16_28_ar1(dataframe, sheet_number, k, first, second):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '1.1'
+        condition = df.iloc[:, 0] == first[k][0]
         index = condition[condition].index[0]
         rows_1.append(index)
 
-    except KeyError:
-        print(f"Row - 3.1 - not found")
+    except IndexError:
+        print(f"Row - {first[k][0]} - not found")
 
     sheet = AR1_TO_CHECK[sheet_number + 2]
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '7.1'
+        condition = df.iloc[:, 0] == second[k][0]
         index = condition[condition].index[0]
         rows_2.append(index)
 
-    except KeyError:
+    except IndexError:
+        print(f"Row - {second[k][0]} - not found")
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    for c in [first[k][1]]:
+        value_sum_1 = 0
+        for i in range(len(rows_1)):
+            value_sum_1 += to_int(df.iat[rows_1[i], c])
+        first_part = value_sum_1
+
+    sheet = AR1_TO_CHECK[sheet_number + 2]
+    df = dataframe[sheet]
+    for c in [second[k][1]]:
+        value_sum_2 = 0
+        for i in range(len(rows_2)):
+            value_sum_2 += to_int(df.iat[rows_2[i], c])
+        second_part = value_sum_2
+
+    if first_part <= second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, c])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.01_29
+def rule_29_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        rows_1 = []
+        condition = df.iloc[:, 0] == '3.1'
+        index = condition[condition].index[0]
+        rows_1.append(index)
+
+    except IndexError:
+        print(f"Row - 3.1 - not found")
+
+    try:
+        rows_2 = range(9, 40)
+
+    except IndexError:
         print(f"Row - not found")
 
-    for c in [5]:
+    for c in [6]:
         value_sum_1 = 0
         for i in range(len(rows_1)):
             value_sum_1 += to_int(dataframe[sheet].iat[rows_1[i], c])
         first_part = value_sum_1
 
+    for c in [4]:
         sheet = AR1_TO_CHECK[sheet_number + 3]
         value_sum_2 = 0
-        for i in range(len(rows_1)):
+        for i in range(len(rows_2)):
             value_sum_2 += to_int(dataframe[sheet].iat[rows_2[i], c])
         second_part = value_sum_2
 
-    if first_part <= second_part:
+    if first_part == second_part:
+        results.append([sheet, True])
+    else:
+        results.append([sheet, False, c])
+        print(first_part, '!=', second_part)
+
+    return results
+
+
+# RW_ST.01_30
+def rule_30_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        rows_1 = []
+        condition = df.iloc[:, 0] == '3.1'
+        index = condition[condition].index[0]
+        rows_1.append(index)
+
+    except IndexError:
+        print(f"Row - 3.1 - not found")
+
+    try:
+        rows_2 = range(9, 40)
+
+    except IndexError:
+        print(f"Row - not found")
+
+    for c in [6]:
+        value_sum_1 = 0
+        for i in range(len(rows_1)):
+            value_sum_1 += to_int(dataframe[sheet].iat[rows_1[i], c])
+        first_part = value_sum_1
+
+    for c in [5]:
+        sheet = AR1_TO_CHECK[sheet_number + 3]
+        value_sum_2 = 0
+        for i in range(len(rows_2)):
+            value_sum_2 += to_int(dataframe[sheet].iat[rows_2[i], c])
+        second_part = value_sum_2
+
+    if first_part == second_part:
         results.append([sheet, True])
     else:
         results.append([sheet, False, c])
