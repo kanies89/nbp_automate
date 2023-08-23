@@ -583,6 +583,24 @@ def perform_tests():
     run_rule_ar1(3, df_nbp_1, 52, 9, 4)
     run_rule_ar1(3, df_nbp_1, 53, 10, 4)
     run_rule_ar1(3, df_nbp_1, 54, 11, 4)
+    # ST.05
+    run_rule_ar1(3, df_nbp_1, 55, 0, 5)
+    run_rule_ar1(3, df_nbp_1, 56, 1, 5)
+    run_rule_ar1(3, df_nbp_1, 57, 2, 5)
+    run_rule_ar1(3, df_nbp_1, 58, 3, 5)
+    run_rule_ar1(3, df_nbp_1, 59, 4, 5)
+    run_rule_ar1(3, df_nbp_1, 60, 5, 5)
+    run_rule_ar1(3, df_nbp_1, 61, 6, 5)
+    # ST.06
+    run_rule_ar1(3, df_nbp_1, 62, 1, 6)
+    # ST.07
+    run_rule_ar1(3, df_nbp_1, 63, 0, 7)
+    run_rule_ar1(3, df_nbp_1, 64, 1, 7)
+    run_rule_ar1(3, df_nbp_1, 65, 2, 7)
+    run_rule_ar1(3, df_nbp_1, 66, 3, 7)
+    run_rule_ar1(3, df_nbp_1, 67, 4, 7)
+    run_rule_ar1(3, df_nbp_1, 68, 5, 7)
+    run_rule_ar1(3, df_nbp_1, 69, 6, 7)
 
 
 if __name__ == "__main__":

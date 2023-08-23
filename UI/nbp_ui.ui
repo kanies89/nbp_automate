@@ -4365,6 +4365,11 @@ suma poz. w kol. &quot;M202 - Wartość operacji w sieci akceptacji na terytoriu
             <string>1</string>
            </property>
           </row>
+          <row>
+           <property name="text">
+            <string/>
+           </property>
+          </row>
           <column>
            <property name="text">
             <string>Identyfikator reguły</string>

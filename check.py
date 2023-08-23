@@ -2672,3 +2672,537 @@ def rule_54_ar1(dataframe, sheet_number):
         print(first_part, '!=', second_part)
 
     return results
+
+
+# RW_ST.05_01
+def rule_55_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '11.1.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    try:
+        looking_for = '11.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_2 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(9, columns_number):
+        first_part = df.iat[ind_1, c]
+        second_part = df.iat[ind_2, c]
+
+        if first_part <= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, c])
+            print(first_part, '<=', second_part)
+
+    return results
+
+
+# RW_ST.05_02
+def rule_56_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '11.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    c = [9, 13]
+
+    for rows in range(ind_1, df.shape[0]):
+        first_part = to_int(dataframe[sheet].iat[rows, c[0]])
+        second_part = to_int(dataframe[sheet].iat[rows, c[1]])
+
+        if first_part >= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, (rows, c[0])])
+            print(first_part, '>=', second_part)
+
+    return results
+
+
+# RW_ST.05_03
+def rule_57_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '11.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    c = [10, 14]
+
+    for rows in range(ind_1, df.shape[0]):
+        first_part = to_int(dataframe[sheet].iat[rows, c[0]])
+        second_part = to_int(dataframe[sheet].iat[rows, c[1]])
+
+        if first_part >= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, (rows, c[0])])
+            print(first_part, '>=', second_part)
+
+    return results
+
+
+# RW_ST.05_04
+def rule_58_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '11.2.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    try:
+        looking_for = '11.2.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_2 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(9, columns_number):
+        first_part = df.iat[ind_1, c]
+        second_part = df.iat[ind_2, c]
+
+        if first_part <= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, c])
+            print(first_part, '<=', second_part)
+
+    return results
+
+
+# RW_ST.05_05
+def rule_59_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '11.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    c = [11, 15]
+
+    for rows in range(ind_1, df.shape[0]):
+        first_part = to_int(dataframe[sheet].iat[rows, c[0]])
+        second_part = to_int(dataframe[sheet].iat[rows, c[1]])
+
+        if first_part >= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, (rows, c[0])])
+            print(first_part, '>=', second_part)
+
+    return results
+
+
+# RW_ST.05_06
+def rule_60_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '11.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    c = [12, 16]
+
+    for rows in range(ind_1, df.shape[0]):
+        first_part = to_int(dataframe[sheet].iat[rows, c[0]])
+        second_part = to_int(dataframe[sheet].iat[rows, c[1]])
+
+        if first_part >= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, (rows, c[0])])
+            print(first_part, '>=', second_part)
+
+    return results
+
+
+# RW_ST.05_07
+def rule_61_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '12.1.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    try:
+        looking_for = '12.1'
+        condition = df.iloc[:, 0] == looking_for
+        ind_2 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(9, columns_number):
+        first_part = df.iat[ind_1, c]
+        second_part = df.iat[ind_2, c]
+
+        if first_part <= second_part:
+            results.append([sheet, True])
+        else:
+            results.append([sheet, False, c])
+            print(first_part, '<=', second_part)
+
+    return results
+
+
+# RW_ST.06_01
+def rule_62_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = 'SE'
+        condition = df.iloc[:, 0] == looking_for
+        ind_1 = condition[condition].index[0] + 1
+    except IndexError:
+        print(f"Row - {looking_for} + 1 - not found")
+
+    try:
+        looking_for = 'GB'
+        condition = df.iloc[:, 0] == looking_for
+        ind_2 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    rows_number = df.shape[0]
+    for c in range(9, columns_number):
+        first_part = df.iat[ind_1, c]
+        sum_values = []
+        for row in range(ind_2, rows_number):
+            sum_values.append(df.iat[row, c])
+
+        second_part = sum_values.sum()
+
+        if first_part == second_part:
+            results.append([sheet, True])
+            print('RW_ST.06_01', first_part, '==', second_part)
+        else:
+            results.append([sheet, False, c])
+            print('RW_ST.06_01', first_part, '==', second_part)
+
+    return results
+
+
+# RW_ST.07_01
+def rule_63_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.1'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.1.1', '17.1.2', '17.1.3']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part == second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_01", first_part, '==', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_01", first_part, '==', second_part)
+
+    return results
+
+
+# RW_ST.07_03
+def rule_64_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.1.1'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.1.1.1', '17.1.1.2']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part == second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_03", first_part, '==', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_03", first_part, '==', second_part)
+
+    return results
+
+
+# RW_ST.07_04
+def rule_65_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.1.1.1.1'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.1.1.1']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part <= second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_04", first_part, '<=', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_04", first_part, '<=', second_part)
+
+    return results
+
+
+# RW_ST.07_06
+def rule_66_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.1.1.3.1'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.1.1']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part <= second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_06", first_part, '<=', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_06", first_part, '<=', second_part)
+
+    return results
+
+
+# RW_ST.07_04
+def rule_67_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.1.2'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.1.2.1', '17.1.2.2']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part == second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_04", first_part, '==', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_04", first_part, '==', second_part)
+
+    return results
+
+
+# RW_ST.07_07
+def rule_68_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.1.2.3.1'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.1.2']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part <= second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_07", first_part, '==', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_07", first_part, '<=', second_part)
+
+    return results
+
+
+# RW_ST.07_02
+def rule_69_ar1(dataframe, sheet_number):
+    results = []
+
+    sheet = AR1_TO_CHECK[sheet_number]
+    df = dataframe[sheet]
+    try:
+        looking_for = '17.2'
+        condition = df.iloc[:, 1] == looking_for
+        ind_1 = condition[condition].index[0]
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    ind_2 = []
+    r_names = ['17.2.1', '17.2.2', '17.2.3']
+    try:
+        for r_name in r_names:
+            looking_for = r_name
+            condition = df.iloc[:, 1] == looking_for
+            ind_2.append(condition[condition].index[0])
+    except IndexError:
+        print(f"Row - {looking_for} - not found")
+
+    columns_number = df.shape[1]
+    for c in range(3, columns_number):
+        first_part = to_int(df.iat[ind_1, c])
+        sum_value = 0
+        for ind in ind_2:
+            sum_value += to_int(df.iat[ind, c])
+        second_part = sum_value
+        if first_part == second_part:
+            results.append([sheet, True])
+            print("RW_ST.07_02", first_part, '==', second_part)
+        else:
+            results.append([sheet, False, c])
+            print("RW_ST.07_02", first_part, '==', second_part)
+
+    return results
