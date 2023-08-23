@@ -283,6 +283,90 @@ def prepare_data_ar2(user, passw, progress_callback=None):
         i = 0
         j += 1
 
+    # PCP_006
+    for c in range(3, df_nbp_2[sheet].shape[1]):
+        try:
+            condition = df_nbp_2[sheet][9:, 0] == "8.1.2.1.2.1.2.2"
+            row_1 = condition[condition].index[0]
+            rows = []
+            for i in range(2, 6):
+                condition = df_nbp_2[sheet][9:, 0] == f"8.1.2.1.3.{i}"
+                rows.append(condition[condition].index[0])
+
+        except IndexError:
+            print('Not found')
+
+        sum_values = 0
+        for row in rows:
+            sum_values += row
+
+        df_nbp_2[sheet][c].iloc[row_1] = sum_values
+
+    # PCP_099
+    df = df_fraud
+    grouped_df = df.groupby(['podział NBP', 'FT description', 'tr_sink_node', 'czy_SCA']).agg(
+        {'ARN': 'count', 'tr_amout': 'sum'})
+
+    # Rename the 'quarter' column to 'quarter count' to reflect the count of quarters
+    grouped_df = grouped_df.rename(columns={'ARN': 'count'})
+    # Extract the unique values from the 'podział NBP' column
+    try:
+        for v in range(grouped_df.shape[0]):
+            country = grouped_df.index[v][0]
+            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            reason = grouped_df.index[v][1]
+            sca = grouped_df.index[v][3]
+
+        if reason == 'Zgubienie lub kradzież karty':
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.1'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.1'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        elif reason == 'Nieodebrana karta':
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        elif reason == 'Karta sfałszowana':
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.3'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.3'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        # 8.1.2.1.2.1.2.1.2 and 8.1.2.1.2.1.2.2.2
+        elif "Manipulation" in reason:
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        # 8.1.2.1.2.1.2.1.1.4 and 8.1.2.1.2.1.2.2.1.4
+        else:
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.4'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.1.4'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+    except IndexError:
+        print('IndexError in PCP_099')
+
     sheet = '5a.R.WF_PLiW2'
 
     j = 0
@@ -300,6 +384,90 @@ def prepare_data_ar2(user, passw, progress_callback=None):
             i += 1
         i = 0
         j += 1
+
+    # PCP_006
+    for c in range(3, df_nbp_2[sheet].shape[1]):
+        try:
+            condition = df_nbp_2[sheet][9:, 0] == "8.1.2.1.2.1.2.2"
+            row_1 = condition[condition].index[0]
+            rows = []
+            for i in range(2, 6):
+                condition = df_nbp_2[sheet][9:, 0] == f"8.1.2.1.3.{i}"
+                rows.append(condition[condition].index[0])
+
+        except IndexError:
+            print('Not found')
+
+        sum_values = 0
+        for row in rows:
+            sum_values += row
+
+        df_nbp_2[sheet][c].iloc[row_1] = sum_values
+
+    # PCP_099
+    df = df_fraud
+    grouped_df = df.groupby(['podział NBP', 'FT description', 'tr_sink_node', 'czy_SCA']).agg(
+        {'ARN': 'count', 'tr_amout': 'sum'})
+
+    # Rename the 'quarter' column to 'quarter count' to reflect the count of quarters
+    grouped_df = grouped_df.rename(columns={'ARN': 'count'})
+    # Extract the unique values from the 'podział NBP' column
+    try:
+        for v in range(grouped_df.shape[0]):
+            country = grouped_df.index[v][0]
+            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+            reason = grouped_df.index[v][1]
+            sca = grouped_df.index[v][3]
+
+        if reason == 'Zgubienie lub kradzież karty':
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.1'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.1'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        elif reason == 'Nieodebrana karta':
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        elif reason == 'Karta sfałszowana':
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.3'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.3'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        # 8.1.2.1.2.1.2.1.2 and 8.1.2.1.2.1.2.2.2
+        elif "Manipulation" in reason:
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.2'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+        # 8.1.2.1.2.1.2.1.1.4 and 8.1.2.1.2.1.2.2.1.4
+        else:
+            if sca == 'non_SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.4'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
+            elif sca == 'SCA':
+                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.1.4'
+                row = condition[condition].index[0]
+                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
+    except IndexError:
+        print('IndexError in PCP_099')
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
