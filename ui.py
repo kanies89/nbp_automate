@@ -69,6 +69,9 @@ class AutomationThread(QThread):
         # Emit the finished signal to indicate the completion
         self.finished.emit()
 
+        # Enable the toolButton
+        dialog.toolButton.setEnabled(True)
+
 
 class MyDialog(QDialog):
     editing_finished = pyqtSignal()
@@ -331,29 +334,35 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         self.PasswordText.setText(user_text)
 
     def on_start_clicked(self):
-        password = self.TPassword.text()  # Use text() method instead of toPlainText()
+        if self.Start.text() == 'Start':
+            password = self.TPassword.text()  # Use text() method instead of toPlainText()
 
-        # Disable the current input field and enable the "Start" button
-        self.TPassword.setEnabled(False)
-        self.Start.setEnabled(False)
-        self.progressBar.setEnabled(True)
+            self.Start.text() == 'Exit'
 
-        # Get the input values from other fields
-        name = self.TName.toPlainText()  # Use toPlainText() for QTextEdit
-        surname = self.TSurname.toPlainText()  # Use toPlainText() for QTextEdit
-        phone = self.TPhone.toPlainText()  # Use toPlainText() for QTextEdit
-        email = self.TEmail.toPlainText()  # Use toPlainText() for QTextEdit
+            # Disable the current input field and enable the "Start" button
+            self.TPassword.setEnabled(False)
+            self.Start.setEnabled(False)
+            self.progressBar.setEnabled(True)
 
-        # Create the AutomationThread and start it
-        self.automation_thread = AutomationThread(name, surname, phone, email, password)
-        self.automation_thread.progress_updated.connect(self.update_progress)
-        self.automation_thread.finished.connect(self.on_automation_finished)
+            # Get the input values from other fields
+            name = self.TName.toPlainText()  # Use toPlainText() for QTextEdit
+            surname = self.TSurname.toPlainText()  # Use toPlainText() for QTextEdit
+            phone = self.TPhone.toPlainText()  # Use toPlainText() for QTextEdit
+            email = self.TEmail.toPlainText()  # Use toPlainText() for QTextEdit
 
-        # Connect the log_updated signal to the logger.log_updated signal
-        self.automation_thread.log_updated.connect(self.logger.log_updated)
+            # Create the AutomationThread and start it
+            self.automation_thread = AutomationThread(name, surname, phone, email, password)
+            self.automation_thread.progress_updated.connect(self.update_progress)
+            self.automation_thread.finished.connect(self.on_automation_finished)
 
-        # Start the automation thread
-        self.automation_thread.start()
+            # Connect the log_updated signal to the logger.log_updated signal
+            self.automation_thread.log_updated.connect(self.logger.log_updated)
+
+            # Start the automation thread
+            self.automation_thread.start()
+
+        elif self.Start.text() == 'Exit':
+            QApplication.quit()
 
     def update_progress(self, progress):
         # Update the progress bar
@@ -384,6 +393,7 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
     def on_automation_finished(self):
         # Enable the "Start" button when the automation is finished
         self.Start.setEnabled(True)
+        self.Start.setText("Exit")
         # Save the logs to the log file
         self.save_logs()
 

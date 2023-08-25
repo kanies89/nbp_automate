@@ -19,6 +19,7 @@ from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_r
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 from PyQt5.QtCore import pyqtSignal, QObject
+from check import to_float
 
 bug_table = []
 
@@ -160,6 +161,8 @@ def load_or_query(length, name, temp_table, query):
 
 def prepare_data_ar2(user, passw, progress_callback=None):
     # 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+    global visa, mastercard
+
     print('4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW')
 
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
@@ -266,218 +269,160 @@ def prepare_data_ar2(user, passw, progress_callback=None):
     if progress_callback:
         progress_callback(43)
 
-    sheet = '5a.R.LF_PLiW2'
+    # Make pivot table
+    df_fraud['country_aggr'] = df_fraud['country'].apply(lambda u: aggr_country(u))
 
-    j = 0
-    i = 0
-    for n in range(0, len(dataframe_2)):
-        for country in dataframe_2[n]['code']:
-            try:
-                col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', dataframe_2[dataframe_2['code'] == country]])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
-            df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
-            i += 1
+    path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
+    df_fraud.to_csv(path_df + 'df_fraud.csv')
+
+    sheets = ['5a.R.LF_PLiW2', '5a.R.WF_PLiW2']
+    for sheet in sheets:
+        j = 0
         i = 0
-        j += 1
+        for n in range(0, len(dataframe_2) - 2): # @TODO:CHECK
+            for country in dataframe_2[n]['code']:
+                try:
+                    col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
+                except KeyError:
+                    bug_table.append([f'BUG_{sheet}', dataframe_2[dataframe_2['code'] == country]])
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
+                if sheet == '5a.R.LF_PLiW2':
+                    df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['ilosc'].iloc[i]
+                else:
+                    df_nbp_2[sheet][col].iloc[AR2_5_row_1[j]] = dataframe_2[n]['wartosc'].iloc[i]
+                i += 1
+            i = 0
+            j += 1
 
-    # PCP_006
-    for c in range(3, df_nbp_2[sheet].shape[1]):
-        try:
-            condition = df_nbp_2[sheet][9:, 0] == "8.1.2.1.2.1.2.2"
-            row_1 = condition[condition].index[0]
-            rows = []
-            for i in range(2, 6):
-                condition = df_nbp_2[sheet][9:, 0] == f"8.1.2.1.3.{i}"
-                rows.append(condition[condition].index[0])
+        # PCP_099
+        df = df_fraud
+        for v in range(df.shape[0]):
+            country = df['podział NBP'].iloc[v]
+            reason = df['FT description'].iloc[v]
+            visa_or_master = df['tr_sink_node'].iloc[v]
+            sca = df['czy_SCA'].iloc[v]
+            tr_amount = df['tr_amout'].iloc[v]
+            pos_entry_mode = df['pos_entry_mode'].iloc[v]
 
-        except IndexError:
-            print('Not found')
-
-        sum_values = 0
-        for row in rows:
-            sum_values += row
-
-        df_nbp_2[sheet][c].iloc[row_1] = sum_values
-
-    # PCP_099
-    df = df_fraud
-    grouped_df = df.groupby(['podział NBP', 'FT description', 'tr_sink_node', 'czy_SCA']).agg(
-        {'ARN': 'count', 'tr_amout': 'sum'})
-
-    # Rename the 'quarter' column to 'quarter count' to reflect the count of quarters
-    grouped_df = grouped_df.rename(columns={'ARN': 'count'})
-    # Extract the unique values from the 'podział NBP' column
-    try:
-        for v in range(grouped_df.shape[0]):
-            country = grouped_df.index[v][0]
             col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
-            reason = grouped_df.index[v][1]
-            sca = grouped_df.index[v][3]
 
-        if reason == 'Zgubienie lub kradzież karty':
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.1'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.1'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        elif reason == 'Nieodebrana karta':
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        elif reason == 'Karta sfałszowana':
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.3'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.3'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        # 8.1.2.1.2.1.2.1.2 and 8.1.2.1.2.1.2.2.2
-        elif "Manipulation" in reason:
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        # 8.1.2.1.2.1.2.1.1.4 and 8.1.2.1.2.1.2.2.1.4
-        else:
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.4'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.1.4'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-    except IndexError:
-        print('IndexError in PCP_099')
+            visa = [['8.1.2.1.2.1.2.1.1.1', '8.1.2.1.2.1.2.1.1.2', '8.1.2.1.2.1.2.1.1.3', '8.1.2.1.2.1.2.1.2', '8.1.2.1.2.1.2.1.1.4', '8.1.2.1.2.1.2.1.1', '8.1.2.1.2.1.2.1'],
+                    ['8.1.2.1.2.1.2.2.1.1', '8.1.2.1.2.1.2.2.1.2', '8.1.2.1.2.1.2.2.1.3', '8.1.2.1.2.1.2.2.2', '8.1.2.1.2.1.2.2.1.4', '8.1.2.1.2.1.2.2.1', '8.1.2.1.2.1.2.2']]
+            mastercard = [['8.1.2.1.2.2.2.1.1.1', '8.1.2.1.2.2.2.1.1.2', '8.1.2.1.2.2.2.1.1.3', '8.1.2.1.2.2.2.1.2', '8.1.2.1.2.2.2.1.1.4', '8.1.2.1.2.2.2.1.1', '8.1.2.1.2.2.2.1'],
+                          ['8.1.2.1.2.2.2.2.1.1', '8.1.2.1.2.2.2.2.1.2', '8.1.2.1.2.2.2.2.1.3', '8.1.2.1.2.2.2.2.2', '8.1.2.1.2.2.2.2.1.4', '8.1.2.1.2.2.2.2.1', '8.1.2.1.2.2.2.2']]
 
-    sheet = '5a.R.WF_PLiW2'
+            if visa_or_master == 'SN-Visa':
+                looking_for = visa
+                s = 0
+            elif visa_or_master == 'SN-MasterC':
+                looking_for = mastercard
+                s = 1
 
-    j = 0
-    i = 0
-    for n in range(0, len(dataframe_2)):
-        for country in dataframe_2[n]['code']:
-            try:
-                col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', dataframe_2[dataframe_2['code'] == country]])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_2[dataframe_2['code'] == country]}")
+            if sca == 'SCA':
+                x = 0
+            elif sca == 'non_SCA':
+                x = 1
 
-            df_nbp_2[sheet][col].iloc[AR2_5_row_2[j]] = dataframe_2[n]['wartosc'].iloc[i]
-            i += 1
-        i = 0
-        j += 1
+            r_reasons = ['Zgubienie lub kradzież karty', 'Nieodebrana karta', 'Karta sfałszowana', "Manipulation", "Pozostałe"]
 
-    # PCP_006
-    for c in range(3, df_nbp_2[sheet].shape[1]):
-        try:
-            condition = df_nbp_2[sheet][9:, 0] == "8.1.2.1.2.1.2.2"
-            row_1 = condition[condition].index[0]
-            rows = []
-            for i in range(2, 6):
-                condition = df_nbp_2[sheet][9:, 0] == f"8.1.2.1.3.{i}"
-                rows.append(condition[condition].index[0])
+            for r, r_reason in enumerate(r_reasons):
+                if r_reason in reason:
+                    y = r
+                    print('Card Fraud Reason found.')
+                else:
+                    y = 4
 
-        except IndexError:
-            print('Not found')
+            condition = df_nbp_2[sheet].iloc[9:, 0] == looking_for[x][y]
+            row = condition[condition].index[0]
 
-        sum_values = 0
-        for row in rows:
-            sum_values += row
+            if sheet == '5a.R.LF_PLiW2':
+                value = 1
+            else:
+                value = tr_amount
 
-        df_nbp_2[sheet][c].iloc[row_1] = sum_values
+            df_nbp_2[sheet].iat[row, col] = to_float(df_nbp_2[sheet].iat[row, col]) + value
 
-    # PCP_099
-    df = df_fraud
-    grouped_df = df.groupby(['podział NBP', 'FT description', 'tr_sink_node', 'czy_SCA']).agg(
-        {'ARN': 'count', 'tr_amout': 'sum'})
+            if x == 1:
+                if pos_entry_mode == 'CTLS' and tr_amount <= 10000:
+                    z = '8.1.2.1.3.3'
+                    condition = df_nbp_2[sheet].iloc[9:, 0] == z
+                    row = condition[condition].index[0]
+                    df_nbp_2[sheet].iat[row, col] = to_float(df_nbp_2[sheet].iat[row, col]) + value
+                else:
+                    z = '8.1.2.1.3.5'
+                    condition = df_nbp_2[sheet].iloc[9:, 0] == z
+                    row = condition[condition].index[0]
+                    df_nbp_2[sheet].iat[row, col] = to_float(df_nbp_2[sheet].iat[row, col]) + value
 
-    # Rename the 'quarter' column to 'quarter count' to reflect the count of quarters
-    grouped_df = grouped_df.rename(columns={'ARN': 'count'})
-    # Extract the unique values from the 'podział NBP' column
-    try:
-        for v in range(grouped_df.shape[0]):
-            country = grouped_df.index[v][0]
-            col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
-            reason = grouped_df.index[v][1]
-            sca = grouped_df.index[v][3]
+        for looking_for in [visa, mastercard]:
+            for k in [0, 1]:
+                for col in range(3, df_nbp_2[sheet].shape[1]):
+                    # 8.1.2.1.2.1.2.1.1 = sum of 8.1.2.1.2.1.2.1.1.{i} and i = 1..4
+                    sum_v = 0
+                    for i in range(1, 5):
+                        condition = df_nbp_2[sheet].iloc[9:, 0] == looking_for[k][5] + f'.{i}'
+                        print(looking_for[k][5] + f'.{i}')
+                        row = condition[condition].index[0]
+                        sum_v += to_float(df_nbp_2[sheet].iat[row, col])
 
-        if reason == 'Zgubienie lub kradzież karty':
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.1'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.1'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        elif reason == 'Nieodebrana karta':
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        elif reason == 'Karta sfałszowana':
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.3'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2.3'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        # 8.1.2.1.2.1.2.1.2 and 8.1.2.1.2.1.2.2.2
-        elif "Manipulation" in reason:
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.2'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-        # 8.1.2.1.2.1.2.1.1.4 and 8.1.2.1.2.1.2.2.1.4
-        else:
-            if sca == 'non_SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.1.1.4'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][0]
-            elif sca == 'SCA':
-                condition = df_nbp_2[sheet][9:, 0] == f'8.1.2.1.2.1.2.2.1.4'
-                row = condition[condition].index[0]
-                df_nbp_2[sheet].iat[row, col] = grouped_df.iloc[v][1]
-    except IndexError:
-        print('IndexError in PCP_099')
+                    condition = df_nbp_2[sheet].iloc[9:, 0] == looking_for[k][5]
+                    row = condition[condition].index[0]
+                    df_nbp_2[sheet].iat[row, col] = sum_v
+
+        for col in range(3, df_nbp_2[sheet].shape[1]):
+            # Total sum 8.1.2.1.2.1.2.1 = sum of 8.1.2.1.2.1.2.1.{i} and i = 1..3
+            sum_1_3 = [0, 0, 0, 0]
+            for i in [1, 2, 3]:
+                # VISA-SCA 8.1.2.1.2.1.2.1.{i}
+                condition1 = df_nbp_2[sheet].iloc[9:, 0] == visa[0][6] + f'.{i}'
+                row = condition1[condition1].index[0]
+                sum_1_3[0] += to_float(df_nbp_2[sheet].iat[row, col])
+
+                condition2 = df_nbp_2[sheet].iloc[9:, 0] == visa[1][6] + f'.{i}'
+                row = condition2[condition2].index[0]
+                sum_1_3[1] += to_float(df_nbp_2[sheet].iat[row, col])
+
+                condition3 = df_nbp_2[sheet].iloc[9:, 0] == mastercard[0][6] + f'.{i}'
+                row = condition3[condition3].index[0]
+                sum_1_3[2] += to_float(df_nbp_2[sheet].iat[row, col])
+
+                condition4 = df_nbp_2[sheet].iloc[9:, 0] == mastercard[1][6] + f'.{i}'
+                row = condition4[condition4].index[0]
+                sum_1_3[3] += to_float(df_nbp_2[sheet].iat[row, col])
+
+            condition = df_nbp_2[sheet].iloc[9:, 0] == visa[0][6]
+            row = condition[condition].index[0]
+            df_nbp_2[sheet].iat[row, col] = sum_1_3[0]
+
+            condition = df_nbp_2[sheet].iloc[9:, 0] == visa[1][6]
+            row = condition[condition].index[0]
+            df_nbp_2[sheet].iat[row, col] = sum_1_3[1]
+
+            condition = df_nbp_2[sheet].iloc[9:, 0] == mastercard[0][6]
+            row = condition[condition].index[0]
+            df_nbp_2[sheet].iat[row, col] = sum_1_3[2]
+
+            condition = df_nbp_2[sheet].iloc[9:, 0] == mastercard[1][6]
+            row = condition[condition].index[0]
+            df_nbp_2[sheet].iat[row, col] = sum_1_3[3]
+
+        for col in range(3, df_nbp_2[sheet].shape[1]):
+            # Total sum for 8.1.2.1.2.{i} and i = 1..2
+            for i in range(1, 3):
+                sum_values_t = 0
+                for j in range(1, 4):
+                    condition1 = df_nbp_2[sheet].iloc[9:, 0] == f'8.1.2.1.2.{i}.1.{j}'
+                    row1 = condition1[condition1].index[0]
+                    sum_values_t += to_float(df_nbp_2[sheet].iat[row1, col])
+
+                condition2 = df_nbp_2[sheet].iloc[9:, 0] == f'8.1.2.1.2.{i}'
+                row2 = condition2[condition2].index[0]
+                df_nbp_2[sheet].iat[row2, col] = sum_values_t
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(47)
-
-    # Make pivot table
-    df_fraud['country_aggr'] = df_fraud['country'].apply(lambda c: aggr_country(c))
-
-    path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
-    df_fraud.to_csv(path_df + 'df_fraud.csv')
 
     print('\nChecking the quarter: ' + str(check_quarter()[3]))
 
@@ -981,18 +926,18 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None):
     if progress_callback:
         progress_callback(50)
 
-    df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+    #df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
     # Fill sheets in AR1
-    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24, progress_callback)
+    #prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24, progress_callback)
 
     # Save everything to new excel file
-    from_wb = path + 'AR1 - Q1.2023.xlsx'
-    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}.xlsx'
+    #from_wb = path + 'AR1 - Q1.2023.xlsx'
+    #to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}.xlsx'
 
-    wb = copy_wb(from_wb, to_wb, df_nbp_1, 1)
+    #wb = copy_wb(from_wb, to_wb, df_nbp_1, 1)
 
     # Save the updated workbook
-    wb.save(to_wb)
+    #wb.save(to_wb)
 
     # Set progress to 100% when everything is completed
     if progress_callback:
