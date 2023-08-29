@@ -159,9 +159,12 @@ def load_or_query(length, name, temp_table, query):
     return dataframe
 
 
-def prepare_data_ar2(user, passw, progress_callback=None):
+def prepare_data_ar2(user, passw, progress_callback=None, progress_callback_text=None):
     # 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
     global visa, mastercard
+
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Query: 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW.')
 
     print('4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW')
 
@@ -200,10 +203,12 @@ def prepare_data_ar2(user, passw, progress_callback=None):
     for j in range(2):
         df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = dataframe_1[20 + j]['ilosc'].iloc[0]
         df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20 + j]['wartosc'].iloc[0]
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Finished: 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW.')
     # 5a.R.SF
     print('5a.R.SF')
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Query: 5a.R.SF.')
     temp_table = f"Query\\AR2\\NBP_Temp_3.sql"
     query = f"Query\\AR2\\NBP_Query_3.sql"
 
@@ -218,14 +223,16 @@ def prepare_data_ar2(user, passw, progress_callback=None):
     df_nbp_2[sheet][3].iloc[8] = dataframe_3[2]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[9] = dataframe_3[3]['wartosc'].iloc[0]
     df_nbp_2[sheet][3].iloc[10] = dataframe_3[4]['wartosc'].iloc[0]
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Finished: 5a.R.SF.')
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(29)
 
     # 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
     print('5a.R.LF_PLiW2 and 5a.R.WF_PLiW2')
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Fraud data: 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2.')
     # Get the Visa
     data_visa = f_visa_make(user, passw)
 
@@ -304,6 +311,9 @@ def prepare_data_ar2(user, passw, progress_callback=None):
             sca = df['czy_SCA'].iloc[v]
             tr_amount = df['tr_amout'].iloc[v]
             pos_entry_mode = df['pos_entry_mode'].iloc[v]
+
+            if country == 'PL':
+                country = 'W2'
 
             col = pd.Index(df_nbp_2[sheet].iloc[6]).get_loc(country)
 
@@ -423,7 +433,8 @@ def prepare_data_ar2(user, passw, progress_callback=None):
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(47)
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Finished: 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2.')
     print('\nChecking the quarter: ' + str(check_quarter()[3]))
 
     # 9.R.L.MCC and 9.R.W.MCC
@@ -431,7 +442,8 @@ def prepare_data_ar2(user, passw, progress_callback=None):
 
     temp_table = f"Query\\AR2\\NBP_Temp_4.sql"
     query = f"Query\\AR2\\NBP_Query_4.sql"
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Query: 9.R.L.MCC and 9.R.W.MCC.')
     dataframe_4 = load_or_query(4, '9.R.L.MCC_9.R.W.MCC__', temp_table, query)
 
     # Calculate and update progress to 30% when appropriate
@@ -503,7 +515,8 @@ def prepare_data_ar2(user, passw, progress_callback=None):
             i += 1
         i = 0
         j += 1
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - Finished: 9.R.L.MCC and 9.R.W.MCC.')
     return df_fraud
 
 
@@ -514,15 +527,19 @@ def aggr_country(c):
         return 'NPL'
 
 
-def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None):
+def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None, progress_callback_text=None):
     # ST.01
     print('ST.01')
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Query: ST.01.')
 
     temp_table = f"Query\\AR1\\NBP_Temp_1.sql"
     query = f"Query\\AR1\\NBP_Query_1.sql"
 
     dataframe_1 = load_or_query(2, 'ST.01.', temp_table, query)
 
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Finished: ST.01.')
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(55)
@@ -579,7 +596,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     # Just using values filled to sheet ST.01
     for v in range(len(to_change_values)):
         df_nbp_1['ST.03'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
-
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Finished: ST.03.')
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(64)
@@ -589,7 +607,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
     temp_table = f"Query\\AR1\\NBP_Temp_2.sql"
     query = f"Query\\AR1\\NBP_Query_2.sql"
-
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Query: ST.05.')
     dataframe_2 = load_or_query(6, 'ST.05.', temp_table, query)
 
     # Calculate and update progress to 30% when appropriate
@@ -658,7 +677,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
         to_change_values = prepare_values_data(df[row], category)
         for v in range(len(to_change_values)):
             df_nbp_1['ST.05'].iat[to_change_rows_2[row], to_change_columns[v]] = to_change_values[v]
-
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Finished: ST.05.')
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(75)
@@ -668,7 +688,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
     temp_table = f"Query\\AR1\\NBP_Temp_3.sql"
     query = f"Query\\AR1\\NBP_Query_3.sql"
-
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Query: ST.06.')
     dataframe_3 = load_or_query(2, 'ST.06.', temp_table, query)
     print('\nDate: ' + str(dataframe_3[0]))
 
@@ -737,7 +758,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(86)
-
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Finished: ST.06.')
     # ST.02
 
     # Right now we do not fill this sheet.
@@ -747,6 +769,9 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
     temp_table = f"Query\\AR1\\NBP_Temp_4.sql"
     query = f"Query\\AR1\\NBP_Query_4.sql"
+
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Query: ST.07.')
 
     dataframe_4 = load_or_query(4, 'ST.07.', temp_table, query)
     # Calculate and update progress to 30% when appropriate
@@ -781,11 +806,16 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     df_nbp_1['ST.07'].iat[12, 9] = 0
 
     for n in range(4, 10):
-        df_nbp_1['ST.07'].iat[10, n] = float(df_nbp_1['ST.07'][n].iloc[11:15].sum()) - float(
-            df_nbp_1['ST.07'][n].iloc[12])
+        df_nbp_1['ST.07'].iat[13, n] = to_float(df_nbp_1['ST.07'].iat[14, n])
 
     for n in range(4, 10):
-        df_nbp_1['ST.07'].iat[9, n] = df_nbp_1['ST.07'].iat[10, n]
+        df_nbp_1['ST.07'].iat[10, n] = to_float(df_nbp_1['ST.07'].at[11, n]) + to_float(df_nbp_1['ST.07'].at[13, n])
+
+    for n in range(4, 10):
+        df_nbp_1['ST.07'].iat[9, n] = to_float(df_nbp_1['ST.07'].iat[10, n])
+
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - Finished: ST.07.')
 
     author_data = [
         name,
@@ -859,7 +889,7 @@ def bug_report():
 
 
 @measure_time_with_progress
-def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None):
+def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_callback_text=None):
     # Open the log file in append mode
     log_file = open(to_log(), "a")
 
@@ -871,7 +901,9 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None):
 
     # Assign the logger as the new sys.stdout
     sys.stdout = sys_logger
-
+    # Set progress text
+    if progress_callback_text:
+        progress_callback_text(f'Creating folder structure.')
     # Create folder structure
     create_folder_structure('./Example')
     create_folder_structure('./Example/Filled')
@@ -910,7 +942,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None):
         i += 1
 
     # Fill sheets in AR2
-    df_fraud_st7 = prepare_data_ar2(user, passw, progress_callback)
+    df_fraud_st7 = prepare_data_ar2(user, passw, progress_callback, progress_callback_text)
     df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
     # Save everything to new excel file
@@ -921,24 +953,26 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None):
 
     # Save the updated workbook
     wb.save(to_wb)
-
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - finished.')
     # Set progress to 50% when AR2 is completed
     if progress_callback:
         progress_callback(50)
 
-    #df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+    df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
     # Fill sheets in AR1
-    #prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24, progress_callback)
+    prepare_data_ar1(user, passw, df_fraud_st7, d_21, d_22, d_23, d_24, progress_callback, progress_callback_text)
 
     # Save everything to new excel file
-    #from_wb = path + 'AR1 - Q1.2023.xlsx'
-    #to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}.xlsx'
+    from_wb = path + 'AR1 - Q1.2023.xlsx'
+    to_wb = path + f'Filled\\' + f'AR1 - Q{check_quarter()[3]}.{datetime.date.today().strftime("%Y")}.xlsx'
 
-    #wb = copy_wb(from_wb, to_wb, df_nbp_1, 1)
+    wb = copy_wb(from_wb, to_wb, df_nbp_1, 1)
 
     # Save the updated workbook
-    #wb.save(to_wb)
-
+    wb.save(to_wb)
+    if progress_callback_text:
+        progress_callback_text(f'AR1 finished.')
     # Set progress to 100% when everything is completed
     if progress_callback:
         progress_callback(100)

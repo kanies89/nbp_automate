@@ -2993,11 +2993,14 @@ def rule_64_ar1(dataframe, sheet_number):
 
     columns_number = df.shape[1]
     for c in range(3, columns_number):
-        first_part = to_int(df.iat[ind_1, c])
+        first_part = round(to_float(df.iat[ind_1, c]), 2)
+
         sum_value = 0
         for ind in ind_2:
-            sum_value += to_int(df.iat[ind, c])
-        second_part = sum_value
+            sum_value += to_float(df.iat[ind, c])
+
+        second_part = round(to_float(sum_value), 2)
+
         if first_part == second_part:
             results.append([sheet, True])
             print("RW_ST.07_03", first_part, '==', second_part)

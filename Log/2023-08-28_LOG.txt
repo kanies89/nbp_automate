@@ -1,0 +1,77 @@
+Name: Krzysztof
+Surname: Kaniewski
+starting the function
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+
+Preparing NBP_Report for:
+year: 2023,
+quarter: 2.
+NBP report automation 20234.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+
+6.ab.LiW6.ab.LiW
+
+5a.R.SF5a.R.SF
+
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW25a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230401_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230402_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230402_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230403_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230403_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230404_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230404_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230405_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202304/20230405_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
