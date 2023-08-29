@@ -1,4 +1,4 @@
-name: pyinstaller - Build and Publish - Weekly_Sales_Channel_Report
+name: pylint - NBP_Automated_Report
 
 on:
   workflow_dispatch:
