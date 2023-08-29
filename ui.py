@@ -44,6 +44,7 @@ class AutomationThread(QThread):
     progress_updated = pyqtSignal(int)
     finished = pyqtSignal()
     log_updated = pyqtSignal(str)  # Custom signal to send log messages
+    progress_text_updated = pyqtSignal(str)  # Custom signal for updating PasswordText label
 
     def __init__(self, name, surname, phone, email, password):
         super(AutomationThread, self).__init__()
@@ -64,7 +65,11 @@ class AutomationThread(QThread):
             self.progress = (step * 100) // self.total_steps
             self.progress_updated.emit(self.progress)
 
-        start_automation(self.name, self.surname, self.phone, self.email, self.password, progress_callback)
+        # Call the start_automation function with progress_callback_text
+        def progress_callback_text(text):
+            self.progress_text_updated.emit(text)  # Emit the signal to update the PasswordText label
+
+        start_automation(self.name, self.surname, self.phone, self.email, self.password, progress_callback, progress_callback_text)
 
         # Emit the finished signal to indicate the completion
         self.finished.emit()
@@ -77,6 +82,11 @@ class MyDialog(QDialog):
     editing_finished = pyqtSignal()
     # Custom signal for progress updates
     progress_updated = pyqtSignal(int)
+
+    @pyqtSlot(str)
+    def update_progress_text(self, text):
+        # Update the PasswordText label with the provided message
+        self.progressLabel.setText(text)
 
     @pyqtSlot(str)
     def update_display(self, message):
@@ -352,11 +362,19 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
             # Create the AutomationThread and start it
             self.automation_thread = AutomationThread(name, surname, phone, email, password)
+
+            # Connect the password_text_updated signal from the AutomationThread to the update_password_text slot
+            self.automation_thread.progress_text_updated.connect(self.update_progress_text)
             self.automation_thread.progress_updated.connect(self.update_progress)
             self.automation_thread.finished.connect(self.on_automation_finished)
 
             # Connect the log_updated signal to the logger.log_updated signal
             self.automation_thread.log_updated.connect(self.logger.log_updated)
+
+            self.pushButton_openAR1.setEnabled(False)
+            self.pushButton_openAR2.setEnabled(False)
+            self.radioButton_prepare.setEnabled(False)
+            self.radioButton_check.setEnabled(False)
 
             # Start the automation thread
             self.automation_thread.start()
@@ -391,6 +409,23 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             current_item.setText(new_text)
 
     def on_automation_finished(self):
+
+        # Update the PasswordText label with the provided email
+        progress_text = f"Report finished. Checking border conditions..."
+        self.progressLabel.setText(progress_text)
+
+        self.pushButton_openAR1.setEnabled(False)
+        self.pushButton_openAR2.setEnabled(False)
+        self.radioButton_prepare.setEnabled(False)
+        self.radioButton_check.setEnabled(False)
+        # Create the AutomationThread and start it
+        self.check_thread = CheckThread()
+        # self.automation_thread.progress_updated.connect(self.update_progress)
+        # self.automation_thread.finished.connect(self.on_automation_finished)
+
+        # Start the check thread
+        self.check_thread.start()
+
         # Enable the "Start" button when the automation is finished
         self.Start.setEnabled(True)
         self.Start.setText("Exit")
@@ -434,6 +469,7 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.pushButton_openAR1.setEnabled(False)
             self.pushButton_openAR2.setEnabled(False)
             self.radioButton_prepare.setEnabled(False)
+            self.radioButton_check.setEnabled(False)
             # Create the AutomationThread and start it
             self.check_thread = CheckThread()
             # self.automation_thread.progress_updated.connect(self.update_progress)
