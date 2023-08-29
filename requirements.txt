@@ -8,3 +8,4 @@ sqlalchemy
 pytest
 numpy
 pyqt5
+win32wnet
