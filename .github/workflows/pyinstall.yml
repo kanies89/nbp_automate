@@ -1,4 +1,4 @@
-name: pyinstaller - Build and Publish
+name: pyinstaller - Build and Publish - Weekly_Sales_Channel_Report
 
 on:
   workflow_dispatch:
@@ -15,26 +15,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set working directory
-        run: cd ../
+      - name: Navigate to root directory
+        run: cd ../..
 
       - name: Install dependencies
-        run: pip install -r req.txt
+        run: pip install -r requirements.txt
 
       - name: Install PyInstaller
         run: pip install pyinstaller
-
-      - name: Install PyQt
-        run: pip install pyqt5
         
       - name: Install pyodbc
         run: pip install pyodbc
         
       - name: Build executable
-        run: pyinstaller --onefile --name NBP_Report main.py
+        run: pyinstaller --onefile --name NBP_Automated_Report --icon=UI/logos/Paytel_1.ico ui.py
 
       - name: Publish artifact
         uses: actions/upload-artifact@v2
         with:
-          name: nbp_report
-          path: dist/NBP_Report.exe
+          name: NBP_Automated_Report
+          path: dist/NBP_Automated_Report.exe
