@@ -1,7 +1,10 @@
-fiscalyear
-openpyxl
 pandas
-pywin32
-pyodbc
-SQLAlchemy
+openpyxl
 tqdm
+cx_freeze
+fiscalyear
+pyodbc
+sqlalchemy
+pytest
+numpy
+pyqt5
