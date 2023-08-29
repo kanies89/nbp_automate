@@ -1,0 +1,37 @@
+name: pylint - NBP_Automated_Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Navigate to root directory
+        run: cd ../..
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install PyInstaller
+        run: pip install pyinstaller
+        
+      - name: Install pyodbc
+        run: pip install pyodbc
+        
+      - name: Build executable
+        run: pyinstaller --onefile --name NBP_Automated_Report --icon=UI/logos/Paytel_1.ico ui.py
+
+      - name: Publish artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: NBP_Automated_Report
+          path: dist/NBP_Automated_Report.exe
