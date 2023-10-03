@@ -1,3 +1,4 @@
+import datetime
 from calendar import monthrange
 import pandas as pd
 from fiscalyear import FiscalDate
@@ -131,11 +132,17 @@ EPD_SPLIT = {
 
 
 def check_quarter():
-    a = FiscalDate.today()
-    q = a.fiscal_quarter
+    if datetime.date.today().month < 4:
+        q = 1
+    elif datetime.date.today().month < 7:
+        q = 2
+    elif datetime.date.today().month < 10:
+        q = 3
+    else:
+        q = 4
 
-    q_prev = q - 2
-    q_year = a.fiscal_year
+    q_prev = q - 1
+    q_year = datetime.date.today().year
 
     if q_prev == 0:
         q_prev = 4

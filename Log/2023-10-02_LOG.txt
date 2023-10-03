@@ -1,0 +1,782 @@
+Name: Krzysztof
+Surname: Kaniewski
+starting the function
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure created successfully.Folder structure created successfully.
+
+
+Preparing NBP_Report for:
+year: 2023,
+quarter: 3.
+NBP report automation 20234.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+
+6.ab.LiW6.ab.LiW
+
+5a.R.SF5a.R.SF
+
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW25a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230701_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230701_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230702_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230702_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230703_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230703_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230704_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230704_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230705_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230705_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230706_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230706_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230707_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230707_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230708_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230708_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230709_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230709_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230710_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230710_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230711_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230711_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230712_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230712_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230713_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230713_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230714_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230714_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230715_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230715_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230716_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230716_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230717_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230717_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230718_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230718_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230719_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230719_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230720_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230720_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230721_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230721_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230722_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230722_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230723_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230723_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230724_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230724_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230725_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230725_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230726_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230726_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230727_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230727_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230728_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230728_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230729_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230729_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230730_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202307/20230730_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230801_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230801_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230802_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230802_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230803_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230803_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230804_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230804_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230805_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230805_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230806_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230806_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230807_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230807_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230808_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230808_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230809_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230809_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230810_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230810_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230811_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230811_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230812_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230812_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230813_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230813_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230814_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230814_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230815_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230815_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230816_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230816_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230817_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230817_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230818_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230818_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230819_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230819_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230820_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230820_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230821_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230821_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230822_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230822_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230823_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230823_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230824_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230824_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230825_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230825_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230826_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230826_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230827_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202308/20230827_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230901_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230901_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230902_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230902_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230903_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230903_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230904_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230904_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230905_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230905_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230906_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230906_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230907_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230907_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230908_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230908_INITF.epd
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230909_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230909_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230910_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230910_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230911_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230911_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230912_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230912_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230913_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230913_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230914_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230914_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230915_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230915_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230916_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230916_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230917_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230917_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230918_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230918_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230919_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230919_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230920_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230920_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230921_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230921_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230922_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230922_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230923_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230923_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230924_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230924_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230925_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230925_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230926_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230926_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230927_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230927_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230928_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230928_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230929_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230929_INITF.epd
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230930_INITF.epd
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202309/20230930_INITF.epd
+
+
+Found VISA FRAUD data: 45  00441049400082 GRUZINSKA CHATKA 70143  KRAKOW        PL  5462 1            54.50 490823 06/07/23 490823******4162 0024 74410493158018818530147 07  FRDDMC61  024175700
+
+Found VISA FRAUD data: 45  00441049400082 GRUZINSKA CHATKA 70143  KRAKOW        PL  5462 1            54.50 490823 06/07/23 490823******4162 0024 74410493158018818530147 07  FRDDMC61  024175700
+
+
+
+Found VISA FRAUD data: 45  00441049400082 FATEMA BD SP. Z O08436  OSWIECIM      PL  5812 0            24.47 414740 06/05/23 414740******1521 4025 74410493156018805833613 00  FRDDMC61  031911370
+
+Found VISA FRAUD data: 45  00441049400082 FATEMA BD SP. Z O08436  OSWIECIM      PL  5812 0            24.47 414740 06/05/23 414740******1521 4025 74410493156018805833613 00  FRDDMC61  031911370
+
+
+
+Found VISA FRAUD data: 45  00441049400082 Przystanek Pierog38637  KRAKOW        PL  5812 0            23.90 414740 06/06/23 414740******1521 4018 74410493157018815763601 00  FRDDMC61  031911380
+
+Found VISA FRAUD data: 45  00441049400082 Przystanek Pierog38637  KRAKOW        PL  5812 0            23.90 414740 06/06/23 414740******1521 4018 74410493157018815763601 00  FRDDMC61  031911380
+
+
+
+Found VISA FRAUD data: 45  00441049400082 APTEKA WAWA      92377  WARSZAWA      PL  5122 0            49.98 414949 05/21/23 414949******6148 0053 74410493141018693644070 07  FRDDMC61  032530910
+
+Found VISA FRAUD data: 45  00441049400082 APTEKA WAWA      92377  WARSZAWA      PL  5122 0            49.98 414949 05/21/23 414949******6148 0053 74410493141018693644070 07  FRDDMC61  032530910
+
+
+
+Found VISA FRAUD data: 45  00441049400082 F.H.U. STARKA M. 12736  TYCHY         PL  5411 0            35.36 424671 07/06/23 424671******6893 0011 74410493187019033276594 07  FRDDMC61  034150960
+
+Found VISA FRAUD data: 45  00441049400082 F.H.U. STARKA M. 12736  TYCHY         PL  5411 0            35.36 424671 07/06/23 424671******6893 0011 74410493187019033276594 07  FRDDMC61  034150960
+
+
+
+Found VISA FRAUD data: 45  00441049400082 F.H.U. STARKA M. 12736  TYCHY         PL  5411 0            46.33 424671 07/06/23 424671******6893 0013 74410493187019033294951 07  FRDDMC61  034150970
+
+Found VISA FRAUD data: 45  00441049400082 F.H.U. STARKA M. 12736  TYCHY         PL  5411 0            46.33 424671 07/06/23 424671******6893 0013 74410493187019033294951 07  FRDDMC61  034150970
+
+
+
+Found VISA FRAUD data: 45  00441049400082 ZAKORKOWANI WINE 49650  GDANSK        PL  5812 1           186.01 485620 06/08/23 485620******5847 4015 74410493159018826723444 07  FRDDMC61  022040190
+
+Found VISA FRAUD data: 45  00441049400082 ZAKORKOWANI WINE 49650  GDANSK        PL  5812 1           186.01 485620 06/08/23 485620******5847 4015 74410493159018826723444 07  FRDDMC61  022040190
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PAWEL SZAFRANIEC 97771  KRAKOW        PL  7011 6           496.96 403710 06/28/23 403710******3931 0097 74410493179018980056215 01  FRDDMC61  023561310
+
+Found VISA FRAUD data: 45  00441049400082 PAWEL SZAFRANIEC 97771  KRAKOW        PL  7011 6           496.96 403710 06/28/23 403710******3931 0097 74410493179018980056215 01  FRDDMC61  023561310
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4          1108.96 459954 07/15/23 459954******1797 0007 74410493196019105144687 07  FRDDMC61  036767160
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4          1108.96 459954 07/15/23 459954******1797 0007 74410493196019105144687 07  FRDDMC61  036767160
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4          1110.00 459954 07/15/23 459954******1797 0006 74410493196019105133508 07  FRDDMC61  036767170
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4          1110.00 459954 07/15/23 459954******1797 0006 74410493196019105133508 07  FRDDMC61  036767170
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4          1108.96 459954 07/15/23 459954******1797 0005 74410493196019105109797 07  FRDDMC61  036767180
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4          1108.96 459954 07/15/23 459954******1797 0005 74410493196019105109797 07  FRDDMC61  036767180
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            63.00 459954 07/14/23 459954******1797 0001 74410493195019104890562 07  FRDDMC61  036767190
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            63.00 459954 07/14/23 459954******1797 0001 74410493195019104890562 07  FRDDMC61  036767190
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           352.96 459954 07/14/23 459954******1797 0002 74410493195019104967576 07  FRDDMC61  036767200
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           352.96 459954 07/14/23 459954******1797 0002 74410493195019104967576 07  FRDDMC61  036767200
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           221.89 459954 07/15/23 459954******1797 0003 74410493196019105056659 07  FRDDMC61  036767210
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4           221.89 459954 07/15/23 459954******1797 0003 74410493196019105056659 07  FRDDMC61  036767210
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            74.63 459954 07/15/23 459954******1797 0004 74410493196019105072508 07  FRDDMC61  036767220
+
+Found VISA FRAUD data: 45  00441049400082 PARTY 24         40785  LUBLIN        PL  5921 4            74.63 459954 07/15/23 459954******1797 0004 74410493196019105072508 07  FRDDMC61  036767220
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PAWEL SZAFRANIEC 97771  KRAKOW        PL  7011 6           397.99 403710 06/27/23 403710******3931 0119 74410493178018973846235 01  FRDDMC61  032359720
+
+Found VISA FRAUD data: 45  00441049400082 PAWEL SZAFRANIEC 97771  KRAKOW        PL  7011 6           397.99 403710 06/27/23 403710******3931 0119 74410493178018973846235 01  FRDDMC61  032359720
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             3.03 424671 07/22/23 424671******4934 0001 74410493203019160499571 07  FRDDMC61  032359730
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             3.03 424671 07/22/23 424671******4934 0001 74410493203019160499571 07  FRDDMC61  032359730
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             6.00 424671 07/22/23 424671******4934 0004 74410493203019161376679 07  FRDDMC61  032359740
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             6.00 424671 07/22/23 424671******4934 0004 74410493203019161376679 07  FRDDMC61  032359740
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             6.00 424671 07/22/23 424671******4934 0005 74410493203019161814372 07  FRDDMC61  032359750
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             6.00 424671 07/22/23 424671******4934 0005 74410493203019161814372 07  FRDDMC61  032359750
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1            15.01 424671 07/22/23 424671******4934 0009 74410493203019160507464 07  FRDDMC61  032359760
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1            15.01 424671 07/22/23 424671******4934 0009 74410493203019160507464 07  FRDDMC61  032359760
+
+
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             3.03 424671 07/22/23 424671******4934 0002 74410493203019162253265 07  FRDDMC61  032359770
+
+Found VISA FRAUD data: 45  00441049400082 PHU BORGEN FRANCZ44215  SOPOT         PL  5192 1             3.03 424671 07/22/23 424671******4934 0002 74410493203019162253265 07  FRDDMC61  032359770
+
+
+
+Found VISA FRAUD data: 45  00441049400082 Przystanek Pierog75881  WARSZAWA      PL  5812 0            49.03 414740 07/05/23 414740******1858 4040 74410493186019026720971 00  FRDDMC61  033973380
+
+Found VISA FRAUD data: 45  00441049400082 Przystanek Pierog75881  WARSZAWA      PL  5812 0            49.03 414740 07/05/23 414740******1858 4040 74410493186019026720971 00  FRDDMC61  033973380
+
+
+
+Found VISA FRAUD data: 45  00441049400082 DONA ANETA CYWINS15111  GDANSK        PL  5921 1            19.50 440066 08/06/23 440066******5202 0001 74410493218019268291667 07  FRDDMC61  026279070
+
+Found VISA FRAUD data: 45  00441049400082 DONA ANETA CYWINS15111  GDANSK        PL  5921 1            19.50 440066 08/06/23 440066******5202 0001 74410493218019268291667 07  FRDDMC61  026279070
+
+
+
+Found VISA FRAUD data: 45  00441049400082 DONA ANETA CYWINS15111  GDANSK        PL  5921 1            49.98 440066 08/06/23 440066******5202 0004 74410493218019268293333 05  FRDDMC61  026279080
+
+Found VISA FRAUD data: 45  00441049400082 DONA ANETA CYWINS15111  GDANSK        PL  5921 1            49.98 440066 08/06/23 440066******5202 0004 74410493218019268293333 05  FRDDMC61  026279080
+
+
+
+Found VISA FRAUD data: 45  00441049400082 DONA ANETA CYWINS15111  GDANSK        PL  5921 1            79.19 440066 08/06/23 440066******5202 0002 74410493218019268292723 07  FRDDMC61  026279090
+
+Found VISA FRAUD data: 45  00441049400082 DONA ANETA CYWINS15111  GDANSK        PL  5921 1            79.19 440066 08/06/23 440066******5202 0002 74410493218019268292723 07  FRDDMC61  026279090
+
+
+
+Found VISA FRAUD data: 45  00441049400082 KIOSK JANIAK GRAZ45391  HEL           PL  5331 1            58.94 451161 07/31/23 451161******4235 4000 74410493212019227997525 07  FRDDMC61  026279100
+
+Found VISA FRAUD data: 45  00441049400082 KIOSK JANIAK GRAZ45391  HEL           PL  5331 1            58.94 451161 07/31/23 451161******4235 4000 74410493212019227997525 07  FRDDMC61  026279100
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GASTRONOMIA DANIE95144  Legionowo     PL  5812 6            19.49 454033 07/10/23 454033******1019 0129 74410493191019064326312 07  FRDDMC61  037966950
+
+Found VISA FRAUD data: 45  00441049400082 GASTRONOMIA DANIE95144  Legionowo     PL  5812 6            19.49 454033 07/10/23 454033******1019 0129 74410493191019064326312 07  FRDDMC61  037966950
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SILBUD MICHAL KUP80371  BELCHATOW     PL  5999 4         25899.48 415417 08/12/23 415417******5680 0002 74410493089018340910233     FRDDMC61  024181220
+
+Found VISA FRAUD data: 45  00441049400082 SILBUD MICHAL KUP80371  BELCHATOW     PL  5999 4         25899.48 415417 08/12/23 415417******5680 0002 74410493089018340910233     FRDDMC61  024181220
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SILBUD MICHAL KUP80371  BELCHATOW     PL  5999 4          1462.41 415417 08/12/23 415417******5680 0001 74410493090018349748268     FRDDMC61  024181230
+
+Found VISA FRAUD data: 45  00441049400082 SILBUD MICHAL KUP80371  BELCHATOW     PL  5999 4          1462.41 415417 08/12/23 415417******5680 0001 74410493090018349748268     FRDDMC61  024181230
+
+
+
+Found VISA FRAUD data: 45  00441049400082 ELECTIO SP. Z O.O03230  KATOWICE      PL  5072 1            39.03 424671 08/09/23 424671******7145 0010 74410493221019288690448 07  FRDDMC61  032737780
+
+Found VISA FRAUD data: 45  00441049400082 ELECTIO SP. Z O.O03230  KATOWICE      PL  5072 1            39.03 424671 08/09/23 424671******7145 0010 74410493221019288690448 07  FRDDMC61  032737780
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GEO Michal Gorczy73249  CHORZOW       PL  7538 2            36.30 426684 07/15/23 426684******5576 4006 74410493196019105044770 00  FRDDMC61  032737790
+
+Found VISA FRAUD data: 45  00441049400082 GEO Michal Gorczy73249  CHORZOW       PL  7538 2            36.30 426684 07/15/23 426684******5576 4006 74410493196019105044770 00  FRDDMC61  032737790
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LOKALIZACJA 1    10686  STALOWA WOLA  PL  5995 4             5.51 405621 08/04/23 405621******3766 0001 74410493216019255932325 07  FRDDMC61  032737800
+
+Found VISA FRAUD data: 45  00441049400082 LOKALIZACJA 1    10686  STALOWA WOLA  PL  5995 4             5.51 405621 08/04/23 405621******3766 0001 74410493216019255932325 07  FRDDMC61  032737800
+
+
+
+Found VISA FRAUD data: 45  00441049400082 ORFI JAROSLAW FIO57938  WARSZAWA      PL  7399 4           944.99 414720 08/10/23 414720******3503 4001 74410493222019297013664 00  FRDDMC61  021673700
+
+Found VISA FRAUD data: 45  00441049400082 ORFI JAROSLAW FIO57938  WARSZAWA      PL  7399 4           944.99 414720 08/10/23 414720******3503 4001 74410493222019297013664 00  FRDDMC61  021673700
+
+
+
+Found VISA FRAUD data: 45  00441049400082 ARTEMIDA S.C.    45521  WARSZAWA      PL  5499 1            49.50 424671 09/02/23 424671******1153 0007 74410493245019465937010 07  FRDDMC61  018133680
+
+Found VISA FRAUD data: 45  00441049400082 ARTEMIDA S.C.    45521  WARSZAWA      PL  5499 1            49.50 424671 09/02/23 424671******1153 0007 74410493245019465937010 07  FRDDMC61  018133680
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP WIELOBRANZO61850  WARSZAWA      PL  5411 1            49.50 424671 09/02/23 424671******1153 0009 74410493245019466073682 07  FRDDMC61  018133690
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP WIELOBRANZO61850  WARSZAWA      PL  5411 1            49.50 424671 09/02/23 424671******1153 0009 74410493245019466073682 07  FRDDMC61  018133690
+
+
+
+Found VISA FRAUD data: 45  00441049400082 MISZ-MASZ        81494  PRZEMYSL      PL  5812 4            10.14 478200 08/30/23 478200******5536 0003 74410493242019441737420 07  FRDDMC61  031140980
+
+Found VISA FRAUD data: 45  00441049400082 MISZ-MASZ        81494  PRZEMYSL      PL  5812 4            10.14 478200 08/30/23 478200******5536 0003 74410493242019441737420 07  FRDDMC61  031140980
+
+
+
+Found VISA FRAUD data: 45  00441049400082 MISZ-MASZ        81494  PRZEMYSL      PL  5812 4            19.27 478200 08/30/23 478200******5536 0002 74410493242019441266305 07  FRDDMC61  031140990
+
+Found VISA FRAUD data: 45  00441049400082 MISZ-MASZ        81494  PRZEMYSL      PL  5812 4            19.27 478200 08/30/23 478200******5536 0002 74410493242019441266305 07  FRDDMC61  031140990
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1             4.80 421623 07/12/23 421623******3012 0005 74410493193019085714106 07  FRDDMC61  023789300
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1             4.80 421623 07/12/23 421623******3012 0005 74410493193019085714106 07  FRDDMC61  023789300
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            10.18 421623 07/12/23 421623******3012 0011 74410493193019086119412 07  FRDDMC61  023789310
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            10.18 421623 07/12/23 421623******3012 0011 74410493193019086119412 07  FRDDMC61  023789310
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            26.58 421623 07/12/23 421623******3012 0009 74410493193019086878009 07  FRDDMC61  023789320
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            26.58 421623 07/12/23 421623******3012 0009 74410493193019086878009 07  FRDDMC61  023789320
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            12.59 421623 07/12/23 421623******3012 0006 74410493193019086883207 07  FRDDMC61  023789330
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            12.59 421623 07/12/23 421623******3012 0006 74410493193019086883207 07  FRDDMC61  023789330
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            23.09 421623 07/12/23 421623******3012 0003 74410493193019085228081 05  FRDDMC61  023789340
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            23.09 421623 07/12/23 421623******3012 0003 74410493193019085228081 05  FRDDMC61  023789340
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1             5.31 421623 07/12/23 421623******3012 0002 74410493193019086249805 07  FRDDMC61  023789350
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1             5.31 421623 07/12/23 421623******3012 0002 74410493193019086249805 07  FRDDMC61  023789350
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            50.80 421623 07/12/23 421623******3012 0008 74410493193019083773666 07  FRDDMC61  023789360
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            50.80 421623 07/12/23 421623******3012 0008 74410493193019083773666 07  FRDDMC61  023789360
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            55.98 421623 07/12/23 421623******3012 0001 74410493193019085203902 07  FRDDMC61  023789370
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            55.98 421623 07/12/23 421623******3012 0001 74410493193019085203902 07  FRDDMC61  023789370
+
+
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            67.38 421623 07/12/23 421623******3012 0004 74410493193019082317721 07  FRDDMC61  023789380
+
+Found VISA FRAUD data: 45  00441049400082 GS SCH JEDLICZE S36545  JEDLICZE      PL  5411 1            67.38 421623 07/12/23 421623******3012 0004 74410493193019082317721 07  FRDDMC61  023789380
+
+
+
+Found VISA FRAUD data: 45  00441049400082 KIOSK REGINA     62664  SOPOT         PL  5999 0             9.69 425836 07/19/23 425836******7528 0013 74410493200019136647793 07  FRDDMC61  035032500
+
+Found VISA FRAUD data: 45  00441049400082 KIOSK REGINA     62664  SOPOT         PL  5999 0             9.69 425836 07/19/23 425836******7528 0013 74410493200019136647793 07  FRDDMC61  035032500
+
+
+
+All ARN numbers passed to SQL query for VISA FRAUD.
+All ARN numbers passed to SQL query for VISA FRAUD.
+
+
+VISA ARNs: ('74410493158018818530147', '74410493156018805833613', '74410493157018815763601', '74410493141018693644070', '74410493187019033276594', '74410493187019033294951', '74410493159018826723444', '74410493179018980056215', '74410493196019105144687', '74410493196019105133508', '74410493196019105109797', '74410493195019104890562', '74410493195019104967576', '74410493196019105056659', '74410493196019105072508', '74410493178018973846235', '74410493203019160499571', '74410493203019161376679', '74410493203019161814372', '74410493203019160507464', '74410493203019162253265', '74410493186019026720971', '74410493218019268291667', '74410493218019268293333', '74410493218019268292723', '74410493212019227997525', '74410493191019064326312', '74410493089018340910233', '74410493090018349748268', '74410493221019288690448', '74410493196019105044770', '74410493216019255932325', '74410493222019297013664', '74410493245019465937010', '74410493245019466073682', '74410493242019441737420', '74410493242019441266305', '74410493193019085714106', '74410493193019086119412', '74410493193019086878009', '74410493193019086883207', '74410493193019085228081', '74410493193019086249805', '74410493193019083773666', '74410493193019085203902', '74410493193019082317721', '74410493200019136647793')
+VISA ARNs: ('74410493158018818530147', '74410493156018805833613', '74410493157018815763601', '74410493141018693644070', '74410493187019033276594', '74410493187019033294951', '74410493159018826723444', '74410493179018980056215', '74410493196019105144687', '74410493196019105133508', '74410493196019105109797', '74410493195019104890562', '74410493195019104967576', '74410493196019105056659', '74410493196019105072508', '74410493178018973846235', '74410493203019160499571', '74410493203019161376679', '74410493203019161814372', '74410493203019160507464', '74410493203019162253265', '74410493186019026720971', '74410493218019268291667', '74410493218019268293333', '74410493218019268292723', '74410493212019227997525', '74410493191019064326312', '74410493089018340910233', '74410493090018349748268', '74410493221019288690448', '74410493196019105044770', '74410493216019255932325', '74410493222019297013664', '74410493245019465937010', '74410493245019466073682', '74410493242019441737420', '74410493242019441266305', '74410493193019085714106', '74410493193019086119412', '74410493193019086878009', '74410493193019086883207', '74410493193019085228081', '74410493193019086249805', '74410493193019083773666', '74410493193019085203902', '74410493193019082317721', '74410493200019136647793')
+
+VISA finishedVISA finished
+
+
+Preparing NBP_Report for:
+year: 2023,
+quarter: 3.
+NBP report automation 2023
