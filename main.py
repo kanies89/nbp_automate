@@ -725,8 +725,8 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
                         new_row_data[column_amount[i]] = dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_amount[i]].values[0]
                         new_row_data[column_value[i]] = dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_value[i]].values[0]
                 else:
-                    country_name = geo6[geo6['Code'] == country]['Nazwa kraju'].values[0]
-                    country_name_english = geo6[geo6['Code'] == country]['Name'].values[0]
+                    country_name = geo6[geo6['Code'] == country]['name_PL'].values[0]
+                    country_name_english = geo6[geo6['Code'] == country]['name'].values[0]
                     new_row_data = [country, country_name, country_name_english] + [np.nan] * (len(column_amount) + len(column_value))
                     for i in range(len(column_amount)):
                         new_row_data[column_amount[i]] = dataframe_3[dataframe_3['CountryCode'] == country][content_amount[i]].values[0]
