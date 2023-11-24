@@ -29,26 +29,28 @@ AR1_TO_CHECK = [
 
 
 # PCP_090
-def rule_1_ar2(dataframe, sheet_number):
+def rule_1_ar2(dataframe, sheet_number, vectors):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
-
+    v = vectors[f"ar2_{sheet}"][2]
+    vc = vectors[f"ar2_{sheet}"][1]
     df = dataframe[sheet]
     try:
-        row_f = df[df.iloc[:, 0] == "8"].index[0]
+        row_f = df[df.iloc[:, vc] == "8"].index[0]
+        print(row_f)
     except KeyError:
         print("Row - 8 - not found")
     try:
-        row_s_1 = df[df.iloc[:, 0] == "8.1.1"].index[0]
+        row_s_1 = df[df.iloc[:, vc] == "8.1.1"].index[0]
     except KeyError:
         print("Row - 8.1.1 - not found")
     try:
-        row_s_2 = df[df.iloc[:, 0] == "8.1.2"].index[0]
+        row_s_2 = df[df.iloc[:, vc] == "8.1.2"].index[0]
     except KeyError:
         print("Row - 8.1.2 - not found")
     columns_number = dataframe[sheet].shape[1]
 
-    for c in range(3, columns_number):
+    for c in range(3 + vc, columns_number):
         value_sum = 0
 
         first_part = round(to_float(dataframe[sheet].iat[row_f, c]), 2)
@@ -71,30 +73,32 @@ def rule_1_ar2(dataframe, sheet_number):
 
 
 # PCP_091
-def rule_2_ar2(dataframe, sheet_number):
+def rule_2_ar2(dataframe, sheet_number, vectors):
     results = []
     sheet = AR2_TO_CHECK[sheet_number]
+    v = vectors[f"ar2_{sheet}"][2]
+    vc = vectors[f"ar2_{sheet}"][1]
 
     df = dataframe[sheet]
 
     try:
-        row_f = df[df.iloc[:, 0] == "8.1.1"].index[0]
+        row_f = df[df.iloc[:, v] == "8.1.1"].index[0]
     except KeyError:
         print("Row - 8. - not found")
 
     try:
-        row_s_1 = df[df.iloc[:, 0] == "8.1.1.1"].index[0]
+        row_s_1 = df[df.iloc[:, v] == "8.1.1.1"].index[0]
     except KeyError:
         print("Row - 8.1.1.1 - not found")
 
     try:
-        row_s_2 = df[df.iloc[:, 0] == "8.1.1.2"].index[0]
+        row_s_2 = df[df.iloc[:, v] == "8.1.1.2"].index[0]
     except KeyError:
         print("Row - 8.1.1.2 - not found")
 
     columns_number = dataframe[sheet].shape[1]
 
-    for c in range(3, columns_number):
+    for c in range(3 + vc, columns_number + vc):
         value_sum = 0
 
         first_part = round(to_float(dataframe[sheet].iat[row_f, c]), 2)
@@ -124,17 +128,17 @@ def rule_3_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        row_f = df[df.iloc[:, 0] == "8.1.2"].index[0]
+        row_f = df[df.iloc[:, v] == "8.1.2"].index[0]
     except KeyError:
         print("Row - 8.1.2 - not found")
 
     try:
-        row_s_1 = df[df.iloc[:, 0] == "8.1.2.1"].index[0]
+        row_s_1 = df[df.iloc[:, v] == "8.1.2.1"].index[0]
     except KeyError:
         print("Row - 8.1.2.1 - not found")
 
     try:
-        row_s_2 = df[df.iloc[:, 0] == "8.1.2.2"].index[0]
+        row_s_2 = df[df.iloc[:, v] == "8.1.2.2"].index[0]
     except KeyError:
         print("Row - 8.1.2.2 - not found")
 
@@ -170,14 +174,14 @@ def rule_4_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        row_f = df[df.iloc[:, 0] == "8.1.2.1"].index[0]
+        row_f = df[df.iloc[:, v] == "8.1.2.1"].index[0]
     except KeyError:
         print("Row - 8.1.2.1 - not found")
 
     try:
         rows = []
         for i in range(1, 4):
-            condition = df.iloc[:, 0] == f"8.1.2.1.1.{i}"
+            condition = df.iloc[:, v] == f"8.1.2.1.1.{i}"
             index = condition[condition].index[0]
             rows.append(index)
 
@@ -213,14 +217,14 @@ def rule_5_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        row_f = df[df.iloc[:, 0] == "8.1.2.1"].index[0]
+        row_f = df[df.iloc[:, v] == "8.1.2.1"].index[0]
     except KeyError:
         print("Row - 8.1.2.1 - not found")
 
     try:
         rows = []
         for i in range(1, 10):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}"
             index = condition[condition].index[0]
             rows.append(index)
 
@@ -258,7 +262,7 @@ def rule_6_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         for i in range(1, 10):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}"
             index = condition[condition].index[0]
             rows_1.append(index)
 
@@ -269,7 +273,7 @@ def rule_6_ar2(dataframe, sheet_number):
         rows_2 = []
         for i in range(1, 10):
             for j in range(1, 4):
-                condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.1.{j}"
+                condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.1.{j}"
                 index = condition[condition].index[0]
                 rows_2.append(index)
 
@@ -314,7 +318,7 @@ def rule_7_ar2(dataframe, sheet_number):
     try:
         i = 1
         rows_1 = []
-        condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}"
+        condition = df.iloc[:, v] == f"8.1.2.1.2.{i}"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -325,7 +329,7 @@ def rule_7_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 3):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -364,7 +368,7 @@ def rule_8_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         for i in range(1, 10):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.2"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.2"
             index = condition[condition].index[0]
             rows_1.append(index)
 
@@ -374,7 +378,7 @@ def rule_8_ar2(dataframe, sheet_number):
     try:
         rows_2 = []
         for j in range(2, 6):
-            condition = df.iloc[:, 0] == f"8.1.2.1.3.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.1.3.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -413,7 +417,7 @@ def rule_9_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
 
-        condition = df.iloc[:, 0] == f"8.1.2.2"
+        condition = df.iloc[:, v] == f"8.1.2.2"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -423,7 +427,7 @@ def rule_9_ar2(dataframe, sheet_number):
     try:
         rows_2 = []
         for i in range(1, 10):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -462,7 +466,7 @@ def rule_10_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}"
+        condition = df.iloc[:, v] == f"8.1.2.2.2.{i}"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -473,7 +477,7 @@ def rule_10_ar2(dataframe, sheet_number):
         i = 1
         rows_2 = []
         for j in range(1, 4):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.1.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -512,7 +516,7 @@ def rule_11_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}"
+        condition = df.iloc[:, v] == f"8.1.2.2.2.{i}"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -523,7 +527,7 @@ def rule_11_ar2(dataframe, sheet_number):
         i = 1
         rows_2 = []
         for j in range(1, 3):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -562,7 +566,7 @@ def rule_12_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         for i in range(1, 10):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.2"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.2"
             index = condition[condition].index[0]
             rows_1.append(index)
 
@@ -573,7 +577,7 @@ def rule_12_ar2(dataframe, sheet_number):
         rows_2 = []
 
         for j in [2, 3, 5, 6, 7]:
-            condition = df.iloc[:, 0] == f"8.1.2.2.3.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.3.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -612,7 +616,7 @@ def rule_13_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         for i in range(1, 10):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.1"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.1"
             index = condition[condition].index[0]
             rows_1.append(index)
 
@@ -623,7 +627,7 @@ def rule_13_ar2(dataframe, sheet_number):
         rows_2 = []
         for i in range(1, 10):
             for j in range(1, 4):
-                condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.1.{j}"
+                condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.1.{j}"
                 index = condition[condition].index[0]
                 rows_2.append(index)
 
@@ -662,7 +666,7 @@ def rule_14_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.1.1"
+        condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.1.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -673,7 +677,7 @@ def rule_14_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 5):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.1.1.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.1.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -712,7 +716,7 @@ def rule_15_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.2"
+        condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.2"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -723,7 +727,7 @@ def rule_15_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 4):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.2.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.2.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -762,7 +766,7 @@ def rule_16_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.2.1"
+        condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.2.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -773,7 +777,7 @@ def rule_16_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 5):
-            condition = df.iloc[:, 0] == f"8.1.2.1.2.{i}.2.2.1.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.1.2.{i}.2.2.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -812,7 +816,7 @@ def rule_17_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.1"
+        condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -823,7 +827,7 @@ def rule_17_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 4):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.1.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -862,7 +866,7 @@ def rule_18_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.1.1"
+        condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.1.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -873,7 +877,7 @@ def rule_18_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 6):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.1.1.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.1.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -912,7 +916,7 @@ def rule_19_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.2"
+        condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.2"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -923,7 +927,7 @@ def rule_19_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 4):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.2.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.2.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -962,7 +966,7 @@ def rule_20_ar2(dataframe, sheet_number):
     try:
         rows_1 = []
         i = 1
-        condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.2.1"
+        condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.2.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -973,7 +977,7 @@ def rule_20_ar2(dataframe, sheet_number):
         rows_2 = []
         i = 1
         for j in range(1, 6):
-            condition = df.iloc[:, 0] == f"8.1.2.2.2.{i}.2.2.1.{j}"
+            condition = df.iloc[:, v] == f"8.1.2.2.2.{i}.2.2.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -1011,7 +1015,7 @@ def rule_21_ar2(dataframe, sheet_number):
 
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == "9.1"
+        condition = df.iloc[:, v] == "9.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1021,7 +1025,7 @@ def rule_21_ar2(dataframe, sheet_number):
     try:
         rows_2 = []
         for j in range(1, 3):
-            condition = df.iloc[:, 0] == f"9.1.{j}"
+            condition = df.iloc[:, v] == f"9.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -1059,7 +1063,7 @@ def rule_22_ar2(dataframe, sheet_number):
 
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == "9.1.1"
+        condition = df.iloc[:, v] == "9.1.1"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1069,7 +1073,7 @@ def rule_22_ar2(dataframe, sheet_number):
     try:
         rows_2 = []
         for j in range(742, 1077):
-            condition = df.iloc[:, 0] == f"9.1.1.{j}"
+            condition = df.iloc[:, v] == f"9.1.1.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -1107,7 +1111,7 @@ def rule_23_ar2(dataframe, sheet_number):
 
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == "9.1.2"
+        condition = df.iloc[:, v] == "9.1.2"
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1117,7 +1121,7 @@ def rule_23_ar2(dataframe, sheet_number):
     try:
         rows_2 = []
         for j in range(742, 1077):
-            condition = df.iloc[:, 0] == f"9.1.2.{j}"
+            condition = df.iloc[:, v] == f"9.1.2.{j}"
             index = condition[condition].index[0]
             rows_2.append(index)
 
@@ -1262,7 +1266,7 @@ def rule_26_ar2(dataframe, sheet_number):
     print(sheet)
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == 9
+        condition = df.iloc[:, v] == 9
         print(df.iat[9, 0])
         print(condition[9])
         index = condition[condition].index[0]
@@ -1273,7 +1277,7 @@ def rule_26_ar2(dataframe, sheet_number):
 
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == "9.1"
+        condition = df.iloc[:, v] == "9.1"
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1316,7 +1320,7 @@ def rule_27_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        condition = df.iloc[:, 0] == "9.1.1"
+        condition = df.iloc[:, v] == "9.1.1"
         index = condition[condition].index[0]
 
     except KeyError:
@@ -1335,7 +1339,7 @@ def rule_27_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        condition = df.iloc[:, 0] == "8.1.2.1"
+        condition = df.iloc[:, v] == "8.1.2.1"
         index = condition[condition].index[0]
 
     except KeyError:
@@ -1350,7 +1354,7 @@ def rule_27_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        condition = df.iloc[:, 0] == "8.1.2.1"
+        condition = df.iloc[:, v] == "8.1.2.1"
         index = condition[condition].index[0]
 
     except KeyError:
@@ -1388,7 +1392,7 @@ def rule_29_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        condition = df.iloc[:, 0] == "9.1.2"
+        condition = df.iloc[:, v] == "9.1.2"
         index = condition[condition].index[0]
 
     except KeyError:
@@ -1414,7 +1418,7 @@ def rule_29_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        condition = df.iloc[:, 0] == "8.1.2.2"
+        condition = df.iloc[:, v] == "8.1.2.2"
         index = condition[condition].index[0]
 
     except KeyError:
@@ -1436,7 +1440,7 @@ def rule_29_ar2(dataframe, sheet_number):
     df = dataframe[sheet]
 
     try:
-        condition = df.iloc[:, 0] == "8.1.2.2"
+        condition = df.iloc[:, v] == "8.1.2.2"
         index = condition[condition].index[0]
 
     except KeyError:
@@ -1523,7 +1527,7 @@ def rule_1_13_ar1(dataframe, sheet_number, k, first, second):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == first[k]
+        condition = df.iloc[:, v] == first[k]
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1532,7 +1536,7 @@ def rule_1_13_ar1(dataframe, sheet_number, k, first, second):
 
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == second[k]
+        condition = df.iloc[:, v] == second[k]
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1569,7 +1573,7 @@ def rule_14_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '3.1'
+        condition = df.iloc[:, v] == '3.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1580,7 +1584,7 @@ def rule_14_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '9.1'
+        condition = df.iloc[:, v] == '9.1'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1616,7 +1620,7 @@ def rule_15_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '3.1'
+        condition = df.iloc[:, v] == '3.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1670,7 +1674,7 @@ def rule_16_28_ar1(dataframe, sheet_number, k, first, second):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == first[k][0]
+        condition = df.iloc[:, v] == first[k][0]
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1681,7 +1685,7 @@ def rule_16_28_ar1(dataframe, sheet_number, k, first, second):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == second[k][0]
+        condition = df.iloc[:, v] == second[k][0]
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1721,7 +1725,7 @@ def rule_29_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '3.1'
+        condition = df.iloc[:, v] == '3.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1764,7 +1768,7 @@ def rule_30_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '3.1'
+        condition = df.iloc[:, v] == '3.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1807,7 +1811,7 @@ def rule_31_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.1.1'
+        condition = df.iloc[:, v] == '6.1.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1816,7 +1820,7 @@ def rule_31_ar1(dataframe, sheet_number):
 
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '6.1'
+        condition = df.iloc[:, v] == '6.1'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1852,7 +1856,7 @@ def rule_32_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.2.1'
+        condition = df.iloc[:, v] == '6.2.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1863,7 +1867,7 @@ def rule_32_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '6.2'
+        condition = df.iloc[:, v] == '6.2'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1899,7 +1903,7 @@ def rule_32_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.2.2'
+        condition = df.iloc[:, v] == '6.2.2'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -1910,7 +1914,7 @@ def rule_32_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '6.2'
+        condition = df.iloc[:, v] == '6.2'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -1949,7 +1953,7 @@ def rule_33_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.1.1'
+        condition = df.iloc[:, v] == '6.1.1'
         index = condition[condition].index[0]
         rows_1.append(index)
     except IndexError:
@@ -1993,7 +1997,7 @@ def rule_34_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.2'
+        condition = df.iloc[:, v] == '6.2'
         index = condition[condition].index[0]
         rows_1.append(index)
     except IndexError:
@@ -2034,7 +2038,7 @@ def rule_35_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.2.2'
+        condition = df.iloc[:, v] == '6.2.2'
         index = condition[condition].index[0]
         rows_1.append(index)
     except IndexError:
@@ -2076,7 +2080,7 @@ def rule_36_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '6.2.2'
+        condition = df.iloc[:, v] == '6.2.2'
         index = condition[condition].index[0]
         rows_1.append(index)
     except IndexError:
@@ -2118,7 +2122,7 @@ def rule_37_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '7.1'
+        condition = df.iloc[:, v] == '7.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -2129,7 +2133,7 @@ def rule_37_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '7.1.1'
+        condition = df.iloc[:, v] == '7.1.1'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -2165,7 +2169,7 @@ def rule_38_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '7.2'
+        condition = df.iloc[:, v] == '7.2'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -2176,7 +2180,7 @@ def rule_38_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '7.2.2'
+        condition = df.iloc[:, v] == '7.2.2'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -2212,7 +2216,7 @@ def rule_39_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '7.2'
+        condition = df.iloc[:, v] == '7.2'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -2223,7 +2227,7 @@ def rule_39_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '7.2.1'
+        condition = df.iloc[:, v] == '7.2.1'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -2259,7 +2263,7 @@ def rule_40_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '8.1'
+        condition = df.iloc[:, v] == '8.1'
         index = condition[condition].index[0]
         rows_1.append(index)
     except IndexError:
@@ -2267,7 +2271,7 @@ def rule_40_ar1(dataframe, sheet_number):
 
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '8.1.1'
+        condition = df.iloc[:, v] == '8.1.1'
         index = condition[condition].index[0]
         rows_2.append(index)
     except IndexError:
@@ -2302,7 +2306,7 @@ def rule_41_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '8.2'
+        condition = df.iloc[:, v] == '8.2'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -2313,7 +2317,7 @@ def rule_41_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '8.2.1'
+        condition = df.iloc[:, v] == '8.2.1'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -2349,7 +2353,7 @@ def rule_42_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_1 = []
-        condition = df.iloc[:, 0] == '9.1'
+        condition = df.iloc[:, v] == '9.1'
         index = condition[condition].index[0]
         rows_1.append(index)
 
@@ -2360,7 +2364,7 @@ def rule_42_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         rows_2 = []
-        condition = df.iloc[:, 0] == '9.1.1'
+        condition = df.iloc[:, v] == '9.1.1'
         index = condition[condition].index[0]
         rows_2.append(index)
 
@@ -2492,7 +2496,7 @@ def rule_48_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 3]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '3.1'
+        condition = df.iloc[:, v] == '3.1'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 3.1 - not found")
@@ -2519,7 +2523,7 @@ def rule_49_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 3]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '3.1.1'
+        condition = df.iloc[:, v] == '3.1.1'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 3.1.1 - not found")
@@ -2546,7 +2550,7 @@ def rule_50_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 3]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '3.1.8'
+        condition = df.iloc[:, v] == '3.1.8'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 3.1.8 - not found")
@@ -2573,7 +2577,7 @@ def rule_51_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 2]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '6.1.1'
+        condition = df.iloc[:, v] == '6.1.1'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 6.1.1 - not found")
@@ -2600,7 +2604,7 @@ def rule_52_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 2]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '6.2'
+        condition = df.iloc[:, v] == '6.2'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 6.2 - not found")
@@ -2627,7 +2631,7 @@ def rule_53_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 2]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '6.2.1'
+        condition = df.iloc[:, v] == '6.2.1'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 6.2.1 - not found")
@@ -2654,7 +2658,7 @@ def rule_54_ar1(dataframe, sheet_number):
     sheet = AR1_TO_CHECK[sheet_number - 2]
     df = dataframe[sheet]
     try:
-        condition = df.iloc[:, 0] == '6.2.2'
+        condition = df.iloc[:, v] == '6.2.2'
         ind = condition[condition].index[0]
     except IndexError:
         print(f"Row - 6.2.2 - not found")
@@ -2682,14 +2686,14 @@ def rule_55_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '11.1.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
 
     try:
         looking_for = '11.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_2 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2716,7 +2720,7 @@ def rule_56_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '11.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2744,7 +2748,7 @@ def rule_57_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '11.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2772,14 +2776,14 @@ def rule_58_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '11.2.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
 
     try:
         looking_for = '11.2.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_2 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2806,7 +2810,7 @@ def rule_59_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '11.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2834,7 +2838,7 @@ def rule_60_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '11.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2862,14 +2866,14 @@ def rule_61_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = '12.1.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
 
     try:
         looking_for = '12.1'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_2 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")
@@ -2896,14 +2900,14 @@ def rule_62_ar1(dataframe, sheet_number):
     df = dataframe[sheet]
     try:
         looking_for = 'SE'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_1 = condition[condition].index[0] + 1
     except IndexError:
         print(f"Row - {looking_for} + 1 - not found")
 
     try:
         looking_for = 'GB'
-        condition = df.iloc[:, 0] == looking_for
+        condition = df.iloc[:, v] == looking_for
         ind_2 = condition[condition].index[0]
     except IndexError:
         print(f"Row - {looking_for} - not found")

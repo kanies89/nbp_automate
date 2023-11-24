@@ -1,0 +1,2781 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:d-BSP-uz="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-uz-2022-01-01" xmlns:d-BSP-ts="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-ts-2022-01-01" xmlns:d-dane="http://bsp.nbp.pl/1.1.1/d-dane-2017-08-09" xmlns:d-BSP-tw="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-tw-2022-01-01" xmlns:p-dane="http://bsp.nbp.pl/1.1.1/p-dane-2017-08-09" xmlns:d-BSP-ps="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-ps-2022-01-01" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:d-BSP-kw="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-kw-2022-01-01" xmlns:p-BSP-measures="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/p-BSP-measures-2022-01-01" xmlns:d-BSP-ur="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-ur-2022-01-01" xmlns:d-BSP-kt="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-kt-2022-01-01" xmlns:d-BSP-ro="http://bsp.nbp.pl/BazaSystemuPlatniczego/1.1.1/d-BSP-ro-2022-01-01" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:link="http://www.xbrl.org/2003/linkbase">
+  <link:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="t-BSP-2022-01-01.xsd"/>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f8b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPEZR</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ad">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.GOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef2">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1094">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee5">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_103f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f00">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1093">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_faa">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_105e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1090">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ab">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.BZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f21">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1019">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OIP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.UIP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1010">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.OMOB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_106a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f07">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.BZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f14">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee2">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>ZW-Zimbabwe</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eff">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1026">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UAKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f12">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a7">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.GOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f31">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OIIP.UIP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee3">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f33">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT.WGS</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1014">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a9">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fe8">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UAKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1017">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.IT.OIP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f05">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eeb">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.MPOS</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1021">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_feb">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UAKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eda">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>AG-Antigua i Barbuda</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1095">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f04">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f27">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1086">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1022">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1089">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1011">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.PBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee0">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>ZW-Zimbabwe</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f8e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPEZR</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee4">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eea">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.IT.OKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1097">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f4d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1023">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f24">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b2">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.05</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee1">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>ZW-Zimbabwe</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f32">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OIIP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f15">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10af">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.02</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1088">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fad">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efd">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a1">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f06">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ff4">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef5">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.INNEUKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f59">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPEZR</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edc">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>AG-Antigua i Barbuda</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1042">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fc9">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1015">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.OMOB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f23">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1013">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OIP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f09">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.GOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef0">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1099">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1020">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UAKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fb6">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a8">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a6">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef3">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10aa">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1007">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef4">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.EMV</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f28">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f30">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OPP.IT.PBL</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1016">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.PBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a0">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.BZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f97">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef6">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.IT.OKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee6">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f26">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f34">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT.WGS.INN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f22">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b1">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.04</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a4">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef1">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ae">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.01</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1012">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.IT.OIP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1025">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eec">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SOFTPOS</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1092">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f17">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT.OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efb">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eee">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eed">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SAMO</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f20">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f29">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OPP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edf">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOTIN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f03">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edb">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>AG-Antigua i Barbuda</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OPP.IT.PBL</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f50">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT.OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1080">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1085">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ts:TransakcjeWymiar">d-BSP-ts:TZ</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f78">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPEZR</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1098">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eef">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efe">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT.WGS.INN</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OGOT.WGS</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1024">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPEZR</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efc">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef9">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SAMO</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f08">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT.OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee8">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.EMV</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OIIP.UIP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fd5">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UAKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f18">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.GOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OIIP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b0">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.03</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a2">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b3">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.06</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0e">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ede">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f3a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ac">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.IT.OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OBZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_104b">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f16">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.BZGOT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1096">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.UIP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a3">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.ZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fcc">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1061">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_102c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:CZ</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edd">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
+          <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.UIP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f6c">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee9">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.INNEUKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b4">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.07</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef8">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SOFTPOS</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee7">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1091">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAG</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCRGB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_107d">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:HU</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f19">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KI</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f25">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef7">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.MPOS</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-uz:UzytkownikWymiar">d-BSP-uz:KB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f13">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OPP.IT</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a5">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ps:PonoszacyStratyWymiar">d-BSP-ps:SAK</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OMOB.UIP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100a">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efa">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:context id="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f6f">
+    <xbrli:entity>
+      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">55555</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKPE</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+        <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2023-03-31</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+  <xbrli:unit id="PURE">
+    <xbrli:measure>xbrli:pure</xbrli:measure>
+  </xbrli:unit>
+  <xbrli:unit id="PLN">
+    <xbrli:measure>iso4217:PLN</xbrli:measure>
+  </xbrli:unit>
+  <p-BSP-measures:M03 id="ft_101_0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef7" unitRef="PURE" decimals="0">12170</p-BSP-measures:M03>
+  <p-BSP-measures:M02 id="ft_101_1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee6" unitRef="PURE" decimals="0">1455</p-BSP-measures:M02>
+  <p-BSP-measures:M03 id="ft_101_2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee3" unitRef="PURE" decimals="0">2531</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee8" unitRef="PURE" decimals="0">438</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef1" unitRef="PURE" decimals="0">15210</p-BSP-measures:M03>
+  <p-BSP-measures:M01 id="ft_101_5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef6" unitRef="PURE" decimals="0">836</p-BSP-measures:M01>
+  <p-BSP-measures:M01 id="ft_101_6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eef" unitRef="PURE" decimals="0">3098</p-BSP-measures:M01>
+  <p-BSP-measures:M01 id="ft_101_7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef2" unitRef="PURE" decimals="0">853</p-BSP-measures:M01>
+  <p-BSP-measures:M03 id="ft_101_8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef3" unitRef="PURE" decimals="0">2126</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eee" unitRef="PURE" decimals="0">2306</p-BSP-measures:M03>
+  <p-BSP-measures:M01 id="ft_101_a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee4" unitRef="PURE" decimals="0">80</p-BSP-measures:M01>
+  <p-BSP-measures:M01 id="ft_101_b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee6" unitRef="PURE" decimals="0">1217</p-BSP-measures:M01>
+  <p-BSP-measures:M03 id="ft_101_c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee7" unitRef="PURE" decimals="0">1196</p-BSP-measures:M03>
+  <p-BSP-measures:M02 id="ft_101_d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee3" unitRef="PURE" decimals="0">318</p-BSP-measures:M02>
+  <p-BSP-measures:M01 id="ft_101_e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef0" unitRef="PURE" decimals="0">171</p-BSP-measures:M01>
+  <p-BSP-measures:M02 id="ft_101_f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef1" unitRef="PURE" decimals="0">5506</p-BSP-measures:M02>
+  <p-BSP-measures:M03 id="ft_101_10" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eed" unitRef="PURE" decimals="0">47</p-BSP-measures:M03>
+  <p-BSP-measures:M02 id="ft_101_11" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef2" unitRef="PURE" decimals="0">2132</p-BSP-measures:M02>
+  <p-BSP-measures:M01 id="ft_101_12" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee5" unitRef="PURE" decimals="0">56</p-BSP-measures:M01>
+  <p-BSP-measures:M01 id="ft_101_13" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee3" unitRef="PURE" decimals="0">275</p-BSP-measures:M01>
+  <p-BSP-measures:M01 id="ft_101_14" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eea" unitRef="PURE" decimals="0">25</p-BSP-measures:M01>
+  <p-BSP-measures:M02 id="ft_101_15" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef0" unitRef="PURE" decimals="0">2296</p-BSP-measures:M02>
+  <p-BSP-measures:M01 id="ft_101_16" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef1" unitRef="PURE" decimals="0">643</p-BSP-measures:M01>
+  <p-BSP-measures:M03 id="ft_101_17" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef8" unitRef="PURE" decimals="0">17464</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_18" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee9" unitRef="PURE" decimals="0">556</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_19" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eeb" unitRef="PURE" decimals="0">2435</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_1a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eef" unitRef="PURE" decimals="0">31270</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_1b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef4" unitRef="PURE" decimals="0">8567</p-BSP-measures:M03>
+  <p-BSP-measures:M02 id="ft_101_1c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee5" unitRef="PURE" decimals="0">304</p-BSP-measures:M02>
+  <p-BSP-measures:M03 id="ft_101_1d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee4" unitRef="PURE" decimals="0">1950</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_1e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef0" unitRef="PURE" decimals="0">3578</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_1f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efa" unitRef="PURE" decimals="0">24149</p-BSP-measures:M03>
+  <p-BSP-measures:M02 id="ft_101_20" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eef" unitRef="PURE" decimals="0">9168</p-BSP-measures:M02>
+  <p-BSP-measures:M03 id="ft_101_21" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef9" unitRef="PURE" decimals="0">1281</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_22" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eec" unitRef="PURE" decimals="0">5</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_23" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee5" unitRef="PURE" decimals="0">2230</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_24" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ef5" unitRef="PURE" decimals="0">27766</p-BSP-measures:M03>
+  <p-BSP-measures:M02 id="ft_101_25" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee4" unitRef="PURE" decimals="0">91</p-BSP-measures:M02>
+  <p-BSP-measures:M09 id="ft_101_26" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101a" unitRef="PURE" decimals="0">27656</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_27" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1019" unitRef="PURE" decimals="0">876</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_28" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1020" unitRef="PURE" decimals="0">8628</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_29" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1025" unitRef="PURE" decimals="0">45470</p-BSP-measures:M09>
+  <p-BSP-measures:M08 id="ft_101_2a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101b" unitRef="PURE" decimals="0">195</p-BSP-measures:M08>
+  <p-BSP-measures:M09 id="ft_101_2b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1026" unitRef="PURE" decimals="0">18306</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_2c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101f" unitRef="PURE" decimals="0">13889</p-BSP-measures:M09>
+  <p-BSP-measures:M08 id="ft_101_2d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101c" unitRef="PURE" decimals="0">86</p-BSP-measures:M08>
+  <p-BSP-measures:M08 id="ft_101_2e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1021" unitRef="PURE" decimals="0">1213</p-BSP-measures:M08>
+  <p-BSP-measures:M09 id="ft_101_2f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1023" unitRef="PURE" decimals="0">26548</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_30" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1024" unitRef="PURE" decimals="0">28383</p-BSP-measures:M09>
+  <p-BSP-measures:M07 id="ft_101_31" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1021" unitRef="PURE" decimals="0">233</p-BSP-measures:M07>
+  <p-BSP-measures:M08 id="ft_101_32" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1022" unitRef="PURE" decimals="0">7607</p-BSP-measures:M08>
+  <p-BSP-measures:M09 id="ft_101_33" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101d" unitRef="PURE" decimals="0">147</p-BSP-measures:M09>
+  <p-BSP-measures:M07 id="ft_101_34" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101b" unitRef="PURE" decimals="0">100</p-BSP-measures:M07>
+  <p-BSP-measures:M09 id="ft_101_35" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_101e" unitRef="PURE" decimals="0">7871</p-BSP-measures:M09>
+  <p-BSP-measures:M05 id="ft_101_36" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1011" unitRef="PURE" decimals="0">7982</p-BSP-measures:M05>
+  <p-BSP-measures:M05 id="ft_101_37" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100e" unitRef="PURE" decimals="0">15769</p-BSP-measures:M05>
+  <p-BSP-measures:M05 id="ft_101_38" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1010" unitRef="PURE" decimals="0">867</p-BSP-measures:M05>
+  <p-BSP-measures:M04 id="ft_101_39" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1013" unitRef="PURE" decimals="0">13899</p-BSP-measures:M04>
+  <p-BSP-measures:M04 id="ft_101_3a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1014" unitRef="PURE" decimals="0">6882</p-BSP-measures:M04>
+  <p-BSP-measures:M05 id="ft_101_3b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100f" unitRef="PURE" decimals="0">1459</p-BSP-measures:M05>
+  <p-BSP-measures:M05 id="ft_101_3c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1015" unitRef="PURE" decimals="0">3273</p-BSP-measures:M05>
+  <p-BSP-measures:M05 id="ft_101_3d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1016" unitRef="PURE" decimals="0">15253</p-BSP-measures:M05>
+  <p-BSP-measures:M04 id="ft_101_3e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1016" unitRef="PURE" decimals="0">11691</p-BSP-measures:M04>
+  <p-BSP-measures:M04 id="ft_101_3f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100e" unitRef="PURE" decimals="0">5389</p-BSP-measures:M04>
+  <p-BSP-measures:M04 id="ft_101_40" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1011" unitRef="PURE" decimals="0">4532</p-BSP-measures:M04>
+  <p-BSP-measures:M06 id="ft_101_41" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1010" unitRef="PURE" decimals="0">5317</p-BSP-measures:M06>
+  <p-BSP-measures:M04 id="ft_101_42" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1010" unitRef="PURE" decimals="0">339</p-BSP-measures:M04>
+  <p-BSP-measures:M04 id="ft_101_43" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1012" unitRef="PURE" decimals="0">3622</p-BSP-measures:M04>
+  <p-BSP-measures:M06 id="ft_101_44" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1014" unitRef="PURE" decimals="0">50927</p-BSP-measures:M06>
+  <p-BSP-measures:M04 id="ft_101_45" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1015" unitRef="PURE" decimals="0">3183</p-BSP-measures:M04>
+  <p-BSP-measures:M05 id="ft_101_46" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1014" unitRef="PURE" decimals="0">12957</p-BSP-measures:M05>
+  <p-BSP-measures:M04 id="ft_101_47" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1017" unitRef="PURE" decimals="0">10306</p-BSP-measures:M04>
+  <p-BSP-measures:M06 id="ft_101_48" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100f" unitRef="PURE" decimals="0">10482</p-BSP-measures:M06>
+  <p-BSP-measures:M04 id="ft_101_49" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100f" unitRef="PURE" decimals="0">461</p-BSP-measures:M04>
+  <p-BSP-measures:M05 id="ft_101_4a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1013" unitRef="PURE" decimals="0">16098</p-BSP-measures:M05>
+  <p-BSP-measures:M06 id="ft_101_4b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1015" unitRef="PURE" decimals="0">20930</p-BSP-measures:M06>
+  <p-BSP-measures:M09 id="ft_101_4c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f8e" unitRef="PURE" decimals="0">7890</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_4d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f59" unitRef="PURE" decimals="0">8940</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_4e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f78" unitRef="PURE" decimals="0">7854</p-BSP-measures:M09>
+  <p-BSP-measures:M03 id="ft_101_4f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f97" unitRef="PURE" decimals="0">1066</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_50" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fb6" unitRef="PURE" decimals="0">5463</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_51" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fad" unitRef="PURE" decimals="0">596</p-BSP-measures:M03>
+  <p-BSP-measures:M09 id="ft_101_52" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fe8" unitRef="PURE" decimals="0">5967</p-BSP-measures:M09>
+  <p-BSP-measures:M03 id="ft_101_53" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fcc" unitRef="PURE" decimals="0">11734</p-BSP-measures:M03>
+  <p-BSP-measures:M09 id="ft_101_54" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f6c" unitRef="PURE" decimals="0">11744</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_55" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_100a" unitRef="PURE" decimals="0">9714</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_56" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fd5" unitRef="PURE" decimals="0">6025</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_57" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f8b" unitRef="PURE" decimals="0">12639</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_58" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_feb" unitRef="PURE" decimals="0">6314</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_59" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ff4" unitRef="PURE" decimals="0">18876</p-BSP-measures:M09>
+  <p-BSP-measures:M03 id="ft_101_5a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f4d" unitRef="PURE" decimals="0">11357</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_5b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f50" unitRef="PURE" decimals="0">12786</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_5c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f3a" unitRef="PURE" decimals="0">7127</p-BSP-measures:M03>
+  <p-BSP-measures:M03 id="ft_101_5d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_faa" unitRef="PURE" decimals="0">464</p-BSP-measures:M03>
+  <p-BSP-measures:M09 id="ft_101_5e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f6f" unitRef="PURE" decimals="0">5864</p-BSP-measures:M09>
+  <p-BSP-measures:M09 id="ft_101_5f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1007" unitRef="PURE" decimals="0">16880</p-BSP-measures:M09>
+  <p-BSP-measures:M03 id="ft_101_60" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_fc9" unitRef="PURE" decimals="0">6952</p-BSP-measures:M03>
+  <p-BSP-measures:M202 id="ft_101_61" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f23" unitRef="PLN" decimals="2">1949564.78</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_62" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f28" unitRef="PLN" decimals="2">2435971.41</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_63" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f22" unitRef="PURE" decimals="0">155402</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_64" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1f" unitRef="PURE" decimals="0">101686</p-BSP-measures:M10>
+  <p-BSP-measures:M202 id="ft_101_65" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f21" unitRef="PLN" decimals="2">619328.60</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_66" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f19" unitRef="PURE" decimals="0">144602</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_67" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f22" unitRef="PLN" decimals="2">2104562.60</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_68" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f24" unitRef="PLN" decimals="2">1096048.90</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_69" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1b" unitRef="PURE" decimals="0">108625</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_6a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1d" unitRef="PURE" decimals="0">7651</p-BSP-measures:M10>
+  <p-BSP-measures:M202 id="ft_101_6b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f26" unitRef="PLN" decimals="2">1225606.46</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_6c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f24" unitRef="PLN" decimals="2">458623.30</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_6d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f20" unitRef="PURE" decimals="0">5759</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_6e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f23" unitRef="PLN" decimals="2">2552731.08</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_6f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f19" unitRef="PLN" decimals="2">979187.05</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_70" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1f" unitRef="PLN" decimals="2">1156629.81</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_71" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1c" unitRef="PLN" decimals="2">93696.11</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_72" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1b" unitRef="PLN" decimals="2">849497.97</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_73" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1d" unitRef="PLN" decimals="2">1132022.58</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_74" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1a" unitRef="PLN" decimals="2">1854674.60</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_75" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f26" unitRef="PURE" decimals="0">43948</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_76" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1a" unitRef="PLN" decimals="2">895199.92</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_77" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1b" unitRef="PLN" decimals="2">176356.72</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_78" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f20" unitRef="PLN" decimals="2">790672.20</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_79" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1c" unitRef="PURE" decimals="0">75043</p-BSP-measures:M10>
+  <p-BSP-measures:M202 id="ft_101_7a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f19" unitRef="PLN" decimals="2">236443.92</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_7b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1c" unitRef="PURE" decimals="0">50084</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_7c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1c" unitRef="PLN" decimals="2">139302.25</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_7d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f21" unitRef="PURE" decimals="0">90344</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_7e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1e" unitRef="PLN" decimals="2">1010143.57</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_7f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f20" unitRef="PLN" decimals="2">286250.68</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_80" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f25" unitRef="PURE" decimals="0">185850</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_81" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f28" unitRef="PURE" decimals="0">259574</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_82" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1a" unitRef="PURE" decimals="0">99614</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_83" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f27" unitRef="PURE" decimals="0">143091</p-BSP-measures:M10>
+  <p-BSP-measures:M202 id="ft_101_84" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1d" unitRef="PLN" decimals="2">582915.86</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_85" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1f" unitRef="PLN" decimals="2">669005.77</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_86" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1a" unitRef="PURE" decimals="0">106662</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_87" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f27" unitRef="PURE" decimals="0">58174</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_88" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f26" unitRef="PURE" decimals="0">51535</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_89" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1b" unitRef="PURE" decimals="0">65269</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_8a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1e" unitRef="PLN" decimals="2">526483.39</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_8b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f19" unitRef="PURE" decimals="0">76910</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_8c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f25" unitRef="PURE" decimals="0">276799</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_8d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f23" unitRef="PURE" decimals="0">303552</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_8e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f28" unitRef="PURE" decimals="0">23622</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_8f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f21" unitRef="PLN" decimals="2">1495763.41</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_90" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f22" unitRef="PLN" decimals="2">1350357.51</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_91" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1e" unitRef="PURE" decimals="0">120339</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_92" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f22" unitRef="PURE" decimals="0">210341</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_93" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f24" unitRef="PURE" decimals="0">48610</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_94" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f20" unitRef="PURE" decimals="0">1862</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_95" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f27" unitRef="PLN" decimals="2">332113.37</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_96" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f25" unitRef="PLN" decimals="2">2502128.06</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_97" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f28" unitRef="PLN" decimals="2">2553676.57</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_98" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f21" unitRef="PURE" decimals="0">33190</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_99" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1d" unitRef="PURE" decimals="0">5664</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_9a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f26" unitRef="PLN" decimals="2">1652344.59</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_9b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1f" unitRef="PURE" decimals="0">96372</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_9c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f1e" unitRef="PURE" decimals="0">94630</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_9d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f23" unitRef="PURE" decimals="0">389720</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_9e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f27" unitRef="PLN" decimals="2">776930.85</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_9f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f25" unitRef="PLN" decimals="2">2783177.15</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_a0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f24" unitRef="PURE" decimals="0">25487</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_a1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01" unitRef="PURE" decimals="0">51260</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_a2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f30" unitRef="PURE" decimals="0">121015</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_a3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2f" unitRef="PLN" decimals="2">939458.47</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_a4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2e" unitRef="PLN" decimals="2">944285.25</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_a5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2e" unitRef="PURE" decimals="0">93926</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_a6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2f" unitRef="PURE" decimals="0">65078</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_a7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f29" unitRef="PURE" decimals="0">77159</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_a8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2c" unitRef="PURE" decimals="0">185338</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_a9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02" unitRef="PLN" decimals="2">1465653.38</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_aa" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f34" unitRef="PLN" decimals="2">721143.19</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_ab" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10" unitRef="PLN" decimals="2">1700200.35</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_ac" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2d" unitRef="PURE" decimals="0">12468</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_ad" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2d" unitRef="PLN" decimals="2">993868.17</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_ae" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11" unitRef="PLN" decimals="2">942399.55</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_af" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f32" unitRef="PLN" decimals="2">529870.46</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_b0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2b" unitRef="PURE" decimals="0">3938</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_b1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02" unitRef="PURE" decimals="0">21241</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_b2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2c" unitRef="PURE" decimals="0">91944</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_b3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10" unitRef="PLN" decimals="2">932616.04</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_b4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f31" unitRef="PLN" decimals="2">667695.51</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_b5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f33" unitRef="PLN" decimals="2">153884.37</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_b6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2a" unitRef="PLN" decimals="2">341240.10</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_b7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2e" unitRef="PLN" decimals="2">284327.75</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_b8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2f" unitRef="PLN" decimals="2">19034.82</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_b9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2c" unitRef="PLN" decimals="2">631714.24</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_ba" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f34" unitRef="PURE" decimals="0">83518</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_bb" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10" unitRef="PURE" decimals="0">120854</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_bc" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11" unitRef="PLN" decimals="2">1268443.98</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_bd" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f32" unitRef="PURE" decimals="0">56109</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_be" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2a" unitRef="PLN" decimals="2">806860.12</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_bf" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01" unitRef="PLN" decimals="2">1232084.29</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_c0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f30" unitRef="PURE" decimals="0">53856</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_c1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2c" unitRef="PLN" decimals="2">192760.06</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_c2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f33" unitRef="PLN" decimals="2">925951.19</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_c3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f34" unitRef="PURE" decimals="0">146176</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_c4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10" unitRef="PURE" decimals="0">40225</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_c5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f33" unitRef="PURE" decimals="0">7371</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_c6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2a" unitRef="PURE" decimals="0">16653</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_c7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01" unitRef="PLN" decimals="2">786432.77</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_c8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f31" unitRef="PLN" decimals="2">689702.77</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_c9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11" unitRef="PURE" decimals="0">164849</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_ca" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f32" unitRef="PURE" decimals="0">100819</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_cb" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f34" unitRef="PLN" decimals="2">879718.99</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_cc" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2a" unitRef="PURE" decimals="0">57609</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_cd" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f33" unitRef="PURE" decimals="0">31777</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_ce" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f29" unitRef="PURE" decimals="0">34431</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_cf" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f30" unitRef="PLN" decimals="2">2167.31</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_d0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f30" unitRef="PLN" decimals="2">601702.69</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_d1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2f" unitRef="PURE" decimals="0">130041</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_d2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2b" unitRef="PURE" decimals="0">64609</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_d3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2e" unitRef="PURE" decimals="0">166941</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_d4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01" unitRef="PURE" decimals="0">31479</p-BSP-measures:M201>
+  <p-BSP-measures:M10 id="ft_101_d5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02" unitRef="PURE" decimals="0">47955</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_d6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f29" unitRef="PLN" decimals="2">917338.00</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_d7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f31" unitRef="PURE" decimals="0">57440</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_d8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f32" unitRef="PLN" decimals="2">599396.57</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_d9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2d" unitRef="PLN" decimals="2">599242.64</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_da" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11" unitRef="PURE" decimals="0">79907</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_db" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2b" unitRef="PLN" decimals="2">814002.62</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_dc" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2d" unitRef="PURE" decimals="0">65842</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_dd" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f2b" unitRef="PLN" decimals="2">1324352.24</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_de" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f31" unitRef="PURE" decimals="0">6639</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_df" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f29" unitRef="PLN" decimals="2">757392.53</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_e0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02" unitRef="PLN" decimals="2">599500.66</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_e1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1089" unitRef="PURE" decimals="0">150456</p-BSP-measures:M10>
+  <p-BSP-measures:M201 id="ft_101_e2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108c" unitRef="PURE" decimals="0">46908</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_e3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1085" unitRef="PURE" decimals="0">7246</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_e4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1089" unitRef="PLN" decimals="2">978612.20</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_e5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1086" unitRef="PLN" decimals="2">842634.78</p-BSP-measures:M202>
+  <p-BSP-measures:M202 id="ft_101_e6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108b" unitRef="PLN" decimals="2">797977.39</p-BSP-measures:M202>
+  <p-BSP-measures:M11 id="ft_101_e7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108f" unitRef="PLN" decimals="2">851450.78</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_e8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1088" unitRef="PLN" decimals="2">1124896.71</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_e9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108e" unitRef="PLN" decimals="2">878968.99</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_ea" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1088" unitRef="PURE" decimals="0">55035</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_eb" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108f" unitRef="PURE" decimals="0">60836</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_ec" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108b" unitRef="PLN" decimals="2">1338562.31</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_ed" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1086" unitRef="PLN" decimals="2">941151.60</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_ee" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108e" unitRef="PLN" decimals="2">693121.61</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_ef" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108c" unitRef="PURE" decimals="0">105492</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_f0" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1085" unitRef="PURE" decimals="0">8845</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_f1" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1089" unitRef="PLN" decimals="2">1915944.07</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_f2" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108c" unitRef="PLN" decimals="2">537917.64</p-BSP-measures:M202>
+  <p-BSP-measures:M201 id="ft_101_f3" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1089" unitRef="PURE" decimals="0">68018</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_f4" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1086" unitRef="PURE" decimals="0">33446</p-BSP-measures:M201>
+  <p-BSP-measures:M201 id="ft_101_f5" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108b" unitRef="PURE" decimals="0">62123</p-BSP-measures:M201>
+  <p-BSP-measures:M202 id="ft_101_f6" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1085" unitRef="PLN" decimals="2">831774.92</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_f7" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108f" unitRef="PURE" decimals="0">96940</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_f8" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1088" unitRef="PURE" decimals="0">101500</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_f9" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108e" unitRef="PURE" decimals="0">73641</p-BSP-measures:M10>
+  <p-BSP-measures:M202 id="ft_101_fa" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1088" unitRef="PLN" decimals="2">935181.61</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_fb" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1086" unitRef="PURE" decimals="0">125864</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_fc" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108b" unitRef="PURE" decimals="0">113797</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_fd" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108c" unitRef="PLN" decimals="2">934805.05</p-BSP-measures:M11>
+  <p-BSP-measures:M201 id="ft_101_fe" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108e" unitRef="PURE" decimals="0">12215</p-BSP-measures:M201>
+  <p-BSP-measures:M11 id="ft_101_ff" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1085" unitRef="PLN" decimals="2">1669243.27</p-BSP-measures:M11>
+  <p-BSP-measures:M202 id="ft_101_100" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_108f" unitRef="PLN" decimals="2">518510.41</p-BSP-measures:M202>
+  <p-BSP-measures:M10 id="ft_101_101" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ede" unitRef="PURE" decimals="0">40150</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_102" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee2" unitRef="PURE" decimals="0">72675</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_103" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ede" unitRef="PLN" decimals="2">64707.75</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_104" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edc" unitRef="PURE" decimals="0">36454</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_105" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edc" unitRef="PLN" decimals="2">95960.85</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_106" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eda" unitRef="PURE" decimals="0">78436</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_107" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eda" unitRef="PLN" decimals="2">197055.25</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_108" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edf" unitRef="PURE" decimals="0">50525</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_109" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee0" unitRef="PURE" decimals="0">61757</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_10a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edf" unitRef="PLN" decimals="2">637248.66</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_10b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee1" unitRef="PURE" decimals="0">88907</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_10c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee0" unitRef="PLN" decimals="2">543443.58</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_10d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee1" unitRef="PLN" decimals="2">377815.89</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_10e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edd" unitRef="PURE" decimals="0">46254</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_10f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edb" unitRef="PURE" decimals="0">79298</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_110" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edd" unitRef="PLN" decimals="2">625049.29</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_111" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_edb" unitRef="PLN" decimals="2">181569.99</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_112" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_ee2" unitRef="PLN" decimals="2">39494.36</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_113" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1042" unitRef="PLN" decimals="2">1365548.12</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_114" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1061" unitRef="PURE" decimals="0">208355</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_115" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_107d" unitRef="PLN" decimals="2">842649.40</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_116" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_103f" unitRef="PURE" decimals="0">14312</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_117" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_102c" unitRef="PLN" decimals="2">996113.74</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_118" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1080" unitRef="PLN" decimals="2">772703.87</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_119" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1061" unitRef="PLN" decimals="2">624093.63</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_11a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1080" unitRef="PURE" decimals="0">159654</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_11b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_102c" unitRef="PURE" decimals="0">18281</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_11c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_104b" unitRef="PURE" decimals="0">72428</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_11d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_106a" unitRef="PLN" decimals="2">960610.70</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_11e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_107d" unitRef="PURE" decimals="0">17379</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_11f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_103f" unitRef="PLN" decimals="2">759794.80</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_120" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_105e" unitRef="PURE" decimals="0">80943</p-BSP-measures:M10>
+  <p-BSP-measures:M10 id="ft_101_121" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1042" unitRef="PURE" decimals="0">186447</p-BSP-measures:M10>
+  <p-BSP-measures:M11 id="ft_101_122" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_104b" unitRef="PLN" decimals="2">983472.54</p-BSP-measures:M11>
+  <p-BSP-measures:M11 id="ft_101_123" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_105e" unitRef="PLN" decimals="2">674111.98</p-BSP-measures:M11>
+  <p-BSP-measures:M10 id="ft_101_124" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_106a" unitRef="PURE" decimals="0">22317</p-BSP-measures:M10>
+  <p-BSP-measures:M13 id="ft_101_125" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f18" unitRef="PLN" decimals="2">20.58</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_126" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f04" unitRef="PURE" decimals="0">872</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_127" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0c" unitRef="PURE" decimals="0">89</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_128" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f03" unitRef="PLN" decimals="2">498.57</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_129" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f13" unitRef="PLN" decimals="2">814.94</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_12a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11" unitRef="PLN" decimals="2">669.99</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_12b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f09" unitRef="PURE" decimals="0">55</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_12c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0a" unitRef="PURE" decimals="0">2469</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_12d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f15" unitRef="PURE" decimals="0">1012</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_12e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f16" unitRef="PURE" decimals="0">1444</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_12f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f05" unitRef="PLN" decimals="2">284.84</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_130" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f08" unitRef="PLN" decimals="2">168.22</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_131" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eff" unitRef="PURE" decimals="0">665</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_132" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0d" unitRef="PLN" decimals="2">854.63</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_133" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0b" unitRef="PLN" decimals="2">0.34</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_134" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f00" unitRef="PURE" decimals="0">30</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_135" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0f" unitRef="PLN" decimals="2">812.54</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_136" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0e" unitRef="PLN" decimals="2">637.48</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_137" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efc" unitRef="PURE" decimals="0">376</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_138" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f04" unitRef="PLN" decimals="2">84.87</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_139" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0c" unitRef="PLN" decimals="2">891.91</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_13a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f14" unitRef="PLN" decimals="2">604.74</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_13b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efe" unitRef="PURE" decimals="0">563</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_13c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f13" unitRef="PURE" decimals="0">393</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_13d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f07" unitRef="PURE" decimals="0">1028</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_13e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efb" unitRef="PLN" decimals="2">2419.24</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_13f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02" unitRef="PURE" decimals="0">430</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_140" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f11" unitRef="PURE" decimals="0">970</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_141" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f03" unitRef="PURE" decimals="0">1735</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_142" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f15" unitRef="PLN" decimals="2">1746.54</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_143" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f08" unitRef="PURE" decimals="0">225</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_144" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_eff" unitRef="PLN" decimals="2">245.53</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_145" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f00" unitRef="PLN" decimals="2">576.24</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_146" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0f" unitRef="PURE" decimals="0">13</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_147" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0e" unitRef="PURE" decimals="0">39</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_148" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f06" unitRef="PLN" decimals="2">774.14</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_149" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f14" unitRef="PURE" decimals="0">614</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_14a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f12" unitRef="PURE" decimals="0">1546</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_14b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f07" unitRef="PLN" decimals="2">1068.86</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_14c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f02" unitRef="PLN" decimals="2">992.17</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_14d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f17" unitRef="PLN" decimals="2">390.81</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_14e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efb" unitRef="PURE" decimals="0">2377</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_14f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efe" unitRef="PLN" decimals="2">283.79</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_150" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efd" unitRef="PLN" decimals="2">490.35</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_151" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10" unitRef="PLN" decimals="2">716.33</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_152" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01" unitRef="PURE" decimals="0">598</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_153" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f06" unitRef="PURE" decimals="0">1319</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_154" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f12" unitRef="PLN" decimals="2">1440.26</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_155" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0b" unitRef="PURE" decimals="0">10</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_156" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f18" unitRef="PURE" decimals="0">539</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_157" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f17" unitRef="PURE" decimals="0">155</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_158" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f09" unitRef="PLN" decimals="2">128.86</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_159" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efd" unitRef="PURE" decimals="0">756</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_15a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f10" unitRef="PURE" decimals="0">474</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_15b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0a" unitRef="PLN" decimals="2">3945.40</p-BSP-measures:M13>
+  <p-BSP-measures:M12 id="ft_101_15c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f05" unitRef="PURE" decimals="0">808</p-BSP-measures:M12>
+  <p-BSP-measures:M12 id="ft_101_15d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f0d" unitRef="PURE" decimals="0">923</p-BSP-measures:M12>
+  <p-BSP-measures:M13 id="ft_101_15e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f16" unitRef="PLN" decimals="2">1386.32</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_15f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_efc" unitRef="PLN" decimals="2">60.22</p-BSP-measures:M13>
+  <p-BSP-measures:M13 id="ft_101_160" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_f01" unitRef="PLN" decimals="2">76.69</p-BSP-measures:M13>
+  <p-BSP-measures:M14 id="ft_101_161" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1096" unitRef="PLN" decimals="2">4.49</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_162" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a3" unitRef="PLN" decimals="2">48.93</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_163" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109b" unitRef="PLN" decimals="2">40.30</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_164" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109d" unitRef="PLN" decimals="2">25.04</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_165" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1094" unitRef="PLN" decimals="2">9.33</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_166" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10aa" unitRef="PLN" decimals="2">170.31</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_167" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a0" unitRef="PLN" decimals="2">19.21</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_168" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1099" unitRef="PLN" decimals="2">25.56</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_169" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a2" unitRef="PLN" decimals="2">82.14</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_16a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a8" unitRef="PLN" decimals="2">25.79</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_16b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1093" unitRef="PLN" decimals="2">28.55</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_16c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109e" unitRef="PLN" decimals="2">76.00</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_16d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1098" unitRef="PLN" decimals="2">159.84</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_16e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1097" unitRef="PLN" decimals="2">82.25</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_16f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a9" unitRef="PLN" decimals="2">23.93</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_170" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1091" unitRef="PLN" decimals="2">7.17</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_171" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ab" unitRef="PLN" decimals="2">184.98</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_172" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1092" unitRef="PLN" decimals="2">11.75</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_173" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109a" unitRef="PLN" decimals="2">58.28</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_174" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ad" unitRef="PLN" decimals="2">23.87</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_175" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109f" unitRef="PLN" decimals="2">377.93</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_176" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a7" unitRef="PLN" decimals="2">73.59</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_177" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1095" unitRef="PLN" decimals="2">27.72</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_178" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_1090" unitRef="PLN" decimals="2">154.76</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_179" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a1" unitRef="PLN" decimals="2">88.17</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_17a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_109c" unitRef="PLN" decimals="2">86.74</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_17b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ac" unitRef="PLN" decimals="2">56.77</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_17c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a5" unitRef="PLN" decimals="2">94.38</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_17d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a4" unitRef="PLN" decimals="2">22.64</p-BSP-measures:M14>
+  <p-BSP-measures:M14 id="ft_101_17e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10a6" unitRef="PLN" decimals="2">90.60</p-BSP-measures:M14>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_17f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b4">Zbigniew.Mazurski@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_180" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10af">33 2345678</p-dane:TelefonSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_181" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10af">Kowalska</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_182" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b1">Lato</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_183" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b1">55 4567890</p-dane:TelefonSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_184" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b3">Elwira</p-dane:ImieSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_185" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10af">Marta</p-dane:ImieSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_186" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b1">Agnieszka</p-dane:ImieSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_187" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b3">77 6789012</p-dane:TelefonSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_188" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b4">88 7890123</p-dane:TelefonSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_189" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b4">Mazurski</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_18a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b3">Elwira.Zielarski@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_18b" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b1">Agnieszka.Lato@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_18c" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10af">Marta.Kowalska@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_18d" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ae">22 1234567</p-dane:TelefonSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_18e" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b2">Andrzejewski</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_18f" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b0">Pomorski</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_190" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ae">Jan</p-dane:ImieSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_191" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ae">Nowak</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_192" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b4">Zbigniew</p-dane:ImieSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_193" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b0">44 3456789</p-dane:TelefonSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_194" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b2">Franciszek</p-dane:ImieSporzadzajacego>
+  <p-dane:ImieSporzadzajacego id="ft_101_195" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b0">Krzysztof</p-dane:ImieSporzadzajacego>
+  <p-dane:TelefonSporzadzajacego id="ft_101_196" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b2">66 5678901</p-dane:TelefonSporzadzajacego>
+  <p-dane:NazwiskoSporzadzajacego id="ft_101_197" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b3">Zielarski</p-dane:NazwiskoSporzadzajacego>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_198" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b2">Franciszek.Andrzejewski@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_199" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10ae">Jan.Nowak@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+  <p-dane:AdresEMailSporzadzajacego id="ft_101_19a" contextRef="NBP_bsp2_ar_j_m_k_20230331_t_BSP_2022_01_01_10b0">Krzysztof.Pomorski@abcde.pl</p-dane:AdresEMailSporzadzajacego>
+</xbrli:xbrl>
