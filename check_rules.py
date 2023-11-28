@@ -1,4 +1,5 @@
 import pandas as pd
+from variables import geo3
 
 AR2_TO_CHECK = [
     'AR2',
@@ -159,20 +160,20 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
     rules = {
         "RW_ST.05_01": [5, ['11.1.1.1'], '<=', ['11.1.1'], 0, 4],
         "RW_ST.05_02": [5, ['M10_NRP'], '>=', ['M201_NRP'], 1, [4, 5]],
-        "RW_ST.05_03": [5],
-        "RW_ST.05_04": [5],
-        "RW_ST.05_05": [5],
-        "RW_ST.05_06": [5],
-        "RW_ST.05_07": [5],
-        "RW_ST.05_08": [5],
-        "RW_ST.05_09": [5],
-        "RW_ST.05_10": [5],
-        "RW_ST.05_11": [5],
-        "RW_ST.05_12": [5],
-        "RW_ST.05_13": [5]
+        "RW_ST.05_03": [5, ['M10_PRP'], '>=', ['M201_PRP'], 2, [4, 5]],
+        "RW_ST.05_04": [5, ['11.2.1.1'], '<=', ['11.2.1'], 3, 4],
+        "RW_ST.05_05": [5, ['M11_NRP'], '>=', ['M202_NRP'], 4, [4, 5]],
+        "RW_ST.05_06": [5, ['M11_PRP'], '>=', ['M202_PRP'], 5, [4, 5]],
+        "RW_ST.05_07": [5, ['12.1.1'], '<=', ['12.1'], 6, 4],
+        "RW_ST.05_08": [[5, 6], ['M201_PRP', ['_KI_OKP.UKP_', '_KB_OKP.UKP_']], '==', ['M10_OKP.UKP_PRP_', geo3], 7, [0, 5]],
+        "RW_ST.05_09": [[5, 6], ['M201_PRP', ['_KI_OCB_', '_KB_OCB_']], '==', ['M10_OCB_PRP_', geo3], 8, [0, 5]],
+        "RW_ST.05_10": [[5, 6], ['M201_PRP', ['_KI_OKP.IT_', '_KB_OKP.IT_']], '==', ['M10_OKP.IT_PRP_', geo3], 9, [0, 5]],
+        "RW_ST.05_11": [[5, 6], ['M202_PRP', ['_KI_OKP.UKP_', '_KB_OKP.UKP_']], '==', ['M11_OKP.UKP_PRP_', geo3], 10, [0, 5]],
+        "RW_ST.05_12": [[5, 6], ['M202_PRP', ['_KI_OCB_', '_KB_OCB_']], '==', ['M11_OCB_PRP_', geo3], 11, [0, 5]],
+        "RW_ST.05_13": [[5, 6], ['M202_PRP', ['_KI_OKP.IT_', '_KB_OKP.IT_']], '==', ['M11_OKP.IT_PRP_', geo3], 12, [0, 5]]
     }
     results = []
-    if rule in ["RW_ST.05_01"]:
+    if rule in ["RW_ST.05_01", "RW_ST.05_04", "RW_ST.05_07"]:
         case = rules[rule]
         sheet = case[0]
         df_tc = df[AR1_TO_CHECK[sheet]]
@@ -227,7 +228,7 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
             return results
 
-    if rule in ["RW_ST.05_02"]:
+    if rule in ["RW_ST.05_02", "RW_ST.05_03", "RW_ST.05_05", "RW_ST.05_06"]:
         case = rules[rule]
         sheet = case[0]
         df_tc = df[AR1_TO_CHECK[sheet]]
@@ -262,6 +263,67 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                 results.append([sheet, True, case[4]])
             else:
                 results.append([sheet, False, case[4], row])
+
+            return results
+
+    if rule in ["RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12", "RW_ST.05_13"]:
+        case = rules[rule]
+
+        code_col = case[5][0]
+        code_row = case[5][1]
+
+        parts = [1, 3]
+        match = [0, 0]
+
+        c: int
+        for p, part in enumerate(parts):
+            for row_value in case[part][1]:
+                col_value = case[part][0]
+
+                # Check if df_tc is not empty
+                if p == 0:
+                    sheet = case[0][p]
+                    df_tc = df[AR1_TO_CHECK[sheet]]
+
+                    if not df_tc.empty:
+                        # Check if the value exists in the specified column
+                        if case[part] in df_tc.loc[code_row].values:
+                            # Get the index of the first occurrence
+                            col = pd.Index(df_tc.iloc[code_row]).get_loc(col_value)
+                            row = df_tc[df_tc[code_col] == row_value].index[0]
+                            print("Index of the first occurrence:", df_tc[df_tc[code_col] == case[part][0]].index[0])
+
+                            match[p] += df_tc.iat[row, col]
+                        else:
+                            print(f"The value {case[part][0]} does not exist in the specified column.")
+                    else:
+                        print("The DataFrame is empty.")
+
+                else:
+                    sheet = case[0][p]
+                    df_tc = df[AR1_TO_CHECK[sheet]]
+
+                    if not df_tc.empty:
+                        # Check if the value exists in the specified column
+                        if case[part] in df_tc.loc[code_row].values:
+                            # Get the index of the first occurrence
+                            col = pd.Index(df_tc.iloc[code_row]).get_loc(case[part])
+                            row = df_tc[df_tc[code_col] == case[part][0]].index[0]
+                            print("Index of the first occurrence:", df_tc[df_tc[code_col] == case[part][0]].index[0])
+
+                            match[p] += df_tc.iat[row, col]
+                        else:
+                            print(f"The value {case[part][0]} does not exist in the specified column.")
+                    else:
+                        print("The DataFrame is empty.")
+
+            condition = f"{match[0]} {case[2]} {match[1]}"
+            print(condition)
+
+            if eval(condition):
+                results.append([sheet, True, case[4]])
+            else:
+                results.append([sheet, False, case[4], col])
 
             return results
 

@@ -63,6 +63,38 @@ EXCEL_READ_AR1 = [
     'p-dane'
 ]
 
+geo3 = [
+    'AT'
+    , 'BE'
+    , 'BG'
+    , 'HR'
+    , 'CY'
+    , 'CZ'
+    , 'DK'
+    , 'EE'
+    , 'FI'
+    , 'FR'
+    , 'GR'
+    , 'ES'
+    , 'NL'
+    , 'IE'
+    , 'IS'
+    , 'LT'
+    , 'LI'
+    , 'LU'
+    , 'LV'
+    , 'MT'
+    , 'DE'
+    , 'NO'
+    , 'PT'
+    , 'RO'
+    , 'SK'
+    , 'SI'
+    , 'SE'
+    , 'HU'
+    , 'IT'
+]
+
 geo3_country_loc = [
     'AT'
     , 'BE'
