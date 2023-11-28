@@ -505,10 +505,9 @@ def run_rule(ar, df):
     rules_2 = ["PCP_090", "PCP_091", "PCP_092", "PCP_093", "PCP_094", "PCP_096", "PCP_099", "PCP_006",
                "PCP_095", "PCP_102", "PCP_105", "PCP_007", "PCP_108", "PCP_120", "PCP_109", "PCP_121",
                "PCP_111", "PCP_123", "PCP_245_R", "DSDs_038_R", "DSDs_040_R", "PCP_110", "PCP_122"]
-    rules_1 = ["RW_ST.05_01", "RW_ST.05_02"
-               # , "RW_ST.05_03", "RW_ST.05_04", "RW_ST.05_05", "RW_ST.05_06",
-               # "RW_ST.05_07", "RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12",
-               # "RW_ST.05_13"
+    rules_1 = ["RW_ST.05_01", "RW_ST.05_02", "RW_ST.05_03", "RW_ST.05_04", "RW_ST.05_05", "RW_ST.05_06",
+               "RW_ST.05_07", "RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12",
+               "RW_ST.05_13"
                ]
 
     rule: str
