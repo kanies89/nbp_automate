@@ -9,7 +9,7 @@ from check import AR2_TO_CHECK, AR1_TO_CHECK
 import importlib
 import pandas as pd
 from openpyxl.utils import get_column_letter
-from check_rules import check_rules
+from check_rules import check_rules_ar2, check_rules_ar1
 
 
 class CheckThread(QThread):
@@ -502,20 +502,46 @@ def run_rule_ar1(col, dataframe, rule_number, row, sheet):
 
 def run_rule(ar, df):
     # [sheet, boolean, row, column]
-    rules = ["PCP_090", "PCP_091", "PCP_092", "PCP_093", "PCP_094", "PCP_096", "PCP_099", "PCP_006",
-             "PCP_095", "PCP_102", "PCP_105", "PCP_007", "PCP_108", "PCP_120", "PCP_109"]
+    rules_2 = ["PCP_090", "PCP_091", "PCP_092", "PCP_093", "PCP_094", "PCP_096", "PCP_099", "PCP_006",
+               "PCP_095", "PCP_102", "PCP_105", "PCP_007", "PCP_108", "PCP_120", "PCP_109", "PCP_121",
+               "PCP_111", "PCP_123", "PCP_245_R", "DSDs_038_R", "DSDs_040_R", "PCP_110", "PCP_122"]
+    rules_1 = ["RW_ST.05_01", "RW_ST.05_02"
+               # , "RW_ST.05_03", "RW_ST.05_04", "RW_ST.05_05", "RW_ST.05_06",
+               # "RW_ST.05_07", "RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12",
+               # "RW_ST.05_13"
+               ]
+
     rule: str
-    for rule in rules:
-        info = check_rules(ar, df, rule, 6)
-        results = info
-        for result in results:
-            row = result[2]
-            n = result[0]
-            if not result[1]:
-                dialog.change_cell_background(row, n + 3, 255, 0, 0, 'AR2')
-                dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ', 'AR2')
-            if result[1]:
-                dialog.change_cell_background(row, n + 3, 50, 205, 50, 'AR2')
+
+    if ar == 2:
+        for rule in rules_2:
+            results = check_rules_ar2(ar, df, rule, 6)
+
+            for result in results:
+                row = result[2]
+                n = result[0]
+                if result[1]:
+                    dialog.change_cell_background(row, n + 3, 50, 205, 50, 'AR2')
+                else:
+                    dialog.change_cell_background(row, n + 3, 255, 0, 0, 'AR2')
+                    dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ',
+                                               'AR2')
+    elif ar == 1:
+        for rule in rules_1:
+            results = check_rules_ar1(ar, df, rule, 13)
+            if results is None:
+                continue
+            for result in results:
+                row = result[2]
+                col = 3
+                sheet = result[0]
+
+                if result[1]:
+                    dialog.change_cell_background(row, col, 50, 205, 50, f'AR1-ST.0{sheet}')
+                else:
+                    dialog.change_cell_background(row, col, 255, 0, 0, f'AR1-ST.0{sheet}')
+                    dialog.append_text_to_cell(row, col, f'; Error in column: {get_column_letter(result[3] + 1)}; ',
+                                               'AR1')
 
 
 def perform_tests():
@@ -532,7 +558,9 @@ def perform_tests():
 
     # Perform all the tests
     df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
+    df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
     run_rule(2, df_nbp_2)
+    run_rule(1, df_nbp_1)
 
 
 if __name__ == "__main__":
