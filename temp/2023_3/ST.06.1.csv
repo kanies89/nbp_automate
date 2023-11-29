@@ -4,9 +4,9 @@
 2,BG,Bułgaria,Bulgaria,wyróżnione,2021,0,1,131092.1700,0,14.0000
 3,HR,Chorwacja,Croatia,wyróżnione,995,0,0,63899.1800,0,0.0000
 4,CY,Cypr,Cyprus,wyróżnione,783,0,0,73813.3600,0,0.0000
-5,CZ,Czechy,Czechia,wyróżnione,114241,0,8,9660081.6500,0,107.5000
+5,CZ,Czechy,Czechia,wyróżnione,114240,0,8,9660057.6500,0,107.5000
 6,DK,Dania,Denmark,wyróżnione,25070,0,22,2287011.8500,0,1538.6800
-7,EE,Estonia,Estonia,wyróżnione,5067,0,0,358712.2100,0,0.0000
+7,EE,Estonia,Estonia,wyróżnione,5066,0,0,358700.2100,0,0.0000
 8,FI,Finlandia,Finland,wyróżnione,7652,0,0,487556.2900,0,0.0000
 9,FR,Francja,France,wyróżnione,19003,0,0,1910668.7600,0,0.0000
 10,DE,Niemcy,Germany,wyróżnione,169824,0,55,20379033.3700,0,1493.0000
@@ -24,7 +24,7 @@
 22,NO,Norwegia ,Norway,wyróżnione,58399,0,2,5954306.3000,0,400.0000
 23,PT,Portugalia ,Portugal,wyróżnione,1775,0,0,132829.0100,0,0.0000
 24,RO,Rumunia,Romania,wyróżnione,4536,0,1,292066.5500,0,16.0000
-25,SK,Słowacja,Slovakia,wyróżnione,27797,0,0,2370030.0800,0,0.0000
+25,SK,Słowacja,Slovakia,wyróżnione,27796,0,0,2370012.0800,0,0.0000
 26,SI,Słowenia,Slovenia,wyróżnione,1054,0,0,62873.7400,0,0.0000
 27,ES,Hiszpania,Spain,wyróżnione,14272,0,0,989713.3100,0,0.0000
 28,SE,Szwecja,Sweden,wyróżnione,42104,0,1,3254563.8600,0,106.0000
@@ -148,7 +148,7 @@
 146,TM,Turkmenistan,Turkmenistan,reszta świata,2,0,0,154.9900,0,0.0000
 147,TC,Wyspy Turks i Caicos,Turks and Caicos Islands (the),reszta świata,2,0,0,903.0000,0,0.0000
 148,UG,Uganda,Uganda,reszta świata,24,0,0,5189.1100,0,0.0000
-149,UA,Ukraina,Ukraine,reszta świata,289533,0,3,14117288.5400,0,13.0000
+149,UA,Ukraina,Ukraine,reszta świata,289532,0,3,14117257.0600,0,13.0000
 150,AE,Zjednoczone Emiraty Arabskie,United Arab Emirates (the),reszta świata,6261,0,0,2161517.7600,0,0.0000
 151,GB,Wielka Brytania,United Kingdom of Great Britain and Northern Ireland (the),reszta świata,593942,0,11,36464493.2100,0,1543.9000
 152,US,Stany Zjednoczone Ameryki Północnej łącznie z Portoryko i Navassa,United States of America (the),reszta świata,75758,0,1,9187784.7500,0,500.0000

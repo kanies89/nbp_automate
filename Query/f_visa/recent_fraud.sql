@@ -1,4 +1,3 @@
-SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED
 SELECT
 aquirerReferenceNumber 'ARN',
 tr_sink_node,

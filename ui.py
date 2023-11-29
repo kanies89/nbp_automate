@@ -1,15 +1,59 @@
 import sys
 import datetime
-from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog
-from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot
+from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
+from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QDate
 from PyQt5.QtGui import QColor
 from PyQt5.uic import loadUi
 from main_v2 import start_automation, Logger, check_quarter
-from check import AR2_TO_CHECK, AR1_TO_CHECK
-import importlib
+
 import pandas as pd
 from openpyxl.utils import get_column_letter
-from check_rules import check_rules_ar2, check_rules_ar1
+from check_rules import check_rules_ar2, check_rules_ar1, AR2_TO_CHECK, AR1_TO_CHECK
+from generate_ar1_xml import create_xml_ar1
+from generate_ar2_xml import create_xml_ar2
+
+
+class QuarterlyDateEdit(QWidget):
+    def __init__(self, parent=None):
+        super(QuarterlyDateEdit, self).__init__(parent)
+
+        layout = QVBoxLayout(self)
+
+        self.year_combo = QComboBox(self)
+        self.year_combo.addItems([str(year) for year in range(2000, 2031)])
+        current_year = QDate.currentDate().year()  # Get the current year
+        self.year_combo.setCurrentIndex(self.year_combo.findText(str(current_year)))
+        self.year_combo.currentIndexChanged.connect(self.update_date)
+        self.year_combo.setEnabled(False)  # Initially disabled
+
+        self.quarter_combo = QComboBox(self)
+        self.quarter_combo.addItems(["Q1", "Q2", "Q3", "Q4"])
+        current_quarter = (QDate.currentDate().month() - 1) // 3 + 1  # Get the current quarter
+        self.quarter_combo.setCurrentIndex(current_quarter - 2)
+        self.quarter_combo.currentIndexChanged.connect(self.update_date)
+        self.quarter_combo.setEnabled(False)  # Initially disabled
+
+        self.date_edit = QDateEdit(self)
+        self.date_edit.setDisplayFormat("yyyy-MM-dd")
+        self.date_edit.setEnabled(False)  # Initially disabled
+        self.date_edit.setButtonSymbols(QAbstractSpinBox.NoButtons)
+
+        layout.addWidget(self.year_combo)
+        layout.addWidget(self.quarter_combo)
+        layout.addWidget(self.date_edit)
+
+        self.update_date()
+
+    def update_date(self):
+        year = int(self.year_combo.currentText())
+        quarter = self.quarter_combo.currentIndex() + 1
+        last_day_of_quarter = self.last_day_of_quarter(year, quarter)
+        self.date_edit.setDate(last_day_of_quarter)
+
+    def last_day_of_quarter(self, year, quarter):
+        month = (quarter - 1) * 3 + 3
+        last_day = QDate(year, month, 1).addMonths(1).addDays(-1)
+        return last_day
 
 
 class CheckThread(QThread):
@@ -35,6 +79,51 @@ class CheckThread(QThread):
         # Enable the toolButton
         dialog.toolButton.setEnabled(True)
         dialog.radioButton_check.setEnabled(True)
+        dialog.radioButton_xml.setEnabled(True)
+        dialog.radioButton_prepare.setEnabled(True)
+        dialog.pushButton_openAR1.setEnabled(True)
+        dialog.pushButton_openAR2.setEnabled(True)
+
+
+class ConvertThread(QThread):
+    # Define custom signals to communicate with the main thread
+    def __init__(self, date):
+        super(ConvertThread, self).__init__()
+        self.date = date
+
+    def run(self):
+        # Run the start_automation function
+        print('Making xml files.')
+
+        # Call the start_automation function with progress_callback
+        def progress_callback(step):
+            self.progress = (step * 100) // self.total_steps
+            self.progress_updated.emit(self.progress)
+
+        if dialog.AR2 is None:
+            path_2 = f'EXAMPLE\\Filled\\' + f'{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR2_v.4.01.xlsx'
+        else:
+            path_2 = dialog.AR2
+
+        if dialog.AR1 is None:
+            path_1 = f'EXAMPLE\\Filled\\' + f'{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR1_ST.w.8.7.5.xlsx'
+        else:
+            path_1 = dialog.AR1
+
+        # Perform all the tests
+        df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
+        df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
+
+        create_xml_ar1(df_nbp_1, self.date)
+        create_xml_ar2(df_nbp_2, self.date)
+
+        # Emit the finished signal to indicate the completion
+        self.finished.emit()
+
+        # Disable the toolButton
+        dialog.pushButton_convert.setEnabled(True)
+        dialog.radioButton_check.setEnabled(True)
+        dialog.radioButton_xml.setEnabled(True)
         dialog.radioButton_prepare.setEnabled(True)
         dialog.pushButton_openAR1.setEnabled(True)
         dialog.pushButton_openAR2.setEnabled(True)
@@ -70,7 +159,8 @@ class AutomationThread(QThread):
         def progress_callback_text(text):
             self.progress_text_updated.emit(text)  # Emit the signal to update the PasswordText label
 
-        start_automation(self.name, self.surname, self.phone, self.email, self.password, progress_callback, progress_callback_text)
+        start_automation(self.name, self.surname, self.phone, self.email, self.password, progress_callback,
+                         progress_callback_text)
 
         # Emit the finished signal to indicate the completion
         self.finished.emit()
@@ -81,28 +171,51 @@ class AutomationThread(QThread):
 
 class MyDialog(QDialog):
     editing_finished = pyqtSignal()
-    # Custom signal for progress updates
     progress_updated = pyqtSignal(int)
 
     @pyqtSlot(str)
     def update_progress_text(self, text):
-        # Update the PasswordText label with the provided message
         self.progressLabel.setText(text)
 
     @pyqtSlot(str)
     def update_display(self, message):
         self.TDisplay.append(message)
-        # Scroll to the last row
         scrollbar = self.TDisplay.verticalScrollBar()
         scrollbar.setValue(scrollbar.maximum())
 
+    def update_date(self):
+        # Handle date updates here if needed
+        pass
+
     def __init__(self):
         super(MyDialog, self).__init__()
+
         # Load the UI from the XML file
-        loadUi("./UI/nbp_ui.ui", self)
+        ui = loadUi("./UI/nbp_ui.ui", self)
+
+        # Create an instance of QuarterlyDateEdit
+        self.quarterly_date_edit = QuarterlyDateEdit(self)
+        self.quarterly_date_edit.year_combo.currentIndexChanged.connect(self.update_date)
+        self.quarterly_date_edit.quarter_combo.currentIndexChanged.connect(self.update_date)
+
+        # Find the existing QVBoxLayout named verticallayout_convert
+        existing_layout = ui.findChild(QVBoxLayout, "verticallayout_convert")
+
+        # Check if the layout exists
+        if existing_layout is not None:
+            # Add QuarterlyDateEdit to the existing layout
+            existing_layout.insertWidget(0, self.quarterly_date_edit)
+        else:
+            print("No verticallayout_convert found in the loaded UI.")
+
+        # Add existing components and QuarterlyDateEdit to verticallayout_convert
+        # self.verticallayout_convert.addWidget(self.TDisplay)
+        # self.verticallayout_convert.addWidget(self.progressLabel)
+        # self.verticallayout_convert.addWidget(self.quarterly_date_edit)
 
         self.automation_thread = None
         self.check_thread = None
+        self.convert_thread = None
         self.AR1 = None
         self.AR2 = None
 
@@ -113,7 +226,7 @@ class MyDialog(QDialog):
         self.current_tab = 0
 
         # Set the fixed size of the window
-        self.setFixedSize(402, 555)
+        self.setFixedSize(402, 605)
 
         # Connect the "Apply" buttons click events to their functions
         self.BName.clicked.connect(self.on_name_apply_clicked)
@@ -121,10 +234,12 @@ class MyDialog(QDialog):
         self.BPhone.clicked.connect(self.on_phone_apply_clicked)
         self.BEmail.clicked.connect(self.on_email_apply_clicked)
         self.Start.clicked.connect(self.on_start_clicked)
+        self.pushButton_convert.clicked.connect(self.on_convert_button_clicked)
 
         # Connect radio buttons
         self.radioButton_check.clicked.connect(lambda button: self.radio_buttons(button='check'))
         self.radioButton_prepare.clicked.connect(lambda button: self.radio_buttons(button='prepare'))
+        self.radioButton_xml.clicked.connect(lambda button: self.radio_buttons(button='xml'))
 
         self.pushButton_openAR1.clicked.connect(lambda source: self.open_file_dialog(source='AR1'))
         self.pushButton_openAR2.clicked.connect(lambda source: self.open_file_dialog(source='AR2'))
@@ -263,15 +378,15 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
     def toggle_window_size(self, index, source):
         if self.enlarged and source == "toolButton":
-            self.setFixedSize(402, 555)  # Set your original size
+            self.setFixedSize(402, 605)  # Set your original size
             self.enlarged = False
         else:
             if index == 0:  # tab_AR2
-                self.setFixedSize(1975, 555)  # Set the enlarged size
+                self.setFixedSize(1975, 605)  # Set the enlarged size
                 self.current_tab = 0
                 self.enlarged = True
             elif index == 1:  # tab_AR1
-                self.setFixedSize(1075, 555)  # Set the enlarged size
+                self.setFixedSize(1075, 605)  # Set the enlarged size
                 self.enlarged = True
                 self.current_tab = 1
 
@@ -376,12 +491,24 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.pushButton_openAR2.setEnabled(False)
             self.radioButton_prepare.setEnabled(False)
             self.radioButton_check.setEnabled(False)
+            self.radioButton_xml.setEnabled(False)
 
             # Start the automation thread
             self.automation_thread.start()
 
         elif self.Start.text() == 'Exit':
             QApplication.quit()
+
+    def on_convert_button_clicked(self):
+        selected_date = self.quarterly_date_edit.date_edit.date()
+        date_string = selected_date.toString(Qt.ISODate)
+        print("Selected Date:", selected_date.toString(Qt.ISODate))
+
+        # Run
+        self.convert_thread = ConvertThread(date_string)
+
+        # Start the check thread
+        self.convert_thread.start()
 
     def update_progress(self, progress):
         # Update the progress bar
@@ -419,13 +546,21 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         self.pushButton_openAR2.setEnabled(False)
         self.radioButton_prepare.setEnabled(False)
         self.radioButton_check.setEnabled(False)
-        # Create the AutomationThread and start it
-        self.check_thread = CheckThread()
-        # self.automation_thread.progress_updated.connect(self.update_progress)
-        # self.automation_thread.finished.connect(self.on_automation_finished)
+        self.radioButton_xml.setEnabled(False)
 
+        # Create the CheckThread and start it
+        self.check_thread = CheckThread()
         # Start the check thread
         self.check_thread.start()
+
+        selected_date = self.quarterly_date_edit.date_edit.date()
+        date_string = selected_date.toString(Qt.ISODate)
+        print("Selected Date:", selected_date.toString(Qt.ISODate))
+
+        # Create the ConvertThread and start it
+        self.convert_thread = ConvertThread(date_string)
+        # Start the convert thread
+        self.convert_thread.start()
 
         # Enable the "Start" button when the automation is finished
         self.Start.setEnabled(True)
@@ -435,7 +570,14 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
     def radio_buttons(self, button):
         if button == 'prepare':
+            self.pushButton_convert.setEnabled(False)
+
+            self.quarterly_date_edit.quarter_combo.setEnabled(False)
+            self.quarterly_date_edit.year_combo.setEnabled(False)
+            self.quarterly_date_edit.date_edit.setEnabled(False)
+
             self.radioButton_check.setChecked(False)
+            self.radioButton_xml.setChecked(False)
             self.TName.setEnabled(True)
             self.BName.setEnabled(True)
             self.pushButton_openAR1.setEnabled(False)
@@ -447,7 +589,30 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.toggle_window_size(self.current_tab, source="toolButton")
 
         if button == 'check':
+            self.pushButton_convert.setEnabled(False)
+
+            self.quarterly_date_edit.quarter_combo.setEnabled(False)
+            self.quarterly_date_edit.year_combo.setEnabled(False)
+            self.quarterly_date_edit.date_edit.setEnabled(False)
+
             self.radioButton_prepare.setChecked(False)
+            self.radioButton_xml.setChecked(False)
+            self.TName.setEnabled(False)
+            self.BName.setEnabled(False)
+            self.pushButton_openAR1.setEnabled(True)
+            self.pushButton_openAR2.setEnabled(True)
+            self.enlarged = True
+            self.toggle_window_size(self.current_tab, source="toolButton")
+
+        if button == 'xml':
+            self.pushButton_convert.setEnabled(True)
+
+            self.quarterly_date_edit.quarter_combo.setEnabled(True)
+            self.quarterly_date_edit.year_combo.setEnabled(True)
+            self.quarterly_date_edit.date_edit.setEnabled(True)
+
+            self.radioButton_prepare.setChecked(False)
+            self.radioButton_check.setChecked(False)
             self.TName.setEnabled(False)
             self.BName.setEnabled(False)
             self.pushButton_openAR1.setEnabled(True)
@@ -471,33 +636,13 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.pushButton_openAR2.setEnabled(False)
             self.radioButton_prepare.setEnabled(False)
             self.radioButton_check.setEnabled(False)
+            self.radioButton_xml.setEnabled(False)
+
             # Create the AutomationThread and start it
             self.check_thread = CheckThread()
-            # self.automation_thread.progress_updated.connect(self.update_progress)
-            # self.automation_thread.finished.connect(self.on_automation_finished)
 
             # Start the check thread
             self.check_thread.start()
-
-
-def run_rule_ar1(col, dataframe, rule_number, row, sheet):
-    rule_module = importlib.import_module('check')
-    rule_function_name = f'rule_{rule_number}_ar1'
-    rule_function = getattr(rule_module, rule_function_name, None)
-
-    if rule_function is None or not callable(rule_function):
-        raise ValueError(f"Rule {rule_function_name} not found or not callable")
-
-    bool = True
-    results = rule_function(dataframe, sheet - 1)
-
-    for result in results:
-        if not result[1]:
-            dialog.change_cell_background(row, col, 255, 0, 0, f'AR1-ST.0{sheet}')
-            dialog.append_text_to_cell(row, col, f'; Error in column: {result[2]}; ', f'AR1-ST.0{sheet}')
-            bool = False
-        if result[1] and bool:
-            dialog.change_cell_background(row, col, 50, 205, 50, f'AR1-ST.0{sheet}')
 
 
 def run_rule(ar, df):
@@ -544,7 +689,6 @@ def run_rule(ar, df):
 
 
 def perform_tests():
-    date = check_quarter()
     if dialog.AR2 is None:
         path_2 = f'EXAMPLE\\Filled\\' + f'{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR2_v.4.01.xlsx'
     else:
