@@ -1,31 +1,6 @@
 import pandas as pd
 
-AR2_TO_CHECK = [
-    'AR2',
-    '4a.LiW',
-    '4a.R.L_PLiW2',
-    '4a.R.L_krajGEO3',
-    '4a.R.W_PLiW2',
-    '4a.R.W_krajGEO3',
-    '5a.R.LF_PLiW2',
-    '5a.R.LF_krajGEO3',
-    '5a.R.WF_PLiW2',
-    '5a.R.WF_krajGEO3',
-    '5a.R.SF',
-    '6.ab.LiW',
-    '9.R.L.MCC',
-    '9.R.W.MCC'
-]
 
-AR1_TO_CHECK = [
-    'ST.01',
-    'ST.02',
-    'ST.03',
-    'ST.04',
-    'ST.05',
-    'ST.06',
-    'ST.07'
-]
 
 
 # PCP_090

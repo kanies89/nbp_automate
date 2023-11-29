@@ -18,7 +18,7 @@ from variables import EXCEL_READ_AR2, AR2_4_row_1, AR2_4_row_2, EXCEL_READ_AR1
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 from PyQt5.QtCore import pyqtSignal, QObject
-from check import to_float
+from check_rules import to_float
 
 bug_table = []
 
@@ -1729,11 +1729,11 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
     passw = d_pass
 
     # Fill sheets in AR2
-    # df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
-    # df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+    df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
+    df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
     #
     # # Save everything to new excel file
-    # wb.save(wb_data[2])
+    wb.save(wb_data[2])
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - finished.')

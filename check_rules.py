@@ -25,8 +25,41 @@ AR1_TO_CHECK = [
     'ST.04',
     'ST.05',
     'ST.06',
-    'ST.07'
+    'ST.07',
+    'p-dane'
 ]
+
+
+def to_float(value):
+    # Convert the value to a float using pd.to_numeric()
+    try:
+        # Convert the value to a float using pd.to_numeric()
+        value_float = pd.to_numeric(value, errors='coerce')  # Convert to float and replace non-numeric values with NaN
+
+        # Replace NaN with 0
+        if pd.isna(value_float):
+            value_float = 0
+
+        return value_float
+
+    except ValueError:
+        return None  # Handle the case where the conversion fails
+
+
+def to_int(value):
+    # Convert the value to a float using pd.to_numeric()
+    try:
+        # Convert the value to a float using pd.to_numeric()
+        value_int = pd.to_numeric(value, errors='coerce')  # Convert to float and replace non-numeric values with NaN
+
+        # Replace NaN with 0
+        if pd.isna(value_int):
+            value_int = 0
+
+        return value_int
+
+    except ValueError:
+        return None  # Handle the case where the conversion fails
 
 
 def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
@@ -156,7 +189,6 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
 
 def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
-
     rules = {
         "RW_ST.05_01": [5, ['11.1.1.1'], '<=', ['11.1.1'], 0, 4],
         "RW_ST.05_02": [5, ['M10_NRP'], '>=', ['M201_NRP'], 1, [4, 5]],
@@ -172,7 +204,9 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
         "RW_ST.05_12": [[5, 6], ['M202_PRP', ['_KI_OCB_', '_KB_OCB_']], '==', ['M11_OCB_PRP_', geo3], 11, [0, 5]],
         "RW_ST.05_13": [[5, 6], ['M202_PRP', ['_KI_OKP.IT_', '_KB_OKP.IT_']], '==', ['M11_OKP.IT_PRP_', geo3], 12, [0, 5]]
     }
+
     results = []
+
     if rule in ["RW_ST.05_01", "RW_ST.05_04", "RW_ST.05_07"]:
         case = rules[rule]
         sheet = case[0]
