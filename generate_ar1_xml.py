@@ -386,9 +386,13 @@ def create_ar1(tab, df, date):
     return xml_add_code
 
 
-def create_xml_ar1(df, date):
+def create_xml_ar1(df, date, progress_callback=None, progress_callback_text=None):
+    if progress_callback:
+        progress_callback(0)
+
     xml_code = ''
-    date = date.split('-')
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - creating xml file.')
 
     EXCEL_READ_AR1 = [
         'p-dane',
@@ -400,13 +404,22 @@ def create_xml_ar1(df, date):
         'ST.06',
         'ST.07'
     ]
-    for sheet in EXCEL_READ_AR1:
+
+    percent = 100/(len(EXCEL_READ_AR1) - 1)
+
+    for e, sheet in enumerate(EXCEL_READ_AR1):
         xml_code += create_ar1(sheet, df, date)
+
+        if progress_callback:
+            progress_callback((e+1)*percent)
 
     xml_code += '</xbrli:xbrl>'
 
     with open(f"PayTel_fjk_{date[0]+date[1]+date[2]}_AR1.xml", 'w', encoding="utf-8") as file:
         file.write(xml_code)
+
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR1.xml".')
 
 
 if __name__ == '__main__':
