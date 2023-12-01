@@ -1,5 +1,5 @@
 import pandas as pd
-from variables import geo3
+from variables import geo3, geo3_wld
 
 AR2_TO_CHECK = [
     'AR2',
@@ -190,6 +190,55 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
 def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
     rules = {
+        "RW_ST.01_01": [1, ['1.1.1'], '<=', ['1.1'], 0, 8],
+        "RW_ST.01_02": [1, ['1.1.2'], '<=', ['1.1'], 1, 8],
+        "RW_ST.01_03": [1, ['1.2.1'], '<=', ['1.2'], 2, 8],
+        "RW_ST.01_04": [1, ['2.1.1'], '<=', ['2.1'], 3, 8],
+        "RW_ST.01_05": [1, ['2.1.2'], '<=', ['2.1'], 4, 8],
+        "RW_ST.01_06": [1, ['3.1.1'], '<=', ['3.1'], 5, 8],
+        "RW_ST.01_07": [1, ['3.1.2'], '<=', ['3.1'], 6, 8],
+        "RW_ST.01_08": [1, ['3.1.3'], '<=', ['3.1'], 7, 8],
+        "RW_ST.01_09": [1, ['3.1.4'], '<=', ['3.1'], 8, 8],
+        "RW_ST.01_10": [1, ['3.1.5'], '<=', ['3.1'], 9, 8],
+        "RW_ST.01_11": [1, ['3.1.6'], '<=', ['3.1'], 10, 8],
+        "RW_ST.01_12": [1, ['3.1.7'], '<=', ['3.1'], 11, 8],
+        "RW_ST.01_13": [1, ['3.1.8'], '<=', ['3.1'], 12, 8],
+        "RW_ST.01_14": [[1, 3], ['NRP', ['M03_UKP_']], '<=', ['NRP', ['M06_UIP_']], 13, [0, 5]],
+        "RW_ST.01_15": [[1, 4], ['PRP', ['M03_UKP_']], '<=', ['M03_UKP_PRP_', [geo3_wld]], 14, [0, 5]],
+        "RW_ST.01_16": [[1, 3], ['NRP', ['M01_UKP_']], '<=', ['NRP', ['M04_UIP_']], 15, [0, 5]],
+        "RW_ST.01_17": [[1, 3], ['PRP', ['M01_UKP_']], '<=', ['PRP', ['M04_UIP_']], 16, [0, 5]],
+        "RW_ST.01_18": [[1, 3], ['NRP', ['M01_IT.OKP_']], '<=', ['NRP', ['M04_IT.OIP_']], 17, [0, 5]],
+        "RW_ST.01_19": [[1, 3], ['PRP', ['M01_IT.OKP_']], '<=', ['PRP', ['M04_IT.OIP_']], 18, [0, 5]],
+        "RW_ST.01_20": [[1, 3], ['NRP', ['M01_UKP.IT.OKP_']], '<=', ['NRP', ['M04_UIP.IT.OIP_']], 19, [0, 5]],
+        "RW_ST.01_21": [[1, 3], ['PRP', ['M01_UKP.IT.OKP_']], '<=', ['PRP', ['M04_UIP.IT.OIP_']], 20, [0, 5]],
+        "RW_ST.01_22": [[1, 3], ['NRP', ['M02_UKP_']], '<=', ['NRP', ['M05_UIP_']], 21, [0, 5]],
+        "RW_ST.01_23": [[1, 3], ['PRP', ['M02_UKP_']], '<=', ['PRP', ['M05_UIP_']], 22, [0, 5]],
+        "RW_ST.01_24": [[1, 3], ['NRP', ['M02_OMOB_']], '<=', ['NRP', ['M05_UIP.OMOB_']], 23, [0, 5]],
+        "RW_ST.01_25": [[1, 3], ['PRP', ['M02_OMOB_']], '<=', ['PRP', ['M05_UIP.OMOB_']], 24, [0, 5]],
+        "RW_ST.01_26": [[1, 3], ['NRP', ['M02_IT.OKP_']], '<=', ['NRP', ['M05_IT.UIP_']], 25, [0, 5]],
+        "RW_ST.01_27": [[1, 3], ['PRP', ['M02_IT.OKP_']], '<=', ['PRP', ['M05_IT.UIP_']], 26, [0, 5]],
+        "RW_ST.01_28": [[1, 3], ['NRP', ['M03.UKP_']], '<=', ['NRP', ['M06_UIP_']], 27, [0, 5]],
+        "RW_ST.01_29": [[1, 3], ['PRP', ['M03.UKP_']], '<=', ['PRP', ['M06_UIP_']], 28, [0, 5]],
+        "RW_ST.01_30": [[1, 3], ['NRP', ['M03.UKP_']], '<=', ['NRP', ['M06_UIP_']], 27, [0, 5]],
+
+        "RW_ST.02_01": [2, ['M09_UKPE_'], '<=', ['M09_'], 0, 0],
+        "RW_ST.02_02": [2, ['M09_UKPEZR_'], '<=', ['M09_UKKPE_'], 1, 0],
+        "RW_ST.02_03": [2, ['M09_UAKPE_'], '<=', ['M09_UKKPE_'], 2, 0],
+        "RW_ST.02_04": [[2, 4], ['PRP', ['M09_UKPE_']], '<=', ['M09_UKPE_PRP_', geo3_wld], 3, [0, 5]],
+        "RW_ST.02_05": [[2, 4], ['PRP', ['M09_UKKPE_']], '<=', ['M09_UKKPE_PRP_', geo3_wld], 4, [0, 5]],
+        "RW_ST.02_06": [[2, 4], ['PRP', ['M09_UKPEZR_']], '<=', ['M09_UKPEZR_PRP_', geo3_wld], 5, [0, 5]],
+        "RW_ST.02_07": [[2, 4], ['PRP', ['M09_UAKPE_']], '<=', ['M09_UAKPE_PRP_', geo3_wld], 6, [0, 5]],
+
+        "RW_ST.03_01": [3, ['M04_UIP_'], '<=', ['M04_UIP.OMOB_'], 0, 0],
+        "RW_ST.03_02": [3, ['M04_IT.OIP_'], '<=', ['M04_UIP.IT.OIP_'], 1, 0],
+        "RW_ST.03_06": [3, ['M04_IT.OIP_'], '<=', ['M04_IT.PBL_'], 2, 0],
+        "RW_ST.03_03": [3, ['M05_UIP_'], '<=', ['M05_UIP.OMOB_'], 3, 0],
+        "RW_ST.03_04": [3, ['M05_IT.OIP_'], '<=', ['M05_IT.PBL_'], 4, 0],
+        "RW_ST.03_05": [3, ['M06_UIP_'], '<=', ['M06_UIP.OMOB_'], 5, 0],
+
+        "RW_ST.04_01": [4, 'M03_UKP.OZBL_PRP_', '<=', 'M03_UKP_PRP_', 0, 5],
+        "RW_ST.04_02": [4, 'M03_UKP.OZBL_PRP_', '<=', 'M03_UKP_PRP_', 0, 5],
+
         "RW_ST.05_01": [5, ['11.1.1.1'], '<=', ['11.1.1'], 0, 4],
         "RW_ST.05_02": [5, ['M10_NRP'], '>=', ['M201_NRP'], 1, [4, 5]],
         "RW_ST.05_03": [5, ['M10_PRP'], '>=', ['M201_PRP'], 2, [4, 5]],
@@ -207,7 +256,54 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
     results = []
 
-    if rule in ["RW_ST.05_01", "RW_ST.05_04", "RW_ST.05_07"]:
+    if rule in ["RW_ST.04_01"]:
+        case = rules[rule]
+        sheet = case[0]
+        df_tc = df[AR1_TO_CHECK[sheet]]
+        code_row = case[5]
+        code_col = 0
+
+        parts = [1, 3]
+        match = [0, 0]
+
+        rows = [*range(df_tc[df_tc[0].notna()].index[0], df_tc[df_tc[df_tc[0].notna()].index[0]:][df_tc[0].isna()].index[0])]
+
+        for row in rows:
+            for p, part in enumerate(parts):
+                print(df_tc.iloc[code_row])
+                col = pd.Index(df_tc.iloc[code_row]).get_loc(case[part])
+                # Check if df_tc is not empty
+                if not df_tc.empty:
+                    # Check if the value exists in the specified column
+                    if case[part] in df_tc[code_col].values:
+                        # Get the index of the first occurrence
+                        match[p] = df_tc.iat[row, col]
+                    else:
+                        print(f"The value {case[part][0]} does not exist in the specified column.")
+                else:
+                    print("The DataFrame is empty.")
+
+            condition = f"{match[0]} {case[2]} {match[1]}"
+            print(condition)
+
+            if eval(condition):
+                results.append([sheet, True, case[4]])
+            else:
+                results.append([sheet, False, case[4], col])
+
+            return results
+
+    if rule in [
+        "RW_ST.05_01", "RW_ST.05_04", "RW_ST.05_07",
+
+        "RW_ST.01_01", "RW_ST.01_02", "RW_ST.01_03", "RW_ST.01_04", "RW_ST.01_05", "RW_ST.01_06", "RW_ST.01_07",
+        "RW_ST.01_08", "RW_ST.01_09", "RW_ST.01_10", "RW_ST.01_11", "RW_ST.01_12", "RW_ST.01_13",
+
+        "RW_ST.02_01", "RW_ST.02_02", "RW_ST.02_03",
+
+        "RW_ST.03_01", "RW_ST.03_02", "RW_ST.03_03", "RW_ST.03_04", "RW_ST.03_05", "RW_ST.03_06"
+                ]:
+
         case = rules[rule]
         sheet = case[0]
         df_tc = df[AR1_TO_CHECK[sheet]]
@@ -300,7 +396,15 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
             return results
 
-    if rule in ["RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12", "RW_ST.05_13"]:
+    if rule in [
+        "RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12", "RW_ST.05_13",
+
+        "RW_ST.01_14", "RW_ST.01_15", "RW_ST.01_16", "RW_ST.01_17", "RW_ST.01_18", "RW_ST.01_19",
+        "RW_ST.01_20", "RW_ST.01_21", "RW_ST.01_22", "RW_ST.01_23", "RW_ST.01_24", "RW_ST.01_25",
+        "RW_ST.01_26", "RW_ST.01_27", "RW_ST.01_28", "RW_ST.01_29", "RW_ST.01_30",
+
+        "RW_ST.02_04", "RW_ST.02_05", "RW_ST.02_06", "RW_ST.02_07"
+    ]:
         case = rules[rule]
 
         code_col = case[5][0]

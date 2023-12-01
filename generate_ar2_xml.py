@@ -11,6 +11,7 @@ def create_ar2(df, date):
     find_values = ['D2.1', 'D2.2', 'D2.3', 'D2.4']
     values = []
     rows = []
+    print(date)
 
     for value in find_values:
         rows.append(df['AR2'][df['AR2'][0] == value].index[0])
@@ -63,8 +64,7 @@ def create_ar2(df, date):
 
 
 def create_tabs(tab, df, date):
-    print(tab)
-    print(df[tab[0]])
+    print(date)
     df = df[tab[0]]
     codes = df.loc[30:, 0]
     countries = df.loc[27, 5:]
@@ -202,7 +202,7 @@ def create_tabs(tab, df, date):
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
 
-                    if value == '':
+                    if value == '' or value == 0:
                         continue
                     else:
                         if taxonomy[10] in ['M17', 'M19', 'M20']:
@@ -400,8 +400,13 @@ def add_geo(tab, df, date):
     return additional_xml_code
 
 
-def create_xml_ar2(df, date):
+def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None):
+    if progress_callback:
+        progress_callback(0)
+
     xml_code = ''
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - creating xml file.')
 
     with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'w', encoding="utf-8") as file:
         file.write(xml_code)
@@ -422,25 +427,33 @@ def create_xml_ar2(df, date):
         ['9.R.W.MCC', '9.R.W.MCC', '7']
     ]
 
-    for sheet in EXCEL_READ_AR2:
+    percent = 100/(len(EXCEL_READ_AR2) - 1)
+
+    for e, sheet in enumerate(EXCEL_READ_AR2):
         xml_code = create_tabs(sheet, df, date)
+
+        if progress_callback:
+            progress_callback((e+1)*percent)
+
         with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
             file.write(xml_code)
 
-    GEO3_TABS = [
-        '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
-    ]
+    # GEO3_TABS = [
+    #     '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
+    # ]
 
-    for sheet in GEO3_TABS:
-        xml_code = add_geo(sheet, df, date)
-        with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
-            file.write(xml_code)
+    # for sheet in GEO3_TABS:
+    #     xml_code = add_geo(sheet, df, date)
+    #     with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
+    #         file.write(xml_code)
 
     xml_code += '</xbrli:xbrl>'
 
     with open(f"PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
         file.write(xml_code)
 
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml".')
 
 if __name__ == '__main__':
     print('No methods to be runned.')
