@@ -75,7 +75,7 @@ def create_ar1(tab, df, date):
                     ]
                 else:
                     if value == '':
-                        value = '0'
+                        value = 0
                     unit = [
                         'PURE',
                         '0',
@@ -115,13 +115,13 @@ def create_ar1(tab, df, date):
                     if value == '':
                         value = 0
                     unit = [
-                        'PURE',
+                        'PLN',
                         '2',
                         format_decimal(value)
                     ]
                 else:
                     if value == '':
-                        value = '0'
+                        value = 0
                     unit = [
                         'PURE',
                         '0',
@@ -141,7 +141,8 @@ def create_ar1(tab, df, date):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                 else:
                     xml = f"""
@@ -157,14 +158,18 @@ def create_ar1(tab, df, date):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                 xml_add_code += xml
 
     elif tab in ['ST.04', 'ST.06']:
         xml_add_code = ''
         codes1 = df.loc[9:, 0]
-        codes2 = df.loc[5, 13:]
+        if tab == "ST.06":
+            codes2 = df.loc[5, 13:18]
+        else:
+            codes2 = df.loc[5, 13:]
 
         for number1, code1 in enumerate(codes1):
             for number2, code2 in enumerate(codes2):
@@ -177,13 +182,13 @@ def create_ar1(tab, df, date):
                     if value == '':
                         value = 0
                     unit = [
-                        'PURE',
+                        'PLN',
                         '2',
                         format_decimal(value)
                     ]
                 else:
-                    if value == '':
-                        value = '0'
+                    if pd.isnull(df.iat[9 + number1, 13 + number2]) or value == '':
+                        value = 0
                     unit = [
                         'PURE',
                         '0',
@@ -205,7 +210,8 @@ def create_ar1(tab, df, date):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                 if tab == 'ST.06':
                     if taxonomy[3] not in ['AT', 'BE', 'BG', 'CY', 'HR', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'ES', 'NL',
@@ -233,7 +239,8 @@ def create_ar1(tab, df, date):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                     else:
                         xml = f"""

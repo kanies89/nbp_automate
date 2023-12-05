@@ -1,6 +1,6 @@
 import sys
 import datetime
-from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
+from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QSizePolicy, QHBoxLayout, QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QDate
 from PyQt5.QtGui import QColor, QPalette
 from PyQt5.uic import loadUi
@@ -18,6 +18,7 @@ class QuarterlyDateEdit(QWidget):
         super(QuarterlyDateEdit, self).__init__(parent)
 
         layout = QVBoxLayout(self)
+        layout.setAlignment(Qt.AlignCenter)
 
         self.year_combo = QComboBox(self)
         self.year_combo.addItems([str(year) for year in range(2000, 2031)])
@@ -25,6 +26,7 @@ class QuarterlyDateEdit(QWidget):
         self.year_combo.setCurrentIndex(self.year_combo.findText(str(current_year)))
         self.year_combo.currentIndexChanged.connect(self.update_date)
         self.year_combo.setEnabled(False)  # Initially disabled
+        self.year_combo.setFixedWidth(100)
 
         self.quarter_combo = QComboBox(self)
         self.quarter_combo.addItems(["Q1", "Q2", "Q3", "Q4"])
@@ -32,15 +34,22 @@ class QuarterlyDateEdit(QWidget):
         self.quarter_combo.setCurrentIndex(current_quarter - 2)
         self.quarter_combo.currentIndexChanged.connect(self.update_date)
         self.quarter_combo.setEnabled(False)  # Initially disabled
+        self.quarter_combo.setFixedWidth(100)
 
         self.date_edit = QDateEdit(self)
         self.date_edit.setDisplayFormat("yyyy-MM-dd")
         self.date_edit.setEnabled(False)  # Initially disabled
         self.date_edit.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.date_edit.setFixedWidth(100)
 
-        layout.addWidget(self.year_combo)
-        layout.addWidget(self.quarter_combo)
-        layout.addWidget(self.date_edit)
+        # Add a spacer to push the button to the center
+        spacer = QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Fixed)
+        layout.addItem(spacer)
+        layout.addWidget(self.year_combo, alignment=Qt.AlignCenter)
+        layout.addWidget(self.quarter_combo, alignment=Qt.AlignCenter)
+        layout.addWidget(self.date_edit, alignment=Qt.AlignCenter)
+        # Add another spacer to balance the layout
+        layout.addItem(QSpacerItem(0, 0, QSizePolicy.Expanding, QSizePolicy.Fixed))
 
         self.update_date()
 
@@ -327,22 +336,25 @@ class MyDialog(QDialog):
     def change_cell_background(self, row, col, r, g, b, excel):
         if excel == 'AR2':
             item = self.tableWidget_AR2.item(row, col)
-        if excel == 'AR1-ST.01':
+        elif excel == 'AR1-ST.01':
             item = self.tableWidget_AR1_1.item(row, col)
-        if excel == 'AR1-ST.02':
+        elif excel == 'AR1-ST.02':
             item = self.tableWidget_AR1_2.item(row, col)
-        if excel == 'AR1-ST.03':
+        elif excel == 'AR1-ST.03':
             item = self.tableWidget_AR1_3.item(row, col)
-        if excel == 'AR1-ST.04':
+        elif excel == 'AR1-ST.04':
             item = self.tableWidget_AR1_4.item(row, col)
-        if excel == 'AR1-ST.05':
+        elif excel == 'AR1-ST.05':
             item = self.tableWidget_AR1_5.item(row, col)
-        if excel == 'AR1-ST.06':
+        elif excel == 'AR1-ST.06':
             item = self.tableWidget_AR1_6.item(row, col)
-        if excel == 'AR1-ST.07':
+        elif excel == 'AR1-ST.07':
             item = self.tableWidget_AR1_7.item(row, col)
-        if item:
+
+        if 'item' in locals():
             item.setBackground(QColor(r, g, b))
+        else:
+            print('Item not declared.')
 
     def setup_table(self):
         # Set default alignment for wrapped text in header
@@ -536,6 +548,8 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             QApplication.quit()
 
     def on_convert_button_clicked(self):
+        check_or_convert = self.pushButton_convert.text()
+
         selected_date = self.quarterly_date_edit.date_edit.date()
         date_string = selected_date.toString(Qt.ISODate)
         print("Selected Date:", selected_date.toString(Qt.ISODate))
@@ -543,15 +557,26 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         self.pushButton_openAR1.setEnabled(False)
         self.pushButton_openAR2.setEnabled(False)
 
-        # Run
-        self.convert_thread = ConvertThread(date_string)
+        if check_or_convert == "CONVERT":
+            # Start the convert thread
+            self.convert_thread = ConvertThread(date_string)
 
-        # Connect the password_text_updated signal from the ConvertThread to the update_password_text slot
-        self.convert_thread.progress_text_updated.connect(self.update_progress_text)
-        self.convert_thread.progress_updated.connect(self.update_progress)
+            # Connect the password_text_updated signal from the ConvertThread to the update_password_text slot
+            self.convert_thread.progress_text_updated.connect(self.update_progress_text)
+            self.convert_thread.progress_updated.connect(self.update_progress)
 
-        # Start the check thread
-        self.convert_thread.start()
+            # Start the check thread
+            self.convert_thread.start()
+        elif check_or_convert == "CHECK":
+            # Create the AutomationThread and start it
+            self.check_thread = CheckThread()
+
+            # Connect the password_text_updated signal from the ConvertThread to the update_password_text slot
+            self.check_thread.progress_text_updated.connect(self.update_progress_text)
+            self.check_thread.progress_updated.connect(self.update_progress)
+
+            # Start the check thread
+            self.check_thread.start()
 
     def update_progress(self, progress):
         # Update the progress bar
@@ -560,24 +585,29 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
     def append_text_to_cell(self, row, col, text_to_append, excel):
         if excel == 'AR2':
             current_item = self.tableWidget_AR2.item(row, col)
-        if excel == 'AR1-ST.01':
+        elif excel == 'AR1-ST.01':
             current_item = self.tableWidget_AR1_1.item(row, col)
-        if excel == 'AR1-ST.02':
+        elif excel == 'AR1-ST.02':
             current_item = self.tableWidget_AR1_2.item(row, col)
-        if excel == 'AR1-ST.03':
+        elif excel == 'AR1-ST.03':
             current_item = self.tableWidget_AR1_3.item(row, col)
-        if excel == 'AR1-ST.04':
+        elif excel == 'AR1-ST.04':
             current_item = self.tableWidget_AR1_4.item(row, col)
-        if excel == 'AR1-ST.05':
+        elif excel == 'AR1-ST.05':
             current_item = self.tableWidget_AR1_5.item(row, col)
-        if excel == 'AR1-ST.06':
+        elif excel == 'AR1-ST.06':
             current_item = self.tableWidget_AR1_6.item(row, col)
-        if excel == 'AR1-ST.07':
+        elif excel == 'AR1-ST.07':
             current_item = self.tableWidget_AR1_7.item(row, col)
-        if current_item:
+        else:
+            print(f'Not declared in append_text_to_cell {excel}.')
+
+        if 'current_item' in locals():
             current_text = current_item.text()
             new_text = current_text + " " + text_to_append
             current_item.setText(new_text)
+        else:
+            print(f'Not declared in append_text_to_cell {excel}.')
 
     def on_automation_finished(self):
 
@@ -590,20 +620,6 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         self.radioButton_prepare.setEnabled(False)
         self.radioButton_check.setEnabled(False)
         self.radioButton_xml.setEnabled(False)
-
-        # Create the CheckThread and start it
-        self.check_thread = CheckThread()
-        # Start the check thread
-        self.check_thread.start()
-
-        selected_date = self.quarterly_date_edit.date_edit.date()
-        date_string = selected_date.toString(Qt.ISODate)
-        print("Selected Date:", date_string)
-
-        # Create the ConvertThread and start it
-        self.convert_thread = ConvertThread(date_string)
-        # Start the convert thread
-        self.convert_thread.start()
 
         # Enable the "Start" button when the automation is finished
         self.Start.setEnabled(True)
@@ -630,9 +646,10 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.toolButton.setEnabled(False)
             self.enlarged = True
             self.toggle_window_size(self.current_tab, source="toolButton")
+            self.pushButton_convert.setText("-")
 
         if button == 'check':
-            self.pushButton_convert.setEnabled(False)
+            self.pushButton_convert.setEnabled(True)
 
             self.quarterly_date_edit.quarter_combo.setEnabled(False)
             self.quarterly_date_edit.year_combo.setEnabled(False)
@@ -646,6 +663,7 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.pushButton_openAR2.setEnabled(True)
             self.enlarged = True
             self.toggle_window_size(self.current_tab, source="toolButton")
+            self.pushButton_convert.setText("CHECK")
 
         if button == 'xml':
             self.pushButton_convert.setEnabled(True)
@@ -662,6 +680,7 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.pushButton_openAR2.setEnabled(True)
             self.enlarged = True
             self.toggle_window_size(self.current_tab, source="toolButton")
+            self.pushButton_convert.setText("CONVERT")
 
     def open_file_dialog(self, source):
         options = QFileDialog.Options()
@@ -681,12 +700,6 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.radioButton_check.setEnabled(False)
             self.radioButton_xml.setEnabled(False)
 
-            # Create the AutomationThread and start it
-            self.check_thread = CheckThread()
-
-            # Start the check thread
-            self.check_thread.start()
-
 
 def run_rule(ar, df):
     # [sheet, boolean, row, column]
@@ -705,7 +718,7 @@ def run_rule(ar, df):
 
         "RW_ST.03_01", "RW_ST.03_02", "RW_ST.03_03", "RW_ST.03_04", "RW_ST.03_05", "RW_ST.03_06",
 
-        "RW_ST.04_01",
+        "RW_ST.04_01", "RW_ST.04_02", "RW_ST.04_03", "RW_ST.04_04", "RW_ST.04_05",
 
         "RW_ST.05_01", "RW_ST.05_02", "RW_ST.05_03", "RW_ST.05_04", "RW_ST.05_05", "RW_ST.05_06",
         "RW_ST.05_07", "RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12",
@@ -713,7 +726,6 @@ def run_rule(ar, df):
                ]
 
     rule: str
-
     if ar == 2:
         for rule in rules_2:
             results = check_rules_ar2(ar, df, rule, 6)
@@ -725,24 +737,24 @@ def run_rule(ar, df):
                     dialog.change_cell_background(row, n + 3, 50, 205, 50, 'AR2')
                 else:
                     dialog.change_cell_background(row, n + 3, 255, 0, 0, 'AR2')
-                    dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ',
-                                               'AR2')
+                    dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ', 'AR2')
     elif ar == 1:
         for rule in rules_1:
             results = check_rules_ar1(ar, df, rule, 13)
             if results is None:
                 continue
             for result in results:
+                print('here3')
                 row = result[2]
                 col = 3
                 sheet = result[0]
 
                 if result[1]:
                     dialog.change_cell_background(row, col, 50, 205, 50, f'AR1-ST.0{sheet}')
+                    print('here4')
                 else:
                     dialog.change_cell_background(row, col, 255, 0, 0, f'AR1-ST.0{sheet}')
-                    dialog.append_text_to_cell(row, col, f'; Error in column: {get_column_letter(result[3] + 1)}; ',
-                                               'AR1')
+                    dialog.append_text_to_cell(row, col, f'; Error in column: {get_column_letter(result[3] + 1)} - Value difference = {result[3]}; ', f'AR1-ST.0{sheet}')
 
 
 def perform_tests():
@@ -756,9 +768,10 @@ def perform_tests():
     else:
         path_1 = dialog.AR1
 
+    na_values_list = ['N/A']
     # Perform all the tests
-    df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
-    df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
+    df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False, na_values=na_values_list)
+    df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False, na_values=na_values_list)
     run_rule(2, df_nbp_2)
     run_rule(1, df_nbp_1)
 

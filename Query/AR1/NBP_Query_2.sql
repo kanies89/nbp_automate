@@ -77,20 +77,18 @@ SELECT
 
 FROM 
  mc_transaction MC (nolock)
- join if_transaction TR (nolock) on TR.postTranId = MC.postTranId
- join trans (nolock) on TR.tranNr = tr_tran_nr 
+ join paytel_olap.dbo.if_transaction TR (nolock) on TR.postTranId = MC.postTranId 
+ JOIN paytel_olap.dbo.trans (NOLOCK) ON isnull(tr_prev_tran_nr, tr_tran_nr) = TR.tranNr
 	 and tr_datetime_req between @dtb AND @dte 
 	 and tr_reversed = 0
 	 and tr_rsp_code = '00'   
 	 and tr_message_type in (200,220)
- join trans_ext (nolock) on tr_tran_nr = te_tran_nr
+ join trans_ext (nolock) ON isnull(tr_prev_tran_nr, tr_tran_nr) = te_tran_nr
   and [te_tran_type] = @te_tran_type
  
  --left Join mcipm_ip0072t1 on MC.memberId=mcipm_ip0072t1.member_id 
  --left join country_codes CS on mcipm_ip0072t1.country_code=cc_A3
  left join if_product_category (NOLOCK) ON gcmsProductId = ipc_product_id    
-
-
 
 group by
  
