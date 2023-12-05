@@ -7,10 +7,22 @@ def format_decimal(number):
     return formatted_number
 
 
-def create_ar2(values):
-    year = '2023'
-    month = '09'
-    day = '30'
+def create_ar2(df, date):
+    find_values = ['D2.1', 'D2.2', 'D2.3', 'D2.4']
+    values = []
+    rows = []
+    print(date)
+
+    for value in find_values:
+        rows.append(df['AR2'][df['AR2'][0] == value].index[0])
+
+    for e, row in enumerate(rows):
+        values.append(df['AR2'].iat[row, 6])
+
+    year = date[0]
+    month = date[1]
+    day = date[2]
+
     code_ar2 = f"""<?xml version="1.0" encoding="UTF-8"?>
 <xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:this="http://bsp.nbp.pl/BSP2_AR2_U/d-W020_SPORZ.xsd" xmlns:this1="http://bsp.nbp.pl/BSP2_AR2_U/p-BSP2_AR2_U.xsd" xmlns:this2="http://bsp.nbp.pl/BSP2_AR2_U/d-W030_RODZAJ.xsd" xmlns:this3="http://bsp.nbp.pl/BSP2_AR2_U/d-W040_OKRES.xsd" xmlns:this4="http://bsp.nbp.pl/BSP2_AR2_U/d-W050_NBP.xsd" xmlns:this5="http://bsp.nbp.pl/BSP2_AR2_U/d-W130_KRAJ.xsd" xmlns:this6="http://bsp.nbp.pl/BSP2_AR2_U/d-W140_POS_KRAJ.xsd" xmlns:this7="http://bsp.nbp.pl/BSP2_AR2_U/d-W160_TYP_TRAN.xsd" xmlns:this8="http://bsp.nbp.pl/BSP2_AR2_U/d-W170_STR_TRAN.xsd" xmlns:this9="http://bsp.nbp.pl/BSP2_AR2_U/d-W180_INICJOW.xsd" xmlns:this10="http://bsp.nbp.pl/BSP2_AR2_U/d-W190_ZDALNE.xsd" xmlns:this11="http://bsp.nbp.pl/BSP2_AR2_U/d-W200_SCHEMAT.xsd" xmlns:this12="http://bsp.nbp.pl/BSP2_AR2_U/d-W210_KARTY.xsd" xmlns:this13="http://bsp.nbp.pl/BSP2_AR2_U/d-W220_SCA.xsd" xmlns:this14="http://bsp.nbp.pl/BSP2_AR2_U/d-W250_CZY_OSZ.xsd" xmlns:this15="http://bsp.nbp.pl/BSP2_AR2_U/d-W320_ZKRES.xsd" xmlns:this16="http://bsp.nbp.pl/BSP2_AR2_U/d-W330_LICZ_WAR.xsd" xmlns:this17="http://bsp.nbp.pl/BSP2_AR2_U/d-W240_STR.xsd" xmlns:this18="http://bsp.nbp.pl/BSP2_AR2_U/d-W132_KRAJ.xsd" xmlns:this19="http://bsp.nbp.pl/BSP2_AR2_U/d-W280_MCC.xsd" xmlns:this20="http://bsp.nbp.pl/BSP2_AR2_U/d-W510_STR_TRAN2.xsd" xmlns:this21="http://bsp.nbp.pl/BSP2_AR2_U/d-W141_POS_KRAJ.xsd">
     <link:schemaRef xlink:type="simple" xlink:href="BSP2_AR2_UJK.xsd"/>
@@ -51,18 +63,17 @@ def create_ar2(values):
     return code_ar2
 
 
-def create_tabs(tab):
-    path = 'Example\\'
-    df = pd.read_excel(path + '2023_09_31_Q3___BSP_AR2_v.4.01_v2_no_PL_4arkusz_added_0.xlsx', sheet_name=tab[0], header=None, keep_default_na=False)
-
+def create_tabs(tab, df, date):
+    print(date)
+    df = df[tab[0]]
     codes = df.loc[30:, 0]
     countries = df.loc[27, 5:]
 
     additional_xml_code = ""
     number = 1
-    year = '2023'
-    month = '09'
-    day = '30'
+    year = date[0]
+    month = date[1]
+    day = date[2]
 
     for row, code in enumerate(codes):
         if code == '':
@@ -190,7 +201,8 @@ def create_tabs(tab):
                 elif tab[0] in ['9.R.L.MCC', '9.R.W.MCC']:
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
-                    if value == '':
+
+                    if value == '' or value == 0:
                         continue
                     else:
                         if taxonomy[10] in ['M17', 'M19', 'M20']:
@@ -317,21 +329,20 @@ def create_tabs(tab):
     return additional_xml_code
 
 
-def add_geo(tab):
+def add_geo(tab, df, date):
+    df = df[tab]
+
     countries = geo3_country
     tab_countries = geo3_country_loc
-
-    path = 'Example\\'
-    df = pd.read_excel(path + '2023_09_31_Q3___BSP_AR2_v.4.01_v2_no_PL_4arkusz_added_0.xlsx', sheet_name=tab, header=None, keep_default_na=False)
 
     codes = df.loc[30:, 0]
 
     additional_xml_code = ""
     number = 1
 
-    year = '2023'
-    month = '09'
-    day = '30'
+    year = date[0]
+    month = date[1]
+    day = date[2]
 
     for country_tab in tab_countries:
         for row, code in enumerate(codes):
@@ -389,9 +400,21 @@ def add_geo(tab):
     return additional_xml_code
 
 
-if __name__ == '__main__':
+def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None):
+    if progress_callback:
+        progress_callback(0)
+
     xml_code = ''
-    xml_code += create_ar2(['Krzysztof', 'Kaniewski', '+48 506 297 621', 'krzysztof.kaniewski@paytel.pl'])
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - creating xml file.')
+
+    with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'w', encoding="utf-8") as file:
+        file.write(xml_code)
+
+    xml_code = create_ar2(df, date)
+
+    with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
+        file.write(xml_code)
 
     EXCEL_READ_AR2 = [
         ['4a.R.L_PLiW2', '4a.R.L_PLiW2', '0'],
@@ -403,17 +426,36 @@ if __name__ == '__main__':
         ['9.R.L.MCC', '9.R.L.MCC', '6'],
         ['9.R.W.MCC', '9.R.W.MCC', '7']
     ]
-    for sheet in EXCEL_READ_AR2:
-        xml_code += create_tabs(sheet)
 
-    GEO3_TABS = [
-        '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
-    ]
+    percent = 100/(len(EXCEL_READ_AR2) - 1)
 
-    for sheet in GEO3_TABS:
-        xml_code += add_geo(sheet)
+    for e, sheet in enumerate(EXCEL_READ_AR2):
+        xml_code = create_tabs(sheet, df, date)
+
+        if progress_callback:
+            percent = 100 / len(EXCEL_READ_AR2) * (e + 1)
+            progress_callback(int(percent))
+
+        with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
+            file.write(xml_code)
+
+    # GEO3_TABS = [
+    #     '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
+    # ]
+
+    # for sheet in GEO3_TABS:
+    #     xml_code = add_geo(sheet, df, date)
+    #     with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
+    #         file.write(xml_code)
 
     xml_code += '</xbrli:xbrl>'
 
-    with open("PayTel_fjk_20230930_AR2.txt", 'w', encoding="utf-8") as file:
+    with open(f"PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
         file.write(xml_code)
+
+    if progress_callback_text:
+        progress_callback_text(f'AR2 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml".')
+
+if __name__ == '__main__':
+    print('No methods to be runned.')
+
