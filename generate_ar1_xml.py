@@ -1,4 +1,5 @@
 import pandas as pd
+import openpyxl
 from f_visa import check_quarter
 
 
@@ -7,7 +8,7 @@ def format_decimal(number):
     return formatted_number
 
 
-def create_ar1(tab, df, date):
+def create_ar1(tab, df, date, path):
     df = df[tab]
     year = date[0]
     month = date[1]
@@ -36,6 +37,10 @@ def create_ar1(tab, df, date):
                 taxonomy = code.split('_')
 
                 value = df.iat[9 + number2, 13 + number1]
+                if value == 'WLD':
+                    workbook = openpyxl.load_workbook(path)
+                    print("WLD")
+
                 print(taxonomy, tab)
                 xml = f"""
 <xbrli:context id="{tab}_{number1}{number2}">
@@ -167,7 +172,7 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
         xml_add_code = ''
         codes1 = df.loc[9:, 0]
         if tab == "ST.06":
-            codes2 = df.loc[5, 13:18]
+            codes2 = df.loc[5, 13:]
         else:
             codes2 = df.loc[5, 13:]
 
@@ -187,7 +192,7 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
                         format_decimal(value)
                     ]
                 else:
-                    if pd.isnull(df.iat[9 + number1, 13 + number2]) or value == '':
+                    if value == '':
                         value = 0
                     unit = [
                         'PURE',
@@ -216,13 +221,11 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
                 if tab == 'ST.06':
                     if taxonomy[3] not in ['AT', 'BE', 'BG', 'CY', 'HR', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'ES', 'NL',
                                            'IE', 'IS', 'LI', 'LT', 'LU', 'LV', 'MT', 'DE', 'NO', 'PT', 'RO', 'SK', 'SI',
-                                           'SE', 'HU', 'IT', 'GB'
+                                           'SE', 'HU', 'IT', 'GB', 'WLD'
                                            ]:
-                        if taxonomy[3] == "WLD":
-                            taxonomy[3] = "D09-Pozostale kraje"
-                        else:
-                            cc = df.iat[9 + number1, 11]
-                            taxonomy[3] = taxonomy[3] + '-' + cc
+
+                        cc = df.iat[9 + number1, 11]
+                        taxonomy[3] = taxonomy[3] + '-' + cc
                         xml = f"""
 <xbrli:context id="{tab}_{number1}{number2}">
 <xbrli:entity>
@@ -393,7 +396,7 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
     return xml_add_code
 
 
-def create_xml_ar1(df, date, progress_callback=None, progress_callback_text=None):
+def create_xml_ar1(df, date, path, progress_callback=None, progress_callback_text=None):
     if progress_callback:
         progress_callback(0)
 
@@ -415,10 +418,11 @@ def create_xml_ar1(df, date, progress_callback=None, progress_callback_text=None
     percent = 100/(len(EXCEL_READ_AR1) - 1)
 
     for e, sheet in enumerate(EXCEL_READ_AR1):
-        xml_code += create_ar1(sheet, df, date)
+        xml_code += create_ar1(sheet, df, date, path)
 
         if progress_callback:
-            progress_callback((e+1)*percent)
+            percent = 100 / len(EXCEL_READ_AR1) * (e + 1)
+            progress_callback(int(percent))
 
     xml_code += '</xbrli:xbrl>'
 

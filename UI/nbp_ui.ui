@@ -2848,7 +2848,7 @@ Suma liczb/wartości w tabelach 4a.R.L/W_PLiW2 oraz 4a.R.L/W_krajGEO3_&lt;kraj&g
       </rect>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="ST_01">
       <attribute name="title">

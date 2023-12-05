@@ -1,6 +1,7 @@
 import sys
 import datetime
-from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QSizePolicy, QHBoxLayout, QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
+from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QSizePolicy, QHBoxLayout, \
+    QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QDate
 from PyQt5.QtGui import QColor, QPalette
 from PyQt5.uic import loadUi
@@ -86,7 +87,11 @@ class CheckThread(QThread):
             self.progress = (step * 100) // self.total_steps
             self.progress_updated.emit(self.progress)
 
-        perform_tests()
+        # Call the start_automation function with progress_callback_text
+        def progress_callback_text(text):
+            self.progress_text_updated.emit(text)  # Emit the signal to update the PasswordText label
+
+        perform_tests(progress_callback_text, progress_callback)
 
         # Emit the finished signal to indicate the completion
         self.finished.emit()
@@ -139,7 +144,7 @@ class ConvertThread(QThread):
         df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
         df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
 
-        create_xml_ar1(df_nbp_1, self.date, progress_callback, progress_callback_text)
+        create_xml_ar1(df_nbp_1, self.date, path_1, progress_callback, progress_callback_text)
         create_xml_ar2(df_nbp_2, self.date, progress_callback, progress_callback_text)
 
         # Emit the finished signal to indicate the completion
@@ -153,7 +158,8 @@ class ConvertThread(QThread):
         dialog.pushButton_openAR1.setEnabled(True)
         dialog.pushButton_openAR2.setEnabled(True)
 
-        print(f"Files (PayTel_fjk_{self.date[0]+self.date[1]+self.date[2]}_AR2.xml and PayTel_fjk_{self.date[0]+self.date[1]+self.date[2]}_AR2.xml) created successfully.")
+        print(
+            f"Files (PayTel_fjk_{self.date[0] + self.date[1] + self.date[2]}_AR2.xml and PayTel_fjk_{self.date[0] + self.date[1] + self.date[2]}_AR2.xml) created successfully.")
 
 
 class AutomationThread(QThread):
@@ -567,6 +573,7 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
             # Start the check thread
             self.convert_thread.start()
+
         elif check_or_convert == "CHECK":
             # Create the AutomationThread and start it
             self.check_thread = CheckThread()
@@ -577,6 +584,8 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
             # Start the check thread
             self.check_thread.start()
+
+        self.progressBar.setEnabled(True)
 
     def update_progress(self, progress):
         # Update the progress bar
@@ -701,7 +710,10 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
             self.radioButton_xml.setEnabled(False)
 
 
-def run_rule(ar, df):
+def run_rule(ar, df, progress_callback_text=None, progress_callback=None):
+    if progress_callback:
+        progress_callback(0)
+
     # [sheet, boolean, row, column]
     rules_2 = ["PCP_090", "PCP_091", "PCP_092", "PCP_093", "PCP_094", "PCP_096", "PCP_099", "PCP_006",
                "PCP_095", "PCP_102", "PCP_105", "PCP_007", "PCP_108", "PCP_120", "PCP_109", "PCP_121",
@@ -722,13 +734,25 @@ def run_rule(ar, df):
 
         "RW_ST.05_01", "RW_ST.05_02", "RW_ST.05_03", "RW_ST.05_04", "RW_ST.05_05", "RW_ST.05_06",
         "RW_ST.05_07", "RW_ST.05_08", "RW_ST.05_09", "RW_ST.05_10", "RW_ST.05_11", "RW_ST.05_12",
-        "RW_ST.05_13"
-               ]
+        "RW_ST.05_13",
+
+        "RW_ST.06_01",
+
+        "RW_ST.07_01", "RW_ST.07_02", "RW_ST.07_03", "RW_ST.07_04", "RW_ST.07_05", "RW_ST.07_06",
+        "RW_ST.07_07"
+    ]
 
     rule: str
     if ar == 2:
-        for rule in rules_2:
+        for r, rule in enumerate(rules_2):
+            if progress_callback_text:
+                progress_callback_text(f"AR{ar} - {rule}")
+
             results = check_rules_ar2(ar, df, rule, 6)
+
+            if progress_callback:
+                percent = 100 / len(rules_2) * (r + 1)
+                progress_callback(int(percent))
 
             for result in results:
                 row = result[2]
@@ -737,27 +761,36 @@ def run_rule(ar, df):
                     dialog.change_cell_background(row, n + 3, 50, 205, 50, 'AR2')
                 else:
                     dialog.change_cell_background(row, n + 3, 255, 0, 0, 'AR2')
-                    dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ', 'AR2')
+                    dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ',
+                                               'AR2')
     elif ar == 1:
-        for rule in rules_1:
+        for r, rule in enumerate(rules_1):
+            if progress_callback_text:
+                progress_callback_text(f"AR{ar} - {rule}")
+
             results = check_rules_ar1(ar, df, rule, 13)
+
+            if progress_callback:
+                percent = 100 / len(rules_1) * (r + 1)
+                progress_callback(int(percent))
+
             if results is None:
                 continue
             for result in results:
-                print('here3')
                 row = result[2]
                 col = 3
                 sheet = result[0]
 
                 if result[1]:
                     dialog.change_cell_background(row, col, 50, 205, 50, f'AR1-ST.0{sheet}')
-                    print('here4')
                 else:
                     dialog.change_cell_background(row, col, 255, 0, 0, f'AR1-ST.0{sheet}')
-                    dialog.append_text_to_cell(row, col, f'; Error in column: {get_column_letter(result[3] + 1)} - Value difference = {result[3]}; ', f'AR1-ST.0{sheet}')
+                    dialog.append_text_to_cell(row, col,
+                                               f'; Error in column: {get_column_letter(result[3] + 1)} - Value difference = {result[3]}; ',
+                                               f'AR1-ST.0{sheet}')
 
 
-def perform_tests():
+def perform_tests(progress_callback_text=None, progress_callback=None):
     if dialog.AR2 is None:
         path_2 = f'EXAMPLE\\Filled\\' + f'{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR2_v.4.01.xlsx'
     else:
@@ -770,10 +803,15 @@ def perform_tests():
 
     na_values_list = ['N/A']
     # Perform all the tests
-    df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False, na_values=na_values_list)
-    df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False, na_values=na_values_list)
-    run_rule(2, df_nbp_2)
-    run_rule(1, df_nbp_1)
+    df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False,
+                             na_values=na_values_list)
+    df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False,
+                             na_values=na_values_list)
+    run_rule(2, df_nbp_2, progress_callback_text, progress_callback)
+    run_rule(1, df_nbp_1, progress_callback_text, progress_callback)
+
+    if progress_callback_text:
+        progress_callback_text('Report checked - open review tab >>>')
 
 
 if __name__ == "__main__":

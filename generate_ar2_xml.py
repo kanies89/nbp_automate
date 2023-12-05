@@ -433,7 +433,8 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
         xml_code = create_tabs(sheet, df, date)
 
         if progress_callback:
-            progress_callback((e+1)*percent)
+            percent = 100 / len(EXCEL_READ_AR2) * (e + 1)
+            progress_callback(int(percent))
 
         with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
             file.write(xml_code)

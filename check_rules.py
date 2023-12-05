@@ -256,7 +256,17 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
         "RW_ST.05_10": [[5, 6], ['M201_PRP', ['_KI_OKP.IT_', '_KB_OKP.IT_']], '==', ['M10_OKP.IT_PRP_', geo6], 9, [0, 5]],
         "RW_ST.05_11": [[5, 6], ['M202_PRP', ['_KI_OKP.UKP_', '_KB_OKP.UKP_']], '==', ['M11_OKP.UKP_PRP_', geo6], 10, [0, 5]],
         "RW_ST.05_12": [[5, 6], ['M202_PRP', ['_KI_OCB_', '_KB_OCB_']], '==', ['M11_OCB_PRP_', geo6], 11, [0, 5]],
-        "RW_ST.05_13": [[5, 6], ['M202_PRP', ['_KI_OKP.IT_', '_KB_OKP.IT_']], '==', ['M11_OKP.IT_PRP_', geo6], 12, [0, 5]]
+        "RW_ST.05_13": [[5, 6], ['M202_PRP', ['_KI_OKP.IT_', '_KB_OKP.IT_']], '==', ['M11_OKP.IT_PRP_', geo6], 12, [0, 5]],
+
+        "RW_ST.06_01": [6, [["M10_OKP.UKP_PRP_", "M10_OKP.IT_PRP_",	"M10_OCB_PRP_",	"M11_OKP.UKP_PRP_",
+                             "M11_OKP.IT_PRP_", "M11_OCB_PRP_"], 'WLD'], "==", ['GB'], 0, [0, 5]],
+        "RW_ST.07_01": [7, ['_OBZGOT_'], '==', ['_OKP_', '_OMOB.BZGOT_'], 0, 0],
+        "RW_ST.07_03": [7, ['_OKP_'], '==', ['_OKP.UKP_', '_OKP.IT_'], 1, 0],
+        "RW_ST.07_05": [7, ['_OKP.ZBL_'], '<', ['_OKP.UKP_'], 2, 0],
+        "RW_ST.07_06": [7, ['_OCRGB_'], '<=', ['_OKP_'], 3, 0],
+        "RW_ST.07_04": [7, ['_OMOB.BZGOT_'], '==', ['_OMOB.UIP_'], 4, 0],
+        "RW_ST.07_07": [7, ['_OMOB.IT.OCRGB_'], '<=', ['_OMOB.BZGOT_'], 5, 0],
+        "RW_ST.07_02": [7, ['_OGOT_'], '==', ['_OCB_', '_OMOB.GOT_', '_OGOTIN_'], 6, 0]
     }
 
     results = []
@@ -311,8 +321,6 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
             return results
 
     if rule in [
-        "RW_ST.05_01", "RW_ST.05_04", "RW_ST.05_07",
-
         "RW_ST.01_01", "RW_ST.01_02", "RW_ST.01_03", "RW_ST.01_04", "RW_ST.01_05", "RW_ST.01_06", "RW_ST.01_07",
         "RW_ST.01_08", "RW_ST.01_09", "RW_ST.01_10", "RW_ST.01_11", "RW_ST.01_12", "RW_ST.01_13",
 
@@ -320,7 +328,9 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
         "RW_ST.03_01", "RW_ST.03_02", "RW_ST.03_03", "RW_ST.03_04", "RW_ST.03_05", "RW_ST.03_06",
 
-        "RW_ST.04_05"
+        "RW_ST.04_05",
+
+        "RW_ST.05_01", "RW_ST.05_04", "RW_ST.05_07"
     ]:
 
         case = rules[rule]
@@ -354,7 +364,7 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                     # Check if df_tc is not empty
                     if not df_tc.empty:
                         # Check if the value exists in the specified column
-                        if case[part] in df_tc[code_col].values:
+                        if case[part][0] in df_tc[code_col].values:
                             # Get the index of the first occurrence
                             rows.append(df_tc[df_tc[code_col] == case[part][0]].index[0])
                         else:
@@ -369,15 +379,15 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                     else:
                         match[p] += df_tc.iat[row, c]
 
-            condition = f"{match[0]} {case[2]} {match[1]}"
-            print(rule + ": ", condition)
+        condition = f"{match[0]} {case[2]} {match[1]}"
+        print(rule + ": ", condition)
 
-            if eval(condition):
-                results.append([sheet, True, case[4]])
-            else:
-                results.append([sheet, False, case[4], c])
+        if eval(condition):
+            results.append([sheet, True, case[4]])
+        else:
+            results.append([sheet, False, case[4], c])
 
-            return results
+        return results
 
     if rule in [
         "RW_ST.05_02", "RW_ST.05_03", "RW_ST.05_05", "RW_ST.05_06", "RW_ST.05_07"
@@ -472,11 +482,11 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                 row = df_tc[df_tc[11] == "Namibia"].index[0]
 
                 match[1] += round(df_tc.iat[row, col], 2)
-                print(match[1])
 
         condition = f"{match[0]} {case[2]} {match[1]}"
         print(rule + ": ", condition)
         val_diff = match[0] - match[1]
+
         if eval(condition):
             sheet = case[0][0]
             results.append([sheet, True, case[4]])
@@ -485,6 +495,86 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
             results.append([sheet, False, case[4], col, val_diff])
 
         return results
+
+    if rule in ["RW_ST.06_01"]:
+        case = rules[rule]
+        sheet = case[0]
+
+        code_col = case[5][0]
+        code_row = case[5][1]
+
+        parts = [1, 3]
+        match = [0, 0]
+
+        for p, part in enumerate(parts):
+            df_tc = df[AR1_TO_CHECK[sheet]]
+            if p == 0:
+                row_value = case[part][1]
+            else:
+                row_value = case[part][0]
+
+            for col_value in case[1][0]:
+                col = pd.Index(df_tc.iloc[code_row]).get_loc(col_value)
+                row = df_tc[df_tc[code_col] == row_value].index[0]
+
+                if p == 0:
+                    match[p] = df_tc.iat[row, col]
+                else:
+                    match[p] = df_tc.iloc[row:, col].sum()
+
+        condition = f"{match[0]} {case[2]} {match[1]}"
+        print(rule + ": ", condition)
+        val_diff = match[0] - match[1]
+
+        if eval(condition):
+            sheet = case[0]
+            results.append([sheet, True, case[4]])
+        else:
+            sheet = case[0]
+            results.append([sheet, False, case[4], col, val_diff])
+
+        return results
+
+    if rule in ["RW_ST.07_01", "RW_ST.07_02", "RW_ST.07_03", "RW_ST.07_04", "RW_ST.07_05", "RW_ST.07_06",
+                "RW_ST.07_07"]:
+
+        case = rules[rule]
+        sheet = case[0]
+        df_tc = df[AR1_TO_CHECK[sheet]]
+
+        code_col = case[5]
+        columns = [*range(13, df_tc.shape[1])]
+
+        parts = [1, 3]
+
+        for col in columns:
+            match = [0, 0]
+
+            for p, part in enumerate(parts):
+                row_value = case[part]
+
+                for r_value in row_value:
+                    row = df_tc[df_tc[code_col] == r_value].index[0]
+                    value = df_tc.iat[row, col]
+                    if value == '':
+                        value = 0
+                    match[p] += value
+
+            condition = f"{match[0]} {case[2]} {match[1]}"
+            print(rule + ": ", condition)
+            val_diff = match[0] - match[1]
+
+            if eval(condition):
+                sheet = case[0]
+                results.append([sheet, True, case[4]])
+            else:
+                sheet = case[0]
+                results.append([sheet, False, case[4], col, val_diff])
+
+        return results
+
+
+
 
 
 

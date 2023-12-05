@@ -9396,17 +9396,14 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:segment>
     <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
     <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
-    <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
-      <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
-    </xbrldi:typedMember>
+    <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M10 id="ft_ST.06_290" contextRef="ST.06_290" unitRef="PURE" 
-decimals="0">1054168</p-BSP-measures:M10>
+<p-BSP-measures:M10 id="ft_ST.06_290" contextRef="ST.06_290" unitRef="PURE" decimals="0">1054168</p-BSP-measures:M10>
 
 <xbrli:context id="ST.06_291">
 <xbrli:entity>
@@ -9414,17 +9411,14 @@ decimals="0">1054168</p-BSP-measures:M10>
   <xbrli:segment>
     <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
     <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
-    <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
-      <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
-    </xbrldi:typedMember>
+    <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M10 id="ft_ST.06_291" contextRef="ST.06_291" unitRef="PURE" 
-decimals="0">0</p-BSP-measures:M10>
+<p-BSP-measures:M10 id="ft_ST.06_291" contextRef="ST.06_291" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
 
 <xbrli:context id="ST.06_292">
 <xbrli:entity>
@@ -9432,17 +9426,14 @@ decimals="0">0</p-BSP-measures:M10>
   <xbrli:segment>
     <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
     <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
-    <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
-      <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
-    </xbrldi:typedMember>
+    <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M10 id="ft_ST.06_292" contextRef="ST.06_292" unitRef="PURE" 
-decimals="0">18</p-BSP-measures:M10>
+<p-BSP-measures:M10 id="ft_ST.06_292" contextRef="ST.06_292" unitRef="PURE" decimals="0">18</p-BSP-measures:M10>
 
 <xbrli:context id="ST.06_293">
 <xbrli:entity>
@@ -9450,17 +9441,14 @@ decimals="0">18</p-BSP-measures:M10>
   <xbrli:segment>
     <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
     <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.UKP</xbrldi:explicitMember>
-    <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
-      <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
-    </xbrldi:typedMember>
+    <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M11 id="ft_ST.06_293" contextRef="ST.06_293" unitRef="PLN" 
-decimals="2">79252315.54</p-BSP-measures:M11>
+<p-BSP-measures:M11 id="ft_ST.06_293" contextRef="ST.06_293" unitRef="PLN" decimals="2">79252315.54</p-BSP-measures:M11>
 
 <xbrli:context id="ST.06_294">
 <xbrli:entity>
@@ -9468,17 +9456,14 @@ decimals="2">79252315.54</p-BSP-measures:M11>
   <xbrli:segment>
     <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
     <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OKP.IT</xbrldi:explicitMember>
-    <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
-      <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
-    </xbrldi:typedMember>
+    <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M11 id="ft_ST.06_294" contextRef="ST.06_294" unitRef="PLN" 
-decimals="2">0.00</p-BSP-measures:M11>
+<p-BSP-measures:M11 id="ft_ST.06_294" contextRef="ST.06_294" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
 
 <xbrli:context id="ST.06_295">
 <xbrli:entity>
@@ -9486,17 +9471,14 @@ decimals="2">0.00</p-BSP-measures:M11>
   <xbrli:segment>
     <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
     <xbrldi:explicitMember dimension="d-BSP-ro:RodzajeOperacjiWymiar">d-BSP-ro:OCB</xbrldi:explicitMember>
-    <xbrldi:typedMember dimension="d-BSP-kt:KrajWpisywanyWymiar">
-      <d-BSP-kt:FNKW01T>D09-Pozostale kraje</d-BSP-kt:FNKW01T>
-    </xbrldi:typedMember>
+    <xbrldi:explicitMember dimension="d-BSP-kw:KrajWydawcyKartyWymiar001">d-BSP-kw:WLD</xbrldi:explicitMember>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M11 id="ft_ST.06_295" contextRef="ST.06_295" unitRef="PLN" 
-decimals="2">2164.90</p-BSP-measures:M11>
+<p-BSP-measures:M11 id="ft_ST.06_295" contextRef="ST.06_295" unitRef="PLN" decimals="2">2164.90</p-BSP-measures:M11>
 
 <xbrli:context id="ST.06_300">
 <xbrli:entity>
