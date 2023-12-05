@@ -1,5 +1,6 @@
-from variables import geo3_country_loc, geo3_country
 import pandas as pd
+import openpyxl
+from f_visa import check_quarter
 
 
 def format_decimal(number):
@@ -7,14 +8,11 @@ def format_decimal(number):
     return formatted_number
 
 
-def create_ar1(tab):
-    path = 'Example\\'
-    df = pd.read_excel(path + '2023_09_31___BSP_AR1_ST.w.8.7.5.xlsx', sheet_name=tab, header=None,
-                       keep_default_na=False)
-
-    year = '2023'
-    month = '09'
-    day = '30'
+def create_ar1(tab, df, date, path):
+    df = df[tab]
+    year = date[0]
+    month = date[1]
+    day = date[2]
 
     if tab == 'p-dane':
         xml_add_code = ''
@@ -39,6 +37,10 @@ def create_ar1(tab):
                 taxonomy = code.split('_')
 
                 value = df.iat[9 + number2, 13 + number1]
+                if value == 'WLD':
+                    workbook = openpyxl.load_workbook(path)
+                    print("WLD")
+
                 print(taxonomy, tab)
                 xml = f"""
 <xbrli:context id="{tab}_{number1}{number2}">
@@ -78,7 +80,7 @@ def create_ar1(tab):
                     ]
                 else:
                     if value == '':
-                        value = '0'
+                        value = 0
                     unit = [
                         'PURE',
                         '0',
@@ -118,13 +120,13 @@ def create_ar1(tab):
                     if value == '':
                         value = 0
                     unit = [
-                        'PURE',
+                        'PLN',
                         '2',
                         format_decimal(value)
                     ]
                 else:
                     if value == '':
-                        value = '0'
+                        value = 0
                     unit = [
                         'PURE',
                         '0',
@@ -144,7 +146,8 @@ def create_ar1(tab):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                 else:
                     xml = f"""
@@ -160,14 +163,18 @@ def create_ar1(tab):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                 xml_add_code += xml
 
     elif tab in ['ST.04', 'ST.06']:
         xml_add_code = ''
         codes1 = df.loc[9:, 0]
-        codes2 = df.loc[5, 13:]
+        if tab == "ST.06":
+            codes2 = df.loc[5, 13:]
+        else:
+            codes2 = df.loc[5, 13:]
 
         for number1, code1 in enumerate(codes1):
             for number2, code2 in enumerate(codes2):
@@ -180,13 +187,13 @@ def create_ar1(tab):
                     if value == '':
                         value = 0
                     unit = [
-                        'PURE',
+                        'PLN',
                         '2',
                         format_decimal(value)
                     ]
                 else:
                     if value == '':
-                        value = '0'
+                        value = 0
                     unit = [
                         'PURE',
                         '0',
@@ -208,18 +215,17 @@ def create_ar1(tab):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                 if tab == 'ST.06':
                     if taxonomy[3] not in ['AT', 'BE', 'BG', 'CY', 'HR', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'ES', 'NL',
                                            'IE', 'IS', 'LI', 'LT', 'LU', 'LV', 'MT', 'DE', 'NO', 'PT', 'RO', 'SK', 'SI',
-                                           'SE', 'HU', 'IT', 'GB'
+                                           'SE', 'HU', 'IT', 'GB', 'WLD'
                                            ]:
-                        if taxonomy[3] == "WLD":
-                            taxonomy[3] = "D09-Pozostale kraje"
-                        else:
-                            cc = df.iat[9 + number1, 11]
-                            taxonomy[3] = taxonomy[3] + '-' + cc
+
+                        cc = df.iat[9 + number1, 11]
+                        taxonomy[3] = taxonomy[3] + '-' + cc
                         xml = f"""
 <xbrli:context id="{tab}_{number1}{number2}">
 <xbrli:entity>
@@ -236,7 +242,8 @@ def create_ar1(tab):
   <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
+<p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
+decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
                     else:
                         xml = f"""
@@ -259,7 +266,14 @@ def create_ar1(tab):
 
     elif tab in ['ST.05', 'ST.07']:
         xml_add_code = ''
-        codes1 = df.loc[9:, 0]
+
+        if tab == 'ST.05':
+            first_cell = df[df[0].notna()].index[0]
+
+        else:
+            first_cell = 9
+
+        codes1 = df.loc[first_cell:, 0]
         codes2 = df.loc[5, 13:]
 
         for number1, code1 in enumerate(codes1):
@@ -267,7 +281,8 @@ def create_ar1(tab):
                 code = code2.split("_")[0] + code1 + code2.split("_")[1]
                 taxonomy = code.split('_')
                 print(taxonomy, tab)
-                value = df.iat[9 + number1, 13 + number2]
+
+                value = df.iat[first_cell + number1, 13 + number2]
 
                 if taxonomy[0] in ['M11', 'M13', 'M14', 'M202']:
                     if value == '':
@@ -372,13 +387,22 @@ def create_ar1(tab):
 </xbrli:context>
 <p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
+                    elif len(taxonomy) == 1:
+                        continue
+                    else:
+                        print(len(taxonomy), taxonomy, tab)
                 xml_add_code += xml
 
     return xml_add_code
 
 
-if __name__ == '__main__':
+def create_xml_ar1(df, date, path, progress_callback=None, progress_callback_text=None):
+    if progress_callback:
+        progress_callback(0)
+
     xml_code = ''
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - creating xml file.')
 
     EXCEL_READ_AR1 = [
         'p-dane',
@@ -390,10 +414,24 @@ if __name__ == '__main__':
         'ST.06',
         'ST.07'
     ]
-    for sheet in EXCEL_READ_AR1:
-        xml_code += create_ar1(sheet)
+
+    percent = 100/(len(EXCEL_READ_AR1) - 1)
+
+    for e, sheet in enumerate(EXCEL_READ_AR1):
+        xml_code += create_ar1(sheet, df, date, path)
+
+        if progress_callback:
+            percent = 100 / len(EXCEL_READ_AR1) * (e + 1)
+            progress_callback(int(percent))
 
     xml_code += '</xbrli:xbrl>'
 
-    with open("PayTel_fjk_20230930_AR1.txt", 'w', encoding="utf-8") as file:
+    with open(f"PayTel_fjk_{date[0]+date[1]+date[2]}_AR1.xml", 'w', encoding="utf-8") as file:
         file.write(xml_code)
+
+    if progress_callback_text:
+        progress_callback_text(f'AR1 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR1.xml".')
+
+
+if __name__ == '__main__':
+    print("No method running.")
