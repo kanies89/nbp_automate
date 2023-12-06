@@ -13,9 +13,9 @@ IF OBJECT_ID('tempdb..#transakcje') IS NOT NULL DROP TABLE #transakcje
 SELECT
 'VISA'as 'karta'
 ,CASE
-	WHEN  VT.country = 'ROM' THEN 'Romania'
-	WHEN  VT.country in ('QZ', 'QZZ', 'SZ') THEN 'Extra UE not allocated' --- Kosowo i  Eswatini - brak na liście od nbp, wrzucone do extra not allocated - ale to nie jest ue - trzeba by skonsultować z nbp   
-	WHEN  VT.country = 'PR' THEN 'United States of America'
+	WHEN VT.country = 'ROM' THEN 'Romania'
+	WHEN VT.country in ('QZ', 'QZZ', 'SZ') THEN 'Extra UE not allocated' --- Kosowo i  Eswatini - brak na liście od nbp, wrzucone do extra not allocated - ale to nie jest ue - trzeba by skonsultować z nbp   
+	WHEN VT.country = 'PR' THEN 'United States of America'
 	ELSE cc_name end as CountryName
 ,CASE 
 	WHEN VT.country = 'ROM' THEN 'RO'
@@ -39,7 +39,7 @@ FROM
 	visa_transaction VT (nolock) 
 	join if_transaction IT (nolock) on IT.postTranId = VT.postTranId 
 	join trans (nolock) on tranNr = tr_tran_nr
-		and  tr_datetime_req between @dtb AND @dte
+		and tr_datetime_req between @dtb AND @dte
 		and tr_reversed = 0 AND tr_rsp_code = '00'
 		and tr_message_type in (200, 220)
 	join trans_ext (nolock) on tr_tran_nr = te_tran_nr
@@ -327,13 +327,13 @@ SELECT
 	ELSE 'reszta świata' END 'podział NBP'
 FROM 
 	mc_transaction MC (nolock)
-	join if_transaction TR (nolock) on TR.postTranId = MC.postTranId
-	join trans (nolock) on TR.tranNr = tr_tran_nr 
+	join paytel_olap.dbo.if_transaction TR (nolock) on TR.postTranId = MC.postTranId 
+	JOIN paytel_olap.dbo.trans (NOLOCK) ON isnull(tr_prev_tran_nr, tr_tran_nr) = TR.tranNr
 	and tr_datetime_req between @dtb AND @dte 
 		and tr_reversed = 0
 		and tr_rsp_code = '00'   
 		and tr_message_type in (200, 220)
-	join trans_ext (nolock) on tr_tran_nr = te_tran_nr
+	join trans_ext (nolock) ON isnull(tr_prev_tran_nr, tr_tran_nr) = te_tran_nr
 	--left Join mcipm_ip0072t1 on MC.memberId = mcipm_ip0072t1.member_id 
 	left join country_codes CS on MC.country = cc_A3   
 WHERE 

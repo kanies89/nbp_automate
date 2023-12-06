@@ -61,7 +61,7 @@ def connect_single_query(query):
         df = []
 
         for q in q_list:
-            tableResult = pd.read_sql(f'{q}', connection)
+            tableResult = pd.read_sql(text(q), connection)
             df.append(pd.DataFrame(tableResult))
 
     engine.dispose()

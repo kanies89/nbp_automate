@@ -18,16 +18,12 @@ from variables import EXCEL_READ_AR2, AR2_4_row_1, AR2_4_row_2, EXCEL_READ_AR1
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 from PyQt5.QtCore import pyqtSignal, QObject
-from check import to_float
+from check_rules import to_float
 
 bug_table = []
 
 TEMP = f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/'
 PATH = 'Example/'
-
-df_nbp_2 = pd.read_excel(PATH + 'BSP_AR2_v.4.0_Q12023_20230421.xlsx', sheet_name=EXCEL_READ_AR2, header=None,
-                         keep_default_na=False)
-df_nbp_1 = pd.read_excel(PATH + 'AR1 - Q1.2023.xlsx', sheet_name=EXCEL_READ_AR1, header=None, keep_default_na=False)
 
 
 def reference(index, type_ref):
@@ -137,63 +133,6 @@ def to_log():
     with open(file_name, 'a') as log:
         log.write(f"\nReport start -AR2- --{report_date}--\n")
     return file_name
-
-
-def copy_wb(from_workbook, to_workbook, dataframe, number):
-    # Load the existing workbook
-    wb = openpyxl.load_workbook(from_workbook)
-
-    if number == 1:
-        for sheet_name in EXCEL_READ_AR1:
-            sheet = wb[sheet_name]
-            for row in dataframe[sheet_name].index:
-                for col in dataframe[sheet_name].columns:
-                    coord = openpyxl.utils.get_column_letter(col + 1) + str(row + 1)
-                    new_value = dataframe[sheet_name].iat[row, col]
-
-                    # Handle merged cells
-                    for merged_range in sheet.merged_cells.ranges:
-                        if coord in merged_range:
-                            # Find the first cell in the merged range
-                            first_cell = merged_range.min_row, merged_range.min_col
-                            first_coord = openpyxl.utils.get_column_letter(first_cell[1]) + str(first_cell[0])
-                            # wb[sheet_name][first_coord].value = new_value
-
-                            # Merge the cells
-                            # sheet.merge_cells(merged_range.coord)
-
-                            break  # Exit the loop after setting the value and merging cells
-                    else:
-                        # If the cell is not merged, set the value directly
-                        sheet[coord].value = new_value
-
-    elif number == 2:
-        for sheet_name in EXCEL_READ_AR2:
-            sheet = wb[sheet_name]
-            for row in dataframe[sheet_name].index:
-                for col in dataframe[sheet_name].columns:
-                    coord = openpyxl.utils.get_column_letter(col + 1) + str(row + 1)
-                    new_value = dataframe[sheet_name].iat[row, col]
-
-                    # Handle merged cells
-                    for merged_range in sheet.merged_cells.ranges:
-                        if coord in merged_range:
-                            # Find the first cell in the merged range
-                            first_cell = merged_range.min_row, merged_range.min_col
-                            first_coord = openpyxl.utils.get_column_letter(first_cell[1]) + str(first_cell[0])
-                            # wb[sheet_name][first_coord].value = new_value
-
-                            # Merge the cells
-                            # sheet.merge_cells(merged_range.coord)
-
-                            break  # Exit the loop after setting the value and merging cells
-                    else:
-                        # If the cell is not merged, set the value directly
-                        sheet[coord].value = new_value
-
-    # Save the changes
-    wb.save(to_workbook)
-    return wb
 
 
 def load_df(length, path):
@@ -337,10 +276,10 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 5a.R.SF.')
+
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(29)
-    # @TODO: Check why it doesn't save.
 
     # 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
     print(wb_sheets[3][0] + ' and ' + wb_sheets[4][0])
@@ -513,30 +452,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
     sheets = [wb_sheets[3][0], wb_sheets[4][0]]
 
-    # for sheet in sheets:
-    #     for r in range(df_total.shape[0]):
-    #         condition = df3.iloc[30:, 2] == '8'
-    #         row = condition[condition].index[0]
-    #
-    #         country = df_total.iloc[r][0]
-    #         sum_v = df_total.iloc[r][7]
-    #         count_v = df_total.iloc[r][8]
-    #         print(country, ": ", sum_v, count_v)
-    #
-    #         try:
-    #             col = pd.Index(df3.iloc[27]).get_loc(country)
-    #             if sheet == '5a.R.LF_PLiW2':
-    #                 s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-    #                     to_float(count_v), 2)
-    #             else:
-    #                 s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-    #                     to_float(sum_v), 2)
-    #
-    #         except KeyError:
-    #             bug_table.append([f'BUG_{sheet}', country])
-    #             print(
-    #                 f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
     # 8.1.1 initiated non-electronically
     df_total_moto = df_total[df_total['czy_moto'] == 'MOTO']
 
@@ -620,17 +535,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
                 s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
                     to_float(sum_v), 2)
 
-            # # 8.1.2.1 initiated via non-remote payment channel
-            # condition = df3.iloc[30:, 2] == '8.1.2.1'
-            # row = condition[condition].index[0]
-            #
-            # if sheet == '5a.R.LF_PLiW2':
-            #     s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-            #         to_float(count_v), 2)
-            # else:
-            #     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-            #         to_float(sum_v), 2)
-
             # 8.1.2.1.1.1 Initiated at a physical EFTPOS
             condition = df3.iloc[30:, 2] == '8.1.2.1.1.1'
             row = condition[condition].index[0]
@@ -646,29 +550,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
     # 8.1.2.1.2.1 Card-based payment instruments issued under PCS VISA
     df_total_tr_sink_node_visa = df_total[df_total['tr_sink_node'] == 'SN-Visa']
-
-    # for sheet in sheets:
-    #     for r in range(df_total_tr_sink_node_visa.shape[0]):
-    #         condition = df3.iloc[30:, 2] == '8.1.2.1.2.1'
-    #         row = condition[condition].index[0]
-    #
-    #         country = df_total_tr_sink_node_visa.iloc[r][0]
-    #         sum_v = df_total_tr_sink_node_visa.iloc[r][7]
-    #         count_v = df_total_tr_sink_node_visa.iloc[r][8]
-    #
-    #         try:
-    #             col = pd.Index(df3.iloc[27]).get_loc(country)
-    #         except KeyError:
-    #             bug_table.append([f'BUG_{sheet}', country])
-    #             print(
-    #                 f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-    #
-    #         if sheet == '5a.R.LF_PLiW2':
-    #             s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-    #                 to_float(count_v), 2)
-    #         else:
-    #             s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-    #                 to_float(sum_v), 2)
 
     # 8.1.2.1.2.1.1.1 with a debit card
     df_total_typ_karty_debit = df_total_tr_sink_node_visa[df_total_tr_sink_node_visa['Typ_karty'] == 'Debit']
@@ -740,13 +621,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
                 bug_table.append([f'BUG_{sheet}', country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-            #
-            # if sheet == '5a.R.LF_PLiW2':
-            #     s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-            #         to_float(count_v), 2)
-            # else:
-            #     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-            #         to_float(sum_v), 2)
 
             if df_total_visa_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
                 # 8.1.2.1.2.1.2.1.1.1 Lost or Stolen card
@@ -814,13 +688,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
                 bug_table.append([f'BUG_{sheet}', country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-            #
-            # if sheet == '5a.R.LF_PLiW2':
-            #     s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-            #         to_float(count_v), 2)
-            # else:
-            #     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-            #         to_float(sum_v), 2)
 
             if df_total_visa_non_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
                 # 8.1.2.1.2.1.2.2.1.1 Lost or Stolen card
@@ -873,29 +740,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
     # 8.1.2.1.2.2 Card-based payment instruments issued under PCS MASTERCARD
     df_total_tr_sink_node_masterc = df_total[df_total['tr_sink_node'] == 'SN-MasterC']
-
-    # for sheet in sheets:
-    #     for r in range(df_total_tr_sink_node_masterc.shape[0]):
-    #         condition = df3.iloc[30:, 2] == '8.1.2.1.2.2'
-    #         row = condition[condition].index[0]
-    #
-    #         country = df_total_tr_sink_node_masterc.iloc[r][0]
-    #         sum_v = df_total_tr_sink_node_masterc.iloc[r][7]
-    #         count_v = df_total_tr_sink_node_masterc.iloc[r][8]
-    #
-    #         try:
-    #             col = pd.Index(df3.iloc[27]).get_loc(country)
-    #         except KeyError:
-    #             bug_table.append([f'BUG_{sheet}', country])
-    #             print(
-    #                 f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-    #
-    #         if sheet == '5a.R.LF_PLiW2':
-    #             s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-    #                 to_float(count_v), 2)
-    #         else:
-    #             s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-    #                 to_float(sum_v), 2)
 
     # 8.1.2.1.2.2.1.1 with a debit card
     df_total_typ_karty_debit = df_total_tr_sink_node_masterc[df_total_tr_sink_node_masterc['Typ_karty'] == 'Debit']
@@ -955,8 +799,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
     for sheet in sheets:
         for r in range(df_total_masterc_sca.shape[0]):
-            # condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.1'
-            # row = condition[condition].index[0]
 
             country = df_total_masterc_sca.iloc[r][0]
             sum_v = df_total_masterc_sca.iloc[r][7]
@@ -968,13 +810,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
                 bug_table.append([f'BUG_{sheet}', country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            # if sheet == '5a.R.LF_PLiW2':
-            #     s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-            #         to_float(count_v), 2)
-            # else:
-            #     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-            #         to_float(sum_v), 2)
 
             if df_total_visa_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
                 # 8.1.2.1.2.2.2.1.1.1 Lost or Stolen card
@@ -1028,9 +863,7 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
     for sheet in sheets:
         for r in range(df_total_masterc_non_sca.shape[0]):
-            # condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.2'
-            # row = condition[condition].index[0]
-            #
+
             country = df_total_masterc_non_sca.iloc[r][0]
             sum_v = df_total_masterc_non_sca.iloc[r][7]
             count_v = df_total_masterc_non_sca.iloc[r][8]
@@ -1041,13 +874,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
                 bug_table.append([f'BUG_{sheet}', country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-            #
-            # if sheet == '5a.R.LF_PLiW2':
-            #     s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-            #         to_float(count_v), 2)
-            # else:
-            #     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-            #         to_float(sum_v), 2)
 
             if df_total_masterc_non_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
                 # 8.1.2.1.2.2.2.2.1.1 Lost or Stolen card
@@ -1238,6 +1064,7 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None,
                      progress_callback_text=None):
+
     wb_data = create_ar1_excel()
 
     # Create new AR2 excel file
@@ -1442,6 +1269,9 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
             bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
         # IF country in Database AND within predefined countries in excel.
 
+        elif country == 'D09':
+            continue
+
         elif df6[0][9:40].isin([country]).any():
             row = df6[0][9:40][df6[0][9:40] == country].index[0]
             for i in range(3):
@@ -1467,6 +1297,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
                 print(country)
                 if not geo6['Code'].isin([country]).any():
                     country = 'D09'
+
                 # Country name
                 country_name = geo6[geo6['Code'] == country]['Nazwa kraju'].values[0]
                 # Country name - english version
@@ -1729,11 +1560,11 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
     passw = d_pass
 
     # Fill sheets in AR2
-    # df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
-    # df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
-    #
-    # # Save everything to new excel file
-    # wb.save(wb_data[2])
+    df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
+    df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+
+    # Save everything to new excel file
+    wb.save(wb_data[2])
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - finished.')
@@ -1742,6 +1573,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         progress_callback(50)
 
     df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+
     # Fill sheets in AR1
     prepare_data_ar1(user, passw, df_fraud_st7, d1, d2, d3, d4, progress_callback, progress_callback_text)
 
