@@ -260,6 +260,7 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
 
         "RW_ST.06_01": [6, [["M10_OKP.UKP_PRP_", "M10_OKP.IT_PRP_",	"M10_OCB_PRP_",	"M11_OKP.UKP_PRP_",
                              "M11_OKP.IT_PRP_", "M11_OCB_PRP_"], 'WLD'], "==", ['GB'], 0, [0, 5]],
+
         "RW_ST.07_01": [7, ['_OBZGOT_'], '==', ['_OKP_', '_OMOB.BZGOT_'], 0, 0],
         "RW_ST.07_03": [7, ['_OKP_'], '==', ['_OKP.UKP_', '_OKP.IT_'], 1, 0],
         "RW_ST.07_05": [7, ['_OKP.ZBL_'], '<', ['_OKP.UKP_'], 2, 0],
@@ -377,6 +378,7 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                     if df_tc.iat[row, c] == '':
                         match[p] += 0
                     else:
+                        print(df_tc.iat[row, c])
                         match[p] += df_tc.iat[row, c]
 
         condition = f"{match[0]} {case[2]} {match[1]}"
