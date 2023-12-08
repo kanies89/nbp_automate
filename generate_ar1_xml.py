@@ -32,18 +32,17 @@ def create_ar1(tab, df, date, path):
         xml_add_code += xml
 
         for number1, code1 in enumerate(codes1):
+            once = True
             for number2, code2 in enumerate(codes2):
+
                 code = code1 + code2
                 taxonomy = code.split('_')
 
-                value = df.iat[9 + number2, 13 + number1]
-                if value == 'WLD':
-                    workbook = openpyxl.load_workbook(path)
-                    print("WLD")
+                if once:
+                    once = False
 
-                print(taxonomy, tab)
-                xml = f"""
-<xbrli:context id="{tab}_{number1}{number2}">
+                    xml = f"""
+<xbrli:context id="{tab}_{number1}0">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
       <xbrli:segment>
@@ -53,9 +52,14 @@ def create_ar1(tab, df, date, path):
     <xbrli:period>
       <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
     </xbrli:period>
-</xbrli:context>
-<p-dane:{taxonomy[1]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}">{value}</p-dane:{taxonomy[1]}>
-"""
+</xbrli:context>"""
+                    xml_add_code += xml
+
+                value = df.iat[9 + number2, 13 + number1]
+
+                print(taxonomy, tab)
+                xml = f"""
+<p-dane:{taxonomy[1]} contextRef="{tab}_{number1}0">{value}</p-dane:{taxonomy[1]}>"""
                 xml_add_code += xml
 
     elif tab == 'ST.01':
@@ -363,7 +367,7 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
@@ -382,7 +386,7 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>{year}-{month}-{day}</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>

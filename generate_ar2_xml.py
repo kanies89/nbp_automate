@@ -90,6 +90,7 @@ def create_tabs(tab, df, date):
                 if tab[0] in ['4a.R.L_PLiW2', '4a.R.W_PLiW2', '5a.R.LF_PLiW2', '5a.R.WF_PLiW2']:
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
+
                     if taxonomy[15] in ['M17', 'M19', 'M20']:
                         if value == '':
                             value = 0
@@ -98,6 +99,7 @@ def create_tabs(tab, df, date):
                         if value == '':
                             value = "0"
                         unit = ['unit1', '0', value]
+
                     xml = f"""
     <xbrli:context id="PayTel_fjk_{year + month + day}_{tab[1]}{number}">
         <xbrli:entity>
@@ -159,9 +161,8 @@ def create_tabs(tab, df, date):
         </xbrli:scenario>
     </xbrli:context>
     <this1:{taxonomy[10]} contextRef="PayTel_fjk_{year + month + day}_{tab[1]}{number}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</this1:{taxonomy[10]}>
-
                     """
-
+# 6.ab.LiW'
                 elif tab[0] in ['6.ab.LiW']:
                     taxonomy[4] = country
                     value = df.iat[row + 30, column + 5]
@@ -195,9 +196,8 @@ def create_tabs(tab, df, date):
         </xbrli:scenario>
     </xbrli:context>
     <this1:{taxonomy[10]} contextRef="PayTel_fjk_{year + month + day}_{tab[1]}{number}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</this1:{taxonomy[10]}>
-
                     """
-
+# 9.R.L.MCC, 9.R.W.MCC
                 elif tab[0] in ['9.R.L.MCC', '9.R.W.MCC']:
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
@@ -209,6 +209,7 @@ def create_tabs(tab, df, date):
                             unit = ['unit1', '2', format_decimal(value)]  # changed for PURE
                         else:
                             unit = ['unit1', '0', value]
+
                         if taxonomy[0] == "PMC":
                             if taxonomy[3] == 'D09':
                                 xml = f"""
@@ -448,13 +449,14 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
     #     with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
     #         file.write(xml_code)
 
-    xml_code += '</xbrli:xbrl>'
+    xml_code = '</xbrli:xbrl>'
 
     with open(f"PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
         file.write(xml_code)
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml".')
+
 
 if __name__ == '__main__':
     print('No methods to be runned.')

@@ -19,47 +19,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_00" contextRef="p-dane_00">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_01">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.01</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_01" contextRef="p-dane_01">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_02">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.01</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_02" contextRef="p-dane_02">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_03">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.01</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_03" contextRef="p-dane_03">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_00">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_00">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_00">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_00">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="p-dane_10">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -71,47 +34,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_10" contextRef="p-dane_10">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_11">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.02</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_11" contextRef="p-dane_11">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_12">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.02</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_12" contextRef="p-dane_12">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_13">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.02</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_13" contextRef="p-dane_13">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_10">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_10">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_10">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_10">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="p-dane_20">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -123,47 +49,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_20" contextRef="p-dane_20">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_21">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.03</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_21" contextRef="p-dane_21">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_22">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.03</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_22" contextRef="p-dane_22">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_23">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.03</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_23" contextRef="p-dane_23">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_20">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_20">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_20">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_20">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="p-dane_30">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -175,47 +64,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_30" contextRef="p-dane_30">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_31">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.04</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_31" contextRef="p-dane_31">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_32">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.04</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_32" contextRef="p-dane_32">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_33">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.04</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_33" contextRef="p-dane_33">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_30">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_30">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_30">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_30">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="p-dane_40">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -227,47 +79,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_40" contextRef="p-dane_40">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_41">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.05</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_41" contextRef="p-dane_41">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_42">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.05</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_42" contextRef="p-dane_42">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_43">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.05</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_43" contextRef="p-dane_43">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_40">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_40">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_40">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_40">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="p-dane_50">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -279,47 +94,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_50" contextRef="p-dane_50">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_51">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.06</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_51" contextRef="p-dane_51">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_52">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.06</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_52" contextRef="p-dane_52">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_53">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.06</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_53" contextRef="p-dane_53">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_50">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_50">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_50">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_50">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="p-dane_60">
     <xbrli:entity>
       <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -331,47 +109,10 @@
       <xbrli:instant>2023-09-30</xbrli:instant>
     </xbrli:period>
 </xbrli:context>
-<p-dane:ImieSporzadzajacego id="ft_p-dane_60" contextRef="p-dane_60">Krzysztof</p-dane:ImieSporzadzajacego>
-
-<xbrli:context id="p-dane_61">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.07</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:NazwiskoSporzadzajacego id="ft_p-dane_61" contextRef="p-dane_61">Kaniewski</p-dane:NazwiskoSporzadzajacego>
-
-<xbrli:context id="p-dane_62">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.07</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:TelefonSporzadzajacego id="ft_p-dane_62" contextRef="p-dane_62">+48 506 297 621</p-dane:TelefonSporzadzajacego>
-
-<xbrli:context id="p-dane_63">
-    <xbrli:entity>
-      <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
-      <xbrli:segment>
-        <xbrldi:explicitMember dimension="d-dane:FormularzeWymiar">d-dane:ST.07</xbrldi:explicitMember>
-      </xbrli:segment>
-    </xbrli:entity>
-    <xbrli:period>
-      <xbrli:instant>2023-09-30</xbrli:instant>
-    </xbrli:period>
-</xbrli:context>
-<p-dane:AdresEMailSporzadzajacego id="ft_p-dane_63" contextRef="p-dane_63">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
-
+<p-dane:ImieSporzadzajacego contextRef="p-dane_60">Krzysztof</p-dane:ImieSporzadzajacego>
+<p-dane:NazwiskoSporzadzajacego contextRef="p-dane_60">Kaniewski</p-dane:NazwiskoSporzadzajacego>
+<p-dane:TelefonSporzadzajacego contextRef="p-dane_60">+48 506 297 621</p-dane:TelefonSporzadzajacego>
+<p-dane:AdresEMailSporzadzajacego contextRef="p-dane_60">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
 <xbrli:context id="ST.02_00">
 <xbrli:entity>
   <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -4422,7 +4163,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_100" contextRef="ST.05_100" unitRef="PURE" decimals="0">45161734</p-BSP-measures:M10>
@@ -4437,7 +4178,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_101" contextRef="ST.05_101" unitRef="PURE" decimals="0">1734182</p-BSP-measures:M10>
@@ -4452,7 +4193,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_102" contextRef="ST.05_102" unitRef="PLN" decimals="2">2363744667.50</p-BSP-measures:M11>
@@ -4467,7 +4208,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_103" contextRef="ST.05_103" unitRef="PLN" decimals="2">150118091.16</p-BSP-measures:M11>
@@ -4482,7 +4223,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_104" contextRef="ST.05_104" unitRef="PURE" decimals="0">45161734</p-BSP-measures:M201>
@@ -4497,7 +4238,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_105" contextRef="ST.05_105" unitRef="PURE" decimals="0">1734182</p-BSP-measures:M201>
@@ -4512,7 +4253,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_106" contextRef="ST.05_106" unitRef="PLN" decimals="2">2363744667.50</p-BSP-measures:M202>
@@ -4527,7 +4268,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_107" contextRef="ST.05_107" unitRef="PLN" decimals="2">150118091.16</p-BSP-measures:M202>
@@ -4542,7 +4283,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_110" contextRef="ST.05_110" unitRef="PURE" decimals="0">44113979</p-BSP-measures:M10>
@@ -4557,7 +4298,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_111" contextRef="ST.05_111" unitRef="PURE" decimals="0">1631659</p-BSP-measures:M10>
@@ -4572,7 +4313,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_112" contextRef="ST.05_112" unitRef="PLN" decimals="2">2276068699.21</p-BSP-measures:M11>
@@ -4587,7 +4328,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_113" contextRef="ST.05_113" unitRef="PLN" decimals="2">130391831.61</p-BSP-measures:M11>
@@ -4602,7 +4343,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_114" contextRef="ST.05_114" unitRef="PURE" decimals="0">44113979</p-BSP-measures:M201>
@@ -4617,7 +4358,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_115" contextRef="ST.05_115" unitRef="PURE" decimals="0">1631659</p-BSP-measures:M201>
@@ -4632,7 +4373,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_116" contextRef="ST.05_116" unitRef="PLN" decimals="2">2276068699.21</p-BSP-measures:M202>
@@ -4647,7 +4388,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_117" contextRef="ST.05_117" unitRef="PLN" decimals="2">130391831.61</p-BSP-measures:M202>
@@ -4662,7 +4403,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_120" contextRef="ST.05_120" unitRef="PURE" decimals="0">19942</p-BSP-measures:M10>
@@ -4677,7 +4418,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_121" contextRef="ST.05_121" unitRef="PURE" decimals="0">144</p-BSP-measures:M10>
@@ -4692,7 +4433,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_122" contextRef="ST.05_122" unitRef="PLN" decimals="2">3821319.23</p-BSP-measures:M11>
@@ -4707,7 +4448,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_123" contextRef="ST.05_123" unitRef="PLN" decimals="2">11085.77</p-BSP-measures:M11>
@@ -4722,7 +4463,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_124" contextRef="ST.05_124" unitRef="PURE" decimals="0">19942</p-BSP-measures:M201>
@@ -4737,7 +4478,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_125" contextRef="ST.05_125" unitRef="PURE" decimals="0">144</p-BSP-measures:M201>
@@ -4752,7 +4493,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_126" contextRef="ST.05_126" unitRef="PLN" decimals="2">3821319.23</p-BSP-measures:M202>
@@ -4767,7 +4508,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_127" contextRef="ST.05_127" unitRef="PLN" decimals="2">11085.77</p-BSP-measures:M202>
@@ -4782,7 +4523,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_130" contextRef="ST.05_130" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -4797,7 +4538,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_131" contextRef="ST.05_131" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -4812,7 +4553,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_132" contextRef="ST.05_132" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -4827,7 +4568,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_133" contextRef="ST.05_133" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -4842,7 +4583,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_134" contextRef="ST.05_134" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -4857,7 +4598,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_135" contextRef="ST.05_135" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -4872,7 +4613,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_136" contextRef="ST.05_136" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -4887,7 +4628,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_137" contextRef="ST.05_137" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -4902,7 +4643,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_140" contextRef="ST.05_140" unitRef="PURE" decimals="0">1504229</p-BSP-measures:M10>
@@ -4917,7 +4658,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_141" contextRef="ST.05_141" unitRef="PURE" decimals="0">41656</p-BSP-measures:M10>
@@ -4932,7 +4673,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_142" contextRef="ST.05_142" unitRef="PLN" decimals="2">221553318.67</p-BSP-measures:M11>
@@ -4947,7 +4688,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_143" contextRef="ST.05_143" unitRef="PLN" decimals="2">12669719.94</p-BSP-measures:M11>
@@ -4962,7 +4703,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_144" contextRef="ST.05_144" unitRef="PURE" decimals="0">1504229</p-BSP-measures:M201>
@@ -4977,7 +4718,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_145" contextRef="ST.05_145" unitRef="PURE" decimals="0">41656</p-BSP-measures:M201>
@@ -4992,7 +4733,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_146" contextRef="ST.05_146" unitRef="PLN" decimals="2">221553318.67</p-BSP-measures:M202>
@@ -5007,7 +4748,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_147" contextRef="ST.05_147" unitRef="PLN" decimals="2">12669719.94</p-BSP-measures:M202>
@@ -5022,7 +4763,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_150" contextRef="ST.05_150" unitRef="PURE" decimals="0">1439291</p-BSP-measures:M10>
@@ -5037,7 +4778,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_151" contextRef="ST.05_151" unitRef="PURE" decimals="0">30012</p-BSP-measures:M10>
@@ -5052,7 +4793,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_152" contextRef="ST.05_152" unitRef="PLN" decimals="2">205245660.21</p-BSP-measures:M11>
@@ -5067,7 +4808,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_153" contextRef="ST.05_153" unitRef="PLN" decimals="2">5874449.75</p-BSP-measures:M11>
@@ -5082,7 +4823,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_154" contextRef="ST.05_154" unitRef="PURE" decimals="0">1439291</p-BSP-measures:M201>
@@ -5097,7 +4838,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_155" contextRef="ST.05_155" unitRef="PURE" decimals="0">30012</p-BSP-measures:M201>
@@ -5112,7 +4853,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_156" contextRef="ST.05_156" unitRef="PLN" decimals="2">205245660.21</p-BSP-measures:M202>
@@ -5127,7 +4868,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_157" contextRef="ST.05_157" unitRef="PLN" decimals="2">5874449.75</p-BSP-measures:M202>
@@ -5142,7 +4883,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_160" contextRef="ST.05_160" unitRef="PURE" decimals="0">556</p-BSP-measures:M10>
@@ -5157,7 +4898,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_161" contextRef="ST.05_161" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -5172,7 +4913,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_162" contextRef="ST.05_162" unitRef="PLN" decimals="2">133168.97</p-BSP-measures:M11>
@@ -5187,7 +4928,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_163" contextRef="ST.05_163" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -5202,7 +4943,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_164" contextRef="ST.05_164" unitRef="PURE" decimals="0">556</p-BSP-measures:M201>
@@ -5217,7 +4958,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_165" contextRef="ST.05_165" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -5232,7 +4973,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_166" contextRef="ST.05_166" unitRef="PLN" decimals="2">133168.97</p-BSP-measures:M202>
@@ -5247,7 +4988,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_167" contextRef="ST.05_167" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -5262,7 +5003,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_170" contextRef="ST.05_170" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -5277,7 +5018,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_171" contextRef="ST.05_171" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -5292,7 +5033,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_172" contextRef="ST.05_172" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -5307,7 +5048,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_173" contextRef="ST.05_173" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -5322,7 +5063,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_174" contextRef="ST.05_174" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -5337,7 +5078,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_175" contextRef="ST.05_175" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -5352,7 +5093,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_176" contextRef="ST.05_176" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -5367,7 +5108,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_177" contextRef="ST.05_177" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -6279,7 +6020,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_260" contextRef="ST.05_260" unitRef="PURE" decimals="0">25032</p-BSP-measures:M10>
@@ -6295,7 +6036,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_261" contextRef="ST.05_261" unitRef="PURE" decimals="0">819</p-BSP-measures:M10>
@@ -6311,7 +6052,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_262" contextRef="ST.05_262" unitRef="PLN" decimals="2">1059604.22</p-BSP-measures:M11>
@@ -6327,7 +6068,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_263" contextRef="ST.05_263" unitRef="PLN" decimals="2">67037.71</p-BSP-measures:M11>
@@ -6343,7 +6084,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_264" contextRef="ST.05_264" unitRef="PURE" decimals="0">25032</p-BSP-measures:M201>
@@ -6359,7 +6100,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_265" contextRef="ST.05_265" unitRef="PURE" decimals="0">819</p-BSP-measures:M201>
@@ -6375,7 +6116,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_266" contextRef="ST.05_266" unitRef="PLN" decimals="2">1059604.22</p-BSP-measures:M202>
@@ -6391,7 +6132,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_267" contextRef="ST.05_267" unitRef="PLN" decimals="2">67037.71</p-BSP-measures:M202>
@@ -6407,7 +6148,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_270" contextRef="ST.05_270" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -6423,7 +6164,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_271" contextRef="ST.05_271" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -6439,7 +6180,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_272" contextRef="ST.05_272" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -6455,7 +6196,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_273" contextRef="ST.05_273" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -6471,7 +6212,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_274" contextRef="ST.05_274" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -6487,7 +6228,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_275" contextRef="ST.05_275" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -6503,7 +6244,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_276" contextRef="ST.05_276" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -6519,7 +6260,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_277" contextRef="ST.05_277" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -6535,7 +6276,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_280" contextRef="ST.05_280" unitRef="PURE" decimals="0">1337</p-BSP-measures:M10>
@@ -6551,7 +6292,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_281" contextRef="ST.05_281" unitRef="PURE" decimals="0">24</p-BSP-measures:M10>
@@ -6567,7 +6308,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_282" contextRef="ST.05_282" unitRef="PLN" decimals="2">219619.77</p-BSP-measures:M11>
@@ -6583,7 +6324,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_283" contextRef="ST.05_283" unitRef="PLN" decimals="2">7403.05</p-BSP-measures:M11>
@@ -6599,7 +6340,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_284" contextRef="ST.05_284" unitRef="PURE" decimals="0">1337</p-BSP-measures:M201>
@@ -6615,7 +6356,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_285" contextRef="ST.05_285" unitRef="PURE" decimals="0">24</p-BSP-measures:M201>
@@ -6631,7 +6372,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_286" contextRef="ST.05_286" unitRef="PLN" decimals="2">219619.77</p-BSP-measures:M202>
@@ -6647,7 +6388,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_287" contextRef="ST.05_287" unitRef="PLN" decimals="2">7403.05</p-BSP-measures:M202>
@@ -6663,7 +6404,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_290" contextRef="ST.05_290" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -6679,7 +6420,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M10 id="ft_ST.05_291" contextRef="ST.05_291" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
@@ -6695,7 +6436,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_292" contextRef="ST.05_292" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -6711,7 +6452,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M11 id="ft_ST.05_293" contextRef="ST.05_293" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
@@ -6727,7 +6468,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_294" contextRef="ST.05_294" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -6743,7 +6484,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M201 id="ft_ST.05_295" contextRef="ST.05_295" unitRef="PURE" decimals="0">0</p-BSP-measures:M201>
@@ -6759,7 +6500,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_296" contextRef="ST.05_296" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
@@ -6775,7 +6516,7 @@ decimals="0">0</p-BSP-measures:M09>
   </xbrli:segment>
 </xbrli:entity>
 <xbrli:period>
-  <xbrli:instant>2023-03-31</xbrli:instant>
+  <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
 <p-BSP-measures:M202 id="ft_ST.05_297" contextRef="ST.05_297" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M202>
