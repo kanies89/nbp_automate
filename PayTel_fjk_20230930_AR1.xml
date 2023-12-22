@@ -113,6 +113,538 @@
 <p-dane:NazwiskoSporzadzajacego contextRef="p-dane_60">Kaniewski</p-dane:NazwiskoSporzadzajacego>
 <p-dane:TelefonSporzadzajacego contextRef="p-dane_60">+48 506 297 621</p-dane:TelefonSporzadzajacego>
 <p-dane:AdresEMailSporzadzajacego contextRef="p-dane_60">krzysztof.kaniewski@paytel.pl</p-dane:AdresEMailSporzadzajacego>
+<xbrli:context id="ST.01_00">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_00" contextRef="ST.01_00" unitRef="PURE" decimals="0">3274</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_01">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_01" contextRef="ST.01_01" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_10">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_10" contextRef="ST.01_10" unitRef="PURE" decimals="0">3999</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_11">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_11" contextRef="ST.01_11" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_20">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_20" contextRef="ST.01_20" unitRef="PURE" decimals="0">4441</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_21">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_21" contextRef="ST.01_21" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_30">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_30" contextRef="ST.01_30" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_31">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_31" contextRef="ST.01_31" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_40">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.IT.OKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_40" contextRef="ST.01_40" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_41">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.IT.OKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M01 id="ft_ST.01_41" contextRef="ST.01_41" unitRef="PURE" decimals="0">0</p-BSP-measures:M01>
+
+<xbrli:context id="ST.01_50">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_50" contextRef="ST.01_50" unitRef="PURE" decimals="0">3700</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_51">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_51" contextRef="ST.01_51" unitRef="PURE" decimals="0">0</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_60">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_60" contextRef="ST.01_60" unitRef="PURE" decimals="0">65941</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_61">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_61" contextRef="ST.01_61" unitRef="PURE" decimals="0">0</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_70">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_70" contextRef="ST.01_70" unitRef="PURE" decimals="0">65941</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_71">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_71" contextRef="ST.01_71" unitRef="PURE" decimals="0">0</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_80">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_80" contextRef="ST.01_80" unitRef="PURE" decimals="0">0</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_81">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:IT.OKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M02 id="ft_ST.01_81" contextRef="ST.01_81" unitRef="PURE" decimals="0">0</p-BSP-measures:M02>
+
+<xbrli:context id="ST.01_90">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_90" contextRef="ST.01_90" unitRef="PURE" decimals="0">65941</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_91">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_91" contextRef="ST.01_91" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_100">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_100" contextRef="ST.01_100" unitRef="PURE" decimals="0">65941</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_101">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OZBL</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_101" contextRef="ST.01_101" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_110">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_110" contextRef="ST.01_110" unitRef="PURE" decimals="0">51305</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_111">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OMOB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_111" contextRef="ST.01_111" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_120">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_120" contextRef="ST.01_120" unitRef="PURE" decimals="0">51305</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_121">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.OCB</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_121" contextRef="ST.01_121" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_130">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.EMV</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_130" contextRef="ST.01_130" unitRef="PURE" decimals="0">59906</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_131">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.EMV</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_131" contextRef="ST.01_131" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_140">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.MPOS</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_140" contextRef="ST.01_140" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_141">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.MPOS</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_141" contextRef="ST.01_141" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_150">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SOFTPOS</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_150" contextRef="ST.01_150" unitRef="PURE" decimals="0">59906</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_151">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SOFTPOS</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_151" contextRef="ST.01_151" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_160">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SAMO</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_160" contextRef="ST.01_160" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_161">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.SAMO</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_161" contextRef="ST.01_161" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_170">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_170" contextRef="ST.01_170" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_171">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UIP.PE</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_171" contextRef="ST.01_171" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_180">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.INNEUKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:NRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_180" contextRef="ST.01_180" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
+<xbrli:context id="ST.01_181">
+<xbrli:entity>
+  <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
+  <xbrli:segment>
+    <xbrldi:explicitMember dimension="d-BSP-ur:RodzajUrzadzeniaWymiar">d-BSP-ur:UKP.INNEUKP</xbrldi:explicitMember>
+    <xbrldi:explicitMember dimension="d-BSP-tw:TerytoriumWydawcyWymiar">d-BSP-tw:PRP</xbrldi:explicitMember>
+  </xbrli:segment>
+</xbrli:entity>
+<xbrli:period>
+  <xbrli:instant>2023-09-30</xbrli:instant>
+</xbrli:period>
+</xbrli:context>
+<p-BSP-measures:M03 id="ft_ST.01_181" contextRef="ST.01_181" unitRef="PURE" decimals="0">0</p-BSP-measures:M03>
+
 <xbrli:context id="ST.02_00">
 <xbrli:entity>
   <xbrli:identifier scheme=" http://sis.nbp.pl/nbp">60300</xbrli:identifier>
@@ -9144,7 +9676,7 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M10 id="ft_ST.06_290" contextRef="ST.06_290" unitRef="PURE" decimals="0">1054168</p-BSP-measures:M10>
+<p-BSP-measures:M10 id="ft_ST.06_290" contextRef="ST.06_290" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
 
 <xbrli:context id="ST.06_291">
 <xbrli:entity>
@@ -9174,7 +9706,7 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M10 id="ft_ST.06_292" contextRef="ST.06_292" unitRef="PURE" decimals="0">18</p-BSP-measures:M10>
+<p-BSP-measures:M10 id="ft_ST.06_292" contextRef="ST.06_292" unitRef="PURE" decimals="0">0</p-BSP-measures:M10>
 
 <xbrli:context id="ST.06_293">
 <xbrli:entity>
@@ -9189,7 +9721,7 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M11 id="ft_ST.06_293" contextRef="ST.06_293" unitRef="PLN" decimals="2">79252315.54</p-BSP-measures:M11>
+<p-BSP-measures:M11 id="ft_ST.06_293" contextRef="ST.06_293" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
 
 <xbrli:context id="ST.06_294">
 <xbrli:entity>
@@ -9219,7 +9751,7 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M11 id="ft_ST.06_295" contextRef="ST.06_295" unitRef="PLN" decimals="2">2164.90</p-BSP-measures:M11>
+<p-BSP-measures:M11 id="ft_ST.06_295" contextRef="ST.06_295" unitRef="PLN" decimals="2">0.00</p-BSP-measures:M11>
 
 <xbrli:context id="ST.06_300">
 <xbrli:entity>
@@ -9234,7 +9766,7 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M10 id="ft_ST.06_300" contextRef="ST.06_300" unitRef="PURE" decimals="0">595746</p-BSP-measures:M10>
+<p-BSP-measures:M10 id="ft_ST.06_300" contextRef="ST.06_300" unitRef="PURE" decimals="0">595745</p-BSP-measures:M10>
 
 <xbrli:context id="ST.06_301">
 <xbrli:entity>
@@ -9279,7 +9811,7 @@ decimals="0">0</p-BSP-measures:M09>
   <xbrli:instant>2023-09-30</xbrli:instant>
 </xbrli:period>
 </xbrli:context>
-<p-BSP-measures:M11 id="ft_ST.06_303" contextRef="ST.06_303" unitRef="PLN" decimals="2">38322827.12</p-BSP-measures:M11>
+<p-BSP-measures:M11 id="ft_ST.06_303" contextRef="ST.06_303" unitRef="PLN" decimals="2">38322657.12</p-BSP-measures:M11>
 
 <xbrli:context id="ST.06_304">
 <xbrli:entity>

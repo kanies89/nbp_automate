@@ -626,13 +626,13 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
 
         self.pushButton_openAR1.setEnabled(False)
         self.pushButton_openAR2.setEnabled(False)
-        self.radioButton_prepare.setEnabled(False)
-        self.radioButton_check.setEnabled(False)
-        self.radioButton_xml.setEnabled(False)
+        self.radioButton_prepare.setEnabled(True)
+        self.radioButton_check.setEnabled(True)
+        self.radioButton_xml.setEnabled(True)
 
         # Enable the "Start" button when the automation is finished
         self.Start.setEnabled(True)
-        self.Start.setText("Exit")
+
         # Save the logs to the log file
         self.save_logs()
 

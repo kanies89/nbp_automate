@@ -65,14 +65,14 @@ def create_ar1(tab, df, date, path):
     elif tab == 'ST.01':
         xml_add_code = ''
         codes1 = df.loc[9:, 0]
-        codes2 = df.loc[5, 13:]
-
+        codes2 = df.loc[5, 9:]
+        print("st.01!!!")
         for number1, code1 in enumerate(codes1):
             for number2, code2 in enumerate(codes2):
                 code = code1 + code2
                 taxonomy = code.split('_')
-                print(taxonomy, tab, number1, number2)
-                value = df.iat[9 + number1, 13 + number2]
+                print(taxonomy, tab)
+                value = df.iat[9 + number1, 9 + number2]
 
                 if taxonomy[0] in ['M11', 'M13', 'M14', 'M202']:
                     if value == '':

@@ -1,4 +1,5 @@
 from variables import geo3_country_loc, geo3_country
+import zipfile
 import pandas as pd
 
 
@@ -400,6 +401,13 @@ def add_geo(tab, df, date):
                 number += 1
     return additional_xml_code
 
+import zipfile
+
+
+def zip_file(file_path, zip_path):
+    with zipfile.ZipFile(zip_path, 'w') as zipf:
+        zipf.write(file_path, arcname='your_file_name.txt')
+
 
 def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None):
     if progress_callback:
@@ -456,6 +464,11 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml".')
+
+    file_to_zip = f'PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml'
+    zip_file_path = f'PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.zip'
+
+    zip_file(file_to_zip, zip_file_path)
 
 
 if __name__ == '__main__':
