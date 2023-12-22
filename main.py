@@ -553,26 +553,26 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
     # Data to be filled
     to_change_values = [
+        dataframe_0['active_mid'][0],  # mid all
+        dataframe_0['active_mid'][0],  # mid all
         dataframe_1[1]['MID all cashback'][0],
-        dataframe_1[1]['SID all cashback'][0],
-        dataframe_1[1]['TVID all cashback'][0],
-        dataframe_1[0]['ilosc_softPOS'][0],
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_mid'][0],  # mid all
-        dataframe_0['active_mid'][0],  # mid all
         dataframe_0['active_sid'][0],  # sid all
-        dataframe_0['active_sid'][0]  # sid all
+        dataframe_0['active_sid'][0],  # sid all
+        dataframe_1[1]['SID all cashback'][0],
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_1[1]['TVID all cashback'][0],
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_1[0]['ilosc_softPOS'][0] # ilość softpos
 
     ]
-    to_change_rows = [8, 13, 18, 21, 15, 16, 17, 19, 6, 7, 11, 12]
+    to_change_rows = [9, 10, 11, 14, 15, 16, 18, 19, 20, 21, 22, 23, 24, 26]
     to_change_column = 5
 
     # Changes in dataframe from spreadsheet - df_nbp_1
-    for v in range(len(to_change_values)):
-        df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = to_change_values[v]
+    for v, value in enumerate(to_change_values):
+        df_nbp_1['ST.01'].iat[to_change_rows[v], to_change_column] = value
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:

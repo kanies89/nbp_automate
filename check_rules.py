@@ -520,7 +520,7 @@ def check_rules_ar1(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                 row = df_tc[df_tc[code_col] == row_value].index[0]
 
                 if p == 0:
-                    match[p] = df_tc.iat[row, col]
+                    match[p] = to_float(df_tc.iat[row, col])
                 else:
                     match[p] = df_tc.iloc[row:, col].sum()
 
