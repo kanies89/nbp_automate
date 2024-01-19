@@ -19,40 +19,9 @@ select @dtb,@dte
 --transakcje VISA
 IF OBJECT_ID('tempdb..#dane') IS NOT NULL DROP TABLE #dane
 SELECT
-	'VISA' as 'karta'
-	,case 
-		WHEN VT.country IN ('AUT', 'AT') THEN 'Austria'
-		WHEN VT.country IN ('BEL', 'BE') THEN 'Belgia'
-		WHEN VT.country IN ('BG', 'BGR') THEN 'Bułgaria'
-		WHEN VT.country IN ('HR', 'HRV') THEN 'Chorwacja'
-		WHEN VT.country IN ('CY', 'CYP') THEN 'Cypr'
-		WHEN VT.country IN ('CZ', 'CZE') THEN 'Czechy'
-		WHEN VT.country IN ('DK', 'DNK') THEN 'Dania'
-		WHEN VT.country IN ('EE', 'EST') THEN 'Estonia'
-		WHEN VT.country IN ('FIN', 'FI') THEN 'Finlandia'
-		WHEN VT.country IN ('FR', 'FRA') THEN 'Francja'
-		WHEN VT.country IN ('GE', 'GEO') THEN 'Grecja'
-		WHEN VT.country IN ('ES', 'ESP') THEN 'Hiszpania'
-		WHEN VT.country IN ('NL', 'NLD') THEN 'Holandia'
-		WHEN VT.country IN ('IE', 'IRL') THEN 'Irlandia'
-		WHEN VT.country IN ('IS', 'ISL') THEN 'Islandia'
-		WHEN VT.country IN ('LT', 'LTU') THEN 'Litwa'
-		WHEN VT.country IN ('LI', 'LIE') THEN 'Liechtenstein'
-		WHEN VT.country IN ('LU', 'LUX') THEN 'Luksemburg'
-		WHEN VT.country IN ('LV', 'LVA') THEN 'Łotwa'
-		WHEN VT.country IN ('MLT', 'MT') THEN 'Malta'
-		WHEN VT.country IN ('DE', 'DEU') THEN 'Niemcy'
-		WHEN VT.country IN ('NO', 'NOR') THEN 'Norwegia'
-		WHEN VT.country IN ('PRT', 'PT') THEN 'Portugalia'
-		WHEN VT.country IN ('RO', 'ROM') THEN 'Rumunia'
-		WHEN VT.country IN ('SK', 'SVK') THEN 'Słowacja'
-		WHEN VT.country IN ('SI', 'SVN') THEN 'Słowenia'
-		WHEN VT.country IN ('SE', 'SWE') THEN 'Szwecja'
-		WHEN VT.country IN ('HU', 'HUN') THEN 'Węgry'
-		WHEN VT.country IN ('IT', 'ITA') THEN 'Włochy'
-		WHEN VT.country = 'PL'   THEN 'KRAJOWE'
-		ELSE 'Pozostałe kraje świata (poza EOG)' 
-		END as podzial_NBP
+	'VISA' as 'karta',
+	VT.country
+	,mcc
 	,CASE WHEN accountFundingSource IN ('C','R') THEN 'Credit'
 		WHEN accountFundingSource IN ('P','D') THEN 'Debit' 
 		WHEN accountFundingSource = 'H' THEN 'Charge'
@@ -65,10 +34,16 @@ SELECT
 		ELSE te_pos_entry_mode end as te_pos_entry_mode
 	,IIF(substring(te_pos_entry_mode, 1, 2) = '01', 'MOTO', 'inne') as czy_moto
 	,CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
-				ELSE 0 end as czy_niskokwotowa_zblizeniowa
+	ELSE 0 end as czy_niskokwotowa_zblizeniowa
 	,IIF(trsd_tran_nr is null, 0, 1) as czy_SCA
 	,count(*) as 'ilosc'
 	,sum(convert(money,abs((tr_amount/100)))) as 'wartosc_transakcji'
+	,te_tran_type
+	,sum(convert(money,abs((tr_cash_req/100))))as 'Wartość wypłat Cash Back'
+	,vp_bio as 'category'
+	,tr_rsp_code
+	,tr_app_id
+
 INTO #dane
 FROM paytel_olap.dbo.visa_transaction VT (nolock) 
 	join paytel_olap.dbo.if_transaction IT (nolock) on IT.postTranId = VT.postTranId 
@@ -85,39 +60,8 @@ FROM paytel_olap.dbo.visa_transaction VT (nolock)
 
 
 GROUP BY 
-	case 
-		WHEN VT.country IN ('AUT', 'AT') THEN 'Austria'
-		WHEN VT.country IN ('BEL', 'BE') THEN 'Belgia'
-		WHEN VT.country IN ('BG', 'BGR') THEN 'Bułgaria'
-		WHEN VT.country IN ('HR', 'HRV') THEN 'Chorwacja'
-		WHEN VT.country IN ('CY', 'CYP') THEN 'Cypr'
-		WHEN VT.country IN ('CZ', 'CZE') THEN 'Czechy'
-		WHEN VT.country IN ('DK', 'DNK') THEN 'Dania'
-		WHEN VT.country IN ('EE', 'EST') THEN 'Estonia'
-		WHEN VT.country IN ('FIN', 'FI') THEN 'Finlandia'
-		WHEN VT.country IN ('FR', 'FRA') THEN 'Francja'
-		WHEN VT.country IN ('GE', 'GEO') THEN 'Grecja'
-		WHEN VT.country IN ('ES', 'ESP') THEN 'Hiszpania'
-		WHEN VT.country IN ('NL', 'NLD') THEN 'Holandia'
-		WHEN VT.country IN ('IE', 'IRL') THEN 'Irlandia'
-		WHEN VT.country IN ('IS', 'ISL') THEN 'Islandia'
-		WHEN VT.country IN ('LT', 'LTU') THEN 'Litwa'
-		WHEN VT.country IN ('LI', 'LIE') THEN 'Liechtenstein'
-		WHEN VT.country IN ('LU', 'LUX') THEN 'Luksemburg'
-		WHEN VT.country IN ('LV', 'LVA') THEN 'Łotwa'
-		WHEN VT.country IN ('MLT', 'MT') THEN 'Malta'
-		WHEN VT.country IN ('DE', 'DEU') THEN 'Niemcy'
-		WHEN VT.country IN ('NO', 'NOR') THEN 'Norwegia'
-		WHEN VT.country IN ('PRT', 'PT') THEN 'Portugalia'
-		WHEN VT.country IN ('RO', 'ROM') THEN 'Rumunia'
-		WHEN VT.country IN ('SK', 'SVK') THEN 'Słowacja'
-		WHEN VT.country IN ('SI', 'SVN') THEN 'Słowenia'
-		WHEN VT.country IN ('SE', 'SWE') THEN 'Szwecja'
-		WHEN VT.country IN ('HU', 'HUN') THEN 'Węgry'
-		WHEN VT.country IN ('IT', 'ITA') THEN 'Włochy'
-		WHEN VT.country = 'PL'   THEN 'KRAJOWE'
-		ELSE 'Pozostałe kraje świata (poza EOG)' 
-		END
+	VT.country
+	,mcc
 	,CASE 
 		WHEN accountFundingSource IN ('C','R') THEN 'Credit'
 		WHEN accountFundingSource IN ('P','D') THEN 'Debit' 
@@ -133,44 +77,18 @@ GROUP BY
 	,CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
 				ELSE 0 end
 	,IIF(trsd_tran_nr is null, 0, 1)
+	,te_tran_type
+	,tr_cash_req
+	,vp_bio
+	,tr_rsp_code
+	,tr_app_id
 
 UNION ALL
 --transakcje MC
 SELECT 
-	'MC' as 'karta'
-	,case 
-		WHEN MC.country IN ('AUT', 'AT') THEN 'Austria'
-		WHEN MC.country IN ('BEL', 'BE') THEN 'Belgia'
-		WHEN MC.country IN ('BG', 'BGR') THEN 'Bułgaria'
-		WHEN MC.country IN ('HR', 'HRV') THEN 'Chorwacja'
-		WHEN MC.country IN ('CY', 'CYP') THEN 'Cypr'
-		WHEN MC.country IN ('CZ', 'CZE') THEN 'Czechy'
-		WHEN MC.country IN ('DK', 'DNK') THEN 'Dania'
-		WHEN MC.country IN ('EE', 'EST') THEN 'Estonia'
-		WHEN MC.country IN ('FIN', 'FI') THEN 'Finlandia'
-		WHEN MC.country IN ('FR', 'FRA') THEN 'Francja'
-		WHEN MC.country IN ('GE', 'GEO') THEN 'Grecja'
-		WHEN MC.country IN ('ES', 'ESP') THEN 'Hiszpania'
-		WHEN MC.country IN ('NL', 'NLD') THEN 'Holandia'
-		WHEN MC.country IN ('IE', 'IRL') THEN 'Irlandia'
-		WHEN MC.country IN ('IS', 'ISL') THEN 'Islandia'
-		WHEN MC.country IN ('LT', 'LTU') THEN 'Litwa'
-		WHEN MC.country IN ('LI', 'LIE') THEN 'Liechtenstein'
-		WHEN MC.country IN ('LU', 'LUX') THEN 'Luksemburg'
-		WHEN MC.country IN ('LV', 'LVA') THEN 'Łotwa'
-		WHEN MC.country IN ('MLT', 'MT') THEN 'Malta'
-		WHEN MC.country IN ('DE', 'DEU') THEN 'Niemcy'
-		WHEN MC.country IN ('NO', 'NOR') THEN 'Norwegia'
-		WHEN MC.country IN ('PRT', 'PT') THEN 'Portugalia'
-		WHEN MC.country IN ('RO', 'ROM') THEN 'Rumunia'
-		WHEN MC.country IN ('SK', 'SVK') THEN 'Słowacja'
-		WHEN MC.country IN ('SI', 'SVN') THEN 'Słowenia'
-		WHEN MC.country IN ('SE', 'SWE') THEN 'Szwecja'
-		WHEN MC.country IN ('HU', 'HUN') THEN 'Węgry'
-		WHEN MC.country IN ('IT', 'ITA') THEN 'Włochy'
-		WHEN MC.country = 'POL'   THEN 'KRAJOWE'
-		ELSE 'Pozostałe kraje świata (poza EOG)' 
-		END as podzial_NBP
+	'MC' as 'karta',
+	MC.country,
+	mcc
 	,CASE WHEN ipc_category1 = 'C' THEN 'Credit'
 		WHEN ipc_category1 IN ('P','D') THEN 'Debit' 
 		WHEN ipc_category1 = 'CH' THEN 'Charge'
@@ -187,6 +105,14 @@ SELECT
 	,IIF(trsd_tran_nr is null, 0, 1) as czy_SCA
 	,count(*) as 'ilość transakcji'
 	,sum(convert(money,abs(tr_amount/100))) as 'wartosc_transakcji'
+	,te_tran_type
+	,sum(convert(money,abs((tr_cash_req/100))))as 'Wartość wypłat Cash Back'
+	, CASE 
+	WHEN ipc_category2 = 'B' THEN 'BUSINESS'
+	WHEN ipc_category2 = 'C' THEN 'Individual'
+	ELSE 'b.d.' END as 'category'
+	,tr_rsp_code
+	,tr_app_id
 
 FROM 
 	mc_transaction MC (nolock)
@@ -202,39 +128,8 @@ FROM
 	left join paytel_olap.dbo.trans_structured_data as sc1 on sc1.trsd_tran_nr = tr_tran_nr  and trsd_log_sc1=1
 
 GROUP BY 
-	case 
-		WHEN MC.country IN ('AUT', 'AT') THEN 'Austria'
-		WHEN MC.country IN ('BEL', 'BE') THEN 'Belgia'
-		WHEN MC.country IN ('BG', 'BGR') THEN 'Bułgaria'
-		WHEN MC.country IN ('HR', 'HRV') THEN 'Chorwacja'
-		WHEN MC.country IN ('CY', 'CYP') THEN 'Cypr'
-		WHEN MC.country IN ('CZ', 'CZE') THEN 'Czechy'
-		WHEN MC.country IN ('DK', 'DNK') THEN 'Dania'
-		WHEN MC.country IN ('EE', 'EST') THEN 'Estonia'
-		WHEN MC.country IN ('FIN', 'FI') THEN 'Finlandia'
-		WHEN MC.country IN ('FR', 'FRA') THEN 'Francja'
-		WHEN MC.country IN ('GE', 'GEO') THEN 'Grecja'
-		WHEN MC.country IN ('ES', 'ESP') THEN 'Hiszpania'
-		WHEN MC.country IN ('NL', 'NLD') THEN 'Holandia'
-		WHEN MC.country IN ('IE', 'IRL') THEN 'Irlandia'
-		WHEN MC.country IN ('IS', 'ISL') THEN 'Islandia'
-		WHEN MC.country IN ('LT', 'LTU') THEN 'Litwa'
-		WHEN MC.country IN ('LI', 'LIE') THEN 'Liechtenstein'
-		WHEN MC.country IN ('LU', 'LUX') THEN 'Luksemburg'
-		WHEN MC.country IN ('LV', 'LVA') THEN 'Łotwa'
-		WHEN MC.country IN ('MLT', 'MT') THEN 'Malta'
-		WHEN MC.country IN ('DE', 'DEU') THEN 'Niemcy'
-		WHEN MC.country IN ('NO', 'NOR') THEN 'Norwegia'
-		WHEN MC.country IN ('PRT', 'PT') THEN 'Portugalia'
-		WHEN MC.country IN ('RO', 'ROM') THEN 'Rumunia'
-		WHEN MC.country IN ('SK', 'SVK') THEN 'Słowacja'
-		WHEN MC.country IN ('SI', 'SVN') THEN 'Słowenia'
-		WHEN MC.country IN ('SE', 'SWE') THEN 'Szwecja'
-		WHEN MC.country IN ('HU', 'HUN') THEN 'Węgry'
-		WHEN MC.country IN ('IT', 'ITA') THEN 'Włochy'
-		WHEN MC.country = 'POL'   THEN 'KRAJOWE'
-		ELSE 'Pozostałe kraje świata (poza EOG)'
-		END
+	MC.country,
+	mcc
 	,CASE WHEN ipc_category1 = 'C' THEN 'Credit'
 		WHEN ipc_category1 IN ('P','D') THEN 'Debit' 
 		WHEN ipc_category1 = 'CH' THEN 'Charge'
@@ -249,40 +144,11 @@ GROUP BY
 	,CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
 				ELSE 0 end
 	,IIF(trsd_tran_nr is null, 0, 1)
-
---select * from #dane
-
-IF OBJECT_ID('tempdb..#geo3') IS NOT NULL DROP TABLE #geo3
-CREATE TABLE #geo3 (num smallint, code varchar(2), name varchar(256))
-INSERT INTO #geo3 VALUES (1, 'AT', 'Austria')
-INSERT INTO #geo3 VALUES (2, 'BE', 'Belgia')
-INSERT INTO #geo3 VALUES (3, 'BG', 'Bułgaria')
-INSERT INTO #geo3 VALUES (4, 'HR', 'Chorwacja')
-INSERT INTO #geo3 VALUES (5, 'CY', 'Cypr')
-INSERT INTO #geo3 VALUES (6, 'CZ', 'Czechy')
-INSERT INTO #geo3 VALUES (7, 'DK', 'Dania')
-INSERT INTO #geo3 VALUES (8, 'EE', 'Estonia')
-INSERT INTO #geo3 VALUES (9, 'FI', 'Finlandia')
-INSERT INTO #geo3 VALUES (10, 'FR', 'Francja')
-INSERT INTO #geo3 VALUES (11, 'GR', 'Grecja')
-INSERT INTO #geo3 VALUES (12, 'ES', 'Hiszpania')
-INSERT INTO #geo3 VALUES (13, 'NL', 'Holandia')
-INSERT INTO #geo3 VALUES (14, 'IE', 'Irlandia')
-INSERT INTO #geo3 VALUES (15, 'IS', 'Islandia')
-INSERT INTO #geo3 VALUES (16, 'LT', 'Litwa ')
-INSERT INTO #geo3 VALUES (17, 'LI', 'Liechtenstein')
-INSERT INTO #geo3 VALUES (18, 'LU', 'Luksemburg')
-INSERT INTO #geo3 VALUES (19, 'LV', 'Łotwa')
-INSERT INTO #geo3 VALUES (20, 'MT', 'Malta')
-INSERT INTO #geo3 VALUES (21, 'DE', 'Niemcy')
-INSERT INTO #geo3 VALUES (22, 'NO', 'Norwegia')
-INSERT INTO #geo3 VALUES (23, 'PL', 'Polska')
-INSERT INTO #geo3 VALUES (24, 'PT', 'Portugalia')
-INSERT INTO #geo3 VALUES (25, 'RO', 'Rumunia')
-INSERT INTO #geo3 VALUES (26, 'SK', 'Słowacja')
-INSERT INTO #geo3 VALUES (27, 'SI', 'Słowenia')
-INSERT INTO #geo3 VALUES (28, 'SE', 'Szwecja')
-INSERT INTO #geo3 VALUES (29, 'HU', 'Węgry')
-INSERT INTO #geo3 VALUES (30, 'IT', 'Włochy')
-INSERT INTO #geo3 VALUES (31, 'W2', 'Krajowe')
-INSERT INTO #geo3 VALUES (32, 'G1', 'Pozostałe kraje świata (poza EOG)') 
+	,te_tran_type
+	,tr_cash_req
+	,CASE 
+	WHEN ipc_category2 = 'B' THEN 'BUSINESS'
+	WHEN ipc_category2 = 'C' THEN 'Individual'
+	ELSE 'b.d.' END
+	,tr_rsp_code
+	,tr_app_id

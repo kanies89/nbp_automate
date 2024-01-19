@@ -748,7 +748,7 @@ def run_rule(ar, df, progress_callback_text=None, progress_callback=None):
             if progress_callback_text:
                 progress_callback_text(f"AR{ar} - {rule}")
 
-            results = check_rules_ar2(ar, df, rule, 6)
+            results = check_rules_ar2(ar, df, rule, 5)
 
             if progress_callback:
                 percent = 100 / len(rules_2) * (r + 1)
@@ -760,6 +760,7 @@ def run_rule(ar, df, progress_callback_text=None, progress_callback=None):
                 if result[1]:
                     dialog.change_cell_background(row, n + 3, 50, 205, 50, 'AR2')
                 else:
+                    print('errrr')
                     dialog.change_cell_background(row, n + 3, 255, 0, 0, 'AR2')
                     dialog.append_text_to_cell(row, n + 3, f'; Error in column: {get_column_letter(result[3] + 1)}; ',
                                                'AR2')

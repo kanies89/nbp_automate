@@ -14,8 +14,7 @@ import multiprocessing as mp
 
 from connect import connect
 from variables import EXCEL_READ_AR2, TO_FILL, AR2_4_row_1, AR2_4_row_2, AR2_6_row_1, AR2_6_row_2, AR2_5_row_1, \
-    AR2_5_row_2, \
-    AR2_9_row_1, EXCEL_READ_AR1
+    AR2_9_row_1, EXCEL_READ_AR1, COUNTRY_DICT, countries_to_filter
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 from PyQt5.QtCore import pyqtSignal, QObject
@@ -177,19 +176,68 @@ def prepare_data_ar2(user, passw, progress_callback=None, progress_callback_text
     if progress_callback:
         progress_callback(15)
 
-    for n in range(len(dataframe_1) - 2):
-        for i, country in enumerate(dataframe_1[n]['name']):
-            if country == 'Holandia':
-                country = 'Niderlandy'
+    # Remove spaces from country code
+    dataframe_1[1] = dataframe_1[1].str.replace(' ', '')
+
+    # Function to replace values based on condition
+    def replace_country(value):
+        if len(value) > 2:
+            return COUNTRY_DICT.get(value, value)
+        else:
+            return value
+
+    # Apply the function to the first column
+    dataframe_1[1] = datetime[1].apply(replace_country)
+
+    # Columns:
+    # (0) karta / (1) country / (2) mcc / (3) Typ_karty / (4) te_pos_entry_mode / (5) czy_moto /
+    # (6) czy_niskokwotowa_zblizeniowa / (7) czy_SCA / (8) ilosc / (9) wartosc_transakcji
+
+    # Filter the DataFrame based on the list of countries
+    filtered_df = dataframe_1[dataframe_1[1].isin(countries_to_filter)]
+
+    # List of conditions
+    conditions = [
+        (filtered_df[5] != "MOTO"), # 0
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA"), # 1
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA"), # 2
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA"), # 3
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA") & (filtered_df[3] == "debit"),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA") & (
+                    (filtered_df[3] != 'debit') & (filtered_df[3] != 'credit') | pd.isnull(filtered_df[3])),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA") & (filtered_df[3] == "credit"),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA") & (filtered_df[3] == "credit") & (filtered_df[7] == 1),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "VISA") & (filtered_df[3] == "credit") & (filtered_df[7] == 0),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "MC"),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "MC") & (filtered_df[3] == "debit"),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "MC") & (
+                    (filtered_df[3] != 'debit') & (filtered_df[3] != 'credit') | pd.isnull(filtered_df[3])),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "MC") & (filtered_df[3] == "credit"),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "MC") & (filtered_df[3] == "credit") & (filtered_df[7] == 1),
+        (filtered_df[5] != "MOTO") & (filtered_df[0] == "MC") & (filtered_df[3] == "credit") & (filtered_df[7] == 0),
+        (filtered_df[1] == "PL"),
+        (filtered_df[1] != "PL")
+    ]
+
+    # List of result DataFrames
+    result_dfs = []
+
+    # Apply conditions and perform groupby and sum operations
+    for condition in conditions:
+        result_df = filtered_df[condition].groupby(1)[[8, 9]].sum().reset_index()
+        result_dfs.append(result_df)
+
+    for n in range(len(result_dfs) - 2):
+        for i, country in enumerate(result_dfs[n][1]):
             try:
-                col1 = pd.Index(df_nbp_2['4a.R.L_PLiW2'].iloc[7]).get_loc(country)
-                col2 = pd.Index(df_nbp_2['4a.R.W_PLiW2'].iloc[7]).get_loc(country)
-                df_nbp_2['4a.R.L_PLiW2'][col1].iloc[AR2_4_row_1[n]] = dataframe_1[n]['ilosc'].iloc[i]
-                df_nbp_2['4a.R.W_PLiW2'][col2].iloc[AR2_4_row_2[n]] = dataframe_1[n]['wartosc'].iloc[i]
+                col1 = pd.Index(df_nbp_2['4a.R.L_PLiW2'].iloc[6]).get_loc(country)
+                col2 = pd.Index(df_nbp_2['4a.R.W_PLiW2'].iloc[6]).get_loc(country)
+                df_nbp_2['4a.R.L_PLiW2'][col1].iloc[AR2_4_row_1[n]] = result_dfs[n][8].iloc[i]
+                df_nbp_2['4a.R.W_PLiW2'][col2].iloc[AR2_4_row_2[n]] = result_dfs[n][9].iloc[i]
             except KeyError:
-                bug_table.append([f'BUG_4a.R.L_PLiW2', dataframe_1[n][dataframe_1[n]['name'] == country]])
+                bug_table.append([f'BUG_4a.R.L_PLiW2', result_dfs[n][result_df[n][1] == country]])
                 print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {result_dfs[n][result_df[n][1] == country]}")
 
     # 6.ab.LiW
     print('6.ab.LiW')
@@ -201,8 +249,8 @@ def prepare_data_ar2(user, passw, progress_callback=None, progress_callback_text
         progress_callback(19)
 
     for j in range(2):
-        df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = dataframe_1[20 + j]['ilosc'].iloc[0]
-        df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = dataframe_1[20 + j]['wartosc'].iloc[0]
+        df_nbp_2[sheet][33].iloc[AR2_6_row_1[j]] = result_dfs[20 + j][8].iloc[0]
+        df_nbp_2[sheet][33].iloc[AR2_6_row_2[j]] = result_dfs[20 + j][9].iloc[0]
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW.')
     # 5a.R.SF
@@ -550,7 +598,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     dataframe_0 = pd.read_excel(path, header=3)
 
     print('\nData z pliku Tvid_nev_lost.xlsx: ', dataframe_0['tr_date'][0])
-
+    # @TODO: CHECK
     # Data to be filled
     to_change_values = [
         dataframe_0['active_mid'][0],  # mid all
@@ -629,9 +677,9 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
         if d == 2:
             to_change_values = [
-                dataframe_2[d][ilosc][0],
+                dataframe_2[1][ilosc][0],
                 0,
-                dataframe_2[d][wartosc][0],
+                dataframe_2[][wartosc][0],
                 0,
                 dataframe_2[d][ilosc][0],
                 0,

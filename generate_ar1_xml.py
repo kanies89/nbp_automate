@@ -14,6 +14,8 @@ def create_ar1(tab, df, date, path):
     month = date[1]
     day = date[2]
 
+    st6_tax = ['AT', 'BE', 'BG', 'CY', 'HR', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'ES', 'NL', 'IE', 'IS', 'LI', 'LT', 'LU', 'LV', 'MT', 'DE', 'NO', 'PT', 'RO', 'SK', 'SI', 'SE', 'HU', 'IT', 'GB', 'WLD']
+
     if tab == 'p-dane':
         xml_add_code = ''
         codes1 = df.loc[8, 13:]
@@ -222,12 +224,9 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 <p-BSP-measures:{taxonomy[0]} id="ft_{tab}_{number1}{number2}" contextRef="{tab}_{number1}{number2}" unitRef="{unit[0]}" 
 decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
 """
-                if tab == 'ST.06':
-                    if taxonomy[3] not in ['AT', 'BE', 'BG', 'CY', 'HR', 'CZ', 'DK', 'EE', 'FI', 'FR', 'GR', 'ES', 'NL',
-                                           'IE', 'IS', 'LI', 'LT', 'LU', 'LV', 'MT', 'DE', 'NO', 'PT', 'RO', 'SK', 'SI',
-                                           'SE', 'HU', 'IT', 'GB', 'WLD'
-                                           ]:
 
+                if tab == 'ST.06':
+                    if taxonomy[3] not in st6_tax:
                         cc = df.iat[9 + number1, 11]
                         taxonomy[3] = taxonomy[3] + '-' + cc
                         xml = f"""

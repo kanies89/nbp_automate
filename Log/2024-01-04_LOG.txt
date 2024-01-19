@@ -1,0 +1,2611 @@
+Name:
+ 
+Krzysztof
+
+
+Surname:
+ 
+Kaniewski
+
+
+starting the function
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+Folder structure already exists.
+Folder structure already exists.
+
+
+
+
+
+Preparing NBP_Report for:
+year: 2023,
+quarter: 4.
+
+NBP report automation 2023
+AR2
+AR2
+
+
+
+
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+
+
+
+
+4a.R.L_PLiW2 and 4a.R.W_PLiW2
+4a.R.L_PLiW2 and 4a.R.W_PLiW2
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name ilosc wartosc
+22          22   23  Polska              
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name ilosc wartosc
+22          22   23  Polska              
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+!!: Value was not added to the report (there is no such a country code in excel) -     Unnamed: 0  num    name  ilosc  wartosc
+22          22   23  Polska      0      0.0
+
+
+
+
+6.ab.LiW
+6.ab.LiW
+
+
+
+
+5a.R.SF
+5a.R.SF
+
+
+
+
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+5a.R.LF_PLiW2 and 5a.R.WF_PLiW2
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231001_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231001_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231002_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231002_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231003_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231003_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231004_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231004_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231005_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231005_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231006_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231006_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231007_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231007_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231008_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231008_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231009_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231009_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231010_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231010_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231011_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231011_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231012_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231012_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231013_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231013_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231014_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231014_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231015_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231015_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231016_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231016_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231017_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231017_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231018_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231018_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231019_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231019_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231020_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231020_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231021_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231021_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231022_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231022_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231023_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231023_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231024_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231024_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231025_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231025_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231026_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231026_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231027_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231027_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231028_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231028_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231029_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231029_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231030_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202310/20231030_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231101_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231101_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231102_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231102_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231103_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231103_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231104_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231104_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231105_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231105_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231106_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231106_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231107_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231107_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231108_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231108_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231109_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231109_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231110_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231110_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231111_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231111_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231112_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231112_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231113_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231113_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231114_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231114_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231115_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231115_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231116_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231116_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231117_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231117_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231118_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231118_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231119_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231119_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231120_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231120_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231121_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231121_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231122_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231122_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231123_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231123_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231124_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231124_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231125_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231125_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231126_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231126_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231127_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202311/20231127_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231201_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231201_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231202_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231202_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231203_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231203_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231204_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231204_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231205_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231205_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231206_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231206_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231207_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231207_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231208_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231208_INITF.epd
+
+
+
+
+
+An error occurred while disconnecting all connections:
+
+An error occurred while disconnecting all connections:
+ 
+ 
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231209_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231209_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231210_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231210_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231211_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231211_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231212_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231212_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231213_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231213_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231214_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231214_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231215_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231215_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231216_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231216_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231217_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231217_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231218_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231218_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231219_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231219_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231220_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231220_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231221_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231221_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231222_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231222_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231223_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231223_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231224_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231224_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231225_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231225_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231226_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231226_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231227_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231227_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231228_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231228_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231229_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231229_INITF.epd
+
+
+
+
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231230_INITF.epd
+
+Checking files for VISA FRAUD in: //prdfil/tf$/Internal/clearing/Visa/202312/20231230_INITF.epd
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 BARTOSZA GLOWACKI19842  BIELSKO-BIAL  PL  5812 0            20.02 424671 09/22/23 424671******2204 0002 74410493265019613830138 07  FRDDMC61  028316370
+
+
+Found VISA FRAUD data: 45  00441049400082 BARTOSZA GLOWACKI19842  BIELSKO-BIAL  PL  5812 0            20.02 424671 09/22/23 424671******2204 0002 74410493265019613830138 07  FRDDMC61  028316370
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 FUH PEPPER       92160  BIELSKO-BIAL  PL  5499 0            31.02 424671 09/22/23 424671******2204 0003 74410493265019614462758 07  FRDDMC61  028316380
+
+
+Found VISA FRAUD data: 45  00441049400082 FUH PEPPER       92160  BIELSKO-BIAL  PL  5499 0            31.02 424671 09/22/23 424671******2204 0003 74410493265019614462758 07  FRDDMC61  028316380
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP SPOZ-MONOP 09074  BIELSKO-BIAL  PL  5499 0            39.97 424671 09/22/23 424671******2204 0007 74410493265019614129860 07  FRDDMC61  028316390
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP SPOZ-MONOP 09074  BIELSKO-BIAL  PL  5499 0            39.97 424671 09/22/23 424671******2204 0007 74410493265019614129860 07  FRDDMC61  028316390
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP SPOZ-MONOP 09074  BIELSKO-BIAL  PL  5499 0            67.50 424671 09/22/23 424671******2204 0010 74410493265019615992035 07  FRDDMC61  028316400
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP SPOZ-MONOP 09074  BIELSKO-BIAL  PL  5499 0            67.50 424671 09/22/23 424671******2204 0010 74410493265019615992035 07  FRDDMC61  028316400
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4           505.73 428688 09/22/23 428688******2875 0006 74410493265019615719479 07  FRDDMC61  029183280
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4           505.73 428688 09/22/23 428688******2875 0006 74410493265019615719479 07  FRDDMC61  029183280
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4           101.15 428688 09/22/23 428688******2875 0007 74410493265019615717465 07  FRDDMC61  029183290
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4           101.15 428688 09/22/23 428688******2875 0007 74410493265019615717465 07  FRDDMC61  029183290
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1820.67 428688 09/22/23 428688******2875 0003 74410493265019615707706 07  FRDDMC61  029183300
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1820.67 428688 09/22/23 428688******2875 0003 74410493265019615707706 07  FRDDMC61  029183300
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4           505.73 428688 09/22/23 428688******2875 0005 74410493265019615703598 07  FRDDMC61  029183310
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4           505.73 428688 09/22/23 428688******2875 0005 74410493265019615703598 07  FRDDMC61  029183310
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1820.67 428688 09/22/23 428688******2875 0002 74410493265019615705692 07  FRDDMC61  029183320
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1820.67 428688 09/22/23 428688******2875 0002 74410493265019615705692 07  FRDDMC61  029183320
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1876.84 428688 09/22/23 428688******2875 0001 74410493265019615710189 07  FRDDMC61  029183330
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1876.84 428688 09/22/23 428688******2875 0001 74410493265019615710189 07  FRDDMC61  029183330
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1770.07 428688 09/22/23 428688******2875 0004 74410493265019615712342 07  FRDDMC61  029183340
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 4          1770.07 428688 09/22/23 428688******2875 0004 74410493265019615712342 07  FRDDMC61  029183340
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 6           522.71 408565 09/26/23 408565******0466 0001 74410493269019638417883 07  FRDDMC61  023050550
+
+
+Found VISA FRAUD data: 45  00441049400082 LMC LINGUISTIC ME46232  WARSZAWA      PL  8299 6           522.71 408565 09/26/23 408565******0466 0001 74410493269019638417883 07  FRDDMC61  023050550
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SW MANAGEMENT SP.03770  WARSZAWA      PL  5812 1           129.98 454638 09/30/23 454638******3247 0005 74410493273019663976666 05  FRDDMC61  035142330
+
+
+Found VISA FRAUD data: 45  00441049400082 SW MANAGEMENT SP.03770  WARSZAWA      PL  5812 1           129.98 454638 09/30/23 454638******3247 0005 74410493273019663976666 05  FRDDMC61  035142330
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SW MANAGEMENT SP.07380  WARSZAWA      PL  5812 1            24.36 454638 09/30/23 454638******3247 0006 74410493273019663983563 07  FRDDMC61  035142340
+
+
+Found VISA FRAUD data: 45  00441049400082 SW MANAGEMENT SP.07380  WARSZAWA      PL  5812 1            24.36 454638 09/30/23 454638******3247 0006 74410493273019663983563 07  FRDDMC61  035142340
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 G.R PRODUKCJA DRO93436  ZANIEMYSL     PL  5999 0            66.02 424671 10/09/23 424671******8094 0002 74410493282019723364639 07  FRDDMC61  030112990
+
+
+Found VISA FRAUD data: 45  00441049400082 G.R PRODUKCJA DRO93436  ZANIEMYSL     PL  5999 0            66.02 424671 10/09/23 424671******8094 0002 74410493282019723364639 07  FRDDMC61  030112990
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP SPOZYWCZO P61145  BIALYSTOK     PL  5411 B            31.99 482435 09/29/23 482435******7064 0002 74410493272019658736118 07  FRDDMC61  029092850
+
+
+Found VISA FRAUD data: 45  00441049400082 SKLEP SPOZYWCZO P61145  BIALYSTOK     PL  5411 B            31.99 482435 09/29/23 482435******7064 0002 74410493272019658736118 07  FRDDMC61  029092850
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 NIMFA SKLEP ZOOLO08864  WROCLAW       PL  5995 0            53.69 424671 10/23/23 424671******7022 0002 74410493296019816832116 07  FRDDMC61  011529990
+
+
+Found VISA FRAUD data: 45  00441049400082 NIMFA SKLEP ZOOLO08864  WROCLAW       PL  5995 0            53.69 424671 10/23/23 424671******7022 0002 74410493296019816832116 07  FRDDMC61  011529990
+
+
+
+
+
+
+Found VISA FRAUD data: 45  00441049400082 AGNIESZKA BIELA F13037  KRAKOW        PL  5411 0            87.99 424671 10/30/23 424671******4816 0002 74410493303019865193106 07  FRDDMC61  030358960
+
+
+Found VISA FRAUD dat
+Found VISA FRAUD data: 45  00441049400082 RENTGEN NA DWORCU42763  BIELSKO-BIAL  PL  8011 0           100.00 424671 11/07/23 424671******7946 0001 74410493311019909611550 07  FRDDMC61  029208350
+
+
+
+Found VISA FRAUD data: 45  00441049400082 MANIKULTURA KATAR04693  ELK           PL  7230 6           110.02 425125 10/31/23 425125******6712 0001 74410493304019869002724 07  FRDDMC61  029429230
+
+Found VISA FRAUD data: 45  00441049400082 MANIKULTURA KATAR04693  ELK           PL  7230 6           110.02 425125 10/31/23 425125******6712 0001 74410493304019869002724 07  FRDDMC61  029429230
+
+
+
+Found VISA FRAUD data: 45  00441049400082 MAGIA CUKIERKA   10359  SOSNOWIEC     PL  5651 1             4.55 416549 10/29/23 416549******3277 0003 74410493302019857407440 07  FRDDMC61  038082860
+
+Found VISA FRAUD data: 45  00441049400082 MAGIA CUKIERKA   10359  SOSNOWIEC     PL  5651 1             4.55 416549 10/29/23 416549******3277 0003 74410493302019857407440 07  FRDDMC61  038082860
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SLAWKO- SERWIS   22293  WARSZAWA      PL  5999 1            29.99 459811 10/30/23 459811******7983 0013 74410493303019859989659 07  FRDDMC61  032735710
+
+Found VISA FRAUD data: 45  00441049400082 SLAWKO- SERWIS   22293  WARSZAWA      PL  5999 1            29.99 459811 10/30/23 459811******7983 0013 74410493303019859989659 07  FRDDMC61  032735710
+
+
+
+Found VISA FRAUD data: 45  00441049400082 HARP INDII SP. Z 72321  WARSZAWA      PL  5812 4            50.57 474481 11/28/23 474481******3952 0002 74410493332020032039219 07  FRDDMC61  032428720
+
+Found VISA FRAUD data: 45  00441049400082 HARP INDII SP. Z 72321  WARSZAWA      PL  5812 4            50.57 474481 11/28/23 474481******3952 0002 74410493332020032039219 07  FRDDMC61  032428720
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SOBI Sp.z o.o.   38256  GDANSK        PL  4121 0           592.42 414720 12/10/23 414720******4264 4006 74410493344020104113062 00  FRDDMC61  026553170
+
+Found VISA FRAUD data: 45  00441049400082 SOBI Sp.z o.o.   38256  GDANSK        PL  4121 0           592.42 414720 12/10/23 414720******4264 4006 74410493344020104113062 00  FRDDMC61  026553170
+
+
+
+Found VISA FRAUD data: 45  00441049400082 CHM GOGOLA, BOCZO17615  KRAKOW        PL  5999 2           169.01 438854 10/06/23 438854******8860 4270 74410493279019707409850 00  FRDDMC61  027228950
+
+Found VISA FRAUD data: 45  00441049400082 CHM GOGOLA, BOCZO17615  KRAKOW        PL  5999 2           169.01 438854 10/06/23 438854******8860 4270 74410493279019707409850 00  FRDDMC61  027228950
+
+
+
+Found VISA FRAUD data: 45  00441049400082 ELECTIO GALERIA Z07214  WARSZAWA      PL  5072 6            82.13 408565 12/13/23 408565******0072 0002 74410493347020125677183 07  FRDDMC61  027228960
+
+Found VISA FRAUD data: 45  00441049400082 ELECTIO GALERIA Z07214  WARSZAWA      PL  5072 6            82.13 408565 12/13/23 408565******0072 0002 74410493347020125677183 07  FRDDMC61  027228960
+
+
+
+Found VISA FRAUD data: 45  00441049400082 Georgian Bakery s37699  KRAKOW        PL  5462 2            13.00 438854 10/09/23 438854******8860 4298 74410493282019723486275 00  FRDDMC61  027228970
+
+Found VISA FRAUD data: 45  00441049400082 Georgian Bakery s37699  KRAKOW        PL  5462 2            13.00 438854 10/09/23 438854******8860 4298 74410493282019723486275 00  FRDDMC61  027228970
+
+
+
+Found VISA FRAUD data: 45  00441049400082 Georgian Bakery s37699  KRAKOW        PL  5462 2            13.00 438854 10/09/23 438854******8860 4285 74410493282019726012722 00  FRDDMC61  027228980
+
+Found VISA FRAUD data: 45  00441049400082 Georgian Bakery s37699  KRAKOW        PL  5462 2            13.00 438854 10/09/23 438854******8860 4285 74410493282019726012722 00  FRDDMC61  027228980
+
+
+
+Found VISA FRAUD data: 45  00441049400082 Georgian Bakery s37699  KRAKOW        PL  5462 2            20.18 438854 12/06/23 438854******8860 4043 74410493340020083030976 00  FRDDMC61  027228990
+
+Found VISA FRAUD data: 45  00441049400082 Georgian Bakery s37699  KRAKOW        PL  5462 2            20.18 438854 12/06/23 438854******8860 4043 74410493340020083030976 00  FRDDMC61  027228990
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SMARTSPOT ZLOTE T16550  WARSZAWA      PL  5732 6          2388.14 460031 12/14/23 460031******8482 0001 74410493348020130474765 07  FRDDMC61  027229000
+
+Found VISA FRAUD data: 45  00441049400082 SMARTSPOT ZLOTE T16550  WARSZAWA      PL  5732 6          2388.14 460031 12/14/23 460031******8482 0001 74410493348020130474765 07  FRDDMC61  027229000
+
+
+
+Found VISA FRAUD data: 45  00441049400082 SMARTSPOT ZLOTE T16550  WARSZAWA      PL  5732 6          4331.11 472736 12/12/23 472736******2802 0001 74410493346020119551411 07  FRDDMC61  034958030
+
+Found VISA FRAUD data: 45  00441049400082 SMARTSPOT ZLOTE T16550  WARSZAWA      PL  5732 6          4331.11 472736 12/12/23 472736******2802 0001 74410493346020119551411 07  FRDDMC61  034958030
+
+
+
+Found VISA FRAUD data: 45  00441049400082 KIOSK CHOJNICKI P45710  TORUN         PL  5411 4            29.52 405671 12/15/23 405671******9065 0006 74410493349020136185141 07  FRDDMC61  025504310
+
+Found VISA FRAUD data: 45  00441049400082 KIOSK CHOJNICKI P45710  TORUN         PL  5411 4            29.52 405671 12/15/23 405671******9065 0006 74410493349020136185141 07  FRDDMC61  025504310
+
+
+
+All ARN numbers passed to SQL query for VISA FRAUD.
+All ARN numbers passed to SQL query for VISA FRAUD.
+
+
+VISA ARNs: ('74410493265019613830138', '74410493265019614462758', '74410493265019614129860', '74410493265019615992035', '74410493265019615719479', '74410493265019615717465', '74410493265019615707706', '74410493265019615703598', '74410493265019615705692', '74410493265019615710189', '74410493265019615712342', '74410493269019638417883', '74410493273019663976666', '74410493273019663983563', '74410493282019723364639', '74410493272019658736118', '74410493296019816832116', '74410493303019865193106', '74410493305019873640807', '74410493305019873640906', '74410493305019873640484', '74410493311019909611550', '74410493304019869002724', '74410493302019857407440', '74410493303019859989659', '74410493332020032039219', '74410493344020104113062', '74410493279019707409850', '74410493347020125677183', '74410493282019723486275', '74410493282019726012722', '74410493340020083030976', '74410493348020130474765', '74410493346020119551411', '74410493349020136185141')
+VISA ARNs: ('74410493265019613830138', '74410493265019614462758', '74410493265019614129860', '74410493265019615992035', '74410493265019615719479', '74410493265019615717465', '74410493265019615707706', '74410493265019615703598', '74410493265019615705692', '74410493265019615710189', '74410493265019615712342', '74410493269019638417883', '74410493273019663976666', '74410493273019663983563', '74410493282019723364639', '74410493272019658736118', '74410493296019816832116', '74410493303019865193106', '74410493305019873640807', '74410493305019873640906', '74410493305019873640484', '74410493311019909611550', '74410493304019869002724', '74410493302019857407440', '74410493303019859989659', '74410493332020032039219', '74410493344020104113062', '74410493279019707409850', '74410493347020125677183', '74410493282019723486275', '74410493282019726012722', '74410493340020083030976', '74410493348020130474765', '74410493346020119551411', '74410493349020136185141')
+
+VISA finishedVISA finished
+
+Found xlsxFound xlsx
+
+
+All ARN numbers passed to SQL query.
+All ARN numbers passed to SQL query.
+
+
+MASTERCARD ARNs: ('05185243285034281917150', '05185243306034628138028', '05185243222033115826831', '05185243222033115708526', '05185243343035190249213', '05185243338035104648002', '05185243346035235005213', '05185243346035234986173', '05185243116031067521250', '05185243171032120114341', '05185243172032128737431', '05185243179032271708083')
+MASTERCARD ARNs: ('05185243285034281917150', '05185243306034628138028', '05185243222033115826831', '05185243222033115708526', '05185243343035190249213', '05185243338035104648002', '05185243346035235005213', '05185243346035234986173', '05185243116031067521250', '05185243171032120114341', '05185243172032128737431', '05185243179032271708083')
+
+MASTERCARD finishedMASTERCARD finished
+
+
+Checking the quarter: 4
+Checking the quarter: 4
+
+9.R.L.MCC and 9.R.W.MCC9.R.L.MCC and 9.R.W.MCC
+
+ST.01ST.01
+
+
+An error occurred while disconnecting all connections:
+An error occurred while disconnecting all connections:  (2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')(2250, 'WNetCancelConnection2', 'To po³¹czenie sieciowe nie istnieje.')
+
+
+An error occurred while reading the remote file:
+An error occurred while reading the remote file:  'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
+
+
+Data z pliku Tvid_nev_lost.xlsx: 
+Data z pliku Tvid_nev_lost.xlsx:   2023-12-31 00:00:002023-12-31 00:00:00
+
+ST.03ST.03
+
+ST.05ST.05
+
+ST.06ST.06
+
+
+Date:                        
+0 2023-10-01 2024-01-01
+Date:                        
+0 2023-10-01 2024-01-01
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+TrueTrue
+
+FalseFalse
+
+ALAL
+
+FalseFalse
+
+DZDZ
+
+FalseFalse
+
+ADAD
+
+FalseFalse
+
+AOAO
+
+FalseFalse
+
+ARAR
+
+FalseFalse
+
+AMAM
+
+FalseFalse
+
+AWAW
+
+FalseFalse
+
+AUAU
+
+FalseFalse
+
+AZAZ
+
+FalseFalse
+
+BSBS
+
+FalseFalse
+
+BHBH
+
+FalseFalse
+
+BDBD
+
+FalseFalse
+
+BYBY
+
+FalseFalse
+
+BJBJ
+
+FalseFalse
+
+BMBM
+
+FalseFalse
+
+BOBO
+
+FalseFalse
+
+BABA
+
+FalseFalse
+
+BWBW
+
+FalseFalse
+
+BRBR
+
+FalseFalse
+
+BNBN
+
+FalseFalse
+
+BFBF
+
+FalseFalse
+
+KHKH
+
+FalseFalse
+
+CACA
+
+FalseFalse
+
+KYKY
+
+FalseFalse
+
+CLCL
+
+FalseFalse
+
+CNCN
+
+FalseFalse
+
+COCO
+
+FalseFalse
+
+CDCD
+
+FalseFalse
+
+CRCR
+
+FalseFalse
+
+CICI
+
+FalseFalse
+
+CWCW
+
+FalseFalse
+
+DODO
+
+FalseFalse
+
+ECEC
+
+FalseFalse
+
+EGEG
+
+FalseFalse
+
+SVSV
+
+FalseFalse
+
+ETET
+
+FalseFalse
+
+FalseFalse
+
+GEGE
+
+FalseFalse
+
+GHGH
+
+FalseFalse
+
+GIGI
+
+FalseFalse
+
+GTGT
+
+FalseFalse
+
+GNGN
+
+FalseFalse
+
+HTHT
+
+FalseFalse
+
+VAVA
+
+FalseFalse
+
+HNHN
+
+FalseFalse
+
+HKHK
+
+FalseFalse
+
+ININ
+
+FalseFalse
+
+IDID
+
+FalseFalse
+
+IQIQ
+
+FalseFalse
+
+ILIL
+
+FalseFalse
+
+JMJM
+
+FalseFalse
+
+JPJP
+
+FalseFalse
+
+JOJO
+
+FalseFalse
+
+KZKZ
+
+FalseFalse
+
+KEKE
+
+FalseFalse
+
+KRKR
+
+FalseFalse
+
+KWKW
+
+FalseFalse
+
+KGKG
+
+FalseFalse
+
+LALA
+
+FalseFalse
+
+LBLB
+
+FalseFalse
+
+LYLY
+
+FalseFalse
+
+MOMO
+
+FalseFalse
+
+MGMG
+
+FalseFalse
+
+MWMW
+
+FalseFalse
+
+MYMY
+
+FalseFalse
+
+MVMV
+
+FalseFalse
+
+MLML
+
+FalseFalse
+
+MRMR
+
+FalseFalse
+
+MUMU
+
+FalseFalse
+
+MXMX
+
+FalseFalse
+
+MDMD
+
+FalseFalse
+
+MNMN
+
+FalseFalse
+
+MEME
+
+FalseFalse
+
+MAMA
+
+FalseFalse
+
+MZMZ
+
+FalseFalse
+
+MMMM
+
+FalseFalse
+
+FalseFalse
+
+NPNP
+
+FalseFalse
+
+NZNZ
+
+FalseFalse
+
+NINI
+
+FalseFalse
+
+NGNG
+
+FalseFalse
+
+MKMK
+
+FalseFalse
+
+OMOM
+
+FalseFalse
+
+PKPK
+
+FalseFalse
+
+PSPS
+
+FalseFalse
+
+PAPA
+
+FalseFalse
+
+PGPG
+
+FalseFalse
+
+PYPY
+
+FalseFalse
+
+PEPE
+
+FalseFalse
+
+PHPH
+
+FalseFalse
+
+QAQA
+
+FalseFalse
+
+RWRW
+
+FalseFalse
+
+SMSM
+
+FalseFalse
+
+SASA
+
+FalseFalse
+
+SNSN
+
+FalseFalse
+
+RSRS
+
+FalseFalse
+
+SCSC
+
+FalseFalse
+
+SLSL
+
+FalseFalse
+
+SGSG
+
+FalseFalse
+
+SOSO
+
+FalseFalse
+
+ZAZA
+
+FalseFalse
+
+LKLK
+
+FalseFalse
+
+CHCH
+
+FalseFalse
+
+TWTW
+
+FalseFalse
+
+TJTJ
+
+FalseFalse
+
+TZTZ
+
+FalseFalse
+
+THTH
+
+FalseFalse
+
+TTTT
+
+FalseFalse
+
+TNTN
+
+FalseFalse
+
+TRTR
+
+FalseFalse
+
+TMTM
+
+FalseFalse
+
+UGUG
+
+FalseFalse
+
+UAUA
+
+FalseFalse
+
+AEAE
+
+TrueTrue
+
+FalseFalse
+
+USUS
+
+FalseFalse
+
+UYUY
+
+FalseFalse
+
+UZUZ
+
+FalseFalse
+
+VNVN
+
+FalseFalse
+
+ZMZM
+
+FalseFalse
+
+ZWZW
+
+ST.07ST.07
+
+p-danep-dane
+
+ENDEND
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_0Added bug table to sheet: BUG_4a.R.L_PLiW2_0
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_1Added bug table to sheet: BUG_4a.R.L_PLiW2_1
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_2Added bug table to sheet: BUG_4a.R.L_PLiW2_2
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_3Added bug table to sheet: BUG_4a.R.L_PLiW2_3
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_4Added bug table to sheet: BUG_4a.R.L_PLiW2_4
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_5Added bug table to sheet: BUG_4a.R.L_PLiW2_5
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_6Added bug table to sheet: BUG_4a.R.L_PLiW2_6
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_7Added bug table to sheet: BUG_4a.R.L_PLiW2_7
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_8Added bug table to sheet: BUG_4a.R.L_PLiW2_8
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_9Added bug table to sheet: BUG_4a.R.L_PLiW2_9
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_10Added bug table to sheet: BUG_4a.R.L_PLiW2_10
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_11Added bug table to sheet: BUG_4a.R.L_PLiW2_11
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_12Added bug table to sheet: BUG_4a.R.L_PLiW2_12
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_13Added bug table to sheet: BUG_4a.R.L_PLiW2_13
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_14Added bug table to sheet: BUG_4a.R.L_PLiW2_14
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_15Added bug table to sheet: BUG_4a.R.L_PLiW2_15
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_16Added bug table to sheet: BUG_4a.R.L_PLiW2_16
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_17Added bug table to sheet: BUG_4a.R.L_PLiW2_17
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_18Added bug table to sheet: BUG_4a.R.L_PLiW2_18
+
+Added bug table to sheet: BUG_4a.R.L_PLiW2_19Added bug table to sheet: BUG_4a.R.L_PLiW2_19
+
+Added all bug tables to the combined sheet: Combined SheetAdded all bug tables to the combined sheet: Combined Sheet
+
+Saved bug tables to bug_table.xlsxSaved bug tables to bug_table.xlsx
+
+Selected Date:Selected Date:  2000-01-012000-01-01
+
+CheckingChecking
+
+RW_ST.01_01RW_ST.01_01
+
+RW_ST.01_01: RW_ST.01_01:   0 <= 00 <= 0
+
+RW_ST.01_02RW_ST.01_02
+
+RW_ST.01_02: RW_ST.01_02:   0 <= 00 <= 0
+
+RW_ST.01_03RW_ST.01_03
+
+RW_ST.01_03: RW_ST.01_03:   0 <= 00 <= 0
+
+RW_ST.01_04RW_ST.01_04
+
+RW_ST.01_04: RW_ST.01_04:   0 <= 00 <= 0
+
+RW_ST.01_05RW_ST.01_05
+
+RW_ST.01_05: RW_ST.01_05:   0 <= 00 <= 0
+
+RW_ST.01_06RW_ST.01_06
+
+RW_ST.01_06: RW_ST.01_06:   0 <= 00 <= 0
+
+RW_ST.01_07RW_ST.01_07
+
+RW_ST.01_07: RW_ST.01_07:   0 <= 00 <= 0
+
+RW_ST.01_08RW_ST.01_08
+
+RW_ST.01_08: RW_ST.01_08:   0 <= 00 <= 0
+
+RW_ST.01_09RW_ST.01_09
+
+RW_ST.01_09: RW_ST.01_09:   0 <= 00 <= 0
+
+RW_ST.01_10RW_ST.01_10
+
+RW_ST.01_10: RW_ST.01_10:   0 <= 00 <= 0
+
+RW_ST.01_11RW_ST.01_11
+
+RW_ST.01_11: RW_ST.01_11:   0 <= 00 <= 0
+
+RW_ST.01_12RW_ST.01_12
+
+RW_ST.01_12: RW_ST.01_12:   0 <= 00 <= 0
+
+RW_ST.01_13RW_ST.01_13
+
+RW_ST.01_13: RW_ST.01_13:   0 <= 00 <= 0
+
+RW_ST.01_14RW_ST.01_14
+
+RW_ST.01_14: RW_ST.01_14:   66963 <= 6696366963 <= 66963
+
+RW_ST.01_15RW_ST.01_15
+
+RW_ST.01_15: RW_ST.01_15:   0 <= 00 <= 0
+
+RW_ST.01_16RW_ST.01_16
+
+RW_ST.01_16: RW_ST.01_16:   3222 <= 508833222 <= 50883
+
+RW_ST.01_17RW_ST.01_17
+
+RW_ST.01_17: RW_ST.01_17:   0 <= 00 <= 0
+
+RW_ST.01_18RW_ST.01_18
+
+RW_ST.01_18: RW_ST.01_18:   0 <= 00 <= 0
+
+RW_ST.01_19RW_ST.01_19
+
+RW_ST.01_19: RW_ST.01_19:   0 <= 00 <= 0
+
+RW_ST.01_20RW_ST.01_20
+
+RW_ST.01_20: RW_ST.01_20:   0 <= 00 <= 0
+
+RW_ST.01_21RW_ST.01_21
+
+RW_ST.01_21: RW_ST.01_21:   0 <= 00 <= 0
+
+RW_ST.01_22RW_ST.01_22
+
+RW_ST.01_22: RW_ST.01_22:   4378 <= 593204378 <= 59320
+
+RW_ST.01_23RW_ST.01_23
+
+RW_ST.01_23: RW_ST.01_23:   0 <= 00 <= 0
+
+RW_ST.01_24RW_ST.01_24
+
+RW_ST.01_24: RW_ST.01_24:   66963 <= 5932066963 <= 59320
+
+RW_ST.01_25RW_ST.01_25
+
+RW_ST.01_25: RW_ST.01_25:   0 <= 00 <= 0
+
+RW_ST.01_26RW_ST.01_26
+
+RW_ST.01_26: RW_ST.01_26:   0 <= 00 <= 0
+
+RW_ST.01_27RW_ST.01_27
+
+RW_ST.01_27: RW_ST.01_27:   0 <= 00 <= 0
+
+RW_ST.01_28RW_ST.01_28
+
+RW_ST.01_28: RW_ST.01_28:   66963 <= 6696366963 <= 66963
+
+RW_ST.01_29RW_ST.01_29
+
+RW_ST.01_29: RW_ST.01_29:   0 <= 00 <= 0
+
+RW_ST.01_30RW_ST.01_30
+
+RW_ST.01_30: RW_ST.01_30:   66963 <= 6696366963 <= 66963
+
+RW_ST.02_01RW_ST.02_01
+
+RW_ST.02_01: RW_ST.02_01:   0 <= 00 <= 0
+
+RW_ST.02_02RW_ST.02_02
+
+RW_ST.02_02: RW_ST.02_02:   0 <= 00 <= 0
+
+RW_ST.02_03RW_ST.02_03
+
+RW_ST.02_03: RW_ST.02_03:   0 <= 00 <= 0
+
+RW_ST.02_04RW_ST.02_04
+
+RW_ST.02_04: RW_ST.02_04:   0 <= 00 <= 0
+
+RW_ST.02_05RW_ST.02_05
+
+RW_ST.02_05: RW_ST.02_05:   0 <= 00 <= 0
+
+RW_ST.02_06RW_ST.02_06
+
+RW_ST.02_06: RW_ST.02_06:   0 <= 00 <= 0
+
+RW_ST.02_07RW_ST.02_07
+
+RW_ST.02_07: RW_ST.02_07:   0 <= 00 <= 0
+
+RW_ST.03_01RW_ST.03_01
+
+5088350883
+
+5088350883
+
+RW_ST.03_01: RW_ST.03_01:   50883 <= 5088350883 <= 50883
+
+RW_ST.03_02RW_ST.03_02
+
+RW_ST.03_02: RW_ST.03_02:   0 <= 00 <= 0
+
+RW_ST.03_03RW_ST.03_03
+
+5932059320
+
+5932059320
+
+RW_ST.03_03: RW_ST.03_03:   59320 <= 5932059320 <= 59320
+
+RW_ST.03_04RW_ST.03_04
+
+RW_ST.03_04: RW_ST.03_04:   0 <= 00 <= 0
+
+RW_ST.03_05RW_ST.03_05
+
+6696366963
+
+6696366963
+
+RW_ST.03_05: RW_ST.03_05:   66963 <= 6696366963 <= 66963
+
+RW_ST.03_06RW_ST.03_06
+
+RW_ST.03_06: RW_ST.03_06:   0 <= 00 <= 0
+
+RW_ST.04_01RW_ST.04_01
+
+RW_ST.04_01: RW_ST.04_01:   0 <= 00 <= 0
+
+RW_ST.04_02RW_ST.04_02
+
+RW_ST.04_02: RW_ST.04_02:   0 <= 00 <= 0
+
+RW_ST.04_03RW_ST.04_03
+
+RW_ST.04_03: RW_ST.04_03:   0 <= 00 <= 0
+
+RW_ST.04_04RW_ST.04_04
+
+RW_ST.04_04: RW_ST.04_04:   0 <= 00 <= 0
+
+RW_ST.04_05RW_ST.04_05
+
+RW_ST.04_05: RW_ST.04_05:   0 >= 00 >= 0
+
+RW_ST.05_01RW_ST.05_01
+
+3592678235926782
+
+3674751636747516
+
+11514141151414
+
+12116801211680
+
+2014926701.712014926701.71
+
+2089641994.022089641994.02
+
+93878185.6793878185.67
+
+106506829.88106506829.88
+
+3592678235926782
+
+3674751636747516
+
+11514141151414
+
+12116801211680
+
+2014926701.712014926701.71
+
+2089641994.022089641994.02
+
+93878185.6793878185.67
+
+106506829.88106506829.88
+
+RW_ST.05_01: RW_ST.05_01:   4291766166.76 <= 4468216039.84291766166.76 <= 4468216039.8
+
+RW_ST.05_02RW_ST.05_02
+
+RW_ST.05_02: RW_ST.05_02:   0 >= 00 >= 0
+
+RW_ST.05_03RW_ST.05_03
+
+RW_ST.05_03: RW_ST.05_03:   0 >= 00 >= 0
+
+RW_ST.05_04RW_ST.05_04
+
+12151501215150
+
+12706251270625
+
+2426724267
+
+3347433474
+
+195968349.08195968349.08
+
+211332206.55211332206.55
+
+5363585.155363585.15
+
+10111633.6710111633.67
+
+12151501215150
+
+12706251270625
+
+2426724267
+
+3347433474
+
+195968349.08195968349.08
+
+211332206.55211332206.55
+
+5363585.155363585.15
+
+10111633.6710111633.67
+
+RW_ST.05_04: RW_ST.05_04:   405142702.46000004 <= 445495878.44405142702.46000004 <= 445495878.44
+
+RW_ST.05_05RW_ST.05_05
+
+RW_ST.05_05: RW_ST.05_05:   0 >= 00 >= 0
+
+RW_ST.05_06RW_ST.05_06
+
+RW_ST.05_06: RW_ST.05_06:   0 >= 00 >= 0
+
+RW_ST.05_07RW_ST.05_07
+
+RW_ST.05_07: RW_ST.05_07:   0 <= 00 <= 0
+
+RW_ST.05_08RW_ST.05_08
+
+RW_ST.05_08: RW_ST.05_08:   1245154 == 12445251245154 == 1244525
+
+RW_ST.05_09RW_ST.05_09
+
+RW_ST.05_09: RW_ST.05_09:   284 == 284284 == 284
+
+RW_ST.05_10RW_ST.05_10
+
+RW_ST.05_10: RW_ST.05_10:   0 == 00 == 0
+
+RW_ST.05_11RW_ST.05_11
+
+RW_ST.05_11: RW_ST.05_11:   116618463.55 == 116590795.87000005116618463.55 == 116590795.87000005
+
+RW_ST.05_12RW_ST.05_12
+
+RW_ST.05_12: RW_ST.05_12:   16571.75 == 16571.7516571.75 == 16571.75
+
+RW_ST.05_13RW_ST.05_13
+
+RW_ST.05_13: RW_ST.05_13:   0 == 00 == 0
+
+RW_ST.06_01RW_ST.06_01
+
+RW_ST.06_01: RW_ST.06_01:   0 == 10467.30 == 10467.3
+
+RW_ST.07_01RW_ST.07_01
+
+RW_ST.07_01: RW_ST.07_01:   34 == 3434 == 34
+
+RW_ST.07_01: RW_ST.07_01:   265 == 265265 == 265
+
+RW_ST.07_01: RW_ST.07_01:   17947.5 == 17947.517947.5 == 17947.5
+
+RW_ST.07_01: RW_ST.07_01:   1267488.73 == 1267488.731267488.73 == 1267488.73
+
+RW_ST.07_01: RW_ST.07_01:   0 == 00 == 0
+
+RW_ST.07_01: RW_ST.07_01:   4252.4 == 4252.44252.4 == 4252.4
+
+RW_ST.07_02RW_ST.07_02
+
+RW_ST.07_02: RW_ST.07_02:   0 == 00 == 0
+
+RW_ST.07_02: RW_ST.07_02:   0 == 00 == 0
+
+RW_ST.07_02: RW_ST.07_02:   0 == 00 == 0
+
+RW_ST.07_02: RW_ST.07_02:   0 == 00 == 0
+
+RW_ST.07_02: RW_ST.07_02:   0 == 00 == 0
+
+RW_ST.07_02: RW_ST.07_02:   0 == 00 == 0
+
+RW_ST.07_03RW_ST.07_03
+
+RW_ST.07_03: RW_ST.07_03:   34 == 3434 == 34
+
+RW_ST.07_03: RW_ST.07_03:   265 == 265265 == 265
+
+RW_ST.07_03: RW_ST.07_03:   17947.5 == 17947.517947.5 == 17947.5
+
+RW_ST.07_03: RW_ST.07_03:   1267488.73 == 1267488.731267488.73 == 1267488.73
+
+RW_ST.07_03: RW_ST.07_03:   0 == 00 == 0
+
+RW_ST.07_03: RW_ST.07_03:   4252.4 == 4252.44252.4 == 4252.4
+
+RW_ST.07_04RW_ST.07_04
+
+RW_ST.07_04: RW_ST.07_04:   0 == 00 == 0
+
+RW_ST.07_04: RW_ST.07_04:   0 == 00 == 0
+
+RW_ST.07_04: RW_ST.07_04:   0 == 00 == 0
+
+RW_ST.07_04: RW_ST.07_04:   0 == 00 == 0
+
+RW_ST.07_04: RW_ST.07_04:   0 == 00 == 0
+
+RW_ST.07_04: RW_ST.07_04:   0 == 00 == 0
+
+RW_ST.07_05RW_ST.07_05
+
+RW_ST.07_05: RW_ST.07_05:   15 < 1515 < 15
+
+RW_ST.07_05: RW_ST.07_05:   29 < 3229 < 32
+
+RW_ST.07_05: RW_ST.07_05:   1047.63 < 1047.631047.63 < 1047.63
+
+RW_ST.07_05: RW_ST.07_05:   39134.7 < 39427.739134.7 < 39427.7
+
+RW_ST.07_05: RW_ST.07_05:   0 < 00 < 0
+
+RW_ST.07_05: RW_ST.07_05:   0 < 00 < 0
+
+RW_ST.07_06RW_ST.07_06
+
+RW_ST.07_06: RW_ST.07_06:   19 <= 3419 <= 34
+
+RW_ST.07_06: RW_ST.07_06:   233 <= 265233 <= 265
+
+RW_ST.07_06: RW_ST.07_06:   16899.87 <= 17947.516899.87 <= 17947.5
+
+RW_ST.07_06: RW_ST.07_06:   1228061.03 <= 1267488.731228061.03 <= 1267488.73
+
+RW_ST.07_06: RW_ST.07_06:   0 <= 00 <= 0
+
+RW_ST.07_06: RW_ST.07_06:   4252.4 <= 4252.44252.4 <= 4252.4
+
+RW_ST.07_07RW_ST.07_07
+
+RW_ST.07_07: RW_ST.07_07:   0 <= 00 <= 0
+
+RW_ST.07_07: RW_ST.07_07:   0 <= 00 <= 0
+
+RW_ST.07_07: RW_ST.07_07:   0 <= 00 <= 0
+
+RW_ST.07_07: RW_ST.07_07:   0 <= 00 <= 0
+
+RW_ST.07_07: RW_ST.07_07:   0 <= 00 <= 0
+
+RW_ST.07_07: RW_ST.07_07:   0 <= 00 <= 0
+

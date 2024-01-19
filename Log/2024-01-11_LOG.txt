@@ -1,0 +1,40 @@
+Name: Krzysztof
+Surname: Kaniewski
+starting the function
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+Folder structure already exists.Folder structure already exists.
+
+
+Preparing NBP_Report for:
+year: 2023,
+quarter: 4.
+NBP report automation 2023AR2AR2
+
+4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW
+
+4a.R.L_PLiW2 and 4a.R.W_PLiW24a.R.L_PLiW2 and 4a.R.W_PLiW2
+
+6.ab.LiW6.ab.LiW
+
+5a.R.SF5a.R.SF
+
+
+Preparing NBP_Report for:
+year: 2023,
+quarter: 4.
+NBP report automation 2023

@@ -42,9 +42,11 @@ FT = {
 def read(file):
     try:
         read_file = pd.read_excel(f'{file}.xlsx', header=4)
+        print('Found xlsx')
 
     except FileNotFoundError:
         read_file = pd.read_excel(f'{file}.csv', header=4)
+        print('Found csv')
 
     return read_file
 

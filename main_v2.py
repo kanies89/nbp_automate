@@ -4,6 +4,7 @@ import re
 import os
 
 import datetime
+import numpy as np
 import pandas as pd
 from openpyxl.utils import get_column_letter
 import openpyxl.utils as utils
@@ -14,7 +15,7 @@ import time
 import multiprocessing as mp
 
 from connect import connect, connect_single_query
-from variables import EXCEL_READ_AR2, AR2_4_row_1, AR2_4_row_2, EXCEL_READ_AR1
+from variables import EXCEL_READ_AR2, AR2_4_row_1, AR2_4_row_2, EXCEL_READ_AR1, COUNTRY_DICT, countries_to_filter
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 from PyQt5.QtCore import pyqtSignal, QObject
@@ -171,11 +172,102 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
     query = f"Query\\AR2\\NBP_Query_1.sql"
 
-    dataframe_1 = load_or_query(22, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
+    dataframe_1 = load_or_query(1, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(15)
+
+    # Remove spaces from country code
+    dataframe_1[0]['country'] = dataframe_1[0]['country'].str.replace(' ', '')
+
+    # Function to replace values based on condition
+    def replace_country(value):
+        if len(value) > 2:
+            value = COUNTRY_DICT.get(value, value)
+            if value == "QZ":
+                return "D09"
+            elif pd.isnull(value):
+                return "PL"
+            else:
+                return value
+        else:
+            return value
+
+    def replace_card_type(value):
+        if pd.isnull(value):
+            return "Debit"
+        else:
+            return value
+
+    def add_g1_countries(value):
+        if value in countries_to_filter:
+            return value
+        else:
+            value = "G1"
+            return value
+
+    # Apply the function to the first column
+    dataframe_1[0]['country'] = dataframe_1[0]['country'].apply(replace_country)
+
+    # Apply the function to the typ_karty column
+    dataframe_1[0]['Typ_karty'] = dataframe_1[0]['Typ_karty'].apply(replace_card_type)
+
+    df_for_mcc = dataframe_1[0].copy()
+
+    # Columns:
+    # (0) karta / (1) country / (2) mcc / (3) Typ_karty / (4) te_pos_entry_mode / (5) czy_moto /
+    # (6) czy_niskokwotowa_zblizeniowa / (7) czy_SCA / (8) ilosc / (9) wartosc_transakcji
+
+    # Filter the DataFrame based on the list of countries
+    dataframe_1[0]['country'] = dataframe_1[0]['country'].apply(add_g1_countries)
+    filtered_df = dataframe_1[0].copy()
+
+    # List of conditions
+    conditions = [
+        # 0
+        (filtered_df['czy_moto'] == "MOTO"),  # 1
+        (filtered_df['czy_moto'] == "MOTO"),  # 2
+        (filtered_df['czy_moto'] != "MOTO"),  # 3
+        (filtered_df['czy_moto'] != "MOTO"),  # 4
+        (filtered_df['czy_moto'] != "MOTO"),  # 5
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA"),  # 6
+        (filtered_df['czy_moto'] != "MOTO") & (
+                filtered_df['karta'] == "VISA") & (filtered_df['Typ_karty'] == "debit"),  # 7
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (
+                (filtered_df['Typ_karty'] != 'debit') & (
+                filtered_df['Typ_karty'] != 'credit') | pd.isnull(filtered_df['Typ_karty'])),  # 8
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (
+                filtered_df['Typ_karty'] != 'credit'),  # 9
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 1),  # 10
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 0),  # 11
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC"),  # 12
+        (filtered_df['czy_moto'] != "MOTO") & (
+                filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "debit"),  # 13
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+                (filtered_df['Typ_karty'] != 'debit') & (
+                filtered_df['Typ_karty'] != 'credit') | pd.isnull(filtered_df['Typ_karty'])),  # 14
+        (filtered_df['czy_moto'] != "MOTO") & (
+                filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "credit"),  # 15
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+                filtered_df['Typ_karty'] == "credit") & (filtered_df['czy_SCA'] == 1),  # 16
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+                filtered_df['Typ_karty'] == "credit") & (filtered_df['czy_SCA'] == 0),  # 17
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+                filtered_df['czy_niskokwotowa_zblizeniowa'] == 1) & (filtered_df['czy_SCA'] == 0),  # 18
+        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+                filtered_df['czy_niskokwotowa_zblizeniowa'] == 0) & (filtered_df['czy_SCA'] == 0),  # 19
+        (filtered_df['country'] == "PL"),  # 20
+        (filtered_df['country'] != "PL")  # 21
+    ]
+
+    # List of result DataFrames
+    result_dfs = [filtered_df.groupby('country')[['ilosc', 'wartosc_transakcji']].sum().reset_index()]
+
+    # Apply conditions and perform groupby and sum operations
+    for condition in conditions:
+        result_df = filtered_df[condition].groupby('country')[['ilosc', 'wartosc_transakcji']].sum().reset_index()
+        result_dfs.append(result_df)
 
     print(wb_sheets[1][0] + ' and ' + wb_sheets[2][0])
     s1 = wb_sheets[1][1]
@@ -183,28 +275,28 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     s2 = wb_sheets[2][1]
     df2 = pd.DataFrame(s1.values)
 
-    for n in range(len(dataframe_1) - 2):
-        for i, country in enumerate(dataframe_1[n]['name']):
-            if country == 'Holandia':
-                country = 'Niderlandy'
-
+    for n in range(len(result_dfs) - 2):
+        for i, country in enumerate(result_dfs[n]['country']):
             try:
+                if country == 'PL':
+                    country = 'W2'
+
                 # Find column for country
-                col1 = pd.Index(df1.iloc[28]).get_loc(country)
-                col2 = pd.Index(df2.iloc[28]).get_loc(country)
+                col1 = pd.Index(df1.iloc[27]).get_loc(country)
+                col2 = pd.Index(df2.iloc[27]).get_loc(country)
 
                 if AR2_4_row_1[n] in [30, 38, 44, 52, 61, 74, 76, 85]:
                     continue
                 else:
                     # Insert value
-                    s1[reference(col1, 'col') + reference(AR2_4_row_1[n], 'row')] = int(dataframe_1[n]['ilosc'].iloc[i])
+                    s1[reference(col1, 'col') + reference(AR2_4_row_1[n], 'row')] = int(result_dfs[n]['ilosc'].iloc[i])
                     s2[reference(col2, 'col') + reference(AR2_4_row_2[n], 'row')] = to_float(
-                        dataframe_1[n]['wartosc'].iloc[i])
+                        result_dfs[n]['wartosc_transakcji'].iloc[i])
 
             except KeyError:
-                bug_table.append([f'BUG_4a.R.L_PLiW2', dataframe_1[n][dataframe_1[n]['name'] == country]])
+                bug_table.append([f'BUG_4a.R.L_PLiW2', result_dfs[n][result_dfs[n]['country'] == country]])
                 print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {dataframe_1[n][dataframe_1[n]['name'] == country]}")
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {result_dfs[n][result_df[n]['country'] == country]}")
 
     # 6.ab.LiW
     print(wb_sheets[6][0])
@@ -221,23 +313,23 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     condition = df6.iloc[30:, 2] == 'L6.1.4'
     row = condition[condition].index[0]
 
-    s6[reference(col, 'col') + reference(row, 'row')] = dataframe_1[20]['ilosc'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[20]['ilosc'].iloc[0]
 
     # 6.1.4
     condition = df6.iloc[30:, 2] == 'W6.1.4'
     row = condition[condition].index[0]
-    s6[reference(col, 'col') + reference(row, 'row')] = dataframe_1[20]['wartosc'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[20]['wartosc_transakcji'].iloc[0]
 
     # L6.2.4
     condition = df6.iloc[30:, 2] == 'L6.2.4'
     row = condition[condition].index[0]
 
-    s6[reference(col, 'col') + reference(row, 'row')] = dataframe_1[21]['ilosc'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[21]['ilosc'].iloc[0]
 
     # 6.2.4
     condition = df6.iloc[30:, 2] == 'W6.2.4'
     row = condition[condition].index[0]
-    s6[reference(col, 'col') + reference(row, 'row')] = dataframe_1[21]['wartosc'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[21]['wartosc_transakcji'].iloc[0]
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW.')
@@ -292,50 +384,55 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     if progress_callback_text:
         progress_callback_text(f'AR2 - Fraud data: 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2.')
 
-    # Get the Visa
-    data_visa = f_visa_make(user, passw)
+    file_path = f"{TEMP}df_fraud.csv"
 
-    # Calculate and update progress to 30% when appropriate
-    if progress_callback:
-        progress_callback(35)
+    if not os.path.exists(file_path):
+        # Get the Visa
+        data_visa = f_visa_make(user, passw)
 
-    df_visa = pd.DataFrame(data_visa[0])
-    # Get the Mastercard
-    data_mastercard = f_mastercard_make()
+        # Calculate and update progress to 30% when appropriate
+        if progress_callback:
+            progress_callback(35)
 
-    # Calculate and update progress to 30% when appropriate
-    if progress_callback:
-        progress_callback(39)
+        df_visa = pd.DataFrame(data_visa[0])
+        # Get the Mastercard
+        data_mastercard = f_mastercard_make()
 
-    df_mastercard = pd.DataFrame(data_mastercard[0])
-    df_complete = [df_visa, df_mastercard]
-    df_fraud = pd.concat(df_complete)
+        # Calculate and update progress to 30% when appropriate
+        if progress_callback:
+            progress_callback(39)
 
-    # Use extracted ARNs for query
-    with open("./Query/AR2/NBP_Temp_2.sql", 'r',
-              encoding='utf-8') as sql:
-        sql = sql.read()
-        pattern = '--insert'
-        insert_start = [match.start() for match in re.finditer(pattern, sql)]
-        mastercard_insert = [insert_start[0], insert_start[0] + len(pattern)]
-        visa_insert = [insert_start[1], insert_start[1] + len(pattern)]
+        df_mastercard = pd.DataFrame(data_mastercard[0])
+        df_complete = [df_visa, df_mastercard]
+        df_fraud = pd.concat(df_complete)
 
-        sql = sql[:visa_insert[0]] + data_visa[1] + sql[visa_insert[1]:]
-        sql = sql[:mastercard_insert[0]] + data_mastercard[1] + sql[mastercard_insert[1]:]
+        # Use extracted ARNs for query
+        with open("./Query/AR2/NBP_Temp_2.sql", 'r',
+                  encoding='utf-8') as sql:
+            sql = sql.read()
+            pattern = '--insert'
+            insert_start = [match.start() for match in re.finditer(pattern, sql)]
+            mastercard_insert = [insert_start[0], insert_start[0] + len(pattern)]
+            visa_insert = [insert_start[1], insert_start[1] + len(pattern)]
 
-    with open("./Query/AR2/NBP_Temp_2_filled.sql", 'w',
-              encoding='utf-8') as sql_w:
-        sql_w.write(sql)
+            sql = sql[:visa_insert[0]] + data_visa[1] + sql[visa_insert[1]:]
+            sql = sql[:mastercard_insert[0]] + data_mastercard[1] + sql[mastercard_insert[1]:]
 
-    # Calculate and update progress to 30% when appropriate
-    if progress_callback:
-        progress_callback(43)
+        with open("./Query/AR2/NBP_Temp_2_filled.sql", 'w',
+                  encoding='utf-8') as sql_w:
+            sql_w.write(sql)
 
-    # Make pivot table
-    df_fraud['country_aggr'] = df_fraud['country'].apply(lambda u: aggr_country(u))
+        # Calculate and update progress to 30% when appropriate
+        if progress_callback:
+            progress_callback(43)
 
-    path_df = f'.\\temp\\{check_quarter()[1]}_{check_quarter()[3]}\\'
-    df_fraud.to_csv(path_df + 'df_fraud.csv')
+        # Make pivot table
+        df_fraud['country_aggr'] = df_fraud['country'].apply(lambda u: aggr_country(u))
+
+        df_fraud.to_csv(f'{TEMP}df_fraud.csv')
+
+    else:
+        df_fraud = pd.read_csv(file_path)
 
     countries_list = [
         "BE",
@@ -992,7 +1089,7 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - Query: 9.R.L.MCC and 9.R.W.MCC.')
-    dataframe_4 = load_or_query(4, '9.R.L.MCC_9.R.W.MCC__', temp_table, query)
+    # dataframe_4 = load_or_query(4, '9.R.L.MCC_9.R.W.MCC__', temp_table, query)
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
@@ -1002,59 +1099,142 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
     df7 = pd.DataFrame(s7.values)
     s8 = wb_sheets[8][1]
     df8 = pd.DataFrame(s8.values)
+
     code = [9, '9.1', '9.1.1']
-    i = 0
-    j = 0
-    for n in range(0, len(dataframe_4)):
-        for country in dataframe_4[n]['name']:
-            # last dataframe retrieved from database is different so if n=3 then execute different algorithm
-            if n < 3:
-                try:
-                    condition = df7[1][30:370] == code[n]
-                    row = condition[condition].index[0]
 
-                    col = pd.Index(df7.iloc[28]).get_loc(country)
-                    s7[reference(col, 'col') + reference(row, 'row')] = dataframe_4[n]['ilosc'].iloc[i]
-                    s8[reference(col, 'col') + reference(row, 'row')] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
+    def change_country(val):
+        if val in ["PL", "PR", "QZ"]:
+            change = {
+                "PL": "W2",
+                "PR": "US",
+                "QZ": "D09"
+            }
+            return change[val]
+        else:
+            return val
 
-                except (KeyError, IndexError) as e:
-                    if country not in pd.Index(df7.iloc[28]):
-                        bug_table.append([f'BUG_{wb_sheets[7][0]}', country])
-                        print(
-                            f"{e} / {wb_sheets[7][0]}!!: Value was not added to the report (there is no such a country code in excel) - {country}")
+    mcc_index = df7[2][35:370].astype(str)
 
-            if n == 3:
-                # Convert df_nbp_2[1] column to string
-                df7[2] = df7[2].astype(str)
-                mcc = dataframe_4[n]['mcc'].iloc[i]
-                mcc_index = df7[2][35:370]
+    def change_mcc(val):
+        if str(val) in ['742', '743', '744', '763', '780']:
+            mcc_change = {'742': '0742',
+                          '743': '0743',
+                          '744': '0744',
+                          '763': '0763',
+                          '780': '0780'}
+            return mcc_change[str(val)]
 
-                try:
-                    col = pd.Index(df7.iloc[28]).get_loc(country)
-                    if mcc_index[mcc_index == mcc].index.size == 0:
-                        ind = mcc_index[mcc_index == "R999"].index[0]
-                        s7[reference(col, 'col') + reference(ind, 'row')] = dataframe_4[n]['ilosc'].iloc[i]
-                        s8[reference(col, 'col') + reference(ind, 'row')] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
+        elif mcc_index[mcc_index == str(val)].index.size == 0:
+            return "R999"
+
+        else:
+            return str(val)
+
+    df_for_mcc['mcc'] = df_for_mcc['mcc'].apply(change_mcc)
+
+    df_mcc_moto = df_for_mcc.groupby(['country', 'mcc', 'czy_moto'])[
+        ['ilosc', 'wartosc_transakcji']].sum().reset_index()
+
+    df_mcc = df_for_mcc.groupby(['country', 'mcc'])[['ilosc', 'wartosc_transakcji']].sum().reset_index()
+
+    df_mcc_moto['country'] = df_mcc_moto['country'].apply(change_country)
+    df_mcc['country'] = df_mcc['country'].apply(change_country)
+
+    pd.DataFrame(df_mcc_moto).to_excel(f'{TEMP}df_mcc_moto.xlsx')
+    pd.DataFrame(df_mcc).to_excel(f'{TEMP}df_mcc.xlsx')
+
+    for country in df_mcc['country']:
+
+        # 9
+        col = pd.Index(df7.iloc[27]).get_loc(country)
+        condition = df7[1][30:370] == code[0]
+        row = condition[condition].index[0]
+
+        addr = reference(col, 'col') + reference(row, 'row')
+
+        result_1 = df_mcc[df_mcc['country'] == country]['ilosc'].sum()
+        result_2 = df_mcc[df_mcc['country'] == country]['wartosc_transakcji'].sum()
+        print('result 1 and 2: ', result_1, result_2)
+        s7[addr].value = result_1
+        s8[addr].value = result_2
+
+        # 9.1
+        condition = df7[1][30:370] == code[1]
+        row = condition[condition].index[0]
+
+        addr = reference(col, 'col') + reference(row, 'row')
+
+        result_1 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['ilosc'].sum()
+        result_2 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')][
+            'wartosc_transakcji'].sum()
+        print('result 1 and 2: ', result_1, result_2)
+        s7[addr].value = result_1
+        s8[addr].value = result_2
+
+        # 9.1.1
+        condition = df7[1][30:370] == code[2]
+        row = condition[condition].index[0]
+
+        addr = reference(col, 'col') + reference(row, 'row')
+
+        result_1 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['ilosc'].sum()
+        result_2 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')][
+            'wartosc_transakcji'].sum()
+        print('result 1 and 2: ', result_1, result_2)
+        s7[addr].value = result_1
+        s8[addr].value = result_2
+
+        df7[2] = df7[2].astype(str)
+
+        mccs = df_mcc[df_mcc['country'] == country]['mcc'].astype(str)
+
+        for m, mcc in enumerate(mccs):
+            print(mcc, type(mcc))
+            # Convert df_nbp_2[1] column to string
+            mcc_value_w = df_mcc[df_mcc['country'] == country]['wartosc_transakcji'].iloc[m]
+            mcc_value_i = df_mcc[df_mcc['country'] == country]['ilosc'].iloc[m]
+
+            try:
+                col = pd.Index(df7.iloc[27]).get_loc(country)
+
+                if mcc_index[mcc_index == mcc].index.size == 0:
+                    print(mcc, ': R999', 'mcc_am :', mcc_value_i)
+                    ind = mcc_index[mcc_index == "R999"].index[0]
+
+                    cell_reference = reference(col, 'col') + reference(ind, 'row')
+
+                    if s7[cell_reference].value is not None:
+                        print(s7[cell_reference].value)
+                        s7[cell_reference].value += int(mcc_value_i)
                     else:
-                        ind = mcc_index[mcc_index == mcc].index[0]
-                        s7[reference(col, 'col') + reference(ind, 'row')] = dataframe_4[n]['ilosc'].iloc[i]
-                        s8[reference(col, 'col') + reference(ind, 'row')] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
+                        s7[cell_reference].value = int(mcc_value_i)
 
-                except (KeyError, IndexError) as e:
-                    if country not in pd.Index(df7.iloc[28]):
-                        bug_table.append([f'BUG_{wb_sheets[7][0]}', country])
-                        print(
-                            f"{e} / {wb_sheets[7][0]}!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-                    elif mcc_index[mcc_index == mcc].index.size == 0:
-                        ind = mcc_index[mcc_index == "R999"].index[0]
-                        s7[reference(col, 'col') + reference(ind, 'row')] = dataframe_4[n]['ilosc'].iloc[i]
-                        s8[reference(col, 'col') + reference(ind, 'row')] = dataframe_4[n]['wartosc_transakcji'].iloc[i]
-                        print(
-                            f'{e} / {wb_sheets[7][0]}!!:For country: {country} and mcc: {mcc} added it to not assigned mccs R999.')
+                    if s8[cell_reference].value is not None:
+                        s8[cell_reference].value += float(mcc_value_w)
+                    else:
+                        s8[cell_reference].value = float(mcc_value_w)
+                else:
+                    print(mcc)
+                    ind = mcc_index[mcc_index == mcc].index[0]
 
-            i += 1
-        i = 0
-        j += 1
+                    cell_reference = reference(col, 'col') + reference(ind, 'row')
+                    s7[cell_reference] = mcc_value_i
+                    s8[cell_reference] = mcc_value_w
+
+            except (KeyError, IndexError) as e:
+
+                if country not in pd.Index(df7.iloc[27]):
+                    bug_table.append([f'BUG_{wb_sheets[7][0]}', country])
+                    print(
+                        f"{e} / {wb_sheets[7][0]}!!: Value was not added to the report (there is no such a country code in excel) - {country}")
+
+                elif mcc_index[mcc_index == mcc].index.size == 0:
+                    ind = mcc_index[mcc_index == "R999"].index[0]
+                    # s7[reference(col, 'col') + reference(ind, 'row')] = mcc_value_i
+                    # s8[reference(col, 'col') + reference(ind, 'row')] = mcc_value_w
+
+                    print(
+                        f'{e} / {wb_sheets[7][0]}!!:For country: {country} and mcc: {mcc} added it to not assigned mccs R999.')
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 9.R.L.MCC and 9.R.W.MCC.')
@@ -1064,7 +1244,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None,
                      progress_callback_text=None):
-
     wb_data = create_ar1_excel()
 
     # Create new AR2 excel file
@@ -1098,18 +1277,22 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
     # Data to be filled
     to_change_values = [
+        dataframe_0['active_mid'][0],  # mid all
+        dataframe_0['active_mid'][0],  # mid all
         dataframe_1[1]['MID all cashback'][0],
-        dataframe_1[1]['SID all cashback'][0],
-        dataframe_1[1]['TVID all cashback'][0],
-        dataframe_1[0]['ilosc_softPOS'][0],
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_tvid'][0],  # tvid all
-        dataframe_0['active_mid'][0],  # mid all
-        dataframe_0['active_mid'][0],  # mid all
+
         dataframe_0['active_sid'][0],  # sid all
-        dataframe_0['active_sid'][0]  # sid all
+        dataframe_0['active_sid'][0],  # sid all
+        dataframe_1[1]['SID all cashback'][0],
+
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_0['active_tvid'][0],  # tvid all
+        dataframe_1[1]['TVID all cashback'][0],
+        dataframe_0['active_tvid'][0],  # tvid all
+
+        dataframe_1[0]['ilosc_softPOS'][0],
+
 
     ]
     to_change_rows = [9, 10, 11, 14, 15, 16, 18, 19, 20, 21, 22, 24]
@@ -1160,37 +1343,186 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     if progress_callback_text:
         progress_callback_text(f'AR1 - Query: ST.05.')
 
-    dataframe_2 = load_or_query(6, 'ST.05.', temp_table, query)
+    dataframe_2 = load_or_query(2, 'ST.05.', temp_table, query)
+
+    temp_table = f"Query\\AR2\\NBP_Temp_1.sql"
+    query = f"Query\\AR2\\NBP_Query_1.sql"
+
+    dataframe_1 = load_or_query(1, '4.a.R.L_PLiW2_4a.R.W_PLiW2_6.ab.LiW__', temp_table, query)
+
+    # Remove spaces from country code
+    dataframe_1[0]['country'] = dataframe_1[0]['country'].str.replace(' ', '')
+
+    # Function to replace values based on condition
+    def replace_country(value):
+        if len(value) > 2:
+            return COUNTRY_DICT.get(value, value)
+        else:
+            return value
+
+    # Apply the function to the first column
+    dataframe_1[0]['country'] = dataframe_1[0]['country'].apply(replace_country)
+
+    df_clean = dataframe_1[0].copy()
+
+    # Columns:
+    # (0) karta / (1) country / (2) mcc / (3) Typ_karty / (4) te_pos_entry_mode / (5) czy_moto /
+    # (6) czy_niskokwotowa_zblizeniowa / (7) czy_SCA / (8) ilosc / (9) wartosc_transakcji / (10) te_tran_type
+    # (11) Wartość wypłat Cash Back / (12) category / (13) tr_rsp_code / (14) tr_app_id
+
+    def polska_inne(value):
+        if value == 'PL':
+            return 'POLSKA'
+        else:
+            return 'INNE KRAJE'
+
+    def business_individual(value):
+        if value != 'BUSINESS':
+            return 'Individual'
+        else:
+            return 'BUSINESS'
+
+    # Filter the DataFrame based on the list of countries
+    dataframe_1[0]['country'] = dataframe_1[0]['country'].apply(polska_inne)
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
         progress_callback(68)
 
+    dataframe_3 = df_clean
+
+    def change_country(val):
+        if val in {"PL", "PR", "QZ"}:
+            change = {
+                "PL": "W2",
+                "PR": "US",
+                "QZ": "D09"
+            }
+            return change[val]
+        else:
+            return val
+
+    dataframe_3['country'] = dataframe_3['country'].apply(change_country)
+
+    dataframe_3['ilosc_internet'] = 0
+    dataframe_3['wartosc_internet'] = 0
+    dataframe_3['ilosc_cashback'] = np.where(dataframe_3['Wartość wypłat Cash Back'] != 0, 1, 0)
+
+    dataframe_3 = dataframe_3.groupby(['country', 'category', 'te_pos_entry_mode']).agg({
+        'Wartość wypłat Cash Back': 'sum',
+        'ilosc_cashback': 'sum',
+        'ilosc_internet': 'sum',
+        'wartosc_internet': 'sum',
+        'ilosc': 'sum',
+        'wartosc_transakcji': 'sum'
+    }).reset_index()
+
+    geo6 = pd.read_excel("./Example/NBP_GEO6.xlsx", header=3)
+
+    dataframe_3 = pd.merge(dataframe_3, geo6, on='country', how='left')
+    dataframe_3.to_excel('ST.05_data.xlsx')
     # Data to be filled
-    def prepare_values_data(d, c):
-        if d == 1:
-            ilosc = 'Liczba transakcji CashBack'
-            wartosc = 'Wartość wypłat Cash Back'
-        elif d == 2:
+
+    def prepare_values_data(d, c, result_df_1):
+        if d == 0:
+            # 1 / "Liczba transakcji CashBack" / "Wartość wypłat Cash Back"
+            # row 12 / 16
+
+            # Print columns of result_df_1
+            print(result_df_1.columns)
+
+            conditions = [
+                (result_df_1['category'] == c) & (result_df_1['country'] == 'W2'),
+                (result_df_1['category'] == c) & (result_df_1['country'] != 'W2'),
+                (result_df_1['category'] == c) & (result_df_1['country'] == 'W2'),
+                (result_df_1['category'] == c) & (result_df_1['country'] != 'W2')
+            ]
+
+            return [
+                result_df_1.loc[conditions[0], 'ilosc_cashback'].sum(),
+                result_df_1.loc[conditions[1], 'ilosc_cashback'].sum(),
+                result_df_1.loc[conditions[2], 'Wartość wypłat Cash Back'].sum(),
+                result_df_1.loc[conditions[3], 'Wartość wypłat Cash Back'].sum(),
+                result_df_1.loc[conditions[0], 'ilosc_cashback'].sum(),
+                result_df_1.loc[conditions[1], 'ilosc_cashback'].sum(),
+                result_df_1.loc[conditions[2], 'Wartość wypłat Cash Back'].sum(),
+                result_df_1.loc[conditions[3], 'Wartość wypłat Cash Back'].sum()
+            ]
+
+        elif d == 1:
+            # 2 / "Liczba transakcji BLIK" / "Kwota transakcji BLIK"
+            # row 20
             ilosc = 'Liczba transakcji BLIK'
             wartosc = 'Kwota transakcji BLIK'
-        else:
-            ilosc = 'ilosc'
-            wartosc = 'wartosc'
 
-        if d == 2:
-            to_change_values = [
-                dataframe_2[d][ilosc][0],
+            return [
+                dataframe_2[0][ilosc][0],
                 0,
-                dataframe_2[d][wartosc][0],
+                dataframe_2[0][wartosc][0],
                 0,
-                dataframe_2[d][ilosc][0],
+                dataframe_2[0][ilosc][0],
                 0,
-                dataframe_2[d][wartosc][0],
+                dataframe_2[0][wartosc][0],
                 0
             ]
-        else:
-            to_change_values = [
+        elif d == 2:
+            # 3
+            # row 10 / 14
+            df_bi = result_df_1
+            df_bi['category'] = df_bi['category'].apply(business_individual)
+
+            result_df_2 = df_bi
+
+            conditions = [
+                (result_df_2['category'] == c) & (result_df_2['country'] == 'W2'),
+                (result_df_2['category'] == c) & (result_df_2['country'] != 'W2'),
+                (result_df_2['category'] == c) & (result_df_2['country'] == 'W2'),
+                (result_df_2['category'] == c) & (result_df_2['country'] != 'W2')
+            ]
+
+            return [
+                result_df_2.loc[conditions[0], 'ilosc'].sum(),
+                result_df_2.loc[conditions[1], 'ilosc'].sum(),
+                result_df_2.loc[conditions[2], 'wartosc_transakcji'].sum(),
+                result_df_2.loc[conditions[3], 'wartosc_transakcji'].sum(),
+                result_df_2.loc[conditions[0], 'ilosc'].sum(),
+                result_df_2.loc[conditions[1], 'ilosc'].sum(),
+                result_df_2.loc[conditions[2], 'wartosc_transakcji'].sum(),
+                result_df_2.loc[conditions[3], 'wartosc_transakcji'].sum()
+
+            ]
+
+        elif d == 3:
+            # 4
+            # row 11 / 15
+            result_df_3 = result_df_1[result_df_1['te_pos_entry_mode'] == 'CTLS']
+
+            conditions = [
+                (result_df_3['category'] == c) & (result_df_3['country'] == 'W2'),
+                (result_df_3['category'] == c) & (result_df_3['country'] != 'W2'),
+                (result_df_3['category'] == c) & (result_df_3['country'] == 'W2'),
+                (result_df_3['category'] == c) & (result_df_3['country'] != 'W2')
+            ]
+
+            return [
+                result_df_3.loc[conditions[0], 'ilosc'].sum(),
+                result_df_3.loc[conditions[1], 'ilosc'].sum(),
+                result_df_3.loc[conditions[2], 'wartosc_transakcji'].sum(),
+                result_df_3.loc[conditions[3], 'wartosc_transakcji'].sum(),
+                result_df_3.loc[conditions[0], 'ilosc'].sum(),
+                result_df_3.loc[conditions[1], 'ilosc'].sum(),
+                result_df_3.loc[conditions[2], 'wartosc_transakcji'].sum(),
+                result_df_3.loc[conditions[3], 'wartosc_transakcji'].sum()
+
+            ]
+        elif d == 4:
+            # 5
+            # c == 'Individual' 26
+            # c == 'BUSINESS' 28
+            d = 1
+            ilosc = 'ilosc'
+            wartosc = 'wartosc'
+            return [
                 dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'POLSKA') & (dataframe_2[d]['category'] == c)][
                     ilosc].sum(),
                 dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
@@ -1199,6 +1531,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
                     wartosc].sum(),
                 dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
                     wartosc].sum(),
+
                 dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'POLSKA') & (dataframe_2[d]['category'] == c)][
                     ilosc].sum(),
                 dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
@@ -1208,25 +1541,22 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
                 dataframe_2[d][(dataframe_2[d]['KRAJE'] == 'INNE KRAJE') & (dataframe_2[d]['category'] == c)][
                     wartosc].sum()
             ]
-        return to_change_values
 
     to_change_columns = range(13, 22)
-    to_change_rows_1 = [12, 10, 11, 26, 20]
-    to_change_rows_2 = [16, 14, 15, 28, 20]
-    df = [1, 3, 4, 5, 2]
+    to_change_rows_1 = [12, 20, 10, 11, 26]
+    to_change_rows_2 = [16, 20, 14, 15, 28]
 
     # Changes in dataframe from spreadsheet - df_nbp_1
-    for row in range(len(df)):
-        category = 'Individual'
-        to_change_values = prepare_values_data(df[row], category)
-        for v in range(len(to_change_values)):
-            s5[reference(to_change_columns[v], 'col') + reference(to_change_rows_1[row], 'row')] = to_change_values[v]
-
-    for row in range(len(df)):
-        category = 'BUSINESS'
-        to_change_values = prepare_values_data(df[row], category)
-        for v in range(len(to_change_values)):
-            s5[reference(to_change_columns[v], 'col') + reference(to_change_rows_2[row], 'row')] = to_change_values[v]
+    for e in range(4):
+        for c in ['Individual', 'BUSINESS']:
+            to_change_values = prepare_values_data(e, c, dataframe_3)
+            for v in range(len(to_change_values)):
+                if c == 'Individual':
+                    s5[reference(to_change_columns[v], 'col') + reference(to_change_rows_1[e], 'row')] = \
+                        to_change_values[v]
+                else:
+                    s5[reference(to_change_columns[v], 'col') + reference(to_change_rows_2[e], 'row')] = \
+                        to_change_values[v]
 
     if progress_callback_text:
         progress_callback_text(f'AR1 - Finished: ST.05.')
@@ -1246,38 +1576,48 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
     if progress_callback_text:
         progress_callback_text(f'AR1 - Query: ST.06.')
 
-    dataframe_3 = load_or_query(2, 'ST.06.', temp_table, query)
-    print('\nDate: ' + str(dataframe_3[0]))
+    # dataframe_3 = load_or_query(2, 'ST.06.', temp_table, query)
+    # print('\nDate: ' + str(dataframe_3[0]))
 
-    dataframe_3 = dataframe_3[1]
+    dataframe_3 = dataframe_3[dataframe_3['country'] != 'W2'].groupby(['country']).agg({
+        'ilosc': 'sum',
+        'ilosc_internet': 'sum',
+        'ilosc_cashback': 'sum',
+        'wartosc_transakcji': 'sum',
+        'wartosc_internet': 'sum',
+        'Wartość wypłat Cash Back': 'sum'
+    }).reset_index()
+
+    dataframe_3.to_excel('ST.06_data.xlsx')
+
+    print(dataframe_3.columns)
 
     column_amount = [13, 14, 15]
     column_value = [16, 17, 18]
 
-    content_amount = ['ilosc_transakcji', 'ilosc_internet', 'ilosc_transakcji_CashBack']
-    content_value = ['wartosc_transakcji', 'wartosc_internet', 'wartosc_wyplat_CashBack']
-
-    geo6 = pd.read_excel("./Example/NBP_GEO6.xlsx", header=3)
+    content_amount = ['ilosc', 'ilosc_internet', 'ilosc_cashback']
+    content_value = ['wartosc_transakcji', 'wartosc_internet', 'Wartość wypłat Cash Back']
 
     # devices that accept payment cards / Internet / cash back
-    for k, country in enumerate(dataframe_3['CountryCode']):
-        print(df6[0][9:41].isin([country]).any())
+    for k, country in enumerate(dataframe_3['country']):
+        print('1: ', geo6['country'].isin([country]).any())
+
         # IF country not in Database
         if country == 'uwaga - coś nowego':
             print(
-                f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']}")
-            bug_table.append([f'ST.06', dataframe_3[dataframe_3['CountryCode'] == 'uwaga - coś nowego']])
+                f"!!: In the report fraud transactions were not added (probably due to NULL value) - {dataframe_3[dataframe_3['country'] == 'uwaga - coś nowego']}")
+            bug_table.append([f'ST.06', dataframe_3[dataframe_3['country'] == 'uwaga - coś nowego']])
         # IF country in Database AND within predefined countries in excel.
 
-        elif country == 'D09':
+        elif country == 'PL':
             continue
 
         elif df6[0][9:40].isin([country]).any():
             row = df6[0][9:40][df6[0][9:40] == country].index[0]
             for i in range(3):
-                df6.iat[row, column_amount[i]] = dataframe_3[dataframe_3['CountryCode'] == country][
+                df6.iat[row, column_amount[i]] = dataframe_3[dataframe_3['country'] == country][
                     content_amount[i]].values[0]
-                df6.iat[row, column_value[i]] = dataframe_3[dataframe_3['CountryCode'] == country][
+                df6.iat[row, column_value[i]] = dataframe_3[dataframe_3['country'] == country][
                     content_value[i]].values[0]
         # ELSE rest of countries - not predefined but within database
         else:
@@ -1288,27 +1628,31 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
                 for i in range(3):
                     new_row_data.append(
-                        dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_amount[i]].values[0])
+                        dataframe_3.iloc[k][content_amount[i]])
                 for i in range(3):
                     new_row_data.append(
-                        dataframe_3[dataframe_3['name_PL'] == 'Namibia'][content_value[i]].values[0])
+                        dataframe_3.iloc[k][content_value[i]])
+
+                dataframe_3.iloc[k]['Name'] = 'Namibia'
+                dataframe_3.iloc[k]['name_PL'] = 'Namibia'
+
             # ELSE - countries in database and not predefined in excel.
             else:
                 print(country)
-                if not geo6['Code'].isin([country]).any():
+                if not geo6['country'].isin([country]).any():
                     country = 'D09'
 
                 # Country name
-                country_name = geo6[geo6['Code'] == country]['Nazwa kraju'].values[0]
+                country_name = geo6[geo6['country'] == country]['name_PL'].values[0]
                 # Country name - english version
-                country_name_english = geo6[geo6['Code'] == country]['Name'].values[0]
+                country_name_english = geo6[geo6['country'] == country]['Name'].values[0]
                 # Add new row data to DataFrame
                 new_row_data = [country, country_name, country_name_english]
 
                 for i in range(3):
-                    new_row_data.append(dataframe_3[dataframe_3['CountryCode'] == country][content_amount[i]].values[0])
+                    new_row_data.append(dataframe_3[dataframe_3['country'] == country][content_amount[i]].values[0])
                 for i in range(3):
-                    new_row_data.append(dataframe_3[dataframe_3['CountryCode'] == country][content_value[i]].values[0])
+                    new_row_data.append(dataframe_3[dataframe_3['country'] == country][content_value[i]].values[0])
 
             columns = [0, 11, 12, 13, 14, 15, 16, 17, 18]
             first_null_index = df6[9:][0].index[df6[9:][0].isnull()].tolist()[0]
@@ -1527,7 +1871,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
     logger.write(f'\nPreparing NBP_Report for:\nyear: {check_quarter()[1]},\nquarter: {check_quarter()[3]}.')
     logger.write(f'\nNBP report automation {check_quarter()[1]}')
 
-    wb_data = create_ar2_excel()
+    """wb_data = create_ar2_excel()
 
     # Create new AR2 excel file
     sheets = wb_data[0]
@@ -1554,12 +1898,12 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         row = df1[0][df1[0] == insert[0]].index[0]
         col = 6
         # Insert values to AR2 sheet
-        s1[reference(col, 'col') + reference(row, 'row')] = insert[1]
+        s1[reference(col, 'col') + reference(row, 'row')] = insert[1]"""
 
     user = 'PAYTEL\\' + d1 + ' ' + d2
     passw = d_pass
 
-    # Fill sheets in AR2
+    """    # Fill sheets in AR2
     df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
     df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
@@ -1570,7 +1914,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         progress_callback_text(f'AR2 - finished.')
     # Set progress to 50% when AR2 is completed
     if progress_callback:
-        progress_callback(50)
+        progress_callback(50)"""
 
     df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
@@ -1584,7 +1928,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         progress_callback(100)
 
     # Prepare bug report tables
-    bug_report()
+    # bug_report()
 
     # Close the log file
     log_file.close()
@@ -1640,4 +1984,4 @@ def start(name, surname, telephone, email, passw):
 
 
 if __name__ == '__main__':
-    start("Krzysztof", "Kaniewski", "+48 506 297 621", "krzysztof.kaniewski@paytel.pl", '')
+    start("Krzysztof", "Kaniewski", "+48 506 297 621", "krzysztof.kaniewski@paytel.pl", 'Xl2Km0oPYahPagh8')

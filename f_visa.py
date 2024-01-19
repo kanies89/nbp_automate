@@ -148,13 +148,25 @@ def check_quarter():
         q_prev = 4
         q_year -= 1
 
-    q_year_str = str(q_year)
+        q_year_str = str(q_year)
 
-    folders = []
-    for month in quarter_months[q_prev - 1]:
-        folders.append(q_year_str + month)
+        folders = []
 
-    months[q_prev]
+        for month in quarter_months[q_prev - 1]:
+            folders.append(q_year_str + month)
+
+        months[q_prev - 1]
+
+        return folders, q_year, months, q_prev
+
+    else:
+        q_year_str = str(q_year)
+
+        folders = []
+        for month in quarter_months[q_prev]:
+            folders.append(q_year_str + month)
+
+        months[q_prev]
 
     return folders, q_year, months, q_prev
 

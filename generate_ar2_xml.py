@@ -203,9 +203,9 @@ def create_tabs(tab, df, date):
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
 
-                    if value == '' or value == 0:
-                        continue
-                    else:
+                    if value == '' or value == 0 or pd.isnull(value):
+                        value = 0
+                    if not pd.isnull(value):
                         if taxonomy[10] in ['M17', 'M19', 'M20']:
                             unit = ['unit1', '2', format_decimal(value)]  # changed for PURE
                         else:
@@ -401,11 +401,9 @@ def add_geo(tab, df, date):
                 number += 1
     return additional_xml_code
 
-import zipfile
-
 
 def zip_file(file_path, zip_path):
-    with zipfile.ZipFile(zip_path, 'w') as zipf:
+    with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
         zipf.write(file_path, arcname='your_file_name.txt')
 
 

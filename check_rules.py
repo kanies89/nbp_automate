@@ -29,7 +29,7 @@ AR1_TO_CHECK = [
     'ST.07'
 ]
 
-geo6 = pd.read_excel("./Example/NBP_GEO6.xlsx", header=3)['Code'].to_list()
+geo6 = pd.read_excel("./Example/NBP_GEO6.xlsx", header=3)['country'].to_list()
 
 
 def to_float(value):
@@ -76,38 +76,101 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
     if ar == 1:
         pass
     elif ar == 2:
-        first_part = 0
-        second_part = 0
         results = []
 
         rules = {
-            "PCP_090": [[2, 3, 4, 5, 6, 7, 8, 9], ['8'], ['8.1.1', '8.1.2'], 0],
-            "PCP_091": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.1'], ['8.1.1.1', '8.1.1.2'], 1],
-            "PCP_092": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2'], ['8.1.2.1', '8.1.2.2'], 2],
-            "PCP_093": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.1'], ['8.1.2.1.1.{i}', [1, 4], [0, 1]], 3],
-            "PCP_094": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.1'], ['8.1.2.1.2.{i}', [1, 4], [0, 1]], 4],
-            "PCP_096": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.1.2.{i}', [1, 10], [1, 4]],
-                        ['8.1.2.1.2.{i}.1.{j}', [1, 10], [1, 4]], 5],
-            "PCP_099": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.1.2.1'], ['8.1.2.1.2.{i}.2.{j}', [0, 1], [1, 3]], 6],
-            "PCP_006": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.1.2.{i}.2.2]', [1, 10], [0, 1]],
-                        ['8.1.2.1.3.{j}', [0, 1], [2, 6]], 7],
-            "PCP_095": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.2'], ['8.1.2.2.2.{i}', [0, 10], [0, 1]], 8],
-            "PCP_102": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.2.2.1'], ['8.1.2.2.2.1.1.{j}', [0, 1], [1, 4]], 9],
-            "PCP_105": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.2.2.1'], ['8.1.2.1.2.1.2.{j}', [0, 1], [1, 4]], 10],
-            "PCP_007": [[2, 3, 4, 5, 6, 7, 8, 9], ['8.1.2.2.2.{i}.2.2', [1, 10], [0, 1]],
-                        ['8.1.2.2.3.{j}', [0, 1], [2, 8]], 11],
-            "PCP_108": [[6, 7, 8, 9], ['8.1.2.1.2.{i}.2.1', [1, 10], [0, 1]],
-                        ['8.1.2.1.2.{i}.2.1.{j}', [1, 10], [1, 4]], 12],
-            "PCP_120": [[6, 7, 8, 9], ['8.1.2.1.2.1.2.1.1'], ['8.1.2.1.2.1.2.1.1.{j}', [0, 1], [1, 5]], 13],
-            "PCP_109": [[6, 7, 8, 9], ['8.1.2.1.2.1.2.2'], ['8.1.2.1.2.1.2.2.{j}', [0, 1], [1, 4]], 14],
-            "PCP_121": [[6, 7, 8, 9], ['8.1.2.1.2.1.2.2.1'], ['8.1.2.1.2.1.2.2.1.{j}', [0, 1], [1, 5]], 15],
-            "PCP_110": [[6, 7, 8, 9], ['8.1.2.2.2.1.2.1'], ['8.1.2.2.2.1.2.1.{j}', [0, 1], [1, 4]], 16],
-            "PCP_122": [[6, 7, 8, 9], ['8.1.2.2.2.1.2.1.1'], ['8.1.2.2.2.1.2.1.1.{j}', [0, 1], [1, 6]], 17],
-            "PCP_111": [[6, 7, 8, 9], ['8.1.2.2.2.1.2.2'], ['8.1.2.2.2.1.2.2.{j}', [0, 1], [1, 4]], 18],
-            "PCP_123": [[6, 7, 8, 9], ['8.1.2.2.2.1.2.2.1'], ['8.1.2.2.2.1.2.2.1.{j}', [0, 1], [1, 6]], 19],
-            "PCP_245_R": [[12, 13], ['9.1'], ['9.1.1', '9.1.2'], 20],
-            "DSDs_038_R": [[12, 13], ['9.1.1'], ['9.1.1.{j}', [0, 1], [743, 1077]], 21],
-            "DSDs_040_R": [[12, 13], ['9.1.2'], ['9.1.2.{j}', [0, 1], [743, 1077]], 22],
+            "PCP_090": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8'],
+                        ['8.1.1', '8.1.2'],
+                        0],
+            "PCP_091": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.1'],
+                        ['8.1.1.1', '8.1.1.2'],
+                        1],
+            "PCP_092": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2'],
+                        ['8.1.2.1', '8.1.2.2'],
+                        2],
+            "PCP_093": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.1'],
+                        ['8.1.2.1.1.{i}', [1, 4], [0, 1]],
+                        3],
+            "PCP_094": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.1'],
+                        ['8.1.2.1.2.{i}', [1, 4], [0, 1]],
+                        4],
+            "PCP_096": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.1.2.{i}', [1, 10], [1, 4]],
+                        ['8.1.2.1.2.{i}.1.{j}', [1, 10], [1, 4]],
+                        5],
+            "PCP_099": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.1.2.1'],
+                        ['8.1.2.1.2.{i}.2.{j}', [1, 2], [1, 3]],
+                        6],
+            "PCP_006": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.1.2.{i}.2.2', [1, 10], [1, 2]],
+                        ['8.1.2.1.3.{j}', [1, 2], [2, 6]],
+                        7],
+            "PCP_095": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.2'],
+                        ['8.1.2.2.2.{i}', [1, 10], [1, 2]],
+                        8],
+            "PCP_102": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.2.2.1'],
+                        ['8.1.2.2.2.1.1.{j}', [1, 2], [1, 4]],
+                        9],
+            "PCP_105": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.2.2.1'],
+                        ['8.1.2.1.2.1.2.{j}', [1, 2], [1, 3]],
+                        10],
+            "PCP_007": [[2, 3, 4, 5, 6, 7, 8, 9],
+                        ['8.1.2.2.2.{i}.2.2', [1, 10], [1, 2]],
+                        ['8.1.2.2.3.{j}', [1, 2], [2, 8]],
+                        11],
+            "PCP_108": [[6, 7, 8, 9],
+                        ['8.1.2.1.2.{i}.2.1', [1, 10], [1, 2]],
+                        ['8.1.2.1.2.{i}.2.1.{j}', [1, 10], [1, 4]],
+                        12],
+            "PCP_120": [[6, 7, 8, 9],
+                        ['8.1.2.1.2.1.2.1.1'],
+                        ['8.1.2.1.2.1.2.1.1.{j}', [1, 2], [1, 5]],
+                        13],
+            "PCP_109": [[6, 7, 8, 9],
+                        ['8.1.2.1.2.1.2.2'],
+                        ['8.1.2.1.2.1.2.2.{j}', [1, 2], [1, 4]],
+                        14],
+            "PCP_121": [[6, 7, 8, 9],
+                        ['8.1.2.1.2.1.2.2.1'],
+                        ['8.1.2.1.2.1.2.2.1.{j}', [1, 2], [1, 5]],
+                        15],
+            "PCP_110": [[6, 7, 8, 9],
+                        ['8.1.2.2.2.1.2.1'],
+                        ['8.1.2.2.2.1.2.1.{j}', [1, 2], [1, 4]],
+                        16],
+            "PCP_122": [[6, 7, 8, 9],
+                        ['8.1.2.2.2.1.2.1.1'],
+                        ['8.1.2.2.2.1.2.1.1.{j}', [1, 2], [1, 6]],
+                        17],
+            "PCP_111": [[6, 7, 8, 9],
+                        ['8.1.2.2.2.1.2.2'],
+                        ['8.1.2.2.2.1.2.2.{j}', [1, 2], [1, 4]],
+                        18],
+            "PCP_123": [[6, 7, 8, 9],
+                        ['8.1.2.2.2.1.2.2.1'],
+                        ['8.1.2.2.2.1.2.2.1.{j}', [1, 2], [1, 6]],
+                        19],
+            "PCP_245_R": [[12, 13],
+                          ['9.1'],
+                          ['9.1.1', '9.1.2'],
+                          20],
+            "DSDs_038_R": [[12, 13],
+                           ['9.1.1'],
+                           ['9.1.1.{j}', [1, 2], [743, 1077]],
+                           21],
+            "DSDs_040_R": [[12, 13],
+                           ['9.1.2'],
+                           ['9.1.2.{j}', [1, 2], [743, 1077]],
+                           22]
         }
 
         special_rules = {
@@ -134,11 +197,18 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
         for sheet in sheets:
             df_tc = df[AR2_TO_CHECK[sheet]]
             columns = [*range(cc, df_tc.shape[1])]
+            print(sheet)
+            if sheet in [12, 13]:
+                code_val = 1
+            else:
+                code_val = 2
             for c in columns:
-
+                first_part = 0
+                second_part = 0
                 # part 1
-                rows = []
-                if isinstance(case[1][0], str) and '{}' in case[1][0]:
+                rows_1 = []
+                if isinstance(rules[rule][1][0], str) and '{' in rules[rule][1][0]:
+                    print(1)
                     i = case[1][1]
                     j = case[1][2]
 
@@ -146,44 +216,59 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                         for j_number in range(j[0], j[1]):  # Adjust the range as needed
                             # Use the values of i and j in your logic
                             updated_value = case[1][0].format(i=i_number, j=j_number)
-                            rows.append(df_tc[df_tc == updated_value].index[0])
-                else:
-                    rows.append(df_tc[df_tc == case[1][0]].index[0])
+                            rows_1.append(df_tc[df_tc[code_val] == updated_value].index[0])
 
-                for row in rows:
-                    if df_tc.iat[row, c] == '':
-                        first_part += 0
+                elif isinstance(case[1], list) and len(case[1]) > 1:
+                    print(2)
+                    for cas_1 in case[1]:
+                        rows_1.append(df_tc[df_tc[code_val] == cas_1].index[0])
+                else:
+                    print(3)
+                    print(code_val)
+                    matching_rows = df_tc[df_tc[code_val] == case[1][0]]
+                    if not matching_rows.empty:
+                        rows_1.append(matching_rows.index[0])
                     else:
-                        first_part += pd.to_numeric(df_tc.iat[row, c])
+                        # Handle the case when no matching rows are found
+                        print("No matching rows found.")
+
+                for row_1 in rows_1:
+                    print(4)
+                    first_part = pd.to_numeric(df_tc.iat[row_1, c] or 0)
 
                 # part 2
-                rows = []
-                if isinstance(rules[rule][2][0], str) and '{}' in rules[rule][2][0]:
+                rows_2 = []
+                if isinstance(rules[rule][2][0], str) and '{' in rules[rule][2][0]:
                     i = case[2][1]
                     j = case[2][2]
 
                     for i_number in range(i[0], i[1]):  # Adjust the range as needed
                         for j_number in range(j[0], j[1]):  # Adjust the range as needed
-                            if rule == "PCP_007" and j_number == 4:
+                            if rule == 'PCP_007' and j_number == 4:
                                 continue
                             # Use the values of i and j in your logic
                             updated_value = case[2][0].format(i=i_number, j=j_number)
-                            rows.append(df_tc[df_tc == updated_value].index[0])
-                else:
-                    rows.append(df_tc[df_tc == case[1][0]].index[0])
+                            rows_2.append(df_tc[df_tc[code_val] == updated_value].index[0])
 
-                for row in rows:
-                    if df_tc.iat[row, c] == '':
-                        second_part += 0
-                    else:
-                        second_part += pd.to_numeric(df_tc.iat[row, c])
+                elif isinstance(case[2], list) and len(case[2]) > 1:
+                    for cas_2 in case[2]:
+                        print(code_val)
+                        rows_2.append(df_tc[df_tc[code_val] == cas_2].index[0])
+                else:
+                    rows_2.append(df_tc[df_tc[code_val] == case[2]].index[0])
+
+                for row_2 in rows_2:
+                    second_part += pd.to_numeric(df_tc.iat[row_2, c] or 0)
 
                 if first_part == second_part:
                     results.append([sheet, True, rules[rule][3]])
+                    print(rule)
+                    print(f"{rules[rule][1]}: ", first_part, f'==', second_part)
+
                 else:
-                    text = ' + '.join(rules[rule][2])
                     results.append([sheet, False, rules[rule][3], c])
-                    print(f"{rules[rule][1]}: ", first_part, f'!= {text}', second_part)
+                    print(rule, 1)
+                    print(f"{rules[rule][1]}: ", first_part, f'!=', second_part)
         return results
     else:
         print(f'There are no more rules for ar{ar}')
