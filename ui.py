@@ -1,5 +1,6 @@
 import sys
 import datetime
+import openpyxl
 from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QSizePolicy, QHBoxLayout, \
     QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QDate
@@ -808,7 +809,8 @@ def perform_tests(progress_callback_text=None, progress_callback=None):
                              na_values=na_values_list)
     df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False,
                              na_values=na_values_list)
-    run_rule(2, df_nbp_2, progress_callback_text, progress_callback)
+
+    run_rule(2, path_2, progress_callback_text, progress_callback)
     run_rule(1, df_nbp_1, progress_callback_text, progress_callback)
 
     if progress_callback_text:

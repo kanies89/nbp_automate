@@ -1,5 +1,7 @@
 import pandas as pd
 from variables import geo3, geo3_wld
+from openpyxl import load_workbook
+
 
 AR2_TO_CHECK = [
     'AR2',
@@ -62,6 +64,16 @@ def to_int(value):
 
     except ValueError:
         return None  # Handle the case where the conversion fails
+
+
+def open_excel_with_formulas(file_path, sheets_to_read):
+    nbp_wb_2 = load_workbook(file_path, read_only=False, keep_links=False, data_only=True)
+    sheet_list = []
+
+    for sheet in sheets_to_read:
+        sheet_list.append([pd.DataFrame(nbp_wb_2[sheet].values), sheet])
+
+    return sheet_list
 
 
 def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
@@ -193,22 +205,30 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
         }
         case = rules[rule]
         sheets = case[0]
+        check = []
 
         for sheet in sheets:
-            df_tc = df[AR2_TO_CHECK[sheet]]
+            check.append(AR2_TO_CHECK[sheet])
+
+        df_opened = open_excel_with_formulas(df, check)
+
+        for no, s in enumerate(df_opened):
+            df_tc = s[0]
+            df_tc.to_excel('che.xlsx')
             columns = [*range(cc, df_tc.shape[1])]
-            print(sheet)
-            if sheet in [12, 13]:
+
+            if s[1] == '9.R.L.MCC' or s[1] == '9.R.W.MCC':
                 code_val = 1
             else:
                 code_val = 2
+
             for c in columns:
                 first_part = 0
                 second_part = 0
                 # part 1
                 rows_1 = []
                 if isinstance(rules[rule][1][0], str) and '{' in rules[rule][1][0]:
-                    print(1)
+                    print(1, "t")
                     i = case[1][1]
                     j = case[1][2]
 
@@ -219,12 +239,11 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                             rows_1.append(df_tc[df_tc[code_val] == updated_value].index[0])
 
                 elif isinstance(case[1], list) and len(case[1]) > 1:
-                    print(2)
+                    print(2, "t")
                     for cas_1 in case[1]:
                         rows_1.append(df_tc[df_tc[code_val] == cas_1].index[0])
                 else:
-                    print(3)
-                    print(code_val)
+                    print(3, "t")
                     matching_rows = df_tc[df_tc[code_val] == case[1][0]]
                     if not matching_rows.empty:
                         rows_1.append(matching_rows.index[0])
@@ -233,8 +252,9 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                         print("No matching rows found.")
 
                 for row_1 in rows_1:
-                    print(4)
-                    first_part = pd.to_numeric(df_tc.iat[row_1, c] or 0)
+                    print(df_tc.iat[row_1, c])
+                    first_part += pd.to_numeric(df_tc.iat[row_1, c] or 0)
+                    print(first_part)
 
                 # part 2
                 rows_2 = []
@@ -261,12 +281,12 @@ def check_rules_ar2(ar: int, df: pd.DataFrame, rule: str, cc: int) -> list:
                     second_part += pd.to_numeric(df_tc.iat[row_2, c] or 0)
 
                 if first_part == second_part:
-                    results.append([sheet, True, rules[rule][3]])
+                    results.append([sheets[no], True, rules[rule][3]])
                     print(rule)
                     print(f"{rules[rule][1]}: ", first_part, f'==', second_part)
 
                 else:
-                    results.append([sheet, False, rules[rule][3], c])
+                    results.append([sheets[no], False, rules[rule][3], c])
                     print(rule, 1)
                     print(f"{rules[rule][1]}: ", first_part, f'!=', second_part)
         return results

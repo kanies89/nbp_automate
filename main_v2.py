@@ -253,12 +253,12 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 filtered_df['Typ_karty'] == "credit") & (filtered_df['czy_SCA'] == 1),  # 16
         (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
                 filtered_df['Typ_karty'] == "credit") & (filtered_df['czy_SCA'] == 0),  # 17
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+        (filtered_df['czy_moto'] != "MOTO") & (
                 filtered_df['czy_niskokwotowa_zblizeniowa'] == 1) & (filtered_df['czy_SCA'] == 0),  # 18
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
+        (filtered_df['czy_moto'] != "MOTO") & (
                 filtered_df['czy_niskokwotowa_zblizeniowa'] == 0) & (filtered_df['czy_SCA'] == 0),  # 19
         (filtered_df['country'] == "PL"),  # 20
-        (filtered_df['country'] != "PL")  # 21
+        (filtered_df['country'] != "PL") # 21
     ]
 
     # List of result DataFrames
@@ -384,7 +384,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     if progress_callback_text:
         progress_callback_text(f'AR2 - Fraud data: 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2.')
 
-    file_path = f"{TEMP}df_fraud.csv"
+    file_path = f"{TEMP}df_f.csv"
 
     if not os.path.exists(file_path):
         # Get the Visa
@@ -431,130 +431,129 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
         df_fraud.to_csv(f'{TEMP}df_fraud.csv')
 
+        countries_list = [
+            "BE",
+            "IT",
+            "AT",
+            "BG",
+            "HR",
+            "CY",
+            "CZ",
+            "DK",
+            "EE",
+            "FI",
+            "FR",
+            "GR",
+            "ES",
+            "NL",
+            "IE",
+            "IS",
+            "LT",
+            "LI",
+            "LU",
+            "LV",
+            "MT",
+            "DE",
+            "NO",
+            "PT",
+            "RO",
+            "SK",
+            "SI",
+            "SE",
+            "HU"
+        ]
+
+        country_mapping = {'PL': 'W2'}
+
+        df_fraud['Category'] = df_fraud['country'].apply(
+            lambda x: x if x in countries_list else country_mapping.get(x, 'G1'))
+
+        query_arn = ''
+        for number, arn in enumerate(df_fraud['ARN']):
+            if number == df_fraud['ARN'].size - 1:
+                query_arn += f"'{arn}'"
+            else:
+                query_arn += f"'{arn}',"
+
+        sql_select = f"""
+    SELECT
+    aquirerReferenceNumber 'ARN',
+    te_pos_entry_mode, 
+    IIF(substring(te_pos_entry_mode, 1, 2) = '01', 'MOTO', 'inne') as czy_moto,
+    CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
+    ELSE 0 end as czy_niskokwotowa_zblizeniowa
+    
+    FROM [paytel_olap].[dbo].[v_trans] -- w przypadku starszych niż 90 dni v_trans
+    join [paytel_olap].[dbo].v_trans_ext on (tr_tran_nr=te_tran_nr)	
+    left join [paytel_olap].[dbo].v_visa_transaction  on (tranNr=tr_tran_nr) 
+    left join [paytel_olap].[dbo].terminal on (_tr_tid=_t_tid)
+    left join [paytel_olap].[dbo].shop on (ms_id=t_sid)
+    left join [paytel_olap].[dbo].merchant on (tr_mid=m_mid)
+    left join [paytel_olap].[dbo].visa_product_id on productId=vp_product_id
+    WHERE aquirerReferenceNumber in ({query_arn})
+    
+    UNION
+    
+    SELECT
+    aquirerReferenceNumber 'ARN',
+    te_pos_entry_mode, 
+    IIF(substring(te_pos_entry_mode, 1, 2) = '01', 'MOTO', 'inne') as czy_moto,
+    CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
+    ELSE 0 end as czy_niskokwotowa_zblizeniowa
+    
+    FROM [paytel_olap].[dbo].[v_trans] -- w przypadku starszych niż 90 dni v_trans
+    join [paytel_olap].[dbo].v_trans_ext on (tr_tran_nr=te_tran_nr)	
+    JOIN [paytel_olap].[dbo].if_transaction AS IT (NOLOCK) ON isnull(tr_prev_tran_nr, tr_tran_nr) = tranNr
+    LEFT JOIN [paytel_olap].[dbo].mc_transaction AS MCT (NOLOCK)ON IT.postTranId = MCT.postTranId
+    left join [paytel_olap].[dbo].terminal on (_tr_tid=_t_tid)
+    left join [paytel_olap].[dbo].shop on (ms_id=t_sid)
+    left join [paytel_olap].[dbo].merchant on (tr_mid=m_mid)
+    
+    WHERE aquirerReferenceNumber in ({query_arn})"""
+
+        result = connect_single_query(sql_select)[0]
+        df_fraud = pd.merge(df_fraud, result, on='ARN', how='inner')
+
+        # Group by and calculate sum and count aggregations
+        grouped_sum = \
+            df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
+                              'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])['tr_amout'].sum().reset_index()
+        grouped_count = \
+            df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
+                              'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])[
+                'tr_amout'].count().reset_index()
+
+        # Rename columns for clarity
+        grouped_sum.rename(columns={'tr_amout': 'Sum'}, inplace=True)
+        grouped_count.rename(columns={'tr_amout': 'Count'}, inplace=True)
+
+        # Merge the grouped dataframes on the specified columns
+        merged_grouped_table = pd.merge(grouped_sum, grouped_count,
+                                        on=['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node',
+                                            'czy_moto', 'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])
+
+        # Set the desired index
+        merged_grouped_table.set_index(['Category'], inplace=True)
+
+        # 8 - Card-based payment transactions with card-based payment instruments issued by resident PSP (except cards
+        # with an e-money function only) [received] Define columns to be summed
+        # Define columns to be summed
+        sum_columns = ['Sum', 'Count']
+
+        df_total = merged_grouped_table.groupby(
+            by=['Category', 'tr_sink_node', 'czy_moto', 'Typ_karty', 'czy_niskokwotowa_zblizeniowa', 'czy_SCA',
+                'FT description'])[sum_columns].sum().reset_index()
     else:
-        df_fraud = pd.read_csv(file_path)
-
-    countries_list = [
-        "BE",
-        "IT",
-        "AT",
-        "BG",
-        "HR",
-        "CY",
-        "CZ",
-        "DK",
-        "EE",
-        "FI",
-        "FR",
-        "GR",
-        "ES",
-        "NL",
-        "IE",
-        "IS",
-        "LT",
-        "LI",
-        "LU",
-        "LV",
-        "MT",
-        "DE",
-        "NO",
-        "PT",
-        "RO",
-        "SK",
-        "SI",
-        "SE",
-        "HU"
-    ]
-
-    country_mapping = {'PL': 'W2'}
-
-    df_fraud['Category'] = df_fraud['country'].apply(
-        lambda x: x if x in countries_list else country_mapping.get(x, 'G1'))
-
-    query_arn = ''
-    for number, arn in enumerate(df_fraud['ARN']):
-        if number == df_fraud['ARN'].size - 1:
-            query_arn += f"'{arn}'"
-        else:
-            query_arn += f"'{arn}',"
-
-    sql_select = f"""
-SELECT
-aquirerReferenceNumber 'ARN',
-te_pos_entry_mode, 
-IIF(substring(te_pos_entry_mode, 1, 2) = '01', 'MOTO', 'inne') as czy_moto,
-CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
-ELSE 0 end as czy_niskokwotowa_zblizeniowa
-
-FROM [paytel_olap].[dbo].[v_trans] -- w przypadku starszych niż 90 dni v_trans
-join [paytel_olap].[dbo].v_trans_ext on (tr_tran_nr=te_tran_nr)	
-left join [paytel_olap].[dbo].v_visa_transaction  on (tranNr=tr_tran_nr) 
-left join [paytel_olap].[dbo].terminal on (_tr_tid=_t_tid)
-left join [paytel_olap].[dbo].shop on (ms_id=t_sid)
-left join [paytel_olap].[dbo].merchant on (tr_mid=m_mid)
-left join [paytel_olap].[dbo].visa_product_id on productId=vp_product_id
-WHERE aquirerReferenceNumber in ({query_arn})
-
-UNION
-
-SELECT
-aquirerReferenceNumber 'ARN',
-te_pos_entry_mode, 
-IIF(substring(te_pos_entry_mode, 1, 2) = '01', 'MOTO', 'inne') as czy_moto,
-CASE WHEN abs(tr_amount)<=10000 and substring(te_pos_entry_mode, 1, 2) in ('07','91') THEN 1
-ELSE 0 end as czy_niskokwotowa_zblizeniowa
-
-FROM [paytel_olap].[dbo].[v_trans] -- w przypadku starszych niż 90 dni v_trans
-join [paytel_olap].[dbo].v_trans_ext on (tr_tran_nr=te_tran_nr)	
-JOIN [paytel_olap].[dbo].if_transaction AS IT (NOLOCK) ON isnull(tr_prev_tran_nr, tr_tran_nr) = tranNr
-LEFT JOIN [paytel_olap].[dbo].mc_transaction AS MCT (NOLOCK)ON IT.postTranId = MCT.postTranId
-left join [paytel_olap].[dbo].terminal on (_tr_tid=_t_tid)
-left join [paytel_olap].[dbo].shop on (ms_id=t_sid)
-left join [paytel_olap].[dbo].merchant on (tr_mid=m_mid)
-
-WHERE aquirerReferenceNumber in ({query_arn})"""
-
-    result = connect_single_query(sql_select)[0]
-    df_fraud = pd.merge(df_fraud, result, on='ARN', how='inner')
-
-    # Group by and calculate sum and count aggregations
-    grouped_sum = \
-        df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
-                          'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])['tr_amout'].sum().reset_index()
-    grouped_count = \
-        df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
-                          'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])[
-            'tr_amout'].count().reset_index()
-
-    # Rename columns for clarity
-    grouped_sum.rename(columns={'tr_amout': 'Sum'}, inplace=True)
-    grouped_count.rename(columns={'tr_amout': 'Count'}, inplace=True)
-
-    # Merge the grouped dataframes on the specified columns
-    merged_grouped_table = pd.merge(grouped_sum, grouped_count,
-                                    on=['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node',
-                                        'czy_moto', 'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])
-
-    # Set the desired index
-    merged_grouped_table.set_index(['Category'], inplace=True)
-
-    # 8 - Card-based payment transactions with card-based payment instruments issued by resident PSP (except cards
-    # with an e-money function only) [received] Define columns to be summed
-    # Define columns to be summed
-    sum_columns = ['Sum', 'Count']
-
-    df_total = merged_grouped_table.groupby(
-        by=['Category', 'tr_sink_node', 'czy_moto', 'Typ_karty', 'czy_niskokwotowa_zblizeniowa', 'czy_SCA',
-            'FT description'])[sum_columns].sum().reset_index()
+        df_total = pd.read_csv(file_path)
 
     sheets = [wb_sheets[3][0], wb_sheets[4][0]]
 
-    # 8.1.1 initiated non-electronically
-    df_total_moto = df_total[df_total['czy_moto'] == 'MOTO']
+    # 8.1.1.1 initiated via non-remote payment channel
+    df_total_moto = df_total[df_total['czy_moto'] != 'MOTO']
 
     for sheet in sheets:
         for r in range(df_total_moto.shape[0]):
-            condition = df3.iloc[30:, 2] == '8.1.1'
+            condition = df3.iloc[30:, 2] == '8.1.1.1'
             row = condition[condition].index[0]
 
             country = df_total_moto.iloc[r][0]
@@ -575,10 +574,6 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
                 bug_table.append([f'BUG_{sheet}', country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-    # 8.1.1.1 initiated via non-remote payment channel
-
-    # Always 0
 
     # 8.1.1.2 initiated via remote payment channel
     df_total_moto = df_total[df_total['czy_moto'] == 'MOTO']
@@ -614,27 +609,16 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
             sum_v = df_total_moto.iloc[r][7]
             count_v = df_total_moto.iloc[r][8]
 
+            # 8.1.2.1.1.1 Initiated at a physical EFTPOS
+            condition = df3.iloc[30:, 2] == '8.1.2.1.1.1'
+            row = condition[condition].index[0]
+
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
             except KeyError:
                 bug_table.append([f'BUG_{sheet}', country])
                 print(
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            # 8.1.2 initiated electronically
-            condition = df3.iloc[30:, 2] == '8.1.2'
-            row = condition[condition].index[0]
-
-            if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
-            else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
-
-            # 8.1.2.1.1.1 Initiated at a physical EFTPOS
-            condition = df3.iloc[30:, 2] == '8.1.2.1.1.1'
-            row = condition[condition].index[0]
 
             if sheet == '5a.R.LF_PLiW2':
                 s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
@@ -1186,13 +1170,13 @@ WHERE aquirerReferenceNumber in ({query_arn})"""
 
         df7[2] = df7[2].astype(str)
 
-        mccs = df_mcc[df_mcc['country'] == country]['mcc'].astype(str)
+        mccs = df_mcc[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['mcc'].astype(str)
 
         for m, mcc in enumerate(mccs):
             print(mcc, type(mcc))
             # Convert df_nbp_2[1] column to string
-            mcc_value_w = df_mcc[df_mcc['country'] == country]['wartosc_transakcji'].iloc[m]
-            mcc_value_i = df_mcc[df_mcc['country'] == country]['ilosc'].iloc[m]
+            mcc_value_w = df_mcc[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['wartosc_transakcji'].iloc[m]
+            mcc_value_i = df_mcc[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['ilosc'].iloc[m]
 
             try:
                 col = pd.Index(df7.iloc[27]).get_loc(country)
@@ -1871,7 +1855,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
     logger.write(f'\nPreparing NBP_Report for:\nyear: {check_quarter()[1]},\nquarter: {check_quarter()[3]}.')
     logger.write(f'\nNBP report automation {check_quarter()[1]}')
 
-    """wb_data = create_ar2_excel()
+    wb_data = create_ar2_excel()
 
     # Create new AR2 excel file
     sheets = wb_data[0]
@@ -1898,12 +1882,12 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         row = df1[0][df1[0] == insert[0]].index[0]
         col = 6
         # Insert values to AR2 sheet
-        s1[reference(col, 'col') + reference(row, 'row')] = insert[1]"""
+        s1[reference(col, 'col') + reference(row, 'row')] = insert[1]
 
     user = 'PAYTEL\\' + d1 + ' ' + d2
     passw = d_pass
 
-    """    # Fill sheets in AR2
+    # Fill sheets in AR2
     df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
     df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
@@ -1914,7 +1898,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         progress_callback_text(f'AR2 - finished.')
     # Set progress to 50% when AR2 is completed
     if progress_callback:
-        progress_callback(50)"""
+        progress_callback(50)
 
     df_fraud_st7 = pd.read_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
