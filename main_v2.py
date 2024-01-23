@@ -548,33 +548,6 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
     sheets = [wb_sheets[3][0], wb_sheets[4][0]]
 
-    # 8.1.1.1 initiated via non-remote payment channel
-    df_total_moto = df_total[df_total['czy_moto'] != 'MOTO']
-
-    for sheet in sheets:
-        for r in range(df_total_moto.shape[0]):
-            condition = df3.iloc[30:, 2] == '8.1.1.1'
-            row = condition[condition].index[0]
-
-            country = df_total_moto.iloc[r][0]
-            sum_v = df_total_moto.iloc[r][7]
-            count_v = df_total_moto.iloc[r][8]
-
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
     # 8.1.1.2 initiated via remote payment channel
     df_total_moto = df_total[df_total['czy_moto'] == 'MOTO']
 
@@ -1223,7 +1196,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 9.R.L.MCC and 9.R.W.MCC.')
 
-    return df_fraud
+    if "df_fraud" in locals():
+        df_fraud.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None,
@@ -1888,8 +1862,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
     passw = d_pass
 
     # Fill sheets in AR2
-    df_fraud_st7 = prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
-    df_fraud_st7.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+    prepare_data_ar2(user, passw, sheets, progress_callback, progress_callback_text)
 
     # Save everything to new excel file
     wb.save(wb_data[2])
