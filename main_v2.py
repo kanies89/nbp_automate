@@ -513,52 +513,52 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
         result = connect_single_query(sql_select)[0]
         df_fraud = pd.merge(df_fraud, result, on='ARN', how='inner')
-
-        # Group by and calculate sum and count aggregations
-        grouped_sum = \
-            df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
-                              'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])['tr_amout'].sum().reset_index()
-        grouped_count = \
-            df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
-                              'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])[
-                'tr_amout'].count().reset_index()
-
-        # Rename columns for clarity
-        grouped_sum.rename(columns={'tr_amout': 'Sum'}, inplace=True)
-        grouped_count.rename(columns={'tr_amout': 'Count'}, inplace=True)
-
-        # Merge the grouped dataframes on the specified columns
-        merged_grouped_table = pd.merge(grouped_sum, grouped_count,
-                                        on=['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node',
-                                            'czy_moto', 'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])
-
-        # Set the desired index
-        merged_grouped_table.set_index(['Category'], inplace=True)
-
-        # 8 - Card-based payment transactions with card-based payment instruments issued by resident PSP (except cards
-        # with an e-money function only) [received] Define columns to be summed
-        # Define columns to be summed
-        sum_columns = ['Sum', 'Count']
-
-        df_total = merged_grouped_table.groupby(
-            by=['Category', 'tr_sink_node', 'czy_moto', 'Typ_karty', 'czy_niskokwotowa_zblizeniowa', 'czy_SCA',
-                'FT description'])[sum_columns].sum().reset_index()
     else:
-        df_total = pd.read_csv(file_path)
+        df_fraud = pd.read_csv(file_path)
+
+    # Group by and calculate sum and count aggregations
+    grouped_sum = \
+        df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
+                          'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])['tr_amout'].sum().reset_index()
+    grouped_count = \
+        df_fraud.groupby(['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node', 'czy_moto',
+                          'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])[
+            'tr_amout'].count().reset_index()
+
+    # Rename columns for clarity
+    grouped_sum.rename(columns={'tr_amout': 'Sum'}, inplace=True)
+    grouped_count.rename(columns={'tr_amout': 'Count'}, inplace=True)
+
+    # Merge the grouped dataframes on the specified columns
+    merged_grouped_table = pd.merge(grouped_sum, grouped_count,
+                                    on=['Category', 'czy_SCA', 'FT description', 'Typ_karty', 'tr_sink_node',
+                                        'czy_moto', 'czy_niskokwotowa_zblizeniowa', 'pos_entry_mode'])
+
+    # Set the desired index
+    merged_grouped_table.set_index(['Category'], inplace=True)
+
+    # 8 - Card-based payment transactions with card-based payment instruments issued by resident PSP (except cards
+    # with an e-money function only) [received] Define columns to be summed
+    # Define columns to be summed
+    sum_columns = ['Sum', 'Count']
+
+    df_total = merged_grouped_table.groupby(
+        by=['Category', 'tr_sink_node', 'czy_moto', 'Typ_karty', 'czy_niskokwotowa_zblizeniowa', 'czy_SCA',
+            'FT description'])[sum_columns].sum().reset_index()
 
     sheets = [wb_sheets[3][0], wb_sheets[4][0]]
 
     # 8.1.1.2 initiated via remote payment channel
-    df_total_moto = df_total[df_total['czy_moto'] == 'MOTO']
+    df_total_moto = df_total[df_total['czy_moto'] == 'MOTO'][sum_columns].groupby("Category").sum().reset_index()
 
     for sheet in sheets:
-        for r in range(df_total_moto.shape[0]):
+        category = df_total_moto['Category']
+        for country in category:
             condition = df3.iloc[30:, 2] == '8.1.1.2'
             row = condition[condition].index[0]
 
-            country = df_total_moto.iloc[r][0]
-            sum_v = df_total_moto.iloc[r][7]
-            count_v = df_total_moto.iloc[r][8]
+            sum_v = df_total_moto[df_total_moto == country]['Sum'].sum()
+            count_v = df_total_moto[df_total_moto == country]['Count'].sum()
 
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -568,54 +568,21 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
 
             if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
+                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
             else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
+                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
-    df_total_moto = df_total[df_total['czy_moto'] == 'inne']
+    df_total_moto_2 = df_total[df_total['czy_moto'] == 'inne'][sum_columns].groupby("Category").sum().reset_index()
 
+    # 8.1.2.1.1.1 Initiated at a physical EFTPOS
     for sheet in sheets:
-        for r in range(df_total_moto.shape[0]):
-            country = df_total_moto.iloc[r][0]
-            sum_v = df_total_moto.iloc[r][7]
-            count_v = df_total_moto.iloc[r][8]
-
-            # 8.1.2.1.1.1 Initiated at a physical EFTPOS
+        category = df_total_moto_2['Category']
+        for country in category:
             condition = df3.iloc[30:, 2] == '8.1.2.1.1.1'
             row = condition[condition].index[0]
 
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
-            else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
-
-    # =================================== VISA
-
-    # 8.1.2.1.2.1 Card-based payment instruments issued under PCS VISA
-    df_total_tr_sink_node_visa = df_total[df_total['tr_sink_node'] == 'SN-Visa']
-
-    # 8.1.2.1.2.1.1.1 with a debit card
-    df_total_typ_karty_debit = df_total_tr_sink_node_visa[df_total_tr_sink_node_visa['Typ_karty'] == 'Debit']
-
-    for sheet in sheets:
-        for r in range(df_total_typ_karty_debit.shape[0]):
-            condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.1.1'
-            row = condition[condition].index[0]
-
-            country = df_total_typ_karty_debit.iloc[r][0]
-            sum_v = df_total_typ_karty_debit.iloc[r][7]
-            count_v = df_total_typ_karty_debit.iloc[r][8]
+            sum_v = df_total_moto_2[df_total_moto_2 == country]['Sum'].sum()
+            count_v = df_total_moto_2[df_total_moto_2 == country]['Count'].sum()
 
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -625,356 +592,211 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
 
             if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
+                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
             else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
+                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
-    # 8.1.2.1.2.1.1.3 with a credit card
-    df_total_typ_karty_credit = df_total_tr_sink_node_visa[df_total_tr_sink_node_visa['Typ_karty'] == 'Credit']
+    for card in ['SN-Visa', 'SN-MasterC']:
+        if card == 'SN-Visa':
+            # =================================== VISA
+            # 8.1.2.1.2.1 Card-based payment instruments issued under PCS VISA
+            df_total_tr_sink_node = df_total[df_total['tr_sink_node'] == 'SN-Visa'][sum_columns].groupby("Category").sum().reset_index()
+            int_v = 1
+        else:
+            # =================================== MASTERCARD
+            # 8.1.2.1.2.2 Card-based payment instruments issued under PCS MASTERCARD
+            df_total_tr_sink_node = df_total[df_total['tr_sink_node'] == 'SN-MasterC']
+            int_v = 2
 
-    for sheet in sheets:
-        for r in range(df_total_typ_karty_credit.shape[0]):
-            condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.1.3'
-            row = condition[condition].index[0]
+        # 8.1.2.1.2.1/2.1.1 with a debit card
+        df_total_typ_karty_debit = df_total_tr_sink_node[df_total_tr_sink_node['Typ_karty'] == 'Debit'][sum_columns].groupby("Category").sum().reset_index()
 
-            country = df_total_typ_karty_credit.iloc[r][0]
-            sum_v = df_total_typ_karty_credit.iloc[r][7]
-            count_v = df_total_typ_karty_credit.iloc[r][8]
+        for sheet in sheets:
+            category = df_total_typ_karty_debit['Category']
+            for country in category:
+                condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.1.1'
+                row = condition[condition].index[0]
 
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
+                sum_v = df_total_typ_karty_debit[df_total_typ_karty_debit == country]['Sum'].sum()
+                count_v = df_total_typ_karty_debit[df_total_typ_karty_debit == country]['Count'].sum()
 
-            if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
-            else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
+                try:
+                    col = pd.Index(df3.iloc[27]).get_loc(country)
+                except KeyError:
+                    bug_table.append([f'BUG_{sheet}', country])
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
 
-    # 8.1.2.1.2.1.2.1 SCA
-    df_total_visa_sca = df_total_tr_sink_node_visa[df_total_tr_sink_node_visa['czy_SCA'] == 'SCA']
+                if sheet == '5a.R.LF_PLiW2':
+                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
+                else:
+                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
-    for sheet in sheets:
-        for r in range(df_total_visa_sca.shape[0]):
-            # condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.1'
-            # row = condition[condition].index[0]
-            #
-            country = df_total_visa_sca.iloc[r][0]
-            sum_v = df_total_visa_sca.iloc[r][7]
-            count_v = df_total_visa_sca.iloc[r][8]
+        # 8.1.2.1.2.1.1.3 with a credit card
+        df_total_typ_karty_credit = df_total_tr_sink_node[df_total_tr_sink_node['Typ_karty'] == 'Credit'][sum_columns].groupby("Category").sum().reset_index()
 
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
+        for sheet in sheets:
+            category = df_total_typ_karty_credit['Category']
+            for country in category:
+                condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.1.3'
+                row = condition[condition].index[0]
 
-            if df_total_visa_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
+                sum_v = df_total_typ_karty_credit[df_total_typ_karty_credit == country]["Sum"].sum()
+                count_v = df_total_typ_karty_credit[df_total_typ_karty_credit == country]["Count"].sum()
+
+                try:
+                    col = pd.Index(df3.iloc[27]).get_loc(country)
+                except KeyError:
+                    bug_table.append([f'BUG_{sheet}', country])
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
+
+                if sheet == '5a.R.LF_PLiW2':
+                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
+                else:
+                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
+
+        # 8.1.2.1.2.1.2.1 SCA
+        df_total_visa_sca = df_total_tr_sink_node[df_total_tr_sink_node['czy_SCA'] == 'SCA'][sum_columns].groupby(["Category", 'FT description']).sum().reset_index()
+
+        for sheet in sheets:
+            category = df_total_visa_sca['Category']
+            for country in category:
+                try:
+                    col = pd.Index(df3.iloc[27]).get_loc(country)
+                except KeyError:
+                    bug_table.append([f'BUG_{sheet}', country])
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
                 # 8.1.2.1.2.1.2.1.1.1 Lost or Stolen card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.1.1.1'
-                row = condition[condition].index[0]
+                if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
+                    condition_v =(df_total_visa_sca == country) & (df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty')
+                    sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.1.1.1'
+                    row = condition[condition].index[0]
 
-            elif df_total_visa_sca.iloc[r]['FT description'] == 'Karta sfałszowana':
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.1.1.3 Counterfeit card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.1.1.3'
-                row = condition[condition].index[0]
+                if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Karta sfałszowana'].empty:
+                    condition_v = (df_total_visa_sca == country) & (
+                                df_total_visa_sca['FT description'] == 'Karta sfałszowana')
+                    sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.1.1.3'
+                    row = condition[condition].index[0]
 
-            elif df_total_visa_sca.iloc[r]['FT description'] == 'Nieodebrana karta':
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.1.1.2 Card Not Received
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.1.1.2'
-                row = condition[condition].index[0]
+                if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Nieodebrana karta'].empty:
+                    condition_v = (df_total_visa_sca == country) & (
+                                df_total_visa_sca['FT description'] == 'Nieodebrana karta')
+                    sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.1.1.2'
+                    row = condition[condition].index[0]
 
-            else:
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.1.1.4 Others
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.1.1.4'
-                row = condition[condition].index[0]
+                if not df_total_visa_sca[df_total_visa_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta']].empty:
+                    condition_v = (df_total_visa_sca == country) & (df_total_visa_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+                    sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.1.1.4'
+                    row = condition[condition].index[0]
 
-    # 8.1.2.1.2.1.2.2 non-SCA
-    df_total_visa_non_sca = df_total_tr_sink_node_visa[df_total_tr_sink_node_visa['czy_SCA'] == 'non_SCA']
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
+                            to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
+                            to_float(sum_v), 2)
 
-    for sheet in sheets:
-        for r in range(df_total_visa_non_sca.shape[0]):
-            # condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.2'
-            # row = condition[condition].index[0]
-            #
-            country = df_total_visa_non_sca.iloc[r][0]
-            sum_v = df_total_visa_non_sca.iloc[r][7]
-            count_v = df_total_visa_non_sca.iloc[r][8]
-            #
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
+        # 8.1.2.1.2.1.2.2 non-SCA
+        df_total_visa_non_sca = df_total_tr_sink_node[df_total_tr_sink_node['czy_SCA'] == 'non_SCA'][sum_columns].groupby(["Category", 'FT description']).sum().reset_index()
 
-            if df_total_visa_non_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
+        for sheet in sheets:
+            category = df_total_visa_non_sca['Category']
+            for country in category:
+                try:
+                    col = pd.Index(df3.iloc[27]).get_loc(country)
+                except KeyError:
+                    bug_table.append([f'BUG_{sheet}', country])
+                    print(
+                        f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
                 # 8.1.2.1.2.1.2.2.1.1 Lost or Stolen card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.2.1.1'
-                row = condition[condition].index[0]
+                if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
+                    condition_v = (df_total_visa_non_sca == country) & (df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty')
+                    sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.2.1.1'
+                    row = condition[condition].index[0]
 
-            elif df_total_visa_non_sca.iloc[r]['FT description'] == 'Karta sfałszowana':
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.3 Counterfeit card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.2.1.3'
-                row = condition[condition].index[0]
+                if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Karta sfałszowana'].empty:
+                    condition_v = (df_total_visa_non_sca == country) & (
+                                df_total_visa_non_sca['FT description'] == 'Karta sfałszowana')
+                    sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = to_float(df4[col].iloc[row]) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.2.1.3'
+                    row = condition[condition].index[0]
 
-            elif df_total_visa_non_sca.iloc[r]['FT description'] == 'Nieodebrana karta':
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
+                            to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = to_float(df4[col].iloc[row]) + round(
+                            to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.2 Card Not Received
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.2.1.2'
-                row = condition[condition].index[0]
+                if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Nieodebrana karta'].empty:
+                    condition_v = (df_total_visa_non_sca == country) & (
+                                df_total_visa_non_sca['FT description'] == 'Nieodebrana karta')
+                    sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-            else:
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.2.1.2'
+                    row = condition[condition].index[0]
+
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
+                            to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
+                            to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.4 Others
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.1.2.2.1.4'
-                row = condition[condition].index[0]
+                if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta']].empty:
+                    condition_v = (df_total_visa_non_sca == country) & (df_total_visa_non_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+                    sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
+                    count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.2.2.1.4'
+                    row = condition[condition].index[0]
 
-    # =================================== MASTERCARD
-
-    # 8.1.2.1.2.2 Card-based payment instruments issued under PCS MASTERCARD
-    df_total_tr_sink_node_masterc = df_total[df_total['tr_sink_node'] == 'SN-MasterC']
-
-    # 8.1.2.1.2.2.1.1 with a debit card
-    df_total_typ_karty_debit = df_total_tr_sink_node_masterc[df_total_tr_sink_node_masterc['Typ_karty'] == 'Debit']
-
-    for sheet in sheets:
-        for r in range(df_total_typ_karty_debit.shape[0]):
-            condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.1.1'
-            row = condition[condition].index[0]
-
-            country = df_total_typ_karty_debit.iloc[r][0]
-            sum_v = df_total_typ_karty_debit.iloc[r][7]
-            count_v = df_total_typ_karty_debit.iloc[r][8]
-
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
-            else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
-
-    # 8.1.2.1.2.2.1.3 with a credit card
-    df_total_typ_karty_credit = df_total_tr_sink_node_masterc[
-        df_total_tr_sink_node_masterc['Typ_karty'] == 'Credit']
-
-    for sheet in sheets:
-        for r in range(df_total_typ_karty_credit.shape[0]):
-            condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.1.3'
-            row = condition[condition].index[0]
-
-            country = df_total_typ_karty_credit.iloc[r][0]
-            sum_v = df_total_typ_karty_credit.iloc[r][7]
-            count_v = df_total_typ_karty_credit.iloc[r][8]
-
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
-            else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
-
-    # 8.1.2.1.2.2.2.1 SCA
-    df_total_masterc_sca = df_total_tr_sink_node_masterc[df_total_tr_sink_node_masterc['czy_SCA'] == 'SCA']
-
-    for sheet in sheets:
-        for r in range(df_total_masterc_sca.shape[0]):
-
-            country = df_total_masterc_sca.iloc[r][0]
-            sum_v = df_total_masterc_sca.iloc[r][7]
-            count_v = df_total_masterc_sca.iloc[r][8]
-
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            if df_total_visa_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
-                # 8.1.2.1.2.2.2.1.1.1 Lost or Stolen card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.1.1.1'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = to_float(df4[col].iloc[row]) + round(
-                        to_float(sum_v), 2)
-
-            elif df_total_visa_sca.iloc[r]['FT description'] == 'Karta sfałszowana':
-                # 8.1.2.1.2.2.2.1.1.3 Counterfeit card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.1.1.3'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = to_float(df4[col].iloc[row]) + round(
-                        to_float(sum_v), 2)
-
-            elif df_total_visa_sca.iloc[r]['FT description'] == 'Nieodebrana karta':
-                # 8.1.2.1.2.2.2.1.1.2 Card Not Received
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.1.1.2'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-            else:
-                # 8.1.2.1.2.1.2.1.1.4 Others
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.1.1.4'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-
-    # 8.1.2.1.2.2.2.2 non-SCA
-    df_total_masterc_non_sca = df_total_tr_sink_node_masterc[df_total_tr_sink_node_masterc['czy_SCA'] == 'non_SCA']
-
-    for sheet in sheets:
-        for r in range(df_total_masterc_non_sca.shape[0]):
-
-            country = df_total_masterc_non_sca.iloc[r][0]
-            sum_v = df_total_masterc_non_sca.iloc[r][7]
-            count_v = df_total_masterc_non_sca.iloc[r][8]
-
-            try:
-                col = pd.Index(df3.iloc[27]).get_loc(country)
-            except KeyError:
-                bug_table.append([f'BUG_{sheet}', country])
-                print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
-
-            if df_total_masterc_non_sca.iloc[r]['FT description'] == 'Zgubienie lub kradzież karty':
-                # 8.1.2.1.2.2.2.2.1.1 Lost or Stolen card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.2.1.1'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-
-            elif df_total_masterc_non_sca.iloc[r]['FT description'] == 'Karta sfałszowana':
-                # 8.1.2.1.2.2.2.2.1.3 Counterfeit card
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.2.1.3'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-
-            elif df_total_masterc_non_sca.iloc[r]['FT description'] == 'Nieodebrana karta':
-                # 8.1.2.1.2.2.2.2.1.2 Card Not Received
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.2.1.2'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
-            else:
-                # 8.1.2.1.2.2.2.2.1.4 Others
-                condition = df3.iloc[30:, 2] == '8.1.2.1.2.2.2.2.1.4'
-                row = condition[condition].index[0]
-
-                if sheet == '5a.R.LF_PLiW2':
-                    s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                        to_float(count_v), 2)
-                else:
-                    s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                        to_float(sum_v), 2)
+                    if sheet == '5a.R.LF_PLiW2':
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
+                            to_float(count_v), 2)
+                    else:
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
+                            to_float(sum_v), 2)
 
     # 8.1.2.1.3.3 Contactless low value
     df_total_contactless = df_total[df_total['czy_niskokwotowa_zblizeniowa'] == 1]
