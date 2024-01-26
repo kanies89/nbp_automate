@@ -446,14 +446,14 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
         with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
             file.write(xml_code)
 
-    # GEO3_TABS = [
-    #     '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
-    # ]
+    GEO3_TABS = [
+         '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
+    ]
 
-    # for sheet in GEO3_TABS:
-    #     xml_code = add_geo(sheet, df, date)
-    #     with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
-    #         file.write(xml_code)
+    for sheet in GEO3_TABS:
+        xml_code = add_geo(sheet, df, date)
+        with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
+            file.write(xml_code)
 
     xml_code = '</xbrli:xbrl>'
 

@@ -39,11 +39,11 @@ def reference(index, type_ref):
     if type_ref == "col":
         reference_address = utils.get_column_letter(index + 1)
     elif type_ref == "row":
-        reference_address = index + 1
+        reference_address = str(index + 1)  # Convert integer to string
     else:
         reference_address = None
 
-    return f'{reference_address}'
+    return reference_address
 
 
 class Logger(QObject):
@@ -226,47 +226,42 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     # List of conditions
     conditions = [
         # 0
-        (filtered_df['czy_moto'] == "MOTO"),  # 1
-        (filtered_df['czy_moto'] == "MOTO"),  # 2
-        (filtered_df['czy_moto'] != "MOTO"),  # 3
-        (filtered_df['czy_moto'] != "MOTO"),  # 4
-        (filtered_df['czy_moto'] != "MOTO"),  # 5
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA"),  # 6
-        (filtered_df['czy_moto'] != "MOTO") & (
-                filtered_df['karta'] == "VISA") & (filtered_df['Typ_karty'] == "debit"),  # 7
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (
-                (filtered_df['Typ_karty'] != 'debit') & (
-                filtered_df['Typ_karty'] != 'credit') | pd.isnull(filtered_df['Typ_karty'])),  # 8
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (
-                filtered_df['Typ_karty'] != 'credit'),  # 9
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 1),  # 10
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 0),  # 11
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC"),  # 12
-        (filtered_df['czy_moto'] != "MOTO") & (
-                filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "debit"),  # 13
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
-                (filtered_df['Typ_karty'] != 'debit') & (
-                filtered_df['Typ_karty'] != 'credit') | pd.isnull(filtered_df['Typ_karty'])),  # 14
-        (filtered_df['czy_moto'] != "MOTO") & (
-                filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "credit"),  # 15
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
-                filtered_df['Typ_karty'] == "credit") & (filtered_df['czy_SCA'] == 1),  # 16
-        (filtered_df['czy_moto'] != "MOTO") & (filtered_df['karta'] == "MC") & (
-                filtered_df['Typ_karty'] == "credit") & (filtered_df['czy_SCA'] == 0),  # 17
-        (filtered_df['czy_moto'] != "MOTO") & (
-                filtered_df['czy_niskokwotowa_zblizeniowa'] == 1) & (filtered_df['czy_SCA'] == 0),  # 18
-        (filtered_df['czy_moto'] != "MOTO") & (
-                filtered_df['czy_niskokwotowa_zblizeniowa'] == 0) & (filtered_df['czy_SCA'] == 0),  # 19
-        (filtered_df['country'] == "PL"),  # 20
-        (filtered_df['country'] != "PL") # 21
+        [(filtered_df['czy_moto'] == "MOTO"), 32],
+        [(filtered_df['czy_moto'] == "MOTO"), 34],
+        [(filtered_df['czy_moto'] != "MOTO"), 36],
+        [(filtered_df['czy_moto'] != "MOTO"), 40],
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "VISA") & (filtered_df['Typ_karty'] == "debit"), 46],  # 5
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "VISA") & (filtered_df['Typ_karty'] == "credit"), 48],  # 7
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "VISA") & ((filtered_df['Typ_karty'] != 'debit') & (filtered_df['Typ_karty'] != 'credit')), 47],  # 8
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 1), 50],  # 10
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 0), 59],  # 11
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "debit"), 70],  # 13
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "MC") & ((filtered_df['Typ_karty'] != 'debit') & (filtered_df['Typ_karty'] != 'credit')), 71],  # 14
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "credit"), 72],  # 15
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "MC") & (filtered_df['czy_SCA'] == 1), 74],  # 16
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['karta'] == "MC") & (filtered_df['czy_SCA'] == 0), 83],  # 17
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['czy_niskokwotowa_zblizeniowa'] == 1) & (filtered_df['czy_SCA'] == 0), 262],  # 18
+        [(filtered_df['czy_moto'] != "MOTO") &
+         (filtered_df['czy_niskokwotowa_zblizeniowa'] == 0) & (filtered_df['czy_SCA'] == 0), 264],  # 19
     ]
 
     # List of result DataFrames
-    result_dfs = [filtered_df.groupby('country')[['ilosc', 'wartosc_transakcji']].sum().reset_index()]
+    result_dfs = []
 
     # Apply conditions and perform groupby and sum operations
     for condition in conditions:
-        result_df = filtered_df[condition].groupby('country')[['ilosc', 'wartosc_transakcji']].sum().reset_index()
+        result_df = filtered_df[condition[0]].groupby('country')['ilosc', 'wartosc_transakcji'].sum().reset_index()
         result_dfs.append(result_df)
 
     print(wb_sheets[1][0] + ' and ' + wb_sheets[2][0])
@@ -275,8 +270,11 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     s2 = wb_sheets[2][1]
     df2 = pd.DataFrame(s1.values)
 
-    for n in range(len(result_dfs) - 2):
-        for i, country in enumerate(result_dfs[n]['country']):
+    rows = [32, 34, 35, 36, 40, 41, 42, 46, 47,  48, 50, 59, 70, 71, 72, 74, 83, 261, 262, 263, 264]
+
+    for e, cond_row_values in enumerate(conditions):
+        row = cond_row_values[1]
+        for i, country in enumerate(result_dfs[e]['country']):
             try:
                 if country == 'PL':
                     country = 'W2'
@@ -285,18 +283,15 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 col1 = pd.Index(df1.iloc[27]).get_loc(country)
                 col2 = pd.Index(df2.iloc[27]).get_loc(country)
 
-                if AR2_4_row_1[n] in [30, 38, 44, 52, 61, 74, 76, 85]:
-                    continue
-                else:
-                    # Insert value
-                    s1[reference(col1, 'col') + reference(AR2_4_row_1[n], 'row')] = int(result_dfs[n]['ilosc'].iloc[i])
-                    s2[reference(col2, 'col') + reference(AR2_4_row_2[n], 'row')] = to_float(
-                        result_dfs[n]['wartosc_transakcji'].iloc[i])
+                # Insert value
+                s1[reference(col1, 'col') + reference(row, 'row')] = int(result_dfs[e]['ilosc'].iloc[i])
+                s2[reference(col2, 'col') + reference(row, 'row')] = to_float(
+                    result_dfs[e]['wartosc_transakcji'].iloc[i])
 
             except KeyError:
-                bug_table.append([f'BUG_4a.R.L_PLiW2', result_dfs[n][result_dfs[n]['country'] == country]])
+                bug_table.append([f'BUG_4a.R.L_PLiW2', result_dfs[e][result_dfs[e]['country'] == country]])
                 print(
-                    f"!!: Value was not added to the report (there is no such a country code in excel) - {result_dfs[n][result_df[n]['country'] == country]}")
+                    f"!!: Value was not added to the report (there is no such a country code in excel) - {result_dfs[e][result_df[e]['country'] == country]}")
 
     # 6.ab.LiW
     print(wb_sheets[6][0])
@@ -307,29 +302,37 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     if progress_callback:
         progress_callback(19)
 
+    condition = [
+        (filtered_df['country'] == "PL"),
+        (filtered_df['country'] != "PL")
+        ]
+
+    country_pl = filtered_df[condition[0]].groupby('country')['ilosc', 'wartosc_transakcji'].sum().reset_index()
+    country_non_pl = filtered_df[condition[1]].groupby('country')['ilosc', 'wartosc_transakcji'].sum().reset_index()
+
     col = 34
 
     # L6.1.4
     condition = df6.iloc[30:, 2] == 'L6.1.4'
     row = condition[condition].index[0]
 
-    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[20]['ilosc'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = country_pl['ilosc'].iloc[0]
 
     # 6.1.4
     condition = df6.iloc[30:, 2] == 'W6.1.4'
     row = condition[condition].index[0]
-    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[20]['wartosc_transakcji'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = country_pl['wartosc_transakcji'].iloc[0]
 
     # L6.2.4
     condition = df6.iloc[30:, 2] == 'L6.2.4'
     row = condition[condition].index[0]
 
-    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[21]['ilosc'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = country_non_pl['ilosc'].iloc[0]
 
     # 6.2.4
     condition = df6.iloc[30:, 2] == 'W6.2.4'
     row = condition[condition].index[0]
-    s6[reference(col, 'col') + reference(row, 'row')] = result_dfs[21]['wartosc_transakcji'].iloc[0]
+    s6[reference(col, 'col') + reference(row, 'row')] = country_non_pl['wartosc_transakcji'].iloc[0]
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 4.a.R.L_PLiW2 and 4a.R.W_PLiW2 and 6.ab.LiW.')
@@ -549,7 +552,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     sheets = [wb_sheets[3][0], wb_sheets[4][0]]
 
     # 8.1.1.2 initiated via remote payment channel
-    df_total_moto = df_total[df_total['czy_moto'] == 'MOTO'][sum_columns].groupby("Category").sum().reset_index()
+    df_total_moto = df_total[df_total['czy_moto'] == 'MOTO'].groupby("Category").sum([sum_columns]).reset_index()
 
     for sheet in sheets:
         category = df_total_moto['Category']
@@ -557,8 +560,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
             condition = df3.iloc[30:, 2] == '8.1.1.2'
             row = condition[condition].index[0]
 
-            sum_v = df_total_moto[df_total_moto == country]['Sum'].sum()
-            count_v = df_total_moto[df_total_moto == country]['Count'].sum()
+            sum_v = df_total_moto[df_total_moto["Category"] == country]['Sum'].sum()
+            count_v = df_total_moto[df_total_moto["Category"] == country]['Count'].sum()
 
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -572,7 +575,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
             else:
                 s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
-    df_total_moto_2 = df_total[df_total['czy_moto'] == 'inne'][sum_columns].groupby("Category").sum().reset_index()
+    df_total_moto_2 = df_total[df_total['czy_moto'] == 'inne'].groupby("Category").sum([sum_columns]).reset_index()
 
     # 8.1.2.1.1.1 Initiated at a physical EFTPOS
     for sheet in sheets:
@@ -581,8 +584,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
             condition = df3.iloc[30:, 2] == '8.1.2.1.1.1'
             row = condition[condition].index[0]
 
-            sum_v = df_total_moto_2[df_total_moto_2 == country]['Sum'].sum()
-            count_v = df_total_moto_2[df_total_moto_2 == country]['Count'].sum()
+            sum_v = df_total_moto_2[df_total_moto_2["Category"] == country]['Sum'].sum()
+            count_v = df_total_moto_2[df_total_moto_2["Category"] == country]['Count'].sum()
 
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -596,20 +599,14 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
             else:
                 s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
-    for card in ['SN-Visa', 'SN-MasterC']:
-        if card == 'SN-Visa':
-            # =================================== VISA
-            # 8.1.2.1.2.1 Card-based payment instruments issued under PCS VISA
-            df_total_tr_sink_node = df_total[df_total['tr_sink_node'] == 'SN-Visa'][sum_columns].groupby("Category").sum().reset_index()
-            int_v = 1
-        else:
-            # =================================== MASTERCARD
-            # 8.1.2.1.2.2 Card-based payment instruments issued under PCS MASTERCARD
-            df_total_tr_sink_node = df_total[df_total['tr_sink_node'] == 'SN-MasterC']
-            int_v = 2
+    for e, card in enumerate(['SN-Visa', 'SN-MasterC']):
+        df_total_tr_sink_node = df_total[(df_total['tr_sink_node'] == card) & (df_total['czy_moto'] == "inne")]
+        df_total_tr_sink_node.to_excel("tr_sink_node.xlsx")
+        df_total.to_excel("df_total.xlsx")
+        int_v = 1 + e
 
         # 8.1.2.1.2.1/2.1.1 with a debit card
-        df_total_typ_karty_debit = df_total_tr_sink_node[df_total_tr_sink_node['Typ_karty'] == 'Debit'][sum_columns].groupby("Category").sum().reset_index()
+        df_total_typ_karty_debit = df_total_tr_sink_node[df_total_tr_sink_node['Typ_karty'] == 'Debit']
 
         for sheet in sheets:
             category = df_total_typ_karty_debit['Category']
@@ -617,8 +614,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.1.1'
                 row = condition[condition].index[0]
 
-                sum_v = df_total_typ_karty_debit[df_total_typ_karty_debit == country]['Sum'].sum()
-                count_v = df_total_typ_karty_debit[df_total_typ_karty_debit == country]['Count'].sum()
+                sum_v = df_total_typ_karty_debit[df_total_typ_karty_debit["Category"] == country]['Sum'].sum()
+                count_v = df_total_typ_karty_debit[df_total_typ_karty_debit["Category"] == country]['Count'].sum()
 
                 try:
                     col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -633,7 +630,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
         # 8.1.2.1.2.1.1.3 with a credit card
-        df_total_typ_karty_credit = df_total_tr_sink_node[df_total_tr_sink_node['Typ_karty'] == 'Credit'][sum_columns].groupby("Category").sum().reset_index()
+        df_total_typ_karty_credit = df_total_tr_sink_node[df_total_tr_sink_node['Typ_karty'] == 'Credit']
 
         for sheet in sheets:
             category = df_total_typ_karty_credit['Category']
@@ -641,8 +638,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 condition = df3.iloc[30:, 2] == f'8.1.2.1.2.{int_v}.1.3'
                 row = condition[condition].index[0]
 
-                sum_v = df_total_typ_karty_credit[df_total_typ_karty_credit == country]["Sum"].sum()
-                count_v = df_total_typ_karty_credit[df_total_typ_karty_credit == country]["Count"].sum()
+                sum_v = df_total_typ_karty_credit[df_total_typ_karty_credit["Category"] == country]["Sum"].sum()
+                count_v = df_total_typ_karty_credit[df_total_typ_karty_credit["Category"] == country]["Count"].sum()
 
                 try:
                     col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -657,7 +654,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
         # 8.1.2.1.2.1.2.1 SCA
-        df_total_visa_sca = df_total_tr_sink_node[df_total_tr_sink_node['czy_SCA'] == 'SCA'][sum_columns].groupby(["Category", 'FT description']).sum().reset_index()
+        df_total_visa_sca = df_total_tr_sink_node[df_total_tr_sink_node['czy_SCA'] == 'SCA']
 
         for sheet in sheets:
             category = df_total_visa_sca['Category']
@@ -670,7 +667,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
                 # 8.1.2.1.2.1.2.1.1.1 Lost or Stolen card
                 if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
-                    condition_v =(df_total_visa_sca == country) & (df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty')
+                    condition_v = (df_total_visa_sca["Category"] == country) & (df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty')
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
@@ -683,7 +680,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.1.1.3 Counterfeit card
                 if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Karta sfałszowana'].empty:
-                    condition_v = (df_total_visa_sca == country) & (
+                    condition_v = (df_total_visa_sca["Category"] == country) & (
                                 df_total_visa_sca['FT description'] == 'Karta sfałszowana')
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
@@ -697,7 +694,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.1.1.2 Card Not Received
                 if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Nieodebrana karta'].empty:
-                    condition_v = (df_total_visa_sca == country) & (
+                    condition_v = (df_total_visa_sca["Category"] == country) & (
                                 df_total_visa_sca['FT description'] == 'Nieodebrana karta')
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
@@ -710,8 +707,13 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     else:
                         s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.1.1.4 Others
-                if not df_total_visa_sca[df_total_visa_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta']].empty:
-                    condition_v = (df_total_visa_sca == country) & (df_total_visa_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+                if not df_total_visa_sca[~df_total_visa_sca[
+                    'FT description'].isin(['Zgubienie lub kradzież karty', 'Karta sfałszowana',
+                                            'Nieodebrana karta'])].empty:
+                    condition_v = (df_total_visa_sca["Category"] == country) & ~df_total_visa_sca[
+                        'FT description'].isin(
+                        ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
@@ -719,14 +721,14 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     row = condition[condition].index[0]
 
                     if sheet == '5a.R.LF_PLiW2':
-                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                            to_float(count_v), 2)
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
                     else:
-                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                            to_float(sum_v), 2)
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
         # 8.1.2.1.2.1.2.2 non-SCA
-        df_total_visa_non_sca = df_total_tr_sink_node[df_total_tr_sink_node['czy_SCA'] == 'non_SCA'][sum_columns].groupby(["Category", 'FT description']).sum().reset_index()
+        df_total_visa_non_sca = df_total_tr_sink_node[
+            df_total_tr_sink_node['czy_SCA'] == 'non_SCA'].groupby(["Category",
+                                                                    'FT description'])[sum_columns].sum().reset_index()
 
         for sheet in sheets:
             category = df_total_visa_non_sca['Category']
@@ -739,7 +741,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
                 # 8.1.2.1.2.1.2.2.1.1 Lost or Stolen card
                 if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
-                    condition_v = (df_total_visa_non_sca == country) & (df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty')
+                    condition_v = (df_total_visa_non_sca['Category'] == country) & (df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty')
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
@@ -752,7 +754,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.3 Counterfeit card
                 if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Karta sfałszowana'].empty:
-                    condition_v = (df_total_visa_non_sca == country) & (
+                    condition_v = (df_total_visa_non_sca['Category'] == country) & (
                                 df_total_visa_non_sca['FT description'] == 'Karta sfałszowana')
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
@@ -761,14 +763,12 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     row = condition[condition].index[0]
 
                     if sheet == '5a.R.LF_PLiW2':
-                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                            to_float(count_v), 2)
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
                     else:
-                        s4[reference(col, 'col') + reference(row, 'row')] = to_float(df4[col].iloc[row]) + round(
-                            to_float(sum_v), 2)
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.2 Card Not Received
                 if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Nieodebrana karta'].empty:
-                    condition_v = (df_total_visa_non_sca == country) & (
+                    condition_v = (df_total_visa_non_sca['Category'] == country) & (
                                 df_total_visa_non_sca['FT description'] == 'Nieodebrana karta')
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
@@ -777,14 +777,13 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     row = condition[condition].index[0]
 
                     if sheet == '5a.R.LF_PLiW2':
-                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                            to_float(count_v), 2)
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
                     else:
-                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                            to_float(sum_v), 2)
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.4 Others
-                if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta']].empty:
-                    condition_v = (df_total_visa_non_sca == country) & (df_total_visa_non_sca['FT description'] not in ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+                if not df_total_visa_non_sca[~df_total_visa_non_sca['FT description'].isin(['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])].empty:
+                    condition_v = (df_total_visa_non_sca['Category'] == country) & ~df_total_visa_non_sca['FT description'].isin(['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
@@ -792,24 +791,21 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     row = condition[condition].index[0]
 
                     if sheet == '5a.R.LF_PLiW2':
-                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                            to_float(count_v), 2)
+                        s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
                     else:
-                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                            to_float(sum_v), 2)
+                        s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
     # 8.1.2.1.3.3 Contactless low value
-    df_total_contactless = df_total[df_total['czy_niskokwotowa_zblizeniowa'] == 1]
+    df_total_contactless = df_total[(df_total['czy_niskokwotowa_zblizeniowa'] == 1) & (df_total['czy_moto'] != "MOTO")]
     df_total_contactless = df_total_contactless[df_total_contactless['czy_SCA'] == 'non_SCA']
-
     for sheet in sheets:
-        for r in range(df_total_contactless.shape[0]):
+        category = df_total_contactless['Category']
+        for country in category:
             condition = df3.iloc[30:, 2] == '8.1.2.1.3.3'
             row = condition[condition].index[0]
 
-            country = df_total_contactless.iloc[r][0]
-            sum_v = df_total_contactless.iloc[r][7]
-            count_v = df_total_contactless.iloc[r][8]
+            sum_v = df_total_contactless[df_total_contactless["Category"] == country]["Sum"].sum()
+            count_v = df_total_contactless[df_total_contactless["Category"] == country]["Count"].sum()
 
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -819,24 +815,21 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
 
             if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
+                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
             else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
+                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
     # 8.1.2.1.3.5 Other
-    df_total_contactless = df_total[df_total['czy_niskokwotowa_zblizeniowa'] == 0]
+    df_total_contactless = df_total[(df_total['czy_niskokwotowa_zblizeniowa'] == 0) & (df_total['czy_moto'] != "MOTO")]
     df_total_contactless = df_total_contactless[df_total_contactless['czy_SCA'] == 'non_SCA']
-
     for sheet in sheets:
-        for r in range(df_total_contactless.shape[0]):
+        category = df_total_contactless['Category']
+        for country in category:
             condition = df3.iloc[30:, 2] == '8.1.2.1.3.5'
             row = condition[condition].index[0]
 
-            country = df_total_contactless.iloc[r][0]
-            sum_v = df_total_contactless.iloc[r][7]
-            count_v = df_total_contactless.iloc[r][8]
+            sum_v = df_total_contactless[df_total_contactless["Category"] == country]["Sum"].sum()
+            count_v = df_total_contactless[df_total_contactless["Category"] == country]["Count"].sum()
 
             try:
                 col = pd.Index(df3.iloc[27]).get_loc(country)
@@ -846,11 +839,9 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
 
             if sheet == '5a.R.LF_PLiW2':
-                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(df3[col].iloc[row]), 2) + round(
-                    to_float(count_v), 2)
+                s3[reference(col, 'col') + reference(row, 'row')] = round(to_float(count_v), 2)
             else:
-                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(df4[col].iloc[row]), 2) + round(
-                    to_float(sum_v), 2)
+                s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
 
     # Calculate and update progress to 30% when appropriate
     if progress_callback:
@@ -859,7 +850,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
         progress_callback_text(f'AR2 - Finished: 5a.R.LF_PLiW2 and 5a.R.WF_PLiW2.')
 
     print('\nChecking the quarter: ' + str(check_quarter()[3]))
-
+    # @TO_DO: popraw!!!
     # 9.R.L.MCC and 9.R.W.MCC
     print(wb_sheets[7][0] + ' and ' + wb_sheets[8][0])
 
@@ -1020,6 +1011,16 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
     if "df_fraud" in locals():
         df_fraud.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
+
+        # create excel with fraud data for external use.
+        if not os.path.exists("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/"):
+            os.makedirs("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/")
+        if not os.path.exists("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/FRAUD TRANSACTIONS/"):
+            os.makedirs("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/FRAUD TRANSACTIONS/")
+
+        path = f"\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/FRAUD TRANSACTIONS/"
+
+        df_fraud.to_excel()
 
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None,
