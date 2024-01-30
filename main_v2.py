@@ -235,7 +235,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
         [(filtered_df['czy_moto'] != "MOTO") &
          (filtered_df['karta'] == "VISA") & (filtered_df['Typ_karty'] == "credit"), 48],  # 7
         [(filtered_df['czy_moto'] != "MOTO") &
-         (filtered_df['karta'] == "VISA") & ((filtered_df['Typ_karty'] != 'debit') & (filtered_df['Typ_karty'] != 'credit')), 47],  # 8
+         (filtered_df['karta'] == "VISA") & (
+                     (filtered_df['Typ_karty'] != 'debit') & (filtered_df['Typ_karty'] != 'credit')), 47],  # 8
         [(filtered_df['czy_moto'] != "MOTO") &
          (filtered_df['karta'] == "VISA") & (filtered_df['czy_SCA'] == 1), 50],  # 10
         [(filtered_df['czy_moto'] != "MOTO") &
@@ -243,7 +244,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
         [(filtered_df['czy_moto'] != "MOTO") &
          (filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "debit"), 70],  # 13
         [(filtered_df['czy_moto'] != "MOTO") &
-         (filtered_df['karta'] == "MC") & ((filtered_df['Typ_karty'] != 'debit') & (filtered_df['Typ_karty'] != 'credit')), 71],  # 14
+         (filtered_df['karta'] == "MC") & (
+                     (filtered_df['Typ_karty'] != 'debit') & (filtered_df['Typ_karty'] != 'credit')), 71],  # 14
         [(filtered_df['czy_moto'] != "MOTO") &
          (filtered_df['karta'] == "MC") & (filtered_df['Typ_karty'] == "credit"), 72],  # 15
         [(filtered_df['czy_moto'] != "MOTO") &
@@ -270,7 +272,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     s2 = wb_sheets[2][1]
     df2 = pd.DataFrame(s1.values)
 
-    rows = [32, 34, 35, 36, 40, 41, 42, 46, 47,  48, 50, 59, 70, 71, 72, 74, 83, 261, 262, 263, 264]
+    rows = [32, 34, 35, 36, 40, 41, 42, 46, 47, 48, 50, 59, 70, 71, 72, 74, 83, 261, 262, 263, 264]
 
     for e, cond_row_values in enumerate(conditions):
         row = cond_row_values[1]
@@ -305,7 +307,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     condition = [
         (filtered_df['country'] == "PL"),
         (filtered_df['country'] != "PL")
-        ]
+    ]
 
     country_pl = filtered_df[condition[0]].groupby('country')['ilosc', 'wartosc_transakcji'].sum().reset_index()
     country_non_pl = filtered_df[condition[1]].groupby('country')['ilosc', 'wartosc_transakcji'].sum().reset_index()
@@ -667,7 +669,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
                 # 8.1.2.1.2.1.2.1.1.1 Lost or Stolen card
                 if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
-                    condition_v = (df_total_visa_sca["Category"] == country) & (df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty')
+                    condition_v = (df_total_visa_sca["Category"] == country) & (
+                                df_total_visa_sca['FT description'] == 'Zgubienie lub kradzież karty')
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
@@ -681,7 +684,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 # 8.1.2.1.2.1.2.1.1.3 Counterfeit card
                 if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Karta sfałszowana'].empty:
                     condition_v = (df_total_visa_sca["Category"] == country) & (
-                                df_total_visa_sca['FT description'] == 'Karta sfałszowana')
+                            df_total_visa_sca['FT description'] == 'Karta sfałszowana')
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
@@ -695,7 +698,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 # 8.1.2.1.2.1.2.1.1.2 Card Not Received
                 if not df_total_visa_sca[df_total_visa_sca['FT description'] == 'Nieodebrana karta'].empty:
                     condition_v = (df_total_visa_sca["Category"] == country) & (
-                                df_total_visa_sca['FT description'] == 'Nieodebrana karta')
+                            df_total_visa_sca['FT description'] == 'Nieodebrana karta')
                     sum_v = df_total_visa_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_sca[condition_v]["Count"].sum()
 
@@ -740,8 +743,10 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     print(
                         f"!!: Value was not added to the report (there is no such a country code in excel) - {country}")
                 # 8.1.2.1.2.1.2.2.1.1 Lost or Stolen card
-                if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
-                    condition_v = (df_total_visa_non_sca['Category'] == country) & (df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty')
+                if not df_total_visa_non_sca[
+                    df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty'].empty:
+                    condition_v = (df_total_visa_non_sca['Category'] == country) & (
+                                df_total_visa_non_sca['FT description'] == 'Zgubienie lub kradzież karty')
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
@@ -755,7 +760,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 # 8.1.2.1.2.1.2.2.1.3 Counterfeit card
                 if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Karta sfałszowana'].empty:
                     condition_v = (df_total_visa_non_sca['Category'] == country) & (
-                                df_total_visa_non_sca['FT description'] == 'Karta sfałszowana')
+                            df_total_visa_non_sca['FT description'] == 'Karta sfałszowana')
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
@@ -769,7 +774,7 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                 # 8.1.2.1.2.1.2.2.1.2 Card Not Received
                 if not df_total_visa_non_sca[df_total_visa_non_sca['FT description'] == 'Nieodebrana karta'].empty:
                     condition_v = (df_total_visa_non_sca['Category'] == country) & (
-                                df_total_visa_non_sca['FT description'] == 'Nieodebrana karta')
+                            df_total_visa_non_sca['FT description'] == 'Nieodebrana karta')
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
 
@@ -781,8 +786,11 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                     else:
                         s4[reference(col, 'col') + reference(row, 'row')] = round(to_float(sum_v), 2)
                 # 8.1.2.1.2.1.2.2.1.4 Others
-                if not df_total_visa_non_sca[~df_total_visa_non_sca['FT description'].isin(['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])].empty:
-                    condition_v = (df_total_visa_non_sca['Category'] == country) & ~df_total_visa_non_sca['FT description'].isin(['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
+                if not df_total_visa_non_sca[~df_total_visa_non_sca['FT description'].isin(
+                        ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])].empty:
+                    condition_v = (df_total_visa_non_sca['Category'] == country) & ~df_total_visa_non_sca[
+                        'FT description'].isin(
+                        ['Zgubienie lub kradzież karty', 'Karta sfałszowana', 'Nieodebrana karta'])
 
                     sum_v = df_total_visa_non_sca[condition_v]["Sum"].sum()
                     count_v = df_total_visa_non_sca[condition_v]["Count"].sum()
@@ -901,20 +909,16 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
             return str(val)
 
     df_for_mcc['mcc'] = df_for_mcc['mcc'].apply(change_mcc)
+    df_for_mcc['country'] = df_for_mcc['country'].apply(change_country)
 
-    df_mcc_moto = df_for_mcc.groupby(['country', 'mcc', 'czy_moto'])[
-        ['ilosc', 'wartosc_transakcji']].sum().reset_index()
-
-    df_mcc = df_for_mcc.groupby(['country', 'mcc'])[['ilosc', 'wartosc_transakcji']].sum().reset_index()
-
-    df_mcc_moto['country'] = df_mcc_moto['country'].apply(change_country)
-    df_mcc['country'] = df_mcc['country'].apply(change_country)
+    df_mcc_moto = df_for_mcc.groupby(['country', 'mcc', 'czy_moto'])['ilosc', 'wartosc_transakcji'].sum().reset_index()
+    df_mcc = df_mcc_moto[df_mcc_moto['czy_moto'] != 'MOTO']
 
     pd.DataFrame(df_mcc_moto).to_excel(f'{TEMP}df_mcc_moto.xlsx')
-    pd.DataFrame(df_mcc).to_excel(f'{TEMP}df_mcc.xlsx')
 
     for country in df_mcc['country']:
-
+        df_mcc_set = df_mcc[df_mcc['country'] == country]
+        df_mcc_moto_set = df_mcc_moto[df_mcc_moto['country'] == country]
         # 9
         col = pd.Index(df7.iloc[27]).get_loc(country)
         condition = df7[1][30:370] == code[0]
@@ -922,9 +926,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
         addr = reference(col, 'col') + reference(row, 'row')
 
-        result_1 = df_mcc[df_mcc['country'] == country]['ilosc'].sum()
-        result_2 = df_mcc[df_mcc['country'] == country]['wartosc_transakcji'].sum()
-        print('result 1 and 2: ', result_1, result_2)
+        result_1 = df_mcc_moto_set['ilosc'].sum()
+        result_2 = df_mcc_moto_set['wartosc_transakcji'].sum()
         s7[addr].value = result_1
         s8[addr].value = result_2
 
@@ -934,10 +937,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
         addr = reference(col, 'col') + reference(row, 'row')
 
-        result_1 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['ilosc'].sum()
-        result_2 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')][
-            'wartosc_transakcji'].sum()
-        print('result 1 and 2: ', result_1, result_2)
+        result_1 = df_mcc_set['ilosc'].sum()
+        result_2 = df_mcc_set['wartosc_transakcji'].sum()
         s7[addr].value = result_1
         s8[addr].value = result_2
 
@@ -947,27 +948,25 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
         addr = reference(col, 'col') + reference(row, 'row')
 
-        result_1 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['ilosc'].sum()
-        result_2 = df_mcc_moto[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')][
-            'wartosc_transakcji'].sum()
-        print('result 1 and 2: ', result_1, result_2)
+        result_1 = df_mcc_set['ilosc'].sum()
+        result_2 = df_mcc_set['wartosc_transakcji'].sum()
         s7[addr].value = result_1
         s8[addr].value = result_2
 
         df7[2] = df7[2].astype(str)
 
-        mccs = df_mcc[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['mcc'].astype(str)
+        mccs = df_mcc_set['mcc'].astype(str)
 
         for m, mcc in enumerate(mccs):
             print(mcc, type(mcc))
             # Convert df_nbp_2[1] column to string
-            mcc_value_w = df_mcc[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['wartosc_transakcji'].iloc[m]
-            mcc_value_i = df_mcc[(df_mcc_moto['country'] == country) & (df_mcc_moto['czy_moto'] == 'inne')]['ilosc'].iloc[m]
+            mcc_value_w = df_mcc_set['wartosc_transakcji'].iloc[m]
+            mcc_value_i = df_mcc_set['ilosc'].iloc[m]
 
             try:
                 col = pd.Index(df7.iloc[27]).get_loc(country)
 
-                if mcc_index[mcc_index == mcc].index.size == 0:
+                """                if mcc_index[mcc_index == mcc].index.size == 0:
                     print(mcc, ': R999', 'mcc_am :', mcc_value_i)
                     ind = mcc_index[mcc_index == "R999"].index[0]
 
@@ -983,13 +982,12 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
                         s8[cell_reference].value += float(mcc_value_w)
                     else:
                         s8[cell_reference].value = float(mcc_value_w)
-                else:
-                    print(mcc)
-                    ind = mcc_index[mcc_index == mcc].index[0]
+                else:"""
+                ind = mcc_index[mcc_index == mcc].index[0]
 
-                    cell_reference = reference(col, 'col') + reference(ind, 'row')
-                    s7[cell_reference] = mcc_value_i
-                    s8[cell_reference] = mcc_value_w
+                cell_reference = reference(col, 'col') + reference(ind, 'row')
+                s7[cell_reference] = mcc_value_i
+                s8[cell_reference] = mcc_value_w
 
             except (KeyError, IndexError) as e:
 
@@ -1000,27 +998,42 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
                 elif mcc_index[mcc_index == mcc].index.size == 0:
                     ind = mcc_index[mcc_index == "R999"].index[0]
-                    # s7[reference(col, 'col') + reference(ind, 'row')] = mcc_value_i
-                    # s8[reference(col, 'col') + reference(ind, 'row')] = mcc_value_w
+                    cell_reference = reference(col, 'col') + reference(ind, 'row')
 
+                    if s7[cell_reference].value is not None:
+                        print(s7[cell_reference].value)
+                        s7[cell_reference].value += int(mcc_value_i)
+                    else:
+                        s7[cell_reference].value = int(mcc_value_i)
+
+                    if s8[cell_reference].value is not None:
+                        s8[cell_reference].value += float(mcc_value_w)
+                    else:
+                        s8[cell_reference].value = float(mcc_value_w)
                     print(
                         f'{e} / {wb_sheets[7][0]}!!:For country: {country} and mcc: {mcc} added it to not assigned mccs R999.')
 
     if progress_callback_text:
         progress_callback_text(f'AR2 - Finished: 9.R.L.MCC and 9.R.W.MCC.')
 
+    # Check if df_fraud exists
     if "df_fraud" in locals():
+        # Save to CSV (local)
         df_fraud.to_csv(f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/df_f.csv')
 
-        # create excel with fraud data for external use.
-        if not os.path.exists("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/"):
-            os.makedirs("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/")
-        if not os.path.exists("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/FRAUD TRANSACTIONS/"):
-            os.makedirs("\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/FRAUD TRANSACTIONS/")
+        # Path for the Excel file on external drive
+        base_path = f"\\\\prdfil\\Business\\DPiUS\\Zespol Przetwarzania\\Raporty kwartalne\\{check_quarter()[1]}Q{check_quarter()[3]}"
+        fraud_trans_path = os.path.join(base_path, "FRAUD TRANSACTIONS")
 
-        path = f"\\prdfil/BusinessDPiUS/Zespol Przetwarzania/Raporty kwartalne/{check_quarter()[1]}Q{check_quarter()[3]}/FRAUD TRANSACTIONS/"
+        # Create directories if they don't exist
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
+        if not os.path.exists(fraud_trans_path):
+            os.makedirs(fraud_trans_path)
 
-        df_fraud.to_excel()
+        # Save to Excel (external drive)
+        excel_path = os.path.join(fraud_trans_path, "FRAUD_TRANS.xlsx")
+        df_fraud.to_excel(excel_path)
 
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None,
@@ -1073,7 +1086,6 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
         dataframe_0['active_tvid'][0],  # tvid all
 
         dataframe_1[0]['ilosc_softPOS'][0],
-
 
     ]
     to_change_rows = [9, 10, 11, 14, 15, 16, 18, 19, 20, 21, 22, 24]
@@ -1202,6 +1214,7 @@ def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_ca
 
     dataframe_3 = pd.merge(dataframe_3, geo6, on='country', how='left')
     dataframe_3.to_excel('ST.05_data.xlsx')
+
     # Data to be filled
 
     def prepare_values_data(d, c, result_df_1):

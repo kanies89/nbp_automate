@@ -4,7 +4,8 @@ import pandas as pd
 
 
 def format_decimal(number):
-    formatted_number = "{:.2f}".format(float(number))
+    number = float(number)
+    formatted_number = f'{number:.2f}'
     return formatted_number
 
 
@@ -87,7 +88,7 @@ def create_tabs(tab, df, date):
             for column, country in enumerate(countries):
                 taxonomy = code.split('.')
                 print(taxonomy, country)
-# '4a.R.L_PLiW2', '4a.R.W_PLiW2', '5a.R.LF_PLiW2', '5a.R.WF_PLiW2'
+                # '4a.R.L_PLiW2', '4a.R.W_PLiW2', '5a.R.LF_PLiW2', '5a.R.WF_PLiW2'
                 if tab[0] in ['4a.R.L_PLiW2', '4a.R.W_PLiW2', '5a.R.LF_PLiW2', '5a.R.WF_PLiW2']:
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
@@ -129,12 +130,12 @@ def create_tabs(tab, df, date):
     </xbrli:context>
     <this1:{taxonomy[15]} contextRef="PayTel_fjk_{year + month + day}_{tab[1]}{number}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</this1:{taxonomy[15]}>
                     """
-# '5a.R.SF'
+                # '5a.R.SF'
                 elif tab[0] == '5a.R.SF':
                     value = df.iat[row + 30, 5]
                     if taxonomy[10] in ['M17', 'M19', 'M20']:
                         if value == '':
-                            value = 0
+                            value = "0.00"
                         unit = ['unit1', '2', format_decimal(value)]  # changed for PURE
                     else:
                         if value == '':
@@ -163,13 +164,13 @@ def create_tabs(tab, df, date):
     </xbrli:context>
     <this1:{taxonomy[10]} contextRef="PayTel_fjk_{year + month + day}_{tab[1]}{number}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</this1:{taxonomy[10]}>
                     """
-# 6.ab.LiW'
+                # 6.ab.LiW'
                 elif tab[0] in ['6.ab.LiW']:
                     taxonomy[4] = country
                     value = df.iat[row + 30, column + 5]
                     if taxonomy[10] in ['M17', 'M19', 'M20']:
                         if value == '':
-                            value = 0
+                            value = "0.00"
                         unit = ['unit1', '2', format_decimal(value)]  # changed for PURE
                     else:
                         if value == '':
@@ -198,7 +199,7 @@ def create_tabs(tab, df, date):
     </xbrli:context>
     <this1:{taxonomy[10]} contextRef="PayTel_fjk_{year + month + day}_{tab[1]}{number}" unitRef="{unit[0]}" decimals="{unit[1]}">{unit[2]}</this1:{taxonomy[10]}>
                     """
-# 9.R.L.MCC, 9.R.W.MCC
+                # 9.R.L.MCC, 9.R.W.MCC
                 elif tab[0] in ['9.R.L.MCC', '9.R.W.MCC']:
                     taxonomy[3] = country
                     value = df.iat[row + 30, column + 5]
@@ -206,8 +207,13 @@ def create_tabs(tab, df, date):
                     if value == '' or value == 0 or pd.isnull(value):
                         value = 0
                     if not pd.isnull(value):
-                        if taxonomy[10] in ['M17', 'M19', 'M20']:
+                        if tab[0] == '9.R.W.MCC':
                             unit = ['unit1', '2', format_decimal(value)]  # changed for PURE
+
+                            formatted_val = format_decimal(value).split('.')
+                            if len(formatted_val[1]) > 2:
+                                print(formatted_val)
+                                break
                         else:
                             unit = ['unit1', '0', value]
 
@@ -361,7 +367,7 @@ def add_geo(tab, df, date):
                     if taxonomy[10] in ['M17', 'M19', 'M20']:
                         if value == 0:
                             value = "0.00"
-                        unit = ['unit1', '2', value]  # changed for PURE
+                        unit = ['unit1', '2', format_decimal(value)]  # changed for PURE
                     else:
                         unit = ['unit1', '0', value]
 
@@ -402,9 +408,9 @@ def add_geo(tab, df, date):
     return additional_xml_code
 
 
-def zip_file(file_path, zip_path):
+def zip_file(file_path, zip_path, date):
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
-        zipf.write(file_path, arcname='your_file_name.txt')
+        zipf.write(file_path, arcname=f'PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml')
 
 
 def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None):
@@ -434,7 +440,7 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
         ['9.R.W.MCC', '9.R.W.MCC', '7']
     ]
 
-    percent = 100/(len(EXCEL_READ_AR2) - 1)
+    percent = 100 / (len(EXCEL_READ_AR2) - 1)
 
     for e, sheet in enumerate(EXCEL_READ_AR2):
         xml_code = create_tabs(sheet, df, date)
@@ -446,29 +452,28 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
         with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
             file.write(xml_code)
 
-    GEO3_TABS = [
+        """    GEO3_TABS = [
          '4a.R.L_krajGEO3', '4a.R.W_krajGEO3', '5a.R.LF_krajGEO3', '5a.R.WF_krajGEO3'
     ]
 
     for sheet in GEO3_TABS:
         xml_code = add_geo(sheet, df, date)
         with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
-            file.write(xml_code)
+            file.write(xml_code)"""
 
     xml_code = '</xbrli:xbrl>'
 
-    with open(f"PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
+    with open(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml", 'a', encoding="utf-8") as file:
         file.write(xml_code)
 
     if progress_callback_text:
-        progress_callback_text(f'AR2 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml".')
+        progress_callback_text(f'AR2 - xml file generated - "PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml".')
 
-    file_to_zip = f'PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.xml'
-    zip_file_path = f'PayTel_fjk_{date[0]+date[1]+date[2]}_AR2.zip'
+    file_to_zip = f'PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml'
+    zip_file_path = f'PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.zip'
 
-    zip_file(file_to_zip, zip_file_path)
+    zip_file(file_to_zip, zip_file_path, date)
 
 
 if __name__ == '__main__':
     print('No methods to be runned.')
-

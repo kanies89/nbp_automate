@@ -8,7 +8,7 @@ def format_decimal(number):
     return formatted_number
 
 
-def create_ar1(tab, df, date, path):
+def create_ar1(tab, df, date):
     df = df[tab]
     year = date[0]
     month = date[1]
@@ -399,7 +399,7 @@ decimals="{unit[1]}">{unit[2]}</p-BSP-measures:{taxonomy[0]}>
     return xml_add_code
 
 
-def create_xml_ar1(df, date, path, progress_callback=None, progress_callback_text=None):
+def create_xml_ar1(df, date, progress_callback=None, progress_callback_text=None):
     if progress_callback:
         progress_callback(0)
 
@@ -421,7 +421,7 @@ def create_xml_ar1(df, date, path, progress_callback=None, progress_callback_tex
     percent = 100/(len(EXCEL_READ_AR1) - 1)
 
     for e, sheet in enumerate(EXCEL_READ_AR1):
-        xml_code += create_ar1(sheet, df, date, path)
+        xml_code += create_ar1(sheet, df, date)
 
         if progress_callback:
             percent = 100 / len(EXCEL_READ_AR1) * (e + 1)

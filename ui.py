@@ -141,11 +141,10 @@ class ConvertThread(QThread):
         else:
             path_1 = dialog.AR1
 
-        # Perform all the tests
-        df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
         df_nbp_1 = pd.read_excel(path_1, sheet_name=AR1_TO_CHECK, header=None, keep_default_na=False)
+        df_nbp_2 = pd.read_excel(path_2, sheet_name=AR2_TO_CHECK, header=None, keep_default_na=False)
 
-        create_xml_ar1(df_nbp_1, self.date, path_1, progress_callback, progress_callback_text)
+        create_xml_ar1(df_nbp_1, self.date, progress_callback, progress_callback_text)
         create_xml_ar2(df_nbp_2, self.date, progress_callback, progress_callback_text)
 
         # Emit the finished signal to indicate the completion
