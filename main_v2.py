@@ -6,7 +6,6 @@ import os
 import datetime
 import numpy as np
 import pandas as pd
-from openpyxl.utils import get_column_letter
 import openpyxl.utils as utils
 import openpyxl
 
@@ -15,7 +14,7 @@ import time
 import multiprocessing as mp
 
 from connect import connect, connect_single_query
-from variables import EXCEL_READ_AR2, AR2_4_row_1, AR2_4_row_2, EXCEL_READ_AR1, COUNTRY_DICT, countries_to_filter
+from variables import EXCEL_READ_AR2, EXCEL_READ_AR1, COUNTRY_DICT, countries_to_filter
 from f_visa import f_visa_make, check_quarter, read_remote_file
 from f_mastercard import f_mastercard_make
 from PyQt5.QtCore import pyqtSignal, QObject
@@ -25,6 +24,17 @@ bug_table = []
 
 TEMP = f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/'
 PATH = 'Example/'
+
+
+def save_generated_file(file, folder):
+    # Path for the Excel file on external drive
+    base_path = f"\\\\prdfil\\Business\\DPiUS\\Zespol Przetwarzania\\Raporty kwartalne\\{check_quarter()[1]}Q{check_quarter()[3]}\\NBP"
+    create_folder_structure(base_path)
+    folder_path = os.path.join(base_path, folder)
+    create_folder_structure(folder_path)
+
+    basename = os.path.basename(folder_path)
+    shutil.copy(file, folder_path + "\\" + basename)
 
 
 def reference(index, type_ref):
@@ -1725,6 +1735,12 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
 
     # Close the log file
     log_file.close()
+    files = [
+        f"{PATH}/Filled/{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR1_ST.w.8.7.5.xlsx",
+        f"{PATH}/Filled/{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR2_v.4.01.xlsx"
+    ]
+    for file in files:
+        save_generated_file(file, "Raport - excel")
 
 
 def start(name, surname, telephone, email, passw):

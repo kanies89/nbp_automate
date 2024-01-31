@@ -1,7 +1,9 @@
+import os
+
 from variables import geo3_country_loc, geo3_country
 import zipfile
 import pandas as pd
-
+from main_v2 import save_generated_file
 
 def format_decimal(number):
     number = float(number)
@@ -473,6 +475,9 @@ def create_xml_ar2(df, date, progress_callback=None, progress_callback_text=None
     zip_file_path = f'PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.zip'
 
     zip_file(file_to_zip, zip_file_path, date)
+    os.remove(f"PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.xml")
+
+    save_generated_file(f'PayTel_fjk_{date[0] + date[1] + date[2]}_AR2.zip', "Raport - xml")
 
 
 if __name__ == '__main__':

@@ -4835,6 +4835,36 @@ komorka &quot;Pozostałe kraje siwata&quot; = suma &quot;Wielka Brytania plus ka
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>radioButton_prepare</tabstop>
+  <tabstop>radioButton_check</tabstop>
+  <tabstop>radioButton_xml</tabstop>
+  <tabstop>TDisplay</tabstop>
+  <tabstop>TName</tabstop>
+  <tabstop>BName</tabstop>
+  <tabstop>TSurname</tabstop>
+  <tabstop>BSurname</tabstop>
+  <tabstop>TPhone</tabstop>
+  <tabstop>BPhone</tabstop>
+  <tabstop>TEmail</tabstop>
+  <tabstop>BEmail</tabstop>
+  <tabstop>TPassword</tabstop>
+  <tabstop>Start</tabstop>
+  <tabstop>pushButton_openAR1</tabstop>
+  <tabstop>pushButton_openAR2</tabstop>
+  <tabstop>pushButton_convert</tabstop>
+  <tabstop>toolButton</tabstop>
+  <tabstop>tableWidget_AR2</tabstop>
+  <tabstop>tabWidget</tabstop>
+  <tabstop>tableWidget_AR1_1</tabstop>
+  <tabstop>tableWidget_AR1_2</tabstop>
+  <tabstop>tableWidget_AR1_3</tabstop>
+  <tabstop>tabWidget_2</tabstop>
+  <tabstop>tableWidget_AR1_4</tabstop>
+  <tabstop>tableWidget_AR1_5</tabstop>
+  <tabstop>tableWidget_AR1_6</tabstop>
+  <tabstop>tableWidget_AR1_7</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

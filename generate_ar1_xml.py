@@ -1,6 +1,7 @@
 import pandas as pd
 import openpyxl
 from f_visa import check_quarter
+from main_v2 import save_generated_file
 
 
 def format_decimal(number):
@@ -434,6 +435,8 @@ def create_xml_ar1(df, date, progress_callback=None, progress_callback_text=None
 
     if progress_callback_text:
         progress_callback_text(f'AR1 - xml file generated - "PayTel_fjk_{date[0]+date[1]+date[2]}_AR1.xml".')
+
+    save_generated_file(f'PayTel_fjk_{date[0] + date[1] + date[2]}_AR1.xml', "Raport - xml")
 
 
 if __name__ == '__main__':

@@ -1,10 +1,10 @@
 import sys
 import datetime
-import openpyxl
+import os
 from PyQt5.QtWidgets import QApplication, QDialog, QLineEdit, QFileDialog, QWidget, QSizePolicy, QHBoxLayout, \
     QVBoxLayout, QDateEdit, QComboBox, QAbstractSpinBox, QSpacerItem
-from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QDate
-from PyQt5.QtGui import QColor, QPalette
+from PyQt5.QtCore import pyqtSignal, Qt, QEvent, QThread, pyqtSlot, QDate, QUrl
+from PyQt5.QtGui import QColor, QPalette, QDesktopServices
 from PyQt5.uic import loadUi
 from main_v2 import start_automation, Logger, check_quarter
 
@@ -13,6 +13,37 @@ from openpyxl.utils import get_column_letter
 from check_rules import check_rules_ar2, check_rules_ar1, AR2_TO_CHECK, AR1_TO_CHECK
 from generate_ar1_xml import create_xml_ar1
 from generate_ar2_xml import create_xml_ar2
+from popup_dialog import Ui_Dialog
+
+
+class PopupDialog(QDialog):
+    def __init__(self, parent=None):
+        super(PopupDialog, self).__init__(parent)
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self)
+        self.check = [False, False]
+
+        self.ui.checkBox.clicked.connect(lambda button: self.on_check_box(num=0))
+        self.ui.checkBox_2.clicked.connect(lambda button: self.on_check_box(num=1))
+        self.ui.pushButton.clicked.connect(self.close)
+        self.ui.commandLinkButton.clicked.connect(self.openPdf)
+
+    def openPdf(self):
+        # Path to the PDF file
+        pdfPath = os.path.abspath("NBP_Automated_Report - Instrukcja Obsługi.pdf")
+        # Use QDesktopServices to open the PDF with the default viewer
+        QDesktopServices.openUrl(QUrl.fromLocalFile(pdfPath))
+
+    def on_check_box(self, num):
+        if self.check[num]:
+            self.check[num] = False
+        else:
+            self.check[num] = True
+
+        if self.check[0] and self.check[1]:
+            self.ui.pushButton.setEnabled(True)
+        else:
+            self.ui.pushButton.setEnabled(False)
 
 
 class QuarterlyDateEdit(QWidget):
@@ -220,8 +251,11 @@ class MyDialog(QDialog):
         # Handle date updates here if needed
         pass
 
-    def __init__(self):
-        super(MyDialog, self).__init__()
+    def __init__(self, parent=None):
+        super(MyDialog, self).__init__(parent)
+
+        # Example of showing the popup at startup
+        self.showPopup()
 
         # Load the UI from the XML file
         ui = loadUi("./UI/nbp_ui.ui", self)
@@ -331,6 +365,10 @@ class MyDialog(QDialog):
 
         # Assign the logger as the new sys.stdout
         sys.stdout = self.logger
+
+    def showPopup(self):
+        self.popup = PopupDialog(self)
+        self.popup.show()
 
     def save_logs(self):
         report_date = datetime.datetime.now().strftime("%Y-%m-%d")
