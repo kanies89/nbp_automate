@@ -28,7 +28,7 @@ def create_ar2(df, date):
     code_ar2 = f"""<?xml version="1.0" encoding="UTF-8"?>
 <xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:xbrldi="http://xbrl.org/2006/xbrldi" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:iso4217="http://www.xbrl.org/2003/iso4217" xmlns:this="http://bsp.nbp.pl/BSP2_AR2_U/d-W020_SPORZ.xsd" xmlns:this1="http://bsp.nbp.pl/BSP2_AR2_U/p-BSP2_AR2_U.xsd" xmlns:this2="http://bsp.nbp.pl/BSP2_AR2_U/d-W030_RODZAJ.xsd" xmlns:this3="http://bsp.nbp.pl/BSP2_AR2_U/d-W040_OKRES.xsd" xmlns:this4="http://bsp.nbp.pl/BSP2_AR2_U/d-W050_NBP.xsd" xmlns:this5="http://bsp.nbp.pl/BSP2_AR2_U/d-W130_KRAJ.xsd" xmlns:this6="http://bsp.nbp.pl/BSP2_AR2_U/d-W140_POS_KRAJ.xsd" xmlns:this7="http://bsp.nbp.pl/BSP2_AR2_U/d-W160_TYP_TRAN.xsd" xmlns:this8="http://bsp.nbp.pl/BSP2_AR2_U/d-W170_STR_TRAN.xsd" xmlns:this9="http://bsp.nbp.pl/BSP2_AR2_U/d-W180_INICJOW.xsd" xmlns:this10="http://bsp.nbp.pl/BSP2_AR2_U/d-W190_ZDALNE.xsd" xmlns:this11="http://bsp.nbp.pl/BSP2_AR2_U/d-W200_SCHEMAT.xsd" xmlns:this12="http://bsp.nbp.pl/BSP2_AR2_U/d-W210_KARTY.xsd" xmlns:this13="http://bsp.nbp.pl/BSP2_AR2_U/d-W220_SCA.xsd" xmlns:this14="http://bsp.nbp.pl/BSP2_AR2_U/d-W250_CZY_OSZ.xsd" xmlns:this15="http://bsp.nbp.pl/BSP2_AR2_U/d-W320_ZKRES.xsd" xmlns:this16="http://bsp.nbp.pl/BSP2_AR2_U/d-W330_LICZ_WAR.xsd" xmlns:this17="http://bsp.nbp.pl/BSP2_AR2_U/d-W240_STR.xsd" xmlns:this18="http://bsp.nbp.pl/BSP2_AR2_U/d-W132_KRAJ.xsd" xmlns:this19="http://bsp.nbp.pl/BSP2_AR2_U/d-W280_MCC.xsd" xmlns:this20="http://bsp.nbp.pl/BSP2_AR2_U/d-W510_STR_TRAN2.xsd" xmlns:this21="http://bsp.nbp.pl/BSP2_AR2_U/d-W141_POS_KRAJ.xsd">
     <link:schemaRef xlink:type="simple" xlink:href="BSP2_AR2_UJK.xsd"/>
-    <xbrli:context id="PayTel_fjk_20230930_ar2_1">
+    <xbrli:context id="PayTel_fjk_{year + month + day}_ar2_1">
         <xbrli:entity>
             <xbrli:identifier scheme="https://sis2.nbp.pl/PayTel">60300</xbrli:identifier>
         </xbrli:entity>
@@ -39,25 +39,25 @@ def create_ar2(df, date):
             <xbrldi:explicitMember dimension="this:W020_SPORZ">this:W020_KAR</xbrldi:explicitMember>
         </xbrli:scenario>
     </xbrli:context>
-    <this1:MIMIE contextRef="PayTel_fjk_20230930_ar2_1">{values[0]}</this1:MIMIE>
-    <this1:MNAZ contextRef="PayTel_fjk_20230930_ar2_1">{values[1]}</this1:MNAZ>
-    <this1:MTEL contextRef="PayTel_fjk_20230930_ar2_1">{values[2]}</this1:MTEL>
-    <this1:MEMAIL contextRef="PayTel_fjk_20230930_ar2_1">{values[3]}</this1:MEMAIL>
-    <xbrli:context id="PayTel_fjk_20230930_ar2_2">
+    <this1:MIMIE contextRef="PayTel_fjk_{year + month + day}_ar2_1">{values[0]}</this1:MIMIE>
+    <this1:MNAZ contextRef="PayTel_fjk_{year + month + day}_ar2_1">{values[1]}</this1:MNAZ>
+    <this1:MTEL contextRef="PayTel_fjk_{year + month + day}_ar2_1">{values[2]}</this1:MTEL>
+    <this1:MEMAIL contextRef="PayTel_fjk_{year + month + day}_ar2_1">{values[3]}</this1:MEMAIL>
+    <xbrli:context id="PayTel_fjk_{year + month + day}_ar2_2">
         <xbrli:entity>
             <xbrli:identifier scheme="https://sis2.nbp.pl/PayTel">60300</xbrli:identifier>
         </xbrli:entity>
         <xbrli:period>
-            <xbrli:instant>2023-09-30</xbrli:instant>
+            <xbrli:instant>{year + '-' + month + '-' + day}</xbrli:instant>
         </xbrli:period>
         <xbrli:scenario>
             <xbrldi:explicitMember dimension="this:W020_SPORZ">this:W020_OSZ</xbrldi:explicitMember>
         </xbrli:scenario>
     </xbrli:context>
-    <this1:MIMIE contextRef="PayTel_fjk_20230930_ar2_2">{values[0]}</this1:MIMIE>
-    <this1:MNAZ contextRef="PayTel_fjk_20230930_ar2_2">{values[1]}</this1:MNAZ>
-    <this1:MTEL contextRef="PayTel_fjk_20230930_ar2_2">{values[2]}</this1:MTEL>
-    <this1:MEMAIL contextRef="PayTel_fjk_20230930_ar2_2">{values[3]}</this1:MEMAIL>
+    <this1:MIMIE contextRef="PayTel_fjk_{year + month + day}_ar2_2">{values[0]}</this1:MIMIE>
+    <this1:MNAZ contextRef="PayTel_fjk_{year + month + day}_ar2_2">{values[1]}</this1:MNAZ>
+    <this1:MTEL contextRef="PayTel_fjk_{year + month + day}_ar2_2">{values[2]}</this1:MTEL>
+    <this1:MEMAIL contextRef="PayTel_fjk_{year + month + day}_ar2_2">{values[3]}</this1:MEMAIL>
     <xbrli:unit id="unit1">
         <xbrli:measure>xbrli:pure</xbrli:measure>
     </xbrli:unit>
