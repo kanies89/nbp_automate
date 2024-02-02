@@ -2,6 +2,7 @@ import shutil
 import sys
 import re
 import os
+import gc
 
 import datetime
 import numpy as np
@@ -925,8 +926,10 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
     df_mcc = df_mcc_moto[df_mcc_moto['czy_moto'] != 'MOTO']
 
     pd.DataFrame(df_mcc_moto).to_excel(f'{TEMP}df_mcc_moto.xlsx')
+    pd.DataFrame(df_mcc['country'].unique()).to_excel('mcc_country.xlsx')
+    for country in df_mcc['country'].unique():
+        gc.collect()  # Explicitly call garbage collector
 
-    for country in df_mcc['country']:
         df_mcc_set = df_mcc[df_mcc['country'] == country]
         df_mcc_moto_set = df_mcc_moto[df_mcc_moto['country'] == country]
         # 9
@@ -1043,7 +1046,8 @@ def prepare_data_ar2(user, passw, wb_sheets, progress_callback=None, progress_ca
 
         # Save to Excel (external drive)
         excel_path = os.path.join(fraud_trans_path, "FRAUD_TRANS.xlsx")
-        df_fraud.to_excel(excel_path)
+        if not os.path.exists(excel_path):
+            df_fraud.to_excel(excel_path)
 
 
 def prepare_data_ar1(user, passw, df_f, name, surname, phone, email, progress_callback=None,

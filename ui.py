@@ -14,36 +14,62 @@ from check_rules import check_rules_ar2, check_rules_ar1, AR2_TO_CHECK, AR1_TO_C
 from generate_ar1_xml import create_xml_ar1
 from generate_ar2_xml import create_xml_ar2
 from popup_dialog import Ui_Dialog
+from PyQt5.QtMultimedia import QSound
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logging.debug('This message should help identify the issue')
 
 
-class PopupDialog(QDialog):
+def play_sound(sound):
+    # Specify the path to the Windows warning sound
+    if sound == 'warning':
+        sound_path = ".\\UI\\win_notify.wav"  # Update the path if needed
+    elif sound == 'finished':
+        sound_path = ".\\UI\\win_unlock.wav"  # Update the path if needed
+
+    # Play the warning sound
+    QSound.play(sound_path)
+
+
+class PopupDialogStart(QDialog):
     def __init__(self, parent=None):
-        super(PopupDialog, self).__init__(parent)
+        super(PopupDialogStart, self).__init__(parent)
         self.ui = Ui_Dialog()
-        self.ui.setupUi(self)
-        self.check = [False, False]
 
-        self.ui.checkBox.clicked.connect(lambda button: self.on_check_box(num=0))
-        self.ui.checkBox_2.clicked.connect(lambda button: self.on_check_box(num=1))
-        self.ui.pushButton.clicked.connect(self.close)
-        self.ui.commandLinkButton.clicked.connect(self.openPdf)
+        play_sound("warning")
 
-    def openPdf(self):
-        # Path to the PDF file
-        pdfPath = os.path.abspath("NBP_Automated_Report - Instrukcja Obsługi.pdf")
-        # Use QDesktopServices to open the PDF with the default viewer
-        QDesktopServices.openUrl(QUrl.fromLocalFile(pdfPath))
+        self.ui.setupUi(self,
+                        title="Reminder - 1",
+                        main_text="Before you start generating NBP AR1 / AR2 reports.",
+                        instructions_text="Please follow the instructions below:",
+                        instructions_url="NBP_Automated_Report - Instrukcja Obsługi.pdf",
+                        reminder_text="Don't forget to prepare and install:",
+                        conditions_text="Please confirm the following conditions:",
+                        checkbox1_text="Mastercard fraud transactions \"YYYY_Q Mastercard.xlsx\" external file is provided.",
+                        checkbox2_text="Microsoft ODBC driver is installed at your operating system.",
+                        proceed_button_text="Proceed",
+                        proceed_function=self.close)
 
-    def on_check_box(self, num):
-        if self.check[num]:
-            self.check[num] = False
-        else:
-            self.check[num] = True
 
-        if self.check[0] and self.check[1]:
-            self.ui.pushButton.setEnabled(True)
-        else:
-            self.ui.pushButton.setEnabled(False)
+class PopupDialogReportGenerated(QDialog):
+    def __init__(self, parent=None):
+        super(PopupDialogReportGenerated, self).__init__(parent)
+        self.ui = Ui_Dialog()
+
+        play_sound("finished")
+
+        self.ui.setupUi(self,
+                        title="Reminder - 2",
+                        main_text="Excel files are ready, open them and check.",
+                        instructions_text="This part is not written in:",
+                        instructions_url="NBP_Automated_Report - Instrukcja Obsługi.pdf",
+                        reminder_text="Before generating xml files, don't forget to recalculate excel files.",
+                        conditions_text="Please confirm the following conditions:",
+                        checkbox1_text="Each sheet in AR1 is recalculated (by opening excel and clicking 'Calculate Sheet'.",
+                        checkbox2_text="Each sheet in AR2 is recalculated (by opening excel and clicking 'Calculate Sheet'.",
+                        proceed_button_text="Proceed",
+                        proceed_function=self.close)
 
 
 class QuarterlyDateEdit(QWidget):
@@ -255,7 +281,8 @@ class MyDialog(QDialog):
         super(MyDialog, self).__init__(parent)
 
         # Example of showing the popup at startup
-        self.showPopup()
+        self.popup = None
+        self.showPopup(1)
 
         # Load the UI from the XML file
         ui = loadUi("./UI/nbp_ui.ui", self)
@@ -366,9 +393,13 @@ class MyDialog(QDialog):
         # Assign the logger as the new sys.stdout
         sys.stdout = self.logger
 
-    def showPopup(self):
-        self.popup = PopupDialog(self)
-        self.popup.show()
+    def showPopup(self, num):
+        if num == 1:
+            self.popup = PopupDialogStart(self)
+            self.popup.show()
+        elif num == 2:
+            self.popup = PopupDialogReportGenerated(self)
+            self.popup.show()
 
     def save_logs(self):
         report_date = datetime.datetime.now().strftime("%Y-%m-%d")
@@ -671,6 +702,8 @@ self.tableWidget_AR1_{i}.cellChanged.connect(self.adjust_row_heights)
         # Enable the "Start" button when the automation is finished
         self.Start.setEnabled(True)
 
+        dialog.showPopup(2)
+
         # Save the logs to the log file
         self.save_logs()
 
@@ -849,6 +882,9 @@ def perform_tests(progress_callback_text=None, progress_callback=None):
 
     run_rule(2, path_2, progress_callback_text, progress_callback)
     run_rule(1, df_nbp_1, progress_callback_text, progress_callback)
+
+    # Call the function to play the finished sound
+    play_sound("finished")
 
     if progress_callback_text:
         progress_callback_text('Report checked - open review tab >>>')
