@@ -27,15 +27,14 @@ TEMP = f'./temp/{check_quarter()[1]}_{check_quarter()[3]}/'
 PATH = 'Example/'
 
 
-def save_generated_file(file, folder):
+def save_generated_file(file, folder, filename):
     # Path for the Excel file on external drive
     base_path = f"\\\\prdfil\\Business\\DPiUS\\Zespol Przetwarzania\\Raporty kwartalne\\{check_quarter()[1]}Q{check_quarter()[3]}\\NBP"
     create_folder_structure(base_path)
     folder_path = os.path.join(base_path, folder)
     create_folder_structure(folder_path)
 
-    basename = os.path.basename(folder_path)
-    shutil.copy(file, folder_path + "\\" + basename)
+    shutil.copy(file, folder_path + "\\" + filename)
 
 
 def reference(index, type_ref):
@@ -1744,7 +1743,7 @@ def start_automation(d1, d2, d3, d4, d_pass, progress_callback=None, progress_ca
         f"{PATH}/Filled/{check_quarter()[1]}_Q{check_quarter()[3]}___BSP_AR2_v.4.01.xlsx"
     ]
     for file in files:
-        save_generated_file(file, "Raport - excel")
+        save_generated_file(file, "Raport - excel", os.path.basename(file))
 
 
 def start(name, surname, telephone, email, passw):

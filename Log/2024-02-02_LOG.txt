@@ -52521,1901 +52521,827 @@ R999
 
 
 
-5942
-5942
- 
- 
-<class 'str'>
-<class 'str'>
+73927392  <class 'str'><class 'str'>
 
+73937393  <class 'str'><class 'str'>
 
+73947394  <class 'str'><class 'str'>
 
+73997399  <class 'str'><class 'str'>
 
-5943
-5943
- 
- 
-<class 'str'>
-<class 'str'>
+75127512  <class 'str'><class 'str'>
 
+75137513  <class 'str'><class 'str'>
 
+75197519  <class 'str'><class 'str'>
 
+75237523  <class 'str'><class 'str'>
 
-5944
-5944
- 
- 
-<class 'str'>
-<class 'str'>
+75317531  <class 'str'><class 'str'>
 
+75347534  <class 'str'><class 'str'>
 
+75357535  <class 'str'><class 'str'>
 
+75387538  <class 'str'><class 'str'>
 
-5945
-5945
- 
- 
-<class 'str'>
-<class 'str'>
+75427542  <class 'str'><class 'str'>
 
+76237623  <class 'str'><class 'str'>
 
+76297629  <class 'str'><class 'str'>
 
+76317631  <class 'str'><class 'str'>
 
-5946
-5946
- 
- 
-<class 'str'>
-<class 'str'>
+76417641  <class 'str'><class 'str'>
 
+76927692  <class 'str'><class 'str'>
 
+76997699  <class 'str'><class 'str'>
 
+78297829  <class 'str'><class 'str'>
 
-5947
-5947
- 
- 
-<class 'str'>
-<class 'str'>
+78327832  <class 'str'><class 'str'>
 
+78417841  <class 'str'><class 'str'>
 
+79117911  <class 'str'><class 'str'>
 
+79227922  <class 'str'><class 'str'>
 
-5948
-5948
- 
- 
-<class 'str'>
-<class 'str'>
+79297929  <class 'str'><class 'str'>
 
+79337933  <class 'str'><class 'str'>
 
+79417941  <class 'str'><class 'str'>
 
+79917991  <class 'str'><class 'str'>
 
-5949
-5949
- 
- 
-<class 'str'>
-<class 'str'>
+79967996  <class 'str'><class 'str'>
 
+79977997  <class 'str'><class 'str'>
 
+79997999  <class 'str'><class 'str'>
 
+80118011  <class 'str'><class 'str'>
 
-5970
-5970
- 
- 
-<class 'str'>
-<class 'str'>
+80218021  <class 'str'><class 'str'>
 
+80428042  <class 'str'><class 'str'>
 
+80438043  <class 'str'><class 'str'>
 
+80508050  <class 'str'><class 'str'>
 
-5973
-5973
- 
- 
-<class 'str'>
-<class 'str'>
+80628062  <class 'str'><class 'str'>
 
+80718071  <class 'str'><class 'str'>
 
+80998099  <class 'str'><class 'str'>
 
+81118111  <class 'str'><class 'str'>
 
-5977
-5977
- 
- 
-<class 'str'>
-<class 'str'>
+82118211  <class 'str'><class 'str'>
 
+82208220  <class 'str'><class 'str'>
 
+82498249  <class 'str'><class 'str'>
 
+82998299  <class 'str'><class 'str'>
 
-5983
-5983
- 
- 
-<class 'str'>
-<class 'str'>
+83518351  <class 'str'><class 'str'>
 
+83988398  <class 'str'><class 'str'>
 
+86418641  <class 'str'><class 'str'>
 
+86618661  <class 'str'><class 'str'>
 
-5992
-5992
- 
- 
-<class 'str'>
-<class 'str'>
+86998699  <class 'str'><class 'str'>
 
+87348734  <class 'str'><class 'str'>
 
+89118911  <class 'str'><class 'str'>
 
+89318931  <class 'str'><class 'str'>
 
-5993
-5993
- 
- 
-<class 'str'>
-<class 'str'>
+89998999  <class 'str'><class 'str'>
 
+92229222  <class 'str'><class 'str'>
 
+93999399  <class 'str'><class 'str'>
 
+R999R999  <class 'str'><class 'str'>
 
-5994
-5994
- 
- 
-<class 'str'>
-<class 'str'>
+27412741  <class 'str'><class 'str'>
 
+41214121  <class 'str'><class 'str'>
 
+51115111  <class 'str'><class 'str'>
 
+51225122  <class 'str'><class 'str'>
 
-5995
-5995
- 
- 
-<class 'str'>
-<class 'str'>
+51395139  <class 'str'><class 'str'>
 
+51695169  <class 'str'><class 'str'>
 
+53315331  <class 'str'><class 'str'>
 
+54115411  <class 'str'><class 'str'>
 
-5999
-5999
- 
- 
-<class 'str'>
-<class 'str'>
+54225422  <class 'str'><class 'str'>
 
+54415441  <class 'str'><class 'str'>
 
+54625462  <class 'str'><class 'str'>
 
+54995499  <class 'str'><class 'str'>
 
-6012
-6012
- 
- 
-<class 'str'>
-<class 'str'>
+55415541  <class 'str'><class 'str'>
 
+56515651  <class 'str'><class 'str'>
 
+56915691  <class 'str'><class 'str'>
 
+57125712  <class 'str'><class 'str'>
 
-6300
-6300
- 
- 
-<class 'str'>
-<class 'str'>
+58115811  <class 'str'><class 'str'>
 
+58125812  <class 'str'><class 'str'>
 
+58135813  <class 'str'><class 'str'>
 
+59215921  <class 'str'><class 'str'>
 
-6513
-6513
- 
- 
-<class 'str'>
-<class 'str'>
+59315931  <class 'str'><class 'str'>
 
+59445944  <class 'str'><class 'str'>
 
+59475947  <class 'str'><class 'str'>
 
+59735973  <class 'str'><class 'str'>
 
-7011
-7011
- 
- 
-<class 'str'>
-<class 'str'>
+59775977  <class 'str'><class 'str'>
 
+59955995  <class 'str'><class 'str'>
 
+59995999  <class 'str'><class 'str'>
 
+70117011  <class 'str'><class 'str'>
 
-7032
-7032
- 
- 
-<class 'str'>
-<class 'str'>
+70337033  <class 'str'><class 'str'>
 
+72307230  <class 'str'><class 'str'>
 
+72987298  <class 'str'><class 'str'>
 
+72997299  <class 'str'><class 'str'>
 
-7033
-7033
- 
- 
-<class 'str'>
-<class 'str'>
+73997399  <class 'str'><class 'str'>
 
+76297629  <class 'str'><class 'str'>
 
+79967996  <class 'str'><class 'str'>
 
+79977997  <class 'str'><class 'str'>
 
-7210
-7210
- 
- 
-<class 'str'>
-<class 'str'>
+79997999  <class 'str'><class 'str'>
 
+80118011  <class 'str'><class 'str'>
 
+89998999  <class 'str'><class 'str'>
 
+53315331  <class 'str'><class 'str'>
 
-7221
-7221
- 
- 
-<class 'str'>
-<class 'str'>
+56515651  <class 'str'><class 'str'>
 
+58125812  <class 'str'><class 'str'>
 
+17991799  <class 'str'><class 'str'>
 
+27412741  <class 'str'><class 'str'>
 
-7230
-7230
- 
- 
-<class 'str'>
-<class 'str'>
+50455045  <class 'str'><class 'str'>
 
+54115411  <class 'str'><class 'str'>
 
+56515651  <class 'str'><class 'str'>
 
+57325732  <class 'str'><class 'str'>
 
-7261
-7261
- 
- 
-<class 'str'>
-<class 'str'>
+58125812  <class 'str'><class 'str'>
 
+58135813  <class 'str'><class 'str'>
 
+58145814  <class 'str'><class 'str'>
 
+59215921  <class 'str'><class 'str'>
 
-7276
-7276
- 
- 
-<class 'str'>
-<class 'str'>
+59995999  <class 'str'><class 'str'>
 
+73337333  <class 'str'><class 'str'>
 
+73997399  <class 'str'><class 'str'>
 
+80118011  <class 'str'><class 'str'>
 
-7277
-7277
- 
- 
-<class 'str'>
-<class 'str'>
+89998999  <class 'str'><class 'str'>
 
+ST.01ST.01
 
 
+An error occurred while reading the remote file:
+An error occurred while reading the remote file:  'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>'charmap' codec can't decode byte 0x90 in position 22: character maps to <undefined>
 
-7296
-7296
- 
- 
-<class 'str'>
-<class 'str'>
 
+Data z pliku Tvid_nev_lost.xlsx: 
+Data z pliku Tvid_nev_lost.xlsx:   2023-12-31 00:00:002023-12-31 00:00:00
 
+ST.03ST.03
 
+ST.05ST.05
 
-7297
-7297
- 
- 
-<class 'str'>
-<class 'str'>
+Index(['country', 'category', 'te_pos_entry_mode', 'Wartoœæ wyp³at Cash Back',
+       'ilosc_cashback', 'ilosc_internet', 'wartosc_internet', 'ilosc',
+       'wartosc_transakcji', 'Unnamed: 0', 'Name', 'name_PL', 'Unnamed: 4'],
+      dtype='object')Index(['country', 'category', 'te_pos_entry_mode', 'Wartoœæ wyp³at Cash Back',
+       'ilosc_cashback', 'ilosc_internet', 'wartosc_internet', 'ilosc',
+       'wartosc_transakcji', 'Unnamed: 0', 'Name', 'name_PL', 'Unnamed: 4'],
+      dtype='object')
 
+Index(['country', 'category', 'te_pos_entry_mode', 'Wartoœæ wyp³at Cash Back',
+       'ilosc_cashback', 'ilosc_internet', 'wartosc_internet', 'ilosc',
+       'wartosc_transakcji', 'Unnamed: 0', 'Name', 'name_PL', 'Unnamed: 4'],
+      dtype='object')Index(['country', 'category', 'te_pos_entry_mode', 'Wartoœæ wyp³at Cash Back',
+       'ilosc_cashback', 'ilosc_internet', 'wartosc_internet', 'ilosc',
+       'wartosc_transakcji', 'Unnamed: 0', 'Name', 'name_PL', 'Unnamed: 4'],
+      dtype='object')
 
+ST.06ST.06
 
+Index(['country', 'ilosc', 'ilosc_internet', 'ilosc_cashback',
+       'wartosc_transakcji', 'wartosc_internet', 'Wartoœæ wyp³at Cash Back'],
+      dtype='object')Index(['country', 'ilosc', 'ilosc_internet', 'ilosc_cashback',
+       'wartosc_transakcji', 'wartosc_internet', 'Wartoœæ wyp³at Cash Back'],
+      dtype='object')
 
-7298
-7298
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+ADAD
 
+1: 1:   TrueTrue
 
+AEAE
 
-7299
-7299
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+ALAL
 
+1: 1:   TrueTrue
 
+AMAM
 
-7311
-7311
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+AOAO
 
+1: 1:   TrueTrue
 
+ARAR
 
-7333
-7333
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+AUAU
 
+1: 1:   TrueTrue
 
-7338
-7338
- 
- 
-<class 'str'>
-<class 'str'>
+AWAW
 
+1: 1:   TrueTrue
 
+AZAZ
 
+1: 1:   TrueTrue
 
-7361
-7361
- 
- 
-<class 'str'>
-<class 'str'>
+BABA
 
+1: 1:   TrueTrue
 
+BDBD
 
+1: 1:   TrueTrue
 
-7375
-7375
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+BFBF
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-7379
-7379
- 
- 
-<class 'str'>
-<class 'str'>
+BHBH
 
+1: 1:   TrueTrue
 
+BJBJ
 
+1: 1:   TrueTrue
 
-7392
-7392
- 
- 
-<class 'str'>
-<class 'str'>
+BMBM
 
+1: 1:   TrueTrue
 
+BNBN
 
+1: 1:   TrueTrue
 
-7394
-7394
- 
- 
-<class 'str'>
-<class 'str'>
+BOBO
 
+1: 1:   TrueTrue
 
+BRBR
 
+1: 1:   TrueTrue
 
-7399
-7399
- 
- 
-<class 'str'>
-<class 'str'>
+BSBS
 
+1: 1:   TrueTrue
 
+BWBW
 
+1: 1:   TrueTrue
 
-7512
-7512
- 
- 
-<class 'str'>
-<class 'str'>
+BYBY
 
+1: 1:   TrueTrue
 
+CACA
 
+1: 1:   TrueTrue
 
-7513
-7513
- 
- 
-<class 'str'>
-<class 'str'>
+CDCD
 
+1: 1:   TrueTrue
 
+CHCH
 
+1: 1:   TrueTrue
 
-7523
-7523
- 
- 
-<class 'str'>
-<class 'str'>
+CICI
 
+1: 1:   TrueTrue
 
+CLCL
 
+1: 1:   TrueTrue
 
-7531
-7531
- 
- 
-<class 'str'>
-<class 'str'>
+CNCN
 
+1: 1:   TrueTrue
 
+COCO
 
+1: 1:   TrueTrue
 
-7534
-7534
- 
- 
-<class 'str'>
-<class 'str'>
+CRCR
 
+1: 1:   TrueTrue
 
+CWCW
 
+1: 1:   TrueTrue
 
-7535
-7535
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+D09D09
 
+1: 1:   TrueTrue
 
-7538
-7538
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+DODO
 
+1: 1:   TrueTrue
 
-7542
-7542
- 
- 
-<class 'str'>
-<class 'str'>
+DZDZ
 
+1: 1:   TrueTrue
 
+ECEC
 
+1: 1:   TrueTrue
 
-7623
-7623
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+EGEG
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-7629
-7629
- 
- 
-<class 'str'>
-<class 'str'>
+ETET
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-7631
-7631
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+GEGE
 
+1: 1:   TrueTrue
 
+GHGH
 
-7699
-7699
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+GIGI
 
+1: 1:   TrueTrue
 
+GNGN
 
-7829
-7829
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+GTGT
 
+1: 1:   TrueTrue
 
-7832
-7832
- 
- 
-<class 'str'>
-<class 'str'>
+HKHK
 
+1: 1:   TrueTrue
 
+HNHN
 
+1: 1:   TrueTrue
 
-7841
-7841
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+HTHT
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-7911
-7911
- 
- 
-<class 'str'>
-<class 'str'>
+IDID
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+ILIL
 
-7929
-7929
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+ININ
 
+1: 1:   TrueTrue
 
+IQIQ
 
-7933
-7933
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+JMJM
 
-7941
-7941
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+JOJO
 
+1: 1:   TrueTrue
 
+JPJP
 
-7991
-7991
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+KEKE
 
+1: 1:   TrueTrue
 
+KGKG
 
-7996
-7996
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+KHKH
 
+1: 1:   TrueTrue
 
+KRKR
 
-7997
-7997
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+KWKW
 
+1: 1:   TrueTrue
 
+KYKY
 
-7999
-7999
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+KZKZ
 
+1: 1:   TrueTrue
 
+LALA
 
-8011
-8011
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+LBLB
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-8021
-8021
- 
- 
-<class 'str'>
-<class 'str'>
+LKLK
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-8042
-8042
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+LYLY
 
+1: 1:   TrueTrue
 
+MAMA
 
-8043
-8043
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+MDMD
 
+1: 1:   TrueTrue
 
+MEME
 
-8050
-8050
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+MGMG
 
+1: 1:   TrueTrue
 
+MKMK
 
-8062
-8062
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+MLML
 
+1: 1:   TrueTrue
 
+MMMM
 
-8071
-8071
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+MNMN
 
+1: 1:   TrueTrue
 
+MOMO
 
-8099
-8099
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+MRMR
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-8111
-8111
- 
- 
-<class 'str'>
-<class 'str'>
+MUMU
 
+1: 1:   TrueTrue
 
+MVMV
 
+1: 1:   TrueTrue
 
-8220
-8220
- 
- 
-<class 'str'>
-<class 'str'>
+MWMW
 
+1: 1:   TrueTrue
 
+MXMX
 
+1: 1:   TrueTrue
 
-8299
-8299
- 
- 
-<class 'str'>
-<class 'str'>
+MYMY
 
+1: 1:   TrueTrue
 
+MZMZ
 
+1: 1:   FalseFalse
 
-8398
-8398
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+NGNG
 
+1: 1:   TrueTrue
 
+NINI
 
-8641
-8641
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+NPNP
 
-8699
-8699
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+NZNZ
 
+1: 1:   TrueTrue
 
+OMOM
 
-8734
-8734
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+PAPA
 
+1: 1:   TrueTrue
 
+PEPE
 
-8911
-8911
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+PGPG
 
+1: 1:   TrueTrue
 
+PHPH
 
-8931
-8931
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+PKPK
 
+1: 1:   TrueTrue
 
+PSPS
 
-8999
-8999
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+PYPY
 
+1: 1:   TrueTrue
 
-R999
-R999
- 
- 
-<class 'str'>
-<class 'str'>
+QAQA
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+RSRS
 
-0742
-0742
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+RWRW
 
+1: 1:   TrueTrue
 
+SASA
 
-0763
-0763
- 
- 
-<class 'str'>
-<class 'str'>
+1: 1:   TrueTrue
 
+SCSC
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-0780
-0780
- 
- 
-<class 'str'>
-<class 'str'>
+SGSG
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
+1: 1:   TrueTrue
 
-1520
-1520
- 
- 
-<class 'str'>
-<class 'str'>
+SLSL
 
+1: 1:   TrueTrue
 
+SMSM
 
+1: 1:   TrueTrue
 
-1711
-1711
- 
- 
-<class 'str'>
-<class 'str'>
+SNSN
 
+1: 1:   TrueTrue
 
+SOSO
 
+1: 1:   TrueTrue
 
-1731
-1731
- 
- 
-<class 'str'>
-<class 'str'>
+SVSV
 
+1: 1:   TrueTrue
 
+SZSZ
 
+1: 1:   TrueTrue
 
-1740
-1740
- 
- 
-<class 'str'>
-<class 'str'>
+THTH
 
+1: 1:   TrueTrue
 
+TJTJ
 
+1: 1:   TrueTrue
 
-1750
-1750
- 
- 
-<class 'str'>
-<class 'str'>
+TMTM
 
+1: 1:   TrueTrue
 
+TNTN
 
+1: 1:   TrueTrue
 
-1799
-1799
- 
- 
-<class 'str'>
-<class 'str'>
+TRTR
 
+1: 1:   TrueTrue
 
+TTTT
 
+1: 1:   TrueTrue
 
-2741
-2741
- 
- 
-<class 'str'>
-<class 'str'>
+TWTW
 
+1: 1:   TrueTrue
 
+TZTZ
 
+1: 1:   TrueTrue
 
-4121
-4121
- 
- 
-<class 'str'>
-<class 'str'>
+UAUA
 
+1: 1:   TrueTrue
 
+UGUG
 
+1: 1:   TrueTrue
 
-4131
-4131
- 
- 
-<class 'str'>
-<class 'str'>
+USUS
 
+1: 1:   TrueTrue
 
+UYUY
 
+1: 1:   TrueTrue
 
-4214
-4214
- 
- 
-<class 'str'>
-<class 'str'>
+UZUZ
 
+1: 1:   TrueTrue
 
+VAVA
 
+1: 1:   TrueTrue
 
-4215
-4215
- 
- 
-<class 'str'>
-<class 'str'>
+VNVN
 
+1: 1:   TrueTrue
 
+ZAZA
 
+1: 1:   TrueTrue
 
-4225
-4225
- 
- 
-<class 'str'>
-<class 'str'>
+ZMZM
 
+1: 1:   TrueTrue
 
+ZWZW
 
+ST.07ST.07
 
-4722
-4722
- 
- 
-<class 'str'>
-<class 'str'>
+p-danep-dane
 
+ENDEND
 
+Folder structure already exists.Folder structure already exists.
 
+Folder structure already exists.Folder structure already exists.
 
-4784
-4784
- 
- 
-<class 'str'>
-<class 'str'>
+Folder structure already exists.Folder structure already exists.
 
+Folder structure already exists.Folder structure already exists.
 
-
-
-4789
-4789
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-4812
-4812
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-4814
-4814
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5013
-5013
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5021
-5021
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5039
-5039
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5044
-5044
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5045
-5045
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5046
-5046
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5047
-5047
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5051
-5051
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5065
-5065
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5072
-5072
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5074
-5074
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5085
-5085
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5094
-5094
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5099
-5099
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5111
-5111
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5122
-5122
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5137
-5137
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5139
-5139
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5169
-5169
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5172
-5172
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5192
-5192
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5193
-5193
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5198
-5198
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5199
-5199
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5200
-5200
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5211
-5211
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5231
-5231
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5251
-5251
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5261
-5261
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5331
-5331
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5411
-5411
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5422
-5422
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5441
-5441
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5451
-5451
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5462
-5462
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5499
-5499
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5511
-5511
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5521
-5521
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5532
-5532
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5533
-5533
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5541
-5541
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5599
-5599
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5611
-5611
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5621
-5621
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5631
-5631
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5641
-5641
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5651
-5651
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5655
-5655
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5661
-5661
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5691
-5691
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5697
-5697
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5699
-5699
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5712
-5712
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5713
-5713
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5714
-5714
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5719
-5719
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5722
-5722
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5732
-5732
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5733
-5733
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5734
-5734
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5735
-5735
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5811
-5811
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5812
-5812
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5813
-5813
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5814
-5814
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5912
-5912
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5921
-5921
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5931
-5931
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5933
-5933
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5935
-5935
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5940
-5940
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5941
-5941
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5942
-5942
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5943
-5943
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5944
-5944
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5945
-5945
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5946
-5946
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5947
-5947
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5948
-5948
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5949
-5949
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5970
-5970
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5973
-5973
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5977
-5977
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5983
-5983
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5992
-5992
- 
- 
-<class 'str'>
-<class 'str'>
-
-
-
-
-5993
-5993
- 
- 
-<class 'str'>
+ 'str'>
 <class 'str'>
 
 
